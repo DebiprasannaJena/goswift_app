@@ -1,0 +1,122 @@
+.thumbsec{ text-align: center}
+
+.thumbsec .jthumbs {
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    height: 80px;
+    text-align: center;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.thumbsec .jthumbs>i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+.thumbsec .jthumbs>i:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.thumbsec .jthumbs>img{width:100%;height: 100%; margin-bottom:10px; }
+.thumbsec .jthumbs>figure {
+    display: none;
+    position: absolute;
+    top: -1px;
+    height: 250px;
+    width: 400px;
+    z-index: 99;
+    left: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 20px 0 #999;
+}
+.thumbsec .jthumbs>figure>img{width:100%;height: 100%; margin-bottom:10px; }
+.thumbsec .jthumbs>.myradio{display: block;margin: auto;}
+
+.thumbsec .myradio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.thumbsec .myradio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.thumbsec .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ccc;
+    border-radius: 50%;
+    right: 0;
+    margin: auto;
+}
+
+/* On mouse-over, add a grey background color */
+.thumbsec .myradio:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.thumbsec .myradio input:checked ~ .checkmark {
+    background-color: #f44336;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.thumbsec .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.thumbsec .myradio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.thumbsec .myradio .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+.layoutsec{margin-top:50px;}
+
+.layoutsec textarea {
+    background-color:#FAFAFA;
+    border:#EFEFEF solid 1px;
+    color:#333;
+    height:250px;
+    width:100%;
+	margin:10px 0;
+}
+
+
+
+#cont1{border-right: 1px solid #eee}
+#cont3{border-left: 1px solid #eee}
+#cont{border-top: 1px solid #eee;border-bottom: 1px solid #eee}

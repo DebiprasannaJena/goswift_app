@@ -1,0 +1,12 @@
+Time: 28/11/2023 10:38:55 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at proposeddetails.Btn_Yes_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\PEAL\proposeddetails.aspx.cs:line 2502
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

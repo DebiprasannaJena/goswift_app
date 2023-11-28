@@ -1,0 +1,305 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Application.master.cs" Inherits="MasterPage_Application" %>
+
+<%@ Register Src="../Include/Leftmenupanel.ascx" TagName="Leftmenupanel" TagPrefix="uc1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SWP</title>
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Start Styles
+         =====================================================================-->
+
+    <link href="../css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/lobipanel.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/flash.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css" />
+    <link href="../css/themify-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../css/emojionearea.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/monthly.css" rel="stylesheet" type="text/css" />
+    <link href="../css/stylecrm.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../css/override.css" rel="stylesheet" type="text/css" />
+    <!-- End Styles
+         =====================================================================-->
+    <script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+    <form id="form1" runat="server">
+        <!--preloader-->
+        <div id="preloader">
+            <div id="status"></div>
+        </div>
+        <!-- Site wrapper -->
+        <div class="wrapper">
+            <header class="main-header">
+                <!--====== Logo ======-->
+                <a href="index.html" class="logo">
+
+                    <span class="logo-mini">
+                        <img src="../images/odigovlogo.png" alt="Logo" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="../images/logos.png" alt="Logo" />
+                    </span>
+                </a>
+                <!--====== Logo ======-->
+                <!--====== Header Navbar ======-->
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-angle-left-circle"></span>
+                    </a>
+                    <!-- searchbar-->
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+
+                            <!-- Messages -->
+                            <li class="dropdown messages-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="pe-7s-mail"></i>
+                                    <span class="label label-success">4</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- start message -->
+                                                <a href="#" class="border-gray">
+                                                    <div class="pull-left">
+                                                        <img src="../images/admin.png" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>Ronaldo</h4>
+                                                    <p>Please oreder 10 pices of kits..</p>
+                                                    <span class="badge badge-success badge-massege"><small>15 hours ago</small>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="border-gray">
+                                                    <div class="pull-left">
+                                                        <img src="../images/admin.png" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>Leo messi</h4>
+                                                    <p>Please oreder 10 pices of Sheos..</p>
+                                                    <span class="badge badge-info badge-massege"><small>6 days ago</small>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="border-gray">
+                                                    <div class="pull-left">
+                                                        <img src="../images/admin.png" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>Modric</h4>
+                                                    <p>Please oreder 6 pices of bats..</p>
+                                                    <span class="badge badge-info badge-massege"><small>1 hour ago</small>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="border-gray">
+                                                    <div class="pull-left">
+                                                        <img src="../images/admin.png" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>Salman</h4>
+                                                    <p>Hello i want 4 uefa footballs</p>
+                                                    <span class="badge badge-danger badge-massege">
+                                                        <small>6 days ago</small>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="border-gray">
+                                                    <div class="pull-left">
+                                                        <img src="../images/admin.png" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>Sergio Ramos</h4>
+                                                    <p>Hello i want 9 uefa footballs</p>
+                                                    <span class="badge badge-info badge-massege"><small>5 hours ago</small>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Notifications -->
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="pe-7s-bell"></i>
+                                    <span class="label label-warning">7</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#" class="border-gray">
+                                                    <i class="fa fa-dot-circle-o color-green"></i>Change Your font style</a>
+                                            </li>
+                                            <li><a href="#" class="border-gray">
+                                                <i class="fa fa-dot-circle-o color-red"></i>
+                                                check the system ststus..</a>
+                                            </li>
+                                            <li><a href="#" class="border-gray">
+                                                <i class="fa fa-dot-circle-o color-yellow"></i>
+                                                Add more admin...</a>
+                                            </li>
+                                            <li><a href="#" class="border-gray">
+                                                <i class="fa fa-dot-circle-o color-violet"></i>Add more clients and order</a>
+                                            </li>
+                                            <li><a href="#" class="border-gray">
+                                                <i class="fa fa-dot-circle-o color-yellow"></i>
+                                                Add more admin...</a>
+                                            </li>
+                                            <li><a href="#" class="border-gray">
+                                                <i class="fa fa-dot-circle-o color-violet"></i>Add more clients and order</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Tasks -->
+                            <li class="dropdown tasks-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="pe-7s-note2"></i>
+                                    <span class="label label-danger">6</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-success pull-right">50%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>Theme color should be change</h3>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-warning pull-right">90%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>Fix Error and bugs</h3>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-danger pull-right">80%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>Sidebar color change</h3>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-info pull-right">30%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>font-family should be change</h3>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-success pull-right">60%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>Fix the database Error</h3>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#" class="border-gray">
+                                                    <span class="label label-info pull-right">20%</span>
+                                                    <h3><i class="fa fa-check-circle"></i>data table data missing</h3>
+                                                </a>
+                                            </li>
+                                            <!-- end task item -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- user -->
+                            <li class="dropdown dropdown-user">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="../images/admin.png" height="45" alt=""><span><asp:Label ID="lblUserName" runat="server" Text=""></asp:Label></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="profile.html">
+                                            <i class="fa fa-user"></i>Edit Profile</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-inbox"></i>Change Password</a></li>
+                                    <li><a href="../Console/AdminDefault.aspx?dwXb=<%=Session["RandomNo"]%>"><i class="fa fa-inbox"></i>Admin Console</a></li>
+                                    <li><a href="../LogOut.aspx">
+                                        <i class="fa fa-sign-out"></i>Signout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--====== Header Navbar ======-->
+            </header>
+            <!-- =============================================== -->
+            <!-- Left side column. contains the sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="sidebar">
+                    <!-- sidebar menu -->
+
+                    <uc1:Leftmenupanel ID="Leftmenupanel1" runat="server" />
+
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+            <!-- =============================================== -->
+            <!-- Content Wrapper. Contains page content -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <strong>Copyright &copy; 2017 <a href="#">Single Window Portal</a>.</strong> All rights reserved.
+            </footer>
+        </div>
+        <!-- /.wrapper -->
+        <!-- Start js
+         =====================================================================-->
+
+
+
+        <script src="../js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/lobipanel.min.js" type="text/javascript"></script>
+        <script src="../js/pace.min.js" type="text/javascript"></script>
+        <script src="../js/fastclick.min.js" type="text/javascript"></script>
+        <script src="../js/custom2.js" type="text/javascript"></script>
+        <script src="../js/dashboard.js" type="text/javascript"></script>
+
+        <script src="../js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function () {
+                $('.datePicker').datepicker({
+                    autoclose: true,
+                    format: 'mm/dd/yyyy'
+                });
+
+            });
+        </script>
+        <!-- End js
+         =====================================================================-->
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+
+<!-- Mirrored from crm.thememinister.com/crmAdmin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jun 2017 03:53:53 GMT -->
+</html>

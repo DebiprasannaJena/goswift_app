@@ -1,0 +1,12 @@
+Time: 13/06/2022 01:38:20 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022031048000026-130622124016|0030-03-800-0097-01076-000|Application Fee|30|0029-00-800-0097-01077-000|Conversion fee|20|0030-03-800-0097-01076-000|Application Fee|30|0029-00-800-0097-01077-000|Conversion fee|20|||||||100|DHARMASIS SAHOO|AT/PO-BADABIRUAN,DIST-JAJPUR||Odisha|Jajpur|111111|8249607168||||||||https://uatgoswift.csmpl.com/SWP/PaymentThankYou.aspx?ReqMode=M
+-----------------------------------------------------------
+Time: 13/06/2022 03:03:28 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022031048000026-130622024150|0030-03-800-0097-01076-000|Application Fee|30|0029-00-800-0097-01077-000|Conversion fee|20|0030-03-800-0097-01076-000|Application Fee|30|0029-00-800-0097-01077-000|Conversion fee|20|||||||100|DHARMASIS SAHOO|AT/PO-BADABIRUAN,DIST-JAJPUR||Odisha|Jajpur|111111|8249607168||||||||https://uatgoswift.csmpl.com/SWP/PaymentThankYou.aspx?ReqMode=M
+-----------------------------------------------------------
+Time: 13/06/2022 03:47:45 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022061347000009-130622032000|1475-00-200-0135-02119-000|Conversion fee|50.00|1475-00-200-0135-02119-000|Conversion fee|50.00|||||||||||||100.00|DHARMASIS SAHOO|AT/PO-BADABIRUAN,DIST-JAJPUR||Odisha|Jajpur|111111|8249607168||||||||https://uatgoswift.csmpl.com/SWP/PaymentThankYou.aspx?ReqMode=M
+-----------------------------------------------------------
+Time: 13/06/2022 04:26:37 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022061316000024-130622035840|0875-60-800-0097-02241-000|User Fee|1.00|0000-00-000-0000-00000-004|NA|273500.00|0875-60-800-0097-02241-000|User Fee|1.00|0000-00-000-0000-00000-006|NA|12480500.00|||||||12754002.00|DHARMASIS SAHOO|AT/PO-BADABIRUAN,DIST-JAJPUR||Odisha|Jajpur|111111|8249607168||||||||https://uatgoswift.csmpl.com/SWP/PaymentThankYou.aspx?ReqMode=M
+-----------------------------------------------------------

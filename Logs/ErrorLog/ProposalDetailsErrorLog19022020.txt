@@ -1,0 +1,32 @@
+Time: 19/02/2020 12:36:11 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposal_ProposalDetails.GetGroupOfCompanyDetails() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\Proposal\ProposalDetails.aspx.cs:line 654
+Source: App_Web_gzxk2pm5
+TargetSite: Void GetGroupOfCompanyDetails()
+-----------------------------------------------------------
+
+Time: 19/02/2020 12:36:15 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposal_ProposalDetails.GetGroupOfCompanyDetails() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\Proposal\ProposalDetails.aspx.cs:line 654
+Source: App_Web_gzxk2pm5
+TargetSite: Void GetGroupOfCompanyDetails()
+-----------------------------------------------------------
+
+Time: 19/02/2020 12:36:23 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposal_ProposalDetails.GetGroupOfCompanyDetails() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\Proposal\ProposalDetails.aspx.cs:line 654
+Source: App_Web_gzxk2pm5
+TargetSite: Void GetGroupOfCompanyDetails()
+-----------------------------------------------------------
+
+Time: 19/02/2020 12:39:02 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposal_ProposalDetails.GetGroupOfCompanyDetails() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\Proposal\ProposalDetails.aspx.cs:line 654
+Source: App_Web_lvqxhyv0
+TargetSite: Void GetGroupOfCompanyDetails()
+-----------------------------------------------------------
+

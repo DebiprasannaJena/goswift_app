@@ -1,0 +1,10 @@
+Time: 01/06/2023 12:32:04 PM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\Projects\SWPGoo\SWP_NEW\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+

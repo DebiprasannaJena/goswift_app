@@ -1,0 +1,35 @@
+﻿var districtdetails = [
+{ "district_Id": 1, "district_name": "angul", "category_a": "225.765", "category_b": "1983.960" },
+{ "district_Id": 2, "district_name": "baleswar", "category_a": "6022.660", "category_b": "2668.250" },
+{ "district_Id": 3, "district_name": "baragarh", "category_a": "0.00", "category_b": "2698.720" },
+{ "district_Id": 4, "district_name": "bhadrak", "category_a": "883.640", "category_b": "2551.732" },
+{ "district_Id": 5, "district_name": "balangir", "category_a": "0.00", "category_b": "1913.580" },
+{ "district_Id": 6, "district_name": "boudh", "category_a": "2290.080", "category_b": "0.00" },
+{ "district_Id": 7, "district_name": "cuttack", "category_a": "1738.746", "category_b": "9588.330" },
+{ "district_Id": 8, "district_name": "deogarh", "category_a": "444.900", "category_b": "2386.880" },
+{ "district_Id": 9, "district_name": "dhenkanal", "category_a": "67.910", "category_b": "5964.985" },
+{ "district_Id": 10, "district_name": "gajapati", "category_a": "-", "category_b": "-" },
+{ "district_Id": 11, "district_name": "ganjam", "category_a": "367.692", "category_b": "907.734" },
+{ "district_Id": 12, "district_name": "jagatsinghpur", "category_a": "4163.530", "category_b": "979.180" },
+{ "district_Id": 13, "district_name": "jajpur", "category_a": "1797.630", "category_b": "3738.536" },
+{ "district_Id": 14, "district_name": "jharsuguda", "category_a": "	349.490", "category_b": "3518.220" },
+{ "district_Id": 15, "district_name": "kalahandi", "category_a": "444.440", "category_b": "16947.044" },
+{ "district_Id": 16, "district_name": "kandhamal", "category_a": "-", "category_b": "-" },
+{ "district_Id": 17, "district_name": "kendrapara", "category_a": "2.000", "category_b": "1254.816" },
+{ "district_Id": 18, "district_name": "keonjhar", "category_a": "1214.959", "category_b": "1569.455" },
+{ "district_Id": 19, "district_name": "khurdha", "category_a": "3048.923", "category_b": "3910.101" },
+{ "district_Id": 20, "district_name": "koraput", "category_a": "0.00", "category_b": "32679.251" },
+
+{ "district_Id": 21, "district_name": "malkangiri", "category_a": "85.866", "category_b": "0.00" },
+{ "district_Id": 22, "district_name": "mayurbhanj", "category_a": "-", "category_b": "-" },
+{ "district_Id": 23, "district_name": "nawarangpur", "category_a": "-", "category_b": "-" },
+{ "district_Id": 24, "district_name": "nayagarh", "category_a": "0.00", "category_b": "314.810" },
+{ "district_Id": 25, "district_name": "nuapada", "category_a": "-", "category_b": "-" },
+{ "district_Id": 26, "district_name": "puri", "category_a": "126.820", "category_b": "0.00" },
+{ "district_Id": 27, "district_name": "rayagada", "category_a": "837.340", "category_b": "0.00" },
+{ "district_Id": 28, "district_name": "sambalpur", "category_a": "562.880", "category_b": "1952.080" },
+{ "district_Id": 29, "district_name": "sonepur", "category_a": "-", "category_b": "-" },
+{ "district_Id": 30, "district_name": "sundergarh", "category_a": "223.850", "category_b": "1329.810" }
+
+
+];

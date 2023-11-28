@@ -1,0 +1,11 @@
+1) ALTER TABLE FlexiOfficeTime ADD vch_HalfStartTime VARCHAR(50),vch_HalfEETime VARCHAR(50),vch_HalfLETime VARCHAR(50)
+
+2) ALTER TABLE OfficeTimeMaster ADD vch_HalfStartTime VARCHAR(50),vch_HalfEETime VARCHAR(50),vch_HalfLETime VARCHAR(50)
+
+3) ALTER TABLE GlobalLinkMaster ADD bit_ShowOnHomePage BIT
+
+4) ALTER TABLE PrimaryLinkMaster ADD bit_ShowOnHomePage BIT
+
+5) ALTER TABLE usermaster ADD int_LogFlag INT
+
+6) ALTER TABLE FUNCTIONMASTER  ADD chr_Notification CHAR(1)

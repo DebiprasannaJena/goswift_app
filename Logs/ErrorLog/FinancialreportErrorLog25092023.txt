@@ -1,0 +1,60 @@
+Time: 25/09/2023 12:32:19 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_MISFinancialReport.lnkExport_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 173
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 25/09/2023 04:48:09 PM
+-----------------------------------------------------------
+Message: @P_DTM_FROM_DATE is not a parameter for procedure USP_ChildServices_MISReport_Logic2.
+StackTrace:    at Portal_MISReport_MISFinancialReport.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 116
+   at Portal_MISReport_MISFinancialReport.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 25
+Source: .Net SqlClient Data Provider
+TargetSite: Void BindGridView()
+-----------------------------------------------------------
+
+Time: 25/09/2023 04:48:33 PM
+-----------------------------------------------------------
+Message: @P_DTM_FROM_DATE is not a parameter for procedure USP_ChildServices_MISReport_Logic2.
+StackTrace:    at Portal_MISReport_MISFinancialReport.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 116
+   at Portal_MISReport_MISFinancialReport.btnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 124
+Source: .Net SqlClient Data Provider
+TargetSite: Void BindGridView()
+-----------------------------------------------------------
+
+Time: 25/09/2023 05:01:53 PM
+-----------------------------------------------------------
+Message: @P_DTM_FROM_DATE is not a parameter for procedure USP_ChildServices_MISReport_Logic2.
+StackTrace:    at Portal_MISReport_MISFinancialReport.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 116
+   at Portal_MISReport_MISFinancialReport.btnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 124
+Source: .Net SqlClient Data Provider
+TargetSite: Void BindGridView()
+-----------------------------------------------------------
+
+Time: 25/09/2023 05:10:48 PM
+-----------------------------------------------------------
+Message: @P_DTM_FROM_DATE is not a parameter for procedure USP_ChildServices_MISReport_Logic2.
+StackTrace:    at Portal_MISReport_MISFinancialReport.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 116
+   at Portal_MISReport_MISFinancialReport.btnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 124
+Source: .Net SqlClient Data Provider
+TargetSite: Void BindGridView()
+-----------------------------------------------------------
+
+Time: 25/09/2023 05:12:40 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Portal_MISReport_MISFinancialReport.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 29
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

@@ -1,0 +1,29 @@
+Time: 06/06/2022 02:57:36 PM
+-----------------------------------------------------------
+Message: The remote server returned an error: (500) Internal Server Error.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at PaymentScheduler.ExternalServicePaymentSchedule() in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\PaymentScheduler.cs:line 238
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 06/06/2022 05:09:55 PM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at PaymentScheduler.ExternalServicePaymentSchedule() in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\PaymentScheduler.cs:line 308
+Source: mscorlib
+TargetSite: Void ThrowKeyNotFoundException()
+-----------------------------------------------------------
+
+Time: 06/06/2022 05:14:16 PM
+-----------------------------------------------------------
+Message: The given key was not present in the dictionary.
+StackTrace:    at System.ThrowHelper.ThrowKeyNotFoundException()
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at PaymentScheduler.ExternalServicePaymentSchedule() in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\PaymentScheduler.cs:line 308
+Source: mscorlib
+TargetSite: Void ThrowKeyNotFoundException()
+-----------------------------------------------------------
+

@@ -1,0 +1,9 @@
+Time: 06/09/2021 10:05:02 AM
+-----------------------------------------------------------
+Message: Column '' does not belong to table .
+StackTrace:    at Portal_PAN_Operation_View_Investor_Regd_Details.fillDetails(Int32 intInvetsorId, Int32 intRequestId) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 276
+   at Portal_PAN_Operation_View_Investor_Regd_Details.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 54
+Source: App_Web_cwlnks5d
+TargetSite: Void fillDetails(Int32, Int32)
+-----------------------------------------------------------
+

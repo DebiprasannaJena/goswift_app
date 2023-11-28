@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="usernm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="psw" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intDepartmentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StrIp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strDeptlogin" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intProjectId" type="s:int" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="SMSWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iDeptid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iProject" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iScheme" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iUserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReceiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SMSWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SMSWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsMobiles">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="intDeptId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intProjectId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intUID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendBulkMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendBulkMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWebMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendWebMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendWebMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSwithXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ArgContent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="ArgFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intSchemeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSwithXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSwithXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebSoapIn">
+    <wsdl:part name="parameters" element="tns:SMSWeb" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebSoapOut">
+    <wsdl:part name="parameters" element="tns:SMSWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendBulkMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendBulkMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendBulkMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendWebMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendWebMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMSwithXML" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSwithXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetIn">
+    <wsdl:part name="strMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebHttpGetIn">
+    <wsdl:part name="iDeptid" type="s:string" />
+    <wsdl:part name="iProject" type="s:string" />
+    <wsdl:part name="sIp" type="s:string" />
+    <wsdl:part name="iScheme" type="s:string" />
+    <wsdl:part name="iUserId" type="s:string" />
+    <wsdl:part name="sReceiver" type="s:string" />
+    <wsdl:part name="sMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageHttpGetIn">
+    <wsdl:part name="strMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLHttpGetIn">
+    <wsdl:part name="ArgContent" type="s1:StringArray" />
+    <wsdl:part name="ArgFileName" type="s:string" />
+    <wsdl:part name="intSchemeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostIn">
+    <wsdl:part name="strMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebHttpPostIn">
+    <wsdl:part name="iDeptid" type="s:string" />
+    <wsdl:part name="iProject" type="s:string" />
+    <wsdl:part name="sIp" type="s:string" />
+    <wsdl:part name="iScheme" type="s:string" />
+    <wsdl:part name="iUserId" type="s:string" />
+    <wsdl:part name="sReceiver" type="s:string" />
+    <wsdl:part name="sMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SMSWebHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageHttpPostIn">
+    <wsdl:part name="strMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendWebMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLHttpPostIn">
+    <wsdl:part name="ArgContent" type="s1:StringArray" />
+    <wsdl:part name="ArgFileName" type="s:string" />
+    <wsdl:part name="intSchemeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSwithXMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="smsconfSoap">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <wsdl:input message="tns:SMSWebSoapIn" />
+      <wsdl:output message="tns:SMSWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <wsdl:input message="tns:SendBulkMessageSoapIn" />
+      <wsdl:output message="tns:SendBulkMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <wsdl:input message="tns:SendWebMessageSoapIn" />
+      <wsdl:output message="tns:SendWebMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <wsdl:input message="tns:SendSMSwithXMLSoapIn" />
+      <wsdl:output message="tns:SendSMSwithXMLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="smsconfHttpGet">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpGetIn" />
+      <wsdl:output message="tns:SendMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <wsdl:input message="tns:SMSWebHttpGetIn" />
+      <wsdl:output message="tns:SMSWebHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <wsdl:input message="tns:SendWebMessageHttpGetIn" />
+      <wsdl:output message="tns:SendWebMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <wsdl:input message="tns:SendSMSwithXMLHttpGetIn" />
+      <wsdl:output message="tns:SendSMSwithXMLHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="smsconfHttpPost">
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpPostIn" />
+      <wsdl:output message="tns:SendMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <wsdl:input message="tns:SMSWebHttpPostIn" />
+      <wsdl:output message="tns:SMSWebHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <wsdl:input message="tns:SendWebMessageHttpPostIn" />
+      <wsdl:output message="tns:SendWebMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <wsdl:input message="tns:SendSMSwithXMLHttpPostIn" />
+      <wsdl:output message="tns:SendSMSwithXMLHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="smsconfSoap" type="tns:smsconfSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendMessageAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <soap:operation soapAction="http://tempuri.org/SMSWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <soap:operation soapAction="http://tempuri.org/SendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <soap:operation soapAction="http://tempuri.org/SendWebMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendWebMessageAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <soap:operation soapAction="http://tempuri.org/SendSMSwithXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendSMSwithXMLAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsconfSoap12" type="tns:smsconfSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendMessageAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <soap12:operation soapAction="http://tempuri.org/SMSWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendBulkMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendBulkMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendWebMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendWebMessageAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <soap12:operation soapAction="http://tempuri.org/SendSMSwithXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendSMSwithXMLAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsconfHttpGet" type="tns:smsconfHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <http:operation location="/SMSWeb" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <http:operation location="/SendWebMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <http:operation location="/SendSMSwithXML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smsconfHttpPost" type="tns:smsconfHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMSWeb">
+      <http:operation location="/SMSWeb" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendWebMessage">
+      <http:operation location="/SendWebMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMSwithXML">
+      <http:operation location="/SendSMSwithXML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smsconf">
+    <wsdl:port name="smsconfSoap" binding="tns:smsconfSoap">
+      <soap:address location="http://webs.ocac.in/smsconf.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsconfSoap12" binding="tns:smsconfSoap12">
+      <soap12:address location="http://webs.ocac.in/smsconf.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsconfHttpGet" binding="tns:smsconfHttpGet">
+      <http:address location="http://webs.ocac.in/smsconf.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smsconfHttpPost" binding="tns:smsconfHttpPost">
+      <http:address location="http://webs.ocac.in/smsconf.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,16 @@
+select * into T_group_receive_temp_23072016 from T_group_receive_temp
+select * into t_caf_receive_23072016 from t_caf_receive
+select * into T_ApplicantDetails_Temp_23072016 from T_ApplicantDetails_Temp
+delete from T_group_receive_temp where vch_AdvertisementNo='4827'
+delete from T_group_receive_temp where vch_AdvertisementNo='4876'
+delete from t_caf_receive where vch_AdvertisementNo='4827'
+delete from t_caf_receive where vch_AdvertisementNo='4876'
+update T_ApplicantDetails_Temp set bit_ReceiveStatus=0,bit_Rejected=0 where vch_AdvertisementNo in ('4827','4876') and ISNULL(bit_DeletedFlag,0)=0
+
+
+
+
+
+------------
+--USP_Group_Tagging
+--USP_viewBulkTaggingDetails

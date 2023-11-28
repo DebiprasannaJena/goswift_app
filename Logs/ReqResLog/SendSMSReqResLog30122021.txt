@@ -1,0 +1,168 @@
+Time: 30/12/2021 11:37:25 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 721 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400020&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:37:26 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 721 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:37:29 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 279 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400020&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:37:29 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 279 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:02 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 709 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400021&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:02 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 709 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:04 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 124 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400021&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:04 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 124 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:34 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 760 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400022&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:34 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 760 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:36 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 497 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400022&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:38:36 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 497 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:40:31 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 946 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400023&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:40:31 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 946 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:40:34 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 123 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400023&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:40:34 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 123 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:41:05 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 653 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400024&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:41:06 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 653 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:41:08 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 136 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400024&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:41:08 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 136 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:49:53 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 619 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400025&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:49:53 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 619 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:49:55 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 852 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400025&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:49:55 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 852 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:51:05 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 424 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400026&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:51:05 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 424 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:51:10 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 764 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400026&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:51:10 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 764 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:52:23 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 180 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400027&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:52:24 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 180 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:52:26 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 911 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400027&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:52:26 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 911 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:54:54 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 540 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400028&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:54:54 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 540 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:54:56 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 227 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400028&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:54:56 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 227 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:56:17 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 250 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400029&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:56:18 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 250 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:56:20 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 852 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400029&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:56:20 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 852 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:58:07 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 491 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0200030&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:58:07 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 491 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:58:09 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 949 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0200030&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:58:09 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 949 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:59:33 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 108 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0400031&mnumber=919861342095&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 30/12/2021 11:59:33 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 108 - null
+
+-----------------------------------------------------------
+Time: 30/12/2021 11:59:35 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 742 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=GoiPlus, has registered a grievance with grievance No: ANG0400031&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 30/12/2021 11:59:36 AM For RequestMethod: SendSmsWithTemplate
+InputOutput: 742 - null
+
+-----------------------------------------------------------

@@ -1,0 +1,299 @@
+Time: 05/11/2019 12:49:35 PM
+-----------------------------------------------------------
+Message: Cannot find table 0.
+StackTrace:    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 102
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 25
+Source: System.Data
+TargetSite: System.Data.DataTable get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 05/11/2019 12:50:27 PM
+-----------------------------------------------------------
+Message: Cannot find table 0.
+StackTrace:    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 102
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 25
+Source: System.Data
+TargetSite: System.Data.DataTable get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 05/11/2019 12:51:39 PM
+-----------------------------------------------------------
+Message: Cannot find table 1.
+StackTrace:    at System.Data.DataTableCollection.get_Item(Int32 index)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 102
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 25
+Source: System.Data
+TargetSite: System.Data.DataTable get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 05/11/2019 02:49:51 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchProposalNo'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_view_investor_transaction_details_aspx.__DataBinding__control63(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx:line 121
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 05/11/2019 02:50:38 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchProposalNo'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_view_investor_transaction_details_aspx.__DataBinding__control63(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx:line 121
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 05/11/2019 02:55:27 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_APPLICATION_UNQ_KEY'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_view_investor_transaction_details_aspx.__DataBinding__control106(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx:line 188
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 05/11/2019 02:56:13 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_APPLICATION_UNQ_KEY'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_view_investor_transaction_details_aspx.__DataBinding__control106(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx:line 188
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 05/11/2019 03:36:59 PM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'Lbkl_SlNo' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView1_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 135
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 05/11/2019 03:38:49 PM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'Lbkl_SlNo' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView1_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 135
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 05/11/2019 03:38:53 PM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'Lbkl_SlNo' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView1_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 135
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:23:29 PM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'Lbkl_SlNo' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 146
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:23:47 PM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'Lbkl_SlNo' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 146
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:25:03 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 150
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: App_Web_izb1g5w0
+TargetSite: Void GridView3_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:25:11 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 150
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: App_Web_izb1g5w0
+TargetSite: Void GridView3_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:25:56 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 150
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: App_Web_nnj0xsiq
+TargetSite: Void GridView3_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 05/11/2019 04:27:11 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_PAN_Operation_View_Investor_Transaction_Details.GridView3_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 150
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.FillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 106
+   at Portal_PAN_Operation_View_Investor_Transaction_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Transaction_Details.aspx.cs:line 28
+Source: App_Web_nnj0xsiq
+TargetSite: Void GridView3_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 05/11/2019 05:49:01 PM
+-----------------------------------------------------------
+Message: Column 'DTM_APPROVAL_DATE_1ST_LEVEL' does not belong to table .
+StackTrace:    at Portal_PAN_Operation_View_Investor_Regd_Details.fillDetails(Int32 intInvetsorId, Int32 intRequestId) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 252
+   at Portal_PAN_Operation_View_Investor_Regd_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 48
+Source: App_Web_phhnakdz
+TargetSite: Void fillDetails(Int32, Int32)
+-----------------------------------------------------------
+
+Time: 05/11/2019 05:49:04 PM
+-----------------------------------------------------------
+Message: Column 'DTM_APPROVAL_DATE_1ST_LEVEL' does not belong to table .
+StackTrace:    at Portal_PAN_Operation_View_Investor_Regd_Details.fillDetails(Int32 intInvetsorId, Int32 intRequestId) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 252
+   at Portal_PAN_Operation_View_Investor_Regd_Details.Page_Load(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 48
+Source: App_Web_phhnakdz
+TargetSite: Void fillDetails(Int32, Int32)
+-----------------------------------------------------------
+

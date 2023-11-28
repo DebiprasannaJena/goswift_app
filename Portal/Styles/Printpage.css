@@ -1,0 +1,134 @@
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	font-size:12px;
+	line-height: 18px;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+
+h2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+
+	#printContainer{	
+	padding:0px;
+	display:none;
+	text-align:left;
+	
+	}
+	#printContainer table{
+	border-collapse:collapse;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	padding:2px;
+	width:100%;
+	}
+	
+	#printContainer table th{
+	border: 1px solid #000000;
+	background-color:#CCCCCC;
+	font-weight:bold;	
+	text-align:left;
+	}
+	#printContainer table td{
+	border: 1px solid #000000;	
+	text-align:left;	
+	}
+	#printContainer table td.secondTabNoborder{
+	padding:0px;
+	}
+	#printContainer table td.secondTabNoborder table td{
+	border:none;
+	}
+	#Name{
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:0px;
+	padding-left:0px;
+	margin-top:10px;
+	margin-bottom:10px;
+	
+	}
+.bottomBorder {
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	margin-bottom:10px;
+	background-image: url(Images/printe-sikhya.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+	.NOPRINT{
+	display:none;
+	}
+	.paging{
+	display:none;
+	}
+	.printOnly{
+	display:block;
+	}
+	
+.const {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	color: #999999;
+	text-decoration: none;
+	padding-top:50px;
+	padding-bottom:10px;
+}
+
+.innernotice {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCCCCC;	
+}
+
+.innernotice a {
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	display:block;
+	font-size:12px;
+}
+
+.printHead{display:none;}
+
+.noPrint{
+	display:none;
+}
+a{
+	color:#000;
+	text-decoration:none;
+	font-size:12px;
+	cursor: default;
+}
+#PrintHeader {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	text-decoration: none;
+	padding-bottom: 5px;
+}

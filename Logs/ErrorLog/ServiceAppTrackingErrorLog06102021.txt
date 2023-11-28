@@ -1,0 +1,99 @@
+Time: 06/10/2021 04:44:51 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.DataKeyArray.get_Item(Int32 index)
+   at Portal_HelpDesk_TrackServiceAppStatus.GrdQuereyDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 495
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_HelpDesk_TrackServiceAppStatus.fillGridviewData() in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 166
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 06/10/2021 04:45:28 PM
+-----------------------------------------------------------
+Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+StackTrace:    at System.Collections.ArrayList.get_Item(Int32 index)
+   at System.Web.UI.WebControls.DataKeyArray.get_Item(Int32 index)
+   at Portal_HelpDesk_TrackServiceAppStatus.GrdQuereyDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 495
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_HelpDesk_TrackServiceAppStatus.fillGridviewData() in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 166
+Source: mscorlib
+TargetSite: System.Object get_Item(Int32)
+-----------------------------------------------------------
+
+Time: 06/10/2021 04:56:22 PM
+-----------------------------------------------------------
+Message: D:\Projects\SWPGoo\SWP_NEW\portal\HelpDesk\QueryFiles\Services\2020_12_30_09_03_49_PM__Query_Dept_AAMPP0917F_935000.pdf
+StackTrace:    at Ionic.Zip.SharedUtilities.GetFileLength(String fileName)
+   at Ionic.Zip.ZipEntry.MaybeUnsetCompressionMethodForWriting(Int32 cycle)
+   at Ionic.Zip.ZipEntry.WriteHeader(Stream s, Int32 cycle)
+   at Ionic.Zip.ZipEntry.Write(Stream s)
+   at Ionic.Zip.ZipFile.Save()
+   at Portal_HelpDesk_TrackServiceAppStatus.lnkQueryFile_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 536
+Source: Ionic.Zip.Reduced
+TargetSite: Int64 GetFileLength(System.String)
+-----------------------------------------------------------
+
+Time: 06/10/2021 04:56:44 PM
+-----------------------------------------------------------
+Message: D:\Projects\SWPGoo\SWP_NEW\portal\HelpDesk\QueryFiles\Services\2021_01_26_08_39_02_AM__Query_Dept_AAMPP0917F_935000.pdf
+StackTrace:    at Ionic.Zip.SharedUtilities.GetFileLength(String fileName)
+   at Ionic.Zip.ZipEntry.MaybeUnsetCompressionMethodForWriting(Int32 cycle)
+   at Ionic.Zip.ZipEntry.WriteHeader(Stream s, Int32 cycle)
+   at Ionic.Zip.ZipEntry.Write(Stream s)
+   at Ionic.Zip.ZipFile.Save()
+   at Portal_HelpDesk_TrackServiceAppStatus.lnkQueryFile_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 536
+Source: Ionic.Zip.Reduced
+TargetSite: Int64 GetFileLength(System.String)
+-----------------------------------------------------------
+
+Time: 06/10/2021 04:57:12 PM
+-----------------------------------------------------------
+Message: D:\Projects\SWPGoo\SWP_NEW\portal\HelpDesk\QueryFiles\Services\2021_01_04_05_29_02_PM__Query_Dept_1346.pdf
+StackTrace:    at Ionic.Zip.SharedUtilities.GetFileLength(String fileName)
+   at Ionic.Zip.ZipEntry.MaybeUnsetCompressionMethodForWriting(Int32 cycle)
+   at Ionic.Zip.ZipEntry.WriteHeader(Stream s, Int32 cycle)
+   at Ionic.Zip.ZipEntry.Write(Stream s)
+   at Ionic.Zip.ZipFile.Save()
+   at Portal_HelpDesk_TrackServiceAppStatus.lnkQueryFile_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 536
+Source: Ionic.Zip.Reduced
+TargetSite: Int64 GetFileLength(System.String)
+-----------------------------------------------------------
+
+Time: 06/10/2021 04:57:28 PM
+-----------------------------------------------------------
+Message: D:\Projects\SWPGoo\SWP_NEW\portal\HelpDesk\QueryFiles\Services\2021_01_26_08_39_02_AM__Query_Dept_AAMPP0917F_935000.pdf
+StackTrace:    at Ionic.Zip.SharedUtilities.GetFileLength(String fileName)
+   at Ionic.Zip.ZipEntry.MaybeUnsetCompressionMethodForWriting(Int32 cycle)
+   at Ionic.Zip.ZipEntry.WriteHeader(Stream s, Int32 cycle)
+   at Ionic.Zip.ZipEntry.Write(Stream s)
+   at Ionic.Zip.ZipFile.Save()
+   at Portal_HelpDesk_TrackServiceAppStatus.lnkQueryFile_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 536
+Source: Ionic.Zip.Reduced
+TargetSite: Int64 GetFileLength(System.String)
+-----------------------------------------------------------
+
+Time: 06/10/2021 06:20:59 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at Portal_HelpDesk_TrackServiceAppStatus.lnkQueryFile_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\TrackServiceAppStatus.aspx.cs:line 537
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

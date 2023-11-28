@@ -1,0 +1,146 @@
+Time: 16/09/2019 02:47:15 PM
+-----------------------------------------------------------
+Message: The name ' SELECT * FROM (SELECT convert(INT, ROW_NUMBER() OVER (order by CONVERT(DATETIME,CONVERT(VARCHAR,T.dtmCreatedOn,101)) desc)) AS RowNo,T.* FROM 
+		                     (
+								SELECT COUNT(A.INT_INVESTOR_ID) OVER () AS TotalCount,A.INT_INVESTOR_ID,A.VCH_INV_NAME,B.vchProposalNo,C.vchDistrictName,
+								ISNULL(D.decProposedAnnualCapacity,0)/100 as decProposedAnnualCapacity,D.intTotalProp,
+								FORMAT(E.dtmUpdatedon,'dd-MM-yyyy ') AS [Date]
+								FROM M_INVESTOR_DETAILS A
+								LEFT JOIN M_District C ON C.intDistrictId=A.INT_DISTRICT
+								LEFT JOIN T_PEAL_PROMOTER B ON B.intCreatedBy=A.INT_INVESTOR_ID
+								LEFT JOI' is not a valid identifier.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 88
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 16/09/2019 03:17:54 PM
+-----------------------------------------------------------
+Message: The name ' SELECT * FROM (SELECT convert(INT, ROW_NUMBER() OVER (order by CONVERT(DATETIME,CONVERT(VARCHAR,T.dtmCreatedOn,101)) desc)) AS RowNo,T.* FROM 
+		                     (
+								SELECT COUNT(A.INT_INVESTOR_ID) OVER () AS TotalCount,A.INT_INVESTOR_ID,A.VCH_INV_NAME,B.vchProposalNo,C.vchDistrictName,
+								ISNULL(D.decProposedAnnualCapacity,0)/100 as decProposedAnnualCapacity,D.intTotalProp,
+								FORMAT(E.dtmUpdatedon,'dd-MM-yyyy ') AS [Date],B.dtmCreatedOn
+								FROM M_INVESTOR_DETAILS A
+								LEFT JOIN M_District C ON C.intDistrictId=A.INT_DISTRICT
+								LEFT JOIN T_PEAL_PROMOTER B ON B.intCreatedBy=A.INT_INVESTOR_ID
+	' is not a valid identifier.
+StackTrace:    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 88
+Source: .Net SqlClient Data Provider
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action])
+-----------------------------------------------------------
+
+Time: 16/09/2019 05:12:55 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlForm' to type 'System.Web.UI.WebControls.GridView'.
+StackTrace:    at Portal_MISReport_MapPealwithServiceRpt.grdServiceDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 218
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.grdPealDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 176
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 118
+Source: App_Web_e4dbq1c3
+TargetSite: Void grdServiceDetails_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 16/09/2019 05:24:48 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlForm' to type 'System.Web.UI.WebControls.GridView'.
+StackTrace:    at Portal_MISReport_MapPealwithServiceRpt.grdServiceDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 218
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.grdPealDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 176
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 118
+Source: App_Web_e4dbq1c3
+TargetSite: Void grdServiceDetails_RowDataBound(System.Object, System.Web.UI.WebControls.GridViewRowEventArgs)
+-----------------------------------------------------------
+
+Time: 16/09/2019 05:57:01 PM
+-----------------------------------------------------------
+Message: There is no row at position 1.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at Portal_MISReport_MapPealwithServiceRpt.grdServiceDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 227
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.grdPealDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 176
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 118
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 16/09/2019 05:58:33 PM
+-----------------------------------------------------------
+Message: There is no row at position 1.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at Portal_MISReport_MapPealwithServiceRpt.grdServiceDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 227
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.grdPealDetails_RowDataBound(Object sender, GridViewRowEventArgs e) in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 176
+   at System.Web.UI.WebControls.GridView.OnRowDataBound(GridViewRowEventArgs e)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_MapPealwithServiceRpt.DisplayPeal() in e:\SWP_NEW\Portal\MISReport\MapPealwithServiceRpt.aspx.cs:line 118
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+

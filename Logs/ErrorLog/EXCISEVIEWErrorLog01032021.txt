@@ -1,0 +1,32 @@
+Time: 01/03/2021 12:09:13 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.EXCISE(String strApplicationKey, Int32 intServiceid) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\ApplicationDetails1.aspx.cs:line 1746
+Source: App_Web_3rp4hfv5
+TargetSite: System.String EXCISE(System.String, Int32)
+-----------------------------------------------------------
+
+Time: 01/03/2021 12:16:15 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.EXCISE(String strApplicationKey, Int32 intServiceid) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\ApplicationDetails1.aspx.cs:line 1746
+Source: App_Web_3rp4hfv5
+TargetSite: System.String EXCISE(System.String, Int32)
+-----------------------------------------------------------
+
+Time: 01/03/2021 12:23:16 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.EXCISE(String strApplicationKey, Int32 intServiceid) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\ApplicationDetails1.aspx.cs:line 1746
+Source: App_Web_3rp4hfv5
+TargetSite: System.String EXCISE(System.String, Int32)
+-----------------------------------------------------------
+
+Time: 01/03/2021 12:26:13 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.EXCISE(String strApplicationKey, Int32 intServiceid) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\ApplicationDetails1.aspx.cs:line 1746
+Source: App_Web_3rp4hfv5
+TargetSite: System.String EXCISE(System.String, Int32)
+-----------------------------------------------------------
+

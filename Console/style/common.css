@@ -1,0 +1,147 @@
+﻿#MainArea
+{
+	padding-bottom: 0px;
+	margin: auto;
+	padding-left: 0px;
+	padding-right: 0px; /*BACKGROUND: url(../images/top.jpg) #565758 no-repeat center top;*/
+	padding-top: 0px;
+}
+#MainArea .toolTip
+{
+	/*WIDTH:98.8%; */
+	display: block;
+	margin: 0px auto;
+	overflow: hidden;
+	padding: 3px 1px; /*BACKGROUND: url(../images/tip_yellow_bk.png) #ffd86d repeat-x right top;*/
+	height: 20px;
+	background-color: #f4f4f4;
+	border-top: 1px solid #e1e1e1;
+}
+#MainArea .toolTip .close
+{
+	margin: 7px 7px 0px 0px;
+	width: 14px;
+	display: block;
+	float: right;
+	height: 14px;
+}
+#MidArea
+{
+	width: 99.6%; /*background-color:#def1fd;*/
+	background-color: #ffffff;
+	margin: auto;
+	padding: 0px;
+}
+#midRightArea
+{
+	background-color: #ffffff;
+	padding: 0px;
+	margin: 0px; /*width:100%;*/
+}
+#LeftPannel
+{
+	width: 198px;
+	min-height: 440px;
+	background: url(../images/LeftBG.jpg) repeat-y top left;
+}
+#container
+{
+	padding-bottom: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	min-height: 445px;
+	border-left: 1px solid #ebebeb;
+}
+
+#footer
+{
+	margin: 3px 0px 0px 0px;
+	padding: 7px 0;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	text-align: right;
+	height: 18px;
+	width: 100%;
+	background: #1a7ca1 url(../images/TopHeaderBG.jpg) repeat-x top left;
+}
+#footer a
+{
+	color: #FFF;
+	text-decoration: none;
+}
+#footer a:hover
+{
+	color: #FC0;
+	text-decoration: none;
+}
+
+
+/*For Left Menu*/
+.tree
+{
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	font-size: 12px;
+}
+.tree td div
+{
+	height: 100% !important;
+}
+.rootNode
+{
+	font-size: 12px;
+	padding: 5px 0px;
+	margin: 0px;
+	font-weight: bold;
+	color: #333;
+}
+.parentNode
+{
+	font-size: 12px; /*padding: 5px 2px 5px 0; */ /*Commented by Dilip Kumar Tripathy on dated 15-May-2012 to prevent the broken line of tree view*/
+	padding-right: 2px;
+	padding-left: 3px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	background: #f3f9fe url(../images/NavigationBG.jpg) repeat-x left bottom;
+	color: #000;
+	border-bottom: #CCFFFF solid 1px;
+}
+.parentNode:hover
+{
+	background: #f3f9fe url(../images/NavigationBG.jpg) repeat-x left top;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+}
+.leafNode
+{
+	font-size: 12px; /* padding: 5px 0px;*/ /*Commented by Dilip Kumar Tripathy on dated 15-May-2012 to prevent the broken line of tree view*/
+	padding-right: 2px;
+	font-weight: bold;
+	color: #010101;
+}
+.leafNode:hover
+{
+	font-size: 12px;
+	font-weight: normal;
+	color: #147498;
+}
+.selectedNode
+{
+	font-size: 12px; /*padding: 5px 2px;*/ /*Commented by Dilip Kumar Tripathy on dated 15-May-2012 to prevent the broken line of tree view*/
+	padding-right: 5px;
+	margin: 0px;
+	font-weight: bold;
+	color: #147498;
+}
+
+.leftmenutreeview_css
+{
+	height: 470px;
+}
+
+a:active

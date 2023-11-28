@@ -1,0 +1,63 @@
+Time: 08/09/2021 11:34:58 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_ViewGrievanceDetails.GetDistrictIdByUser() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 195
+   at Portal_Grievance_ViewGrievanceDetails.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 62
+Source: App_Web_g2qjlj5d
+TargetSite: Int32 GetDistrictIdByUser()
+-----------------------------------------------------------
+
+Time: 08/09/2021 11:39:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_ViewGrievanceDetails.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 138
+   at Portal_Grievance_ViewGrievanceDetails.BtnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 260
+Source: App_Web_g2qjlj5d
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 08/09/2021 11:42:56 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_ViewGrievanceDetails.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 138
+   at Portal_Grievance_ViewGrievanceDetails.BtnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 260
+Source: App_Web_g2qjlj5d
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 08/09/2021 11:43:33 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_ViewGrievanceDetails.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 138
+   at Portal_Grievance_ViewGrievanceDetails.BtnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 260
+Source: App_Web_g2qjlj5d
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 08/09/2021 11:43:36 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_ViewGrievanceDetails.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 138
+   at Portal_Grievance_ViewGrievanceDetails.BtnSearch_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceDetails.aspx.cs:line 260
+Source: App_Web_g2qjlj5d
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 08/09/2021 12:26:30 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.GetDistrictIdByUser() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 154
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 42
+Source: App_Web_gnvbbdo2
+TargetSite: Int32 GetDistrictIdByUser()
+-----------------------------------------------------------
+
+Time: 08/09/2021 12:26:35 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.GetDistrictIdByUser() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 154
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 42
+Source: App_Web_gnvbbdo2
+TargetSite: Int32 GetDistrictIdByUser()
+-----------------------------------------------------------
+

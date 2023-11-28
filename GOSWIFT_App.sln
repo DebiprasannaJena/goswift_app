@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GOSWIFT_App", "..\GOSWIFT_App", "{EDE75920-0F81-463D-87A6-30DC6E7391FC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_60162"
+		Debug.AspNetCompiler.PhysicalPath = "..\GOSWIFT_App\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60162\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_60162"
+		Release.AspNetCompiler.PhysicalPath = "..\GOSWIFT_App\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60162\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60162"
+		SlnRelativePath = "..\GOSWIFT_App\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDE75920-0F81-463D-87A6-30DC6E7391FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE75920-0F81-463D-87A6-30DC6E7391FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C159DFF-7F78-4341-A1DA-6A0D6202CA46}
+	EndGlobalSection
+EndGlobal

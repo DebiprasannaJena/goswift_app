@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<PageConfig>
+  <DomainUser Name="DomainUser" Value="False" />
+  <OfficeType Name="OfficeType" Value="True" />
+  <ProbComp Name="ProbComp" Value="False" />
+  <Grade Name="Grade" Value="False" />
+  <SuperPrevil Name="SuperPrevil" Value="False" />
+  <Attendance Name="Attendance" Value="False" />
+  <Payroll Name="Payroll" Value="False" />
+  <EPF Name="EPF" Value="False" />
+  <Telephone Name="Telephone" Value="False" />
+  <Mobile Name="Mobile" Value="True" />
+  <PAddr Name="PAddr" Value="False" />
+  <RA Name="RA" Value="False" />
+</PageConfig>

@@ -1,0 +1,12 @@
+Time: 06/09/2023 03:04:04 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Portal_MISReport_MISFinancialReport.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\MISFinancialReport.aspx.cs:line 24
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

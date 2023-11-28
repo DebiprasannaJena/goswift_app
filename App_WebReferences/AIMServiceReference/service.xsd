@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:element name="insertrecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objentity" nillable="true" type="q1:userregistration_propEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertrecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertrecordResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATERECORD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objentity" nillable="true" type="q2:userregistration_propEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UPDATERECORDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UPDATERECORDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEINPC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="objentity" nillable="true" type="q3:userregistration_propEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckEINPCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckEINPCResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Encrypt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UNIQUEID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SecurityKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EncryptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EncryptResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="provideincentivedetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DISTCODE" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="provideincentivedetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="provideincentivedetailsResult" nillable="true" type="q4:MISDATA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="STATUSWISEINCENTIVEDETAILS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="STATUS" type="xs:int" />
+        <xs:element minOccurs="0" name="DIST_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FYEAR" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="STATUSWISEINCENTIVEDETAILSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="STATUSWISEINCENTIVEDETAILSResult" nillable="true" type="q5:MISDATA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="COUNTINCENTIVE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DIST_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FYEAR" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="COUNTINCENTIVEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="COUNTINCENTIVEResult" nillable="true" type="q6:MISDATA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DICWISEINCENTIVEDETAILS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="STATUS" type="xs:int" />
+        <xs:element minOccurs="0" name="DIC_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FYEAR" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DICWISEINCENTIVEDETAILSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DICWISEINCENTIVEDETAILSResult" nillable="true" type="q7:MISDATA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DICWISECOUNTINCENTIVE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DIC_CODE" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FYEAR" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DICWISECOUNTINCENTIVEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="DICWISECOUNTINCENTIVEResult" nillable="true" type="q8:MISDATA" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

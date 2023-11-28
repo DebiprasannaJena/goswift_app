@@ -1,0 +1,343 @@
+.bg-orange{
+          background: #1bbc9b!important;
+padding: 10px 10px 18px 22px !important;
+          color:#fff!important;
+          box-shadow: 1px 1px 1px 1px #8e8e8e;
+  }
+		  
+		  
+  .bg-yellow{
+          background: #3598db!important;
+padding: 10px 10px 18px 22px !important;
+          color:#fff!important;
+          box-shadow: 1px 1px 1px 1px #8e8e8e;
+          }
+		  
+ .bg-sky{
+          background: #9b58b5!important;
+padding: 10px 10px 18px 22px !important;      
+   color:#fff!important;
+          box-shadow: 1px 1px 1px 1px #8e8e8e;
+          }
+		   
+ .bg-green{
+          background: #e77e23!important;
+padding: 10px 10px 18px 22px !important;  
+     color:#fff!important;
+          box-shadow: 1px 1px 1px 1px #8e8e8e;
+          }
+.bg-red{
+          background: #e84c3d!important;
+padding: 10px 10px 18px 22px !important;    
+   color:#fff!important;
+          box-shadow: 1px 1px 1px 1px #8e8e8e;
+          }
+		  
+.img{float: right;
+    width: 37px;
+    border: 2px solid #fff;
+    margin: 8px 10px 10px 0px;}
+	
+.left{padding:5px;}	
+	
+.color{background-color: #00112d;
+    padding: 5px 5px 5px 5px;
+    color: #fff;
+    float: left;
+    width: 100%;
+}	
+	
+.fixed{position:fixed; top:0;
+          z-index: 999;}	
+	
+.footer {
+    background-color: #e0e0e0;
+    float: left;
+    width: 100%;
+    color: #000000;
+    padding:10px 10px 0px 10px;
+    text-align:center;
+    font-size: 14px;
+	position:fixed;
+	bottom:0px;
+
+}	
+
+.margint0p20{margin-top:30px;}
+.design{font-size: 15px;
+    color: #1b5c94;
+}
+
+.design a{
+    font-weight: bold;
+    text-decoration: none;
+   color:#1b5c94;}
+
+.design a:hover{color:#0d88de;}
+
+.report{
+    font-size:20px;
+    margin: 0px 20px 9px 0px;
+    color: #013050;
+    font-weight: 600;}
+
+.design td i{margin: 0px 25px 0px 8px;}
+
+.rdbtn input{padding-right:3px;}
+.rdbtn level{padding-right:12px;}
+
+.margin-btm0{margin-bottom:0px;}
+
+.page-container.page-container-wide .footer{padding-left:60px; position:fixed;
+	bottom:0px;
+}	
+.fix{position:fixed; top:0;  z-index:1;}		
+	
+.width{width:20%;}	
+	
+	.panel.panel-default {
+    margin-top:7px;
+}	
+	
+.top-header{float:right;
+            margin-right:200px;}	
+	
+.panel.panel-default {
+    padding-bottom:0px;
+}	
+
+
+	
+.nav-tabs > li > a:hover{background-color:#002640;
+                         color:#fff;}
+                         
+ .nav-tabs > li.active > a:hover{background-color:#002640;
+                         color:#fff;}                        	
+	
+.box{margin-left:15px;}	
+	
+.nav-tabs > li {
+    margin-top: 50px;
+}	
+.colon{float: left;margin-left: -10px;margin-top: 6px;}
+.form-group label{margin-top: 5px;font-weight: 400;}
+
+span.mandetory{   float: right;
+color: #f00;
+position: absolute;
+right: 0;
+top: 0;}
+  
+
+  
+div.mandatory{float:right;
+            margin-right:15px;}
+    
+    
+    
+.red{color:#e84c3d;}
+.margin-right20{margin-right:20px;}
+.margin-top10{margin-top:10px;}	
+.searchbox{padding-top: 10px;background: #f9f9f9;border: 1px solid #efefef;margin-right: 10px; padding-bottom: 10px; padding-left: 10px;  margin-top: 5px;}
+.addbox{padding-top:15px;}
+
+.x-navigation .x-navigation-control { width: 36px;height: 38px;background: #055d9a; margin-top: 8px;}
+.x-navigation .x-navigation-control:before {top: 10px;left: 12px;}
+.breadcrumb {padding: 90px 15px 7px 20px;}
+.paging table{float:right}
+.table td.bdr-lft-clarification { border-left:8px solid #00CC99;}
+
+
+
+.paging table tr td  a {
+      margin-left: 3px;
+  
+    border-radius: 3px;
+    color: #22262e;
+    border-color: #dadada;
+    padding: 5px 10px;
+    margin-left: 2px;
+    background-color: #e8e8e8;
+}
+.paging table tr td  span {
+         margin-left: 3px;
+    border-radius: 3px;
+    color: #ffffff;
+    border-color: #dadada;
+    padding: 5px 10px;
+    margin-left: 2px;
+    background-color: #055d9a;
+}
+#pdf{position: absolute;
+    right: 60px;
+    top: 82px;
+    z-index: 9;
+    color: #fff;
+    font-weight: bold;
+    padding: 3px 3px 3px 9px;
+}
+    
+ span .glyphicon-record:before {
+    content: "\e165";
+    padding: 5px;
+}   
+ .srchbtn {
+    background-color: #055d9a;
+    color: #fff;
+   padding: 5px 11px 6px 15px;
+    font-size: 13px;
+    border-bottom-left-radius:7px;
+    border-bottom-right-radius:7px;
+z-index:99;
+    position:absolute;
+    right:48%;
+    margin-top:-10px;
+    margin-bottom:15px;
+}
+.srchbtn:hover{color:#daf0ff; text-decoration:none; cursor:pointer;}
+.srchbtn span{padding-left:11px;}
+.margintop35{margin-top:35px;}
+
+@media only screen and (max-width:800px) {	
+.x-navigation { max-height: 76px; background: transprant;}
+.x-navigation.x-navigation-panel { height: auto;}
+.x-navigation.x-navigation-horizontal { padding: 0px 0px 0px 10px;}
+}
+	
+	
+	
+	@media only screen and (max-width:1280px){
+	.panel.panel-default {
+    margin-top: 0px;}
+}
+	    
+	    
+	
+	@media only screen and (max-width:1366px){
+	.panel.panel-default {
+    margin-top: 0px!important;}
+}
+	
+	
+	
+	
+	
+	
+	
+	@media only screen and (max-width:1024px){
+	.panel .panel-heading .panel-title-box h3 {
+    font-size: 13px;}
+    
+    
+    
+	.srchbtn {
+  padding: 4px 8px 5px 12px;
+    font-size: 13px;
+    right: 40%;}
+	
+    .srchbtn span { padding-left: 7px;}
+    
+    
+}
+	
+	
+	
+	
+	@media only screen and (max-width:768px){
+	h3 {
+    font-size: 13px;}
+    .bg-green {
+    padding: 10px 10px 10px 10px !important;}
+    
+    
+	.srchbtn {
+  padding: 4px 8px 5px 12px;
+    font-size: 12px;
+    right: 40%;}
+	
+    
+    
+    
+    
+    
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@media only screen and (max-width:480px){
+	h3 {
+      font-size:15px;}
+    .bg-orange {
+    padding: 10px 10px 18px 13px !important;}
+    
+     .bg-yellow {
+    padding: 10px 10px 18px 13px !important;}
+    
+      .bg-sky {
+    padding: 10px 10px 18px 13px !important;}
+    
+      .bg-green {
+    padding: 10px 10px 18px 10px !important;}
+    
+      .bg-red {
+    padding: 10px 10px 18px 13px !important;}
+    
+    .width {
+    width: 100%;
+}
+    
+ .panel-body.panel-body-table {
+    height:auto!important;} 
+    
+    .srchbtn {
+    padding: 2px 5px 5px 14px;
+    right: 34%;}
+    
+   .srchbtn span {
+    padding-left: 9px;}
+    
+    
+    }
+	
+	
+	
+	
+	
+	@media only screen and (max-width:320px){
+	
+   .odisha-image img {
+   padding-top: 12px;
+    max-width: 180px;
+    padding-bottom: 22px;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

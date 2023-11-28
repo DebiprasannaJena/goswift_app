@@ -1,0 +1,328 @@
+Time: 30/08/2021 12:05:19 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_UNIQUEID'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_approval_aspx.__DataBinding__control33(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx:line 180
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Approval.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 60
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 30/08/2021 03:40:03 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'INT_INDUSTRY_TYPE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_approval_aspx.__DataBinding__control33(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx:line 170
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 60
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:12:18 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'INT_INDUSTRY_TYPE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_approval_aspx.__DataBinding__control33(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx:line 170
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 60
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:26:20 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'INT_INDUSTRY_TYPE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_approval_aspx.__DataBinding__control33(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx:line 170
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 60
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:26:49 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:26:53 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:26:59 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:27:03 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:27:06 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 AND VCH_INV_NAME like'%ipicoladmin%' ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:27:33 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:27:41 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+
+Time: 30/08/2021 04:29:31 PM
+-----------------------------------------------------------
+Message: Incorrect syntax near the keyword 'FROM'.
+SELECT INT_INVESTOR_ID,
+		VCH_INV_NAME,
+		VCH_INV_USERID,
+		VCH_INDUSTRY_NAME,
+		VCH_OFF_MOBILE,
+		VCH_EMAIL,
+		VCH_PAN,
+		VCH_EIN_IEM,
+		INT_APPROVAL_STATUS,
+		INT_PARENT_ID,
+		VCH_APPROVAL_STATUS=CASE WHEN INT_APPROVAL_STATUS=0 THEN 'Pending' ELSE 'Approved' END,
+		VCH_SITELOCATION,
+		DTM_CREATED_ON,
+		INT_INDUSTRY_TYPE,
+		FROM M_INVESTOR_DETAILS
+		WHERE
+		INT_OTP_STATUS=1
+		AND INT_APPROVAL_STATUS=0
+		AND BIT_DELETED_FLAG=0
+		AND INT_USER_LEVEL=1 ORDER BY DTM_CREATED_ON DESC
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Investor\InvestorDataLayer.cs:line 917
+   at BusinessLogicLayer.Investor.InvestorBusinessLayer.UserManagementView(InvestorDetails objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Investor\InvestorBusinessLayer.cs:line 77
+   at Portal_PAN_Operation_User_Approval.FillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Approval.aspx.cs:line 57
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable UserManagementView(EntityLayer.Investor.InvestorDetails)
+-----------------------------------------------------------
+

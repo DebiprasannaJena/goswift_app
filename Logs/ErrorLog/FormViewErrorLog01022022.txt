@@ -1,0 +1,13 @@
+Time: 01/02/2022 10:45:45 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at FormView.CreateNavigationMenuAfterDraft(String strApplicationKey, String Amount) in d:\Projects\SWPGoo\SWP_NEW\FormView.aspx.cs:line 1922
+   at FormView.btnDraft_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\FormView.aspx.cs:line 1308
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

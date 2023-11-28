@@ -1,0 +1,273 @@
+﻿
+body
+{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Sans-Serif" ,Arial;
+    color: #000;
+}
+.print-area
+{
+    margin-top: 10px;
+    max-width: 100% !important;
+    margin-right: 0px;
+}
+.header
+{
+    border: 1px solid #ddd;
+    padding: 9px;
+    background: #eee;
+}
+.logo-sec
+{
+    width: 15%;
+    float: left;
+}
+.logo
+{
+    height: 80px;
+}
+.heading-sec
+{
+    width: 100%;
+}
+.heading-sec h1
+{
+    margin: 0px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 34px;
+}
+.heading-sec h5
+{
+    font-size: 14px;
+    margin: 5px;
+    font-weight: 600;
+}
+.heading-sec h4
+{
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+.info-secs
+{
+    margin-bottom: 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+table
+{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+table > tbody > tr > th, table > tbody > tr > td, table > thead > tr > td, table > thead > tr > th
+{
+    border: 1px solid #ddd;
+}
+table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th
+{
+    padding: 6px 0px 6px 8px;
+    line-height: 1.3;
+    font-size: 13px;
+    vertical-align: middle;
+}
+table
+{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+table tr th
+{
+    background-color: #eee;
+    padding: 8px !important;
+    border-bottom: 1px solid #c1c1c1 !important;
+    font-size: 14px !important;
+}
+table label
+{
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+table .fa
+{
+    margin-right: 3px;
+}
+.border-top
+{
+    border-top: 1px solid #000 !important;
+}
+.border-table > tbody > tr > th, .border-table > tbody > tr > td, .border-table > thead > tr > td, .border-table > thead > tr > th
+{
+    border: 1px solid #ababab !important;
+}
+table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th
+{
+    padding: 1px 0px 1px 8px;
+    line-height: 1.2;
+}
+.border-table
+{
+    margin: 2px 2px 2px 2px;
+    width: 99.5%;
+}
+.heading-sec h5
+{
+    font-size: 15px;
+    margin: 5px;
+}
+.heading-sec h4
+{
+    font-size: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.info-secs
+{
+    margin-bottom: 5px;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.margin-top20
+{
+    margin-top: 20px;
+}
+
+#printbtn
+{
+    margin-top: 10px;
+}
+.input-div
+{
+    height: 20px;
+    border: 1px solid #000;
+}
+.padding5
+{
+    padding: 10px;
+}
+.info-secs h4
+{
+    font-size: 14px;
+}
+.info-secs p
+{
+    text-align: justify;
+    line-height: 22px;
+}
+.info-secs ol
+{
+    margin-left: -25px;
+}
+.info-secs ol li
+{
+    margin-bottom: 10px;
+    text-align: justify;
+}
+.address
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.info-secs ol ol
+{
+    list-style-type: lower-alpha;
+}
+.info-secs ol ol li
+{
+    margin-left: -12px;
+}
+.info-secs ol ol li:first-child
+{
+    margin-left: 0px;
+}
+.info-secs ol ol ol
+{
+    list-style-type: lower-roman;
+}
+.info-secs ol ol ol li
+{
+    margin-left: 0px;
+}
+.address p
+{
+    margin-bottom: 0px;
+    line-height: 18px;
+    font-size: 13px;
+}
+.address h4
+{
+    font-size: 16px;
+    margin: 0px;
+    margin-bottom: 8px;
+}
+.margin-top50
+{
+    margin-top: 50px;
+}
+.no-border > tbody > tr > th, .no-border > tbody > tr > td, .no-border > thead > tr > td, .no-borderthead > tr > th
+{
+    border: 0px solid #ddd;
+}
+@media print
+{
+    .header
+    {
+        padding: 4px;
+        border: 1px solid #efefe;
+        margin-bottom: 6px;
+    }
+    .pagebreak
+    {
+        page-break-after: always;
+    }
+    .container
+    {
+        width: 100%;
+    }
+
+    .heading-sec h1
+    {
+        margin: 0px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .heading-sec h4
+    {
+        font-size: 15px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .heading-sec h5
+    {
+        font-size: 13px;
+        margin: 2px;
+    }
+    .info-secs
+    {
+        border: 0px solid #ddd;
+        padding: 10px;
+        font-size: 13px;
+    }
+    .noprint
+    {
+        display: none;
+    }
+    table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th
+    {
+        padding: 1px 0px 1px 8px;
+        line-height: 1.2;
+    }
+    table > tbody > tr > td, table > tbody > tr > th, table > tfoot > tr > td, table > tfoot > tr > th, table > thead > tr > td, table > thead > tr > th, .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th
+    {
+        padding: 2px 0px 2px 8px;
+    }
+}

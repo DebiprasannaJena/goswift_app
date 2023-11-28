@@ -1,0 +1,278 @@
+Time: 23/08/2021 03:28:46 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceType.aspx.cs:line 131
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:28:49 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceType.aspx.cs:line 131
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:28:53 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceType.aspx.cs:line 131
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:57:17 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 159
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:57:28 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 159
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:57:34 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 159
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 03:58:56 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 159
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:03:00 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 69
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 189
+Source: App_Web_xaoeea3q
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:09:51 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 69
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 178
+Source: App_Web_1q0w0tkf
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:14:25 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 69
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 180
+Source: App_Web_zhizq5zz
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:16:33 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.set_SelectedValue(String value)
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 178
+Source: System.Web
+TargetSite: Void set_SelectedValue(System.String)
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:17:23 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.set_SelectedValue(String value)
+   at Portal_Grievance_AddGrievanceSubType.clearFields() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 188
+Source: System.Web
+TargetSite: Void set_SelectedValue(System.String)
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:23:45 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 73
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 182
+Source: App_Web_smutfy50
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:24:45 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 73
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 191
+Source: App_Web_smutfy50
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:25:30 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 73
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 182
+Source: App_Web_smutfy50
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:31:10 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 73
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 191
+Source: App_Web_atnu45ox
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 04:37:04 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 73
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 191
+Source: App_Web_atnu45ox
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 05:56:36 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 186
+Source: App_Web_azo1dbgo
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 05:58:25 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 195
+Source: App_Web_azo1dbgo
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 06:05:36 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 186
+Source: App_Web_vubspw2f
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 06:16:26 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 196
+Source: App_Web_b5aejfzq
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 06:26:34 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 187
+Source: App_Web_b4leqqiw
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 06:28:38 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 196
+Source: App_Web_kjugts5k
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 10:13:23 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 198
+Source: App_Web_h0d3bte3
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 10:24:44 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 198
+Source: App_Web_h0d3bte3
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 10:25:41 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 198
+Source: App_Web_h0d3bte3
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+
+Time: 23/08/2021 10:26:26 PM
+-----------------------------------------------------------
+Message: 'ddl_griv_type' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at Portal_Grievance_AddGrievanceSubType.BindGrievanceType() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 77
+   at Portal_Grievance_AddGrievanceSubType.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\AddGrievanceSubType.aspx.cs:line 198
+Source: App_Web_h0d3bte3
+TargetSite: Void BindGrievanceType()
+-----------------------------------------------------------
+

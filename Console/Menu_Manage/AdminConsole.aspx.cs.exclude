@@ -1,0 +1,12 @@
+﻿using System;
+
+namespace KwantifyPortalV3._2_App.Admin.Menu_Manage
+{
+    public partial class AdminConsole : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

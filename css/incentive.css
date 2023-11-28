@@ -1,0 +1,100 @@
+﻿/*=========/ Incentive sec /=========*/
+.incentivesec{}
+.incentivesec h2{color: #232323;border-bottom: 1px solid #d5d8f3; padding-bottom: 6px;}
+.incentivesec h2.hdr {color: #000; font-size:24px;   margin-top:20px; border-bottom:0;}
+.panel-body h3{margin-top: 0px; padding-bottom: 8px; font-size: 18px;color: #000;border-bottom: 1px solid #e0e0e0;}
+.form-body span.dataspan { font-size: 15px;margin-top: 4px;}
+
+.incentive-portlet{padding:10px;color:#fff;margin-bottom:10px; background-color: #349aa7;}
+.incentive-portlet h1{margin:0px;font-size:16px;display: table;width: 100%;}
+.incentive-portlet h1 span{line-height:36px;display: table-cell;vertical-align: middle;font-size:18px;}
+.incentive-portlet h1 a{color: #c5f8ff; vertical-align: middle; font-weight:normal;}
+.incentive-portlet h1 a:hover,.incentive-portlet h1 a:focus{color:#abf4fd;text-decoration:none; }
+.incentive-portlet p{margin-bottom:0px;font-size:16px;border-bottom:1px solid #3db4c3;padding-bottom:5px;}
+.incentive-portlet ul{ margin-top: 14px;  display: table; width: 100%;}
+.incentive-portlet ul li{display:inline-block;width: 29%;margin-right: 5px;display: table-cell;padding: 3px;/* height: 91px; */vertical-align: middle;}
+.incentive-portlet ul li:last-child{margin-right:0px}
+.incentive-portlet ul li a{padding: 10px;display: block; line-height:18px; color: #c5f8ff !important;background: rgb(42, 123, 134);height: 88px;}
+.incentive-portlet ul li a span{font-size: 26px;  color: #fff; line-height: 30px;}
+.incentive-portlet ul li a:hover span{color:#69cfdc}
+.criteriadiv{border:1px solid  #e4e4e4;padding:10px;margin-bottom: 10px;background: #fcfdff;}
+.criteriadiv h4{margin-top:0px;padding-bottom: 8px;border-bottom: 1px solid #e4e4e4;font-size: 16px; color:#63729e /* background: #e4e4e4; */}
+.criteriadiv{position:relative;}
+.criteriadiv:after {content: '';display: none; position: absolute; left: 16px; top: 100%;width: 0; height: 0; border-top: 11px solid #cbddff;border-right: 15px solid transparent;border-bottom: 0 solid transparent;border-left: 15px solid transparent;}
+.derivecon{border-color:#cbddff}
+.derivecon2:after{border-top: 0px}
+
+.criteriadiv ul{margin:0px;margin-bottom:10px;    list-style: none;}
+.criteriadiv ul li{color: #333; font-size: 14px;  line-height: 24px;padding: 0 0 5px 24px;   margin: 0; background: url(../images/circledone.png) 2px 4px no-repeat;}
+.criteriadiv p.notdone{color: #3c3c3c; font-size: 14px;  line-height: 24px;padding: 0 0 0px 24px;   margin: 0; background: url(../images/circlenotdone.png) 2px 4px no-repeat;}
+.criteriadiv p{margin-bottom:0px;}
+.criteriadiv ul li.ulheading{background:none;padding-left:0px;font-size:16px;line-height:24px;color:#000;font-weight: 600;}
+.criteriadiv ul li a{color: #4a4a4a; font-size: 14px;}
+.criteriadiv ul li a:hover,.criteriadiv ul li a:focus{color:#cf0a11;text-decoration:none}
+.incentivepreiview{padding:10px;background:#fff;}
+.preiviewheader{border-bottom:1px solid #8a8a8a;position:relative;}
+.preiviewheader img{position:absolute;right:0px;height: 45px;top: 45px;}
+.preiviewheader h4{font-size:16px;line-height:24px;margin:5px 0px}
+.prieviewdatasec h4{font-size:15px;line-height:20px;margin:5px 0px}
+.preiviewheader p{margin-bottom:5px;}
+.prieviewdatasec{padding:10px 30px}
+.prieviewdatasec p{margin-bottom:5px;   line-height: 24px;}
+.prieviewdatasec p span,.preiviewfooter p span{margin-left:5px;font-size:15px;border-bottom:1px dashed #8a8a8a;padding:0px 10px;font-weight: 600;}
+.preiviewfooter img{height:70px}
+.preiviewfooter p{margin-bottom:8px;    line-height: 24px;}
+.preiviewfooter ol{margin-left:30px;}
+.preiviewfooter h4{font-size:16px;line-height:24px;margin:10px 0px}
+.preiviewfooter ol li{line-height:22px;}
+.prievewdynamicdata{}
+
+.incentivesec .nav{    background: none; border-bottom: solid 1px #556080; }
+.incentivesec .nav li {padding-left:0;}
+.incentivesec .nav li:first-child {margin-left:0;}
+.incentivesec .nav-pills>li>a {border-radius: 1px;display: block;padding: 8px 15px;background: #556080; color: #fff !important;border: 1px solid #556080;border-bottom: 0px;margin-bottom: -1px;}
+.incentivesec .nav-pills>li.active>a, .incentivesec .nav-pills>li.active>a:focus, .incentivesec .nav-pills>li.active>a:hover {
+    color: #556080 !important;
+    background-color: #FFF;
+}
+
+/*=========/ Incentive sec /=========*/
+
+/*=========/ Print CSS /=========*/
+
+
+
+@media screen and (max-width:1370px){
+.investorheader .navbar-header img {height: 60px;}
+
+}
+@media screen and (max-width:1285px){
+
+}
+@media screen and (max-width:1024px)
+{
+
+}
+
+
+@media screen and (max-width:800px)
+{
+
+}
+@media screen and (max-width:660px)
+{
+
+}
+@media screen and (max-width:490px){
+
+
+}
+@media screen and (max-width:430px){
+
+}
+@media screen and (max-width:380px)
+{
+
+}
+@media screen and (max-width:330px){
+
+}
+

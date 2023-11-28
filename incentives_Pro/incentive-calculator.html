@@ -1,0 +1,275 @@
+<!--
+/*
+  ' File Name		      : incentive-calculator.html
+  ' Description 	      : This page is for incentive-calculator
+  ' Created by            : Himalaya Pagada
+  ' Created on            : 5-Sep-2017
+  ' Designed by           : Himalaya Pagada
+  ' Designed on           : 5-Sep-2017
+  ' Modification History  :
+  '   <CR no.>             <Date>             <Modified by>                <Modification Summary>'
+  '
+  ' Style sheet           : bootstrap.min.css
+  ' Javscript Functions   : angular.min.js, incentive-calculator.js
+  ' includes		      : 
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Incentive Calculator</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/controller/incentive-calculator.js"></script>
+    <style>
+    .valueText {visibility: hidden;position: absolute;}
+    .listGap li, .assumptionList li {margin-bottom: 10px!important;}
+    .assumptionList li {font-size: 12px!important;}
+    </style>
+</head>
+<body ng-app="incentiveCalculator">
+    <!-- Header Area Starts -->
+    <div class="inner-container">
+        <div class="container innercontent" ng-init="infowizInit()" ng-controller="incentiveCalculatorController">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 innerpage inner incentiveCalculator">
+                    <!--div class="download">
+                        <span><a style="cursor:pointer;" ng-click="exitInfowizard()" class="hvr-shutter-in-horizontal">Exit</a></span> 
+                    </div-->
+                    <h4 ng-cloak>{{flowTitle}}</h4>
+                    <form name="incentiveForm" ng-if="subsidiesForm" ng-submit="calculateIncentive(user)" ng-cloak>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="industryNm">Industry Name<sup>*</sup></label>
+                                    <input type="text" class="form-control" id="industryNm" ng-model="user.industryNm" placeholder="Enter here" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="slctSector">Sector<sup>*</sup></label>
+                                    <select class="form-control" name="sectorId" id="slctSector" ng-init="user.sectorNm = sectorDropdown[0]" ng-options="item.text for item in sectorDropdown track by item.value" ng-model="user.sectorNm" ng-change="infoSectorChange(user.sectorNm.value)">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="slctEnterpriseType">Sub-sector<sup>*</sup></label>
+                                <select class="form-control" id="slctEnterpriseType" ng-init="user.enterpriseType = enterpriseTypes[0]" ng-options="item as item.text for item in enterpriseTypes track by item.value" ng-model="user.enterpriseType" ng-change="enterpriseTypeChange(user.enterpriseType.value)"></select>
+                            </div>
+                            <div class="col-sm-6" ng-if="user.sectorNm.value == 'Healthcare'">
+                                <div class="form-group">
+                                    <label for="totalBed">Enter numer of Beds</label>
+                                    <input type="text" numbers-only class="form-control" id="totalBed" ng-model="user.totalBed" placeholder="Enter here" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="powerConsume">Apprx. power units consumed per month</label>
+                                    <input type="text" numbers-only class="form-control" id="powerConsume" ng-model="user.powerConsume" placeholder="Enter here" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="totalInvestment">Apprx. investment amount (Cr.)<sup>*</sup></label>
+                                    <input type="text" numbers-only class="form-control" id="totalInvestment" ng-model="user.totalInvestment" placeholder="Enter amount" ng-change="totalInvestVal(user.totalInvestment,user.plantInvest)" required />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="plantInvestment">Apprx. Plant & Machinery Investment amount (Cr.)<sup>*</sup></label>
+                                    <input type="text" numbers-only class="form-control" id="plantInvestment" ng-model="user.plantInvest" placeholder="Enter amount" ng-change="plantInvestVal(user.totalInvestment,user.plantInvest)" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="slctdistrict">Industry Location<sup>*</sup></label>
+                                    <select class="form-control" id="slctdistrict" ng-init="user.district = distobj[0]" ng-options="item as item.text for item in distobj | orderBy:'text'" ng-model="user.district" ng-change="districtChange(user.district)">
+                                        <!--<option ng-repeat="item in distobj track by $index | orderBy:'text'" value="{{item.value}}"  ng-selected="$index==0">{{item.text}}</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="expEmp">Local Employment</label>
+                                    <select class="form-control" id="expEmp" ng-init="user.expectedEmployee = employmentRangeVal[0]" ng-options="item as item.text for item in employmentRangeVal track by item.value" ng-model="user.expectedEmployee" ng-change="employmentRangeChange(user.expectedEmployee.value)"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="slctInvestorCategory">Investor Category<sup>*</sup></label>
+                                <select class="form-control" name="sectorId" id="slctInvestorCategory" ng-model="user.investorCategory" ng-change="investorCategoryChange(user.investorCategory)" required>
+                                    <option value="">--Select Category--</option>
+                                    <option value="SC/ST">SC/ST</option>
+                                    <option value="general">General</option>
+                                    <option value="differentlyAbled">Differently Abled</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <div>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="gender" ng-model="user.gender" id="gender" value="male"> Male
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="gender" ng-model="user.gender" id="gender" value="female"> Female
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear30"></div>
+                        <div class="text-center">
+                            <button type="submit" type="button" class="btn btnwizard yesbtn" ng-disabled="incentiveForm.$invalid || user.sectorNm.value == 0 || user.district.value == 0">Submit</button>
+                        </div>
+                    </form>
+                    <div class="queSection" ng-if="subsidiesEligible" ng-cloak style="text-align: left;"> 
+                        <h3 class="brown">You are eligible for the following incentives.</h3>
+                        <div class="panel panel-default incentivesList" ng-repeat="item in finalObj" on-finish-render="ngRepeatFinished">
+                            <div class="panel-heading"><input type="checkbox" id="capitalSubsidies{{$index}}" class="incentiveCheckbox" ng-model="incentiveVal" /> <label for="capitalSubsidies{{$index}}">{{item.key}}</label></div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <label class="list-group-item" ng-repeat="incentive in item.value" ng-if="showHideCell(incentive.id) == -1">
+                                        <input type="radio" name="{{item.key}}Policy" class="incentiveRadiobtn" /> <b class="policyNm">{{incentive.policyName}} :</b> 
+                                        <span ng-init="htmlData = callFun(incentive.functionName, incentive.id,incentive.id)" class="plicyTxt"><span bind-html-unsafe="htmlData"></span></span>
+                                        <i class="valueText" ng-bind="getVal(incentive.functionName, incentive.id,incentive.id)"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <p ng-if="finalObj.length <= 0">
+                            As per your inputs provided, The project envisaged by you is not supported within the incentive framework. However, for further details please contact IPICOL @Toll Free Helpline - 1800 345 7111                                                        
+                        </p>
+                        <div class="clear30"></div>
+                        <div class="text-center">
+                            <input type="button" value="Back" class="btn btnwizard  btnprev" ng-click="subsidiesBack()" />
+                            <input type="button" value="Next" class="btn btnwizard  btnnext" ng-if="finalObj.length" ng-click="subsidiesNext()" />
+                        </div>
+                        <div class="clear30"></div>
+                        <div class="clear30"></div>
+                    </div>
+                    <div class="queSection" ng-if="subsidiesResult" ng-cloak style="text-align: left;">
+                        <div id="subsidyReport">  
+                            <div style="text-align: center;" class="visible-print"><img src="images/odishaNewOpportunities_logo.png" /></div>
+                            <div class="visible-print">
+                                <h3 class="brown">Sector Information</h3>
+                                <table cellspacing="15" border="0" width="100%">
+                                    <tr>
+                                        <td>
+                                            <p>Industry Name</p>
+                                            <label><b>{{user.industryNm}}</b></label>
+                                        </td>
+                                        <td>
+                                            <p>Sector </p>
+                                            <label><b>{{user.sectorNm.text}}</b></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Sub-sector</p>
+                                            <label><b>{{user.enterpriseType.text}}</b></label>
+                                        </td>
+                                        <td ng-if="user.sectorNm.value == 'Healthcare'">
+                                            <p>Enter numer of Beds</p>
+                                            <label><b>{{user.totalBed}}</b></label>
+                                        </td>
+                                        <td>
+                                            <p>Apprx. power units consumed per month</p>
+                                            <label><b>{{user.powerConsume}}</b></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Apprx. investment amount (Cr.)</p>
+                                            <label><b>{{user.totalInvestment}}</b></label>
+                                        </td>
+                                        <td>
+                                            <p>Apprx. Plant & Machinery Investment amount (Cr.)</p>
+                                            <label><b>{{user.plantInvest}}</b></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Industry Location</p>
+                                            <label><b>{{user.district.text}}</b></label>
+                                        </td>
+                                        <td>
+                                            <p>Local Employment</p>
+                                            <label><b>{{user.expectedEmployee.text}}</b></label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>Investor Category</p>
+                                            <label><b>{{user.investorCategory}}</b></label>
+                                        </td>
+                                        <td>
+                                            <p>Gender</p>
+                                            <label><b>{{user.gender}}</b></label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <div class="clear30 clear"></div>
+                                <hr />
+                            </div>
+                            <div class="clear30"></div>
+                            <h3 class="brown">You are eligible for the following subsidies.</h3>
+                            <ol class="listGap">
+                                <li ng-repeat="item in selectedIncObj"><b>{{item.policy}}</b> {{item.incentive}}- {{item.value}}</li>
+                            </ol>      
+                            
+                        </div>
+                            <div class="clear30"></div>
+                        <div class="text-center">                    
+                            <input type="button" value="Print" class="btn btnwizard printbtn" ng-click="printRes('subsidyReport')" />                                        
+                            <input type="button" value="Close" class="btn btnwizard Nobtn" ng-click="exitInfowizard()" />
+                        </div>
+                            <div class="clear30"></div>
+                            <div class="clear30"></div>
+                    </div>
+                    <div class="clear30"></div>
+                    <h3>Exemption is taken for Incentive Calculation</h3>
+                    <div class="well">
+                        <ol class="assumptionList">
+                            <li>
+                                <strong>Training Subsidy :</strong> 30% of total employees will be undertaken skill upgrading & 40% of total employees are to be newly trained. 
+                            </li>
+                            <li>
+                                <strong>Interest Subsidy :</strong> 60% of total investment have taken as the lead.
+                            </li>
+                            <li>
+                                <strong>Stamp Duty Exemption :</strong> Land cost 1.3 Cr. Per acre in category A districts & 30 Lakh per acre in category B districts. 
+                            </li>
+                            <li>
+                                <strong>VAT Reimbursement : </strong> Turnover is taken as 4 times of total investment.
+                            </li>
+                            <li>
+                                <strong>Entry Tax Reimbursement : </strong> 2% entry tax is for manufacturing industries & 1% for service industries.
+                            </li>
+                            <li>
+                                <strong>Electricity Duty Exemption : </strong> All MSME use LT electricity connection duty exemption.
+                            </li>
+                            <li>
+                                <strong>Local Employment : </strong> The middle value of the employment range is taken for calculation.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

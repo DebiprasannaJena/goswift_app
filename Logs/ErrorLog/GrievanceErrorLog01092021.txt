@@ -1,0 +1,10 @@
+Time: 01/09/2021 01:53:40 PM
+-----------------------------------------------------------
+Message: Error converting data type varchar to int.
+StackTrace:    at GrievanceServiceProvider.TakeActionDetail(GrievanceEntity grievanceEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\GrievanceDAL\GrievanceServiceProvider.cs:line 407
+   at GrievanceServices.TakeActionDetail(GrievanceEntity objGrivEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\GrievanceBAL\GrievanceServices.cs:line 75
+   at Portal_Grievance_GrievanceTakeAction.BtnSubmit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 407
+Source: .Net SqlClient Data Provider
+TargetSite: System.String TakeActionDetail(EntityLayer.GrievanceEntity.GrievanceEntity)
+-----------------------------------------------------------
+

@@ -1,0 +1,48 @@
+Time: 23/08/2021 09:15:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Portal_Grievance_ViewGrievanceSubType.DisplayPaging() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 134
+   at Portal_Grievance_ViewGrievanceSubType.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 59
+   at Portal_Grievance_ViewGrievanceSubType.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 31
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 09:30:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Portal_Grievance_ViewGrievanceSubType.DisplayPaging() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 134
+   at Portal_Grievance_ViewGrievanceSubType.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 59
+   at Portal_Grievance_ViewGrievanceSubType.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 31
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 09:31:00 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Portal_Grievance_ViewGrievanceSubType.DisplayPaging() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 134
+   at Portal_Grievance_ViewGrievanceSubType.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 59
+   at Portal_Grievance_ViewGrievanceSubType.lbtnAll_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 158
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 23/08/2021 10:15:31 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at Portal_Grievance_ViewGrievanceSubType.DisplayPaging() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 136
+   at Portal_Grievance_ViewGrievanceSubType.BindGridView() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 59
+   at Portal_Grievance_ViewGrievanceSubType.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\ViewGrievanceSubType.aspx.cs:line 31
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+

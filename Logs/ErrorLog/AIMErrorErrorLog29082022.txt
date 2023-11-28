@@ -1,0 +1,168 @@
+Time: 29/08/2022 03:52:03 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99af4913fa5991bbd80123f736a9749bf34b5aa686b5acf712ca40670bf5d452015c11804f12db27692c",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.insertrecord(userregistration_propEntity objentity)
+   at AIMServiceReference.UserRegistrationClient.insertrecord(userregistration_propEntity objentity) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 436
+   at TestPageSPMG.Btn_AIM_Test_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 71
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:32:42 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99afd9ff490497bbd8010c293994a598d268462b9b23e8c61692197386be4e618c70f8f641c427e0c0e6",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.insertrecord(userregistration_propEntity objentity)
+   at AIMServiceReference.UserRegistrationClient.insertrecord(userregistration_propEntity objentity) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 436
+   at TestPageSPMG.Btn_AIM_Test_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 70
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:48:54 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99afd4fc874b99bbd8012ac8124669668c53b7f6f1e3d2553f152919bd59cf1e92a3a8b97eb4d51a2a99",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.COUNTINCENTIVE(String DIST_CODE, String FYEAR)
+   at AIMServiceReference.UserRegistrationClient.COUNTINCENTIVE(String DIST_CODE, String FYEAR) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 460
+   at TestPageSPMG.Btn_AIM_MIS_Report_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 561
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:48:56 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99af402d5a4c99bbd801d70f77803c93acdbd93be3fcc8ba03eb1584710ae3e765b4feb302afd055e791",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.COUNTINCENTIVE(String DIST_CODE, String FYEAR)
+   at AIMServiceReference.UserRegistrationClient.COUNTINCENTIVE(String DIST_CODE, String FYEAR) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 460
+   at TestPageSPMG.Btn_AIM_MIS_Report_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 561
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:48:59 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99af6d404e4e99bbd801ee10a44389f21346324199f51da3316036847718832d5207977a12f15eadc0e3",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.insertrecord(userregistration_propEntity objentity)
+   at AIMServiceReference.UserRegistrationClient.insertrecord(userregistration_propEntity objentity) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 436
+   at TestPageSPMG.Btn_AIM_Test_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 71
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:49:02 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99af465c605099bbd8013334fc6aa6a4df0a0ae8e447b64e079b1b0d09216156e2e96d5552effc91b5e1",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.UPDATERECORD(userregistration_propEntity objentity)
+   at AIMServiceReference.UserRegistrationClient.UPDATERECORD(userregistration_propEntity objentity) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 440
+   at TestPageSPMG.Btn_AIM_Test_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 112
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 29/08/2022 04:49:11 PM
+-----------------------------------------------------------
+Message: The HTTP request is unauthorized with client authentication scheme 'Anonymous'. The authentication header received from the server was 'Digest qop="auth",algorithm=MD5-sess,nonce="+Upgraded+v1f94aebb21317b014e6eb302c095d99afc9ed4c5599bbd80102a44a58fd803c935f672d18937ce63b71a63daf4b3a1cd25e7463fec4167ea7",charset=utf-8,realm="Digest",Negotiate,NTLM'.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateAuthentication(HttpWebRequest request, HttpWebResponse response, WebException responseException, HttpChannelFactory`1 factory)
+   at System.ServiceModel.Channels.HttpChannelUtilities.ValidateRequestReplyResponse(HttpWebRequest request, HttpWebResponse response, HttpChannelFactory`1 factory, WebException responseException, ChannelBinding channelBinding)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at AIMServiceReference.IUserRegistration.CheckEINPC(userregistration_propEntity objentity)
+   at AIMServiceReference.UserRegistrationClient.CheckEINPC(userregistration_propEntity objentity) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.pf0fgi1j.6.cs:line 444
+   at TestPageSPMG.Btn_AIM_Test_CheckEIN_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\TestPageSPMG.aspx.cs:line 606
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+

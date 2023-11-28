@@ -1,0 +1,84 @@
+Time: 30/08/2019 01:11:16 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 01:13:06 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 01:16:22 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 02:53:48 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 02:55:12 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 04:22:46 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+
+Time: 30/08/2019 04:23:35 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   at CICGService.CICGService.FillNodalOfficer() in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\2a7cc33d\9ed10a89\App_WebReferences.lmvk0hvz.5.cs:line 168
+   at Mastermodule_ViewProposal.BindNodalOffcr() in e:\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 89
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+

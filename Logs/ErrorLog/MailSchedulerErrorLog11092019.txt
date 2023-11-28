@@ -1,0 +1,9 @@
+Time: 11/09/2019 03:25:26 PM
+-----------------------------------------------------------
+Message: The remote server returned an error: (400) Bad Request.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Testpdfconveter.getSPMGDataForAll() in e:\SWP_NEW\Testpdfconveter.aspx.cs:line 330
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

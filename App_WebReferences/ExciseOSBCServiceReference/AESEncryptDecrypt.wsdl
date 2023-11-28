@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://osbc.co.in/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://osbc.co.in/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> This Web Service developed by National Informatics Centre, Odisha State Centre, Bhubaneswar provides AES Encryption and Decryption</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://osbc.co.in/">
+      <s:element name="AESEncryptForSignUP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonStr" type="tns:SupDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SupDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GoSwiftUserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Application_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Active_Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sector_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sector_Subtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AESEncryptForSignUPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AESEncryptForSignUPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AESEncryptForViewApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JsonStr" type="tns:SupDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AESEncryptForViewApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AESEncryptForViewApplicationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AESEncryptForSignUPSoapIn">
+    <wsdl:part name="parameters" element="tns:AESEncryptForSignUP" />
+  </wsdl:message>
+  <wsdl:message name="AESEncryptForSignUPSoapOut">
+    <wsdl:part name="parameters" element="tns:AESEncryptForSignUPResponse" />
+  </wsdl:message>
+  <wsdl:message name="AESEncryptForViewApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:AESEncryptForViewApplication" />
+  </wsdl:message>
+  <wsdl:message name="AESEncryptForViewApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:AESEncryptForViewApplicationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OSBCSoftSoap">
+    <wsdl:operation name="AESEncryptForSignUP">
+      <wsdl:input message="tns:AESEncryptForSignUPSoapIn" />
+      <wsdl:output message="tns:AESEncryptForSignUPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AESEncryptForViewApplication">
+      <wsdl:input message="tns:AESEncryptForViewApplicationSoapIn" />
+      <wsdl:output message="tns:AESEncryptForViewApplicationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="OSBCSoftHttpGet" />
+  <wsdl:portType name="OSBCSoftHttpPost" />
+  <wsdl:binding name="OSBCSoftSoap" type="tns:OSBCSoftSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AESEncryptForSignUP">
+      <soap:operation soapAction="https://osbc.co.in/AESEncryptForSignUP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AESEncryptForViewApplication">
+      <soap:operation soapAction="https://osbc.co.in/AESEncryptForViewApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OSBCSoftSoap12" type="tns:OSBCSoftSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AESEncryptForSignUP">
+      <soap12:operation soapAction="https://osbc.co.in/AESEncryptForSignUP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AESEncryptForViewApplication">
+      <soap12:operation soapAction="https://osbc.co.in/AESEncryptForViewApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OSBCSoftHttpGet" type="tns:OSBCSoftHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="OSBCSoftHttpPost" type="tns:OSBCSoftHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="OSBCSoft">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> This Web Service developed by National Informatics Centre, Odisha State Centre, Bhubaneswar provides AES Encryption and Decryption</wsdl:documentation>
+    <wsdl:port name="OSBCSoftSoap" binding="tns:OSBCSoftSoap">
+      <soap:address location="http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OSBCSoftSoap12" binding="tns:OSBCSoftSoap12">
+      <soap12:address location="http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OSBCSoftHttpGet" binding="tns:OSBCSoftHttpGet">
+      <http:address location="http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OSBCSoftHttpPost" binding="tns:OSBCSoftHttpPost">
+      <http:address location="http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

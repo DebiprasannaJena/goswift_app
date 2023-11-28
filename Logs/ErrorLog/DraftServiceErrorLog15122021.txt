@@ -1,0 +1,26 @@
+Time: 15/12/2021 10:20:48 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DraftedServices.BindGridDraft() in d:\Projects\SWPGoo\SWP_NEW\DraftedServices.aspx.cs:line 61
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 15/12/2021 10:20:55 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DraftedServices.BindGridDraft() in d:\Projects\SWPGoo\SWP_NEW\DraftedServices.aspx.cs:line 61
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

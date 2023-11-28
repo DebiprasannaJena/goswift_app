@@ -1,0 +1,46 @@
+Time: 05/11/2019 10:41:48 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'INT_PROPOSAL_COUNT'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_enquire_aspx.__DataBinding__control37(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx:line 245
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Enquire.fillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx.cs:line 74
+   at Portal_PAN_Operation_User_Enquire.Btn_Search_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx.cs:line 185
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 05/11/2019 10:43:22 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'INT_PROPOSAL_COUNT'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_pan_operation_user_enquire_aspx.__DataBinding__control37(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx:line 245
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_PAN_Operation_User_Enquire.fillGrid() in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx.cs:line 74
+   at Portal_PAN_Operation_User_Enquire.Btn_Search_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\Portal\PAN_Operation\User_Enquire.aspx.cs:line 185
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

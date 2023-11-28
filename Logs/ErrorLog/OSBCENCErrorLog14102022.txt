@@ -1,0 +1,23 @@
+Time: 14/10/2022 01:07:49 PM
+-----------------------------------------------------------
+Message: An error occurred while receiving the HTTP response to http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ExciseOSBCServiceReference.OSBCSoftSoap.AESEncryptForSignUP(SupDetails JsonStr)
+   at ExciseOSBCServiceReference.OSBCSoftSoapClient.AESEncryptForSignUP(SupDetails JsonStr) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.ti84tuwr.5.cs:line 227
+   at DraftedServices.OSBC(String strApplicationKey) in d:\Projects\SWPGoo\SWP_NEW\DraftedServices.aspx.cs:line 596
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+

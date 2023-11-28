@@ -1,0 +1,10 @@
+Time: 12/12/2022 04:37:58 PM
+-----------------------------------------------------------
+Message: There is no row at position 1.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.RemoveAt(Int32 index)
+   at Department.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Department.aspx.cs:line 97
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+

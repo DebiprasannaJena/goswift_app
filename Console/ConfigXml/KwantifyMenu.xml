@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Menu>
+  <Kwantify NAME="Kwantify" ID="0" FLAG="0">
+    
+    <ManageLinks ID="2" TOT="6" NAME="Manage Links" DESC="test" FLAG="0">
+      <FunctionMaster ID="1" TOT="0" NAME="Function Master" DESC="test" FLAG="0">
+      </FunctionMaster>
+      <GlobalLink ID="2" TOT="0" NAME="Global Link" DESC="test" FLAG="0">
+      </GlobalLink>
+      <PrimaryLink ID="3" TOT="0" NAME="Primary Link" DESC="test" FLAG="0">
+      </PrimaryLink>
+      <Button ID="4" TOT="0" NAME="Button" DESC="test" FLAG="0">
+      </Button>
+      <TabMaster ID="5" TOT="0" NAME="Tab Master" DESC="test" FLAG="0">
+      </TabMaster>
+      <AssignLink ID="6" TOT="0" NAME="Assign Link" DESC="test" FLAG="0">
+      </AssignLink>
+    </ManageLinks>
+    <ManageUser ID="3" TOT="7" NAME="Manage User" DESC="Manage User" FLAG="0">
+      <AddUser ID="1" TOT="0" NAME="Add User" DESC="Manage User" FLAG="0">
+      </AddUser>
+      <UserProfile ID="2" TOT="0" NAME="User Profile" DESC="Manage User" FLAG="0">
+      </UserProfile>
+      <SetPermission ID="3" TOT="0" NAME="Set Permission" DESC="Manage User" FLAG="0">
+      </SetPermission>
+      <Location ID="4" TOT="0" NAME="Location" DESC="Manage User" FLAG="0">
+      </Location>
+      <Designation ID="5" TOT="0" NAME="Designation" DESC="Manage User" FLAG="0">
+      </Designation>
+      <GradeMaster ID="6" TOT="0" NAME="Grade Master" DESC="Manage User" FLAG="0">
+      </GradeMaster>
+      <AssignAdmin ID="7" TOT="0" NAME="Assign Admin" DESC="test" FLAG="0">
+      </AssignAdmin>
+    </ManageUser>
+    <RoamingFacilitates ID="4" TOT="1" NAME="Roaming Facilitates" DESC="test" FLAG="0">
+      <RoamingAccess ID="1" TOT="0" NAME="Roaming Access" DESC="test" FLAG="0">
+      </RoamingAccess>
+    </RoamingFacilitates>
+    <OfficeTimings ID="5" TOT="4" NAME="Office Timings" DESC="test" FLAG="0">
+      <ShiftMaster ID="1" TOT="0" NAME="Shift Master" DESC="test" FLAG="0">
+      </ShiftMaster>
+      <OfficeTime ID="2" TOT="0" NAME="Office Time" DESC="test" FLAG="0">
+      </OfficeTime>
+      <FlexiTime ID="3" TOT="0" NAME="Flexi Time" DESC="test" FLAG="0">
+      </FlexiTime>
+      <ShiftAssignment ID="4" TOT="0" NAME="Shift Assignment" DESC="test" FLAG="0">
+      </ShiftAssignment>
+    </OfficeTimings>
+    <Reports ID="6" TOT="1" NAME="Reports" DESC="test" FLAG="0">
+      <AdminReports ID="1" TOT="0" NAME="Admin Reports" DESC="test" FLAG="0">
+      </AdminReports>
+    </Reports>
+    <PersonalizeLoginScreen ID="7" TOT="2" NAME="Personalize Login Screen" DESC="test" FLAG="0">
+      <ColorScheme ID="1" TOT="0" NAME="Color Scheme" DESC="test" FLAG="0">
+      </ColorScheme>
+      <LoginLogo ID="2" TOT="0" NAME="Login Logo" DESC="test" FLAG="0">
+      </LoginLogo>
+    </PersonalizeLoginScreen>
+    <PersonalizeInnerpage ID="8" TOT="2" NAME="Personalize Innerpage" DESC="test" FLAG="0">
+      <Logo ID="1" TOT="0" NAME="Logo" DESC="test" FLAG="0">
+      </Logo>
+      <HeaderFooter ID="2" TOT="0" NAME="Header Footer" DESC="test" FLAG="0">
+      </HeaderFooter>
+    </PersonalizeInnerpage>
+  </Kwantify>
+</Menu>

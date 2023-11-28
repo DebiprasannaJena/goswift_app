@@ -1,0 +1,40 @@
+Time: 30/10/2023 11:42:29 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 90
+Source: App_Web_gfa5i4w4
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 30/10/2023 11:51:27 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 90
+Source: App_Web_aym5bkro
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 30/10/2023 12:26:10 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 90
+Source: App_Web_kytnf2hz
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 30/10/2023 01:50:14 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 90
+Source: App_Web_hsaykmxt
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 30/10/2023 05:19:01 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 91
+Source: App_Web_dvanmapf
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+

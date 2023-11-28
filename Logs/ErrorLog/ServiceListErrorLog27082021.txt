@@ -1,0 +1,50 @@
+Time: 27/08/2021 09:46:56 AM
+-----------------------------------------------------------
+Message: intHOACount
+StackTrace:    at DataAcessLayer.Service.ServiceDataLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Service\ServiceDataLayer.cs:line 1577
+   at BusinessLogicLayer.Service.ServiceBusinessLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Service\ServiceBusinessLayer.cs:line 111
+   at DepartmentClearance.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance.aspx.cs:line 49
+Source: App_Code.pwebnsl_
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Service.ServiceDetails] ViewDepartmentWiseServiceDetails(EntityLayer.Service.ServiceDetails)
+-----------------------------------------------------------
+
+Time: 27/08/2021 10:32:25 AM
+-----------------------------------------------------------
+Message: intHOACount
+StackTrace:    at DataAcessLayer.Service.ServiceDataLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Service\ServiceDataLayer.cs:line 1577
+   at BusinessLogicLayer.Service.ServiceBusinessLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Service\ServiceBusinessLayer.cs:line 111
+   at DepartmentClearance.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance.aspx.cs:line 49
+Source: App_Code.pwebnsl_
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Service.ServiceDetails] ViewDepartmentWiseServiceDetails(EntityLayer.Service.ServiceDetails)
+-----------------------------------------------------------
+
+Time: 27/08/2021 10:32:30 AM
+-----------------------------------------------------------
+Message: intHOACount
+StackTrace:    at DataAcessLayer.Service.ServiceDataLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Service\ServiceDataLayer.cs:line 1577
+   at BusinessLogicLayer.Service.ServiceBusinessLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Service\ServiceBusinessLayer.cs:line 111
+   at DepartmentClearance.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance.aspx.cs:line 49
+Source: App_Code.pwebnsl_
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Service.ServiceDetails] ViewDepartmentWiseServiceDetails(EntityLayer.Service.ServiceDetails)
+-----------------------------------------------------------
+
+Time: 27/08/2021 10:33:13 AM
+-----------------------------------------------------------
+Message: intHOACount
+StackTrace:    at DataAcessLayer.Service.ServiceDataLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Service\ServiceDataLayer.cs:line 1577
+   at BusinessLogicLayer.Service.ServiceBusinessLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Service\ServiceBusinessLayer.cs:line 111
+   at DepartmentClearance.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance.aspx.cs:line 49
+Source: App_Code.pwebnsl_
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Service.ServiceDetails] ViewDepartmentWiseServiceDetails(EntityLayer.Service.ServiceDetails)
+-----------------------------------------------------------
+
+Time: 27/08/2021 11:27:43 AM
+-----------------------------------------------------------
+Message: intHOACount
+StackTrace:    at DataAcessLayer.Service.ServiceDataLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Service\ServiceDataLayer.cs:line 1577
+   at BusinessLogicLayer.Service.ServiceBusinessLayer.ViewDepartmentWiseServiceDetails(ServiceDetails objService) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Service\ServiceBusinessLayer.cs:line 111
+   at DepartmentClearance.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance.aspx.cs:line 49
+Source: App_Code.pwebnsl_
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Service.ServiceDetails] ViewDepartmentWiseServiceDetails(EntityLayer.Service.ServiceDetails)
+-----------------------------------------------------------
+

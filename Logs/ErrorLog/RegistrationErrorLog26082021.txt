@@ -1,0 +1,36 @@
+Time: 26/08/2021 10:43:27 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at InvestorRegistrationNonIndustry.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\InvestorRegistrationNonIndustry.aspx.cs:line 785
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 26/08/2021 11:00:09 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at InvestorRegistrationUser.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\InvestorRegistrationUser.aspx.cs:line 798
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 26/08/2021 11:59:38 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at InvestorRegistrationNonIndustry.Btn_Submit_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\InvestorRegistrationNonIndustry.aspx.cs:line 785
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

@@ -1,0 +1,7 @@
+* {padding:0; margin:0;}
+body {font-size:80%; font-family:Arial, Helvetica, sans-serif; padding:10px;}
+.button {background:url(images/button.png) left top no-repeat; width:62px; text-align:center; line-height:23px; border:none; color:#FFF; margin-top:5px;}
+.button:hover {color:#30ade9;}
+a {text-decoration:none; color:#06C;}
+a:hover {text-decoration:underline;}
+img {border:0;}

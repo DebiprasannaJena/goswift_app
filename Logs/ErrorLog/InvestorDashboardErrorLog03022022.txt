@@ -1,0 +1,9 @@
+Time: 03/02/2022 04:01:11 PM
+-----------------------------------------------------------
+Message: The request was aborted: Could not create SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.InsertSPMGStatus() in d:\Projects\SWPGoo\SWP_NEW\InvesterDashboard.aspx.cs:line 585
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

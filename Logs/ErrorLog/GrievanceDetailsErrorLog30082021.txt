@@ -1,0 +1,9 @@
+Time: 30/08/2021 11:11:57 AM
+-----------------------------------------------------------
+Message: Column 'intIndustryCategory' does not belong to table Table.
+StackTrace:    at GRIEVANCE_GrievanceDetails.fillAppDetails(String strGrivId) in d:\Projects\SWPGoo\SWP_NEW\GRIEVANCE\GrievanceDetails.aspx.cs:line 144
+   at GRIEVANCE_GrievanceDetails.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\GRIEVANCE\GrievanceDetails.aspx.cs:line 31
+Source: App_Web_iuy2smss
+TargetSite: Void fillAppDetails(System.String)
+-----------------------------------------------------------
+

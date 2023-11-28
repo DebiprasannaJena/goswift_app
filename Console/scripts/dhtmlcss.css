@@ -1,0 +1,138 @@
+TABLE {
+	FONT: 12px/14pt Verdana,Arial, Helvetica,sans-serif; TEXT-ALIGN: justify
+}
+.menuitem {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #ffffff; LINE-HEIGHT: 12pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.menuitem:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; WIDTH: 116px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: auto; TEXT-DECORATION: none
+}
+A.menuitem:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; WIDTH: 116px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: auto; TEXT-DECORATION: none
+}
+A.menuitem:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; WIDTH: 116px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: auto; TEXT-DECORATION: none
+}
+A.menuitem:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; WIDTH: 116px; COLOR: #ff0000; FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: auto; BACKGROUND-COLOR: #99ccff; TEXT-DECORATION: none
+}
+.selectedmenu {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; COLOR: #800000; LINE-HEIGHT: 14pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.selectedmenu:link {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; COLOR: #800000; TEXT-DECORATION: none
+}
+A.selectedmenu:visited {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; COLOR: #800000; TEXT-DECORATION: none
+}
+A.selectedmenu:active {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; COLOR: #800000; TEXT-DECORATION: none
+}
+A.selectedmenu:hover {
+	FONT-WEIGHT: normal; FONT-SIZE: 12pt; COLOR: #ff0000; TEXT-DECORATION: none
+}
+.copyright {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.bodytext {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 16pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.homeintro {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 18pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.larger {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt
+}
+.header {
+	FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #ad7510; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+UL {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 13pt; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif
+}
+OL {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 13pt; FONT-FAMILY: Verdana,Arial, Helvetica, sans-serif
+}
+.boldtext {
+	FONT-WEIGHT: bold
+}
+.tabletext {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 13pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.tableteHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; TEXT-INDENT: 0px; LINE-HEIGHT: 19px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #e1e1e1; TEXT-ALIGN: center
+}
+.smalltext {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.smalltext:link {
+	FONT-SIZE: 8pt; COLOR: #0066cc
+}
+A.smalltext:visited {
+	FONT-SIZE: 8pt; COLOR: #003399
+}
+A.smalltext:active {
+	FONT-SIZE: 8pt; COLOR: #0066cc
+}
+A.smalltext:hover {
+	FONT-SIZE: 8pt; COLOR: #ff6600
+}
+.searchresults {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; LINE-HEIGHT: 11pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.searchresults:link {
+	FONT-SIZE: 8pt; COLOR: #0066cc
+}
+A.searchresults:visited {
+	FONT-SIZE: 8pt; COLOR: #003399
+}
+A.searchresults:active {
+	FONT-SIZE: 8pt; COLOR: #0066cc
+}
+A.searchresults:hover {
+	FONT-SIZE: 8pt; COLOR: #ff6600
+}
+A:link {
+	FONT-SIZE: 8pt; COLOR: #0066cc; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A:visited {
+	FONT-SIZE: 8pt; COLOR: #003399; TEXT-DECORATION: underline
+}
+A:active {
+	FONT-SIZE: 8pt; COLOR: #0066cc; TEXT-DECORATION: underline
+}
+A:hover {
+	FONT-SIZE: 8pt; COLOR: #ff6600; TEXT-DECORATION: underline
+}
+.opening {
+	FONT-WEIGHT: normal; FONT-SIZE: 9pt; COLOR: #ffffff; LINE-HEIGHT: 16pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.bottommenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #003399; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.myhover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+A.bottommenu:link {
+	TEXT-DECORATION: none
+}
+A.bottommenu:visited {
+	TEXT-DECORATION: none
+}
+A.bottommenu:active {
+	TEXT-DECORATION: none
+}
+A.bottommenu:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+.new1 {
+	FONT-SIZE: 12px; COLOR: #990000; LINE-HEIGHT: 14px; FONT-STYLE: normal; FONT-FAMILY: Georgia, "Times New Roman", Times, serif; BACKGROUND-COLOR: #0099ff
+}
+INPUT {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; COLOR: #000000; LINE-HEIGHT: normal; BORDER-BOTTOM: #000000 1px solid; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #d9a804
+}
+SELECT {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 8pt; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #deb005
+}
+chk {
+	BORDER-RIGHT: #ffffcc thin; BORDER-TOP: #ffffcc thin; FONT-SIZE: 12px; BORDER-LEFT: #ffffcc thin; COLOR: #ffffcc; LINE-HEIGHT: normal; BORDER-BOTTOM: #ffffcc thin; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffcc
+}

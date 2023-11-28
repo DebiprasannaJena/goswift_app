@@ -1,0 +1,45 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TestEsign2.aspx.cs" Inherits="TestEsign2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <h2>
+        Test Esign</h2>
+    <hr />
+    <br />
+    <center>
+        <asp:Button ID="Btn_Esign" runat="server" Text="Esign Now" Width="150px" Height="40px"
+            OnClick="Btn_Esign_Click" BackColor="Maroon" ForeColor="White" />
+        <br />
+        <br />
+        <div class="form-group" id="divEsign" runat="server">
+            <div class="row">
+                <div class="col-sm-12  col-sm-offset-1">
+                    <asp:HyperLink ID="Hyplnk1" runat="server" CssClass="btn btn-success">Click Here to eSign</asp:HyperLink>
+                    <asp:HiddenField ID="AggrementId" runat="server" />
+                    <asp:HiddenField ID="TokenId" runat="server" />
+                    <asp:HiddenField ID="hdnApplicationKey" runat="server" />
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <asp:Button ID="Btn_Download_Doc" runat="server" Text="Download Document" OnClick="Btn_Download_Doc_Click"
+            ForeColor="White" BackColor="Green" />
+        <br />
+        <br />
+        <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
+        <br />
+        <hr />
+        <br />
+      
+    </center>
+    </form>
+</body>
+</html>

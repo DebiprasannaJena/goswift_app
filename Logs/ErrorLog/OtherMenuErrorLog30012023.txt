@@ -1,0 +1,16 @@
+Time: 30/01/2023 03:55:11 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 81
+Source: App_Web_hhko4rqe
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 30/01/2023 03:55:20 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\includes\investormenu.ascx.cs:line 81
+Source: App_Web_hhko4rqe
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+

@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+
+        body {
+            font-size: 12px
+        }
+
+        #printCard {
+            display: block;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+            #printCard .HimCardFront, #printCard .HimCardBack {
+                width: 321px;
+                height: 5.5cm;
+                border: 1px solid #bbb;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 5px;
+                position: relative;
+                background-image: url(../img/crdbg.jpg);
+                background-size: 100%;
+            }
+
+            #printCard .HimCardFront {
+            }
+
+                #printCard .HimCardFront .header {
+                    text-align: left;
+                    padding: 5px;
+                    background: #45c3f1;
+                    color: #fff;
+                }
+
+                    #printCard .HimCardFront .header h2 {
+                        display: inline-block;
+                        font-size: 20px;
+                        margin: 0;
+                        color: #333;
+                        margin: 0 5px;
+                        text-align: center;
+                        vertical-align: top;
+                    }
+
+                        #printCard .HimCardFront .header h2 > small {
+                            display: block;
+                            margin: 0;
+                            font-size: 11px;
+                            color: #ba292f;
+                        }
+
+                    #printCard .HimCardFront .header img {
+                        display: inline-block;
+                        height: 41px;
+                        width: 41px;
+                        float: right;
+                        margin: 0px 5px;
+                        vertical-align: top;
+                    }
+
+                        #printCard .HimCardFront .header img.himcared {
+                            display: inline-block;
+                            height: 50px;
+                            width: 50px;
+                            margin-right: 10px;
+                            float: none;
+                            filter: contrast(1.5);
+                            vertical-align: top;
+                        }
+
+                        #printCard .HimCardFront .header img.stgovt {
+                            display: inline-block;
+                            height: 37px;
+                            width: 40px;
+                            margin-right: 10px;
+                            float: none;
+                            filter: contrast(1.5);
+                            vertical-align: top;
+                        }
+
+                #printCard .HimCardFront .body {
+                    height: 85px;
+                    padding: 10px;
+                    text-align: left;
+                    padding-top: 20px;
+                }
+
+                    #printCard .HimCardFront .body p {
+                        margin: 0;
+                        font-size: 11px;
+                        margin-bottom: 6px;
+                    }
+
+                        #printCard .HimCardFront .body p label {
+                            font-weight: bold;
+                        }
+
+                            #printCard .HimCardFront .body p label small {
+                                display: block;
+                            }
+
+                        #printCard .HimCardFront .body p strong {
+                        }
+
+
+                #printCard .HimCardFront .footer {
+                    background: #de0000;
+                    padding: 5px;
+                    font-size: 11px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                    #printCard .HimCardFront .footer h3 {
+                        margin: 0;
+                        color: #fff;
+                        font-weight: 600;
+                        font-size: 1.4em;
+                    }
+
+                        #printCard .HimCardFront .footer h3 span {
+                        }
+
+                        #printCard .HimCardFront .footer h3 strong {
+                        }
+
+                    #printCard .HimCardFront .footer h4 {
+                        margin: 0;
+                        color: #fff;
+                        font-weight: 100;
+                        letter-spacing: 1px;
+                    }
+
+            #printCard .HimCardBack {
+            }
+
+                #printCard .HimCardBack .header {
+                    background: #45c3f1;
+                    padding: 5px;
+                }
+
+                    #printCard .HimCardBack .header h2 {
+                        margin: 0;
+                        color: #333;
+                        font-size: 18px;
+                    }
+
+                #printCard .HimCardBack .body {
+                    padding: 10px 5px;
+                    height: 128px;
+                }
+
+                    #printCard .HimCardBack .body > strong {
+                        margin-bottom: 5px;
+                        display: block
+                    }
+
+                    #printCard .HimCardBack .body table {
+                        font-size: 10px;
+                        text-align: left;
+                        width: 100%;
+                    }
+
+                        #printCard .HimCardBack .body table tr {
+                        }
+
+                            #printCard .HimCardBack .body table tr th {
+                                border: 1px solid #eee;
+                                padding: 2px;
+                                background: #333;
+                                color: #fff;
+                            }
+
+                            #printCard .HimCardBack .body table tr td {
+                                padding: 2px;
+                                border: 1px solid #eee;
+                            }
+
+                #printCard .HimCardBack .footer {
+                    background: #de0000;
+                    padding: 5px;
+                    font-size: 11px;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                    #printCard .HimCardBack .footer h3 {
+                        margin: 0;
+                        color: #fff;
+                        font-weight: 600;
+                        font-size: 1.4em;
+                    }
+
+                    #printCard .HimCardBack .footer h5 label {
+                    }
+
+                    #printCard .HimCardBack .footer h5 strong {
+                    }
+
+            #printCard .prntbtn {
+                display: block;
+                margin: auto;
+                margin-top: 15px;
+                border: 0;
+                background: #08c74d;
+                color: #fff;
+                padding: 5px 20px;
+            }
+
+        @media print {
+            #printCard .noPrint {
+                display: none
+            }
+        }
+    </style>
+    <title></title>
+
+</head>
+<body>
+    <div id="printCard">
+        <div class="HimCardFront">
+            <div class="header">
+                <!--<img src="image/plogo1a.png" class="himcared" />-->
+                <h2>हिमकेयर<small>हिमाचल हेल्थ केयर योजना</small></h2>
+                <!--<img class="stgovt" src="image/plogo3.png">
+                <img src="image/plogo2a.png">-->
+            </div>
+
+            <div class="body">
+                <p>
+                    <label>Head of Family :</label><span id="lblHOF">$$HOF$$</span><strong></strong>
+                </p>
+                <p>
+                    <label>HIMCARE Number :</label><span id="lblURND">$$URN$$</span><strong></strong>
+                </p>
+                <p>
+                    <label>Policy period from : </label>
+                    <span id="lblPolicyFrmDate">$$policyFrom$$</span><strong></strong>&nbsp;<strong>To&nbsp;</strong><span id="lblPolictToDate">$$policyTo$$</span>
+                </p>
+                <p class="addrs">
+                    <label>Address(District, Block):</label><span id="lblDistrictD">$$DistName$$</span>,<span id="lblBlockD">$$Block$$</span><strong></strong>
+                </p>
+            </div>
+            <div class="footer">
+                <h3><span>स्वस्थ हिमाचल, समृद्ध हिमाचल</span></h3>
+                <h4><strong>Toll Free Number</strong>&nbsp;&nbsp;1800 102 1142</h4>
+            </div>
+
+        </div>
+        <div class="HimCardBack">
+            <div class="header">
+                <h2>Details of family members</h2>
+            </div>
+            <div class="body">
+                <strong>
+                    <label>HIMCARE Number :</label><span id="lblHimcareno">$$URN$$</span>
+                </strong>
+                <div>
+                    <!--<table cellspacing="0" rules="all" class="table table-bordered table-responsive" border="0" id="grdDigitalPrint" style="border-collapse:collapse;">
+                        <tbody>
+                            <tr>
+                                <th scope="col">Sl#</th>
+                                <th align="left" valign="middle" scope="col">Name</th>
+                                <th align="left" valign="middle" scope="col">Gender</th>
+                                <th align="left" valign="middle" scope="col">Unique MemberId</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span id="grdDigitalPrint_lblRowNumber1_0">1</span>
+                                </td>
+                                <td align="left" valign="middle">DEEPAK SINGH</td>
+                                <td align="left" valign="middle">M</td>
+                                <td align="left" valign="middle">020332391101146154</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span id="grdDigitalPrint_lblRowNumber1_1">2</span>
+                                </td>
+                                <td align="left" valign="middle">RUCHITA DEVI</td>
+                                <td align="left" valign="middle">F</td>
+                                <td align="left" valign="middle">020332390120146254</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span id="grdDigitalPrint_lblRowNumber1_2">3</span>
+                                </td>
+                                <td align="left" valign="middle">ANVIKA</td>
+                                <td align="left" valign="middle">F</td>
+                                <td align="left" valign="middle">020332317082046354</td>
+                            </tr>
+                        </tbody>
+                    </table>-->
+                </div>
+
+            </div>
+            <div class="footer">
+                <h3><span>स्वस्थ हिमाचल, समृद्ध हिमाचल</span></h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

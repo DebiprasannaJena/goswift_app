@@ -1,0 +1,10 @@
+Time: 30/01/2020 03:40:59 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'hii' to data type int.
+StackTrace:    at DataAcessLayer.Common.CommonDataLayer.ManageFeedback(Feedback objFeedback) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\Common\CommonDataLayer.cs:line 49
+   at BusinessLogicLayer.Common.CommonBusinessLayer.ManageFeedback(Feedback objFeedback) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\BAL\Common\CommonBusinessLayer.cs:line 11
+   at aboutus.btnSubmit_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\feedback.aspx.cs:line 163
+Source: .Net SqlClient Data Provider
+TargetSite: System.String ManageFeedback(EntityLayer.Common.Feedback)
+-----------------------------------------------------------
+

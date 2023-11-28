@@ -1,0 +1,521 @@
+﻿
+
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
+using NReco.PdfGenerator;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Web;
+using System.Web.Script.Serialization;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Testpdfconveter : System.Web.UI.Page
+{
+    CommonDashboardFunction DashboradCommon = new CommonDashboardFunction();
+    string strCurrentYear = DateTime.Now.Year.ToString();
+    string strCurrentMonth = DateTime.Now.Month.ToString();
+    private const string ENCRYPTION_KEY = "key";
+    private readonly static byte[] SALT = Encoding.ASCII.GetBytes(ENCRYPTION_KEY.Length.ToString());
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            //InsertSPMGStatus();
+            //InsertSPMGGRIDStatus();
+            //getSPMGDistrictDataForAll();
+            //ViewSPMGDistrictDEPTwiseCount();
+           string ss= check("TZvBrgPKlaa+kFOvQ0PsjbqqoEUnvG609eZ6bD4zdFp2GdGcsXwdxKMyWRSfhzVs");
+        }
+    }
+    private void InsertSPMGStatus()
+    {
+        try
+        {
+            //string finalquery = "";
+            //SqlCommand cmd;
+            //Random number generate
+            string strrandomgen = MakeRandom(10);
+            var plainran = Encoding.UTF8.GetBytes(strrandomgen);
+            string randno = Convert.ToBase64String(plainran);
+            //Timestamp
+            TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+            double unixTime = span.TotalSeconds;
+            var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
+            string plunixtime = Convert.ToBase64String(plainut);
+
+            //PasswordDigest
+            string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
+            SHA256 mySHA256 = SHA256Managed.Create();
+            string finalstr = GetSha256FromString(ranpss);
+            byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
+            string ranpss1 = Convert.ToBase64String(bytes);
+
+            //Financial year
+            string FinYear = "2019";
+            //string FinYear = "";
+            //if (Finyear1 == "2016-17")
+            //{
+            //    FinYear = "2016";
+            //}
+            //else if (Finyear1 == "2017-18")
+            //{
+            //    FinYear = "2017";
+            //}
+            // = string.IsNullOrEmpty(ddlspmgyear.SelectedValue) ? default(string) : ddlspmgyear.SelectedValue.ToString();
+            //string serviceUrl = "https://164.100.58.41/odisha/restservices/RestServer.php?view=issuesummary";
+            string serviceUrl = "https://esuvidha.gov.in/odishadi/restservices/RestServer.php?view=issuestatus";
+            object input = new
+            {
+                RandomNonce = randno,
+                TimeStamp = plunixtime,
+                PasswordDigest = ranpss1,
+                FinancialYear = FinYear,
+                DepartmentID = "12"
+            };
+            string inputJson = (new JavaScriptSerializer()).Serialize(input);
+            var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
+            webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.ContentType = "application/json";
+            try
+            {
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+                ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+            }
+            catch
+            {
+            }
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
+            using (var requestStream = webRequest.GetRequestStream())
+            {
+                using (var writer = new StreamWriter(requestStream))
+                {
+                    writer.Write(json);
+                }
+            }
+
+            using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (var responseStream = webResponse.GetResponseStream())
+                {
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        try
+                        {
+                            var responseData = reader.ReadToEnd();
+                            webResponse.Close();
+
+                            string strResult = responseData.ToString();
+                            if (strResult != "")
+                            {
+                                DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
+                                if (DynTable.Rows.Count > 0)
+                                {                                  
+
+                                   
+                                }
+                                else
+                                {
+                                    
+                                }
+                            }
+                        }
+                        catch (WebException ex)
+                        {
+                            Util.LogError(ex, "Dashboard");
+                        }
+                    }
+                }
+            }
+        }
+
+        catch (WebException ex)
+        {
+            Util.LogError(ex, "Dashboard");
+        }
+    }
+
+
+    private void InsertSPMGGRIDStatus()
+    {
+        try
+        {
+            //SqlCommand cmd;
+            //Random number generate
+            string strrandomgen = MakeRandom(10);
+            var plainran = Encoding.UTF8.GetBytes(strrandomgen);
+            string randno = Convert.ToBase64String(plainran);
+            //Timestamp
+            TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+            double unixTime = span.TotalSeconds;
+            var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
+            string plunixtime = Convert.ToBase64String(plainut);
+
+            //PasswordDigest
+            string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
+            SHA256 mySHA256 = SHA256Managed.Create();
+            string finalstr = GetSha256FromString(ranpss);
+            byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
+            string ranpss1 = Convert.ToBase64String(bytes);
+
+            //Financial year
+            string FinYear = "2019";
+            //SPMGStatus = Request.QueryString["SPMGStatus"].ToString();
+
+            //string serviceUrl = "https://164.100.58.41/odisha/restservices/RestServer.php?view=issuestatus";
+
+            string serviceUrl = "https://esuvidha.gov.in/odishadi/restservices/RestServer.php?view=issuedetails";
+
+            object input = new
+            {
+                RandomNonce = randno,
+                TimeStamp = plunixtime,
+                PasswordDigest = ranpss1,
+                FinancialYear = FinYear,
+                Status = "received"
+            };
+            string inputJson = (new JavaScriptSerializer()).Serialize(input);
+            var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
+            webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.ContentType = "application/json";
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
+            using (var requestStream = webRequest.GetRequestStream())
+            {
+                using (var writer = new StreamWriter(requestStream))
+                {
+                    writer.Write(json);
+                }
+            }
+
+            using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (var responseStream = webResponse.GetResponseStream())
+                {
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        var responseData = reader.ReadToEnd();
+                        webResponse.Close();
+                        string strResult = responseData.ToString();
+                        DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
+                        //if (DynTable.ToString() != "")
+                        //{
+                        //SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+                        //if (con.State == ConnectionState.Closed)
+                        //{
+                        //    con.Open();
+                        //}
+                        //string query1 = "DELETE FROM T_SPMG_STATUSDETAILS where int_Year='" + FinYear + "'";
+                        //cmd = new SqlCommand(query1, con);
+                        //cmd.ExecuteNonQuery();
+
+                        //DataTable DynamicForm = new DataTable();
+                        //DynamicForm.TableName = "MySPMGTable";
+                        //DynamicForm.Columns.Add(new DataColumn("INT_ID"));
+                        //DynamicForm.Columns.Add(new DataColumn("Project_Name"));
+                        //DynamicForm.Columns.Add(new DataColumn("Project_Department"));
+                        //DynamicForm.Columns.Add(new DataColumn("Type_Of_Issue"));
+                        //DynamicForm.Columns.Add(new DataColumn("Issue_Date"));
+                        //DynamicForm.Columns.Add(new DataColumn("Issue_Description"));
+                        //DynamicForm.Columns.Add(new DataColumn("Issue_Category"));
+                        //DynamicForm.Columns.Add(new DataColumn("Name_Of_Investor"));
+                        //DynamicForm.Columns.Add(new DataColumn("Pending_Department"));
+                        //DynamicForm.Columns.Add(new DataColumn("Pending_Department_Type"));
+                        //DynamicForm.Columns.Add(new DataColumn("Pending_Days"));
+                        //DynamicForm.Columns.Add(new DataColumn("DTM_CREATED_ON"));
+                        //DynamicForm.Columns.Add(new DataColumn("int_Year"));
+                        //DynamicForm.Columns.Add(new DataColumn("vch_Status"));
+                        //for (int i = 0; i < DynTable.Rows.Count; i++)
+                        //{
+                        //    DataRow dr = DynamicForm.NewRow();
+                        //    dr["INT_ID"] = Convert.ToInt32(Session["Userid"]);
+                        //    dr["Project_Name"] = DynTable.Rows[i]["Project Name"].ToString();
+                        //    dr["Project_Department"] = DynTable.Rows[i]["Project Department"].ToString();
+                        //    dr["Type_Of_Issue"] = DynTable.Rows[i]["Type Of Issue"].ToString();
+                        //    dr["Issue_Date"] = DynTable.Rows[i]["Issue Date"].ToString();
+                        //    dr["Issue_Description"] = DynTable.Rows[i]["Issue Description"].ToString();
+                        //    dr["Issue_Category"] = DynTable.Rows[i]["Issue Category"].ToString();
+                        //    dr["Name_Of_Investor"] = DynTable.Rows[i]["Name Of Investor"].ToString();
+                        //    dr["Pending_Department"] = DynTable.Rows[i]["Pending Department"].ToString();
+                        //    dr["Pending_Department_Type"] = DynTable.Rows[i]["Pending Department Type"].ToString();
+                        //    dr["Pending_Days"] = DynTable.Rows[i]["Pending Days"].ToString();
+                        //    dr["DTM_CREATED_ON"] = DateTime.Now.ToString("dd-MMM-yy");
+                        //    dr["int_Year"] = FinYear;
+                        //    dr["vch_Status"] = SPMGStatus;
+                        //    DynamicForm.Rows.Add(dr);
+                        //}
+                        //string xmltable = GetSTRXMLResult(DynamicForm);
+                        //cmd = new SqlCommand("USP_GRID_XML", con);
+                        //cmd.CommandType = CommandType.StoredProcedure;
+                        //cmd.Parameters.AddWithValue("@P_XMLTABLE", xmltable);
+                        //cmd.Parameters.AddWithValue("@P_ACTION", "SPMGSTATUS");
+                        //cmd.ExecuteNonQuery();
+                        //con.Close();
+                        //}
+                        //else
+                        //{
+                        //    SPMGGridSatus();
+                        //}
+                    }
+
+                }
+            }
+        }
+        //}
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "Dashboard");
+        }
+    }
+
+
+
+    private void getSPMGDistrictDataForAll()
+    {
+        try
+        {
+            //Random number generate
+            string strrandomgen = MakeRandom(10);
+            var plainran = Encoding.UTF8.GetBytes(strrandomgen);
+            string randno = Convert.ToBase64String(plainran);
+            //Timestamp
+            TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+            double unixTime = span.TotalSeconds;
+            var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
+            string plunixtime = Convert.ToBase64String(plainut);
+
+            //PasswordDigest
+            string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
+            SHA256 mySHA256 = SHA256Managed.Create();
+            string finalstr = GetSha256FromString(ranpss);
+            byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
+            string ranpss1 = Convert.ToBase64String(bytes);
+
+            //string serviceUrl = "https://164.100.58.41//odisha/restservices/RestServer.php?view=issuestatus";
+            string serviceUrl = "https://esuvidha.gov.in/odishadi/restservices/RestServer.php?view=monthlyissuestatus";           
+            object input = new
+            {
+                RandomNonce = randno,
+                TimeStamp = plunixtime,
+                PasswordDigest = ranpss1,
+                CurrentYear = strCurrentYear,
+                CurrentMonth = strCurrentMonth
+            };
+
+            string inputJson = (new JavaScriptSerializer()).Serialize(input);
+            var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
+            webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.ContentType = "application/json";
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
+            using (var requestStream = webRequest.GetRequestStream())
+            {
+                using (var writer = new StreamWriter(requestStream))
+                {
+                    writer.Write(json);
+                }
+            }
+
+            using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (var responseStream = webResponse.GetResponseStream())
+                {
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        var responseData = reader.ReadToEnd();
+                        webResponse.Close();
+
+                        string strResult = responseData.ToString();
+                        if (strResult != "")
+                        {
+                            DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
+                            if (DynTable.Rows.Count > 0)
+                            {
+                                //intTempSPMGPendingCM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Current"]);
+                                //intTempSPMGMore30DaysCM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Current (more than 30 days))"]);
+                                //intTempSPMGPendingLM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Last"]);
+                                //intTempSPMGMore30DaysLM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Last (more than 30 days))"]);
+                            }
+                            else
+                            {
+                                //intTempSPMGPendingCM = 0;
+                                //intTempSPMGMore30DaysCM = 0;
+                                //intTempSPMGPendingLM = 0;
+                                //intTempSPMGMore30DaysLM = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch (WebException ex)
+        {
+            Util.LogError(ex, "MailScheduler");
+        }      
+    }
+    private void ViewSPMGDistrictDEPTwiseCount()
+    {
+        System.Threading.Thread.Sleep(5000);
+
+        try
+        {
+            //Random number generate
+            string strrandomgen = MakeRandom(10);
+            var plainran = Encoding.UTF8.GetBytes(strrandomgen);
+            string randno = Convert.ToBase64String(plainran);
+            //Timestamp
+            TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+            double unixTime = span.TotalSeconds;
+            var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
+            string plunixtime = Convert.ToBase64String(plainut);
+
+            //PasswordDigest
+            string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
+            SHA256 mySHA256 = SHA256Managed.Create();
+            string finalstr = GetSha256FromString(ranpss);
+            byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
+            string ranpss1 = Convert.ToBase64String(bytes);
+
+            string strCurrentYear = DateTime.Now.Year.ToString();
+            string strCurrentMonth = DateTime.Now.Month.ToString();
+           
+            string serviceUrl = "https://esuvidha.gov.in/odishadi/restservices/RestServer.php?view=monthlyissuestatusbydepartmentid";
+            object input = new
+            {
+                RandomNonce = randno,
+                TimeStamp = plunixtime,
+                PasswordDigest = ranpss1,
+                DepartmentID = 12,
+                CurrentYear = strCurrentYear,
+                CurrentMonth = strCurrentMonth
+            };
+
+            string inputJson = (new JavaScriptSerializer()).Serialize(input);
+            var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
+            webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.ContentType = "application/json";
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+            ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
+            using (var requestStream = webRequest.GetRequestStream())
+            {
+                using (var writer = new StreamWriter(requestStream))
+                {
+                    writer.Write(json);
+                }
+            }
+
+            using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
+            {
+                using (var responseStream = webResponse.GetResponseStream())
+                {
+                    using (var reader = new StreamReader(responseStream))
+                    {
+                        var responseData = reader.ReadToEnd();
+                        webResponse.Close();
+
+                        string strResult = responseData.ToString();
+                        if (strResult != "")
+                        {
+                            DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
+                            if (DynTable.Rows.Count > 0)
+                            {
+                                //intSPMGPendingCM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Current"]);
+                                //intSPMGMore30DaysCM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Current (more than 30 days))"]);
+
+                                //intSPMGPendingLM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Last"]);
+                                //intSPMGMore30DaysLM = Convert.ToInt32(DynTable.Rows[0]["Issues Pending Last (more than 30 days))"]);
+                            }
+                            else
+                            {
+                                //intSPMGPendingCM = 0;
+                                //intSPMGMore30DaysCM = 0;
+                                //intSPMGPendingLM = 0;
+                                //intSPMGMore30DaysLM = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch (WebException ex)
+        {
+            Util.LogError(ex, "MailScheduler");
+        }
+    }
+    public static string GetSha256FromString(string strData)
+    {
+        var message = Encoding.ASCII.GetBytes(strData);
+        SHA256Managed hashString = new SHA256Managed();
+        string hex = "";
+
+        var hashValue = hashString.ComputeHash(message);
+        foreach (byte x in hashValue)
+        {
+            hex += String.Format("{0:x2}", x);
+        }
+        return hex;
+    }
+
+    public string MakeRandom(int pl)
+    {
+        string possibles = "0123456789";
+        char[] passwords = new char[pl];
+        Random rd = new Random();
+
+        for (int i = 0; i < pl; i++)
+        {
+            passwords[i] = possibles[rd.Next(0, possibles.Length)];
+        }
+        return new string(passwords);
+    }
+
+    public string check(string inputText)
+    {
+        RijndaelManaged rijndaelCipher = new RijndaelManaged();
+
+        try
+        {
+            byte[] encryptedData = Convert.FromBase64String(inputText);
+            PasswordDeriveBytes secretKey = new PasswordDeriveBytes(ENCRYPTION_KEY, SALT);
+
+            using (ICryptoTransform decryptor =
+              rijndaelCipher.CreateDecryptor(secretKey.GetBytes(32), secretKey.GetBytes(16)))
+            {
+                using (MemoryStream memoryStream = new MemoryStream(encryptedData))
+                {
+                    using (CryptoStream cryptoStream =
+                      new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read))
+                    {
+                        byte[] plainText = new byte[encryptedData.Length];
+                        int decryptedCount = cryptoStream.Read(plainText, 0, plainText.Length);
+                        return Encoding.Unicode.GetString(plainText, 0, decryptedCount);
+                    }
+                }
+            }
+        }
+        catch (Exception)
+        {
+            throw new Exception("URL_TMPR");
+            //HttpContext.Current.Response.Redirect("~/CustomError.aspx");
+        }
+    }
+}

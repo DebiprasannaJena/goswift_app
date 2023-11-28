@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetIndustrtyDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIndustrtyDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIndustrtyDetailsResult" type="tns:ArrayOfRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRegistration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Registration" nillable="true" type="tns:Registration" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Registration">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppAlias" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DomainName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrgName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPerson" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContDetails" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandLineNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppKey" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="emailId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Oldpassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndustryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Promoter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PANNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TINNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PINNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AppType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INDUSTRYCODE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INTDEMOGRAPHYID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DistrictId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlockId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SectorId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubSectorId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegdNoType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndustryCategoryType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegdNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdcolandFlag" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFFICE_NO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aadhaar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INVESTMENT" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndustryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdcoReqStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PartyId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdcoAllottee" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrowserType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCommonvar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="intCommonvar" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpartyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="URLEncryption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="URLEncryptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URLEncryptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="URLDecryption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="URLDecryptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URLDecryptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSMEncryption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSMEncryptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CSMEncryptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSMDecryption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CSMDecryptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CSMDecryptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokeFromQueryString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokeFromQueryStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTokeFromQueryStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogIdFromQueryString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogIdFromQueryStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogIdFromQueryStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIdFromQueryString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedURL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserIdFromQueryStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserIdFromQueryStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecureURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSecureURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSecureURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Applicationkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetApplicationUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationUrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegIndustry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncyptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PromoterName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PANNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TINNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubSectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IndustryCategoryType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegdNoType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RegdNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BlockId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDCOLandFlag" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegIndustryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegIndustryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndustryCredential">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncyptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PANNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndustryCredentialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIndustryCredentialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppRedirectURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApplicationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppRedirectURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppRedirectURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIndustryExistInAPPA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckIndustryExistInAPPAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckIndustryExistInAPPAResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GETCICGINDUSTRYDET">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GETCICGINDUSTRYDETResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GETCICGINDUSTRYDETResult" type="tns:ArrayOfRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtherApps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtherAppsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOtherAppsResult" type="tns:ArrayOfRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtherAppsForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOtherAppsForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOtherAppsForUserResult" type="tns:ArrayOfRegistration" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAuthenticationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LogId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordEncryption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PasswordEncryptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordEncryptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndustry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="InvestmentAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="SectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubSectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RequestStatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIndustryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIndustryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Action" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncyptedPasswordOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncyptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryUniqueID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewIndustryRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncyptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PromoterName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PANNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CorAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SubSectorId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IndustryCategoryType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DistId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BlockId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="InvestmentAmount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="officeNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SSOUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewIndustryRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewIndustryRegistrationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginUserAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RandomString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSecurityKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginUserAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserAuthenticationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePAN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PANNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IndustryCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatePANResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidatePANResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetIndustrtyDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIndustrtyDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetIndustrtyDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIndustrtyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="URLEncryptionSoapIn">
+    <wsdl:part name="parameters" element="tns:URLEncryption" />
+  </wsdl:message>
+  <wsdl:message name="URLEncryptionSoapOut">
+    <wsdl:part name="parameters" element="tns:URLEncryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="URLDecryptionSoapIn">
+    <wsdl:part name="parameters" element="tns:URLDecryption" />
+  </wsdl:message>
+  <wsdl:message name="URLDecryptionSoapOut">
+    <wsdl:part name="parameters" element="tns:URLDecryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CSMEncryptionSoapIn">
+    <wsdl:part name="parameters" element="tns:CSMEncryption" />
+  </wsdl:message>
+  <wsdl:message name="CSMEncryptionSoapOut">
+    <wsdl:part name="parameters" element="tns:CSMEncryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CSMDecryptionSoapIn">
+    <wsdl:part name="parameters" element="tns:CSMDecryption" />
+  </wsdl:message>
+  <wsdl:message name="CSMDecryptionSoapOut">
+    <wsdl:part name="parameters" element="tns:CSMDecryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokeFromQueryStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTokeFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="GetTokeFromQueryStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTokeFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogIdFromQueryStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogIdFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="GetLogIdFromQueryStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogIdFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIdFromQueryStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="GetUserIdFromQueryStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSecureURLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSecureURL" />
+  </wsdl:message>
+  <wsdl:message name="GetSecureURLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSecureURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationUrl" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegIndustrySoapIn">
+    <wsdl:part name="parameters" element="tns:RegIndustry" />
+  </wsdl:message>
+  <wsdl:message name="RegIndustrySoapOut">
+    <wsdl:part name="parameters" element="tns:RegIndustryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndustryCredentialSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIndustryCredential" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndustryCredentialSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIndustryCredentialResponse" />
+  </wsdl:message>
+  <wsdl:message name="AppRedirectURLSoapIn">
+    <wsdl:part name="parameters" element="tns:AppRedirectURL" />
+  </wsdl:message>
+  <wsdl:message name="AppRedirectURLSoapOut">
+    <wsdl:part name="parameters" element="tns:AppRedirectURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckIndustryExistInAPPASoapIn">
+    <wsdl:part name="parameters" element="tns:CheckIndustryExistInAPPA" />
+  </wsdl:message>
+  <wsdl:message name="CheckIndustryExistInAPPASoapOut">
+    <wsdl:part name="parameters" element="tns:CheckIndustryExistInAPPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="GETCICGINDUSTRYDETSoapIn">
+    <wsdl:part name="parameters" element="tns:GETCICGINDUSTRYDET" />
+  </wsdl:message>
+  <wsdl:message name="GETCICGINDUSTRYDETSoapOut">
+    <wsdl:part name="parameters" element="tns:GETCICGINDUSTRYDETResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOtherAppsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOtherApps" />
+  </wsdl:message>
+  <wsdl:message name="GetOtherAppsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOtherAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOtherAppsForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOtherAppsForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetOtherAppsForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOtherAppsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="CheckAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckLogSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckLog" />
+  </wsdl:message>
+  <wsdl:message name="CheckLogSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="PasswordEncryptionSoapIn">
+    <wsdl:part name="parameters" element="tns:PasswordEncryption" />
+  </wsdl:message>
+  <wsdl:message name="PasswordEncryptionSoapOut">
+    <wsdl:part name="parameters" element="tns:PasswordEncryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndustrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIndustry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIndustrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIndustryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateEmail" />
+  </wsdl:message>
+  <wsdl:message name="ValidateEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewIndustryRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:NewIndustryRegistration" />
+  </wsdl:message>
+  <wsdl:message name="NewIndustryRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:NewIndustryRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginUserAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="LoginUserAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginUserAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePANSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidatePAN" />
+  </wsdl:message>
+  <wsdl:message name="ValidatePANSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatePANResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ValidateServiceSoap">
+    <wsdl:operation name="GetIndustrtyDetails">
+      <wsdl:input message="tns:GetIndustrtyDetailsSoapIn" />
+      <wsdl:output message="tns:GetIndustrtyDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="URLEncryption">
+      <wsdl:input message="tns:URLEncryptionSoapIn" />
+      <wsdl:output message="tns:URLEncryptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="URLDecryption">
+      <wsdl:input message="tns:URLDecryptionSoapIn" />
+      <wsdl:output message="tns:URLDecryptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CSMEncryption">
+      <wsdl:input message="tns:CSMEncryptionSoapIn" />
+      <wsdl:output message="tns:CSMEncryptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CSMDecryption">
+      <wsdl:input message="tns:CSMDecryptionSoapIn" />
+      <wsdl:output message="tns:CSMDecryptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTokeFromQueryString">
+      <wsdl:input message="tns:GetTokeFromQueryStringSoapIn" />
+      <wsdl:output message="tns:GetTokeFromQueryStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogIdFromQueryString">
+      <wsdl:input message="tns:GetLogIdFromQueryStringSoapIn" />
+      <wsdl:output message="tns:GetLogIdFromQueryStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromQueryString">
+      <wsdl:input message="tns:GetUserIdFromQueryStringSoapIn" />
+      <wsdl:output message="tns:GetUserIdFromQueryStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecureURL">
+      <wsdl:input message="tns:GetSecureURLSoapIn" />
+      <wsdl:output message="tns:GetSecureURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUrl">
+      <wsdl:input message="tns:GetApplicationUrlSoapIn" />
+      <wsdl:output message="tns:GetApplicationUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegIndustry">
+      <wsdl:input message="tns:RegIndustrySoapIn" />
+      <wsdl:output message="tns:RegIndustrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustryCredential">
+      <wsdl:input message="tns:UpdateIndustryCredentialSoapIn" />
+      <wsdl:output message="tns:UpdateIndustryCredentialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppRedirectURL">
+      <wsdl:input message="tns:AppRedirectURLSoapIn" />
+      <wsdl:output message="tns:AppRedirectURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustryExistInAPPA">
+      <wsdl:input message="tns:CheckIndustryExistInAPPASoapIn" />
+      <wsdl:output message="tns:CheckIndustryExistInAPPASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GETCICGINDUSTRYDET">
+      <wsdl:input message="tns:GETCICGINDUSTRYDETSoapIn" />
+      <wsdl:output message="tns:GETCICGINDUSTRYDETSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherApps">
+      <wsdl:input message="tns:GetOtherAppsSoapIn" />
+      <wsdl:output message="tns:GetOtherAppsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherAppsForUser">
+      <wsdl:input message="tns:GetOtherAppsForUserSoapIn" />
+      <wsdl:output message="tns:GetOtherAppsForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuthentication">
+      <wsdl:input message="tns:CheckAuthenticationSoapIn" />
+      <wsdl:output message="tns:CheckAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLog">
+      <wsdl:input message="tns:CheckLogSoapIn" />
+      <wsdl:output message="tns:CheckLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PasswordEncryption">
+      <wsdl:input message="tns:PasswordEncryptionSoapIn" />
+      <wsdl:output message="tns:PasswordEncryptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustry">
+      <wsdl:input message="tns:UpdateIndustrySoapIn" />
+      <wsdl:output message="tns:UpdateIndustrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input message="tns:UpdatePasswordSoapIn" />
+      <wsdl:output message="tns:UpdatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateEmail">
+      <wsdl:input message="tns:ValidateEmailSoapIn" />
+      <wsdl:output message="tns:ValidateEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewIndustryRegistration">
+      <wsdl:input message="tns:NewIndustryRegistrationSoapIn" />
+      <wsdl:output message="tns:NewIndustryRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUserAuthentication">
+      <wsdl:input message="tns:LoginUserAuthenticationSoapIn" />
+      <wsdl:output message="tns:LoginUserAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePAN">
+      <wsdl:input message="tns:ValidatePANSoapIn" />
+      <wsdl:output message="tns:ValidatePANSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ValidateServiceSoap" type="tns:ValidateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIndustrtyDetails">
+      <soap:operation soapAction="http://tempuri.org/GetIndustrtyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="URLEncryption">
+      <soap:operation soapAction="http://tempuri.org/URLEncryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="URLDecryption">
+      <soap:operation soapAction="http://tempuri.org/URLDecryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSMEncryption">
+      <soap:operation soapAction="http://tempuri.org/CSMEncryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSMDecryption">
+      <soap:operation soapAction="http://tempuri.org/CSMDecryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokeFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/GetTokeFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogIdFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/GetLogIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/GetUserIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecureURL">
+      <soap:operation soapAction="http://tempuri.org/GetSecureURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUrl">
+      <soap:operation soapAction="http://tempuri.org/GetApplicationUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegIndustry">
+      <soap:operation soapAction="http://tempuri.org/RegIndustry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustryCredential">
+      <soap:operation soapAction="http://tempuri.org/UpdateIndustryCredential" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppRedirectURL">
+      <soap:operation soapAction="http://tempuri.org/AppRedirectURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustryExistInAPPA">
+      <soap:operation soapAction="http://tempuri.org/CheckIndustryExistInAPPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETCICGINDUSTRYDET">
+      <soap:operation soapAction="http://tempuri.org/GETCICGINDUSTRYDET" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherApps">
+      <soap:operation soapAction="http://tempuri.org/GetOtherApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherAppsForUser">
+      <soap:operation soapAction="http://tempuri.org/GetOtherAppsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuthentication">
+      <soap:operation soapAction="http://tempuri.org/CheckAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLog">
+      <soap:operation soapAction="http://tempuri.org/CheckLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordEncryption">
+      <soap:operation soapAction="http://tempuri.org/PasswordEncryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustry">
+      <soap:operation soapAction="http://tempuri.org/UpdateIndustry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateEmail">
+      <soap:operation soapAction="http://tempuri.org/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewIndustryRegistration">
+      <soap:operation soapAction="http://tempuri.org/NewIndustryRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUserAuthentication">
+      <soap:operation soapAction="http://tempuri.org/LoginUserAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePAN">
+      <soap:operation soapAction="http://tempuri.org/ValidatePAN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ValidateServiceSoap12" type="tns:ValidateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIndustrtyDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetIndustrtyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="URLEncryption">
+      <soap12:operation soapAction="http://tempuri.org/URLEncryption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="URLDecryption">
+      <soap12:operation soapAction="http://tempuri.org/URLDecryption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSMEncryption">
+      <soap12:operation soapAction="http://tempuri.org/CSMEncryption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CSMDecryption">
+      <soap12:operation soapAction="http://tempuri.org/CSMDecryption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokeFromQueryString">
+      <soap12:operation soapAction="http://tempuri.org/GetTokeFromQueryString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogIdFromQueryString">
+      <soap12:operation soapAction="http://tempuri.org/GetLogIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromQueryString">
+      <soap12:operation soapAction="http://tempuri.org/GetUserIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecureURL">
+      <soap12:operation soapAction="http://tempuri.org/GetSecureURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationUrl">
+      <soap12:operation soapAction="http://tempuri.org/GetApplicationUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegIndustry">
+      <soap12:operation soapAction="http://tempuri.org/RegIndustry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustryCredential">
+      <soap12:operation soapAction="http://tempuri.org/UpdateIndustryCredential" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppRedirectURL">
+      <soap12:operation soapAction="http://tempuri.org/AppRedirectURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustryExistInAPPA">
+      <soap12:operation soapAction="http://tempuri.org/CheckIndustryExistInAPPA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETCICGINDUSTRYDET">
+      <soap12:operation soapAction="http://tempuri.org/GETCICGINDUSTRYDET" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherApps">
+      <soap12:operation soapAction="http://tempuri.org/GetOtherApps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherAppsForUser">
+      <soap12:operation soapAction="http://tempuri.org/GetOtherAppsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAuthentication">
+      <soap12:operation soapAction="http://tempuri.org/CheckAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLog">
+      <soap12:operation soapAction="http://tempuri.org/CheckLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PasswordEncryption">
+      <soap12:operation soapAction="http://tempuri.org/PasswordEncryption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIndustry">
+      <soap12:operation soapAction="http://tempuri.org/UpdateIndustry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateEmail">
+      <soap12:operation soapAction="http://tempuri.org/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewIndustryRegistration">
+      <soap12:operation soapAction="http://tempuri.org/NewIndustryRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUserAuthentication">
+      <soap12:operation soapAction="http://tempuri.org/LoginUserAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidatePAN">
+      <soap12:operation soapAction="http://tempuri.org/ValidatePAN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValidateService">
+    <wsdl:port name="ValidateServiceSoap" binding="tns:ValidateServiceSoap">
+      <soap:address location="https://sso.investodisha.org/validateservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ValidateServiceSoap12" binding="tns:ValidateServiceSoap12">
+      <soap12:address location="https://sso.investodisha.org/validateservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

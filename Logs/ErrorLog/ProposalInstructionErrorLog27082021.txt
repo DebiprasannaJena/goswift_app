@@ -1,0 +1,32 @@
+Time: 27/08/2021 09:45:58 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ProposalInstruction.BindInvestorInfo() in d:\Projects\SWPGoo\SWP_NEW\ProposalInstruction.aspx.cs:line 45
+Source: App_Web_zowo24iv
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+
+Time: 27/08/2021 09:46:52 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ProposalInstruction.BindInvestorInfo() in d:\Projects\SWPGoo\SWP_NEW\ProposalInstruction.aspx.cs:line 45
+Source: App_Web_zowo24iv
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+
+Time: 27/08/2021 09:47:04 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ProposalInstruction.BindInvestorInfo() in d:\Projects\SWPGoo\SWP_NEW\ProposalInstruction.aspx.cs:line 45
+Source: App_Web_zowo24iv
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+
+Time: 27/08/2021 10:44:21 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ProposalInstruction.BindInvestorInfo() in d:\Projects\SWPGoo\SWP_NEW\ProposalInstruction.aspx.cs:line 45
+Source: App_Web_zowo24iv
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+

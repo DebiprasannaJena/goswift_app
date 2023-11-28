@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Menu>
+  <SWP NAME="SWP" ID="0" FLAG="0">
+    <ManageHierarchy ID="1" TOT="1" NAME="Manage Hierarchy" DESC="SWP" FLAG="True">
+      <Odisha ID="1" HID="1" TOT="1" LID="1" PID="1" ALIAS="OD" FLAG="True" NAME="Odisha" DESC="SWP" PARENTID="0">
+        <Department ID="1" HID="1" TOT="1" LID="2" PID="2" ALIAS="Department" FLAG="True" NAME="Department" DESC="SWP" PARENTID="1">
+          <Directorate ID="1" HID="1" TOT="1" LID="3" PID="3" ALIAS="Directorate" FLAG="True" NAME="Directorate" DESC="SWP" PARENTID="2">
+            <Division ID="1" HID="1" TOT="1" LID="4" PID="4" ALIAS="Division" FLAG="True" NAME="Division" DESC="SWP" PARENTID="3">
+              <District ID="1" HID="1" TOT="1" LID="5" PID="5" ALIAS="District" FLAG="True" NAME="District" DESC="SWP" PARENTID="4">
+                <Jurisdiction ID="1" HID="1" TOT="1" LID="6" PID="6" ALIAS="Jurisdiction" FLAG="True" NAME="Jurisdiction" DESC="SWP" PARENTID="5">
+                  <Hqrs ID="1" HID="1" TOT="0" LID="7" PID="7" ALIAS="Hqrs" FLAG="True" NAME="Hqrs" DESC="SWP" PARENTID="6" />
+                </Jurisdiction>
+              </District>
+            </Division>
+          </Directorate>
+        </Department>
+      </Odisha>
+    </ManageHierarchy>
+    <ManageLinks ID="2" TOT="6" NAME="Manage Links" DESC="Manage Links" FLAG="0">
+      <FunctionMaster ID="1" TOT="0" NAME="Function Master" DESC="Function Master" FLAG="0" />
+      <GlobalLink ID="2" TOT="0" NAME="Global Link" DESC="Global Link" FLAG="0" />
+      <PrimaryLink ID="3" TOT="0" NAME="Primary Link" DESC="Primary Link" FLAG="0" />
+      <Button ID="4" TOT="0" NAME="Button" DESC="Button" FLAG="0" />
+      <TabMaster ID="5" TOT="0" NAME="Tab Master" DESC="Tab Master" FLAG="0" />
+      <AssignLink ID="6" TOT="0" NAME="Assign Link" DESC="Assign Link" FLAG="0" />
+    </ManageLinks>
+    <ManageUser ID="3" TOT="6" NAME="Manage User" DESC="Manage User" FLAG="0">
+      <AddUser ID="1" TOT="0" NAME="Add User" DESC="Add User" FLAG="0" />
+      <UserProfile ID="2" TOT="0" NAME="User Profile" DESC="User Profile" FLAG="0" />
+      <SetPermission ID="3" TOT="0" NAME="Set Permission" DESC="Set Permission" FLAG="0" />
+      <Location ID="4" TOT="0" NAME="Location" DESC="Location" FLAG="0" />
+      <Designation ID="5" TOT="0" NAME="Designation" DESC="Designation" FLAG="0" />
+      <AssignAdmin ID="6" TOT="0" NAME="Assign Admin" DESC="Assign Admin" FLAG="0" />
+    </ManageUser>
+    <OfficeTimings ID="4" TOT="4" NAME="Office Timings" DESC="Office Timings" FLAG="0">
+      <ShiftMaster ID="1" TOT="0" NAME="Shift Master" DESC="Shift Master" FLAG="0" />
+      <OfficeTime ID="2" TOT="0" NAME="Office Time" DESC="Office Time" FLAG="0" />
+      <FlexiTime ID="3" TOT="0" NAME="Flexi Time" DESC="Flexi Time" FLAG="0" />
+      <ShiftAssignment ID="4" TOT="0" NAME="Shift Assignment" DESC="Shift Assignment" FLAG="0" />
+    </OfficeTimings>
+    <ManageLogIn ID="5" TOT="3" NAME="Manage LogIn" DESC="Manage LogIn" FLAG="0">
+      <ConfigurationMaster ID="1" TOT="0" NAME="Configuration Master" DESC="Configuration Master" FLAG="0" />
+      <ResetPassword ID="2" TOT="0" NAME="Reset Password" DESC="Reset Password" FLAG="0" />
+      <ProxyLogin ID="3" TOT="0" NAME="Proxy Login" DESC="Proxy Login" FLAG="0" />
+    </ManageLogIn>
+  </SWP>
+</Menu>

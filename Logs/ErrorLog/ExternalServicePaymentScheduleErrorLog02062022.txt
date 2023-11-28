@@ -1,0 +1,9 @@
+Time: 02/06/2022 12:55:41 PM
+-----------------------------------------------------------
+Message: The remote server returned an error: (500) Internal Server Error.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at PaymentScheduler.ExternalServicePaymentSchedule() in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\PaymentScheduler.cs:line 186
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

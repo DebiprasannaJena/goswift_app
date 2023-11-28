@@ -1,0 +1,36 @@
+Time: 30/08/2021 12:55:50 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'intIndustryCategory'.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 91
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 37
+Source: App_Web_h0m1aljx
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 30/08/2021 12:56:10 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'intIndustryCategory'.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 91
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 37
+Source: App_Web_h0m1aljx
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 30/08/2021 12:57:17 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'intIndustryCategory'.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 91
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 37
+Source: App_Web_h0m1aljx
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+
+Time: 30/08/2021 12:57:31 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'intIndustryCategory'.
+StackTrace:    at Portal_Grievance_GrievanceTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 91
+   at Portal_Grievance_GrievanceTakeAction.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Grievance\GrievanceTakeAction.aspx.cs:line 37
+Source: App_Web_h0m1aljx
+TargetSite: Void BindGridDetails()
+-----------------------------------------------------------
+

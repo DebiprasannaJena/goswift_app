@@ -1,0 +1,321 @@
+Time: 05/10/2021 11:59:32 AM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (10).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 80
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 154
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 11:59:32 AM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (1).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 80
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 154
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:00:56 PM
+-----------------------------------------------------------
+Message: 'DrpDwn_Bcc_Enable_Status' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Dashboard_ManageCcBccMail.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 97
+Source: System.Web
+TargetSite: Void PerformDataBinding(System.Collections.IEnumerable)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:01:13 PM
+-----------------------------------------------------------
+Message: 'DrpDwn_Bcc_Enable_Status' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Dashboard_ManageCcBccMail.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 97
+Source: System.Web
+TargetSite: Void PerformDataBinding(System.Collections.IEnumerable)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:09:28 PM
+-----------------------------------------------------------
+Message: 'DrpDwn_Bcc_Enable_Status' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Dashboard_ManageCcBccMail.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 97
+Source: System.Web
+TargetSite: Void PerformDataBinding(System.Collections.IEnumerable)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:09:28 PM
+-----------------------------------------------------------
+Message: 'DrpDwn_Bcc_Enable_Status' has a SelectedValue which is invalid because it does not exist in the list of items.
+Parameter name: value
+StackTrace:    at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Dashboard_ManageCcBccMail.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 97
+Source: System.Web
+TargetSite: Void PerformDataBinding(System.Collections.IEnumerable)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:24:53 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (0).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 81
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_UpdateBcc_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 289
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:24:54 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (0).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 81
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_UpdateBcc_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 289
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:48:14 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (0).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 81
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 156
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:49:14 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (0).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 81
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 156
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 12:51:16 PM
+-----------------------------------------------------------
+Message: Violation of PRIMARY KEY constraint 'PK__T_MAIL_C__0431712FC128C832'. Cannot insert duplicate key in object 'dbo.T_MAIL_CC_BCC_MAPPING'. The duplicate key value is (10).
+The statement has been terminated.
+StackTrace:    at ManageMailDataLayer.Manage_Mail_AED(ManageMailEntityLayer objEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 81
+   at ManageMailBusinessLayer.Manage_Mail_AED(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 39
+   at Portal_Dashboard_ManageCcBccMail.Btn_Update_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 156
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Manage_Mail_AED(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:03 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:06 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:12 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:38 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:39 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:39 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:55:39 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:24 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:25 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:25 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:25 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:25 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:56:40 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:57:25 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 06:57:38 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+
+Time: 05/10/2021 07:02:15 PM
+-----------------------------------------------------------
+Message: @P_VCH_INTUSERID is not a parameter for procedure USP_MANAGE_MAIL_SCHEDULER_AED.
+StackTrace:    at ManageMailDataLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Dashboard\ManageMailDataLayer.cs:line 124
+   at ManageMailBusinessLayer.Edit_MailData(ManageMailEntityLayer objPolicy) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\DashBoard\ManageMailBusinessLayer.cs:line 52
+   at Portal_Dashboard_ManageCcBccMail.GridView1_RowUpdating(Object sender, GridViewUpdateEventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Dashboard\ManageCcBccMail.aspx.cs:line 383
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Edit_MailData(ManageMailEntityLayer)
+-----------------------------------------------------------
+

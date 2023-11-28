@@ -1,0 +1,3 @@
+Time: 20/01/2022 01:28:34 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022012016000016-200122011234|0875-60-800-0097-02241-000|User Fee|1.00|0000-00-000-0000-00000-003|NA|57700.00|||||||||||||57701.00|Investor|OCAC,BBSR||Odisha|Angul|111111|9861342095||||||||http://localhost/swp_new/PaymentThankYou1.aspx?ReqMode=M
+-----------------------------------------------------------

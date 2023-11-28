@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetEmployeeName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeNameResult" type="tns:ArrayOfEmployeeDirectory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmployeeDirectory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EmployeeDirectory" nillable="true" type="tns:EmployeeDirectory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EmployeeDirectory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DesgName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeptId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MailId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobileno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profilename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeptName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddAgenda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Proposal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjLoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProdCapcity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrdOfDirectors" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BIOfCompny" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProjCostDtls" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RawMatSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FinDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FinPerformance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FinancialDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAgendaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAgendaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FillNodalOfficer">
+        <s:complexType />
+      </s:element>
+      <s:element name="FillNodalOfficerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FillNodalOfficerResult" type="tns:ArrayOfEmployeeDirectory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmployeeNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeName" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAgendaSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAgenda" />
+  </wsdl:message>
+  <wsdl:message name="AddAgendaSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAgendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="FillNodalOfficerSoapIn">
+    <wsdl:part name="parameters" element="tns:FillNodalOfficer" />
+  </wsdl:message>
+  <wsdl:message name="FillNodalOfficerSoapOut">
+    <wsdl:part name="parameters" element="tns:FillNodalOfficerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CICGServiceSoap">
+    <wsdl:operation name="GetEmployeeName">
+      <wsdl:input message="tns:GetEmployeeNameSoapIn" />
+      <wsdl:output message="tns:GetEmployeeNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAgenda">
+      <wsdl:input message="tns:AddAgendaSoapIn" />
+      <wsdl:output message="tns:AddAgendaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FillNodalOfficer">
+      <wsdl:input message="tns:FillNodalOfficerSoapIn" />
+      <wsdl:output message="tns:FillNodalOfficerSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CICGServiceSoap" type="tns:CICGServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeName">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAgenda">
+      <soap:operation soapAction="http://tempuri.org/AddAgenda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillNodalOfficer">
+      <soap:operation soapAction="http://tempuri.org/FillNodalOfficer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CICGServiceSoap12" type="tns:CICGServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeName">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAgenda">
+      <soap12:operation soapAction="http://tempuri.org/AddAgenda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FillNodalOfficer">
+      <soap12:operation soapAction="http://tempuri.org/FillNodalOfficer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CICGService">
+    <wsdl:port name="CICGServiceSoap" binding="tns:CICGServiceSoap">
+      <soap:address location="http://ams.investodisha.org/CICGService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CICGServiceSoap12" binding="tns:CICGServiceSoap12">
+      <soap12:address location="http://ams.investodisha.org/CICGService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

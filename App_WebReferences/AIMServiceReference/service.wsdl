@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserRegistration" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserRegistration_insertrecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertrecord" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_insertrecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertrecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_UPDATERECORD_InputMessage">
+    <wsdl:part name="parameters" element="tns:UPDATERECORD" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_UPDATERECORD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UPDATERECORDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_CheckEINPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEINPC" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_CheckEINPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckEINPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_Encrypt_InputMessage">
+    <wsdl:part name="parameters" element="tns:Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_Encrypt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_provideincentivedetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:provideincentivedetails" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_provideincentivedetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:provideincentivedetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_STATUSWISEINCENTIVEDETAILS_InputMessage">
+    <wsdl:part name="parameters" element="tns:STATUSWISEINCENTIVEDETAILS" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_STATUSWISEINCENTIVEDETAILS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:STATUSWISEINCENTIVEDETAILSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_COUNTINCENTIVE_InputMessage">
+    <wsdl:part name="parameters" element="tns:COUNTINCENTIVE" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_COUNTINCENTIVE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:COUNTINCENTIVEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_DICWISEINCENTIVEDETAILS_InputMessage">
+    <wsdl:part name="parameters" element="tns:DICWISEINCENTIVEDETAILS" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_DICWISEINCENTIVEDETAILS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DICWISEINCENTIVEDETAILSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_DICWISECOUNTINCENTIVE_InputMessage">
+    <wsdl:part name="parameters" element="tns:DICWISECOUNTINCENTIVE" />
+  </wsdl:message>
+  <wsdl:message name="IUserRegistration_DICWISECOUNTINCENTIVE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DICWISECOUNTINCENTIVEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserRegistration">
+    <wsdl:operation name="insertrecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/insertrecord" message="tns:IUserRegistration_insertrecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/insertrecordResponse" message="tns:IUserRegistration_insertrecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UPDATERECORD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/UPDATERECORD" message="tns:IUserRegistration_UPDATERECORD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/UPDATERECORDResponse" message="tns:IUserRegistration_UPDATERECORD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEINPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/CheckEINPC" message="tns:IUserRegistration_CheckEINPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/CheckEINPCResponse" message="tns:IUserRegistration_CheckEINPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/Encrypt" message="tns:IUserRegistration_Encrypt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/EncryptResponse" message="tns:IUserRegistration_Encrypt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="provideincentivedetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/provideincentivedetails" message="tns:IUserRegistration_provideincentivedetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/provideincentivedetailsResponse" message="tns:IUserRegistration_provideincentivedetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="STATUSWISEINCENTIVEDETAILS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/STATUSWISEINCENTIVEDETAILS" message="tns:IUserRegistration_STATUSWISEINCENTIVEDETAILS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/STATUSWISEINCENTIVEDETAILSResponse" message="tns:IUserRegistration_STATUSWISEINCENTIVEDETAILS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="COUNTINCENTIVE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/COUNTINCENTIVE" message="tns:IUserRegistration_COUNTINCENTIVE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/COUNTINCENTIVEResponse" message="tns:IUserRegistration_COUNTINCENTIVE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DICWISEINCENTIVEDETAILS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/DICWISEINCENTIVEDETAILS" message="tns:IUserRegistration_DICWISEINCENTIVEDETAILS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/DICWISEINCENTIVEDETAILSResponse" message="tns:IUserRegistration_DICWISEINCENTIVEDETAILS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DICWISECOUNTINCENTIVE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRegistration/DICWISECOUNTINCENTIVE" message="tns:IUserRegistration_DICWISECOUNTINCENTIVE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRegistration/DICWISECOUNTINCENTIVEResponse" message="tns:IUserRegistration_DICWISECOUNTINCENTIVE_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Iservice" type="tns:IUserRegistration">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertrecord">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/insertrecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UPDATERECORD">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/UPDATERECORD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEINPC">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/CheckEINPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/Encrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="provideincentivedetails">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/provideincentivedetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="STATUSWISEINCENTIVEDETAILS">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/STATUSWISEINCENTIVEDETAILS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="COUNTINCENTIVE">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/COUNTINCENTIVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DICWISEINCENTIVEDETAILS">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/DICWISEINCENTIVEDETAILS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DICWISECOUNTINCENTIVE">
+      <soap:operation soapAction="http://tempuri.org/IUserRegistration/DICWISECOUNTINCENTIVE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserRegistration">
+    <wsdl:port name="BasicHttpBinding_Iservice" binding="tns:BasicHttpBinding_Iservice">
+      <soap:address location="http://164.100.141.243/UserRegistration.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

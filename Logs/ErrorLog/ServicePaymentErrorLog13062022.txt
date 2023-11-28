@@ -1,0 +1,12 @@
+Time: 13/06/2022 05:27:39 PM
+-----------------------------------------------------------
+Message: Column 'vchAccountHead' does not belong to table .
+StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at ServicePayment.<>c__DisplayClass8.<MultiplePayment>b__3(DataRow K) in d:\Projects\SWPGoo\SWP_NEW\ServicePayment.aspx.cs:line 1679
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at ServicePayment.MultiplePayment() in d:\Projects\SWPGoo\SWP_NEW\ServicePayment.aspx.cs:line 1679
+Source: System.Data
+TargetSite: System.Data.DataColumn GetDataColumn(System.String)
+-----------------------------------------------------------
+

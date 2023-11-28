@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DWHServiceHost" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.10.9/INDUSTRYDW/DWHService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.10.9/INDUSTRYDW/DWHService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.10.9/INDUSTRYDW/DWHService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DWHService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDWHServiceHost_LoginUserAuthentication_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_LoginUserAuthentication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_UserRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_UserRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PortalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PortalList" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PortalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PortalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_SwapUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SwapUserName" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_SwapUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SwapUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_KeyEncryption_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeyEncryption" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_KeyEncryption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeyEncryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_KeyDecryption_InputMessage">
+    <wsdl:part name="parameters" element="tns:KeyDecryption" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_KeyDecryption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeyDecryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PanEinUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PanEinUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PanEinUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PanEinUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_AliasUserNameUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AliasUserNameUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_AliasUserNameUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AliasUserNameUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PortalPermissionUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PortalPermissionUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_PortalPermissionUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PortalPermissionUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetIndustrtyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndustrtyDetails" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetIndustrtyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndustrtyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_CheckLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLog" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_CheckLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_AppRedirectURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppRedirectURL" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_AppRedirectURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppRedirectURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetOtherAppsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherAppsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetOtherAppsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherAppsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ResetAliasUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetAliasUserName" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ResetAliasUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetAliasUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetTokeFromQueryString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTokeFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetTokeFromQueryString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTokeFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_URLEncryption_InputMessage">
+    <wsdl:part name="parameters" element="tns:URLEncryption" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_URLEncryption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:URLEncryptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetLogIdFromQueryString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogIdFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetLogIdFromQueryString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogIdFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetSecureURL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecureURL" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetSecureURL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecureURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetUserIdFromQueryString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromQueryString" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetUserIdFromQueryString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdFromQueryStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdateGoSmile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdateGoSmile" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdateGoSmile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdateGoSmileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_IndustryProfileUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:IndustryProfileUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_IndustryProfileUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IndustryProfileUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_IndustrtyListDeatils_InputMessage">
+    <wsdl:part name="parameters" element="tns:IndustrtyListDeatils" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_IndustrtyListDeatils_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IndustrtyListDeatilsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_UserRejection_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRejection" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_UserRejection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRejectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_EinUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:EinUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_EinUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EinUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetApplicationKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationKey" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_GetApplicationKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_NswsLoginAuthentication_InputMessage">
+    <wsdl:part name="parameters" element="tns:NswsLoginAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_NswsLoginAuthentication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NswsLoginAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdateCINEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdateCINEntity" />
+  </wsdl:message>
+  <wsdl:message name="IDWHServiceHost_ProfileUpdateCINEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProfileUpdateCINEntityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDWHServiceHost">
+    <wsdl:operation name="LoginUserAuthentication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/LoginUserAuthentication" message="tns:IDWHServiceHost_LoginUserAuthentication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/LoginUserAuthenticationResponse" message="tns:IDWHServiceHost_LoginUserAuthentication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/UserRegistration" message="tns:IDWHServiceHost_UserRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/UserRegistrationResponse" message="tns:IDWHServiceHost_UserRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdate" message="tns:IDWHServiceHost_ProfileUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdateResponse" message="tns:IDWHServiceHost_ProfileUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ChangePassword" message="tns:IDWHServiceHost_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ChangePasswordResponse" message="tns:IDWHServiceHost_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PortalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/PortalList" message="tns:IDWHServiceHost_PortalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/PortalListResponse" message="tns:IDWHServiceHost_PortalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SwapUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/SwapUserName" message="tns:IDWHServiceHost_SwapUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/SwapUserNameResponse" message="tns:IDWHServiceHost_SwapUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeyEncryption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/KeyEncryption" message="tns:IDWHServiceHost_KeyEncryption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/KeyEncryptionResponse" message="tns:IDWHServiceHost_KeyEncryption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KeyDecryption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/KeyDecryption" message="tns:IDWHServiceHost_KeyDecryption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/KeyDecryptionResponse" message="tns:IDWHServiceHost_KeyDecryption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PanEinUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/PanEinUpdate" message="tns:IDWHServiceHost_PanEinUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/PanEinUpdateResponse" message="tns:IDWHServiceHost_PanEinUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AliasUserNameUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/AliasUserNameUpdate" message="tns:IDWHServiceHost_AliasUserNameUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/AliasUserNameUpdateResponse" message="tns:IDWHServiceHost_AliasUserNameUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PortalPermissionUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/PortalPermissionUpdate" message="tns:IDWHServiceHost_PortalPermissionUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/PortalPermissionUpdateResponse" message="tns:IDWHServiceHost_PortalPermissionUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ForgotPassword" message="tns:IDWHServiceHost_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ForgotPasswordResponse" message="tns:IDWHServiceHost_ForgotPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ResetPassword" message="tns:IDWHServiceHost_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ResetPasswordResponse" message="tns:IDWHServiceHost_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndustrtyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetIndustrtyDetails" message="tns:IDWHServiceHost_GetIndustrtyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetIndustrtyDetailsResponse" message="tns:IDWHServiceHost_GetIndustrtyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/CheckLog" message="tns:IDWHServiceHost_CheckLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/CheckLogResponse" message="tns:IDWHServiceHost_CheckLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppRedirectURL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/AppRedirectURL" message="tns:IDWHServiceHost_AppRedirectURL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/AppRedirectURLResponse" message="tns:IDWHServiceHost_AppRedirectURL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherAppsForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetOtherAppsForUser" message="tns:IDWHServiceHost_GetOtherAppsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetOtherAppsForUserResponse" message="tns:IDWHServiceHost_GetOtherAppsForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetAliasUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ResetAliasUserName" message="tns:IDWHServiceHost_ResetAliasUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ResetAliasUserNameResponse" message="tns:IDWHServiceHost_ResetAliasUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTokeFromQueryString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetTokeFromQueryString" message="tns:IDWHServiceHost_GetTokeFromQueryString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetTokeFromQueryStringResponse" message="tns:IDWHServiceHost_GetTokeFromQueryString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="URLEncryption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/URLEncryption" message="tns:IDWHServiceHost_URLEncryption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/URLEncryptionResponse" message="tns:IDWHServiceHost_URLEncryption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogIdFromQueryString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetLogIdFromQueryString" message="tns:IDWHServiceHost_GetLogIdFromQueryString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetLogIdFromQueryStringResponse" message="tns:IDWHServiceHost_GetLogIdFromQueryString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecureURL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetSecureURL" message="tns:IDWHServiceHost_GetSecureURL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetSecureURLResponse" message="tns:IDWHServiceHost_GetSecureURL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromQueryString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetUserIdFromQueryString" message="tns:IDWHServiceHost_GetUserIdFromQueryString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetUserIdFromQueryStringResponse" message="tns:IDWHServiceHost_GetUserIdFromQueryString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdateGoSmile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdateGoSmile" message="tns:IDWHServiceHost_ProfileUpdateGoSmile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdateGoSmileResponse" message="tns:IDWHServiceHost_ProfileUpdateGoSmile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IndustryProfileUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/IndustryProfileUpdate" message="tns:IDWHServiceHost_IndustryProfileUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/IndustryProfileUpdateResponse" message="tns:IDWHServiceHost_IndustryProfileUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IndustrtyListDeatils">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/IndustrtyListDeatils" message="tns:IDWHServiceHost_IndustrtyListDeatils_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/IndustrtyListDeatilsResponse" message="tns:IDWHServiceHost_IndustrtyListDeatils_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRejection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/UserRejection" message="tns:IDWHServiceHost_UserRejection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/UserRejectionResponse" message="tns:IDWHServiceHost_UserRejection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EinUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/EinUpdate" message="tns:IDWHServiceHost_EinUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/EinUpdateResponse" message="tns:IDWHServiceHost_EinUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/GetApplicationKey" message="tns:IDWHServiceHost_GetApplicationKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/GetApplicationKeyResponse" message="tns:IDWHServiceHost_GetApplicationKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NswsLoginAuthentication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/NswsLoginAuthentication" message="tns:IDWHServiceHost_NswsLoginAuthentication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/NswsLoginAuthenticationResponse" message="tns:IDWHServiceHost_NswsLoginAuthentication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdateCINEntity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdateCINEntity" message="tns:IDWHServiceHost_ProfileUpdateCINEntity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDWHServiceHost/ProfileUpdateCINEntityResponse" message="tns:IDWHServiceHost_ProfileUpdateCINEntity_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDWHServiceHost" type="tns:IDWHServiceHost">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoginUserAuthentication">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/LoginUserAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRegistration">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/UserRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ProfileUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PortalList">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/PortalList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SwapUserName">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/SwapUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeyEncryption">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/KeyEncryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KeyDecryption">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/KeyDecryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PanEinUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/PanEinUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AliasUserNameUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/AliasUserNameUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PortalPermissionUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/PortalPermissionUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ForgotPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndustrtyDetails">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetIndustrtyDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLog">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/CheckLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppRedirectURL">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/AppRedirectURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherAppsForUser">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetOtherAppsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetAliasUserName">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ResetAliasUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTokeFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetTokeFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="URLEncryption">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/URLEncryption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogIdFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetLogIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecureURL">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetSecureURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIdFromQueryString">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetUserIdFromQueryString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdateGoSmile">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ProfileUpdateGoSmile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndustryProfileUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/IndustryProfileUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndustrtyListDeatils">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/IndustrtyListDeatils" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRejection">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/UserRejection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EinUpdate">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/EinUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationKey">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/GetApplicationKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NswsLoginAuthentication">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/NswsLoginAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProfileUpdateCINEntity">
+      <soap:operation soapAction="http://tempuri.org/IDWHServiceHost/ProfileUpdateCINEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DWHServiceHost">
+    <wsdl:port name="BasicHttpBinding_IDWHServiceHost" binding="tns:BasicHttpBinding_IDWHServiceHost">
+      <soap:address location="http://192.168.10.9/INDUSTRYDW/DWHService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

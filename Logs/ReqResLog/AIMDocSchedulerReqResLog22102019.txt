@@ -1,0 +1,15 @@
+Time: 22/10/2019 09:31:53 AM For RequestMethod: GetEinPcDocumentFromAIM
+InputOutput: (Request)---Unique ID :- CC5DDF02-CAFA-4C41-8165-9C55EF34E107--->(Response)--- StatusDesc :- Something went wrong to update file name in GOSWIFT.
+-----------------------------------------------------------
+Time: 22/10/2019 09:32:23 AM For RequestMethod: GetEinPcDocumentFromAIM
+InputOutput: (Request)---Unique ID :- CC5DDF02-CAFA-4C41-8165-9C55EF34E107--->(Response)--- StatusDesc :- Something went wrong to update file name in GOSWIFT.
+-----------------------------------------------------------
+Time: 22/10/2019 09:32:54 AM For RequestMethod: GetEinPcDocumentFromAIM
+InputOutput: (Request)---Unique ID :- CC5DDF02-CAFA-4C41-8165-9C55EF34E107--->(Response)--- StatusDesc :- Something went wrong to update file name in GOSWIFT.
+-----------------------------------------------------------
+Time: 22/10/2019 09:33:24 AM For RequestMethod: GetEinPcDocumentFromAIM
+InputOutput: (Request)---Unique ID :- CC5DDF02-CAFA-4C41-8165-9C55EF34E107--->(Response)--- StatusDesc :- Something went wrong to update file name in GOSWIFT.
+-----------------------------------------------------------
+Time: 22/10/2019 09:33:55 AM For RequestMethod: GetEinPcDocumentFromAIM
+InputOutput: (Request)---Unique ID :- CC5DDF02-CAFA-4C41-8165-9C55EF34E107--->(Response)--- StatusDesc :- Something went wrong to update file name in GOSWIFT.
+-----------------------------------------------------------

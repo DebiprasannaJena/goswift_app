@@ -1,0 +1,50 @@
+Time: 23/06/2023 04:17:50 PM
+-----------------------------------------------------------
+Message: nvchFormPreviewId
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.View_Application_Details(Inct_Application_Details_Entity objDAEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 2544
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.View_Application_Details(Inct_Application_Details_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 85
+   at Portal_Incentive_View_Inct_Application_IPR2022.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 112
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Application_Details_Entity] View_Application_Details(EntityLayer.Incentive.Inct_Application_Details_Entity)
+-----------------------------------------------------------
+
+Time: 23/06/2023 04:18:01 PM
+-----------------------------------------------------------
+Message: nvchFormPreviewId
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.View_Application_Details(Inct_Application_Details_Entity objDAEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 2544
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.View_Application_Details(Inct_Application_Details_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 85
+   at Portal_Incentive_View_Inct_Application_IPR2022.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 112
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Application_Details_Entity] View_Application_Details(EntityLayer.Incentive.Inct_Application_Details_Entity)
+-----------------------------------------------------------
+
+Time: 23/06/2023 04:20:36 PM
+-----------------------------------------------------------
+Message: nvchFormPreviewId
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.View_Application_Details(Inct_Application_Details_Entity objDAEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 2544
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.View_Application_Details(Inct_Application_Details_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 85
+   at Portal_Incentive_View_Inct_Application_IPR2022.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 112
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Application_Details_Entity] View_Application_Details(EntityLayer.Incentive.Inct_Application_Details_Entity)
+-----------------------------------------------------------
+
+Time: 23/06/2023 04:20:42 PM
+-----------------------------------------------------------
+Message: nvchFormPreviewId
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.View_Application_Details(Inct_Application_Details_Entity objDAEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 2544
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.View_Application_Details(Inct_Application_Details_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 85
+   at Portal_Incentive_View_Inct_Application_IPR2022.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 112
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Application_Details_Entity] View_Application_Details(EntityLayer.Incentive.Inct_Application_Details_Entity)
+-----------------------------------------------------------
+
+Time: 23/06/2023 04:27:41 PM
+-----------------------------------------------------------
+Message: nvchFormPreviewId
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.View_Application_Details(Inct_Application_Details_Entity objDAEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 2544
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.View_Application_Details(Inct_Application_Details_Entity objInctEntity) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 85
+   at Portal_Incentive_View_Inct_Application_IPR2022.fillGrid() in d:\Projects\SWPGoo\SWP_NEW\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 112
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+

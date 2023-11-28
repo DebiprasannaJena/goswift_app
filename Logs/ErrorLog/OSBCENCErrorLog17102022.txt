@@ -1,0 +1,88 @@
+Time: 17/10/2022 04:11:45 PM
+-----------------------------------------------------------
+Message: An error occurred while receiving the HTTP response to http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ExciseOSBCServiceReference.OSBCSoftSoap.AESEncryptForSignUP(SupDetails JsonStr)
+   at ExciseOSBCServiceReference.OSBCSoftSoapClient.AESEncryptForSignUP(SupDetails JsonStr) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.adbf2u6n.5.cs:line 227
+   at ServiceInstructionExternal.OSBC() in d:\Projects\SWPGoo\SWP_NEW\ServiceInstructionExternal.aspx.cs:line 759
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 17/10/2022 04:17:12 PM
+-----------------------------------------------------------
+Message: An error occurred while receiving the HTTP response to http://117.239.112.221/HTTP_PUBLIC/GoSwift/AESEncryptDecrypt.asmx. This could be due to the service endpoint binding not using the HTTP protocol. This could also be due to an HTTP request context being aborted by the server (possibly due to the service shutting down). See server logs for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at ExciseOSBCServiceReference.OSBCSoftSoap.AESEncryptForSignUP(SupDetails JsonStr)
+   at ExciseOSBCServiceReference.OSBCSoftSoapClient.AESEncryptForSignUP(SupDetails JsonStr) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.adbf2u6n.5.cs:line 227
+   at ServiceInstructionExternal.OSBC() in d:\Projects\SWPGoo\SWP_NEW\ServiceInstructionExternal.aspx.cs:line 759
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 17/10/2022 04:22:35 PM
+-----------------------------------------------------------
+Message: The provided URI scheme 'https' is invalid; expected 'http'.
+Parameter name: via
+StackTrace:    at System.ServiceModel.Channels.TransportChannelFactory`1.ValidateScheme(Uri via)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.ValidateCreateChannelParameters(EndpointAddress remoteAddress, Uri via)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.OnCreateChannelCore(EndpointAddress remoteAddress, Uri via)
+   at System.ServiceModel.Channels.ChannelFactoryBase`1.InternalCreateChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.ServiceChannelFactoryOverRequest.CreateInnerChannelBinder(EndpointAddress to, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.CreateServiceChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.CreateChannel(Type channelType, EndpointAddress address, Uri via)
+   at System.ServiceModel.ChannelFactory`1.CreateChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.ClientBase`1.CreateChannel()
+   at System.ServiceModel.ClientBase`1.CreateChannelInternal()
+   at System.ServiceModel.ClientBase`1.get_Channel()
+   at ExciseOSBCServiceReference.OSBCSoftSoapClient.AESEncryptForSignUP(SupDetails JsonStr) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.adbf2u6n.5.cs:line 227
+   at ServiceInstructionExternal.OSBC() in d:\Projects\SWPGoo\SWP_NEW\ServiceInstructionExternal.aspx.cs:line 759
+Source: System.ServiceModel
+TargetSite: Void ValidateScheme(System.Uri)
+-----------------------------------------------------------
+
+Time: 17/10/2022 04:53:59 PM
+-----------------------------------------------------------
+Message: The provided URI scheme 'https' is invalid; expected 'http'.
+Parameter name: via
+StackTrace:    at System.ServiceModel.Channels.TransportChannelFactory`1.ValidateScheme(Uri via)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.ValidateCreateChannelParameters(EndpointAddress remoteAddress, Uri via)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.OnCreateChannelCore(EndpointAddress remoteAddress, Uri via)
+   at System.ServiceModel.Channels.ChannelFactoryBase`1.InternalCreateChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.ServiceChannelFactoryOverRequest.CreateInnerChannelBinder(EndpointAddress to, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.CreateServiceChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.Channels.ServiceChannelFactory.CreateChannel(Type channelType, EndpointAddress address, Uri via)
+   at System.ServiceModel.ChannelFactory`1.CreateChannel(EndpointAddress address, Uri via)
+   at System.ServiceModel.ClientBase`1.CreateChannel()
+   at System.ServiceModel.ClientBase`1.CreateChannelInternal()
+   at System.ServiceModel.ClientBase`1.get_Channel()
+   at ExciseOSBCServiceReference.OSBCSoftSoapClient.AESEncryptForSignUP(SupDetails JsonStr) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\b9508138\477eaf9c\App_WebReferences.adbf2u6n.5.cs:line 227
+   at ServiceInstructionExternal.OSBC() in d:\Projects\SWPGoo\SWP_NEW\ServiceInstructionExternal.aspx.cs:line 759
+Source: System.ServiceModel
+TargetSite: Void ValidateScheme(System.Uri)
+-----------------------------------------------------------
+

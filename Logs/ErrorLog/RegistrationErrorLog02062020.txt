@@ -1,0 +1,12 @@
+Time: 02/06/2020 10:46:58 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at InvestorRegistrationUser.Btn_Submit_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\InvestorRegistrationUser.aspx.cs:line 807
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

@@ -1,0 +1,289 @@
+Time: 09/09/2021 03:33:27 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:33:32 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:33:38 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:33:44 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:33:50 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:34:28 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:34:39 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:34:46 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:35:24 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 03:35:45 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:18:09 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:18:47 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:18:52 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:18:57 PM
+-----------------------------------------------------------
+Message: The multi-part identifier "GT.vchGrivType" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:21:58 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:22:02 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:22:11 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:37:08 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 04:52:49 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 05:29:09 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 158
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 05:38:38 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 158
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 05:40:30 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 158
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 05:48:01 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the varchar value 'Other' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 158
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch)
+-----------------------------------------------------------
+
+Time: 09/09/2021 06:09:11 PM
+-----------------------------------------------------------
+Message: Conversion failed when converting the nvarchar value 'SELECT * FROM
+		                               (
+										SELECT COUNT(1) OVER() AS row_cnt,
+											G.vchGrivId,
+											vchApplicantName,
+											vchDesignation,
+											vchMobileNo,
+											VCH_INV_NAME,
+											vchIndustryType=CASE WHEN ISNULL(I.INT_INDUSTRY_TYPE,'1')=1 THEN 'Industry' ELSE 'Non-Industry' END,
+											S.vchStatusName,
+											GT.vchGrivType,
+											G.intGrivTypeId,
+											Convert(date,G.dtmCreatedOn) dtmCreatedOn,
+											G.intStatus,																	        
+											CASE WHEN G.intGrivTypeID>=3 THEN (Select S.vchGrivSubType from M_GRIEVANCE_SUB_TYPE S WHERE S.intGrivSubTypeId=G.vchGrivSubTypeId) ELSE G.vchGrivSubTypeId END AS 'vchGrivSubType',										
+											(SELECT TOP 1 REPLACE(ISNULL(CONVERT(VARCHAR,GTA.dtmCreatedOn, 106),''), ' ', '-') FROM T_GRIEVANCE_TAKE_ACTION GTA WHERE GTA.vchGrivId=G.vchGrivId AND GTA.intStatus=G.intStatus) AS dtmApprovalDate	,
+											 G.bitDeletedFlag,
+											 G.intDistrictId
+									FROM T_GRIEVANCE_APPLICATION G
+									--LEFT JOIN T_GRIEVANCE_TAKE_ACTION GTA ON GTA.vchGrivId=G.vchGrivId							
+									INNER JOIN M_INVESTOR_DETAILS I ON I.INT_INVESTOR_ID=G.intCreatedBy
+									INNER JOIN M_StatusMaster S ON S.intStatusId=G.intStatus
+									INNER JOIN M_GRIEVANCE_TYPE GT ON GT.intGrivTypeId=G.intGrivTypeId	
+								) G
+								WHERE G.bitDeletedFlag=0 AND CONVERT(DATE,G.dtmCreatedOn) >= 'Aug  1 2021 12:00AM' 
+							            AND CONVERT(DATE,G.dtmCreatedOn) <= 'Sep  9 2021 12:00AM' AND G.intGrivTypeId =' to data type int.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1272
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 158
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(GrievanceMisSearch)
+-----------------------------------------------------------
+

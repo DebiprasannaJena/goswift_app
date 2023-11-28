@@ -1,0 +1,99 @@
+#popup_container
+{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    min-width: 350px;
+    max-width: 350px;
+    background: #FFF;
+    border: solid 0px #eaeaea;
+    color: #000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 3px;
+}
+#popup_title
+{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.75em;
+    color: #fff;
+    background: #006694;
+    border: solid 0px #FFF;
+    border-bottom: solid 1px #999;
+    cursor: default;
+    padding: 0em;
+    margin: 0em;
+    padding: 4px;
+    border-radius: 2px 2px 0px 0px;
+}
+#popup_content
+{
+    background: 16px 16px no-repeat url(../images/info.gif);
+    padding: 1em 1.75em;
+    margin: 0em;
+}
+#popup_content.alert
+{
+    background-image: url(http://labs.abeautifulsite.net/archived/jquery-alerts/demo/images/info.gif);
+}
+#popup_content.confirm
+{
+    background-image: url(http://labs.abeautifulsite.net/archived/jquery-alerts/demo/images/important.gif);
+}
+#popup_content.prompt
+{
+    background-image: url(http://labs.abeautifulsite.net/archived/jquery-alerts/demo/images/help.gif);
+}
+#popup_message
+{
+    font-size: 16px;
+    color: #828282;
+    padding: 10px;
+    text-align: center;
+}
+#popup_panel
+{
+    text-align: center;
+    margin: 0em 0em 0em 0em;
+}
+#popup_prompt
+{
+    margin: .5em 0em;
+}
+#popup_overlay
+{
+    position: absolute;
+    z-index: 10000000 !important;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 974px;
+    background: rgba(0, 0, 0, .5);
+}
+#popup_ok
+{
+    background: #00a523;
+    border: 0px;
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 0 10px;
+}
+#popup_container
+{
+    z-index: 99999999 !important;
+}
+#popup_cancel
+{
+    background:#ec2727;
+    border: 0px;
+    padding: 5px 20px;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px 0 10px;
+}
+#popup_cancel:hover,#popup_cancel:focus
+{
+    background:#f00
+    }

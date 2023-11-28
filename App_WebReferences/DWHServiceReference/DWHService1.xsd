@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DWHService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DWHService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDWH_Model">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DWH_Model" nillable="true" type="tns:DWH_Model" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDWH_Model" nillable="true" type="tns:ArrayOfDWH_Model" />
+  <xs:complexType name="DWH_Model">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DECINVESTAMOUNT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IDCOALLOTTEE" type="xs:int" />
+      <xs:element minOccurs="0" name="INTALIASNAMECOUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="INTAPPROVALLEVEL" type="xs:int" />
+      <xs:element minOccurs="0" name="INTAPPTYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="INTBLOCK" type="xs:int" />
+      <xs:element minOccurs="0" name="INTDISTRICT" type="xs:int" />
+      <xs:element minOccurs="0" name="INTEITYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="INTENTITYTYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="INTIDCOLAND" type="xs:int" />
+      <xs:element minOccurs="0" name="INTIDCOREQSTATUS" type="xs:int" />
+      <xs:element minOccurs="0" name="INTINDUSTRYCATEGORY" type="xs:int" />
+      <xs:element minOccurs="0" name="INTPARENTID" type="xs:int" />
+      <xs:element minOccurs="0" name="INTPARTYID" type="xs:int" />
+      <xs:element minOccurs="0" name="INTPERMISSION" type="xs:int" />
+      <xs:element minOccurs="0" name="INTREGDNOTYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="INTSALUTATION" type="xs:int" />
+      <xs:element minOccurs="0" name="INTSECTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="INTSUBSECTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="INTUSERID" type="xs:int" />
+      <xs:element minOccurs="0" name="INTUSERLEVEL" type="xs:int" />
+      <xs:element minOccurs="0" name="LogId" type="xs:int" />
+      <xs:element minOccurs="0" name="MSGOUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHACTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHADHARNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHALIASUSERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHAPPIDS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHCINNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHCORADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHDESIGNATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHEINIEM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHEMAILID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHINDUSTRYCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHINDUSTRYNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHINVNSWSID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHLICENCEDOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHLICENCENOTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHMOBILENO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHOFFICETELNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHOLDPASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPANNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPARTYCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPROMOTERFNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPROMOTERLNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHPROMOTERMNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHREDIRECTURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHREGDNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHTINNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHUSERNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHUSERNAME_NEW" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHUSERUNIQUEID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DWH_Model" nillable="true" type="tns:DWH_Model" />
+  <xs:complexType name="ArrayOfDWH_PortalList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DWH_PortalList" nillable="true" type="tns:DWH_PortalList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDWH_PortalList" nillable="true" type="tns:ArrayOfDWH_PortalList" />
+  <xs:complexType name="DWH_PortalList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="INTAPPID" type="xs:int" />
+      <xs:element minOccurs="0" name="VCHAPPALIAS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHAPPKEY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHAPPNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHCONTACTDETAILS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHCONTACTPERSON" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHDOMAINNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHLANDLINENO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHMOBILENO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHREDIRECTURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHSECURITYKEY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DWH_PortalList" nillable="true" type="tns:DWH_PortalList" />
+  <xs:complexType name="ArrayOfRegistration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Registration" nillable="true" type="tns:Registration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRegistration" nillable="true" type="tns:ArrayOfRegistration" />
+  <xs:complexType name="Registration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADDRESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppId" type="xs:int" />
+      <xs:element minOccurs="0" name="AppKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppType" type="xs:int" />
+      <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INTENTITYID" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORPRODUCT" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORPRODUCT1" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORPRODUCT2" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORRAWMATERIAL" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORRAWMATERIAL1" type="xs:int" />
+      <xs:element minOccurs="0" name="INTMAJORRAWMATERIAL2" type="xs:int" />
+      <xs:element minOccurs="0" name="INTUSERID" type="xs:int" />
+      <xs:element minOccurs="0" name="LogID" type="xs:int" />
+      <xs:element minOccurs="0" name="MSGOUT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UniqueNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHUNITCAPACITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHWEBSITE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="emailId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="intCommonvar" type="xs:int" />
+      <xs:element minOccurs="0" name="strCommonvar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Registration" nillable="true" type="tns:Registration" />
+  <xs:complexType name="EINModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="intRequestType" type="xs:int" />
+      <xs:element minOccurs="0" name="strAction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strDocument" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strLicenseType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strOutMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUniqueId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="strUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EINModel" nillable="true" type="tns:EINModel" />
+</xs:schema>

@@ -1,0 +1,411 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Application.master.cs"
+    Inherits="MasterPage_Application" %>
+
+<%@ Register Src="../Include/Leftmenupanel.ascx" TagName="Leftmenupanel" TagPrefix="uc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GO SWIFT</title>
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Start Styles
+         =====================================================================-->
+    <script src="../js/jquery-1.4.1.js" type="text/javascript"></script>
+    <script src="../js/jQuery.alert.js" type="text/javascript"></script>
+    <link href="../css/jQuery.alert.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../PortalCSS/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/lobipanel.min.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/flash.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/pe-icon-7-stroke.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/themify-icons.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/emojionearea.min.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/monthly.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/stylecrm.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/override.css" rel="stylesheet" type="text/css" />
+    <link href="../PortalCSS/jquery.timepicker.css" rel="stylesheet" type="text/css" />
+    <!-- End Styles
+         =====================================================================-->
+    <script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.timepicker.js" type="text/javascript"></script>
+    <script src="../Portal/Console/scripts/Validator.js"></script>
+    <script src="../Portal/Console/scripts/md5.js" type="text/javascript"></script>
+    <script src="../js/WebValidation.js" type="text/javascript"></script>
+    <%-- <script>
+        $(function () {
+            document.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+            document.onkeydown = function (e) {
+                if (event.keyCode == 123) {
+                    return false;
+                }
+                else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event.shiftKey && event.keyCode == 74)) {
+                    return false;
+                }
+            }
+        });
+    </script>--%>
+    <script type="text/javascript">
+
+        var projname = '<%=System.Configuration.ConfigurationManager.AppSettings["ProjectName"] %>';
+
+        function validateChgPwd() {
+
+            if (blankFieldValidation('txtOldPwd', 'Old password', projname) == false) {
+                return false;
+            }
+            if (blankFieldValidation('txtNewPwd', 'New password', projname) == false) {
+                return false;
+            }
+            if (document.getElementById("txtNewPwd").value.length < 8) {
+                jAlert('<strong>Your password must be at least 8 characters long !</strong>', projname);
+                document.getElementById("txtNewPwd").focus();
+                return false;
+            }
+            if (document.getElementById("txtOldPwd").value == document.getElementById("txtNewPwd").value) {
+                jAlert('<strong>New password cannot be same as old password !</strong>', projname);
+                document.getElementById("txtNewPwd").value = "";
+                document.getElementById("txtRetypPwd").value = "";
+                document.getElementById("txtNewPwd").focus();
+                return false;
+            }
+            if (!checkPassword()) {
+                return false;
+            }
+            if (blankFieldValidation('txtRetypPwd', 'Confirm password', projname) == false) {
+                document.getElementById("txtRetypPwd").focus();
+                return false;
+            }
+            if (document.getElementById("txtNewPwd").value != document.getElementById("txtRetypPwd").value) {
+                jAlert('<strong>New password and Confirm password does not match !</strong>', projname);
+                document.getElementById("txtNewPwd").value = "";
+                document.getElementById("txtRetypPwd").value = "";
+                document.getElementById("txtNewPwd").focus();
+                return false;
+            }
+        }
+
+        function randomtext() {
+            var the_number = Math.floor(Math.random() * 500);
+            return (the_number)
+        }
+
+        function checkPassword() {
+            var txtNewPwd = document.getElementById("txtNewPwd");
+            var pwdVal = txtNewPwd.value;
+            var illegalChars = /[\W_]g/;
+            var re = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+            if (!re.test(pwdVal)) {
+                jAlert("<strong>The password must contain at least one uppercase letter,one lowercase letter,one numeral and one special character.</strong>", 'GOSWIFT');
+                txtNewPwd.focus();
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
+    <style type="text/css">
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }
+        
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 300px;
+            height: 140px;
+        }
+        
+        
+        .modal-title
+        {
+            font-size: 16px;
+        }
+        .modal-content
+        {
+            border-radius: 3px;
+        }
+        .modal-header
+        {
+            padding: 10px;
+        }
+        .bg-purpul
+        {
+            background-color: #860F1B !important;
+            color: #FFF;
+        }
+        .modal-body p
+        {
+            margin: 0px 0 0;
+            padding-bottom: 15px;
+            color: #E86F7B;
+            font-size: 13px;
+            font-weight: 400;
+        }
+        .modal-body ol
+        {
+            margin-left: 20px;
+        }
+        .modal-body ol li
+        {
+            color: #000;
+            line-height: 24px;
+            margin: 0;
+            list-style-type: decimal;
+            padding: 2px 0 0 5px;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+    <form id="form1" runat="server">
+    <%--        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+    <!--preloader-->
+    <div id="preloader">
+        <div id="status">
+        </div>
+    </div>
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <header class="main-header">
+                <!--====== Logo ======-->
+                <a href="../Dashboard/Default.aspx" class="logo">
+                    <span class="logo-mini">
+                        <img src="../images/portallogo.png" alt="Logo" />
+                    </span>
+                    <span class="logo-lg">
+                        <img src="../images/portallogo.png" alt="Logo" />
+                        <img src="../images/logo.png" alt="Logo" />
+                    </span>
+                </a>
+                <!--====== Logo ======-->
+                <!--====== Header Navbar ======-->
+                <nav class="navbar navbar-static-top">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <!-- Sidebar toggle button-->
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="pe-7s-angle-left-circle"></span>
+                    </a>
+                    <!-- searchbar-->
+
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- user -->
+                            <li class="dropdown dropdown-user">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="../images/admin.png" height="45" alt=""><span><asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>&nbsp;<i class="fa fa-th"></i></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../admin/DeptChangePassword.aspx"><i class="fa fa-inbox"></i>Change Password</a></li>
+                                    <li id="adminconsolelink" runat="server"><a href="../Console/AdminDefault.aspx?dwXb=<%=Session["RandomNo"]%>"><i class="fa fa-inbox"></i>Admin Console</a></li>
+                                    <li><a href="../admin/UpdateProfile.aspx"><i class="fa fa-inbox"></i>Update Profile</a></li>
+                                    <li><a href="../LogOut.aspx">
+                                        <i class="fa fa-sign-out"></i>Signout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--====== Header Navbar ======-->
+            </header>
+        <!-- =============================================== -->
+        <!-- Left side column. contains the sidebar -->
+        <aside class="main-sidebar">
+                <!-- sidebar -->
+                <div class="sidebar">
+                    <!-- sidebar menu -->
+                    <uc1:Leftmenupanel ID="Leftmenupanel1" runat="server" />
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+        <!-- =============================================== -->
+        <!-- Content Wrapper. Contains page content -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+                <strong>Copyright &copy; 2023 <a href="#">Invest Odisha </a>,</strong> All rights reserved.
+            </footer>
+    </div>
+    <!-- /.wrapper -->
+    <!-- Start js
+         =====================================================================-->
+    <script src="../js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/lobipanel.min.js" type="text/javascript"></script>
+    <script src="../js/pace.min.js" type="text/javascript"></script>
+    <script src="../js/fastclick.min.js" type="text/javascript"></script>
+    <script src="../js/custom2.js" type="text/javascript"></script>
+    <script src="../js/dashboard.js" type="text/javascript"></script>
+    <script src="../js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $('[data-toggle="tooltip"]').tooltip();
+            $('.datePicker').datepicker({
+                autoclose: true,
+                
+                format: 'mm/dd/yyyy'
+            });
+
+            $('.sidebar-menu li a').click(function () {
+                $(this).find(".arrow i").toggleClass('fa-angle-down fa-angle-right');
+
+            })
+            $('.PrintBtn').click(function () {
+                window.print();
+
+            })
+
+            var winwidth = $(window).width();
+            if (winwidth < 1050) {
+
+                $('.sidebar-mini').addClass('sidebar-collapse');
+
+            }
+
+        });
+    </script>
+    <!-- End js
+         =====================================================================-->
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- Large Modal Window Panel -->
+    <div class="modal fade" id="pageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;</button>
+                    <h4 class="modal-title" id="myModalLabel">
+                    </h4>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:Label ID="btnShow" runat="server" Text=""></asp:Label>
+    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panel1" TargetControlID="btnShow"
+        BackgroundCssClass="modalBackground">
+    </cc1:ModalPopupExtender>
+    <asp:Panel ID="Panel1" runat="server" CssClass="modalfade" Style="display: none;" ToolTip="Change Password">
+        <div id="Div2">
+            <div class="modal-dialog modal-lg">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header bg-purpul">
+                        <h4 class="modal-title">
+                            Change Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Your password got expired as you have not changed your password for the last 90
+                            days. Please change your password to proceed.
+                        </p>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-3">
+                                    Old Password</label>
+                                <div class="col-sm-7">
+                                    <span class="colon">:</span>
+                                    <asp:TextBox ID="txtOldPwd" runat="server" TextMode="Password" CssClass="form-control"
+                                        ToolTip="Enter old password here !" AutoCompleteType="None" autocomplete="off"></asp:TextBox>
+                                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" TargetControlID="txtOldPwd"
+                                        FilterMode="ValidChars" FilterType="UppercaseLetters,Numbers,Custom,LowercaseLetters"
+                                        ValidChars="@_-">
+                                    </cc1:FilteredTextBoxExtender>
+                                    <span class="mandetory">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-3">
+                                    New Password</label>
+                                <div class="col-sm-7">
+                                    <span class="colon">:</span>
+                                    <asp:TextBox ID="txtNewPwd" runat="server" TextMode="Password" CssClass="form-control"
+                                        MaxLength="50" ToolTip="Password must have 1 digit,1 special character,1 upper & lower case letter and can not contain [%$#!()'<>] chars"
+                                        AutoCompleteType="None" autocomplete="off"></asp:TextBox>
+                                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender10" runat="server" TargetControlID="txtNewPwd"
+                                        FilterMode="ValidChars" FilterType="UppercaseLetters,Numbers,Custom,LowercaseLetters"
+                                        ValidChars="@_-">
+                                    </cc1:FilteredTextBoxExtender>
+                                    <span class="mandetory">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-3">
+                                    Confirm Password</label>
+                                <div class="col-sm-7">
+                                    <span class="colon">:</span>
+                                    <asp:TextBox ID="txtRetypPwd" runat="server" TextMode="Password" MaxLength="50" CssClass="form-control"
+                                        ToolTip="Retype above password !" AutoCompleteType="None" autocomplete="Off"></asp:TextBox>
+                                    <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtRetypPwd"
+                                        FilterMode="ValidChars" FilterType="UppercaseLetters,Numbers,Custom,LowercaseLetters"
+                                        ValidChars="@_-">
+                                    </cc1:FilteredTextBoxExtender>
+                                    <span class="mandetory">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                </div>
+                                <div class="col-sm-7">
+                                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn btn-success"
+                                        OnClientClick="return validateChgPwd();" OnClick="btnSubmit_Click" ToolTip="Click here to change password and proceed !" />
+                                    <asp:Button ID="btnReset" runat="server" Text="Cancel" CssClass="btn btn-warning"
+                                        OnClick="btnReset_Click" OnClientClick="return confirm('Are you sure to cancel ?');"
+                                        ToolTip="Click here to cancel !" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">
+                                    N.B.:-
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                           
+                                <div class="col-sm-12">
+                                    <ol>
+                                        <li>The new password must be at least 8 characters and contains at least one uppercase
+                                            letter, one lowercase letter, one number, and one special character.</li>
+                                        <li>The new password must not be the same as the last 3 passwords.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </asp:Panel>
+    </form>
+</body>
+</html>

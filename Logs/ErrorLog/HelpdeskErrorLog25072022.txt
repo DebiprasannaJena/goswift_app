@@ -1,0 +1,11 @@
+Time: 25/07/2022 03:06:22 PM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Portal_HelpDesk_Issue_Registration.btnSave_Click1(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Helpdesk\Issue_Registration.aspx.cs:line 295
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+

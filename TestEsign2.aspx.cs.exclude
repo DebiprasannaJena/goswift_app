@@ -1,0 +1,521 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Net;
+using System.Text;
+using System.Web.Script.Serialization;
+using System.IO;
+//using System.Net.Http;
+//using System.Net.Http.Headers;
+using System.Data.SqlClient;
+using System.Data;
+
+public partial class TestEsign2 : System.Web.UI.Page
+{
+    SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            Lbl_Msg.Text = "";
+            divEsign.Visible = false;
+
+            //string mm = Request.QueryString["state"];
+            //string ss2 = Request.QueryString["InctUniqueNo"];
+            //string ss1 = Request.QueryString["ServiceId"];            
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["val"] != null)
+                {
+                    string strUnqId = Convert.ToString(Request.QueryString["val"]);
+                    checkSignStatus(strUnqId);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "TestEsign");
+        }
+    }
+
+    ///// Button Click For eSign
+    protected void Btn_Esign_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            CreateAggrement();
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "TestEsign");
+        }
+    }
+
+    ///// Button Click For Download Signed Document
+    protected void Btn_Download_Doc_Click(object sender, EventArgs e)
+    {
+        if (Request.QueryString["val"] != null)
+        {
+            string strUnqId = Convert.ToString(Request.QueryString["val"]);
+
+            /*--------------------------------------------------------*/
+            ///// Get Agreement Id and Access Token Id 
+            /*--------------------------------------------------------*/
+            string[] strValueArr = new string[2];
+            strValueArr = getAppDetails(strUnqId);
+
+            string strAgreementId = Convert.ToString(strValueArr[0]);
+            string strAccessTokenId = Convert.ToString(strValueArr[1]);
+
+            /*--------------------------------------------------------*/
+            ////// Use Access Token Id and Agreement Id to get url of signed document
+            /*--------------------------------------------------------*/
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var endpoint3 = string.Format("https://api.in1.echosign.com/api/rest/v5/agreements/{0}/combinedDocument/url", strAgreementId);
+            HttpClient client3 = new HttpClient();
+            client3.BaseAddress = new Uri("https://api.in1.echosign.com/api/rest/v5");
+            client3.DefaultRequestHeaders.Accept.Clear();
+            client3.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*"));
+            client3.DefaultRequestHeaders.Add("Access-Token", strAccessTokenId);
+            HttpResponseMessage response4 = client3.GetAsync(endpoint3).Result;
+            client3.Dispose();
+            string sd = response4.Content.ReadAsStringAsync().Result;
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            URL collection = serializer.Deserialize<URL>(sd);
+
+            /*--------------------------------------------------------*/
+            ////// Using signed document url,Download the pdf file.
+            /*--------------------------------------------------------*/
+            string strFileName = "SignedDoc_" + string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + ".pdf";
+            WebClient objClient = new WebClient();
+            Response.AddHeader("Pragma", "no-cache");
+            Response.AddHeader("Content-Type", "application/pdf");
+            Response.AddHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            Response.AddHeader("Expires", "0");
+            Response.AddHeader("Content-Length", "Record");
+            Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", strFileName));
+            //Response.TransmitFile(collection.url);
+            //Response.Redirect(collection.url);
+            Response.BinaryWrite(objClient.DownloadData(collection.url));
+            Response.End();
+        }
+    }
+
+    #region FunctionUsed
+
+    ///// Get Application Details Using Unique Id   
+    private string[] getAppDetails(string strUnqId)
+    {
+        //  string strInctUnqId = Request.QueryString["state"];
+
+        string[] strReturnArr = new string[2];
+
+        if (conn.State == ConnectionState.Closed)
+        {
+            conn.Open();
+        }
+
+        SqlCommand objCommand = new SqlCommand();
+        SqlDataAdapter objDa = new SqlDataAdapter();
+        DataTable objdt = new DataTable();
+
+        try
+        {
+            objCommand.CommandText = "USP_ESIGN_TEST";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Connection = conn;
+
+            objCommand.Parameters.AddWithValue("@P_VCH_ACTION", 'V');
+            objCommand.Parameters.AddWithValue("@P_VCH_UNQNO", strUnqId);
+
+            objDa.SelectCommand = objCommand;
+            objDa.Fill(objdt);
+
+            if (objdt.Rows.Count > 0)
+            {
+                strReturnArr[0] = Convert.ToString(objdt.Rows[0]["vchAgreementId"]);
+                strReturnArr[1] = Convert.ToString(objdt.Rows[0]["vchAccessTokenId"]);
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            objdt = null;
+            objCommand = null;
+            objDa = null;
+        }
+
+        return strReturnArr;
+    }
+
+    ///// Check eSign Status From Adobe
+    private void checkSignStatus(string strUnqId)
+    {
+        try
+        {
+            /*--------------------------------------------------------*/
+            ///// Get Agreement Id and Access Token Id 
+            /*--------------------------------------------------------*/
+            string[] strValueArr = new string[2];
+            strValueArr = getAppDetails(strUnqId);
+
+            string strAgreementId = Convert.ToString(strValueArr[0]);
+            string strAccessTokenId = Convert.ToString(strValueArr[1]);
+
+            /*--------------------------------------------------------*/
+            ////// Use Access Token Id and Agreement Id to get eSign status from Adobe.
+            /*--------------------------------------------------------*/
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var endpoint3 = string.Format("https://api.in1.echosign.com/api/rest/v5/agreements/{0}", strAgreementId);
+            HttpClient client3 = new HttpClient();
+            client3.BaseAddress = new Uri("https://api.in1.echosign.com/api/rest/v5");
+            client3.DefaultRequestHeaders.Accept.Clear();
+            client3.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*"));
+            client3.DefaultRequestHeaders.Add("Access-Token", strAccessTokenId);
+            HttpResponseMessage response4 = client3.GetAsync(endpoint3).Result;
+            client3.Dispose();
+
+            string strSucessStatus = response4.IsSuccessStatusCode.ToString();
+            string strResponsePhrase = response4.ReasonPhrase;
+
+            Lbl_Msg.Text = "IsSuccessStatusCode:~" + strSucessStatus + "~ReasonPhrase:~" + strResponsePhrase + "~AgreementId:~" + strAgreementId + "~AccessTokenId:~" + strAccessTokenId;
+
+            //if (strSucessStatus == "True" && strResponsePhrase == "OK")
+            //{
+            //  //// Do updation of eSignStatus in your table.
+            //}
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    ///// Get Access Token Using Refresh Token From Adobe
+    private string getAccessToken()
+    {
+        string strAccessToken = "";
+        try
+        {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var request = (HttpWebRequest)WebRequest.Create("https://api.in1.echosign.com/oauth/refresh?");
+            var postData = "client_id=CBJCHBCAABAAfSOGdtW3OO0pG_cHskhYHeOvodobBsKr";
+            postData += "&client_secret=uiGn6y6KyB9jMMrRSYrzwDPrWKslNjEy";
+            postData += "&grant_type=refresh_token";
+            postData += "&refresh_token=3AAABLblqZhALnIc5ZzykSr1v69NLYz1VOwWQ22Z3bdoZybbCZD8eLJuPNH_wqJUPV2jAvMj9o_Y*";
+            postData += "&state=123";
+
+            var data = Encoding.ASCII.GetBytes(postData);
+
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+            request.KeepAlive = false;
+            request.ProtocolVersion = HttpVersion.Version10;
+
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+
+            var response = (HttpWebResponse)request.GetResponse();
+
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            Adobe collection = serializer.Deserialize<Adobe>(responseString);
+            string txtAccessToken = collection.access_token;
+            strAccessToken = collection.access_token;
+
+            return strAccessToken;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    ///// Insert and Update eSign Agrement Details
+    private void insertRecord(string strUnqId, string strAgreementId, string strAccessTokenId)
+    {
+        if (conn.State == ConnectionState.Closed)
+        {
+            conn.Open();
+        }
+
+        SqlCommand objCommand = new SqlCommand();
+        try
+        {
+            objCommand.CommandText = "USP_ESIGN_TEST";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Connection = conn;
+
+            objCommand.Parameters.AddWithValue("@P_VCH_ACTION", 'I');
+            objCommand.Parameters.AddWithValue("@P_VCH_UNQNO", strUnqId);
+            objCommand.Parameters.AddWithValue("@P_VCH_AGREEMENT_ID", strAgreementId);
+            objCommand.Parameters.AddWithValue("@P_VCH_ACCESS_TOKEN_ID", strAccessTokenId);
+
+            objCommand.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            objCommand = null;
+        }
+    }
+
+    ///// Create Agreement with Abode and Generate eSign Link
+    public void CreateAggrement()
+    {
+        try
+        {
+            /*----------------------------------------------------------*/
+            ///// Get Access Token using Refresh Token
+            /*----------------------------------------------------------*/
+            string strAccessToken = getAccessToken();
+
+            /*----------------------------------------------------------*/
+            ///// Get the pdf file from respective folder and convert it to byte array and expose for esign.
+            /*----------------------------------------------------------*/
+            //string filePath = Server.MapPath("~/incentives/Files/InctEsign/" + "InctEsign_5376_031118013209.pdf");
+            string filePath = Server.MapPath("~/TestEsignFile/" + "InctEsign_5376_031118013208.pdf");
+            string filename = Path.GetFileName(filePath);
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            MultipartFormDataContent content = new MultipartFormDataContent();
+            HttpContent fileContent = new ByteArrayContent(bytes);
+            fileContent.Headers.ContentType = new MediaTypeHeaderValue("multipart/form-data");
+            fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+            {
+                Name = "File",
+                FileName = filename
+            };
+            ViewState["FileName"] = filename;
+            content.Add(fileContent);
+            content.Add(new StringContent(filename), String.Format("\"{0}\"", "File-Name"));
+
+            /*----------------------------------------------------------*/
+            ///// Create transient document
+            /*----------------------------------------------------------*/
+            string endpoint = "https://api.in1.echosign.com/api/rest/v5/transientDocuments";
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://api.in1.echosign.com/api/rest/v5");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders.Add("Access-Token", strAccessToken);
+            HttpResponseMessage response1 = client.PostAsync(endpoint, content).Result;
+            client.Dispose();
+            string sd = response1.Content.ReadAsStringAsync().Result;
+            JavaScriptSerializer serializer1 = new JavaScriptSerializer();
+            fileInfos collection1 = serializer1.Deserialize<fileInfos>(sd);
+            string strTransientDocumentId = collection1.transientDocumentId;
+
+            /*----------------------------------------------------------*/
+            ///// Document Creation Info
+            /*----------------------------------------------------------*/
+            fileInfos objFileinfo = new fileInfos();
+            recipientSetMemberInfos objRecipientMember = new recipientSetMemberInfos();
+            recipientSetInfos objRecipientSet = new recipientSetInfos();
+            documentCreationInfo objDocumentCreation = new documentCreationInfo();
+            documentCreationInfoNew objDocumentCreationNew = new documentCreationInfoNew();
+            List<fileInfos> lstFileinfo = new List<fileInfos>();
+            List<recipientSetMemberInfos> lstrecipientSetMemberInfos = new List<recipientSetMemberInfos>();
+            List<recipientSetInfos> lstrecipientSetInfos = new List<recipientSetInfos>();
+            List<documentCreationInfo> lstDocumentCreation = new List<documentCreationInfo>();
+            List<documentCreationInfoNew> lstDocumentCreationNew = new List<documentCreationInfoNew>();
+
+            /*----------------------------------------------------------*/
+            ///// Post Signing Option 
+            ///// After eSign the Page will be redirect to below metioned url
+            /*----------------------------------------------------------*/
+            postSignOptions objpostSignOptions = new postSignOptions();
+            List<postSignOptions> lstpostSignOptions = new List<postSignOptions>();
+            objpostSignOptions.redirectDelay = "0";
+            //objpostSignOptions.redirectUrl = "https://investodisha.gov.in/goswift/TestEsign2.aspx?val=12345";
+            objpostSignOptions.redirectUrl = "https://localhost/swp_web/TestEsign2.aspx?val=12345";
+            objFileinfo.transientDocumentId = strTransientDocumentId;
+            lstFileinfo.Add(objFileinfo);
+
+            /*----------------------------------------------------------*/
+            ///// Receipient Details
+            ///// After eSign one copy of signed doucment will be mailed to investor mail id as well as IPICOL mail id.
+            /*----------------------------------------------------------*/
+            objRecipientMember.email = "sushant.jena007@gmail.com"; //// Investor's Email Id Here
+            objRecipientMember.fax = "";
+            lstrecipientSetMemberInfos.Add(objRecipientMember);
+            objRecipientSet.recipientSetMemberInfos = lstrecipientSetMemberInfos;
+            objRecipientSet.recipientSetRole = "SIGNER";
+            lstrecipientSetInfos.Add(objRecipientSet);
+
+            objDocumentCreation.fileInfos = lstFileinfo;
+            objDocumentCreation.name = "MyTestAgreement100";
+            objDocumentCreation.recipientSetInfos = lstrecipientSetInfos;
+            objDocumentCreation.signatureType = "ESIGN"; ///// The type of signature you would like to request. The possible values are  ESIGN and WRITTEN.
+            objDocumentCreation.signatureFlow = "SENDER_SIGNATURE_NOT_REQUIRED";
+            objDocumentCreation.postSignOptions = objpostSignOptions;
+            lstDocumentCreation.Add(objDocumentCreation);
+            objDocumentCreationNew.documentCreationInfo = objDocumentCreation;
+            var jsonSerialiser = new JavaScriptSerializer();
+            var jsonData = jsonSerialiser.Serialize(objDocumentCreationNew);
+            var buffer = System.Text.Encoding.UTF8.GetBytes(jsonData);
+            var byteContent = new ByteArrayContent(buffer);
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            /*----------------------------------------------------------*/
+            ///// Agreement Id Creation
+            /*----------------------------------------------------------*/
+            string endpoint1 = "agreements";
+            HttpClient client1 = new HttpClient();
+            client1.BaseAddress = new Uri("https://api.in1.echosign.com/api/rest/v5/");
+            client1.DefaultRequestHeaders.Accept.Clear();
+            client1.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client1.DefaultRequestHeaders.Add("Access-Token", strAccessToken);
+            HttpResponseMessage response2 = client1.PostAsync(endpoint1, byteContent).Result;
+            client1.Dispose();
+            string sd4 = response2.Content.ReadAsStringAsync().Result;
+
+            JavaScriptSerializer serializer16 = new JavaScriptSerializer();
+            fileInfossev collection16 = serializer16.Deserialize<fileInfossev>(sd4);
+            string strAgreementId = collection16.agreementId;
+
+            /*----------------------------------------------------------*/
+            ///// Thread.Sleep is used here because, 
+            ///// Sometimes it's unable to establish connection with Adobe server.
+            /*----------------------------------------------------------*/
+            System.Threading.Thread.Sleep(2000);
+
+            /*----------------------------------------------------------*/
+            ///// Generate Sigining Url Here
+            ///// By using agreement id and access token id,Adobe will create a link for eSign the document.
+            /*----------------------------------------------------------*/
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            var endpoint55 = string.Format("https://api.in1.echosign.com/api/rest/v5/agreements/{0}/signingUrls", strAgreementId);
+            HttpClient client55 = new HttpClient();
+            client55.BaseAddress = new Uri("https://api.in1.echosign.com/api/rest/v5");
+            client55.DefaultRequestHeaders.Accept.Clear();
+            client55.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client55.DefaultRequestHeaders.Add("Access-Token", strAccessToken);
+            HttpResponseMessage response55 = client55.GetAsync(endpoint55).Result;
+            client55.Dispose();
+
+            string sd55 = response55.Content.ReadAsStringAsync().Result;
+            JavaScriptSerializer serializer55 = new JavaScriptSerializer();
+            signingUrlSetInfosNew collection55 = serializer55.Deserialize<signingUrlSetInfosNew>(sd55);
+            string urllink = collection55.signingUrlSetInfos[0].signingUrls[0].esignUrl;
+
+            /*----------------------------------------------------------*/
+            ///// Assign the above signing url to a HyperLink
+            ///// And prompt user to click on that for esign.
+            /*----------------------------------------------------------*/
+
+            Hyplnk1.NavigateUrl = urllink;
+
+            //AggrementId.Value = strAgreementId;
+            //TokenId.Value = strAccessToken;
+            // hdnApplicationKey.Value = Request.QueryString["state"].ToString();
+
+            /*------------------------------------------------------------*/
+            ///// Update Agreement Id and Access Token Id against the unique id in respective tables.
+            ///// Use these ids to access signing status later.
+            /*------------------------------------------------------------*/
+
+            insertRecord("12345", strAgreementId, strAccessToken);
+
+            /*------------------------------------------------------------*/
+            ///// After successfully creation of signing url display the link.
+            /*------------------------------------------------------------*/
+
+            divEsign.Visible = true;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    #endregion
+
+    #region EntityForEsign
+
+    public class Adobe
+    {
+        public string access_token { get; set; }
+        public string refresh_token { get; set; }
+        public string token_type { get; set; }
+        public string expires_in { get; set; }
+    }
+    public class fileInfos
+    {
+        public string transientDocumentId { get; set; }
+    }
+    public class fileInfossev
+    {
+        public string agreementId { get; set; }
+    }
+    public class recipientSetMemberInfos
+    {
+        public string email { get; set; }
+        public string fax { get; set; }
+    }
+    public class recipientSetInfos
+    {
+        public List<recipientSetMemberInfos> recipientSetMemberInfos { get; set; }
+        public string recipientSetRole { get; set; }
+    }
+    public class documentCreationInfo
+    {
+        public List<fileInfos> fileInfos { get; set; }
+        public string name { get; set; }
+        public List<recipientSetInfos> recipientSetInfos { get; set; }
+        public string signatureType { get; set; }
+        public string signatureFlow { get; set; }
+        //public string digsig1_es_ { get; set; }
+        public postSignOptions postSignOptions { get; set; }
+    }
+    public class signingUrlsNew
+    {
+        public string email { get; set; }
+        public string esignUrl { get; set; }
+    }
+    public class postSignOptions
+    {
+        public string redirectUrl { get; set; }
+        public string redirectDelay { get; set; }
+    }
+    public class signingUrlSetInfos
+    {
+        public List<signingUrlsNew> signingUrls { get; set; }
+    }
+    public class documentCreationInfoNew
+    {
+        public documentCreationInfo documentCreationInfo { get; set; }
+    }
+    public class signingUrlSetInfosNew
+    {
+        public List<signingUrlSetInfos> signingUrlSetInfos { get; set; }
+    }
+    public class URL
+    {
+        public string url { get; set; }
+    }
+
+    #endregion
+}

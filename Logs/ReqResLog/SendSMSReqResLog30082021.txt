@@ -1,0 +1,7 @@
+Time: 30/08/2021 03:14:21 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 718 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=OTP has been generated.Kindly log into https://investodisha.gov.in with the new OTP 5840 for M/S TEST UNIT-1.&mnumber=917327014295&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407161579050838384
+-----------------------------------------------------------
+Time: 30/08/2021 03:14:22 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 718 - null
+
+-----------------------------------------------------------

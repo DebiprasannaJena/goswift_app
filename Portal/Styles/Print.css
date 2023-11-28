@@ -1,0 +1,132 @@
+
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight: normal;
+	color: #000;
+	}
+#header{
+	font-size:15px;
+	font-weight:bold; 
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	border-bottom:2px #565656 solid;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	color:#333;
+	margin-left:0px;
+	text-align: left;
+	}
+/*table{
+	border-collapse:collapse;
+	border: 1px solid #ccc;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #ccc;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #ccc;
+	}
+table th{
+	background-color:#EBEBEB;
+	font-size:12px;
+	padding:3px;
+	text-align:left;
+	border: 1px solid #ccc;
+}
+table td{	
+	font-size: 11px;
+	border: 1px solid #ccc;
+	height:24px;
+	font-weight: normal;
+	padding: 2px;
+	}*/
+#printHeader{
+	text-align:left;
+	font-size:14px;
+	font-weight:bold;
+	padding-top:10px;
+	padding-bottom:10px;
+	}
+.noPrint{
+	display:none;
+}
+a{
+	color:#000;
+	text-decoration:none;
+	font-size:12px;
+	cursor: default;
+}
+/*.hder{}*/
+.viewTable  {
+	margin:0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left:0px;
+border-left: 1px solid #ccc;}
+.viewTable table
+	{
+	/*border-collapse:collapse;*/
+	color: #000000;
+	width:100%;
+	margin-bottom: 5px;
+	padding: 2px;
+	border-collapse:collapse;
+	border-bottom: 1px solid #ccc;
+	}
+.viewTable table td
+	{
+	font-size: 11px;
+	border-collapse:collapse;
+	border-bottom: 1px solid #ccc;
+	height:20px;
+	font-weight: normal;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+	}
+
+.viewTable table th
+	{
+	border-collapse:collapse;
+	border-bottom: 1px solid #ccc;
+	color:#2C2C2C;
+	font-size: 11px;
+	text-align: left;
+	padding-top: 4px;
+	padding-right: 3px;
+	padding-bottom: 4px;
+	padding-left: 3px;
+	background-color: #EBEBEB;
+	}
+.viewTable table th a
+	{		
+	color:#2C2C2C;
+	text-decoration:none;
+	}	
+.viewTable table th a:hover
+	{		
+	color:#2C2C2C;	
+	text-decoration:none;
+	}
+	
+	.viewTable table a{
+	color: #00F;
+	text-decoration: none;
+}
+.viewTable table a:hover{
+	 color: #FF0000; 
+	text-decoration: underline;
+}
+.viewTable table td a {
+	color:#000000;
+	text-decoration:none;
+}
+.viewTable table td a:hover {
+	color:#000000;
+	text-decoration:none;
+}
+.noPrint{display:none;}

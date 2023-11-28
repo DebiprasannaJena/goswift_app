@@ -1,0 +1,18 @@
+Time: 29/09/2021 12:44:36 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at TreasuryPaymentTracking.HmacSHA256(String message) in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\TreasuryPaymentTracking.cs:line 120
+   at TreasuryPaymentTracking.GetPaymentStatusFromTreasury(String strOrderNo, Decimal decAmount) in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\TreasuryPaymentTracking.cs:line 37
+Source: App_Code.xpl9e0nu
+TargetSite: System.String HmacSHA256(System.String)
+-----------------------------------------------------------
+
+Time: 29/09/2021 12:55:16 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at TreasuryPaymentTracking.HmacSHA256(String message) in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\TreasuryPaymentTracking.cs:line 120
+   at TreasuryPaymentTracking.GetPaymentStatusFromTreasury(String strOrderNo, Decimal decAmount) in d:\Projects\SWPGoo\SWP_NEW\App_Code\Other\TreasuryPaymentTracking.cs:line 37
+Source: App_Code.xpl9e0nu
+TargetSite: System.String HmacSHA256(System.String)
+-----------------------------------------------------------
+

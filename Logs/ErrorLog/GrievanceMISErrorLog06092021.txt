@@ -1,0 +1,22 @@
+Time: 06/09/2021 11:57:38 AM
+-----------------------------------------------------------
+Message: The multi-part identifier "GTA.dtmCreatedOn" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1271
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+
+Time: 06/09/2021 11:57:44 AM
+-----------------------------------------------------------
+Message: The multi-part identifier "GTA.dtmCreatedOn" could not be bound.
+StackTrace:    at MisReportServiceProvider.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 1271
+   at MisReportServices.GetStatusWiseGrievanceMISReportDtls(PealSearch objSearch) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\MISReport\MisReportServices.cs:line 139
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.FillGrid(Int32 intPageIndex, Int32 intPageSize) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 148
+   at Portal_MISReport_GrivMisDrillDownStatusRpt.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\MISReport\GrivMisDrillDownStatusRpt.aspx.cs:line 39
+Source: .Net SqlClient Data Provider
+TargetSite: System.Data.DataTable GetStatusWiseGrievanceMISReportDtls(PealSearch)
+-----------------------------------------------------------
+

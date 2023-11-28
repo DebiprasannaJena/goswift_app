@@ -1,0 +1,54 @@
+Time: 30/01/2020 10:25:06 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 168
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 128
+Source: App_Web_contactus.aspx.cdcab7d2.gemnsluq
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+
+Time: 30/01/2020 10:26:05 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 168
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 128
+Source: App_Web_contactus.aspx.cdcab7d2.h9dylnul
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+
+Time: 30/01/2020 10:32:26 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 189
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 148
+Source: App_Web_contactus.aspx.cdcab7d2.iq4n3i8u
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+
+Time: 30/01/2020 11:05:05 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 206
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 165
+Source: App_Web_contactus.aspx.cdcab7d2.leavmf-f
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+
+Time: 30/01/2020 11:21:09 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 209
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 168
+Source: App_Web_contactus.aspx.cdcab7d2.3vllujl6
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+
+Time: 30/01/2020 11:29:22 AM
+-----------------------------------------------------------
+Message: Failure sending mail.
+StackTrace:    at contactus.sendMail(String strSubject, String strBody, String toEmail, Boolean enbleSSl) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 212
+   at contactus.Button1_Click(Object sender, EventArgs e) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\contactus.aspx.cs:line 171
+Source: App_Web_contactus.aspx.cdcab7d2.rvrgskge
+TargetSite: Void sendMail(System.String, System.String, System.String, Boolean)
+-----------------------------------------------------------
+

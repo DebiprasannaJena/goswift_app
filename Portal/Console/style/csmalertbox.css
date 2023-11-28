@@ -1,0 +1,69 @@
+#CsmAlertBox-Box {
+  padding-bottom: 24px;
+  background: url('../images/alertimages/bg-box-bottom.png') bottom left no-repeat !important;
+  background: url('../images/alertimages/bg-box-bottom.gif') bottom left no-repeat;
+}
+
+#CsmAlertBox-InBox {
+  padding-top: 15px;
+  background: url('../images/alertimages/bg-box-top.png') top left no-repeat !important;	
+  background: url('../images/alertimages/bg-box-top.gif') top left no-repeat;	
+}
+
+#CsmAlertBox-BoxContent {
+  background: url('../images/alertimages/bg-box-body.png') top left repeat-y !important;
+  background: url('../images/alertimages/bg-box-body.gif') top left repeat-y;
+  padding: 0px 20px;
+}
+
+#CsmAlertBox-BoxContenedor {
+  padding: 0px 0px 5px 55px;
+  text-align: left;
+  font-family:Verdana;
+  font-size:12px;
+  color:#000;
+}
+
+#CsmAlertBox-BoxContenedor h1,#CsmAlertBox-BoxContenedor h2,#CsmAlertBox-BoxContenedor h3,#CsmAlertBox-BoxContenedor b,#CsmAlertBox-BoxContenedor strong{
+  text-align: left;
+  font-family:Verdana;
+  font-size:12px;
+  color:#000;
+  font-weight:bold;
+  margin:0px;
+  padding:0px;
+}
+
+#CsmAlertBox-Buttons{
+  text-align:right;
+}
+
+#CsmAlertBox-Buttons input {
+  margin: 10px 10px;
+}
+
+#CsmAlertBox-BoxContenedor #BoxPromptInput{
+  margin-top:5px;
+}
+
+#CsmAlertBox-Box .BoxAlert 
+{
+	background-color:Blue;
+    background : url('../images/alertimages/dialog-warning.png') top left no-repeat;
+}
+
+#CsmAlertBox-Box .BoxConfirm {
+  background: url('../images/alertimages/dialog-help.png') top left no-repeat;
+}
+
+#CsmAlertBox-Box .BoxPrompt {
+  background: url('../images/alertimages/dialog-help.png') top left no-repeat;
+}
+
+#CsmAlertBox-Box .BoxInfo {
+  background: url('../images/alertimages/dialog-information.png') top left no-repeat;
+}
+
+#CsmAlertBox-Box .BoxError {
+  background: url('../images/alertimages/dialog-error.png') top left no-repeat;
+}

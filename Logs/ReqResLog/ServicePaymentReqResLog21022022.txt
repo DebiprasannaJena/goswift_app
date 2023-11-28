@@ -1,0 +1,6 @@
+Time: 21/02/2022 11:25:02 AM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022022141000006-210222112501|0700-80-800-0097-02240-000|Application Fee and Notice Fee|1000.00||||||||||||||||1000.00|Investor|OCAC,BBSR||Odisha|Angul|111111|9861342095||||||||http://localhost/swp_new/PaymentThankYou1.aspx?ReqMode=M
+-----------------------------------------------------------
+Time: 21/02/2022 03:06:28 PM For RequestMethod: MultiplePayment
+InputOutput: IND|ES2022022141000006-210222030555|0700-80-800-0097-02240-000|Application Fee and Notice Fee|1000.00||||||||||||||||1000.00|Investor|OCAC,BBSR||Odisha|Angul|111111|9861342095||||||||http://localhost/swp_new/PaymentThankYou1.aspx?ReqMode=M
+-----------------------------------------------------------

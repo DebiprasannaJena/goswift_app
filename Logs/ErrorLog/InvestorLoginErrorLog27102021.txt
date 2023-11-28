@@ -1,0 +1,12 @@
+Time: 27/10/2021 11:07:03 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\login.aspx.cs:line 458
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

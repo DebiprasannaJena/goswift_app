@@ -1,0 +1,21 @@
+Time: 31/07/2023 04:22:56 PM
+-----------------------------------------------------------
+Message: intFowardAMS
+StackTrace:    at DataAcessLayer.Proposal.ProposalDataLayer.getProposalDetails(ProposalDet objProposal) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Proposal\ProposalDataLayer.cs:line 1771
+   at BusinessLogicLayer.Proposal.ProposalBAL.getProposalDetails(ProposalDet objProposal) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Proposal\ProposalBAL.cs:line 79
+   at Mastermodule_ViewProposal.fillGridview() in d:\Projects\SWPGoo\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 169
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Proposal.ProposalDet] getProposalDetails(EntityLayer.Proposal.ProposalDet)
+-----------------------------------------------------------
+
+Time: 31/07/2023 04:22:56 PM
+-----------------------------------------------------------
+Message: There is already an open DataReader associated with this Command which must be closed first.
+StackTrace:    at DataAcessLayer.Proposal.ProposalDataLayer.PopulateStatus(ProposalDet objprop) in d:\Projects\SWPGoo\SWP_NEW\App_Code\DAL\Proposal\ProposalDataLayer.cs:line 2049
+   at BusinessLogicLayer.Proposal.ProposalBAL.PopulateStatus(ProposalDet objProposal) in d:\Projects\SWPGoo\SWP_NEW\App_Code\BAL\Proposal\ProposalBAL.cs:line 93
+   at Mastermodule_ViewProposal.BindStatus() in d:\Projects\SWPGoo\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 150
+   at Mastermodule_ViewProposal.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\Portal\Proposal\ViewProposal.aspx.cs:line 70
+Source: App_Code.jmdn9zys
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Proposal.ProposalDet] PopulateStatus(EntityLayer.Proposal.ProposalDet)
+-----------------------------------------------------------
+

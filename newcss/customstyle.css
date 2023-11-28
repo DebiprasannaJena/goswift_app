@@ -1,0 +1,394 @@
+﻿
+body,h1,h2,h3,h4,h5,h6,ul{padding:0; margin:0;}
+body{font-size:15px}
+.topbar{ background:#333; text-align:right}
+.topbar ul{padding:0; margin:0;}
+
+.topbar ul li{display:inline-block}
+.topbar ul li a{color:#ccc; padding:10px; display:block; position:relative; text-decoration:none;transition:.2s;}
+.topbar ul li a:hover, .topbar ul li a.active{background:#555; color:#ddd;}
+.topbar ul li:nth-child(5) a:after, .topbar ul li:nth-child(6) a:after{position:absolute; content:''; height:20px; width:1px; background:#ccc; top:10px; right:0;}
+
+.header{padding:15px}
+.header h1 img{display:inline;}
+
+.header h1 img:first-child{width:15%; border-right:1px solid #ccc; padding-right:10px;}
+.header h1 img:last-child{width:35%;}
+.header .searchbar{float:right; width:60%; margin-top:15px;}
+.header .searchbar .input-group input{border:1px solid #ed3338; border-radius:0; padding:10px; height:auto;}
+
+.header .searchbar .input-group-addon{background:#f00; color:#fff; border:1px solid #ed3338;border-radius:0;}
+
+.menubar{background:#ed3338}
+.menubar ul{display:inline-block}
+.menubar .links{padding:0; margin:0; float:left;}
+
+.menubar .links>li{display:inline-block}
+.menubar .links>li a{color:#fff; padding:17px; display:block; position:relative; text-decoration:none;    font-size: 14px; text-transform:uppercase;}
+.menubar .links>li a:before{position:absolute; content:''; height:5px; width:100%; background:#ffdd00; bottom:-2px; left:0;opacity:0; transition:.2s;}
+.menubar .links>li:hover a:before, .menubar .links>li a.active:before{display:block;opacity:1;}
+.menubar .links>li a:after{position:absolute; content:''; height:20px; width:1px; background:#ccc; top:15px; right:0;}
+.menubar .links>li:last-child a:after{display:none;}
+
+.menubar .implinks{padding:0; margin:0; float:right;    margin-bottom: -5px;}
+
+.menubar .implinks>li{display:inline-block; transform:skew(15deg); width:155px;}
+
+.menubar .implinks>li a{color:#fff;     padding: 5px 15px; display:table; position:relative; text-decoration:none;transform:skew(-15deg);}
+
+
+.menubar .implinks>li:first-child{background:#444;}
+.menubar .implinks>li:first-child:hover{background:#222;}
+.menubar .implinks>li:last-child{background:#ffdd00;}
+.menubar .implinks>li:last-child:hover{background:#ffbb00;}
+.menubar .implinks>li:last-child a label{color:#333;font-weight:normal;}
+
+
+.menubar .implinks>li a i{padding-right:10px; color:#f00; display:table-cell; font-size:3em;vertical-align: middle;}
+.menubar .implinks>li a label{color:#fff; font-size:14px;vertical-align: middle; font-weight:normal;display:table-cell}
+
+
+.gowelcome{padding:30px 0}
+.gowelcome .welcomemsg{border:1px solid #ddd; padding:15px 20px;}
+.gowelcome .welcomemsg h2{color:#333; text-transform:uppercase; margin-bottom:30px; position:relative;}
+.gowelcome .welcomemsg h2 span{color:#f00;}
+.gowelcome .welcomemsg p{line-height:1.7em;}
+.gowelcome .welcomemsg a.rmore{background:#ed3338; color:#fff; padding:10px 20px; text-decoration:none; display:inline-block}
+.gowelcome .welcomemsg a.rmore:hover{background:#ed1118;}
+.gowelcome .welcomemsg h2:after{position:absolute; content:''; height:3px; width:20%; background:#ddd; bottom:-10px; left:0;}
+
+
+.gowelcome .subscription{border:1px solid #ddd;padding:15px 20px;position: relative;}
+.gowelcome .subscription h2{color:#333; margin-bottom:30px; position:relative;font-size: 1.3em;font-weight: bold;}
+.gowelcome .subscription h2 span{color:#ed3338;}
+.gowelcome .subscription h2:after{position:absolute; content:''; height:3px; width:20%; background:#ddd; bottom:-10px; left:0;}
+.gowelcome .subscription>small{display:block; font-size: 14px;font-weight: bold;color: #999;}
+.gowelcome .subscription .input-group{margin-bottom:10px;    width: 100%;}
+.gowelcome .subscription input{border-radius:0; border:1px solid #999; height:40px;}
+.gowelcome .subscription .input-group-addon{border-radius:0; background:#ed3338; color:#fff; border:1px solid #ed3338}
+.gowelcome .subscription .input-group-addon i{position:relative;    left: -12px;font-size: 1.5em; transition:.2s;}
+.gowelcome .subscription .input-group-addon:hover i{left:5px;}
+.gowelcome .subscription p{text-align:center; position:relative; font-style:italic; margin:25px 0;}
+.gowelcome .subscription p:after    
+{
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 42%;
+    background: #ddd;
+    top: 10px;
+    left: -20px;
+}
+.gowelcome .subscription p:before    
+{
+    position: absolute;
+    content: '';
+    height: 1px;
+    width: 42%;
+    background: #ddd;
+    top: 10px;
+    right: -20px;
+}
+
+
+.gowelcome .sublinks{margin:0 -20px;position: absolute;bottom: 0;width: 100%;}
+
+.gowelcome .sublinks a{display:table; text-decoration:none; padding:10px; width:50%; float:left; color:#fff; cursor:pointer;}
+.gowelcome .sublinks a:hover{opacity:.8;}
+.gowelcome .sublinks a i{font-size:3em; display:table-cell;vertical-align:middle; color:#fede00}
+.gowelcome .sublinks a label{ Padding-left:10px;}
+.gowelcome .sublinks a label small{color:#fff;display:block;}
+
+.gowelcome .sublinks a.redlink{background:#ed3338}
+.gowelcome .sublinks a.blacklink{background:#333}
+
+.eqheight{ height:360px;}
+
+.goinvestor{padding:30px 0; background:#f1f1f1; text-align:center; height:850px;}
+.goinvestor h1{color:#f00; text-transform:uppercase; font-size:1.7em; font-weight:bold; margin-bottom:10px;}
+.goinvestor h1+p{color:#222; line-height:1.5em; font-size:1.2em;}
+
+
+
+
+.goinvestor .golist{ margin-top:150px}
+.goinvestor .golist li{list-style:none; display:inline-block;}
+.goinvestor .golist li a {
+    display: block;
+    background: rgba(255,255,255,0.2);
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    position: relative;
+    border: 5px solid #ffa140;
+    color:#999;
+}
+.goinvestor .golist li a:hover {background: rgba(255,255,255,0.8);}
+.goinvestor .golist li a:hover i{transform:scale(1.15)}
+.goinvestor .golist li a i{transition:.2s}
+.goinvestor .golist li:nth-child(even) a{top:-100px;}
+.goinvestor .golist li:nth-child(odd) a{}
+
+.goinvestor .golist li a:before {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid #e17302;
+    border-radius: 100%;
+    transform: scale(1.2);
+}
+
+.goinvestor .golist li:nth-child(odd) a:after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -15px;
+    right: -11px;
+    width: 15px;
+    height: 36px;
+    background: #e17302;
+    transform: rotate(45deg);
+}
+.goinvestor .golist li:nth-child(even) a:after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: -15px;
+    right: -11px;
+    width: 15px;
+    height: 36px;
+    background: #ffb56a;
+    transform: rotate(-45deg);
+  
+}
+.goinvestor .golist li:last-child a:after 
+{
+    display:none;
+}
+.goinvestor .golist li a>i{font-size: 4em; line-height: 1.9em;}
+.goinvestor .golist li a .gotext
+{
+    position: absolute;
+    top: 350px;
+    padding: 10px;
+    left: -50px;
+    right: auto;
+    width: 200px;
+    color: #000;
+    
+    }
+    .goinvestor .golist li a .gotext h3{margin-bottom:10px; font-weight:bold;font-size: 1.4em;}
+    .goinvestor .golist li a .gotext p{font-style:italic;}
+.goinvestor .golist li:nth-child(2n) a .gotext
+{
+    top: 250px;
+    
+}    
+.goinvestor .golist li a .goarrow {
+    height: 200px;
+    width: 5px;
+    position: absolute;
+    top: 121px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #e17302;
+    display: block;
+}
+.goinvestor .golist li:nth-child(2n) a .goarrow 
+{
+    height: 100px;    
+}
+
+.goinvestor .golist li a .goarrow:after 
+{
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #e17302;
+        left: -18px;
+}
+
+.goinvestor .golist li a .goarrow:before 
+{
+    content: '1';
+    position: absolute;
+    bottom: -30px;
+    left: -17px;
+    top: 65px;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    border: 3px solid #e17302;
+    border-radius: 50px;
+    line-height: 1.5em;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.goinvestor .golist li:nth-child(2n) a .goarrow:before 
+{
+  top: 20px;
+    
+}
+
+
+.goinvestor .golist li:nth-child(2) a .goarrow:before
+{
+ content:'2';   
+}
+.goinvestor .golist li:nth-child(3) a .goarrow:before
+{
+ content:'3';   
+}
+.goinvestor .golist li:nth-child(4) a .goarrow:before
+{
+ content:'4';   
+}
+
+.goinvestor .golist li:nth-child(5) a .goarrow:before
+{
+ content:'5';   
+}
+.goinvestor .golist li:nth-child(6) a .goarrow:before
+{
+ content:'6';   
+}
+
+.goinvestor .golist li:nth-child(7) a .goarrow:before
+{
+ content:'7';   
+}
+
+.goinvestor .golist li:nth-child(8) a .goarrow:before
+{
+ content:'8';   
+}
+
+.goinvestor .golist li:nth-child(9) a .goarrow:before
+{
+ content:'9';   
+}
+
+
+
+
+
+
+
+.gohgt{ height:345px;}
+
+.golinks{padding:50px 0; }
+
+
+.goportal{border:1px solid #ccc; padding:20px;}
+.goportal h2{ position:relative; font-size:1.5em; color:#000; font-weight:bold; margin-bottom:30px}
+.goportal h2:after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 40%;
+    background: #eee;
+    bottom: -15px;
+    left: 0;
+}
+
+.useflink .imglink{padding:10px 20px;display:block;background-size: cover; margin-bottom:15px; background:#333; cursor:pointer; text-decoration:none;}
+.useflink .imglink:nth-child(2){background:url(../newimages/smbg1.png)}
+.useflink .imglink:nth-child(3){background:url(../newimages/smbg2.png)}
+.useflink .imglink:nth-child(4){background:url(../newimages/smbg3.png)}
+
+.useflink .imglink:hover{opacity:.8}
+
+
+.imglink h3{ color:#002b91; font-weight:bold; }
+.imglink h3>small{display:block; color:#333; margin-top:10px; font-size:.6em;}
+
+.imglink h4{ color:#fff; font-weight:bold; text-align:center; padding:15px; font-size:1.6em; }
+
+
+.landbank label{color:#999; font-weight:normal; font-style:italic; font-size:1.1em;}
+
+.map-sec{ position:relative}
+.map-sec img{width:85%;}
+
+.map-label{ position:absolute; bottom:0; right:0;}
+.map-label h5{font-size:1.2em; margin-bottom:10px;}
+.map-label h6{  font-size:1em;  color:#999; margin-bottom:5px;}
+.map-label h6>span{  color:red;font-weight:bold;}
+
+
+.proposal{}
+
+.proposal .propbox{color:#fff;text-decoration:none;display:block;margin-bottom:15px;padding: 10px;text-align: center; cursor:pointer;}
+.proposal .propbox:hover{opacity:.8}
+.prophgt{height: 95px;}
+.propbox h3{
+    margin-bottom: 5px;
+}
+
+.propbox h3 i{ margin-right:10px;}
+.propbox h4{font-size: 1em;}
+.propbox h4 i{ margin-right:10px;}
+.propbox label{font-weight:normal;font-size: 1.1em;}
+.col-orange{ background:#f27e4b}
+.col-green{background:#78b732}
+.col-gray{background:#78808b}
+.col-yellow{background:#ffb600}
+.col-blue{background:#50a0ab}
+
+.padl0{ padding-left:0;}
+.padr0{ padding-right:0;}
+
+.gofootmenu{background:#ed3338;padding:20px;text-align:center;box-shadow: 0px 5px 13px 0px #131313;z-index: 1;}
+
+.gofootmenu ul{ margin:auto; }
+.gofootmenu ul li{ display:inline-block; }
+.gofootmenu ul li a{ color:rgba(255,255,255,0.6); transition:.2s; margin:0 20px; font-size:1.2em; font-weight:normal; position:relative; text-decoration:none;}
+.gofootmenu ul li a:hover{ color:rgba(255,255,255,1)}
+.gofootmenu ul li a:after
+{
+     position: absolute;
+     content: '';
+     height: 20px;
+     width: 1px;
+     background: #fff;
+     top: 1px;
+     right: -15px;
+    }
+    
+.gofootmenu ul li:last-child a:after
+{
+    display:none;
+}
+
+.gofooter{background: #333333;height:200px;z-index: 1;position: relative; padding:30px 0;}
+
+.gofooter p{display:inline-block; color:#ccc;}
+.gofooter p>a{color:#ccc; margin:0 15px; display:inline-block; position:relative;text-decoration:none;}
+.gofooter p>a:hover{color:#fff; }
+.gofooter p>a:after
+{
+    position: absolute;
+     content: '';
+     height: 15px;
+     width: 1px;
+     background: #999;
+     top: 3px;
+     left: -10px;
+    
+    }
+    
+.gofooter ul{ float:right}
+.gofooter ul li{ display:inline-block;}
+.gofooter ul li a{ color:#fff; text-decoration:none; border:3px solid #fff; display:block; height:52px; width:52px; border-radius:50px; text-align:center; cursor:pointer}
+.gofooter ul li a:hover{ background:#000;}
+.gofooter ul li a i{ font-size:2em; line-height:1.5em;}
+
+

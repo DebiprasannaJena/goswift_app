@@ -1,0 +1,1190 @@
+[
+  {
+    "id":1,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn1"
+  },
+  {
+    "id":2,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Assistance for Mega Food Park",
+    "functionName": "fucn2"
+  },
+  {
+    "id":3,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Assistance Reefer Vehicle",
+    "functionName": "fucn3"
+  },
+  {
+    "id":4,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Assistance to ULBs for Modernization of Meat Shops",
+    "functionName": "fucn4"
+  },
+  {
+    "id":5,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Assistance for Human Resource Development",
+    "functionName": "fucn5"
+  },
+  {
+    "id":6,
+    "policyName": "Under Food Processing Policy, 2016",
+    "incentiveName": "Promotional Assistance",
+    "functionName": "fucn6"
+  },
+  {
+    "id":7,
+    "policyName": "Under Apparel policy 2016",
+    "incentiveName": "Apparel Units with minimum 200 workers",
+    "functionName": "fucn7"
+  },
+  {
+    "id":8,
+    "policyName": "Under Apparel policy 2016",
+    "incentiveName": "Apparel Park",
+    "functionName": "fucn8"
+  },
+  {
+    "id":9,
+    "policyName": "Under Biotechnology policy 2016",
+    "incentiveName": "R&D",
+    "functionName": "fucn9"
+  },
+  {
+    "id":10,
+    "policyName": "Under Biotechnology policy 2016",
+    "incentiveName": "Promotional Assistance",
+    "functionName": "fucn10"
+  },
+  {
+    "id":11,
+    "policyName": "Under Healthcare policy 2016",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn11"
+  },
+  {
+    "id":17,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Incubation",
+    "functionName": "fucn17"
+  },
+  {
+    "id":18,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Lease Rentals",
+    "functionName": "fucn18"
+  },
+  {
+    "id":19,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Land Allotment in IT Parks",
+    "functionName": "fucn19"
+  },
+  {
+    "id":20,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn20"
+  },
+  {
+    "id":21,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn21"
+  },
+  {
+    "id":22,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn22"
+  },
+  {
+    "id":23,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn23"
+  },
+  {
+    "id":24,
+    "policyName": "Under ICT Policy 2014",
+    "incentiveName": "IT Parks/STPs",
+    "functionName": "fucn24"
+  },
+  {
+    "id":25,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn25"
+  },
+  {
+    "id":26,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Seed Capital Assistance",
+    "functionName": "fucn26"
+  },
+  {
+    "id":27,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Project Report Subsidy",
+    "functionName": "fucn27"
+  },
+  {
+    "id":28,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Reimbursement of Audit Cost for Water Conservation",
+    "functionName": "fucn28"
+  },
+  {
+    "id":29,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Assistance for raising Capital through SME exchange",
+    "functionName": "fucn29"
+  },
+  {
+    "id":30,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Trade Mark Assistance",
+    "functionName": "fucn30"
+  },
+  {
+    "id":31,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Reimbursement of Training Expenditure",
+    "functionName": "fucn31"
+  },
+  {
+    "id":32,
+    "policyName": "Under MSME Development policy 2016",
+    "incentiveName": "Award to MSME/ Entrepreneurs",
+    "functionName": "fucn32"
+  },
+  {
+    "id":33,
+    "policyName": "Under Pharmaceutical policy 2016",
+    "incentiveName": "Pharmaceutical Cluster",
+    "functionName": "fucn33"
+  },
+  {
+    "id":34,
+    "policyName": "Under Pharmaceutical policy 2016",
+    "incentiveName": "Classification of Industries",
+    "functionName": "fucn34"
+  },
+  {
+    "id":35,
+    "policyName": "Under Pharmaceutical policy 2016",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn35"
+  },
+  {
+    "id":36,
+    "policyName": "Under Pharmaceutical policy 2016",
+    "incentiveName": "Environmental Protection Infrastructure Subsidy",
+    "functionName": "fucn36"
+  },
+  {
+    "id":37,
+    "policyName": "Under Renewable Energy policy 2016",
+    "incentiveName": "Concessions in Taxes & Duties",
+    "functionName": "fucn37"
+  },
+  {
+    "id":38,
+    "policyName": "Under Renewable Energy policy 2016",
+    "incentiveName": "Exemptions from Certificates, Fees & Charges",
+    "functionName": "fucn38"
+  },
+  {
+    "id":40,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn40"
+  },
+  {
+    "id":41,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn41"
+  },
+  {
+    "id":42,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn42"
+  },
+  {
+    "id":43,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Land conversion charges",
+    "functionName": "fucn43"
+  },
+  {
+    "id":44,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn44"
+  },
+  {
+    "id":45,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Reimbursement of Entertainment Tax",
+    "functionName": "fucn45"
+  },
+  {
+    "id":46,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Energy",
+    "functionName": "fucn46"
+  },
+  {
+    "id":47,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn47"
+  },
+  {
+    "id":48,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn48"
+  },
+  {
+    "id":49,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Environmental protection infrastructure subsidy",
+    "functionName": "fucn49"
+  },
+  {
+    "id":50,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Training Subsidy",
+    "functionName": "fucn50"
+  },
+  {
+    "id":51,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Transport industry",
+    "functionName": "fucn51"
+  },
+  {
+    "id":52,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Participation in overseas Tourism Events",
+    "functionName": "fucn52"
+  },
+  {
+    "id":53,
+    "policyName": "Under Tourism Policy 2016",
+    "incentiveName": "Film Shooting subsidy",
+    "functionName": "fucn53"
+  },
+  {
+    "id":54,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn54"
+  },
+  {
+    "id":55,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn55"
+  },
+  {
+    "id":56,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Guarantee fee charged under Credit Guarantee Trust",
+    "functionName": "fucn56"
+  },
+  {
+    "id":57,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn57"
+  },
+  {
+    "id":58,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn58"
+  },
+  {
+    "id":59,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "One-time reimbursement of Energy audits costs",
+    "functionName": "fucn59"
+  },
+  {
+    "id":60,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn60"
+  },
+  {
+    "id":61,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn61"
+  },
+  {
+    "id":62,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn62"
+  },
+  {
+    "id":63,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn63"
+  },
+  {
+    "id":64,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn64"
+  },
+  {
+    "id":65,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn65"
+  },
+  {
+    "id":66,
+    "policyName": "MSME Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Environmental Protection Infrastructure Subsidy",
+    "functionName": "fucn66"
+  },
+  {
+    "id":67,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn67"
+  },
+  {
+    "id":68,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn68"
+  },
+  {
+    "id":69,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Guarantee fee charged under Credit Guarantee Trust",
+    "functionName": "fucn69"
+  },
+  {
+    "id":70,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn70"
+  },
+  {
+    "id":71,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn71"
+  },
+  {
+    "id":72,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "One-time reimbursement of Energy audits costs",
+    "functionName": "fucn72"
+  },
+  {
+    "id":73,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn73"
+  },
+  {
+    "id":74,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn74"
+  },
+  {
+    "id":75,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn75"
+  },
+  {
+    "id":76,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn76"
+  },
+  {
+    "id":77,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn77"
+  },
+  {
+    "id":78,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn78"
+  },
+  {
+    "id":79,
+    "policyName": "MSME Incentives under IPR 2015",
+    "incentiveName": "Environmental Protection Infrastructure Subsidy",
+    "functionName": "fucn79"
+  },
+  {
+    "id":80,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn80"
+  },
+  {
+    "id":81,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn81"
+  },
+  {
+    "id":82,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn82"
+  },
+  {
+    "id":83,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn83"
+  },
+  {
+    "id":84,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn84"
+  },
+  {
+    "id":85,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn85"
+  },
+  {
+    "id":86,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn86"
+  },
+  {
+    "id":87,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn87"
+  },
+  {
+    "id":88,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn88"
+  },
+  {
+    "id":89,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn89"
+  },
+  {
+    "id":90,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Land",
+    "functionName": "fucn90"
+  },
+  {
+    "id":91,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn91"
+  },
+  {
+    "id":92,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn92"
+  },
+  {
+    "id":93,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn93"
+  },
+  {
+    "id":94,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn94"
+  },
+  {
+    "id":95,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn95"
+  },
+  {
+    "id":96,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn96"
+  },
+  {
+    "id":97,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn97"
+  },
+  {
+    "id":98,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn98"
+  },
+  {
+    "id":99,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn99"
+  },
+  {
+    "id":100,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn100"
+  },
+  {
+    "id":101,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn101"
+  },
+  {
+    "id":102,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn102"
+  },
+  {
+    "id":103,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn103"
+  },
+  {
+    "id":104,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Land",
+    "functionName": "fucn104"
+  },
+  {
+    "id":105,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn105"
+  },
+  {
+    "id":106,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn106"
+  },
+  {
+    "id":107,
+    "policyName": "MSME Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn107"
+  },
+  {
+    "id":108,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn108"
+  },
+  {
+    "id":109,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn109"
+  },
+  {
+    "id":110,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn110"
+  },
+  {
+    "id":111,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn111"
+  },
+  {
+    "id":112,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn112"
+  },
+  {
+    "id":113,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn113"
+  },
+  {
+    "id":114,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn114"
+  },
+  {
+    "id":115,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn115"
+  },
+  {
+    "id":116,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn116"
+  },
+  {
+    "id":117,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn117"
+  },
+  {
+    "id":118,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn118"
+  },
+  {
+    "id":119,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn119"
+  },
+  {
+    "id":120,
+    "policyName": "MSME Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn120"
+  },
+  {
+    "id":121,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn121"
+  },
+  {
+    "id":122,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn122"
+  },
+  {
+    "id":123,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn123"
+  },
+  {
+    "id":124,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn124"
+  },
+  {
+    "id":125,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn125"
+  },
+  {
+    "id":126,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn126"
+  },
+  {
+    "id":127,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn127"
+  },
+  {
+    "id":128,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn128"
+  },
+  {
+    "id":129,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn129"
+  },
+  {
+    "id":130,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn130"
+  },
+  {
+    "id":131,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn131"
+  },
+  {
+    "id":132,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn132"
+  },
+  {
+    "id":133,
+    "policyName": "MSME Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn133"
+  },
+  {
+    "id":134,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of Power Tariff",
+    "functionName": "fucn134"
+  },
+  {
+    "id":135,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Training Subsidy",
+    "functionName": "fucn135"
+  },
+  {
+    "id":136,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Land for Workers’ hostel",
+    "functionName": "fucn136"
+  },
+  {
+    "id":137,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn137"
+  },
+  {
+    "id":138,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn138"
+  },
+  {
+    "id":139,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn139"
+  },
+  {
+    "id":140,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn140"
+  },
+  {
+    "id":141,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn141"
+  },
+  {
+    "id":142,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn142"
+  },
+  {
+    "id":143,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn143"
+  },
+  {
+    "id":144,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn144"
+  },
+  {
+    "id":145,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn145"
+  },
+  {
+    "id":146,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn146"
+  },
+  {
+    "id":147,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Land",
+    "functionName": "fucn147"
+  },
+  {
+    "id":148,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn148"
+  },
+  {
+    "id":149,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn149"
+  },
+  {
+    "id":150,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream in Backward Districts under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn150"
+  },
+  {
+    "id":151,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Reimbursement of Power Tariff",
+    "functionName": "fucn151"
+  },
+  {
+    "id":152,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Training Subsidy",
+    "functionName": "fucn152"
+  },
+  {
+    "id":153,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Land for Workers’ hostel",
+    "functionName": "fucn153"
+  },
+  {
+    "id":154,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn154"
+  },
+  {
+    "id":155,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn155"
+  },
+  {
+    "id":156,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn156"
+  },
+  {
+    "id":157,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn157"
+  },
+  {
+    "id":158,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn158"
+  },
+  {
+    "id":159,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn159"
+  },
+  {
+    "id":160,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn160"
+  },
+  {
+    "id":161,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn161"
+  },
+  {
+    "id":162,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn162"
+  },
+  {
+    "id":163,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn163"
+  },
+  {
+    "id":164,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn164"
+  },
+  {
+    "id":165,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Land",
+    "functionName": "fucn165"
+  },
+  {
+    "id":166,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn166"
+  },
+  {
+    "id":167,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn167"
+  },
+  {
+    "id":168,
+    "policyName": "Priority Sector Incentives for Ancillary and Downstream under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn168"
+  },
+  {
+    "id":169,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of Power Tariff",
+    "functionName": "fucn169"
+  },
+  {
+    "id":170,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Training Subsidy",
+    "functionName": "fucn170"
+  },
+  {
+    "id":171,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Land for Workers’ hostel",
+    "functionName": "fucn171"
+  },
+  {
+    "id":172,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn172"
+  },
+  {
+    "id":173,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn173"
+  },
+  {
+    "id":174,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn174"
+  },
+  {
+    "id":175,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn175"
+  },
+  {
+    "id":176,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn176"
+  },
+  {
+    "id":177,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn177"
+  },
+  {
+    "id":178,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn178"
+  },
+  {
+    "id":179,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn179"
+  },
+  {
+    "id":180,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn180"
+  },
+  {
+    "id":181,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn181"
+  },
+  {
+    "id":182,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn182"
+  },
+  {
+    "id":183,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn183"
+  },
+  {
+    "id":184,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn184"
+  },
+  {
+    "id":185,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Reimbursement of Power Tariff",
+    "functionName": "fucn185"
+  },
+  {
+    "id":186,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Training Subsidy",
+    "functionName": "fucn186"
+  },
+  {
+    "id":187,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Land for Workers’ hostel",
+    "functionName": "fucn187"
+  },
+  {
+    "id":188,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Interest Subsidy",
+    "functionName": "fucn188"
+  },
+  {
+    "id":189,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Stamp Duty Exemption",
+    "functionName": "fucn189"
+  },
+  {
+    "id":190,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Electricity Duty Exemption",
+    "functionName": "fucn190"
+  },
+  {
+    "id":191,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Reimbursement of VAT",
+    "functionName": "fucn191"
+  },
+  {
+    "id":192,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn192"
+  },
+  {
+    "id":193,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Employment Cost Subsidy",
+    "functionName": "fucn193"
+  },
+  {
+    "id":194,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Patent and Intellectual Property registration",
+    "functionName": "fucn194"
+  },
+  {
+    "id":195,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Quality Certification",
+    "functionName": "fucn195"
+  },
+  {
+    "id":196,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Technical Know-how",
+    "functionName": "fucn196"
+  },
+  {
+    "id":197,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Anchor Tenant Subsidy",
+    "functionName": "fucn197"
+  },
+  {
+    "id":198,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Capital grant to support Quality Infrastructure",
+    "functionName": "fucn198"
+  },
+  {
+    "id":199,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Provision of Sub-station for Industrial Parks",
+    "functionName": "fucn199"
+  },
+  {
+    "id":200,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Exemption from payment of premium leviable under Orissa Land Reforms (OLR) Act",
+    "functionName": "fucn200"
+  },
+  {
+    "id":202,
+    "policyName": "Special Incentive Package Scheme for ESDM Sector",
+    "incentiveName": "Entry Tax Reimbursement",
+    "functionName": "fucn202"
+  },
+  {
+    "id":203,
+    "policyName": "Special Incentive Package Scheme for ESDM Sector",
+    "incentiveName": "Human Capital Investment Subsidy",
+    "functionName": "fucn203"
+  },
+  {
+    "id":207,
+    "policyName": "Priority Sector Incentives under IPR 2015",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn207"
+  },
+  {
+    "id":208,
+    "policyName": "Priority Sector Incentives in Backward Districts under IPR 2015",
+    "incentiveName": "Capital Subsidy",
+    "functionName": "fucn208"
+  }
+]

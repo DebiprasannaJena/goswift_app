@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<User>
+  <UserMaster>
+    <INT_USER_ID>124</INT_USER_ID>
+    <VCH_USER_ID>124</VCH_USER_ID>
+    <VCH_USER_NAME>ipcolbaalaark</VCH_USER_NAME>
+    <INT_HIERARCHY_ID>0</INT_HIERARCHY_ID>
+    <INT_LEVEL_ID>188</INT_LEVEL_ID>
+    <VCH_ADMIN_PREVIL>false</VCH_ADMIN_PREVIL>
+  </UserMaster>
+</User>

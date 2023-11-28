@@ -1,0 +1,56 @@
+Time: 31/08/2021 04:42:27 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 584 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0300001&mnumber=917327014295&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 31/08/2021 04:42:40 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 584 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 04:46:39 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 714 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: ANG0300002&mnumber=917327014295&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 31/08/2021 04:47:07 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 986 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ANG0300001, has registered a grievance with grievance No: ANG0300001&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 31/08/2021 04:47:07 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 714 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 04:47:07 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 760 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ANG0300002, has registered a grievance with grievance No: ANG0300002&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 31/08/2021 04:47:07 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 760 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 04:47:07 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 986 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 04:57:09 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 444 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: CUT0300003&mnumber=917327014295&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 31/08/2021 04:57:09 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 444 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 05:01:18 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 307 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ss  Infotech, has registered a grievance with grievance No: CUT0300003&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 31/08/2021 05:01:18 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 307 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 06:04:22 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 895 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, your complaint has registered with GOSWIFT under Grievance No: JAJ0300004&mnumber=917327014295&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004665048594
+-----------------------------------------------------------
+Time: 31/08/2021 06:04:23 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 895 - null
+
+-----------------------------------------------------------
+Time: 31/08/2021 06:06:42 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 119 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ss  Infotech, has registered a grievance with grievance No: JAJ0300004&mnumber=910&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407163004734389692
+-----------------------------------------------------------
+Time: 31/08/2021 06:06:42 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 119 - null
+
+-----------------------------------------------------------

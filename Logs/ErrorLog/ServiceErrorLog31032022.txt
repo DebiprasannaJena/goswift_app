@@ -1,0 +1,38 @@
+Time: 31/03/2022 10:35:14 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Service_ServiceViewAndTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Service\ServiceViewAndTakeAction.aspx.cs:line 112
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 31/03/2022 10:37:45 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\ApplicationDetails.aspx.cs:line 76
+Source: App_Web_1dtghdb1
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 31/03/2022 10:37:52 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at ApplicationDetails.Page_Load(Object sender, EventArgs e) in d:\Projects\SWPGoo\SWP_NEW\ApplicationDetails.aspx.cs:line 76
+Source: App_Web_1dtghdb1
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 31/03/2022 10:39:46 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at Service_ServiceViewAndTakeAction.BindGridDetails() in d:\Projects\SWPGoo\SWP_NEW\Portal\Service\ServiceViewAndTakeAction.aspx.cs:line 112
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+

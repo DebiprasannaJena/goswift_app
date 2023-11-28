@@ -1,0 +1,8 @@
+Time: 17/02/2022 10:28:25 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DraftedProposals.BindInvestorInfo() in d:\Projects\SWPGoo\SWP_NEW\DraftedProposals.aspx.cs:line 40
+Source: App_Web_draftedproposals.aspx.cdcab7d2.si71vhkg
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+

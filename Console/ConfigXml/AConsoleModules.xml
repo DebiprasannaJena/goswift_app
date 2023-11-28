@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ 
+  <ACModules NAME="ACModules" ID="0" FLAG="0">    
+    <ManageLinks ID="2" TOT="6" NAME="Manage Links" DESC="test" FLAG="0">
+      <FunctionMaster ID="1" TOT="0" NAME="Function Master" DESC="test" FLAG="0">
+      </FunctionMaster>
+      <GlobalLink ID="2" TOT="0" NAME="Global Link" DESC="test" FLAG="0">
+      </GlobalLink>
+      <PrimaryLink ID="3" TOT="0" NAME="Primary Link" DESC="test" FLAG="0">
+      </PrimaryLink>
+      <Button ID="4" TOT="0" NAME="Button" DESC="test" FLAG="0">
+      </Button>
+      <TabMaster ID="5" TOT="0" NAME="Tab Master" DESC="test" FLAG="0">
+      </TabMaster>
+      <AssignLink ID="6" TOT="0" NAME="Assign Link" DESC="test" FLAG="0">
+      </AssignLink>
+    </ManageLinks>
+    <ManageUser ID="3" TOT="6" NAME="Manage User" DESC="Manage User" FLAG="0">
+      <AddUser ID="1" TOT="0" NAME="Add User" DESC="Manage User" FLAG="0">
+      </AddUser>
+      <UserProfile ID="2" TOT="0" NAME="User Profile" DESC="Manage User" FLAG="0">
+      </UserProfile>
+      <SetPermission ID="3" TOT="0" NAME="Set Permission" DESC="Manage User" FLAG="0">
+      </SetPermission>
+      <Location ID="4" TOT="0" NAME="Location" DESC="Manage User" FLAG="0">
+      </Location>
+      <Designation ID="5" TOT="0" NAME="Designation" DESC="Manage User" FLAG="0">
+      </Designation>
+      <AssignAdmin ID="6" TOT="0" NAME="Assign Admin" DESC="test" FLAG="0">
+      </AssignAdmin>
+    </ManageUser>
+    <OfficeTimings ID="4" TOT="4" NAME="Office Timings" DESC="test" FLAG="0">
+      <ShiftMaster ID="1" TOT="0" NAME="Shift Master" DESC="test" FLAG="0">
+      </ShiftMaster>
+      <OfficeTime ID="2" TOT="0" NAME="Office Time" DESC="test" FLAG="0">
+      </OfficeTime>
+      <FlexiTime ID="3" TOT="0" NAME="Flexi Time" DESC="test" FLAG="0">
+      </FlexiTime>
+      <ShiftAssignment ID="4" TOT="0" NAME="Shift Assignment" DESC="test" FLAG="0">
+      </ShiftAssignment>
+    </OfficeTimings>
+    <ManageLogIn ID="5" TOT="3" NAME="Manage LogIn" DESC="LogIn" FLAG="0">
+      <Configuration ID="1" TOT="0" NAME="Configuration Master" DESC="test" FLAG="0">
+      </Configuration>
+      <ResetPassword ID="2" TOT="0" NAME="Reset Password" DESC="test" FLAG="0">
+      </ResetPassword>
+      <ProxyLogin ID="3" TOT="0" NAME="Proxy Login" DESC="test" FLAG="0">
+      </ProxyLogin>
+    </ManageLogIn>
+   
+  </ACModules>
+ 

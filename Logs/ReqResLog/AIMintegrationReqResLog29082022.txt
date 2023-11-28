@@ -1,0 +1,60 @@
+Time: 29/08/2022 03:47:51 PM For RequestMethod: RequestDateTime
+InputOutput: 8/29/2022 3:47:51 PM
+-----------------------------------------------------------
+Time: 29/08/2022 03:47:55 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 03:47:56 PM For RequestMethod: CATEGORY
+InputOutput: 2
+-----------------------------------------------------------
+Time: 29/08/2022 03:48:03 PM For RequestMethod: Data Sent 
+InputOutput: {"ExtensionData":null,"ADDRESS":"Laxmi Sagar","BLOCK":"155","CATEGORY":"2","CELLPHONE_NO":"7327014294","DISTRICT":"15","EIN_PC":"","E_MAIL":"raju1994@gmail.com","Enterprenenur_Name":"Mr Raju Pvt.","GSTIN":"","INV_NAME":"Raju Test","INV_USERID":"AOFPJ9734F_341012","LICENCE_NO_TYPE":"","PAN":"AOFPJ9734F","SECTOR":"29","SITELOCATION":"Near Laxmisagar","SUBSECTOR":"112","Status":"F","UNIQUEID":"7407F984-1B73-4831-A2AB-3DD554935815"}
+-----------------------------------------------------------
+Time: 29/08/2022 04:32:27 PM For RequestMethod: RequestDateTime First Level:
+InputOutput: 8/29/2022 4:32:27 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:32:28 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:32:35 PM For RequestMethod: Data Sent :
+InputOutput: {"ExtensionData":null,"ADDRESS":"Laxmi Sagar","BLOCK":"155","CATEGORY":"2","CELLPHONE_NO":"7327014294","DISTRICT":"15","EIN_PC":"","E_MAIL":"raju1994@gmail.com","Enterprenenur_Name":"Mr Raju Pvt.","GSTIN":"","INV_NAME":"Raju Test","INV_USERID":"AOFPJ9734F_341012","LICENCE_NO_TYPE":"","PAN":"AOFPJ9734F","SECTOR":"29","SITELOCATION":"Near Laxmisagar","SUBSECTOR":"112","Status":"F","UNIQUEID":"7407F984-1B73-4831-A2AB-3DD554935815"}
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:54 PM For RequestMethod: RequestDateTime MIS:
+InputOutput: 8/29/2022 4:48:54 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:54 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:55 PM For RequestMethod: RequestDateTime MIS:
+InputOutput: 8/29/2022 4:48:55 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:55 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:59 PM For RequestMethod: RequestDateTime First Level:
+InputOutput: 8/29/2022 4:48:59 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:59 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:48:59 PM For RequestMethod: Data Sent :
+InputOutput: {"ExtensionData":null,"ADDRESS":"Laxmi Sagar","BLOCK":"155","CATEGORY":"2","CELLPHONE_NO":"7327014294","DISTRICT":"15","EIN_PC":"","E_MAIL":"raju1994@gmail.com","Enterprenenur_Name":"Mr Raju Pvt.","GSTIN":"","INV_NAME":"Raju Test","INV_USERID":"AOFPJ9734F_341012","LICENCE_NO_TYPE":"","PAN":"AOFPJ9734F","SECTOR":"29","SITELOCATION":"Near Laxmisagar","SUBSECTOR":"112","Status":"F","UNIQUEID":"7407F984-1B73-4831-A2AB-3DD554935815"}
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:02 PM For RequestMethod: RequestDateTime Second Level:
+InputOutput: 8/29/2022 4:49:02 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:02 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:02 PM For RequestMethod: Data Sent :
+InputOutput: {"ExtensionData":null,"ADDRESS":null,"BLOCK":"155","CATEGORY":"2","CELLPHONE_NO":null,"DISTRICT":null,"EIN_PC":"0171100024","E_MAIL":null,"Enterprenenur_Name":null,"GSTIN":"658485","INV_NAME":"BISKFARM","INV_USERID":"AOFPJ9734F_341012","LICENCE_NO_TYPE":"PC","PAN":"AOFPJ9734F","SECTOR":"29","SITELOCATION":"Near Laxmisagar","SUBSECTOR":"112","Status":"A","UNIQUEID":"7407F984-1B73-4831-A2AB-3DD554935815"}
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:10 PM For RequestMethod: RequestDateTime CheckEIN:
+InputOutput: 8/29/2022 4:49:10 PM
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:10 PM For RequestMethod: Data initialize 
+InputOutput: Start
+-----------------------------------------------------------
+Time: 29/08/2022 04:49:10 PM For RequestMethod: Data Sent :
+InputOutput: {"ExtensionData":null,"ADDRESS":null,"BLOCK":null,"CATEGORY":null,"CELLPHONE_NO":null,"DISTRICT":null,"EIN_PC":null,"E_MAIL":null,"Enterprenenur_Name":null,"GSTIN":null,"INV_NAME":null,"INV_USERID":null,"LICENCE_NO_TYPE":null,"PAN":null,"SECTOR":null,"SITELOCATION":null,"SUBSECTOR":null,"Status":null,"UNIQUEID":"7407F984-1B73-4831-A2AB-3DD554935815"}
+-----------------------------------------------------------

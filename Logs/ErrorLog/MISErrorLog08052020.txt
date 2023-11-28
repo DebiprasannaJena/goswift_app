@@ -1,0 +1,77 @@
+Time: 08/05/2020 11:57:47 AM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 11:58:09 AM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 12:04:06 PM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 12:05:31 PM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 12:06:11 PM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 12:07:13 PM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+
+Time: 08/05/2020 12:07:54 PM
+-----------------------------------------------------------
+Message: cnt_deferred
+StackTrace:    at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at System.Data.SqlClient.SqlDataReader.get_Item(String name)
+   at MisReportServiceProvider.View_ChildServices_MISReport_New(RptSearch objSearch) in d:\CSMPROJECTS\SWPGoo\SWP_NEW\App_Code\DAL\MISReport\MisReportServiceProvider.cs:line 141
+Source: System.Data
+TargetSite: Int32 GetOrdinal(System.String)
+-----------------------------------------------------------
+

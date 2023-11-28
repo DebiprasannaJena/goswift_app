@@ -1,0 +1,117 @@
+Time: 14/12/2021 09:48:33 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:37 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:41 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:55 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:57 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:58 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:48:59 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:49:00 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 14/12/2021 09:49:02 AM
+-----------------------------------------------------------
+Message: DataBinding: 'EntityLayer.Service.ServiceDetails' does not contain a property with the name 'intExternalType'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at DepartmentClearance1.BindGrid(String strProposalId) in d:\Projects\SWPGoo\SWP_NEW\DepartmentClearance1.aspx.cs:line 49
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
