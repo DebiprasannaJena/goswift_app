@@ -147,9 +147,6 @@ public partial class TestPageSaml2 : System.Web.UI.Page
             }
 
         }
-
-
-
        
     }
 }
