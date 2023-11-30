@@ -290,7 +290,7 @@ public partial class incentives_incentiveoffered : SessionCheck
                         }
                         else
                         {
-                            Response.Redirect("ExemptionLandforIndustrialUse.aspx?key=" + strInctId + "", false);
+                            Response.Redirect("ExemptionLandforIndustrialUseIPR2022.aspx?key=" + strInctId + "", false);
                         }
                     }
                     else if (strInctId == "11400104") //  Apply Conversion Of Land For Industrial Use Certificate IPR 2022
