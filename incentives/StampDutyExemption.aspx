@@ -597,6 +597,7 @@
     <form id="form1" runat="server" autocomplete="off">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+        <uc2:header ID="header" runat="server" />
     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanelMain">
         <ProgressTemplate>
             <div class="overlay">
@@ -609,37 +610,36 @@
     <asp:UpdatePanel runat="server" ID="UpdatePanelMain">
         <ContentTemplate>
             <div class="container">
-                <uc2:header ID="header" runat="server" />
-                <div class="registration-div investors-bg">
-                    <div id="exTab1" class="">
-                        <div class="investrs-tab">
-                            <uc4:investoemenu ID="ineste" runat="server" />
-                        </div>
-                        <div class="tab-content clearfix">
-                            <div class="tab-pane active" id="1a">
-                                <div class="form-sec">
-                                    <div class="innertabs  m-b-10">
-                                        <ul class="nav nav-pills pull-right">
-                                            <li><a href="incentiveoffered.aspx" title="Click Here to View Incentive Offered !!">
-                                                Incentive Offered</a></li>
-                                            <%--   <li class="active"><a href="Basic_Details.aspx" title="Click Here to Apply For Incentives !!">
+                <div class="container wrapper">
+                    <div class="registration-div investors-bg">
+                        <div id="exTab1" class="">
+                            <div class="investrs-tab">
+                                <uc4:investoemenu ID="ineste" runat="server" />
+                            </div>
+                            <div class="tab-content clearfix">
+                                <div class="tab-pane active" id="1a">
+                                    <div class="form-sec">
+                                        <div class="innertabs  m-b-10">
+                                            <ul class="nav nav-pills pull-right">
+                                                <li></li>
+                                                <%--   <li class="active"><a href="Basic_Details.aspx" title="Click Here to Apply For Incentives !!">
                                                 Apply For Incentive</a></li>--%>
-                                            <li><a href="ViewApplicationStatus.aspx" title="Click Here to View Application Status !!">
-                                                View Application Status</a></li>
-                                        </ul>
-                                        <div class="clearfix">
+                                                <li></li>
+                                            </ul>
+                                            <div class="clearfix">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-header">                                      
-                                        <h2>
-                                            BASIC UNIT DETAILS</h2>
-                                    </div>
-                                    <div class="incentivesec">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="details-section leftcolm">
-                                                    <div class="panel-group p-t-20" id="accordion" role="tablist" aria-multiselectable="true">
-                                                       
+                                        <div class="form-header">
+                                            <a href="incentiveoffered.aspx" title="Click Here to View Incentive Offered !!" class="pull-right proposalbtn ">Incentive Offered</a>
+                                            <a href="ViewApplicationStatus.aspx" title="Click Here to View Application Status !!" class="pull-right proposalbtn active">View Application Status</a>
+                                            <h2>Stamp Duty Exemption IPR 2022</h2>
+                                        </div>
+                                        <div class="incentivesec">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="details-section leftcolm">
+                                                        <div class="panel-group p-t-20" id="accordion" role="tablist" aria-multiselectable="true">
+
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading" role="tab" id="headingOne">
                                                                     <h4 class="panel-title">
@@ -657,11 +657,11 @@
                                                                                 <%--<label class="col-sm-4">
                                                                                  1.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
-                                                                               <label for="Iname" class="col-sm-4">                                      
+                                                                                <label for="Iname" class="col-sm-4">
                                                                                     1. Name of Enterprise/Industrial Unit &nbsp;</label>
-                                                                                    
+
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span><asp:TextBox ID="Txt_EnterPrise_Name" CssClass="form-control"
                                                                                         runat="server" MaxLength="100" ToolTip="Enter Name of Enterprise/Industrial Unit Here !!"></asp:TextBox>
@@ -669,21 +669,21 @@
                                                                                         FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom" ValidChars=",-/. ">
                                                                                     </cc1:FilteredTextBoxExtender>
                                                                                 </div>
-                                                                                     
+
                                                                             </div>
 
-                                                                                
+
                                                                         </div>
 
                                                                         <div class="form-group">
                                                                             <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                                <%-- <label class="col-sm-4">
                                                                                  2.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4 ">
-                                                                                  2. Category of the  Unit  &nbsp;</label>
+                                                                                    2. Category of the  Unit  &nbsp;</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
                                                                                     <asp:DropDownList ID="DrpDwn_Unit_Cat" CssClass="form-control" runat="server" ToolTip="Select Category of the  Unit Here !!">
@@ -694,13 +694,13 @@
 
                                                                         <div class="form-group">
                                                                             <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                                <%-- <label class="col-sm-4">
                                                                                  3.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4 ">
-                                                                                   3. Address of Registered Office Unit &nbsp;</label>
+                                                                                    3. Address of Registered Office Unit &nbsp;</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
                                                                                     <asp:TextBox ID="Txt_Industry_Address" CssClass="form-control" MaxLength="500" TextMode="MultiLine"
@@ -713,7 +713,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                       <%-- <div class="form-group">
+                                                                        <%-- <div class="form-group">
                                                                              <div class="row">
                                                                                 <label class="col-sm-4">
                                                                                 4.
@@ -736,7 +736,7 @@
                                                                             </div>
                                                                         </div>--%>
 
-                                                                       <%-- <div class="form-group">
+                                                                        <%-- <div class="form-group">
                                                                              <div class="row">
                                                                                 <label class="col-sm-4">
                                                                                  5.
@@ -776,31 +776,32 @@
                                                                         </div>--%>
 
                                                                         <div class="form-group">
-                                                                             <div class="row">
-                                                                              <%--  <label class="col-sm-4">
+                                                                            <div class="row">
+                                                                                <%--  <label class="col-sm-4">
                                                                                  4.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
-                                                                                   4. Type of  Organization  &nbsp;</label>
+                                                                                    4. Type of  Organization  &nbsp;</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:DropDownList ID="DrpDwn_Org_Type" OnSelectedIndexChanged="DrpDwn_Org_Type_SelectedIndexChanged" CssClass="form-control" runat="server" AutoPostBack="true"  ToolTip="Select Type of  Organization Here !!">
+                                                                                    <asp:DropDownList ID="DrpDwn_Org_Type" OnSelectedIndexChanged="DrpDwn_Org_Type_SelectedIndexChanged" CssClass="form-control" runat="server" AutoPostBack="true" ToolTip="Select Type of  Organization Here !!">
                                                                                     </asp:DropDownList>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                             <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                 5.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
-                                                                                   5. <asp:Label ID="Lbl_Org_Name_Type" runat="server" Text="Name of Managing Partner"></asp:Label>
+                                                                                    5.
+                                                                                    <asp:Label ID="Lbl_Org_Name_Type" runat="server" Text="Name of Managing Partner"></asp:Label>
                                                                                     &nbsp;
                                                                                 </label>
                                                                                 <div class="col-sm-1" style="padding-right: 0px">
@@ -818,18 +819,18 @@
                                                                             </div>
                                                                         </div>
 
-                                                                       <div class="form-group">
-                                                                             <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                  6.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
-                                                                                 6.  Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment</label>
+                                                                                    6.  Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                   <div class="input-group date datePicker" id="Div1" runat="server">
+                                                                                    <div class="input-group date datePicker" id="Div1" runat="server">
                                                                                         <asp:TextBox ID="Txt_Commence_production" CssClass="form-control" type="text" runat="server"
                                                                                             MaxLength="11" ToolTip="Enter Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment Here !!"></asp:TextBox>
                                                                                         <span id="Span2" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -840,17 +841,17 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    
-                                                                        
+
+
                                                                         <div class="form-group">
-                                                                             <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                  7.
                                                                                 </label>--%>
-                                                                                </div>
+                                                                            </div>
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
-                                                                                   7. EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL No.</label>
+                                                                                    7. EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL No.</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
                                                                                     <asp:TextBox ID="Txt_EIN_IL_NO" Onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')" CssClass="form-control" MaxLength="100" runat="server"
@@ -868,7 +869,7 @@
                                                                                     EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL Date</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                            <div class="input-group date datePicker" id="Div_Date_EIN" runat="server">
+                                                                                    <div class="input-group date datePicker" id="Div_Date_EIN" runat="server">
                                                                                         <asp:TextBox ID="Txt_EIN_IL_Date" CssClass="form-control" type="text" runat="server"
                                                                                             MaxLength="11" ToolTip="Enter EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL Date Here !!"></asp:TextBox>
                                                                                         <span id="Span_Date_EIN" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -881,13 +882,13 @@
 
                                                                             <div class="form-group">
                                                                                 <div class="row">
-                                                                                   <%-- <label class="col-sm-4">
+                                                                                    <%-- <label class="col-sm-4">
                                                                                         8.
                                                                                     </label>--%>
                                                                                 </div>
                                                                                 <div class="row">
                                                                                     <label for="Iname" class="col-sm-12">
-                                                                                       8. Proposed items or Items of manufacture / activities with proposed capacity / installed capacity&nbsp;
+                                                                                        8. Proposed items or Items of manufacture / activities with proposed capacity / installed capacity&nbsp;
                                                                                     </label>
                                                                                     <div class="col-sm-12  margin-bottom10">
                                                                                         <table class="table table-bordered">
@@ -1002,618 +1003,609 @@
 
 
                                                                         </div>
-                                                                           
-                                                                            <h4>
-                                                                                <asp:Label ID="Lbl_Header_Prod_Emp" runat="server"></asp:Label></h4>
 
-                                                                         <div class="form-group">
-                                                                                <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                        <h4>
+                                                                            <asp:Label ID="Lbl_Header_Prod_Emp" runat="server"></asp:Label></h4>
+
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                   9.
                                                                                 </label>--%>
-                                                                                </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                               9. Proposed date of production / Date of Production</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <div class="input-group date datePicker" id="Div7" runat="server">
-                                                                                    <asp:TextBox ID="Txt_Proposed_Date" CssClass="form-control" type="text" runat="server"
-                                                                                        MaxLength="11" ToolTip="Enter  Proposed date of production / Date of Production Here !!"></asp:TextBox>
-                                                                                    <span id="Span1" runat="server" class="input-group-addon"><i class="fa fa-calendar">
-                                                                                    </i></span>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    9. Proposed date of production / Date of Production</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group date datePicker" id="Div7" runat="server">
+                                                                                        <asp:TextBox ID="Txt_Proposed_Date" CssClass="form-control" type="text" runat="server"
+                                                                                            MaxLength="11" ToolTip="Enter  Proposed date of production / Date of Production Here !!"></asp:TextBox>
+                                                                                        <span id="Span1" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
                                                                         <div class="form-group">
-                                                                                  <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                10.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    10. Proposed location of the Project</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_Propsed_location" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter  Proposed location of the Project Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                               10. Proposed location of the Project</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Propsed_location" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter  Proposed location of the Project Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
                                                                         <div class="form-group">
-                                                                                  <div class="row">
+                                                                            <div class="row">
                                                                                 <label class="col-sm-4">
-                                                                               
                                                                                 </label>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    Present status of the Project</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_Status" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter Present status of the Project Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                               Present status of the Project</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Status" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter Present status of the Project Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                          <div class="form-group">
-                                                                                  <div class="row">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
                                                                                 <%--<label class="col-sm-4">
                                                                                11.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    11.  Type of Deed / Agreement to be executed</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_deed" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter Type of Deed / Agreement to be executed Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                              11.  Type of Deed / Agreement to be executed</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_deed" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter Type of Deed / Agreement to be executed Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                         <div class="form-group">
-                                                                                  <div class="row">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
                                                                                 <%--<label class="col-sm-4">
                                                                                12.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    12.  Amount of Stamp Duty Exemption claimed</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_Stampduty_claimed" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter Amount of Stamp Duty Exemption claimed Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                             12.  Amount of Stamp Duty Exemption claimed</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Stampduty_claimed" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter Amount of Stamp Duty Exemption claimed Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                           <div class="form-group">
-                                                                                  <div class="row">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
                                                                                 <%--<label class="col-sm-4">
                                                                                13.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    13. Amount of Stamp Duty Exemption availed under any scheme of State Govt / Central Govt(Gol)/ Govt. Agencies / Financial institutions(mention details)</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_Availed" TextMode="MultiLine" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter  Amount of Stamp Duty Exemption availed under any scheme of State Govt / Central Govt(Gol)/ Govt. Agencies / Financial institutions(mention details) Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                               13. Amount of Stamp Duty Exemption availed under any scheme of State Govt / Central Govt(Gol)/ Govt. Agencies / Financial institutions(mention details)</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Availed" TextMode="MultiLine" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter  Amount of Stamp Duty Exemption availed under any scheme of State Govt / Central Govt(Gol)/ Govt. Agencies / Financial institutions(mention details) Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                            <div class="form-group">
-                                                                                  <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                14.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    14.   Amount of deferential claim to be exempted</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="txt_Deferential" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter Amount of deferential claim to be exempted Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                            14.   Amount of deferential claim to be exempted</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="txt_Deferential" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter Amount of deferential claim to be exempted Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
 
 
-                                                                          
-                                                                         <div class="form-group">
-                                                                                  <div class="row">
-                                                                               <%-- <label class="col-sm-4">
+
+                                                                        <div class="form-group">
+                                                                            <div class="row">
+                                                                                <%-- <label class="col-sm-4">
                                                                                15.
                                                                                 </label>--%>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-4">
+                                                                                    15.  Statutory clearances,if any</label>
+                                                                                <div class="col-sm-8">
+                                                                                    <span class="colon">:</span>
+                                                                                    <asp:TextBox ID="Txt_clearances" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                        ToolTip="Enter Statutory clearances,if any Here !!"></asp:TextBox>
                                                                                 </div>
-                                                                        <div class="row">
-                                                                            <label for="Iname" class="col-sm-4">
-                                                                            15.  Statutory clearances,if any</label>
-                                                                            <div class="col-sm-8">
-                                                                                <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_clearances"  CssClass="form-control" MaxLength="100" runat="server"
-                                                                                            ToolTip="Enter Statutory clearances,if any Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                        
+
 
 
                                                                     </div>
                                                                 </div>
-                                                        </div>
-                                                        
-                                                        <div class="panel panel-default">
-                                                            <div class="panel-heading" role="tab" id="Div_other">
-                                                                <%-- <h4 class="panel-title">
+                                                            </div>
+
+                                                            <div class="panel panel-default">
+                                                                <div class="panel-heading" role="tab" id="Div_other">
+                                                                    <%-- <h4 class="panel-title">
                                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                                     href="#InterestSubsidyDetails" aria-expanded="false" aria-controls="collapseThree">
                                                     <i class="more-less fa  fa-plus"></i>Other Documents</a>
                                             </h4>--%>
-                                                                <h4 class="panel-title">
-                                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                                                        href="#InterestSubsidyDetails" aria-expanded="false" aria-controls="collapseThree">Other Documents </a>
+                                                                    <h4 class="panel-title">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                                                            href="#InterestSubsidyDetails" aria-expanded="false" aria-controls="collapseThree">Other Documents </a>
 
-                                                                </h4>
-                                                            </div>
-                                                           
-                                                          
-                                        <div id="InterestSubsidyDetails" class="panel-collapse collapse" role="tabpanel"
-                                            aria-labelledby="headingThree">
-                                            <div class="panel-body">
-                                                <div class="form-group" id="div3" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            1.Entrepreneurs Identification Number / PC / IEM / Industrial License / PEAL approval letter
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flEinno" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnEinno_code" runat="server" Value="D309" />
-                                                                <asp:HiddenField ID="hdnEinno_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUEinno"  runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDEinno" 
-                                                                    runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypEinno" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblEinno" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
-                                                                runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                    </h4>
+                                                                </div>
 
-                                                <div class="form-group" id="div8" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            2. Power of Attorney / Board Resolution / Spciety Resolution as applicable while signing as Partner / Managing Director / Authorized person
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flPoweratt" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPoweratt_code" runat="server" Value="D310" />
-                                                                <asp:HiddenField ID="hdnPoweratt_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUPoweratt" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPoweratt" OnClick="LnkBtn_Delete_Doc_Click"
-                                                                    runat="server" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypPoweratt" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPoweratt" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
-                                                                runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                                <div class="form-group" id="div9" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            3. Certificate of registration under Indian Partnership Act-1932 / Societies Registration Act-1860 /Certificate of incorporation (Memorandum of Association & Article of Association) under Company Act-1956
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flcertofreg" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="certofreg_code" runat="server" Value="D311" />
-                                                                 <asp:HiddenField ID="certofreg_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUcertofreg" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDcertofreg" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwcertofreg" runat="server" Target="_blank" Visible="false" CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblcertofreg" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
-                                                                runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" id="div10" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            4.Document in support of date of first investment in fixed capital of industrial unit i.e. land / 
+                                                                <div id="InterestSubsidyDetails" class="panel-collapse collapse" role="tabpanel"
+                                                                    aria-labelledby="headingThree">
+                                                                    <div class="panel-body">
+                                                                        <div class="form-group" id="div3" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    1.Entrepreneurs Identification Number / PC / IEM / Industrial License / PEAL approval letter
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flEinno" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnEinno_code" runat="server" Value="D309" />
+                                                                                        <asp:HiddenField ID="hdnEinno_name" runat="server" />
+                                                                                        <asp:LinkButton ID="lnkUEinno" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDEinno"
+                                                                                            runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypEinno" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblEinno" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                                                        runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group" id="div8" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    2. Power of Attorney / Board Resolution / Spciety Resolution as applicable while signing as Partner / Managing Director / Authorized person
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flPoweratt" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnPoweratt_code" runat="server" Value="D310" />
+                                                                                        <asp:HiddenField ID="hdnPoweratt_name" runat="server" />
+                                                                                        <asp:LinkButton ID="lnkUPoweratt" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDPoweratt" OnClick="LnkBtn_Delete_Doc_Click"
+                                                                                            runat="server" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypPoweratt" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblPoweratt" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                                                        runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group" id="div9" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    3. Certificate of registration under Indian Partnership Act-1932 / Societies Registration Act-1860 /Certificate of incorporation (Memorandum of Association & Article of Association) under Company Act-1956
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flcertofreg" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="certofreg_code" runat="server" Value="D311" />
+                                                                                        <asp:HiddenField ID="certofreg_name" runat="server" />
+                                                                                        <asp:LinkButton ID="lnkUcertofreg" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDcertofreg" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwcertofreg" runat="server" Target="_blank" Visible="false" CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblcertofreg" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                                                        runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group" id="div10" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    4.Document in support of date of first investment in fixed capital of industrial unit i.e. land / 
                                                                building / plant & machinery and balancing equipment 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flfixcapital" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnfixcapital_Code" runat="server" Value="D312"/>
-                                                                <asp:HiddenField ID="hdnfixcapital_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUfixcapital" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDfixcapital" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwfixcapital" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblfixcapital" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flfixcapital" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnfixcapital_Code" runat="server" Value="D312" />
+                                                                                        <asp:HiddenField ID="hdnfixcapital_Name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUfixcapital" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDfixcapital" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwfixcapital" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblfixcapital" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div12" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            5.Appraisal/ approval/ documents in support of expansion / modernization / diversification on 
+                                                                        <div class="form-group" id="div12" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    5.Appraisal/ approval/ documents in support of expansion / modernization / diversification on 
                                                                unit under Thrust/ Priority sector
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flAppraisal" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnAppraisal_Code" runat="server" Value="D313" />
-                                                                <asp:HiddenField ID="hdnAppraisal_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUAppraisal" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDAppraisal" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwAppraisal" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblAppraisal" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flAppraisal" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnAppraisal_Code" runat="server" Value="D313" />
+                                                                                        <asp:HiddenField ID="hdnAppraisal_Name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUAppraisal" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDAppraisal" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwAppraisal" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblAppraisal" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div13" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            6.Certificate on date of first commercial production in case of taking up E/M/D
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flCommproduction" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnCommproduction_Code" runat="server" Value="D314" />
-                                                                <asp:HiddenField ID="hdnCommproduction_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUCommproduction" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                   
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDCommproduction" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hyVwCommproduction" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblCommproduction" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div13" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    6.Certificate on date of first commercial production in case of taking up E/M/D
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flCommproduction" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnCommproduction_Code" runat="server" Value="D314" />
+                                                                                        <asp:HiddenField ID="hdnCommproduction_Name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUCommproduction" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDCommproduction" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hyVwCommproduction" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblCommproduction" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div14" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            7. Certificate on migration industrial unit under Thrust/Priority sector in case of Migration 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flMigrationindust" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnMigrationindust_Code" runat="server" Value="D315" />
-                                                                <asp:HiddenField ID="hdnMigrationindust_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUMigrationindust" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDMigrationindust" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwMigrationindust" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblMigrationindust" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div14" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    7. Certificate on migration industrial unit under Thrust/Priority sector in case of Migration 
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flMigrationindust" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnMigrationindust_Code" runat="server" Value="D315" />
+                                                                                        <asp:HiddenField ID="hdnMigrationindust_Name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUMigrationindust" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDMigrationindust" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwMigrationindust" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblMigrationindust" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div17" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            8. Documents in support of Private Industrial Estate developer
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flPrivateIndust" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPrivateIndust_code" runat="server" Value="D316" />
-                                                                <asp:HiddenField ID="hdnPrivateIndust_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUPrivateIndust" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPrivateIndust" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwPrivateIndust" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPrivateIndust" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div17" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    8. Documents in support of Private Industrial Estate developer
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flPrivateIndust" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnPrivateIndust_code" runat="server" Value="D316" />
+                                                                                        <asp:HiddenField ID="hdnPrivateIndust_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUPrivateIndust" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDPrivateIndust" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwPrivateIndust" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblPrivateIndust" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div18" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            9. Deed / Agreement to be executed in Original with two copies
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flDeed" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnDeed_code" runat="server" Value="D317" />
-                                                                <asp:HiddenField ID="hdnDeed_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUDeed" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDDeed" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwDeed" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblDeed" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div18" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    9. Deed / Agreement to be executed in Original with two copies
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flDeed" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnDeed_code" runat="server" Value="D317" />
+                                                                                        <asp:HiddenField ID="hdnDeed_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUDeed" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDDeed" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwDeed" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblDeed" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div19" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            10.Document(s) in support of transfer of unit to a new owner / management under the 
+                                                                        <div class="form-group" id="div19" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    10.Document(s) in support of transfer of unit to a new owner / management under the 
                                                                provisions of the State Financial Corporation (SFC) Act, 1951 or under Securitization and 
                                                                Reconstruction of Financial Assets and Enforcement of Security Interest (SARFAESI) Act 
                                                                 2002, and IBC 2016 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flFinancialAssets" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnFinancialAssets_code" runat="server" Value="D318" />
-                                                                <asp:HiddenField ID="hdnFinancialAssets_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUFinancialAssets" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                   
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDFinancialAssets" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwFinancialAssets" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblFinancialAssets" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flFinancialAssets" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnFinancialAssets_code" runat="server" Value="D318" />
+                                                                                        <asp:HiddenField ID="hdnFinancialAssets_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUFinancialAssets" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDFinancialAssets" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypVwFinancialAssets" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblFinancialAssets" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-    <div class="form-group" id="div20" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            11. Where exemption is requested under the provisions enunciated at Para -4.5.1 (f), (g), (h) & 
+                                                                        <div class="form-group" id="div20" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    11. Where exemption is requested under the provisions enunciated at Para -4.5.1 (f), (g), (h) & 
                                                                 (i) of IPR 2022, a certified copy of the relevant records of the Companies shall be produced 
                                                                  by the parties to the instrument to prove that the conditions prescribed are fulfilled 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flexemption" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnexemption_code" runat="server" Value="D319" />
-                                                                <asp:HiddenField ID="hdnexemption_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUexemption" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                   
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDexemption" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwexemption" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblexemption" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flexemption" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnexemption_code" runat="server" Value="D319" />
+                                                                                        <asp:HiddenField ID="hdnexemption_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUexemption" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDexemption" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypvwexemption" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblexemption" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div22" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            12. Valid statutory clearances / approvals / permissions for authorities including OSPCB, or undertaking thereof 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flstatutory" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnstatutory_code" runat="server" Value="D320" />
-                                                                <asp:HiddenField ID="hdnstatutory_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUstatutory" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
-                                                                    
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDstatutory" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwstatutory" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblstatutory" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div22" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    12. Valid statutory clearances / approvals / permissions for authorities including OSPCB, or undertaking thereof 
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flstatutory" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnstatutory_code" runat="server" Value="D320" />
+                                                                                        <asp:HiddenField ID="hdnstatutory_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUstatutory" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDstatutory" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypvwstatutory" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblstatutory" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div21" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            13. Undertaking on non-judicial Stamp Paper duly signed by the applicant in the format-Annexure- B1 
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flStampPaper" CssClass="form-control" runat="server"
-                                                                    onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnStampPaper_code" runat="server" Value="D321" />
-                                                                <asp:HiddenField ID="hdnStampPaper_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUStampPaper" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                  
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDStampPaper" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwStampPaper" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblStampPaper" Style="font-size: 12px;" CssClass="text-blue"
-                                                                Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                        <div class="form-group" id="div21" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    13. Undertaking on non-judicial Stamp Paper duly signed by the applicant in the format-Annexure- B1 
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flStampPaper" CssClass="form-control" runat="server"
+                                                                                            onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnStampPaper_code" runat="server" Value="D321" />
+                                                                                        <asp:HiddenField ID="hdnStampPaper_name" runat="server" Value="" />
+                                                                                        <asp:LinkButton ID="lnkUStampPaper" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDStampPaper" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypvwStampPaper" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblStampPaper" Style="font-size: 12px;" CssClass="text-blue"
+                                                                                        Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                              
-                                                <div class="form-group" id="div11" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            14. Provisional Priority/Thrust Sector Certificate or Priority/Thrust Sector Certificate as the case 
+
+                                                                        <div class="form-group" id="div11" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    14. Provisional Priority/Thrust Sector Certificate or Priority/Thrust Sector Certificate as the case 
                                                                  may be
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flThrustcerti" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnThrustcerti_code" runat="server" Value="D322" />
-                                                                <asp:HiddenField ID="hdnThrustcerti_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUThrustcerti" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDThrustcerti" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwThrustcerti" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
-                                                            </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblThrustcerti" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
-                                                                runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flThrustcerti" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnThrustcerti_code" runat="server" Value="D322" />
+                                                                                        <asp:HiddenField ID="hdnThrustcerti_name" runat="server" />
+                                                                                        <asp:LinkButton ID="lnkUThrustcerti" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDThrustcerti" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypvwThrustcerti" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblThrustcerti" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                                                        runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
 
-                                                <div class="form-group" id="div23" runat="server">
-                                                    <div class="row">
-                                                        <label for="Iname" class="col-sm-5">
-                                                            15.Document in support of delay in implementation condoned by Empowered Committee in 
+                                                                        <div class="form-group" id="div23" runat="server">
+                                                                            <div class="row">
+                                                                                <label for="Iname" class="col-sm-5">
+                                                                                    15.Document in support of delay in implementation condoned by Empowered Committee in 
                                                                 case of delay
-                                                        </label>
-                                                        <div class="col-sm-6">
-                                                            <span class="colon">:</span>
-                                                            <div class="input-group">
-                                                                <asp:FileUpload ID="flEmpCommittee" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnEmpCommittee_code" runat="server" Value="D323" />
-                                                                <asp:HiddenField ID="hdnEmpCommittee_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUEmpCommittee" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
-                                                                    ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDEmpCommittee" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
-                                                                    Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwEmpCommittee" runat="server" Target="_blank" Visible="false"
-                                                                    CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <span class="colon">:</span>
+                                                                                    <div class="input-group">
+                                                                                        <asp:FileUpload ID="flEmpCommittee" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                                        <asp:HiddenField ID="hdnEmpCommittee_code" runat="server" Value="D323" />
+                                                                                        <asp:HiddenField ID="hdnEmpCommittee_name" runat="server" />
+                                                                                        <asp:LinkButton ID="lnkUEmpCommittee" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                                            ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="lnkDEmpCommittee" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                                            Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
+                                                                                        <asp:HyperLink ID="hypvwEmpCommittee" runat="server" Target="_blank" Visible="false"
+                                                                                            CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                                    </div>
+                                                                                    <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
+                                                                                    <asp:Label ID="lblEmpCommittee" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                                                        runat="server" Text="Document uploaded successfully"></asp:Label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblEmpCommittee" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
-                                                                runat="server" Text="Document uploaded successfully"></asp:Label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
 
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                   
-                                    <div class="form-footer">
-                                        <div class="row">
-                                            <div class="col-sm-12 text-center">
-                                                <asp:Button ID="BtnApply" runat="server" style="font-weight:bold;" OnClick="BtnApply_Click" Text="Submit"
- CssClass="btn btn-success" OnClientClick="return validateThrustprioritysectorstatus();" 
-                                                     ToolTip="Click Here to Submit" />
-                                                <asp:Button ID="BtnDraft" OnClick="BtnDraft_Click" style="font-weight:bold;" runat="server"  Text="Draft" 
- CssClass="btn btn-warning" OnClientClick="return validateThrustprioritysectorstatus();" 
-                                                     ToolTip="Click Here to Draft" />
-                                                 <asp:Button ID="BtnCancel" runat="server" style="font-weight:bold;"  Text="Cancel" CssClass="btn btn-danger"
-                                                     ToolTip="Click Here to Cancel" />
-                                                <asp:HiddenField ID="Hid_Is_Exist_Before" runat="server" />
-                                                <asp:HiddenField ID="Hid_Is_Exist_After" runat="server" />
-                                                <asp:HiddenField ID="Hid_Data_Source" runat="server" />
-                                                <asp:HiddenField ID="Hid_PC_Status" runat="server" />
-                                                <asp:HiddenField ID="Hid_Project_Type" runat="server" />
-                                                <asp:HiddenField ID="Hid_Inct_Mode" runat="server" />
+
+                                        <div class="form-footer">
+                                            <div class="row">
+                                                <div class="col-sm-12 text-center">
+                                                    <asp:Button ID="BtnApply" runat="server" Style="font-weight: bold;" OnClick="BtnApply_Click" Text="Submit"
+                                                        CssClass="btn btn-success" OnClientClick="return validateThrustprioritysectorstatus();"
+                                                        ToolTip="Click Here to Submit" />
+                                                    <asp:Button ID="BtnDraft" OnClick="BtnDraft_Click" Style="font-weight: bold;" runat="server" Text="Draft"
+                                                        CssClass="btn btn-warning" OnClientClick="return validateThrustprioritysectorstatus();"
+                                                        ToolTip="Click Here to Draft" />
+                                                    <asp:Button ID="BtnCancel" runat="server" Style="font-weight: bold;" Text="Cancel" CssClass="btn btn-danger"
+                                                        ToolTip="Click Here to Cancel" />
+                                                    <asp:HiddenField ID="Hid_Is_Exist_Before" runat="server" />
+                                                    <asp:HiddenField ID="Hid_Is_Exist_After" runat="server" />
+                                                    <asp:HiddenField ID="Hid_Data_Source" runat="server" />
+                                                    <asp:HiddenField ID="Hid_PC_Status" runat="server" />
+                                                    <asp:HiddenField ID="Hid_Project_Type" runat="server" />
+                                                    <asp:HiddenField ID="Hid_Inct_Mode" runat="server" />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-footer">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h4 style="color: #777;">
-                                                    General Instructions (To fill up subsequent incentive applications)</h4>
-                                                <div class="listdiv">
-                                                    <ol>
-                                                        <li>Need to be provid by department </li>
-                                                        
-                                                    </ol>
+                                        <div class="form-footer">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h4 style="color: #777;">General Instructions (To fill up subsequent incentive applications)</h4>
+                                                    <div class="listdiv">
+                                                        <ol>
+                                                            <li>Need to be provid by department </li>
+
+                                                        </ol>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1623,7 +1615,9 @@
                         </div>
                     </div>
                 </div>
+               
             </div>
+            <uc3:footer ID="footer" runat="server" />
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="lnkUEinno" />
@@ -1830,7 +1824,7 @@
             </div>
         </div>
     </asp:Panel>
-    <uc3:footer ID="footer" runat="server" />
+    
    <script src="../js/bootstrap-datetimepicker.js" type="text/javascript"></script>
     <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -1889,6 +1883,7 @@
             height: 550px;
         }
     </style>
+        
     </form>
 </body>
 </html>
