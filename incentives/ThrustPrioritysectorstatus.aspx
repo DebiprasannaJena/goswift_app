@@ -17,7 +17,7 @@
     <script src="../js/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="../js/WebValidation.js" type="text/javascript"></script>
     <script src="../js/Incentive/JS_Inct_Basic_Details.js" type="text/javascript"></script>
-    <script src="../js/Incentive/JS_Inct_Common_Validation.js" type="text/javascript"></script>>
+    <script src="../js/Incentive/JS_Inct_Common_Validation.js" type="text/javascript"></script>
 <%--    <script language="javascript" type="text/javascript">
 
         var projname = '<%=System.Configuration.ConfigurationManager.AppSettings["ProjectName"] %>';
@@ -1290,7 +1290,8 @@
     <form id="form1" runat="server" autocomplete="off">
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
-    <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanelMain">
+     <uc2:header ID="header" runat="server" />
+     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanelMain">
         <ProgressTemplate>
             <div class="overlay">
                 <div class="overlayContent">
@@ -1302,8 +1303,8 @@
      <asp:UpdatePanel runat="server" ID="UpdatePanelMain">
         <ContentTemplate>
             <div class="container">
-                <uc2:header ID="header" runat="server" />
-                <div class="registration-div investors-bg">
+               <div class="container wrapper">
+                   <div class="registration-div investors-bg">
                     <div id="exTab1" class="">
                         <div class="investrs-tab">
                             <uc4:investoemenu ID="ineste" runat="server" />
@@ -1313,19 +1314,21 @@
                                 <div class="form-sec">
                                     <div class="innertabs  m-b-10">
                                         <ul class="nav nav-pills pull-right">
-                                            <li><a href="incentiveoffered.aspx" title="Click Here to View Incentive Offered !!">
-                                                Incentive Offered</a></li>
+                                            <li></li>
                                             <%--   <li class="active"><a href="Basic_Details.aspx" title="Click Here to Apply For Incentives !!">
                                                 Apply For Incentive</a></li>--%>
-                                            <li><a href="ViewApplicationStatus.aspx" title="Click Here to View Application Status !!">
-                                                View Application Status</a></li>
+                                            <li></li>
                                         </ul>
                                         <div class="clearfix">
                                         </div>
                                     </div>
-                                    <div class="form-header">                                      
+                                    <div class="form-header">   
+                                        <a href="incentiveoffered.aspx" title="Click Here to View Incentive Offered !!" class="pull-right proposalbtn ">
+                                                Incentive Offered</a>
+                                        <a href="ViewApplicationStatus.aspx" title="Click Here to View Application Status !!" class="pull-right proposalbtn active">
+                                                View Application Status</a>
                                         <h2>
-                                            BASIC UNIT DETAILS</h2>
+                                            Thrust Priority Sector Status IPR 2022</h2>
                                     </div>
                                     <div class="incentivesec">
                                         <div class="row">
@@ -3397,8 +3400,12 @@
                             </div>
                         </div>
                     </div>
+               </div>
+                
+                 
+
                 </div>
-            </div>
+           
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="lnkUPowerattpre" />
@@ -3618,7 +3625,7 @@
             </div>
         </div>
     </asp:Panel>
-    <uc3:footer ID="footer" runat="server" />
+    
    <script src="../js/bootstrap-datetimepicker.js" type="text/javascript"></script>
     <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
 
@@ -3662,7 +3669,7 @@
         }
 
     </script>
-   
+     <uc3:footer ID="footer" runat="server" />
     </form>
 </body>
 </html>
