@@ -26,16 +26,16 @@
         </div>
     </li>
     <li class="menudashboard" runat="server" id="dashboardmenu"><a href="InvesterDashboard.aspx"><i class="fa fa-tachometer"></i>Dashboard</a> </li> 
-    <li class="menudashboard" id="nswsmenu" runat="server">
+    <li class="menunswsredirect" id="nswsmenu" runat="server">
         <asp:LinkButton ID="LinkBtnNswsRedirect" runat="server" OnClick="LinkBtnNswsRedirect_Click"><i class="fa fa-tachometer"></i>Go 
             to<br /> NSWS</asp:LinkButton>
     </li>
 </ul>
 
 <asp:LinkButton ID="LnkBtnTarget1" runat="server"></asp:LinkButton>
-<cc1:modalpopupextender id="ServiceModalPopup" behaviorid="mpe1" runat="server" popupcontrolid="pnlPopup"
-    targetcontrolid="LnkBtnTarget1" backgroundcssclass="modalBackground" cancelcontrolid="Linkclose">
-</cc1:modalpopupextender>
+<cc1:ModalPopupExtender id="ServiceModalPopup" BehaviorID="mpe1" runat="server" PopupControlID="pnlPopup"
+    TargetControlID="LnkBtnTarget1" BackgroundCssClass="modalBackground" CancelControlID="LinkPopupclose">
+</cc1:ModalPopupExtender>
 <asp:Panel ID="pnlPopup" runat="server" CssClass="modalPopup" Style="display: none; width: 600px; height: 330px;"
     ToolTip="Important Notes">
     <div class="mhead">
@@ -71,14 +71,14 @@
 </asp:Panel>
 
 <asp:LinkButton ID="LnkBtnTarget2" runat="server"></asp:LinkButton>
-<cc1:modalpopupextender id="InformationModalpopup" behaviorid="mpe2" runat="server" popupcontrolid="Popuppanel"
-   backgroundcssclass="modalBackground" cancelcontrolid="Linkclose" targetcontrolid="LnkBtnTarget2" >
-</cc1:modalpopupextender>
+<cc1:ModalPopupExtender id="InformationModalpopup" behaviorid="mpe2" runat="server" popupcontrolid="Popuppanel"
+   backgroundcssclass="modalBackground" CancelControlID="LinkBtnPopupclose1" targetcontrolid="LnkBtnTarget2" >
+</cc1:ModalPopupExtender>
 
 <asp:Panel ID="Popuppanel" runat="server" CssClass="modalPopup" Style="display: none; width: 350px; height: 230px;"
     ToolTip="Important Notes">
     <div class="mhead">
-        <asp:LinkButton ID="LinkBtnPopupclose" runat="server" OnClick="LinkBtnPopupclose_Click"><i class="fa fa-close"></i></asp:LinkButton>
+        <asp:LinkButton ID="LinkBtnPopupclose1" runat="server" OnClick="LinkBtnPopupclose_Click"><i class="fa fa-close"></i></asp:LinkButton>
         <h4 class="modal-title">Alert </h4>
     </div>
     <div class="modal-body">
@@ -107,7 +107,7 @@
 
 <asp:LinkButton ID="LnkBtnTarget3" runat="server"></asp:LinkButton>
 <cc1:modalpopupextender id="InformationModalpopup2" behaviorid="mpe3" runat="server" popupcontrolid="pnlPopup2"
-    targetcontrolid="LnkBtnTarget3" backgroundcssclass="modalBackground" cancelcontrolid="Linkclose">
+    targetcontrolid="LnkBtnTarget3" backgroundcssclass="modalBackground" cancelcontrolid="Popupclose">
 </cc1:modalpopupextender>
 <asp:Panel ID="pnlPopup2" runat="server" CssClass="modalPopup" Style="display: none; width: 600px; height: 330px;"
     ToolTip="Important Notes">
