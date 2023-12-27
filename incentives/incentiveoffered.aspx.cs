@@ -211,12 +211,14 @@ public partial class incentives_incentiveoffered : SessionCheck
 
                 if (intReturnStatus == 1)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>Your application is already in drafted stage,Please go through drafted application details. !!</strong>','" + strProjName + "')", true);
+                   
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>Your application is already in drafted stage,Please go through drafted application details. !!</strong>');", true);
                     return;
                 }
                 else if (intReturnStatus == 2)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You have already applied this application !!</strong>','" + strProjName + "')", true);
+                   
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You have already applied this application !!</strong>');", true);
                     return;
                 }
                 else if (intReturnStatus == 3)
@@ -225,7 +227,8 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (intPriorityStatus != 1)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for pioneer certification as you donot have a priority certificate !!</strong>','" + strProjName + "')", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for pioneer certification as you donot have a priority certificate !!</strong>');", true);
                             return;
                         }
                         else
@@ -237,8 +240,10 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (strPcStatus == "N")
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for priority certification as you donot have a production certificate !!</strong>','" + strProjName + "')", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for priority certification as you donot have a production certificate !!</strong>');", true);
                             return;
+
                         }
                         else
                         {
@@ -249,7 +254,9 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (strPcStatus == "Y")
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for provisional priority certification as you have a production certificate !!</strong>','" + strProjName + "')", true);
+                          
+
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for provisional priority certification as you have a production certificate !!</strong>');", true);
                             return;
                         }
                         else
@@ -261,7 +268,8 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (strPealStatus == "N")  // og ipr 2022  term 4 b (need to be discous)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Thrust or priority Sector certification of IPR-2022 as you donot have a Approve PEAL !!</strong>','" + strProjName + "')", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Thrust or priority Sector certification of IPR-2022 as you donot have a Approve PEAL !!</strong>');", true);
                             return;
                         }
                         else
@@ -273,7 +281,8 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (strPealStatus == "N")  // og ipr 2022  term 4 b (need to be discous)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Stamp Duty Exemption certification of IPR-2022 as you donot have a Approve PEAL !!</strong>','" + strProjName + "')", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Stamp Duty Exemption certification of IPR-2022 as you donot have a Approve PEAL !!</strong>');", true);
                             return;
                         }
                         else
@@ -285,7 +294,8 @@ public partial class incentives_incentiveoffered : SessionCheck
                     {
                         if (strPealStatus == "N")  // og ipr 2022  term 4 b (need to be discous)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Conversion Of Land For Industrial Use certification of IPR-2022 as you donot have a Approve PEAL !!</strong>','" + strProjName + "')", true);
+                          
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Conversion Of Land For Industrial Use certification of IPR-2022 as you donot have a Approve PEAL !!</strong>');", true);
                             return;
                         }
                         else
@@ -293,11 +303,12 @@ public partial class incentives_incentiveoffered : SessionCheck
                             Response.Redirect("ExemptionLandforIndustrialUseIPR2022.aspx?key=" + strInctId + "", false);
                         }
                     }
-                    else if (strInctId == "11400104") //  Apply Conversion Of Land For Industrial Use Certificate IPR 2022
+                    else if (strInctId == "11400104") //  Apply Migrated Industrial Unit  IPR 2022
                     {
                         if (strPealStatus == "N")  // og ipr 2022  term 4 b (need to be discous)
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Exercising Option by Migrated Industrial Unit IPR-2022 as you donot have a Approve PEAL !!</strong>','" + strProjName + "')", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>You are not eligible to apply for Exercising Option by Migrated Industrial Unit IPR-2022 as you donot have a Approve PEAL !!</strong>');", true);
                             return;
                         }
                         else
