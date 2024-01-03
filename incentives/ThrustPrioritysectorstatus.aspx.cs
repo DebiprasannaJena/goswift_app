@@ -1,7 +1,18 @@
-﻿using System;
+﻿
+// *******************************************************************************************************************
+// File Name         : ThrustPrioritysectorstatus.aspx
+// Description       : Thrust Priority Sector Status IPR-2022 Add and Draft Page
+// Created by        : Debiprasanna Jena
+// Created On        : 07th June 2023
+// Modification History:
+
+// <CR no.>                          <Date>                <Modified by>        <Modification Summary>                      <Instructed By>                                                     
+
+// *********************************************************************************************************************
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
@@ -14,42 +25,25 @@ using System.IO;
 public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 {
     string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
-    
-    
-    DataTable dtSalutation;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!String.IsNullOrEmpty(Request.QueryString["InctUniqueNo"]) || !String.IsNullOrEmpty(Request.QueryString["key"]))
-        {
-            if (Request.QueryString["key"] != null)
-            {
-              string strInctId = Request.QueryString["key"].ToString();
-            }
-
-            if (Request.QueryString["InctUniqueNo"] != null)
-            {
-               string UniqueNo = Request.QueryString["InctUniqueNo"].ToString();
-               string InctNo= Request.QueryString["IncentiveNo"].ToString();
-            }
-        }
-
+        
         if (!IsPostBack)
-            {            
-            fillUnitCategory();
-            fillOrgType();
-            fillSalutation();
-            fillUnitMeasurment();
+        {
+            FillUnitCategory();
+            FillOrgType();
+            FillSalutation();
+            FillUnitMeasurment();
             Txt_Other_Unit_Before.Visible = false;
-           
+
             if (Request.QueryString["InctUniqueNo"] != null)
-            {             
+            {
                 PostpopulateDataComm(Convert.ToInt16(Request.QueryString["InctUniqueNo"]));
-               
+
             }
             else
             {
-
-              
                 Txt_EIN_IL_Date.Attributes.Add("readonly", "readonly");
                 Txt_Proposed_Date.Attributes.Add("readonly", "readonly");
                 Txt_Commence_production.Attributes.Add("readonly", "readonly");
@@ -66,13 +60,13 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Div_UAM_date.Visible = false;
                 Div_EIM_No.Visible = false;
                 Div_Eim_date.Visible = false;
-                fillUnitMeasurment();
-                fillUnitCategory();
+                FillUnitMeasurment();
+                FillUnitCategory();
                 Txt_Other_Unit_Before.Visible = false;
                 Txt_EnterPrise_Name.Enabled = false;
-                fillData();
-                fillOrgType();
-                fillSalutation();
+                FillData();
+                FillOrgType();
+                FillSalutation();
                 BtnDraft.Visible = true;
                 BtnApply.Visible = true;
             }
@@ -94,17 +88,12 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             DataTable dtMeansFinancePre = dslivePre.Tables[5];///////////Means of Finance
             DataTable dtMoFTermLoanPre = dslivePre.Tables[6];///////////investment details
             DataTable dtMoFWorkingLoanPre = dslivePre.Tables[7];///////////Other Document List
-           
 
-            ViewState["salutation"] = dtSalutation;
 
             #region IndustrailUnit
             if (dtindustryPre.Rows.Count > 0)
             {
-
-
                 Txt_EnterPrise_Name.Text = dtindustryPre.Rows[0]["vchEnterpriseName"].ToString().Trim();
-                
                 DrpDwn_Unit_Cat.SelectedValue = (dtindustryPre.Rows[0]["intUnitCat"].ToString());
                 Txt_Industry_Address.Text = dtindustryPre.Rows[0]["vchIndustryAddress"].ToString();
                 Txt_Regd_Office_Address.Text = dtindustryPre.Rows[0]["vchRegisteredOfcAddress"].ToString();
@@ -116,8 +105,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 {
                     ChkSameData.Checked = false;
                 }
-               
-                
                 Txt_Phone_no.Text = dtindustryPre.Rows[0]["vchPhoneNumber"].ToString();
                 Txt_Email.Text = dtindustryPre.Rows[0]["vchEmail"].ToString();
                 DrpDwn_Org_Type.SelectedValue = (dtindustryPre.Rows[0]["intOrganisationType"].ToString());
@@ -142,14 +129,13 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 {
                     Lbl_Org_Name_Type.Text = "Name of Authorized Signatory";
                 }
-                Txt_Partner_Name.Text =dtindustryPre.Rows[0]["vchManagingPartnerName"].ToString();
+                Txt_Partner_Name.Text = dtindustryPre.Rows[0]["vchManagingPartnerName"].ToString();
                 DrpDwn_Gender_Partner.SelectedValue = dtindustryPre.Rows[0]["vchManagingPartnerGender"].ToString();
                 Txt_EIN_IL_NO.Text = dtindustryPre.Rows[0]["vchEINNO"].ToString();
                 Txt_EIN_IL_Date.Text = dtindustryPre.Rows[0]["dtmEIN"].ToString();
-      //   *---------------------------------------------------------------------------------------------------------------------------------*/
+            ///*--------------------------------------------------------------------------------------------------------------------*/
 
                 #region Production
-
                 Grd_Production_Before.DataSource = dtInvestmentPre;
                 Grd_Production_Before.DataBind();
                 if (DrpDwn_Unit_Before.SelectedIndex > 0)
@@ -173,11 +159,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 }
 
                 #endregion
-                      Txt_Proposed_Date.Text= dtindustryPre.Rows[0]["dtmProdCommBefore"].ToString();
-                      Txt_Commence_production.Text= dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
-                      Rad_production.SelectedValue = dtMoFTermLoanPre.Rows[0]["intEIMorUAMtype"].ToString();
-
-               
+                Txt_Proposed_Date.Text = dtindustryPre.Rows[0]["dtmProdCommBefore"].ToString();
+                Txt_Commence_production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
+                Rad_production.SelectedValue = dtMoFTermLoanPre.Rows[0]["intEIMorUAMtype"].ToString();
 
                 if (Rad_production.SelectedValue == "1")
                 {
@@ -187,17 +171,17 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     Div_Eim_date.Visible = true;
                     Div_UAM_No.Visible = false;
                     Div_UAM_date.Visible = false;
-                   
+
                 }
                 else if (Rad_production.SelectedValue == "2")
                 {
-                    Txt_Uam_No.Text= dtMoFTermLoanPre.Rows[0]["vchEIMorUAMnumber"].ToString();
-                    Txt_Uam_Date.Text= dtMoFTermLoanPre.Rows[0]["dtmEIMorUAMdate"].ToString();
+                    Txt_Uam_No.Text = dtMoFTermLoanPre.Rows[0]["vchEIMorUAMnumber"].ToString();
+                    Txt_Uam_Date.Text = dtMoFTermLoanPre.Rows[0]["dtmEIMorUAMdate"].ToString();
                     Div_UAM_No.Visible = true;
                     Div_UAM_date.Visible = true;
                     Div_EIM_No.Visible = false;
                     Div_Eim_date.Visible = false;
-                  
+
                 }
                 else if (Rad_production.SelectedValue == "3")
                 {
@@ -210,7 +194,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     Txt_Uam_No.Text = "";
                     Txt_Uam_Date.Text = "";
                 }
-       /*--------------------------------------------------------------------------------------------------------------------------*/
+              /*--------------------------------------------------------------------------------------------------------------------------*/
 
                 #region Investment
                 Txt_total_emp_Number.Text = dtMoFTermLoanPre.Rows[0]["intDirectEmpAfter"].ToString();
@@ -255,281 +239,278 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Rad_IPR_Incentive_avail.SelectedValue = dtindustryPre.Rows[0]["intIPRinctiveAvel"].ToString();
                 Txt_Swm_approve.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
 
-///----------------------------------------------Other File Upload---------------------------------------------------------------------/////
+                ///----------------------------------------Other File Upload----------------------------------------------------------/////
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D282")
+                for (int i = 0; i < dtMoFWorkingLoanPre.Rows.Count; i++)
                 {
-                    hdnPowerattpre_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypPowerattpre.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypPowerattpre.Visible = true;
-                    lnkDPowerattpre.Visible = true;
-                    lblPowerattpre.Visible = true;
-                    flPowerattpre.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D283")
-                {
-                    certofreg_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwcertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwcertofreg.Visible = true;
-                    lnkDcertofreg.Visible = true;
-                    lblcertofreg.Visible = true;
-                    flcertofreg.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D284")
-                {
-                    hdnAppDPR_Name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwAppDPR.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwAppDPR.Visible = true;
-                    lnkDAppDPR.Visible = true;
-                    lblAppDPR.Visible = true;
-                    flAppDPR.Enabled = false;
-                }               
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D285")
-                {
-                    hdnEIN_Name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwEIN.Visible = true;
-                    lnkDEIN.Visible = true;
-                    lblEIN.Visible = true;
-                    flEIN.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D286")
-                {
-                    hdnPlantmachinery_Name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hyVwPlantmachinery.Visible = true;
-                    lnkDPlantmachinery.Visible = true;
-                    lblPlantmachinery.Visible = true;
-                    flPlantmachinery.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D287")
-                {
-                    hdnCapitalInvst_Name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwCapitalInvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwCapitalInvst.Visible = true;
-                    lnkDCapitalInvst.Visible = true;
-                    lblCapitalInvst.Visible = true;
-                    flCapitalInvst.Enabled = false;
-                }
+                    string vchDocId = dtMoFWorkingLoanPre.Rows[i]["vchDocId"].ToString();
+                    string vchFileName = dtMoFWorkingLoanPre.Rows[i]["vchFileName"].ToString();
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D288")
-                {
-                    hdnInvplantmachinary_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwInvplantmachinary.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwInvplantmachinary.Visible = true;
-                    lnkDInvplantmachinary.Visible = true;
-                    lblInvplantmachinary.Visible = true;
-                    flInvplantmachinary.Enabled = false;
-                }
+                    if (vchDocId == "D282")
+                    {
+                        hdnPowerattpre_name.Value = vchFileName;
+                        hypPowerattpre.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypPowerattpre.Visible = true;
+                        lnkDPowerattpre.Visible = true;
+                        lblPowerattpre.Visible = true;
+                        flPowerattpre.Enabled = false;
+                    }
+                    else if (vchDocId == "D283")
+                    {
+                        certofreg_name.Value = vchFileName;
+                        hypVwcertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwcertofreg.Visible = true;
+                        lnkDcertofreg.Visible = true;
+                        lblcertofreg.Visible = true;
+                        flcertofreg.Enabled = false;
+                    }
+                    else if (vchDocId == "D284")
+                    {
+                        hdnAppDPR_Name.Value = vchFileName;
+                        hypVwAppDPR.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwAppDPR.Visible = true;
+                        lnkDAppDPR.Visible = true;
+                        lblAppDPR.Visible = true;
+                        flAppDPR.Enabled = false;
+                    }
+                    else if (vchDocId == "D285")
+                    {
+                        hdnEIN_Name.Value = vchFileName;
+                        hypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwEIN.Visible = true;
+                        lnkDEIN.Visible = true;
+                        lblEIN.Visible = true;
+                        flEIN.Enabled = false;
+                    }
+                    else if (vchDocId == "D286")
+                    {
+                        hdnPlantmachinery_Name.Value = vchFileName;
+                        hyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hyVwPlantmachinery.Visible = true;
+                        lnkDPlantmachinery.Visible = true;
+                        lblPlantmachinery.Visible = true;
+                        flPlantmachinery.Enabled = false;
+                    }
+                    else if (vchDocId == "D287")
+                    {
+                        hdnCapitalInvst_Name.Value = vchFileName;
+                        hypVwCapitalInvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwCapitalInvst.Visible = true;
+                        lnkDCapitalInvst.Visible = true;
+                        lblCapitalInvst.Visible = true;
+                        flCapitalInvst.Enabled = false;
+                    }
+                    else if (vchDocId == "D288")
+                    {
+                        hdnInvplantmachinary_name.Value = vchFileName;
+                        hypVwInvplantmachinary.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwInvplantmachinary.Visible = true;
+                        lnkDInvplantmachinary.Visible = true;
+                        lblInvplantmachinary.Visible = true;
+                        flInvplantmachinary.Enabled = false;
+                    }
+                    else if (vchDocId == "D289")
+                    {
+                        hdnproposedprod_name.Value = vchFileName;
+                        hypVwproposedprod.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwproposedprod.Visible = true;
+                        lnkDproposedprod.Visible = true;
+                        lblproposedprod.Visible = true;
+                        flproposedprod.Enabled = false;
+                    }
+                    else if (vchDocId == "D290")
+                    {
+                        hdnpresentstageimplemnt_name.Value = vchFileName;
+                        hypVwpresentstageimplemnt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypVwpresentstageimplemnt.Visible = true;
+                        lnkDpresentstageimplemnt.Visible = true;
+                        lblpresentstageimplemnt.Visible = true;
+                        flpresentstageimplemnt.Enabled = false;
+                    }
+                    else if (vchDocId == "D291")
+                    {
+                        hdnmigrantindustrial_name.Value = vchFileName;
+                        hypvwmigrantindustrial.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwmigrantindustrial.Visible = true;
+                        lnkDmigrantindustrial.Visible = true;
+                        lblmigrantindustrial.Visible = true;
+                        flmigrantindustrial.Enabled = false;
+                    }
+                    else if (vchDocId == "D292")
+                    {
+                        hdnfixedcapitalinvst_name.Value = vchFileName;
+                        hypvwfixedcapitalinvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwfixedcapitalinvst.Visible = true;
+                        lnkDfixedcapitalinvst.Visible = true;
+                        lblfixedcapitalinvst.Visible = true;
+                        flfixedcapitalinvst.Enabled = false;
+                    }
+                    else if (vchDocId == "D293")
+                    {
+                        hdncatagoryfalpriority_name.Value = vchFileName;
+                        hypvwcatagoryfalpriority.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwcatagoryfalpriority.Visible = true;
+                        lnkDcatagoryfalpriority.Visible = true;
+                        lblcatagoryfalpriority.Visible = true;
+                        flcatagoryfalpriority.Enabled = false;
+                    }
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D289")
-                {
-                    hdnproposedprod_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwproposedprod.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwproposedprod.Visible = true;
-                    lnkDproposedprod.Visible = true;
-                    lblproposedprod.Visible = true;
-                    flproposedprod.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D290")
-                {
-                    hdnpresentstageimplemnt_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwpresentstageimplemnt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypVwpresentstageimplemnt.Visible = true;
-                    lnkDpresentstageimplemnt.Visible = true;
-                    lblpresentstageimplemnt.Visible = true;
-                    flpresentstageimplemnt.Enabled = false;
-                }
+                    else if (vchDocId == "D294")
+                    {
+                        Powerattpost_name.Value = vchFileName;
+                        hypvwPowerattpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwPowerattpost.Visible = true;
+                        lnkDPowerattpost.Visible = true;
+                        lblPowerattpost.Visible = true;
+                        flPowerattpost.Enabled = false;
+                    }
+                    else if (vchDocId == "D295")
+                    {
+                        hdnpporthrustcertificate_name.Value = vchFileName;
+                        hypvwpporthrustcertificate.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwpporthrustcertificate.Visible = true;
+                        lnkDpporthrustcertificate.Visible = true;
+                        lblpporthrustcertificate.Visible = true;
+                        flpporthrustcertificate.Enabled = false;
+                    }
+                    else if (vchDocId == "D296")
+                    {
+                        hdncertofregpost_name.Value = vchFileName;
+                        hypvwcertofregpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwcertofregpost.Visible = true;
+                        lnkDcertofregpost.Visible = true;
+                        lblcertofregpost.Visible = true;
+                        flcertofregpost.Enabled = false;
+                    }
+                    else if (vchDocId == "D297")
+                    {
+                        hdnAppDPRpost_name.Value = vchFileName;
+                        hypvwAppDPRpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwAppDPRpost.Visible = true;
+                        lnkDAppDPRpost.Visible = true;
+                        lblAppDPRpost.Visible = true;
+                        flAppDPRpost.Enabled = false;
+                    }
+                    else if (vchDocId == "D298")
+                    {
+                        hdnPCorEINPost_name.Value = vchFileName;
+                        hypvwPCorEINPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwPCorEINPost.Visible = true;
+                        lnkDPCorEINPost.Visible = true;
+                        lblPCorEINPost.Visible = true;
+                        flPCorEINPost.Enabled = false;
+                    }
+                    else if (vchDocId == "D299")
+                    {
+                        hdnloansancorFIappliedpost_name.Value = vchFileName;
+                        hypvwloansancorFIappliedpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwloansancorFIappliedpost.Visible = true;
+                        lnkDloansancorFIappliedpost.Visible = true;
+                        lblloansancorFIappliedpost.Visible = true;
+                        flloansancorFIappliedpost.Enabled = false;
+                    }
+                    else if (vchDocId == "D300")
+                    {
+                        hdnCapitalInvstPost_name.Value = vchFileName;
+                        hypvwCapitalInvstPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwCapitalInvstPost.Visible = true;
+                        lnkDCapitalInvstPost.Visible = true;
+                        lblCapitalInvstPost.Visible = true;
+                        flCapitalInvstPost.Enabled = false;
+                    }
+                    else if (vchDocId == "D301")
+                    {
+                        hdnflInvplantmachinaryPost_name.Value = vchFileName;
+                        hypvwInvplantmachinaryPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwInvplantmachinaryPost.Visible = true;
+                        lnkDInvplantmachinaryPost.Visible = true;
+                        lblInvplantmachinaryPost.Visible = true;
+                        flInvplantmachinaryPost.Enabled = false;
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D291")
-                {
-                    hdnmigrantindustrial_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwmigrantindustrial.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwmigrantindustrial.Visible = true;
-                    lnkDmigrantindustrial.Visible = true;
-                    lblmigrantindustrial.Visible = true;
-                    flmigrantindustrial.Enabled = false;
-                }
+                    }
+                    else if (vchDocId == "D302")
+                    {
+                        hdnPlantmachinerypost_name.Value = vchFileName;
+                        hypvwPlantmachinerypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwPlantmachinerypost.Visible = true;
+                        lnkDPlantmachinerypost.Visible = true;
+                        lblPlantmachinerypost.Visible = true;
+                        flPlantmachinerypost.Enabled = false;
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D292")
-                {
-                    hdnfixedcapitalinvst_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwfixedcapitalinvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwfixedcapitalinvst.Visible = true;
-                    lnkDfixedcapitalinvst.Visible = true;
-                    lblfixedcapitalinvst.Visible = true;
-                    flfixedcapitalinvst.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D293")
-                {
-                    hdncatagoryfalpriority_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcatagoryfalpriority.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcatagoryfalpriority.Visible = true;
-                    lnkDcatagoryfalpriority.Visible = true;
-                    lblcatagoryfalpriority.Visible = true;
-                    flcatagoryfalpriority.Enabled = false;
-                }
+                    }
+                    else if (vchDocId == "D303")
+                    {
+                        hdnproductionormanufactpost_name.Value = vchFileName;
+                        hypvwproductionormanufactpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwproductionormanufactpost.Visible = true;
+                        lnkDproductionormanufactpost.Visible = true;
+                        lblproductionormanufactpost.Visible = true;
+                        flproductionormanufactpost.Enabled = false;
 
-            ///---------------------------------------------End--------------------------------------------------------------------------------////
+                    }
+                    else if (vchDocId == "D304")
+                    {
+                        hdncatagoryfalprioritypost_name.Value = vchFileName;
+                        hypvwcatagoryfalprioritypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwcatagoryfalprioritypost.Visible = true;
+                        lnkDcatagoryfalprioritypost.Visible = true;
+                        lblcatagoryfalprioritypost.Visible = true;
+                        flcatagoryfalprioritypost.Enabled = false;
 
-            ///----------------------------------------------Priority or Thrust Sector Status(Post Production)-----------------------------------//
+                    }
+                    else if (vchDocId == "D305")
+                    {
+                        hdnclearancefromPCB_name.Value = vchFileName;
+                        hypvwclearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwclearancefromPCB.Visible = true;
+                        lnkDclearancefromPCB.Visible = true;
+                        lblclearancefromPCB.Visible = true;
+                        flclearancefromPCB.Enabled = false;
 
+                    }
+                    else if (vchDocId == "D306")
+                    {
+                        hdnmigratedindustunitpost_name.Value = vchFileName;
+                        hypvwmigratedindustunitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwmigratedindustunitpost.Visible = true;
+                        lnkDmigratedindustunitpost.Visible = true;
+                        lblmigratedindustunitpost.Visible = true;
+                        flmigratedindustunitpost.Enabled = false;
 
+                    }
+                    else if (vchDocId == "D307")
+                    {
+                        hdnproductionforMSMEPost_name.Value = vchFileName;
+                        hypvwproductionforMSMEPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwproductionforMSMEPost.Visible = true;
+                        lnkDproductionforMSMEPost.Visible = true;
+                        lblproductionforMSMEPost.Visible = true;
+                        flproductionforMSMEPost.Enabled = false;
+                    }
+                    else if (vchDocId == "D308")
+                    {
+                        hdnproductionforMSMEPost_name.Value = vchFileName;
+                        hypvwEmpoweredcommitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        hypvwEmpoweredcommitpost.Visible = true;
+                        lnkDEmpoweredcommitpost.Visible = true;
+                        lblEmpoweredcommitpost.Visible = true;
+                        flEmpoweredcommitpost.Enabled = false;
+                    }
 
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D294")
-                {
-                    Powerattpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPowerattpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPowerattpost.Visible = true;
-                    lnkDPowerattpost.Visible = true;
-                    lblPowerattpost.Visible = true;
-                    flPowerattpost.Enabled = false;
                 }
-
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D295")
-                {
-                    hdnpporthrustcertificate_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwpporthrustcertificate.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwpporthrustcertificate.Visible = true;
-                    lnkDpporthrustcertificate.Visible = true;
-                    lblpporthrustcertificate.Visible = true;
-                    flpporthrustcertificate.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D296")
-                {
-                    hdncertofregpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcertofregpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcertofregpost.Visible = true;
-                    lnkDcertofregpost.Visible = true;
-                    lblcertofregpost.Visible = true;
-                    flcertofregpost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D297")
-                {
-                    hdnAppDPRpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwAppDPRpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwAppDPRpost.Visible = true;
-                    lnkDAppDPRpost.Visible = true;
-                    lblAppDPRpost.Visible = true;
-                    flAppDPRpost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D298")
-                {
-                    hdnPCorEINPost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPCorEINPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPCorEINPost.Visible = true;
-                    lnkDPCorEINPost.Visible = true;
-                    lblPCorEINPost.Visible = true;
-                    flPCorEINPost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D299")
-                {
-                    hdnloansancorFIappliedpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwloansancorFIappliedpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwloansancorFIappliedpost.Visible = true;
-                    lnkDloansancorFIappliedpost.Visible = true;
-                    lblloansancorFIappliedpost.Visible = true;
-                    flloansancorFIappliedpost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D300")
-                {
-                    hdnCapitalInvstPost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwCapitalInvstPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwCapitalInvstPost.Visible = true;
-                    lnkDCapitalInvstPost.Visible = true;
-                    lblCapitalInvstPost.Visible = true;
-                    flCapitalInvstPost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D301")
-                {
-                    hdnflInvplantmachinaryPost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwInvplantmachinaryPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwInvplantmachinaryPost.Visible = true;
-                    lnkDInvplantmachinaryPost.Visible = true;
-                    lblInvplantmachinaryPost.Visible = true;
-                    flInvplantmachinaryPost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D302")
-                {
-                    hdnPlantmachinerypost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPlantmachinerypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwPlantmachinerypost.Visible = true;
-                    lnkDPlantmachinerypost.Visible = true;
-                    lblPlantmachinerypost.Visible = true;
-                    flPlantmachinerypost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D303")
-                {
-                    hdnproductionormanufactpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwproductionormanufactpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwproductionormanufactpost.Visible = true;
-                    lnkDproductionormanufactpost.Visible = true;
-                    lblproductionormanufactpost.Visible = true;
-                    flproductionormanufactpost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D304")
-                {
-                    hdncatagoryfalprioritypost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcatagoryfalprioritypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwcatagoryfalprioritypost.Visible = true;
-                    lnkDcatagoryfalprioritypost.Visible = true;
-                    lblcatagoryfalprioritypost.Visible = true;
-                    flcatagoryfalprioritypost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D305")
-                {
-                    hdnclearancefromPCB_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwclearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwclearancefromPCB.Visible = true;
-                    lnkDclearancefromPCB.Visible = true;
-                    lblclearancefromPCB.Visible = true;
-                    flclearancefromPCB.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D306")
-                {
-                    hdnmigratedindustunitpost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwmigratedindustunitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwmigratedindustunitpost.Visible = true;
-                    lnkDmigratedindustunitpost.Visible = true;
-                    lblmigratedindustunitpost.Visible = true;
-                    flmigratedindustunitpost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D307")
-                {
-                    hdnproductionforMSMEPost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwproductionforMSMEPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwproductionforMSMEPost.Visible = true;
-                    lnkDproductionforMSMEPost.Visible = true;
-                    lblproductionforMSMEPost.Visible = true;
-                    flproductionforMSMEPost.Enabled = false;
-                }
-                if (dtMoFWorkingLoanPre.Rows[0]["vchDocId"].ToString() == "D308")
-                {
-                    hdnproductionforMSMEPost_name.Value = dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwEmpoweredcommitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + dtMoFWorkingLoanPre.Rows[0]["vchFileName"].ToString();
-                    hypvwEmpoweredcommitpost.Visible = true;
-                    lnkDEmpoweredcommitpost.Visible = true;
-                    lblEmpoweredcommitpost.Visible = true;
-                    flEmpoweredcommitpost.Enabled = false;
-                }
-
-                #endregion
 
             }
+            #endregion
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-
-
     }
 
-
-
-    private void fillUnitMeasurment()
+    private void FillUnitMeasurment()
     {
-        
+
         try
         {
             string action = "A";
@@ -545,10 +526,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-       
+
     }
 
-    private void fillOrgType()
+    private void FillOrgType()
     {
         IncentiveMaster objEntity = new IncentiveMaster();
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
@@ -561,15 +542,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            objEntity = null;
-            objBAL = null;
-        }
+        }       
     }
 
-    private void fillSalutation()
+    private void FillSalutation()
     {
         IncentiveMaster objEntity = new IncentiveMaster();
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
@@ -581,15 +557,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            objEntity = null;
-            objBAL = null;
-        }
+        }        
     }
 
-    private void fillUnitCategory()
+    private void FillUnitCategory()
     {
         IncentiveMaster objEntity = new IncentiveMaster();
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
@@ -602,15 +573,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-        finally
-        {
-            objEntity = null;
-            objBAL = null;
-        }
     }
 
 
-    private void fillData()
+    private void FillData()
     {
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
         Basic_Unit_Details_Entity objEntity = new Basic_Unit_Details_Entity();
@@ -623,7 +589,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 /*----------------------------------------------------------------------------*/
                 ///// Common Information 
-                
+
                 string strDataSource = ds.Tables[0].Rows[0]["vch_Data_Source"].ToString();
                 string strPcStatus = ds.Tables[0].Rows[0]["vch_PC_Status"].ToString();
                 string strIsExistBefore = ds.Tables[0].Rows[0]["vch_Is_Before_Exist"].ToString();
@@ -655,60 +621,36 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
                 if (strDataSource == "BASIC")
                 {
-                    
-
                     Txt_EnterPrise_Name.Text = ds.Tables[1].Rows[0]["vchEnterpriseName"].ToString();
-
                 }
 
                 else if (strDataSource == "PC")
                 {
-
-
                     if (strIsExistBefore == "Y")
                     {
-                       
                         Txt_EnterPrise_Name.Text = ds.Tables[1].Rows[0]["vchCompName"].ToString();
-
-
                     }
 
                     if (strIsExistAfter == "Y")
                     {
-                      
                         Txt_EnterPrise_Name.Text = ds.Tables[1].Rows[0]["vchCompName"].ToString();
-
-
                     }
-
-                    
                 }
                 else if (strDataSource == "PEAL" || strDataSource == "REGD")
                 {
-                   
                     Txt_EnterPrise_Name.Text = ds.Tables[1].Rows[0]["vchNameOfUnit"].ToString();
-
-
                 }
                 /*---------------------------------------------------------------*/
-                ///// Session Assigned Here
-                
+                /// Session Assigned Here
+
                 Session["UnitCode"] = strIndustryCode;
                 Session["ProposalNo"] = strProposalNo;
             }
-
-            
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            objBAL = null;
-            objEntity = null;
-            ds = null;
-        }
+        }        
     }
 
 
@@ -724,9 +666,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         string fileExt = System.IO.Path.GetExtension(FileUpload1.FileName);
         int count = FileUpload1.FileName.Count(f => f == '.');
 
-        string filename = System.IO.Path.GetFileNameWithoutExtension(FileUpload1.FileName);
-        CommonFunctions cmmf = new CommonFunctions();
-
+        System.IO.Path.GetFileNameWithoutExtension(FileUpload1.FileName);
+        
         if (imageTypes.Contains(strFiletype) && imageExtension.Contains(fileExt) && count == 1)
         {
             return true;
@@ -794,13 +735,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         try
         {
             string filename = Hid_File_Name.Value;
-            string path = string.Format("~/incentives/Files/{0}/{1}", strFolername, filename);
-            string completePath = Server.MapPath(path);
-            //if (File.Exists(completePath))
-            //{
-            //    File.Delete(completePath);
-            //}
-
+            string path = string.Format("~/incentives/Files/{0}/{1}", strFolername, filename);          
+            Server.MapPath(path);
             Hid_File_Name.Value = "";
             LnkBtn_Delete_Doc.Visible = false;
             LnkBtn_Upload_Doc.Visible = true;
@@ -813,9 +749,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
     }
-
-
-
 
     protected void DrpDwn_Unit_Before_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -866,22 +799,18 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Lbl_Org_Name_Type.Text = "Name of Authorized Signatory";
             }
             else if (DrpDwn_Org_Type.SelectedValue == "19")
-
             {
                 Lbl_Org_Name_Type.Text = "Name of Authorized Signatory";
             }
             else if (DrpDwn_Org_Type.SelectedValue == "20")
-
             {
                 Lbl_Org_Name_Type.Text = "Name of Authorized Signatory";
             }
-
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-
     }
 
     protected void LnkBtn_Add_Item_Before_Click(object sender, EventArgs e)
@@ -921,10 +850,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-        finally
-        {
-            table = null;
-        }
     }
 
     protected void ImgBtn_Delete_Before_Click(object sender, ImageClickEventArgs e)
@@ -962,11 +887,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            table = null;
-        }
+        }       
     }
 
     protected void LnkBtn_TL_Add_More_Click(object sender, EventArgs e)
@@ -1009,11 +930,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            table = null;
-        }
+        }      
     }
 
     protected void ImgBtn_Delete_TL_Click(object sender, ImageClickEventArgs e)
@@ -1053,11 +970,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            table = null;
-        }
+        }       
     }
 
     protected void LnkBtn_WC_Add_More_Click(object sender, EventArgs e)
@@ -1083,7 +996,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Label Lbl_WC_Sanction_Date = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Sanction_Date");
                 Label Lbl_WC_Avail_Amt = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Avail_Amt");
                 Label Lbl_WC_Avail_Date = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Avail_Date");
-                table.Rows.Add(Lbl_WC_Financial_Inst.Text, Lbl_WC_State.Text, Lbl_WC_City.Text, Lbl_WC_Amount.Text, Lbl_WC_Sanction_Date.Text, Lbl_WC_Avail_Amt.Text, Txt_WC_Availed_Date.Text);
+                table.Rows.Add(Lbl_WC_Financial_Inst.Text, Lbl_WC_State.Text, Lbl_WC_City.Text, Lbl_WC_Amount.Text, Lbl_WC_Sanction_Date.Text, Lbl_WC_Avail_Amt.Text, Lbl_WC_Avail_Date.Text);
             }
 
             Grd_WC.DataSource = table;
@@ -1101,11 +1014,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            table = null;
-        }
+        }       
     }
 
     protected void ImgBtn_Delete_WC_Click(object sender, ImageClickEventArgs e)
@@ -1135,7 +1044,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     Label Lbl_WC_Sanction_Date = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Sanction_Date");
                     Label Lbl_WC_Avail_Amt = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Avail_Amt");
                     Label Lbl_WC_Avail_Date = (Label)Grd_WC.Rows[i].FindControl("Lbl_WC_Avail_Date");
-                    table.Rows.Add(Lbl_WC_Financial_Inst.Text, Lbl_WC_State.Text, Lbl_WC_City.Text, Lbl_WC_Amount.Text, Lbl_WC_Sanction_Date.Text, Lbl_WC_Avail_Amt.Text, Txt_WC_Availed_Date.Text);
+                    table.Rows.Add(Lbl_WC_Financial_Inst.Text, Lbl_WC_State.Text, Lbl_WC_City.Text, Lbl_WC_Amount.Text, Lbl_WC_Sanction_Date.Text, Lbl_WC_Avail_Amt.Text, Lbl_WC_Avail_Date.Text);
                 }
             }
 
@@ -1145,20 +1054,16 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            table = null;
-        }
+        }        
     }
 
     protected void BtnApply_Click(object sender, EventArgs e)
     {
         ModalPopupExtender2.Hide();
-        DataSet ds = new DataSet();
-       
+
+
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
-        Basic_Unit_Details_Entity objEntity1 = new Basic_Unit_Details_Entity();      
+        Basic_Unit_Details_Entity objEntity1 = new Basic_Unit_Details_Entity();
 
         try
         {
@@ -1166,8 +1071,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             /*---------------------------------------------------------------------*/
             ////// Add Production Item Before
-
-            BasicProductionItemBefore objProdBefore = new BasicProductionItemBefore();
             List<BasicProductionItemBefore> listProdBefore = new List<BasicProductionItemBefore>();
 
             for (int i = 0; i < Grd_Production_Before.Rows.Count; i++)
@@ -1176,7 +1079,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
                 Label lblProductionName = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Product_Name_Before");
                 Label lblQuantity = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Quantity_Before");
-                Label lblUnit = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Unit_Before");
                 Label lblOtherUnit = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Other_Unit_Before");
                 Label lblValue = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Value_Before");
                 HiddenField hdnUnit = (HiddenField)Grd_Production_Before.Rows[i].FindControl("Hid_Unit_Before");
@@ -1198,12 +1100,11 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             #endregion
 
-            
+
             #region Term Loan
             /*---------------------------------------------------------------------*/
             ////// Add Term Loan
 
-            BasicTermLoan objTL = new BasicTermLoan();
             List<BasicTermLoan> listTL = new List<BasicTermLoan>();
 
             for (int i = 0; i < Grd_TL.Rows.Count; i++)
@@ -1235,9 +1136,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region Working Capital Loan
 
             /*---------------------------------------------------------------------*/
-            ////// Add Working Capital Loan
+            /// Add Working Capital Loan
+            /*---------------------------------------------------------------------*/
 
-            BasicWorkingCapitalLoan objWC = new BasicWorkingCapitalLoan();
             List<BasicWorkingCapitalLoan> listWC = new List<BasicWorkingCapitalLoan>();
 
             for (int i = 0; i < Grd_WC.Rows.Count; i++)
@@ -1269,13 +1170,13 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region IndustrialUnitDetailsSection
 
             /*---------------------------------------------------------------------*/
-            /////// Industrial Unit Details Section
+            ///Industrial Unit Details Section
 
             objEntity1.strEnterpriseName = Txt_EnterPrise_Name.Text;
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
             objEntity1.strIndustryAddress = Txt_Industry_Address.Text;
             objEntity1.intUnitCat = Convert.ToInt32(DrpDwn_Unit_Cat.SelectedValue);
-           
+
             objEntity1.strRegisteredOfcAddress = Txt_Regd_Office_Address.Text;
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;
             objEntity1.strManagingPartnerName = Txt_Partner_Name.Text;
@@ -1291,7 +1192,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region ProductionandEmploymentDetails Section
 
             /*----------------------------------------------------------*/
-            ////// Production and Employment Details Section
+            ///Production and Employment Details Section
             /*----------------------------------------------------------*/
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
             objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
@@ -1353,7 +1254,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 decMarginMoneyForworkingBefore = Convert.ToDecimal(Txt_Margine_money.Text);
             }
-            decimal decTotalCapitalBefore = decLandBefore + decBuildingBefore + decPlantMachBefore + decOtherFixedAssetBefore+ decElectricalInstBefore+ decLoadUnloadBefore + decMarginMoneyForworkingBefore;
+
+            decimal decTotalCapitalBefore = decLandBefore + decBuildingBefore + decPlantMachBefore + decOtherFixedAssetBefore + decElectricalInstBefore + decLoadUnloadBefore + decMarginMoneyForworkingBefore;
 
             objEntity1.decLandAmtBefore = decLandBefore;
             objEntity1.decBuildingAmtBefore = decBuildingBefore;
@@ -1363,10 +1265,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.decElectricalInstAmtBefore = decElectricalInstBefore;
             objEntity1.decLoadUnloadAmtBefore = decLoadUnloadBefore;
             objEntity1.decMarginMoneyForworkingAmtBefore = decMarginMoneyForworkingBefore;
+
             /*---------------------------------------------------------------------*/
             ///// Investment Details (After)
             /*---------------------------------------------------------------------*/
-
             decimal decLandAfter = 0;
             decimal decBuildingAfter = 0;
             decimal decPlantMachAfter = 0;
@@ -1403,7 +1305,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 decMarginMoneyForworkingAfter = Convert.ToDecimal(Txt_Margine_money_After.Text);
             }
-            decimal decTotalCapitalAfter = decLandAfter + decBuildingAfter + decPlantMachAfter + decOtherFixedAssetAfter+ decElectricalInstAfter+ decLoadUnloadAfter+ decMarginMoneyForworkingAfter;
+            decimal decTotalCapitalAfter = decLandAfter + decBuildingAfter + decPlantMachAfter + decOtherFixedAssetAfter + decElectricalInstAfter + decLoadUnloadAfter + decMarginMoneyForworkingAfter;
 
             objEntity1.decLandAmtAfter = decLandAfter;
             objEntity1.decBuildingAmtAfter = decBuildingAfter;
@@ -1419,13 +1321,14 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             #region MeansofFinanceSection
 
-            /*----------------------------------------------------------*/
-            ////// Means of Finance Section
+            /*---------------------------------------------------------------------*/
+            /// Means of Finance Section
+            /*---------------------------------------------------------------------*/
 
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text == "" ? "0" : Txt_Equity_Amt.Text);
             objEntity1.intProjectClearance = Convert.ToInt32(Rad_Clearnce_PCB.SelectedValue);
-            objEntity1.intProvisnalPriorityThrustStatus= Convert.ToInt32(Rad_PP_thrust_Status.SelectedValue);
-            objEntity1.intIPRinctiveAvel= Convert.ToInt32(Rad_IPR_Incentive_avail.SelectedValue);
+            objEntity1.intProvisnalPriorityThrustStatus = Convert.ToInt32(Rad_PP_thrust_Status.SelectedValue);
+            objEntity1.intIPRinctiveAvel = Convert.ToInt32(Rad_IPR_Incentive_avail.SelectedValue);
             objEntity1.strClearnceswm = Txt_Swm_approve.Text;
 
             #endregion
@@ -1433,10 +1336,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region OtherDocumentSection
 
             /*---------------------------------------------------------------------*/
-            /////// Other Document Section
-
-            /*----------------------------------------------------------*/
-            /*--------------------------Pre-Production Document Section Start-----------------------------------------------*/
+            /// Other Document Section
+            /*---------------------------------------------------------------------*/         
             if (hdnPowerattpre_name.Value != "")
             {
                 objEntity1.strPworofAttorneyPreDocCode = hdnPowerattpre_code.Value;
@@ -1447,6 +1348,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPreDocCode = null;
                 objEntity1.strPworofAttorneyPre = null;
             }
+
             if (certofreg_name.Value != "")
             {
                 objEntity1.strCertificateofregistrationDocCodepre = certofreg_code.Value;
@@ -1457,6 +1359,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationDocCodepre = null;
                 objEntity1.strCertificateofregistrationpre = null;
             }
+
             if (hdnAppDPR_Name.Value != "")
             {
                 objEntity1.strApproveDPRDocCodePre = hdnAppDPR_Code.Value;
@@ -1467,6 +1370,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRDocCodePre = null;
                 objEntity1.strApproveDPRPre = null;
             }
+
             if (hdnEIN_Name.Value != "")
             {
                 objEntity1.strEINapprovalDocCodePre = hdnEIN_Code.Value;
@@ -1477,6 +1381,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEINapprovalDocCodePre = null;
                 objEntity1.strEINapprovalPre = null;
             }
+
             if (hdnPlantmachinery_Name.Value != "")
             {
                 objEntity1.strBalacingEquipmentDocCodePre = hdnPlantmachinery_Code.Value;
@@ -1487,6 +1392,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentDocCodePre = null;
                 objEntity1.strBalacingEquipmentPre = null;
             }
+
             if (hdnCapitalInvst_Name.Value != "")
             {
                 objEntity1.strCapitalInvstDocCodePre = hdnCapitalInvst_Code.Value;
@@ -1497,6 +1403,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstDocCodePre = null;
                 objEntity1.strCapitalInvstPre = null;
             }
+
             if (hdnInvplantmachinary_name.Value != "")
             {
                 objEntity1.strInvestmentplantmachinaryDocCodePre = hdnInvplantmachinary_code.Value;
@@ -1507,6 +1414,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryDocCodePre = null;
                 objEntity1.strInvestmentplantmachinaryPre = null;
             }
+
             if (hdnproposedprod_name.Value != "")
             {
                 objEntity1.strProposedprodDocCodePre = hdnproposedprod_code.Value;
@@ -1517,6 +1425,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strProposedprodDocCodePre = null;
                 objEntity1.strProposedprodPre = null;
             }
+
             if (hdnpresentstageimplemnt_name.Value != "")
             {
                 objEntity1.strPresentStageImplentDocCodePre = hdnpresentstageimplemnt_code.Value;
@@ -1527,6 +1436,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPresentStageImplentDocCodePre = null;
                 objEntity1.strPresentStageImplentPre = null;
             }
+
             if (hdnmigrantindustrial_name.Value != "")
             {
                 objEntity1.strMigrantIndustryunitDocCodePre = hdnmigrantindustrial_code.Value;
@@ -1537,6 +1447,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitDocCodePre = null;
                 objEntity1.strMigrantIndustryunitPre = null;
             }
+
             if (hdnfixedcapitalinvst_name.Value != "")
             {
                 objEntity1.strfixedcapitalinvstDocCodePre = hdnfixedcapitalinvst_code.Value;
@@ -1547,6 +1458,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstDocCodePre = null;
                 objEntity1.strfixedcapitalinvstPre = null;
             }
+
             if (hdncatagoryfalpriority_name.Value != "")
             {
                 objEntity1.strPriorityorThrustsectorDocCodePre = hdncatagoryfalpriority_code.Value;
@@ -1557,9 +1469,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorDocCodePre = null;
                 objEntity1.strPriorityorThrustsectorPre = null;
             }
-            /*--------------------------Pre-Production Document Section End-----------------------------------------------*/
 
-            /*--------------------------Post-Production Document Section Start-----------------------------------------------*/
             if (Powerattpost_name.Value != "")
             {
                 objEntity1.strPworofAttorneyPostDocCode = hdnPowerattpost_code.Value;
@@ -1570,6 +1480,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPostDocCode = null;
                 objEntity1.strPworofAttorneyPost = null;
             }
+
             if (hdnpporthrustcertificate_name.Value != "")
             {
                 objEntity1.strPPorThrustStatusCertPostDocCode = hdnpporthrustcertificate_code.Value;
@@ -1580,6 +1491,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPPorThrustStatusCertPostDocCode = null;
                 objEntity1.strPPorThrustStatusCertPost = null;
             }
+
             if (hdncertofregpost_name.Value != "")
             {
                 objEntity1.strCertificateofregistrationDocCodepost = hdncertofregpost_code.Value;
@@ -1590,6 +1502,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationDocCodepost = null;
                 objEntity1.strCertificateofregistrationpost = null;
             }
+
             if (hdnAppDPRpost_name.Value != "")
             {
                 objEntity1.strApproveDPRDocCodePost = hdnAppDPRpost_code.Value;
@@ -1600,6 +1513,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRDocCodePost = null;
                 objEntity1.strApproveDPRPost = null;
             }
+
             if (hdnPCorEINPost_name.Value != "")
             {
                 objEntity1.strPcDocCodePost = hdnPCorEINPost_code.Value;
@@ -1610,6 +1524,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPcDocCodePost = null;
                 objEntity1.strPcPost = null;
             }
+
             if (hdnloansancorFIappliedpost_name.Value != "")
             {
                 objEntity1.strSanctionbankorFIDocCodePost = hdnloansancorFIappliedpost_code.Value;
@@ -1620,6 +1535,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strSanctionbankorFIDocCodePost = null;
                 objEntity1.strSanctionbankorFIPost = null;
             }
+
             if (hdnCapitalInvstPost_name.Value != "")
             {
                 objEntity1.strCapitalInvstDocCodePost = hdnCapitalInvstPost_code.Value;
@@ -1630,6 +1546,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstDocCodePost = null;
                 objEntity1.strCapitalInvstPost = null;
             }
+
             if (hdnflInvplantmachinaryPost_name.Value != "")
             {
                 objEntity1.strInvestmentplantmachinaryDocCodePost = hdnflInvplantmachinaryPost_code.Value;
@@ -1640,6 +1557,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryDocCodePost = null;
                 objEntity1.strInvestmentplantmachinaryPost = null;
             }
+
             if (hdnPlantmachinerypost_name.Value != "")
             {
                 objEntity1.strBalacingEquipmentDocCodePost = hdnPlantmachinerypost_code.Value;
@@ -1650,6 +1568,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentDocCodePost = null;
                 objEntity1.strBalacingEquipmentPost = null;
             }
+
             if (hdnproductionormanufactpost_name.Value != "")
             {
                 objEntity1.strServiceProvideDocCodePost = hdnproductionormanufactpost_code.Value;
@@ -1660,6 +1579,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strServiceProvideDocCodePost = null;
                 objEntity1.strServiceProvidePost = null;
             }
+
             if (hdncatagoryfalprioritypost_name.Value != "")
             {
                 objEntity1.strPriorityorThrustsectorDocCodePost = hdncatagoryfalprioritypost_code.Value;
@@ -1670,6 +1590,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorDocCodePost = null;
                 objEntity1.strPriorityorThrustsectorPost = null;
             }
+
             if (hdnclearancefromPCB_name.Value != "")
             {
                 objEntity1.strClearancefromPCBDocCodePost = hdnclearancefromPCB_code.Value;
@@ -1691,6 +1612,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitDocCodePost = null;
                 objEntity1.strMigrantIndustryunitPost = null;
             }
+
             if (hdnproductionforMSMEPost_name.Value != "")
             {
                 objEntity1.strfixedcapitalinvstDocCodePost = hdnproductionforMSMEPost_code.Value;
@@ -1701,6 +1623,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstDocCodePost = null;
                 objEntity1.strfixedcapitalinvstPost = null;
             }
+
             if (hdnEmpoweredcommitpost_name.Value != "")
             {
                 objEntity1.strEmpoweredCommitteeDocCodePost = hdnEmpoweredcommitpost_code.Value;
@@ -1711,59 +1634,48 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEmpoweredCommitteeDocCodePost = null;
                 objEntity1.strEmpoweredCommitteePost = null;
             }
-            /*--------------------------Post-Production Document Section End-----------------------------------------------*/
-
-
             /*-------------------------Other Document End---------------------------------*/
 
 
             #endregion
 
-            objEntity1.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
-           
-            fillData();
-            objEntity1.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
+            ///This method is called to assign  Session value
+            FillData();
 
+            objEntity1.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
             objEntity1.strPcNoAfter = Session["ProposalNo"].ToString();
             objEntity1.strIndustryCode = Session["UnitCode"].ToString();
 
             if (Request.QueryString["key"] != null)
             {
                 objEntity1.strInctFlow = Request.QueryString["key"].ToString();
-
             }
             else
             {
                 objEntity1.strInctFlow = Request.QueryString["IncentiveNo"].ToString();
             }
 
-            /*---------------------------------------------------------------*/
-            /////// Data Insert and Update
+            /*---------------------------------------------------------------------*/
+            /// Data Insert and Update
+            /// 1-Insert
+            /// 2-Update
+            /*---------------------------------------------------------------------*/
 
             string strReturnStatus = objBAL.Thrust_Priority_AED(objEntity1);
-            if (strReturnStatus == "1")
+            if (strReturnStatus == "1" || strReturnStatus == "2")
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data Saved Successfully !', '" + Messages.TitleOfProject + "', function () {location.href = './incentiveoffered.aspx';}); </script>", false);
                 return;
-            }       
+            }
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something Went wrong.</strong>');", true);
                 return;
             }
-            ModalPopupExtender1.Show();
-
-            ///*---------------------------------------------------------------*/
-
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
-        }
-        finally
-        {
-            objBAL = null;
-            objEntity1 = null;
         }
     }
 
@@ -1801,7 +1713,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Txt_Uam_Date.Text = "";
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
@@ -1820,7 +1732,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PoweofAttorneyPre";
                     UploadDocument(flPowerattpre, hdnPowerattpre_name, strFileName, hypPowerattpre, lblPowerattpre, lnkDPowerattpre, "InctBasicDoc");
                 }
-                
+
             }
             else if (string.Equals(lnk.ID, lnkUcertofreg.ID))
             {
@@ -1894,7 +1806,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     UploadDocument(flmigrantindustrial, hdnmigrantindustrial_name, strFileName, hypvwmigrantindustrial, lblmigrantindustrial, lnkDmigrantindustrial, "InctBasicDoc");
                 }
             }
-
             else if (string.Equals(lnk.ID, lnkUfixedcapitalinvst.ID))
             {
                 if (flfixedcapitalinvst.HasFile)
@@ -2036,7 +1947,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-
     }
 
     protected void LnkBtn_Delete_Doc_Click(object sender, EventArgs e)
@@ -2080,7 +1990,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 UpdFileRemove(hdnpresentstageimplemnt_name, lnkUpresentstageimplemnt, lnkDpresentstageimplemnt, hypVwpresentstageimplemnt, lblpresentstageimplemnt, flpresentstageimplemnt, "InctBasicDoc");
             }
-
             else if (string.Equals(lnk.ID, lnkDmigrantindustrial.ID))
             {
                 UpdFileRemove(hdnmigrantindustrial_name, lnkUmigrantindustrial, lnkDmigrantindustrial, hypvwmigrantindustrial, lblmigrantindustrial, flpresentstageimplemnt, "InctBasicDoc");
@@ -2153,13 +2062,11 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 UpdFileRemove(hdnEmpoweredcommitpost_name, lnkUEmpoweredcommitpost, lnkDEmpoweredcommitpost, hypvwEmpoweredcommitpost, lblEmpoweredcommitpost, flEmpoweredcommitpost, "InctBasicDoc");
             }
-
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-
     }
 
     protected void BtnCancel_Click(object sender, EventArgs e)
@@ -2170,7 +2077,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
     protected void BtnDraft_Click(object sender, EventArgs e)
     {
         ModalPopupExtender2.Hide();
-        DataSet ds = new DataSet();
 
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
         Basic_Unit_Details_Entity objEntity1 = new Basic_Unit_Details_Entity();
@@ -2180,9 +2086,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region Production Item Before
 
             /*---------------------------------------------------------------------*/
-            ////// Add Production Item Before
+            /// Add Production Item Before
+            /*---------------------------------------------------------------------*/
 
-            BasicProductionItemBefore objProdBefore = new BasicProductionItemBefore();
             List<BasicProductionItemBefore> listProdBefore = new List<BasicProductionItemBefore>();
 
             for (int i = 0; i < Grd_Production_Before.Rows.Count; i++)
@@ -2191,7 +2097,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
                 Label lblProductionName = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Product_Name_Before");
                 Label lblQuantity = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Quantity_Before");
-                Label lblUnit = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Unit_Before");
                 Label lblOtherUnit = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Other_Unit_Before");
                 Label lblValue = (Label)Grd_Production_Before.Rows[i].FindControl("Lbl_Value_Before");
                 HiddenField hdnUnit = (HiddenField)Grd_Production_Before.Rows[i].FindControl("Hid_Unit_Before");
@@ -2216,9 +2121,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             #region Term Loan
             /*---------------------------------------------------------------------*/
-            ////// Add Term Loan
+            /// Add Term Loan
+            /*---------------------------------------------------------------------*/
 
-            BasicTermLoan objTL = new BasicTermLoan();
+
             List<BasicTermLoan> listTL = new List<BasicTermLoan>();
 
             for (int i = 0; i < Grd_TL.Rows.Count; i++)
@@ -2250,9 +2156,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region Working Capital Loan
 
             /*---------------------------------------------------------------------*/
-            ////// Add Working Capital Loan
+            ///Add Working Capital Loan
+            /*---------------------------------------------------------------------*/
 
-            BasicWorkingCapitalLoan objWC = new BasicWorkingCapitalLoan();
             List<BasicWorkingCapitalLoan> listWC = new List<BasicWorkingCapitalLoan>();
 
             for (int i = 0; i < Grd_WC.Rows.Count; i++)
@@ -2284,8 +2190,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region IndustrialUnitDetailsSection
 
             /*---------------------------------------------------------------------*/
-            /////// Industrial Unit Details Section
-
+            ///Industrial Unit Details Section
+            /*---------------------------------------------------------------------*/
             objEntity1.strEnterpriseName = Txt_EnterPrise_Name.Text;
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
             objEntity1.strIndustryAddress = Txt_Industry_Address.Text;
@@ -2378,10 +2284,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.decElectricalInstAmtBefore = decElectricalInstBefore;
             objEntity1.decLoadUnloadAmtBefore = decLoadUnloadBefore;
             objEntity1.decMarginMoneyForworkingAmtBefore = decMarginMoneyForworkingBefore;
+
             /*---------------------------------------------------------------------*/
             ///// Investment Details (After)
             /*---------------------------------------------------------------------*/
-
             decimal decLandAfter = 0;
             decimal decBuildingAfter = 0;
             decimal decPlantMachAfter = 0;
@@ -2434,9 +2340,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             #region MeansofFinanceSection
 
-            /*----------------------------------------------------------*/
+            /*---------------------------------------------------------------------*/
             ////// Means of Finance Section
-
+            /*---------------------------------------------------------------------*/
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text == "" ? "0" : Txt_Equity_Amt.Text);
             objEntity1.intProjectClearance = Convert.ToInt32(Rad_Clearnce_PCB.SelectedValue);
             objEntity1.intProvisnalPriorityThrustStatus = Convert.ToInt32(Rad_PP_thrust_Status.SelectedValue);
@@ -2448,10 +2354,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region OtherDocumentSection
 
             /*---------------------------------------------------------------------*/
-            /////// Other Document Section
-
-            /*----------------------------------------------------------*/
-            /*--------------------------Pre-Production Document Section Start-----------------------------------------------*/
+            /// Other Document Section
+            /*---------------------------------------------------------------------*/           
             if (hdnPowerattpre_name.Value != "")
             {
                 objEntity1.strPworofAttorneyPreDocCode = hdnPowerattpre_code.Value;
@@ -2462,6 +2366,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPreDocCode = null;
                 objEntity1.strPworofAttorneyPre = null;
             }
+
             if (certofreg_name.Value != "")
             {
                 objEntity1.strCertificateofregistrationDocCodepre = certofreg_code.Value;
@@ -2472,6 +2377,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationDocCodepre = null;
                 objEntity1.strCertificateofregistrationpre = null;
             }
+
             if (hdnAppDPR_Name.Value != "")
             {
                 objEntity1.strApproveDPRDocCodePre = hdnAppDPR_Code.Value;
@@ -2482,6 +2388,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRDocCodePre = null;
                 objEntity1.strApproveDPRPre = null;
             }
+
             if (hdnEIN_Name.Value != "")
             {
                 objEntity1.strEINapprovalDocCodePre = hdnEIN_Code.Value;
@@ -2492,6 +2399,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEINapprovalDocCodePre = null;
                 objEntity1.strEINapprovalPre = null;
             }
+
             if (hdnPlantmachinery_Name.Value != "")
             {
                 objEntity1.strBalacingEquipmentDocCodePre = hdnPlantmachinery_Code.Value;
@@ -2502,6 +2410,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentDocCodePre = null;
                 objEntity1.strBalacingEquipmentPre = null;
             }
+
             if (hdnCapitalInvst_Name.Value != "")
             {
                 objEntity1.strCapitalInvstDocCodePre = hdnCapitalInvst_Code.Value;
@@ -2512,6 +2421,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstDocCodePre = null;
                 objEntity1.strCapitalInvstPre = null;
             }
+
             if (hdnInvplantmachinary_name.Value != "")
             {
                 objEntity1.strInvestmentplantmachinaryDocCodePre = hdnInvplantmachinary_code.Value;
@@ -2522,6 +2432,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryDocCodePre = null;
                 objEntity1.strInvestmentplantmachinaryPre = null;
             }
+
             if (hdnproposedprod_name.Value != "")
             {
                 objEntity1.strProposedprodDocCodePre = hdnproposedprod_code.Value;
@@ -2532,6 +2443,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strProposedprodDocCodePre = null;
                 objEntity1.strProposedprodPre = null;
             }
+
             if (hdnpresentstageimplemnt_name.Value != "")
             {
                 objEntity1.strPresentStageImplentDocCodePre = hdnpresentstageimplemnt_code.Value;
@@ -2542,6 +2454,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPresentStageImplentDocCodePre = null;
                 objEntity1.strPresentStageImplentPre = null;
             }
+
             if (hdnmigrantindustrial_name.Value != "")
             {
                 objEntity1.strMigrantIndustryunitDocCodePre = hdnmigrantindustrial_code.Value;
@@ -2552,6 +2465,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitDocCodePre = null;
                 objEntity1.strMigrantIndustryunitPre = null;
             }
+
             if (hdnfixedcapitalinvst_name.Value != "")
             {
                 objEntity1.strfixedcapitalinvstDocCodePre = hdnfixedcapitalinvst_code.Value;
@@ -2562,6 +2476,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstDocCodePre = null;
                 objEntity1.strfixedcapitalinvstPre = null;
             }
+
             if (hdncatagoryfalpriority_name.Value != "")
             {
                 objEntity1.strPriorityorThrustsectorDocCodePre = hdncatagoryfalpriority_code.Value;
@@ -2572,9 +2487,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorDocCodePre = null;
                 objEntity1.strPriorityorThrustsectorPre = null;
             }
-            /*--------------------------Pre-Production Document Section End-----------------------------------------------*/
-
-            /*--------------------------Post-Production Document Section Start-----------------------------------------------*/
+            
             if (Powerattpost_name.Value != "")
             {
                 objEntity1.strPworofAttorneyPostDocCode = hdnPowerattpost_code.Value;
@@ -2585,6 +2498,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPostDocCode = null;
                 objEntity1.strPworofAttorneyPost = null;
             }
+
             if (hdnpporthrustcertificate_name.Value != "")
             {
                 objEntity1.strPPorThrustStatusCertPostDocCode = hdnpporthrustcertificate_code.Value;
@@ -2595,6 +2509,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPPorThrustStatusCertPostDocCode = null;
                 objEntity1.strPPorThrustStatusCertPost = null;
             }
+
             if (hdncertofregpost_name.Value != "")
             {
                 objEntity1.strCertificateofregistrationDocCodepost = hdncertofregpost_code.Value;
@@ -2605,6 +2520,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationDocCodepost = null;
                 objEntity1.strCertificateofregistrationpost = null;
             }
+
             if (hdnAppDPRpost_name.Value != "")
             {
                 objEntity1.strApproveDPRDocCodePost = hdnAppDPRpost_code.Value;
@@ -2615,6 +2531,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRDocCodePost = null;
                 objEntity1.strApproveDPRPost = null;
             }
+
             if (hdnPCorEINPost_name.Value != "")
             {
                 objEntity1.strPcDocCodePost = hdnPCorEINPost_code.Value;
@@ -2625,6 +2542,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPcDocCodePost = null;
                 objEntity1.strPcPost = null;
             }
+
             if (hdnloansancorFIappliedpost_name.Value != "")
             {
                 objEntity1.strSanctionbankorFIDocCodePost = hdnloansancorFIappliedpost_code.Value;
@@ -2635,6 +2553,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strSanctionbankorFIDocCodePost = null;
                 objEntity1.strSanctionbankorFIPost = null;
             }
+
             if (hdnCapitalInvstPost_name.Value != "")
             {
                 objEntity1.strCapitalInvstDocCodePost = hdnCapitalInvstPost_code.Value;
@@ -2645,6 +2564,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstDocCodePost = null;
                 objEntity1.strCapitalInvstPost = null;
             }
+
             if (hdnflInvplantmachinaryPost_name.Value != "")
             {
                 objEntity1.strInvestmentplantmachinaryDocCodePost = hdnflInvplantmachinaryPost_code.Value;
@@ -2655,6 +2575,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryDocCodePost = null;
                 objEntity1.strInvestmentplantmachinaryPost = null;
             }
+
             if (hdnPlantmachinerypost_name.Value != "")
             {
                 objEntity1.strBalacingEquipmentDocCodePost = hdnPlantmachinerypost_code.Value;
@@ -2665,6 +2586,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentDocCodePost = null;
                 objEntity1.strBalacingEquipmentPost = null;
             }
+
             if (hdnproductionormanufactpost_name.Value != "")
             {
                 objEntity1.strServiceProvideDocCodePost = hdnproductionormanufactpost_code.Value;
@@ -2675,6 +2597,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strServiceProvideDocCodePost = null;
                 objEntity1.strServiceProvidePost = null;
             }
+
             if (hdncatagoryfalprioritypost_name.Value != "")
             {
                 objEntity1.strPriorityorThrustsectorDocCodePost = hdncatagoryfalprioritypost_code.Value;
@@ -2685,6 +2608,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorDocCodePost = null;
                 objEntity1.strPriorityorThrustsectorPost = null;
             }
+
             if (hdnclearancefromPCB_name.Value != "")
             {
                 objEntity1.strClearancefromPCBDocCodePost = hdnclearancefromPCB_code.Value;
@@ -2706,6 +2630,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitDocCodePost = null;
                 objEntity1.strMigrantIndustryunitPost = null;
             }
+
             if (hdnproductionforMSMEPost_name.Value != "")
             {
                 objEntity1.strfixedcapitalinvstDocCodePost = hdnproductionforMSMEPost_code.Value;
@@ -2716,6 +2641,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstDocCodePost = null;
                 objEntity1.strfixedcapitalinvstPost = null;
             }
+
             if (hdnEmpoweredcommitpost_name.Value != "")
             {
                 objEntity1.strEmpoweredCommitteeDocCodePost = hdnEmpoweredcommitpost_code.Value;
@@ -2726,62 +2652,48 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEmpoweredCommitteeDocCodePost = null;
                 objEntity1.strEmpoweredCommitteePost = null;
             }
-            /*--------------------------Post-Production Document Section End-----------------------------------------------*/
-
 
             /*-------------------------Other Document End---------------------------------*/
-
-
             #endregion
-            fillData();
+
+            ///This method is called to assign  Session value
+            FillData();
             objEntity1.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
-           
+
             objEntity1.strPcNoAfter = Session["ProposalNo"].ToString();
             objEntity1.strIndustryCode = Session["UnitCode"].ToString();
 
             if (Request.QueryString["key"] != null)
             {
                 objEntity1.strIncentiveNumber = Request.QueryString["key"].ToString();
-              
+
             }
             else
             {
-                objEntity1.strIncentiveNumber= Request.QueryString["IncentiveNo"].ToString();
+                objEntity1.strIncentiveNumber = Request.QueryString["IncentiveNo"].ToString();
             }
 
-            /*---------------------------------------------------------------*/
-            /////// Data Insert and Update
+            /*---------------------------------------------------------------------*/
+            /// Data Insert and Update
+            /// 1-Insert
+            /// 2-Update
+            /*---------------------------------------------------------------------*/ 
 
             string strReturnStatus = objBAL.Thrust_Priority_Draft(objEntity1);
-            if (strReturnStatus == "1")
+            if (strReturnStatus == "1" || strReturnStatus == "2")
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data Drafted Successfully !', '" + Messages.TitleOfProject + "', function () {location.href = './incentiveoffered.aspx';}); </script>", false);
                 return;
             }
-
             else
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something Went wrong.</strong>');", true);
                 return;
-            }          
-            ModalPopupExtender1.Show();
-
-            ///*---------------------------------------------------------------*/
-
+            }
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ThrustorPriorityIPR2022");
         }
-        finally
-        {
-            objBAL = null;
-            objEntity1 = null;
-        }
-
     }
-
-    
 }
-
-

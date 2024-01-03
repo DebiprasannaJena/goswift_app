@@ -1,5 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StampDutyExemption.aspx.cs" Inherits="incentives_StampDutyExemption" %>
+﻿<%--'*******************************************************************************************************************
+' File Name         : StampDutyExemption.aspx
+' Description       : Stamp Duty Exemption IPR-2022 Add and Draft Page
+' Created by        : Debiprasanna Jena
+' Created On        : 08th Aug 2023
+' Modification History:
 
+'<CR no.>                          <Date>                <Modified by>        <Modification Summary>                      <Instructed By>                                                     
+
+'   *********************************************************************************************************************--%>
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="StampDutyExemption.aspx.cs" Inherits="incentives_StampDutyExemption" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -12,9 +22,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
+    <title> </title>
     <uc1:doctype ID="doctype" runat="server" />
     <link href="../css/custom.css" rel="stylesheet" type="text/css" />
-    <link href="../css/incentive.css" rel="stylesheet" type="text/css">
+    <link href="../css/incentive.css" rel="stylesheet" type="text/css"/>
     <script src="../js/jquery-1.4.1.min.js" type="text/javascript"></script>
     <script src="../js/WebValidation.js" type="text/javascript"></script>
     <script src="../js/Incentive/JS_Inct_Basic_Details.js" type="text/javascript"></script>
@@ -44,10 +55,6 @@
 
     </script>
     
-  
-
-   
-
 
     <script type="text/javascript" language="javascript">
 
@@ -99,25 +106,9 @@
             }
         }
 
-        
-      
-
 ///*-------------------------------------------------------------------------------------------------------------------------*/
 ///Add by Debiprasanna Jena on Dt-11-07-2023
         function validateThrustprioritysectorstatus() {
-
-           
-            //if (!blankFieldValidation('Txt_EnterPrise_Name', 'EnterPrise/Industrial Unit', projname)) {
-            //    return false;
-            //}
-            //if (!DropDownValidation('DrpDwn_Unit_Cat', '0', 'Category of the Unit ', projname)) {
-            //    $("#popup_ok").click(function () { $("#DrpDwn_Unit_Cat").focus(); });
-            //    return false;
-            //}           
-           
-            //if (!blankFieldValidation('Txt_Industry_Address', 'Address of Registered Office Unit ', projname)) {
-            //    return false;
-            //}
             if (!WhiteSpaceValidation1st('Txt_Industry_Address', 'Address of Registered Office Unit ', projname)) {
                 $("#popup_ok").click(function () { $("#Txt_Industry_Address").focus(); });
                 return false;
@@ -129,11 +120,6 @@
                 $("#popup_ok").click(function () { $("#Txt_Industry_Address").focus(); });
                 return false;
             }
-
-
-            //if (!blankFieldValidation('Txt_Regd_Office_Address', 'Address of Correspondence ', projname)) {
-            //    return false;
-            //}
             if (!WhiteSpaceValidation1st('Txt_Regd_Office_Address', 'Address of Correspondence ', projname)) {
                 $("#popup_ok").click(function () { $("#Txt_Regd_Office_Address").focus(); });
                 return false;
@@ -144,9 +130,6 @@
                 $("#popup_ok").click(function () { $("#Txt_Regd_Office_Address").focus(); });
                 return false;
             }
-            //if (blankFieldValidation('Txt_Phone_no', 'Mobile number', projname) == false) {
-            //    return false;
-            //}
             if (WhiteSpaceValidation1st('Txt_Phone_no', 'Mobile number', projname) == false) {
                 return false;
             }
@@ -161,11 +144,7 @@
                 jAlert('<strong>The minimum length of the mobile number should be 10.  !!</strong>', projname);
                 $("#popup_ok").click(function () { $("#Txt_Phone_no").focus(); });
                 return false;
-            }
-           
-            //if (blankFieldValidation('Txt_Email', 'Email Address', projname) == false) {
-            //    return false;
-            //}
+            }           
             if (WhiteSpaceValidation1st('Txt_Email', 'Email Address', projname) == false) {
                 return false;
             }
@@ -185,22 +164,11 @@
                 }
             }
            
-
-            //if (!DropDownValidation('DrpDwn_Org_Type', '0', 'Organization Type', projname)) {
-            //    $("#popup_ok").click(function () { $("#DrpDwn_Org_Type").focus(); });
-            //    return false;
-            //}
             var orgName = $('#Lbl_Org_Name_Type').text();
-            //if (!blankFieldValidation('Txt_Partner_Name', orgName, projname)) {
-            //    return false;
-            //}
             if (!WhiteSpaceValidation1st('Txt_Partner_Name', orgName, projname)) {
                 $("#popup_ok").click(function () { $("#Txt_Partner_Name").focus(); });
                 return false;
             }
-            //if (blankFieldValidation('Txt_EIN_IL_NO', 'EIN/ IEM/ IL No.', projname) == false) {
-            //    return false;
-            //}
             if (WhiteSpaceValidation1st('Txt_EIN_IL_NO', 'EIN/ IEM/ IL No.', projname) == false) {
                 return false;
             }
@@ -211,7 +179,6 @@
                 return false;
             } 
 
-
             var EINDt = $('#Txt_EIN_IL_Date').val()
             if (EINDt != '') {
 
@@ -221,6 +188,7 @@
                     return false;
                 }
             }
+
             var DtCapitaInv = $('#Txt_Proposed_Date').val()
             if (DtCapitaInv != '') {
 
@@ -230,6 +198,7 @@
                     return false;
                 }
             }
+
             var DtCommencProd = $('#Txt_Commence_production').val()
             if (DtCommencProd != '') {
 
@@ -275,10 +244,6 @@
                     }
                 }
             }
-
-            //if (blankFieldValidation('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
-            //    return false;
-            //}
             if (WhiteSpaceValidation1st('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
                 return false;
             }
@@ -288,201 +253,7 @@
             if (SpecialCharacter1st('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
                 return false;
             }
-
-            
-
-            //if ($('#Hid_PC_Status').val() == 'Y') {
-
-            //    if ($('#Hid_Is_Exist_Before').val() == 'Y') {
-            //        if (!blankFieldValidation('Txt_PC_No_Before', 'PC No.', projname)) {
-            //            return false;
-            //        }
-            //        if (!blankFieldValidation('Txt_Prod_Comm_Date_Before', 'Date of Production Commencement', projname)) {
-            //            return false;
-            //        }
-            //        if (new Date($('#Txt_Prod_Comm_Date_Before').val()) > new Date()) {
-            //            jAlert('<strong>Date of Production Commencement should not be greater than Current Date.</strong>', projname);
-            //            $("#popup_ok").click(function () { $("#Txt_Prod_Comm_Date_Before").focus(); });
-            //            return false;
-            //        }
-            //        if (!blankFieldValidation('Txt_PC_Issue_Date_Before', 'PC Issuance Date', projname)) {
-            //            return false;
-            //        }
-            //        if (new Date($('#Txt_PC_Issue_Date_Before').val()) > new Date()) {
-            //            jAlert('<strong>PC Issuance Date should not be greater than Current Date.</strong>', projname);
-            //            $("#popup_ok").click(function () { $("#Txt_PC_Issue_Date_Before").focus(); });
-            //            return false;
-            //        }
-            //    }
-            //    //if ($('#Hid_Is_Exist_After').val() == 'Y') {
-            //    //    if (!blankFieldValidation('Txt_PC_No_After', 'PC No.', projname)) {
-            //    //        return false;
-            //    //    }
-            //    //    if (!blankFieldValidation('Txt_Prod_Comm_Date_After', 'Date of Production Commencement', projname)) {
-            //    //        return false;
-            //    //    }
-            //    //    if (new Date($('#Txt_Prod_Comm_Date_After').val()) > new Date()) {
-            //    //        jAlert('<strong>Date of Production Commencement should not be greater than Current Date.</strong>', projname);
-            //    //        $("#popup_ok").click(function () { $("#Txt_Prod_Comm_Date_After").focus(); });
-            //    //        return false;
-            //    //    }
-            //    //    if (!blankFieldValidation('Txt_PC_Issue_Date_After', 'PC Issuance Date', projname)) {
-            //    //        return false;
-            //    //    }
-            //    //    if (new Date($('#Txt_PC_Issue_Date_After').val()) > new Date()) {
-            //    //        jAlert('<strong>PC Issuance Date should not be greater than Current Date.</strong>', projname);
-            //    //        $("#popup_ok").click(function () { $("#Txt_PC_Issue_Date_After").focus(); });
-            //    //        return false;
-            //    //    }
-            //    //}
-            //}
-
-
-            //if (($("input[name='Rad_Nature_Of_Activity']:checked").val() != '40') && ($("input[name='Rad_Nature_Of_Activity']:checked").val() != '41')) {
-            //    jAlert('<strong>Please Select Nature of Activity !!</strong>', projname);
-            //    return false;
-            //}
-            //if (($("input[name='Rad_Priority_User']:checked").val() != '1') && ($("input[name='Rad_Priority_User']:checked").val() != '2')) {
-            //    jAlert('<strong>Please Select Whether in Priority IPR-2015 !!</strong>', projname);
-            //    return false;
-            //}
-
-            //if (($("input[name='Rad_Is_Priority']:checked").val() != '1') && ($("input[name='Rad_Is_Priority']:checked").val() != '2') && ($("input[name='Rad_Is_Priority']:checked").val() != '3')) {
-            //    jAlert('<strong>Please Select Priority Sector Status Granted !!</strong>', projname);
-            //    return false;
-            //}
-
-            //if ($("input[name='Rad_Is_Priority']:checked").val() == '1') {
-
-            //    if (($("input[name='Rad_Is_Pioneer']:checked").val() != '1') && ($("input[name='Rad_Is_Pioneer']:checked").val() != '2')) {
-            //        jAlert('<strong>Please Select Pioneer Option !!</strong>', projname);
-            //        return false;
-            //    }
-            //    if ($("input[name='Rad_Is_Pioneer']:checked").val() == '1') {
-            //        if ($('#Hid_Pioneer_Doc_File_Name').val() == '') {
-            //            jAlert('<strong>Please Upload Document in Support of Pioneer Unit !!</strong>', projname);
-            //            $("#popup_ok").click(function () { $("#FU_Pioneer_Doc").focus(); });
-            //            return false;
-            //        }
-            //    }
-            //}
-
-
-            //if ($('#Hid_Is_Exist_Before').val() == 'Y') {
-
-            //    if ($("#Grd_Production_Before tr").length > 0) {
-            //    }
-            //    else {
-            //        jAlert('<strong>Please Insert Atleast One Record for Items of Manufacture/Activity !!</strong>', projname);
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Direct_Emp_Before', 'Direct Empolyment in Numbers', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Contract_Emp_Before', 'Contractual Empolyment in Numbers', projname)) {
-            //        return false;
-            //    }
-            //    //        if ($('#Hid_Direct_Emp_Before_File_Name').val() == '') {
-            //    //            jAlert('<strong>Please Upload Document in Support of Number of Employes shown as directly employed !!</strong>', projname);
-            //    //            $('#FU_Direct_Emp_Before').focus();
-            //    //            return false;
-            //    //        }
-
-            //    if (!blankFieldValidation('Txt_Managarial_Before', 'Managerial Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Supervisor_Before', 'Supervisor Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Skilled_Before', 'Skilled Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Semi_Skilled_Before', 'Semi Skilled Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Unskilled_Before', 'Un Skilled Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_General_Before', 'General Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_SC_Before', 'SC Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_ST_Before', 'ST Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_Women_Before', 'Women Employee', projname)) {
-            //        return false;
-            //    }
-            //    if (!blankFieldValidation('Txt_PHD_Before', 'Differently Abled Persons Employee', projname)) {
-            //        return false;
-            //    }
-
-            //    var direct_emp_before = $('#Txt_Direct_Emp_Before').val();
-            //    var contract_emp_before = $('#Txt_Contract_Emp_Before').val();
-
-            //    var mngr_before = $('#Txt_Managarial_Before').val();
-            //    var sup_before = $('#Txt_Supervisor_Before').val();
-            //    var skilled_before = $('#Txt_Skilled_Before').val();
-            //    var semiskilled_before = $('#Txt_Semi_Skilled_Before').val();
-            //    var unskilled_before = $('#Txt_Unskilled_Before').val();
-            //    var gen_before = $('#Txt_General_Before').val();
-            //    var sc_before = $('#Txt_SC_Before').val();
-            //    var st_before = $('#Txt_ST_Before').val();
-
-            //    var women_before = $('#Txt_Women_Before').val();
-            //    var phd_before = $('#Txt_PHD_Before').val();
-
-            //    var totalDirContBefore = parseInt(direct_emp_before) + parseInt(contract_emp_before);
-            //    var totalEmpBefore = parseInt(mngr_before) + parseInt(sup_before) + parseInt(skilled_before) + parseInt(semiskilled_before) + parseInt(unskilled_before);
-            //    var totalCastEmpBefore = parseInt(sc_before) + parseInt(st_before) + parseInt(gen_before);
-
-            //    if (totalDirContBefore != totalEmpBefore) {
-            //        jAlert('<strong>Total Employees and Sum of Direct and Contractual Employees must be Same !!</strong>', projname);
-            //        $("#popup_ok").click(function () { $("#Txt_Direct_Emp_Before").focus(); });
-            //        return false;
-            //    }
-            //    if (totalEmpBefore != totalCastEmpBefore) {
-            //        jAlert('<strong>Total Employees and Sum of General,SC and ST Employees must be Same !!</strong>', projname);
-            //        return false;
-            //    }
-            //    if (women_before > totalEmpBefore) {
-            //        jAlert('<strong>Total women employees must be less than or equal to total employees !!</strong>', projname);
-            //        $("#popup_ok").click(function () { $("#Txt_Women_Before").focus(); });
-            //        return false;
-            //    }
-            //    if (phd_before > totalEmpBefore) {
-            //        jAlert('<strong>Total differently abled persons employees must be less than or equal to total employees !!</strong>', projname);
-            //        $("#popup_ok").click(function () { $("#Txt_PHD_Before").focus(); });
-            //        return false;
-            //    }
-            //}
-
-            //if ($("#Grd_Production_After tr").length > 0) {
-            //}
-            //else {
-            //    jAlert('<strong>Please Insert Atleast One Record for Items of Manufacture/Activity !!</strong>', projname);
-            //    return false;
-            //}
-            //if (!blankFieldValidation('Txt_Direct_Emp_After', 'Direct Empolyment in Numbers', projname)) {
-            //    return false;
-            //}
-            //if (!blankFieldValidation('Txt_Contract_Emp_After', 'Contractual Empolyment in Numbers', projname)) {
-            //    return false;
-            //}
-
-            //    if ($('#Hid_Direct_Emp_After_File_Name').val() == '') {
-            //        jAlert('<strong>Please upload document in support of number of employes shown as directly employed !!</strong>', projname);
-            //        $('#FU_Direct_Emp_After').focus();
-            //        return false;
-            //    }
-           
-
-           
         }
-
-///*--------------------------------------------------------------------------------------------------------------------------*/
 
 ///*--------------------------------------------------------------------------------------------------------------------------*/
         function inputLimiter(e, allow) {
@@ -530,9 +301,6 @@
             }
         }
 
-
-///*-----------------------------------------------------------------------------------------------------------------------------*/
-
     </script>
     <style type="text/css">
         .fieldinfo-left
@@ -555,8 +323,7 @@
             font-size: 13px;
             line-height: 22px;
         }
-    </style>
-    <style type="text/css">
+    
         .unitdtl .groupmastreportlet2 .portletdivider
         {
             width: 20%;
@@ -570,8 +337,7 @@
         {
             margin-left: 35px !important;
         }
-    </style>
-    <style type="text/css">
+   
         .overlayContent
         {
             z-index: 99;
@@ -622,8 +388,7 @@
                                         <div class="innertabs  m-b-10">
                                             <ul class="nav nav-pills pull-right">
                                                 <li></li>
-                                                <%--   <li class="active"><a href="Basic_Details.aspx" title="Click Here to Apply For Incentives !!">
-                                                Apply For Incentive</a></li>--%>
+                                               
                                                 <li></li>
                                             </ul>
                                             <div class="clearfix">
@@ -632,7 +397,7 @@
                                         <div class="form-header">
                                             <a href="incentiveoffered.aspx" title="Click Here to View Incentive Offered !!" class="pull-right proposalbtn ">Incentive Offered</a>
                                             <a href="ViewApplicationStatus.aspx" title="Click Here to View Application Status !!" class="pull-right proposalbtn active">View Application Status</a>
-                                            <h2>Stamp Duty Exemption IPR 2022</h2>
+                                            <h2>Stamp Duty Exemption IPR-2022</h2>
                                         </div>
                                         <div class="incentivesec">
                                             <div class="row">
@@ -653,11 +418,7 @@
                                                                     runat="server">
                                                                     <div class="panel-body">
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%--<label class="col-sm-4">
-                                                                                 1.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     1. Name of Enterprise/Industrial Unit &nbsp;</label>
@@ -676,11 +437,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                 2.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                         
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4 ">
                                                                                     2. Category of the  Unit  &nbsp;</label>
@@ -693,11 +450,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                 3.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4 ">
                                                                                     3. Address of Registered Office Unit &nbsp;</label>
@@ -713,74 +466,10 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <%-- <div class="form-group">
-                                                                             <div class="row">
-                                                                                <label class="col-sm-4">
-                                                                                4.
-                                                                                </label>
-                                                                                </div>
-                                                                            <div class="row">
-                                                                                <label for="Iname" class="col-sm-4">
-                                                                                    Address of Correspondence &nbsp;</label>
-                                                                                <div class="col-sm-8">
-                                                                                    <span class="colon">:</span>
-                                                                                    <asp:CheckBox ID="ChkSameData" runat="server" Text="Same as Address of Registered office Unit"
-                                                                                        onclick="return SameAddressIndustry();" />
-                                                                                    <asp:TextBox ID="Txt_Regd_Office_Address" MaxLength="500" CssClass="form-control"
-                                                                                        TextMode="MultiLine" runat="server" ToolTip="Enter Address of Correspondence Here !!"></asp:TextBox>
-                                                                                    <cc1:FilteredTextBoxExtender ID="FilteredTxtExt_Regd_Office_Address" runat="server"
-                                                                                        TargetControlID="Txt_Regd_Office_Address" FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom"
-                                                                                        ValidChars=",-/. ">
-                                                                                    </cc1:FilteredTextBoxExtender>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>--%>
-
-                                                                        <%-- <div class="form-group">
-                                                                             <div class="row">
-                                                                                <label class="col-sm-4">
-                                                                                 5.
-                                                                                </label>
-                                                                                </div>
-                                                                            <div class="row">
-                                                                                <label for="Iname" class="col-sm-4">
-                                                                                    Phone Number</label>
-                                                                                <div class="col-sm-8">
-                                                                                    <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_Phone_no" MaxLength="10" Onkeypress="return inputLimiter(event,'Numbers')" CssClass="form-control" runat="server"
-                                                                                        ToolTip="Enter Phone Number Here !!"></asp:TextBox>
-
-                                                                                   <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender24" runat="server" TargetControlID="Txt_Phone_no"
-                                                                                                            FilterType="Numbers,Custom" ValidChars=".">
-                                                                                                        </cc1:FilteredTextBoxExtender>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>--%>
-
-                                                                        <%--<div class="form-group">
-                                                                             <div class="row">
-                                                                                <label class="col-sm-4">
-                                                                                 6.
-                                                                                </label>
-                                                                                </div>
-                                                                            <div class="row">
-                                                                                <label for="Iname" class="col-sm-4">
-                                                                                    Email</label>
-                                                                                <div class="col-sm-8">
-                                                                                    <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_Email" Onkeypress="return inputLimiter(event,'Email')" CssClass="form-control" MaxLength="100" runat="server"
-                                                                                        ToolTip="Enter Email Here !!"></asp:TextBox>
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>--%>
+                                                                   
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%--  <label class="col-sm-4">
-                                                                                 4.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                         
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     4. Type of  Organization  &nbsp;</label>
@@ -793,11 +482,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                5.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     5.
@@ -820,11 +505,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                 6.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                            
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     6.  Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment</label>
@@ -835,20 +516,14 @@
                                                                                             MaxLength="11" ToolTip="Enter Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment Here !!"></asp:TextBox>
                                                                                         <span id="Span2" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                                                     </div>
-                                                                                    <%-- <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender65" runat="server" TargetControlID="Txt_EIN_IL_NO"
-                                                                                    FilterType="Numbers" ValidChars="0123456789">
-                                                                                </cc1:FilteredTextBoxExtender>--%>
+                                                                                   
                                                                                 </div>
                                                                             </div>
                                                                         </div>
 
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                 7.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                            
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     7. EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL No.</label>
@@ -856,9 +531,7 @@
                                                                                     <span class="colon">:</span>
                                                                                     <asp:TextBox ID="Txt_EIN_IL_NO" Onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')" CssClass="form-control" MaxLength="100" runat="server"
                                                                                         ToolTip="Enter EIN/ PC/ IEM/PEAL approval letter & Production Certificate / IL No. Here !!"></asp:TextBox>
-                                                                                    <%-- <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender65" runat="server" TargetControlID="Txt_EIN_IL_NO"
-                                                                                    FilterType="Numbers" ValidChars="0123456789">
-                                                                                </cc1:FilteredTextBoxExtender>--%>
+                                                                                 
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -881,11 +554,7 @@
                                                                         <div id="Div_Prod_Emp_Before" runat="server">
 
                                                                             <div class="form-group">
-                                                                                <div class="row">
-                                                                                    <%-- <label class="col-sm-4">
-                                                                                        8.
-                                                                                    </label>--%>
-                                                                                </div>
+                                                                              
                                                                                 <div class="row">
                                                                                     <label for="Iname" class="col-sm-12">
                                                                                         8. Proposed items or Items of manufacture / activities with proposed capacity / installed capacity&nbsp;
@@ -1008,11 +677,7 @@
                                                                             <asp:Label ID="Lbl_Header_Prod_Emp" runat="server"></asp:Label></h4>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                                  9.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     9. Proposed date of production / Date of Production</label>
@@ -1028,11 +693,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                               10.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                          
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     10. Proposed location of the Project</label>
@@ -1061,11 +722,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%--<label class="col-sm-4">
-                                                                               11.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     11.  Type of Deed / Agreement to be executed</label>
@@ -1078,11 +735,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%--<label class="col-sm-4">
-                                                                               12.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                          
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     12.  Amount of Stamp Duty Exemption claimed</label>
@@ -1095,11 +748,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%--<label class="col-sm-4">
-                                                                               13.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     13. Amount of Stamp Duty Exemption availed under any scheme of State Govt / Central Govt(Gol)/ Govt. Agencies / Financial institutions(mention details)</label>
@@ -1112,11 +761,7 @@
                                                                         </div>
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                               14.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                           
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     14.   Amount of deferential claim to be exempted</label>
@@ -1131,11 +776,7 @@
 
 
                                                                         <div class="form-group">
-                                                                            <div class="row">
-                                                                                <%-- <label class="col-sm-4">
-                                                                               15.
-                                                                                </label>--%>
-                                                                            </div>
+                                                                            
                                                                             <div class="row">
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                     15.  Statutory clearances,if any</label>
@@ -1152,14 +793,10 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
+                                                            </div>
                                                             <div class="panel panel-default">
                                                                 <div class="panel-heading" role="tab" id="Div_other">
-                                                                    <%-- <h4 class="panel-title">
-                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                                    href="#InterestSubsidyDetails" aria-expanded="false" aria-controls="collapseThree">
-                                                    <i class="more-less fa  fa-plus"></i>Other Documents</a>
-                                            </h4>--%>
+                                                                    
                                                                     <h4 class="panel-title">
                                                                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
                                                                             href="#InterestSubsidyDetails" aria-expanded="false" aria-controls="collapseThree">Other Documents </a>
@@ -1660,8 +1297,7 @@
                             I hereby declare that my Unit/Enterprise does not fall under the following ineligible
                             unit.
                         </p>
-                        <%--   <p>
-                            In my application, I will produce required documents for the same.</p>--%>
+                      
                         <h4>
                             List of Ineligible Unit Types</h4>
                         <h5 class="text-red">
@@ -1762,15 +1398,7 @@
                                         </li>
                                         <li>Thermal power plants. </li>
                                         <li>Repackaging units. </li>
-                                        <%--  <li>Industries falling within the purview of the following Boards and public Agencies.
-                                    <ol>
-                                        <li>Coir Board </li>
-                                        <li>Silk Board</li>
-                                        <li>All India handloom and Handicraft Board</li>
-                                        <li>Khadi and village industries Commission/Board</li>
-                                        <li>Any other Agency con situation by Government for industrial department.</li>
-                                    </ol>
-                                </li>--%>
+                                       
                                     </ol>
                                     <small class="text-red">Note: List of industrial units indicated above may be modified
                                         by the Government from time to time.</small> </li>
