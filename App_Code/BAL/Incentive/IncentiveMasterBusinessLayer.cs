@@ -361,5 +361,22 @@ namespace BusinessLogicLayer.Incentive
         {
             return objINCTDal.Stamp_Duty_Exemption_Draft(objIMEntity);
         }
+        public string Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity)
+        {
+            return objINCTDal.Exemption_Land_IndustrialUse(objIMEntity);
+        }
+        public string Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objIMEntity)
+        {
+            return objINCTDal.Exemption_Land_IndustrialUse_Draft(objIMEntity);
+        }
+        public string Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity)
+        {
+            return objINCTDal.Migrated_Industrial_Unit_AED(objIMEntity);
+        }
+        
+        public string Migrated_Industrial_Unit_Draft(Basic_Unit_Details_Entity objIMEntity)
+        {
+            return objINCTDal.Migrated_Industrial_Unit_Draft(objIMEntity);
+        }
     }
 }

@@ -3436,7 +3436,7 @@ namespace DataAcessLayer.Incentive
                                 "@P_vchCertificateofregistrationDocCode", objOGEntity.strCertificateofregistrationDocCode,
                                 "@P_vchCertificateofregistration", objOGEntity.strCertificateofregistration,
                                 "@P_vchfixedcapitalinvstDocCode", objOGEntity.strfixedcapitalinvstDocCode,
-                                "@P_vchfixedcapitalinvstDocCode", objOGEntity.strfixedcapitalinvst,
+                                "@P_vchfixedcapitalinvst", objOGEntity.strfixedcapitalinvst,
                                 "@P_vchAppraisalThrustorPriorityDocCode", objOGEntity.strAppraisalThrustorPriorityDocCode,
                                 "@P_vchAppraisalThrustorPriority", objOGEntity.strAppraisalThrustorPriority,
                                 "@P_vchCertficateofcommproductionDocCode", objOGEntity.strCertficateofcommproductionDocCode,
@@ -3470,6 +3470,281 @@ namespace DataAcessLayer.Incentive
             }
             return param.ToString();
         }
+
+        public string Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity)
+        {
+            try
+            {
+                object[] arr = {
+                                "@P_VCHINCENTIVENO",objOGEntity.strInctFlow,
+                                "@P_VCHPROPOSALNO",objOGEntity.strPcNoAfter,
+                                "@P_VCHUNITCODE",objOGEntity.strIndustryCode,
+                                "@P_INT_USER_ID", objOGEntity.intCreatedBy,
+                                "@P_vchEnterpriseName", objOGEntity.strEnterpriseName,
+                                "@P_intUnitCat", objOGEntity.intUnitCat,
+                                "@P_vchThrustorprioritystatus",objOGEntity.strThrustorPrioritySector,
+                                "@P_vchRegisteredOfcAddress", objOGEntity.strRegisteredOfcAddress,
+                                "@P_intOrganisationType", objOGEntity.intOrganisationType,                              
+                                "@P_vchManagingPartnerGender", objOGEntity.strManagingPartnerGender,
+                                "@P_vchManagingPartnerName", objOGEntity.strManagingPartnerName,
+                                "@P_dtmFFCIDateBefore", objOGEntity.dtmFFCIDateBefore,
+                                "@P_vchEINNO", objOGEntity.strEINNO,
+                                "@P_dtmEIN", objOGEntity.dtmEIN,
+                                "@P_dtmProdCommBefore", objOGEntity.dtmProdCommBefore,
+                                "@P_vchProposedLocation",objOGEntity.strProposedLocation,
+                                "@P_vchPrsentStatus",objOGEntity.strPrsentStatus,
+                                "@P_vchNameoffinancer",objOGEntity.strNameoffinancer,
+                                "@P_decCostofproject",objOGEntity.decCostofproject,
+                                "@P_decAreaofLandRequired",objOGEntity.decAreaofLandRequired,
+                                "@P_decAreaofLandAcquired",objOGEntity.decAreaofLandAcquired,
+                                "@P_intParticularsLandtobeconverted",objOGEntity.intParticularsLandtobeconverted,
+                                "@P_XML_TBL_PROD_ITEM_BE", objOGEntity.ProductionItem_BE.SerializeToXMLString(),
+                                "@P_XML_TBL_LAND_TO_BE_CONVERT", objOGEntity.Land_tobe_converted.SerializeToXMLString(),
+                                "@P_vchEINorPEALapprovalDocCode", objOGEntity.strEINorPEALapprovalDocCode,
+                                "@P_vchEINorPEALapproval", objOGEntity.strEINorPEALapproval,
+                                "@P_vchPworofAttorneyDocCode", objOGEntity.strPworofAttorneyPreDocCode,
+                                "@P_vchPworofAttorney", objOGEntity.strPworofAttorneyPre,
+                                "@P_vchCertificateofregistrationDocCode", objOGEntity.strCertificateofregistrationDocCodepre,
+                                "@P_vchCertificateofregistration", objOGEntity.strCertificateofregistrationpre,
+                                "@P_vchfixedcapitalinvstDocCode", objOGEntity.strfixedcapitalinvstDocCode,
+                                "@P_vchfixedcapitalinvst", objOGEntity.strfixedcapitalinvst,
+                           "@P_vchProvisionalPriorityorThruststatusDocCode",objOGEntity.strProvisionalPriorityorThruststatusDocCode,  
+                                "@P_vchProvisionalPriorityorThruststatus",objOGEntity.strProvisionalPriorityorThruststatus,
+                                "@P_vchApprovalDetailsprojrctDocCode",objOGEntity.strApprovalDetailsprojrctDocCode,
+                                "@P_vchApprovalDetailsprojrct",objOGEntity.strApprovalDetailsprojrct,
+                                "@P_ApprisalsupportexpansionDocCode",objOGEntity.strApprisalsupportexpansionDocCode,
+                                "@P_Apprisalsupportexpansion",objOGEntity.strApprisalsupportexpansion,
+                                "@P_LanddocumentDocCode",objOGEntity.strLanddocumentDocCode,
+                                "@P_Landdocument",objOGEntity.strLanddocument,
+                                "@P_StatutoryClearancesDocCode",objOGEntity.strStatutoryClearancesDocCode,
+                                "@P_StatutoryClearances",objOGEntity.strStatutoryClearances,
+                                "@P_NonjudicialStampDocCode",objOGEntity.strNonjudicialStampDocCode,
+                                "@P_NonjudicialStamp",objOGEntity.strNonjudicialStamp,
+                                "@P_OUT_MSG", "OUT"
+                                };
+
+                int intOutput = SqlHelper.ExecuteNonQuery(conn.ConnectionString, "USP_LandforIndustrialUsedIPR_2022_AED", out param, arr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return param.ToString();
+        }
+
+        public string Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objOGEntity)
+        {
+            try
+            {
+                object[] arr = {
+                                "@P_VCHINCENTIVENO",objOGEntity.strInctFlow,
+                                "@P_VCHPROPOSALNO",objOGEntity.strPcNoAfter,
+                                "@P_VCHUNITCODE",objOGEntity.strIndustryCode,
+                                "@P_INT_USER_ID", objOGEntity.intCreatedBy,
+                                "@P_vchEnterpriseName", objOGEntity.strEnterpriseName,
+                                "@P_intUnitCat", objOGEntity.intUnitCat,
+                                "@P_vchThrustorprioritystatus",objOGEntity.strThrustorPrioritySector,
+                                "@P_vchRegisteredOfcAddress", objOGEntity.strRegisteredOfcAddress,
+                                "@P_intOrganisationType", objOGEntity.intOrganisationType,
+                                "@P_vchManagingPartnerGender", objOGEntity.strManagingPartnerGender,
+                                "@P_vchManagingPartnerName", objOGEntity.strManagingPartnerName,
+                                "@P_dtmFFCIDateBefore", objOGEntity.dtmFFCIDateBefore,
+                                "@P_vchEINNO", objOGEntity.strEINNO,
+                                "@P_dtmEIN", objOGEntity.dtmEIN,
+                                "@P_dtmProdCommBefore", objOGEntity.dtmProdCommBefore,
+                                "@P_vchProposedLocation",objOGEntity.strProposedLocation,
+                                "@P_vchPrsentStatus",objOGEntity.strPrsentStatus,
+                                "@P_vchNameoffinancer",objOGEntity.strNameoffinancer,
+                                "@P_decCostofproject",objOGEntity.decCostofproject,
+                                "@P_decAreaofLandRequired",objOGEntity.decAreaofLandRequired,
+                                "@P_decAreaofLandAcquired",objOGEntity.decAreaofLandAcquired,
+                                "@P_intParticularsLandtobeconverted",objOGEntity.intParticularsLandtobeconverted,
+                                "@P_XML_TBL_PROD_ITEM_BE", objOGEntity.ProductionItem_BE.SerializeToXMLString(),
+                                "@P_XML_TBL_LAND_TO_BE_CONVERT", objOGEntity.Land_tobe_converted.SerializeToXMLString(),
+                                "@P_vchEINorPEALapprovalDocCode", objOGEntity.strEINorPEALapprovalDocCode,
+                                "@P_vchEINorPEALapproval", objOGEntity.strEINorPEALapproval,
+                                "@P_vchPworofAttorneyDocCode", objOGEntity.strPworofAttorneyDocCode,
+                                "@P_vchPworofAttorney", objOGEntity.strPworofAttorney,
+                                "@P_vchCertificateofregistrationDocCode", objOGEntity.strCertificateofregistrationDocCode,
+                                "@P_vchCertificateofregistration", objOGEntity.strCertificateofregistration,
+                                "@P_vchfixedcapitalinvstDocCode", objOGEntity.strfixedcapitalinvstDocCode,
+                                "@P_vchfixedcapitalinvst", objOGEntity.strfixedcapitalinvst,
+                           "@P_vchProvisionalPriorityorThruststatusDocCode",objOGEntity.strProvisionalPriorityorThruststatusDocCode,
+                                "@P_vchProvisionalPriorityorThruststatus",objOGEntity.strProvisionalPriorityorThruststatus,
+                                "@P_vchApprovalDetailsprojrctDocCode",objOGEntity.strApprovalDetailsprojrctDocCode,
+                                "@P_vchApprovalDetailsprojrct",objOGEntity.strApprovalDetailsprojrct,
+                                "@P_ApprisalsupportexpansionDocCode",objOGEntity.strApprisalsupportexpansionDocCode,
+                                "@P_Apprisalsupportexpansion",objOGEntity.strApprisalsupportexpansion,
+                                "@P_LanddocumentDocCode",objOGEntity.strLanddocumentDocCode,
+                                "@P_Landdocument",objOGEntity.strLanddocument,
+                                "@P_StatutoryClearancesDocCode",objOGEntity.strStatutoryClearancesDocCode,
+                                "@P_StatutoryClearances",objOGEntity.strStatutoryClearances,
+                                "@P_NonjudicialStampDocCode",objOGEntity.strNonjudicialStampDocCode,
+                                "@P_NonjudicialStamp",objOGEntity.strNonjudicialStamp,
+                                "@P_OUT_MSG", "OUT"
+                                };
+
+                int intOutput = SqlHelper.ExecuteNonQuery(conn.ConnectionString, "USP_LandforIndustrialUsedIPR_2022_Draft", out param, arr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return param.ToString();
+        }
+
+
+        public string Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity)
+        {
+            try
+            {
+                object[] arr = {
+                                "@P_VCHINCENTIVENO",objOGEntity.strInctFlow,
+                                "@P_VCHPROPOSALNO",objOGEntity.strPcNoAfter,
+                                "@P_VCHUNITCODE",objOGEntity.strIndustryCode,
+                                "@P_INT_USER_ID", objOGEntity.intCreatedBy,
+                                "@P_vchEnterpriseName", objOGEntity.strEnterpriseName,
+                                "@P_intOrganisationType", objOGEntity.intOrganisationType,
+                                "@P_vchIndustryAddress", objOGEntity.strIndustryAddress,
+                                "@P_intUnitCat", objOGEntity.intUnitCat,
+                                "@P_vchRegisteredOfcAddress", objOGEntity.strRegisteredOfcAddress,
+                                "@P_vchManagingPartnerGender", objOGEntity.strManagingPartnerGender,
+                                "@P_vchManagingPartnerName", objOGEntity.strManagingPartnerName,
+                                "@P_vchEINNO", objOGEntity.strEINNO,
+                                "@P_dtmEIN", objOGEntity.dtmEIN,
+                              
+                                "@P_dtmProdCommBefore", objOGEntity.dtmProdCommBefore,
+                                "@P_dtmFFCIDateBefore", objOGEntity.dtmFFCIDateBefore,                           
+                                "@P_decLandAmtBefore", objOGEntity.decLandAmtBefore,
+                                "@P_decBuildingAmtBefore", objOGEntity.decBuildingAmtBefore,
+                                "@P_decPlantMachAmtBefore", objOGEntity.decPlantMachAmtBefore,
+                                "@P_decOtheFixedAssetAmtBefore", objOGEntity.decOtheFixedAssetAmtBefore,
+                                "@P_decTotalAmtBefore", objOGEntity.decTotalAmtBefore,
+                               
+                                "@P_decLandAmtAfter", objOGEntity.decLandAmtAfter,
+                                "@P_decBuildingAmtAfter", objOGEntity.decBuildingAmtAfter,
+                                "@P_decPlantMachAmtAfter", objOGEntity.decPlantMachAmtAfter,
+                                "@P_decOtheFixedAssetAmtAfter", objOGEntity.decOtheFixedAssetAmtAfter,
+                                "@P_decTotalAmtAfter", objOGEntity.decTotalAmtAfter,
+                                "@P_decEquity", objOGEntity.decEquity,
+                                "@P_intProjectClearnce", objOGEntity.intProjectClearance,
+                                "@P_vchPrsentStatus",objOGEntity.strPrsentStatus,
+                                "@P_intIPRInctiveAvel", objOGEntity.intIPRinctiveAvel,
+                                "@P_vchClearnceSWM", objOGEntity.strClearnceswm,
+                                "@P_XML_TBL_PROD_ITEM_BE", objOGEntity.ProductionItem_BE.SerializeToXMLString(),
+                                "@P_XML_TBL_WORKING_LOAN", objOGEntity.WorkingCapitalLoan.SerializeToXMLString(),
+                                "@P_XML_TBL_TERM_LOAN", objOGEntity.TermLoan.SerializeToXMLString(),
+                                "@P_XML_TBL_INCENTIVE_AVAILED_DETAILS",objOGEntity.Incentive_Availeds.SerializeToXMLString(),
+                                "@P_decElectricalInstAmtBefore", objOGEntity.decElectricalInstAmtBefore,
+                                "@P_decElectricalInstAmtAfter", objOGEntity.decElectricalInstAmtAfter,
+                                "@P_decLoadingAmtBefore", objOGEntity.decLoadUnloadAmtBefore,
+                                "@P_decLoadingAmtAfter", objOGEntity.decLoadUnloadAmtAfter,
+                                "@P_decMarginMoneyAmtBefore", objOGEntity.decMarginMoneyForworkingAmtBefore,
+                                "@P_decMarginMoneyAmtAfter", objOGEntity.decMarginMoneyForworkingAmtAfter,
+                                "@P_vchPworofAttorneyDocCode", objOGEntity.strPworofAttorneyDocCode,
+                                "@P_vchPworofAttorney", objOGEntity.strPworofAttorney,
+                                "@P_vchCertificateofregistrationDocCode", objOGEntity.strCertificateofregistrationDocCode,
+                                "@P_vchCertificateofregistration", objOGEntity.strCertificateofregistration,
+                                "@P_vchEINapprovalDocCode", objOGEntity.strEINapprovalDocCode,
+                                "@P_vchEINapproval", objOGEntity.strEINapproval,
+                                "@P_vchCapitalInvstDocCode", objOGEntity.strCapitalInvstDocCode,
+                                "@P_vchCapitalInvst", objOGEntity.strCapitalInvst,
+                                "@P_vchloansancorFIappliedDocCode", objOGEntity.strloansancorFIappliedDocCode,
+                                "@P_vchloansancorFIapplied", objOGEntity.strloansancorFIapplied,
+                                "@P_vchIncentiveAvailDocCode", objOGEntity.strIncentiveAvailDocCode,
+                                "@P_vchIncentiveAvail", objOGEntity.strIncentiveAvail,
+                                "@P_vchUndertakingeffectDocCode", objOGEntity.strUndertakingeffectDocCode,
+                                "@P_vchUndertakingeffectDocCode", objOGEntity.strUndertakingeffect,
+                                "@P_vchclearancefromPCBDocCode", objOGEntity.strclearancefromPCBDocCode,
+                                "@P_vchclearancefromPCB", objOGEntity.strclearancefromPCB,                               
+                                "@P_OUT_MSG", "OUT"
+                                };
+
+                int intOutput = SqlHelper.ExecuteNonQuery(conn.ConnectionString, "USP_MigrationIdustrialIPR_2022_AED", out param, arr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return param.ToString();
+        }
+
+        public string Migrated_Industrial_Unit_Draft(Basic_Unit_Details_Entity objOGEntity)
+        {
+            try
+            {
+                object[] arr = {
+                                "@P_VCHINCENTIVENO",objOGEntity.strInctFlow,
+                                "@P_VCHPROPOSALNO",objOGEntity.strPcNoAfter,
+                                "@P_VCHUNITCODE",objOGEntity.strIndustryCode,
+                                "@P_INT_USER_ID", objOGEntity.intCreatedBy,
+                                "@P_vchEnterpriseName", objOGEntity.strEnterpriseName,
+                                "@P_intOrganisationType", objOGEntity.intOrganisationType,
+                                "@P_vchIndustryAddress", objOGEntity.strIndustryAddress,
+                                "@P_intUnitCat", objOGEntity.intUnitCat,
+                                "@P_vchRegisteredOfcAddress", objOGEntity.strRegisteredOfcAddress,
+                                "@P_vchManagingPartnerGender", objOGEntity.strManagingPartnerGender,
+                                "@P_vchManagingPartnerName", objOGEntity.strManagingPartnerName,
+                                "@P_vchEINNO", objOGEntity.strEINNO,
+                                "@P_dtmEIN", objOGEntity.dtmEIN,
+
+                                "@P_dtmProdCommBefore", objOGEntity.dtmProdCommBefore,
+                                "@P_dtmFFCIDateBefore", objOGEntity.dtmFFCIDateBefore,
+                                "@P_decLandAmtBefore", objOGEntity.decLandAmtBefore,
+                                "@P_decBuildingAmtBefore", objOGEntity.decBuildingAmtBefore,
+                                "@P_decPlantMachAmtBefore", objOGEntity.decPlantMachAmtBefore,
+                                "@P_decOtheFixedAssetAmtBefore", objOGEntity.decOtheFixedAssetAmtBefore,
+                                "@P_decTotalAmtBefore", objOGEntity.decTotalAmtBefore,
+
+                                "@P_decLandAmtAfter", objOGEntity.decLandAmtAfter,
+                                "@P_decBuildingAmtAfter", objOGEntity.decBuildingAmtAfter,
+                                "@P_decPlantMachAmtAfter", objOGEntity.decPlantMachAmtAfter,
+                                "@P_decOtheFixedAssetAmtAfter", objOGEntity.decOtheFixedAssetAmtAfter,
+                                "@P_decTotalAmtAfter", objOGEntity.decTotalAmtAfter,
+                                "@P_decEquity", objOGEntity.decEquity,
+                                "@P_intProjectClearnce", objOGEntity.intProjectClearance,
+                                "@P_vchPrsentStatus",objOGEntity.strPrsentStatus,
+                                "@P_intIPRInctiveAvel", objOGEntity.intIPRinctiveAvel,
+                                "@P_vchClearnceSWM", objOGEntity.strClearnceswm,
+                                "@P_XML_TBL_PROD_ITEM_BE", objOGEntity.ProductionItem_BE.SerializeToXMLString(),
+                                "@P_XML_TBL_WORKING_LOAN", objOGEntity.WorkingCapitalLoan.SerializeToXMLString(),
+                                "@P_XML_TBL_TERM_LOAN", objOGEntity.TermLoan.SerializeToXMLString(),
+                                "@P_XML_TBL_INCENTIVE_AVAILED_DETAILS",objOGEntity.Incentive_Availeds.SerializeToXMLString(),
+                                "@P_decElectricalInstAmtBefore", objOGEntity.decElectricalInstAmtBefore,
+                                "@P_decElectricalInstAmtAfter", objOGEntity.decElectricalInstAmtAfter,
+                                "@P_decLoadingAmtBefore", objOGEntity.decLoadUnloadAmtBefore,
+                                "@P_decLoadingAmtAfter", objOGEntity.decLoadUnloadAmtAfter,
+                                "@P_decMarginMoneyAmtBefore", objOGEntity.decMarginMoneyForworkingAmtBefore,
+                                "@P_decMarginMoneyAmtAfter", objOGEntity.decMarginMoneyForworkingAmtAfter,
+                                "@P_vchPworofAttorneyDocCode", objOGEntity.strPworofAttorneyDocCode,
+                                "@P_vchPworofAttorney", objOGEntity.strPworofAttorney,
+                                "@P_vchCertificateofregistrationDocCode", objOGEntity.strCertificateofregistrationDocCode,
+                                "@P_vchCertificateofregistration", objOGEntity.strCertificateofregistration,
+                                "@P_vchEINapprovalDocCode", objOGEntity.strEINapprovalDocCode,
+                                "@P_vchEINapproval", objOGEntity.strEINapproval,
+                                "@P_vchCapitalInvstDocCode", objOGEntity.strCapitalInvstDocCode,
+                                "@P_vchCapitalInvst", objOGEntity.strCapitalInvst,
+                                "@P_vchloansancorFIappliedDocCode", objOGEntity.strloansancorFIappliedDocCode,
+                                "@P_vchloansancorFIapplied", objOGEntity.strloansancorFIapplied,
+                                "@P_vchIncentiveAvailDocCode", objOGEntity.strIncentiveAvailDocCode,
+                                "@P_vchIncentiveAvail", objOGEntity.strIncentiveAvail,
+                                "@P_vchUndertakingeffectDocCode", objOGEntity.strUndertakingeffectDocCode,
+                                "@P_vchUndertakingeffectDocCode", objOGEntity.strUndertakingeffect,
+                                "@P_vchclearancefromPCBDocCode", objOGEntity.strclearancefromPCBDocCode,
+                                "@P_vchclearancefromPCB", objOGEntity.strclearancefromPCB,
+                                "@P_OUT_MSG", "OUT"
+                                };
+
+                int intOutput = SqlHelper.ExecuteNonQuery(conn.ConnectionString, "USP_MigrationIdustrialIPR_2022_Draft", out param, arr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return param.ToString();
+        }
+
+
 
     }
 }

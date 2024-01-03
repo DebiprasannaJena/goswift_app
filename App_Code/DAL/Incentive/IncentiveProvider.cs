@@ -2239,5 +2239,49 @@ public class IncentiveProvider : IIncentiveProvider
         return ds;
     }
 
+    public DataSet ExemptionLandIndustrialUse_populateDatainDraft(int userid)
+    {
+        DataSet ds = new DataSet();
+
+        object[] sqlParam = {  "@CHRACTIONCODE","ELDVW",
+                               "@P_INTUNQINCID",userid==null?0:userid,
+                            };
+        ds = SqlHelper.ExecuteDataset(conn, "USP_INCT_VIEW_EXEMPTIONLANDFORINDUSTRIALUSE_IPR_2022", sqlParam);
+
+        return ds;
+    }
+    public DataSet ExemptionLandIndustrialUse_ViewData(int userid)
+    {
+        DataSet ds = new DataSet();
+
+        object[] sqlParam = {  "@CHRACTIONCODE","LVW",
+                               "@P_INTUNQINCID",userid==null?0:userid,
+                            };
+        ds = SqlHelper.ExecuteDataset(conn, "USP_INCT_VIEW_EXEMPTIONLANDFORINDUSTRIALUSE_IPR_2022", sqlParam);
+
+        return ds;
+    }
+    public DataSet MigratedIndustrialUnit_populateDatainDraft(int userid)
+    {
+        DataSet ds = new DataSet();
+
+        object[] sqlParam = {  "@CHRACTIONCODE","MIVD",
+                               "@P_INTUNQINCID",userid==null?0:userid,
+                            };
+        ds = SqlHelper.ExecuteDataset(conn, "USP_INCT_VIEW_MIGRATED_INDUSTRIAL_UNIT_IPR_2022", sqlParam);
+
+        return ds;
+    }
+    public DataSet MigratedIndustrialUnit_ViewData(int userid)
+    {
+        DataSet ds = new DataSet();
+
+        object[] sqlParam = {  "@CHRACTIONCODE","MIV",
+                               "@P_INTUNQINCID",userid==null?0:userid,
+                            };
+        ds = SqlHelper.ExecuteDataset(conn, "USP_INCT_VIEW_MIGRATED_INDUSTRIAL_UNIT_IPR_2022", sqlParam);
+
+        return ds;
+    }
 
 }

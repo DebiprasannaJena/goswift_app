@@ -54,9 +54,15 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
     <uc2:header ID="header" runat="server" />
+        <div class="container">
+        <div  class="container wrapper">
     <div class="registration-div investors-bg">
+     
         <div id="exTab1" class="container">
+
             <div class="investrs-tab">
                 <uc4:investoemenu ID="ineste" runat="server" />
             </div>
@@ -147,7 +153,10 @@
                 </div>
             </div>
         </div>
+            </div>
         <uc3:footer ID="footer" runat="server" />
+            </div>
+        </div>
     </form>
 </body>
 </html>
