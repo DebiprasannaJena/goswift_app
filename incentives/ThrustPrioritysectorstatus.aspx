@@ -1968,19 +1968,19 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flPowerattpre" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPowerattpre_code" runat="server" Value="D282" />
-                                                                <asp:HiddenField ID="hdnPowerattpre_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUPowerattpre" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:FileUpload ID="FluPowerattpre" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                <asp:HiddenField ID="HdnPowerattpre_Code" runat="server" Value="D282" />
+                                                                <asp:HiddenField ID="HdnPowerattpre_Name" runat="server" />
+                                                                <asp:LinkButton ID="LnkUPowerattpre" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPowerattpre" OnClick="LnkBtn_Delete_Doc_Click"
+                                                                <asp:LinkButton ID="LnkDPowerattpre" OnClick="LnkBtn_Delete_Doc_Click"
                                                                     runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypPowerattpre" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypPowerattpre" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPowerattpre" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                            <asp:Label ID="LblPowerattpre" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
                                                                 runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -1993,17 +1993,17 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flcertofreg" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="certofreg_code" runat="server" Value="D283" />
-                                                                 <asp:HiddenField ID="certofreg_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUcertofreg" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:FileUpload ID="FluCertofreg" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                <asp:HiddenField ID="HdnCertofreg_Code" runat="server" Value="D283" />
+                                                                 <asp:HiddenField ID="HdnCertofreg_Name" runat="server" />
+                                                                <asp:LinkButton ID="LnkUCertofreg" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDcertofreg" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDCertofreg" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwcertofreg" runat="server" Target="_blank" Visible="false" CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
+                                                                <asp:HyperLink ID="HypvwCertofreg" runat="server" Target="_blank" Visible="false" CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblcertofreg" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                            <asp:Label ID="LblCertofreg" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
                                                                 runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2016,20 +2016,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flAppDPR" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FlAppDPR" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnAppDPR_Code" runat="server" Value="D284" />
-                                                                <asp:HiddenField ID="hdnAppDPR_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUAppDPR" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnAppDPR_Code" runat="server" Value="D284" />
+                                                                <asp:HiddenField ID="HdnAppDPR_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUAppDPR" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDAppDPR" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDAppDPR" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwAppDPR" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwAppDPR" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblAppDPR" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblAppDPR" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2043,20 +2043,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flEIN" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluEIN" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnEIN_Code" runat="server" Value="D285" />
-                                                                <asp:HiddenField ID="hdnEIN_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUEIN" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnEIN_Code" runat="server" Value="D285" />
+                                                                <asp:HiddenField ID="HdnEIN_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUEIN" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDEIN" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDEIN" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwEIN" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwEIN" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblEIN" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblEIN" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2070,20 +2070,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flPlantmachinery" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluPlantmachinery" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPlantmachinery_Code" runat="server" Value="D286" />
-                                                                <asp:HiddenField ID="hdnPlantmachinery_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUPlantmachinery" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnPlantmachinery_Code" runat="server" Value="D286" />
+                                                                <asp:HiddenField ID="HdnPlantmachinery_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUPlantmachinery" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPlantmachinery" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDPlantmachinery" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hyVwPlantmachinery" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HyVwPlantmachinery" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPlantmachinery" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblPlantmachinery" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2097,20 +2097,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flCapitalInvst" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluCapitalInvst" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnCapitalInvst_Code" runat="server" Value="D287" />
-                                                                <asp:HiddenField ID="hdnCapitalInvst_Name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUCapitalInvst" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnCapitalInvst_Code" runat="server" Value="D287" />
+                                                                <asp:HiddenField ID="HdnCapitalInvst_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUCapitalInvst" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDCapitalInvst" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDCapitalInvst" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwCapitalInvst" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwCapitalInvst" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblCapitalInvst" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblCapitalInvst" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2124,20 +2124,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flInvplantmachinary" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluInvplantmachinary" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnInvplantmachinary_code" runat="server" Value="D288" />
-                                                                <asp:HiddenField ID="hdnInvplantmachinary_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUInvplantmachinary" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnInvplantmachinary_Code" runat="server" Value="D288" />
+                                                                <asp:HiddenField ID="HdnInvplantmachinary_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUInvplantmachinary" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDInvplantmachinary" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDInvplantmachinary" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwInvplantmachinary" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwInvplantmachinary" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblInvplantmachinary" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblInvplantmachinary" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2151,20 +2151,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flproposedprod" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluProposedprod" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnproposedprod_code" runat="server" Value="D289" />
-                                                                <asp:HiddenField ID="hdnproposedprod_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUproposedprod" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnProposedprod_Code" runat="server" Value="D289" />
+                                                                <asp:HiddenField ID="HdnProposedprod_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUproposedprod" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDproposedprod" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDproposedprod" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwproposedprod" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwProposedprod" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblproposedprod" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblProposedprod" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2178,20 +2178,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flpresentstageimplemnt" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluPresentstageimplemnt" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnpresentstageimplemnt_code" runat="server" Value="D290" />
-                                                                <asp:HiddenField ID="hdnpresentstageimplemnt_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUpresentstageimplemnt" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnPresentstageimplemnt_Code" runat="server" Value="D290" />
+                                                                <asp:HiddenField ID="HdnPresentstageimplemnt_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUpresentstageimplemnt" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDpresentstageimplemnt" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDpresentstageimplemnt" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypVwpresentstageimplemnt" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypVwpresentstageimplemnt" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblpresentstageimplemnt" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblPresentstageimplemnt" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2205,20 +2205,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flmigrantindustrial" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluMigrantindustrial" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnmigrantindustrial_code" runat="server" Value="D291" />
-                                                                <asp:HiddenField ID="hdnmigrantindustrial_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUmigrantindustrial" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnMigrantindustrial_Code" runat="server" Value="D291" />
+                                                                <asp:HiddenField ID="HdnMigrantindustrial_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUmigrantindustrial" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDmigrantindustrial" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDmigrantindustrial" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwmigrantindustrial" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwMigrantindustrial" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblmigrantindustrial" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblMigrantindustrial" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2232,20 +2232,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flfixedcapitalinvst" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluFixedcapitalinvst" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnfixedcapitalinvst_code" runat="server" Value="D292" />
-                                                                <asp:HiddenField ID="hdnfixedcapitalinvst_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUfixedcapitalinvst" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnFixedcapitalinvst_Code" runat="server" Value="D292" />
+                                                                <asp:HiddenField ID="HdnFixedcapitalinvst_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUfixedcapitalinvst" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDfixedcapitalinvst" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDfixedcapitalinvst" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwfixedcapitalinvst" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwFixedcapitalinvst" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblfixedcapitalinvst" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblFixedcapitalinvst" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2259,20 +2259,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flcatagoryfalpriority" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluCatagoryfalpriority" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdncatagoryfalpriority_code" runat="server" Value="D293" />
-                                                                <asp:HiddenField ID="hdncatagoryfalpriority_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUcatagoryfalpriority" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnCatagoryfalpriority_Code" runat="server" Value="D293" />
+                                                                <asp:HiddenField ID="HdnCatagoryfalpriority_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUcatagoryfalpriority" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDcatagoryfalpriority" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDcatagoryfalpriority" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwcatagoryfalpriority" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwCatagoryfalpriority" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblcatagoryfalpriority" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblCatagoryfalpriority" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2291,18 +2291,18 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flPowerattpost" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPowerattpost_code" runat="server" Value="D294" />
-                                                                <asp:HiddenField ID="Powerattpost_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUPowerattpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:FileUpload ID="FluPowerattPost" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                <asp:HiddenField ID="HdnPowerattpost_Code" runat="server" Value="D294" />
+                                                                <asp:HiddenField ID="HdnPowerattpost_Name" runat="server" />
+                                                                <asp:LinkButton ID="LnkUPowerattpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPowerattpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDPowerattpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwPowerattpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwPowerattpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPowerattpost" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                            <asp:Label ID="LblPowerattpost" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
                                                                 runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2316,18 +2316,18 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flpporthrustcertificate" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnpporthrustcertificate_code" runat="server" Value="D295" />
-                                                                <asp:HiddenField ID="hdnpporthrustcertificate_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUpporthrustcertificate" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:FileUpload ID="FluPporthrustcertificate" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                <asp:HiddenField ID="HdnPporthrustcertificate_Code" runat="server" Value="D295" />
+                                                                <asp:HiddenField ID="HdnPporthrustcertificate_Name" runat="server" />
+                                                                <asp:LinkButton ID="LnkUpporthrustcertificate" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDpporthrustcertificate" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDpporthrustcertificate" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwpporthrustcertificate" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwPporthrustcertificate" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblpporthrustcertificate" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                            <asp:Label ID="LblPporthrustcertificate" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
                                                                 runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2341,18 +2341,18 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flcertofregpost" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdncertofregpost_code" runat="server" Value="D296" />
-                                                                <asp:HiddenField ID="hdncertofregpost_name" runat="server" />
-                                                                <asp:LinkButton ID="lnkUcertofregpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:FileUpload ID="FluCertofregpost" CssClass="form-control" runat="server" onchange="return FileCheck(this);" />
+                                                                <asp:HiddenField ID="HdnCertofregpost_Code" runat="server" Value="D296" />
+                                                                <asp:HiddenField ID="HdnCertofregpost_Name" runat="server" />
+                                                                <asp:LinkButton ID="LnkUcertofregpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDcertofregpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDcertofregpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwcertofregpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwCertofregpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblcertofregpost" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
+                                                            <asp:Label ID="LblCertofregpost" Style="font-size: 12px;" CssClass="text-blue" Visible="false"
                                                                 runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2366,20 +2366,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flAppDPRpost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluAppDPRpost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnAppDPRpost_code" runat="server" Value="D297" />
-                                                                <asp:HiddenField ID="hdnAppDPRpost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUAppDPRpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnAppDPRpost_Code" runat="server" Value="D297" />
+                                                                <asp:HiddenField ID="HdnAppDPRpost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUAppDPRpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDAppDPRpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDAppDPRpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwAppDPRpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwAppDPRpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblAppDPRpost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblAppDPRpost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2393,20 +2393,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flPCorEINPost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluPCorEINPost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPCorEINPost_code" runat="server" Value="D298" />
-                                                                <asp:HiddenField ID="hdnPCorEINPost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUPCorEINPost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnPCorEINPost_Code" runat="server" Value="D298" />
+                                                                <asp:HiddenField ID="HdnPCorEINPost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUPCorEINPost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPCorEINPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDPCorEINPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwPCorEINPost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwPCorEINPost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPCorEINPost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblPCorEINPost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2420,20 +2420,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flloansancorFIappliedpost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluLoansancorFIappliedpost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnloansancorFIappliedpost_code" runat="server" Value="D299" />
-                                                                <asp:HiddenField ID="hdnloansancorFIappliedpost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUloansancorFIappliedpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnLoansancorFIappliedpost_Code" runat="server" Value="D299" />
+                                                                <asp:HiddenField ID="HdnLoansancorFIappliedpost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUloansancorFIappliedpost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDloansancorFIappliedpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDloansancorFIappliedpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwloansancorFIappliedpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwLoansancorFIappliedpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblloansancorFIappliedpost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblLoansancorFIappliedpost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2447,20 +2447,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flCapitalInvstPost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluCapitalInvstPost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnCapitalInvstPost_code" runat="server" Value="D300" />
-                                                                <asp:HiddenField ID="hdnCapitalInvstPost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUCapitalInvstPost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnCapitalInvstPost_Code" runat="server" Value="D300" />
+                                                                <asp:HiddenField ID="HdnCapitalInvstPost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUCapitalInvstPost" runat="server" OnClick="LnkBtn_Add_Doc_Click" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDCapitalInvstPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDCapitalInvstPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwCapitalInvstPost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwCapitalInvstPost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblCapitalInvstPost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblCapitalInvstPost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2474,20 +2474,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flInvplantmachinaryPost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluInvplantmachinaryPost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnflInvplantmachinaryPost_code" runat="server" Value="D301" />
-                                                                <asp:HiddenField ID="hdnflInvplantmachinaryPost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUInvplantmachinaryPost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnInvplantmachinaryPost_Code" runat="server" Value="D301" />
+                                                                <asp:HiddenField ID="HdnInvplantmachinaryPost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUInvplantmachinaryPost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDInvplantmachinaryPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDInvplantmachinaryPost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwInvplantmachinaryPost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwInvplantmachinaryPost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblInvplantmachinaryPost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblInvplantmachinaryPost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2501,20 +2501,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flPlantmachinerypost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluPlantmachinerypost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnPlantmachinerypost_code" runat="server" Value="D302" />
-                                                                <asp:HiddenField ID="hdnPlantmachinerypost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUPlantmachinerypost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnPlantmachinerypost_Code" runat="server" Value="D302" />
+                                                                <asp:HiddenField ID="HdnPlantmachinerypost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUPlantmachinerypost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDPlantmachinerypost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDPlantmachinerypost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwPlantmachinerypost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwPlantmachinerypost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblPlantmachinerypost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblPlantmachinerypost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2528,20 +2528,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flproductionormanufactpost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluProductionormanufactpost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnproductionormanufactpost_code" runat="server" Value="D303" />
-                                                                <asp:HiddenField ID="hdnproductionormanufactpost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUproductionormanufactpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnProductionormanufactpost_Code" runat="server" Value="D303" />
+                                                                <asp:HiddenField ID="HdnProductionormanufactpost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUproductionormanufactpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDproductionormanufactpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDproductionormanufactpost" runat="server" OnClick="LnkBtn_Delete_Doc_Click" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwproductionormanufactpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwProductionormanufactpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblproductionormanufactpost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblProductionormanufactpost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2555,20 +2555,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flcatagoryfalprioritypost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluCatagoryfalprioritypost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdncatagoryfalprioritypost_code" runat="server" Value="D304" />
-                                                                <asp:HiddenField ID="hdncatagoryfalprioritypost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUcatagoryfalprioritypost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnCatagoryfalprioritypost_Code" runat="server" Value="D304" />
+                                                                <asp:HiddenField ID="HdnCatagoryfalprioritypost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUcatagoryfalprioritypost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDcatagoryfalprioritypost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDcatagoryfalprioritypost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwcatagoryfalprioritypost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwCatagoryfalprioritypost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblcatagoryfalprioritypost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblCatagoryfalprioritypost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2582,20 +2582,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flclearancefromPCB" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluClearancefromPCB" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnclearancefromPCB_code" runat="server" Value="D305" />
-                                                                <asp:HiddenField ID="hdnclearancefromPCB_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUclearancefromPCB" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnClearancefromPCB_Code" runat="server" Value="D305" />
+                                                                <asp:HiddenField ID="HdnClearancefromPCB_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUclearancefromPCB" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDclearancefromPCB" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDclearancefromPCB" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwclearancefromPCB" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwClearancefromPCB" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblclearancefromPCB" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblClearancefromPCB" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2610,20 +2610,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flmigratedindustunitpost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluMigratedindustunitpost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnmigratedindustunitpost_code" runat="server" Value="D306" />
-                                                                <asp:HiddenField ID="hdnmigratedindustunitpost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUmigratedindustunitpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnMigratedindustunitpost_Code" runat="server" Value="D306" />
+                                                                <asp:HiddenField ID="HdnMigratedindustunitpost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUmigratedindustunitpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDmigratedindustunitpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDmigratedindustunitpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwmigratedindustunitpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwMigratedindustunitpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblmigratedindustunitpost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblMigratedindustunitpost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2637,20 +2637,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flproductionforMSMEPost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluProductionforMSMEPost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnproductionforMSMEPost_code" runat="server" Value="D307" />
-                                                                <asp:HiddenField ID="hdnproductionforMSMEPost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUproductionforMSMEPost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnProductionforMSMEPost_Code" runat="server" Value="D307" />
+                                                                <asp:HiddenField ID="HdnProductionforMSMEPost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUproductionforMSMEPost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDproductionforMSMEPost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDproductionforMSMEPost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwproductionforMSMEPost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwProductionforMSMEPost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblproductionforMSMEPost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblProductionforMSMEPost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>
@@ -2664,20 +2664,20 @@
                                                         <div class="col-sm-6">
                                                             <span class="colon">:</span>
                                                             <div class="input-group">
-                                                                <asp:FileUpload ID="flEmpoweredcommitpost" CssClass="form-control" runat="server"
+                                                                <asp:FileUpload ID="FluEmpoweredcommitpost" CssClass="form-control" runat="server"
                                                                     onchange="return FileCheck(this);" />
-                                                                <asp:HiddenField ID="hdnEmpoweredcommitpost_code" runat="server" Value="D308" />
-                                                                <asp:HiddenField ID="hdnEmpoweredcommitpost_name" runat="server" Value="" />
-                                                                <asp:LinkButton ID="lnkUEmpoweredcommitpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
+                                                                <asp:HiddenField ID="HdnEmpoweredcommitpost_Code" runat="server" Value="D308" />
+                                                                <asp:HiddenField ID="HdnEmpoweredcommitpost_Name" runat="server" Value="" />
+                                                                <asp:LinkButton ID="LnkUEmpoweredcommitpost" OnClick="LnkBtn_Add_Doc_Click" runat="server" CssClass="input-group-addon bg-green"
                                                                     OnClientClick="return HasFile('flCleanApproveAuthority','Plase Upload Factory & Boiler for all industry related Document');"
                                                                     ToolTip="Click here to upload the file."><i class="fa fa-upload" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:LinkButton ID="lnkDEmpoweredcommitpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
+                                                                <asp:LinkButton ID="LnkDEmpoweredcommitpost" OnClick="LnkBtn_Delete_Doc_Click" runat="server" CssClass="input-group-addon bg-red"
                                                                     Visible="false"><i class="fa fa-trash-o" aria-hidden="true"></i></asp:LinkButton>
-                                                                <asp:HyperLink ID="hypvwEmpoweredcommitpost" runat="server" Target="_blank" Visible="false"
+                                                                <asp:HyperLink ID="HypvwEmpoweredcommitpost" runat="server" Target="_blank" Visible="false"
                                                                     CssClass="input-group-addon bg-blue"><i class="fa fa-download"></i></asp:HyperLink>
                                                             </div>
                                                             <small class="text-danger">(.pdf/.zip file only and Max size file Size 4 MB)</small>
-                                                            <asp:Label ID="lblEmpoweredcommitpost" Style="font-size: 12px;" CssClass="text-blue"
+                                                            <asp:Label ID="LblEmpoweredcommitpost" Style="font-size: 12px;" CssClass="text-blue"
                                                                 Visible="false" runat="server" Text="Document uploaded successfully"></asp:Label>
                                                         </div>
                                                     </div>

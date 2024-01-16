@@ -41,7 +41,7 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
 
             if (Request.QueryString["InctUniqueNo"] != null)
             {
-                PostpopulateDataComm(Convert.ToInt16(Request.QueryString["InctUniqueNo"]));
+                PostpopulateDataComm();
             }
             else
             {
@@ -57,7 +57,7 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
         }
     }
 
-    public void PostpopulateDataComm(int id)
+    public void PostpopulateDataComm()
     {
         try
         {
@@ -163,93 +163,93 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
 
                     if (vchDocId == "D324")
                     {
-                        hdnEinno_name.Value = vchFileName;
-                        hypEinno.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypEinno.Visible = true;
-                        lnkDEinno.Visible = true;
-                        lblEinno.Visible = true;
-                        flEinno.Enabled = false;
+                        HdnEinno_Name.Value = vchFileName;
+                        HypEinno.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypEinno.Visible = true;
+                        LnkDEinno.Visible = true;
+                        LblEinno.Visible = true;
+                        FluEinno.Enabled = false;
                     }
                     else if (vchDocId == "D325")
                     {
-                        hdnPoweratt_name.Value = vchFileName;
-                        hypPoweratt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypPoweratt.Visible = true;
-                        lnkDPoweratt.Visible = true;
-                        lblPoweratt.Visible = true;
-                        flPoweratt.Enabled = false;
+                        HdnPoweratt_Name.Value = vchFileName;
+                        HypPoweratt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypPoweratt.Visible = true;
+                        LnkDPoweratt.Visible = true;
+                        LblPoweratt.Visible = true;
+                        FluPoweratt.Enabled = false;
                     }
                     else if (vchDocId == "D326")
                     {
-                        certofreg_name.Value = vchFileName;
-                        hypVwcertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwcertofreg.Visible = true;
-                        lnkDcertofreg.Visible = true;
-                        lblcertofreg.Visible = true;
-                        flcertofreg.Enabled = false;
+                        HdnCertofreg_Name.Value = vchFileName;
+                        HypVwCertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwCertofreg.Visible = true;
+                        LnkDCertofreg.Visible = true;
+                        LblCertofreg.Visible = true;
+                        FluCertofreg.Enabled = false;
                     }
                     else if (vchDocId == "D327")
                     {
-                        hdnfixcapital_Name.Value = vchFileName;
-                        hypVwfixcapital.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwfixcapital.Visible = true;
-                        lnkDfixcapital.Visible = true;
-                        lblfixcapital.Visible = true;
-                        flfixcapital.Enabled = false;
+                        HdnFixcapital_Name.Value = vchFileName;
+                        HypVwFixcapital.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwFixcapital.Visible = true;
+                        LnkDFixcapital.Visible = true;
+                        LblFixcapital.Visible = true;
+                        FluFixcapital.Enabled = false;
                     }
                     else if (vchDocId == "D328")
                     {
-                        hdnThrustcerti_name.Value = vchFileName;
-                        hypvwThrustcerti.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwThrustcerti.Visible = true;
-                        lnkDThrustcerti.Visible = true;
-                        lblThrustcerti.Visible = true;
-                        flThrustcerti.Enabled = false;
+                        HdnThrustcerti_Name.Value = vchFileName;
+                        HypvwThrustcerti.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwThrustcerti.Visible = true;
+                        LnkDThrustcerti.Visible = true;
+                        LblThrustcerti.Visible = true;
+                        FluThrustcerti.Enabled = false;
                     }
                     else if (vchDocId == "D329")
                     {
-                        hdnAppprovedproj_name.Value = vchFileName;
-                        hypvwAppprovedproj.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwAppprovedproj.Visible = true;
-                        lnkDAppprovedproj.Visible = true;
-                        lblAppprovedproj.Visible = true;
-                        flAppprovedproj.Enabled = false;
+                        HdnAppprovedproj_Name.Value = vchFileName;
+                        HypvwAppprovedproj.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwAppprovedproj.Visible = true;
+                        LnkDAppprovedproj.Visible = true;
+                        LblAppprovedproj.Visible = true;
+                        FluAppprovedproj.Enabled = false;
                     }
                     else if (vchDocId == "D330")
                     {
-                        hdnAppraisal_Name.Value = vchFileName;
-                        hypVwAppraisal.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwAppraisal.Visible = true;
-                        lnkDAppraisal.Visible = true;
-                        lblAppraisal.Visible = true;
-                        flAppraisal.Enabled = false;
+                        HdnAppraisal_Name.Value = vchFileName;
+                        HypVwAppraisal.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwAppraisal.Visible = true;
+                        LnkDAppraisal.Visible = true;
+                        LblAppraisal.Visible = true;
+                        FluAppraisal.Enabled = false;
                     }
                     else if (vchDocId == "D331")
                     {
-                        hdnLanddocument_name.Value = vchFileName;
-                        hypvwLanddocument.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwLanddocument.Visible = true;
-                        lnkDLanddocument.Visible = true;
-                        lblLanddocument.Visible = true;
-                        flLanddocument.Enabled = false;
+                        HdnLanddocument_Name.Value = vchFileName;
+                        HypvwLanddocument.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwLanddocument.Visible = true;
+                        LnkDLanddocument.Visible = true;
+                        LblLanddocument.Visible = true;
+                        FluLanddocument.Enabled = false;
                     }
                     else if (vchDocId == "D332")
                     {
-                        hdnstatutory_name.Value = vchFileName;
-                        hypvwstatutory.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwstatutory.Visible = true;
-                        lnkDstatutory.Visible = true;
-                        lblstatutory.Visible = true;
-                        flstatutory.Enabled = false;
+                        HdnStatutory_Name.Value = vchFileName;
+                        HypvwStatutory.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwStatutory.Visible = true;
+                        LnkDstatutory.Visible = true;
+                        LblStatutory.Visible = true;
+                        FluStatutory.Enabled = false;
                     }
                     else if (vchDocId == "D333")
                     {
-                        hdnStampPaper_name.Value = vchFileName;
-                        hypvwStampPaper.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwStampPaper.Visible = true;
-                        lnkDStampPaper.Visible = true;
-                        lblStampPaper.Visible = true;
-                        flStampPaper.Enabled = false;
+                        HdnStampPaper_Name.Value = vchFileName;
+                        HypvwStampPaper.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwStampPaper.Visible = true;
+                        LnkDStampPaper.Visible = true;
+                        LblStampPaper.Visible = true;
+                        FluStampPaper.Enabled = false;
                     }
                 }
                 #endregion
@@ -330,11 +330,11 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
     {
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
         Basic_Unit_Details_Entity objEntity = new Basic_Unit_Details_Entity();
-        DataSet ds = new DataSet();
+       
         try
         {
             objEntity.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
-            ds = objBAL.Basic_Unit_Details_V(objEntity);
+            DataSet ds = objBAL.Basic_Unit_Details_V(objEntity);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 /*----------------------------------------------------------------------------*/
@@ -353,12 +353,9 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 /// If new PC found then assign strDataSource=PC
                 /// Only when data present in basic table and a new PC found 
                 /*----------------------------------------------------------------------------*/
-                if (strDataSource == "BASIC")
+                if (strDataSource == "BASIC" && strNewPcFound == "Y")
                 {
-                    if (strNewPcFound == "Y")
-                    {
                         strDataSource = "PC";
-                    }
                 }
                 /*----------------------------------------------------------------------------*/
                 /// Value Assigned to HiddenField for use in Validation
@@ -502,88 +499,85 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkUEinno.ID))
+            if (string.Equals(lnk.ID, LnkUEinno.ID))
             {
-                if (flEinno.HasFile)
+                if (FluEinno.HasFile)
                 {
 
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_EinnoLandforIndustrialUseIPR-2022";
-                    UploadDocument(flEinno, hdnEinno_name, strFileName, hypEinno, lblEinno, lnkDEinno, "InctBasicDoc");
+                    UploadDocument(FluEinno, HdnEinno_Name, strFileName, HypEinno, LblEinno, LnkDEinno, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPoweratt.ID))
+            else if (string.Equals(lnk.ID, LnkUPoweratt.ID))
             {
-                if (flPoweratt.HasFile)
+                if (FluPoweratt.HasFile)
                 {
 
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PoweofAttorneyLandforIndustrialUseIPR-2022";
-                    UploadDocument(flPoweratt, hdnPoweratt_name, strFileName, hypPoweratt, lblPoweratt, lnkDPoweratt, "InctBasicDoc");
+                    UploadDocument(FluPoweratt, HdnPoweratt_Name, strFileName, HypPoweratt, LblPoweratt, LnkDPoweratt, "InctBasicDoc");
                 }
 
             }
-            else if (string.Equals(lnk.ID, lnkUcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkUCertofreg.ID))
             {
-                if (flcertofreg.HasFile)
+                if (FluCertofreg.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_MEMORANDUMLandforIndustrialUseIPR-2022";
-                    UploadDocument(flcertofreg, certofreg_name, strFileName, hypVwcertofreg, lblcertofreg, lnkDcertofreg, "InctBasicDoc");
+                    UploadDocument(FluCertofreg, HdnCertofreg_Name, strFileName, HypVwCertofreg, LblCertofreg, LnkDCertofreg, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUfixcapital.ID))
+            else if (string.Equals(lnk.ID, LnkUFixcapital.ID))
             {
-                if (flfixcapital.HasFile)
+                if (FluFixcapital.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_FixCapitalInvstLandforIndustrialUseIPR-2022";
-                    UploadDocument(flfixcapital, hdnfixcapital_Name, strFileName, hypVwfixcapital, lblfixcapital, lnkDfixcapital, "InctBasicDoc");
+                    UploadDocument(FluFixcapital, HdnFixcapital_Name, strFileName, HypVwFixcapital, LblFixcapital, LnkDFixcapital, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUThrustcerti.ID))
+            else if (string.Equals(lnk.ID, LnkUThrustcerti.ID))
             {
-                if (flThrustcerti.HasFile)
+                if (FluThrustcerti.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_ThrustCertificateLandforIndustrialUseIPR-2022";
-                    UploadDocument(flThrustcerti, hdnThrustcerti_name, strFileName, hypvwThrustcerti, lblThrustcerti, lnkDThrustcerti, "InctBasicDoc");
+                    UploadDocument(FluThrustcerti, HdnThrustcerti_Name, strFileName, HypvwThrustcerti, LblThrustcerti, LnkDThrustcerti, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUAppprovedproj.ID))
+            else if (string.Equals(lnk.ID, LnkUAppprovedproj.ID))
             {
-                if (flAppprovedproj.HasFile)
+                if (FluAppprovedproj.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_ApproveddetailedLandforIndustrialUseIPR-2022";
-                    UploadDocument(flAppprovedproj, hdnAppprovedproj_name, strFileName, hypvwAppprovedproj, lblAppprovedproj, lnkDAppprovedproj, "InctBasicDoc");
+                    UploadDocument(FluAppprovedproj, HdnAppprovedproj_Name, strFileName, HypvwAppprovedproj, LblAppprovedproj, LnkDAppprovedproj, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUAppraisal.ID))
+            else if (string.Equals(lnk.ID, LnkUAppraisal.ID))
             {
-                if (flAppraisal.HasFile)
+                if (FluAppraisal.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_AppraisalLandforIndustrialUseIPR-2022";
-                    UploadDocument(flAppraisal, hdnAppraisal_Name, strFileName, hypVwAppraisal, lblAppraisal, lnkDAppraisal, "InctBasicDoc");
+                    UploadDocument(FluAppraisal, HdnAppraisal_Name, strFileName, HypVwAppraisal, LblAppraisal, LnkDAppraisal, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkULanddocument.ID))
+            else if (string.Equals(lnk.ID, LnkULanddocument.ID))
             {
-                if (flLanddocument.HasFile)
+                if (FluLanddocument.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_LandDocumentLandforIndustrialUseIPR-2022";
-                    UploadDocument(flLanddocument, hdnLanddocument_name, strFileName, hypvwLanddocument, lblLanddocument, lnkDLanddocument, "InctBasicDoc");
+                    UploadDocument(FluLanddocument, HdnLanddocument_Name, strFileName, HypvwLanddocument, LblLanddocument, LnkDLanddocument, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUstatutory.ID))
+            else if (string.Equals(lnk.ID, LnkUstatutory.ID))
             {
-                if (flstatutory.HasFile)
+                if (FluStatutory.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_StatutoryLandforIndustrialUseIPR-2022";
-                    UploadDocument(flstatutory, hdnstatutory_name, strFileName, hypvwstatutory, lblstatutory, lnkDstatutory, "InctBasicDoc");
+                    UploadDocument(FluStatutory, HdnStatutory_Name, strFileName, HypvwStatutory, LblStatutory, LnkDstatutory, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUStampPaper.ID))
+            else if (string.Equals(lnk.ID, LnkUStampPaper.ID) && (FluStampPaper.HasFile))
             {
-                if (flStampPaper.HasFile)
-                {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_StampPaperLandforIndustrialUseIPR-2022";
-                    UploadDocument(flStampPaper, hdnStampPaper_name, strFileName, hypvwStampPaper, lblStampPaper, lnkDStampPaper, "InctBasicDoc");
-                }
+                    UploadDocument(FluStampPaper, HdnStampPaper_Name, strFileName, HypvwStampPaper, LblStampPaper, LnkDStampPaper, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -597,45 +591,45 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkDEinno.ID))
+            if (string.Equals(lnk.ID, LnkDEinno.ID))
             {
-                UpdFileRemove(hdnEinno_name, lnkUEinno, lnkDEinno, hypEinno, lblEinno, flEinno, "InctBasicDoc");
+                UpdFileRemove(HdnEinno_Name, LnkUEinno, LnkDEinno, HypEinno, LblEinno, FluEinno, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPoweratt.ID))
+            else if (string.Equals(lnk.ID, LnkDPoweratt.ID))
             {
-                UpdFileRemove(hdnPoweratt_name, lnkUPoweratt, lnkDPoweratt, hypPoweratt, lblPoweratt, flPoweratt, "InctBasicDoc");
+                UpdFileRemove(HdnPoweratt_Name, LnkUPoweratt, LnkDPoweratt, HypPoweratt, LblPoweratt, FluPoweratt, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkDCertofreg.ID))
             {
-                UpdFileRemove(certofreg_name, lnkUcertofreg, lnkDcertofreg, hypVwcertofreg, lblcertofreg, flcertofreg, "InctBasicDoc");
+                UpdFileRemove(HdnCertofreg_Name, LnkUCertofreg, LnkDCertofreg, HypVwCertofreg, LblCertofreg, FluCertofreg, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDfixcapital.ID))
+            else if (string.Equals(lnk.ID, LnkDFixcapital.ID))
             {
-                UpdFileRemove(hdnfixcapital_Name, lnkUfixcapital, lnkDfixcapital, hypVwfixcapital, lblfixcapital, flfixcapital, "InctBasicDoc");
+                UpdFileRemove(HdnFixcapital_Name, LnkUFixcapital, LnkDFixcapital, HypVwFixcapital, LblFixcapital, FluFixcapital, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDThrustcerti.ID))
+            else if (string.Equals(lnk.ID, LnkDThrustcerti.ID))
             {
-                UpdFileRemove(hdnThrustcerti_name, lnkUThrustcerti, lnkDThrustcerti, hypvwThrustcerti, lblThrustcerti, flThrustcerti, "InctBasicDoc");
+                UpdFileRemove(HdnThrustcerti_Name, LnkUThrustcerti, LnkDThrustcerti, HypvwThrustcerti, LblThrustcerti, FluThrustcerti, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDAppprovedproj.ID))
+            else if (string.Equals(lnk.ID, LnkDAppprovedproj.ID))
             {
-                UpdFileRemove(hdnAppprovedproj_name, lnkUAppprovedproj, lnkDAppprovedproj, hypvwAppprovedproj, lblAppprovedproj, flAppprovedproj, "InctBasicDoc");
+                UpdFileRemove(HdnAppprovedproj_Name, LnkUAppprovedproj, LnkDAppprovedproj, HypvwAppprovedproj, LblAppprovedproj, FluAppprovedproj, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDAppraisal.ID))
+            else if (string.Equals(lnk.ID, LnkDAppraisal.ID))
             {
-                UpdFileRemove(hdnAppraisal_Name, lnkUAppraisal, lnkDAppraisal, hypVwAppraisal, lblAppraisal, flAppraisal, "InctBasicDoc");
+                UpdFileRemove(HdnAppraisal_Name, LnkUAppraisal, LnkDAppraisal, HypVwAppraisal, LblAppraisal, FluAppraisal, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDLanddocument.ID))
+            else if (string.Equals(lnk.ID, LnkDLanddocument.ID))
             {
-                UpdFileRemove(hdnLanddocument_name, lnkULanddocument, lnkDLanddocument, hypvwLanddocument, lblLanddocument, flLanddocument, "InctBasicDoc");
+                UpdFileRemove(HdnLanddocument_Name, LnkULanddocument, LnkDLanddocument, HypvwLanddocument, LblLanddocument, FluLanddocument, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDstatutory.ID))
+            else if (string.Equals(lnk.ID, LnkDstatutory.ID))
             {
-                UpdFileRemove(hdnstatutory_name, lnkUstatutory, lnkDstatutory, hypvwstatutory, lblstatutory, flstatutory, "InctBasicDoc");
+                UpdFileRemove(HdnStatutory_Name, LnkUstatutory, LnkDstatutory, HypvwStatutory, LblStatutory, FluStatutory, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDStampPaper.ID))
+            else if (string.Equals(lnk.ID, LnkDStampPaper.ID))
             {
-                UpdFileRemove(hdnStampPaper_name, lnkUStampPaper, lnkDStampPaper, hypvwStampPaper, lblStampPaper, flStampPaper, "InctBasicDoc");
+                UpdFileRemove(HdnStampPaper_Name, LnkUStampPaper, LnkDStampPaper, HypvwStampPaper, LblStampPaper, FluStampPaper, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -994,10 +988,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
             /// Other Document Section
             /*---------------------------------------------------------------------*/
 
-            if (hdnEinno_name.Value != "")
+            if (HdnEinno_Name.Value != "")
             {
-                objEntity1.strEINorPEALapprovalDocCode = hdnEinno_code.Value;
-                objEntity1.strEINorPEALapproval = hdnEinno_name.Value;
+                objEntity1.strEINorPEALapprovalDocCode = HdnEinno_Code.Value;
+                objEntity1.strEINorPEALapproval = HdnEinno_Name.Value;
             }
             else
             {
@@ -1005,10 +999,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strEINorPEALapproval = null;
             }
 
-            if (hdnPoweratt_name.Value != "")
+            if (HdnPoweratt_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyDocCode = hdnPoweratt_code.Value;
-                objEntity1.strPworofAttorney = hdnPoweratt_name.Value;
+                objEntity1.strPworofAttorneyDocCode = HdnPoweratt_Code.Value;
+                objEntity1.strPworofAttorney = HdnPoweratt_Name.Value;
             }
             else
             {
@@ -1016,10 +1010,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strPworofAttorney = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCode = certofreg_code.Value;
-                objEntity1.strCertificateofregistration = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCode = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistration = HdnCertofreg_Name.Value;
             }
             else
             {
@@ -1027,10 +1021,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strCertificateofregistration = null;
             }
 
-            if (hdnfixcapital_Name.Value != "")
+            if (HdnFixcapital_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCode = hdnfixcapital_Code.Value;
-                objEntity1.strfixedcapitalinvst = hdnfixcapital_Name.Value;
+                objEntity1.strfixedcapitalinvstDocCode = HdnFixcapital_Code.Value;
+                objEntity1.strfixedcapitalinvst = HdnFixcapital_Name.Value;
             }
             else
             {
@@ -1038,10 +1032,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strfixedcapitalinvst = null;
             }
 
-            if (hdnThrustcerti_name.Value != "")
+            if (HdnThrustcerti_Name.Value != "")
             {
-                objEntity1.strProvisionalPriorityorThruststatusDocCode = hdnThrustcerti_code.Value;
-                objEntity1.strProvisionalPriorityorThruststatus = hdnThrustcerti_name.Value;
+                objEntity1.strProvisionalPriorityorThruststatusDocCode = HdnThrustcerti_Code.Value;
+                objEntity1.strProvisionalPriorityorThruststatus = HdnThrustcerti_Name.Value;
             }
             else
             {
@@ -1049,10 +1043,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strProvisionalPriorityorThruststatus = null;
             }
 
-            if (hdnAppprovedproj_name.Value != "")
+            if (HdnAppprovedproj_Name.Value != "")
             {
-                objEntity1.strApprovalDetailsprojrctDocCode = hdnAppprovedproj_code.Value;
-                objEntity1.strApprovalDetailsprojrct = hdnAppprovedproj_name.Value;
+                objEntity1.strApprovalDetailsprojrctDocCode = HdnAppprovedproj_Code.Value;
+                objEntity1.strApprovalDetailsprojrct = HdnAppprovedproj_Name.Value;
             }
             else
             {
@@ -1060,10 +1054,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strApprovalDetailsprojrct = null;
             }
 
-            if (hdnAppraisal_Name.Value != "")
+            if (HdnAppraisal_Name.Value != "")
             {
-                objEntity1.strApprisalsupportexpansionDocCode = hdnAppraisal_Code.Value;
-                objEntity1.strApprisalsupportexpansion = hdnAppraisal_Name.Value;
+                objEntity1.strApprisalsupportexpansionDocCode = HdnAppraisal_Code.Value;
+                objEntity1.strApprisalsupportexpansion = HdnAppraisal_Name.Value;
             }
             else
             {
@@ -1071,10 +1065,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strApprisalsupportexpansion = null;
             }
 
-            if (hdnLanddocument_name.Value != "")
+            if (HdnLanddocument_Name.Value != "")
             {
-                objEntity1.strLanddocumentDocCode = hdnLanddocument_code.Value;
-                objEntity1.strLanddocument = hdnLanddocument_name.Value;
+                objEntity1.strLanddocumentDocCode = HdnLanddocument_Code.Value;
+                objEntity1.strLanddocument = HdnLanddocument_Name.Value;
             }
             else
             {
@@ -1082,10 +1076,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strLanddocument = null;
             }
 
-            if (hdnstatutory_name.Value != "")
+            if (HdnStatutory_Name.Value != "")
             {
-                objEntity1.strStatutoryClearancesDocCode = hdnstatutory_code.Value;
-                objEntity1.strStatutoryClearances = hdnstatutory_name.Value;
+                objEntity1.strStatutoryClearancesDocCode = HdnStatutory_Code.Value;
+                objEntity1.strStatutoryClearances = HdnStatutory_Name.Value;
             }
             else
             {
@@ -1093,10 +1087,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strStatutoryClearances = null;
             }
 
-            if (hdnStampPaper_name.Value != "")
+            if (HdnStampPaper_Name.Value != "")
             {
-                objEntity1.strNonjudicialStampDocCode = hdnStampPaper_code.Value;
-                objEntity1.strNonjudicialStamp = hdnStampPaper_name.Value;
+                objEntity1.strNonjudicialStampDocCode = HdnStampPaper_Code.Value;
+                objEntity1.strNonjudicialStamp = HdnStampPaper_Name.Value;
             }
             else
             {
@@ -1263,10 +1257,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
             /// Other Document Section
             /*---------------------------------------------------------------------*/
 
-            if (hdnEinno_name.Value != "")
+            if (HdnEinno_Name.Value != "")
             {
-                objEntity1.strEINorPEALapprovalDocCode = hdnEinno_code.Value;
-                objEntity1.strEINorPEALapproval = hdnEinno_name.Value;
+                objEntity1.strEINorPEALapprovalDocCode = HdnEinno_Code.Value;
+                objEntity1.strEINorPEALapproval = HdnEinno_Name.Value;
             }
             else
             {
@@ -1274,10 +1268,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strEINorPEALapproval = null;
             }
 
-            if (hdnPoweratt_name.Value != "")
+            if (HdnPoweratt_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyDocCode = hdnPoweratt_code.Value;
-                objEntity1.strPworofAttorney = hdnPoweratt_name.Value;
+                objEntity1.strPworofAttorneyDocCode = HdnPoweratt_Code.Value;
+                objEntity1.strPworofAttorney = HdnPoweratt_Name.Value;
             }
             else
             {
@@ -1285,10 +1279,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strPworofAttorney = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCode = certofreg_code.Value;
-                objEntity1.strCertificateofregistration = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCode = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistration = HdnCertofreg_Name.Value;
             }
             else
             {
@@ -1296,10 +1290,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strCertificateofregistration = null;
             }
 
-            if (hdnfixcapital_Name.Value != "")
+            if (HdnFixcapital_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCode = hdnfixcapital_Code.Value;
-                objEntity1.strfixedcapitalinvst = hdnfixcapital_Name.Value;
+                objEntity1.strfixedcapitalinvstDocCode = HdnFixcapital_Code.Value;
+                objEntity1.strfixedcapitalinvst = HdnFixcapital_Name.Value;
             }
             else
             {
@@ -1307,10 +1301,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strfixedcapitalinvst = null;
             }
 
-            if (hdnThrustcerti_name.Value != "")
+            if (HdnThrustcerti_Name.Value != "")
             {
-                objEntity1.strProvisionalPriorityorThruststatusDocCode = hdnThrustcerti_code.Value;
-                objEntity1.strProvisionalPriorityorThruststatus = hdnThrustcerti_name.Value;
+                objEntity1.strProvisionalPriorityorThruststatusDocCode = HdnThrustcerti_Code.Value;
+                objEntity1.strProvisionalPriorityorThruststatus = HdnThrustcerti_Name.Value;
             }
             else
             {
@@ -1318,10 +1312,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strProvisionalPriorityorThruststatus = null;
             }
 
-            if (hdnAppprovedproj_name.Value != "")
+            if (HdnAppprovedproj_Name.Value != "")
             {
-                objEntity1.strApprovalDetailsprojrctDocCode = hdnAppprovedproj_code.Value;
-                objEntity1.strApprovalDetailsprojrct = hdnAppprovedproj_name.Value;
+                objEntity1.strApprovalDetailsprojrctDocCode = HdnAppprovedproj_Code.Value;
+                objEntity1.strApprovalDetailsprojrct = HdnAppprovedproj_Name.Value;
             }
             else
             {
@@ -1329,10 +1323,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strApprovalDetailsprojrct = null;
             }
 
-            if (hdnAppraisal_Name.Value != "")
+            if (HdnAppraisal_Name.Value != "")
             {
-                objEntity1.strApprisalsupportexpansionDocCode = hdnAppraisal_Code.Value;
-                objEntity1.strApprisalsupportexpansion = hdnAppraisal_Name.Value;
+                objEntity1.strApprisalsupportexpansionDocCode = HdnAppraisal_Code.Value;
+                objEntity1.strApprisalsupportexpansion = HdnAppraisal_Name.Value;
             }
             else
             {
@@ -1340,10 +1334,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strApprisalsupportexpansion = null;
             }
 
-            if (hdnLanddocument_name.Value != "")
+            if (HdnLanddocument_Name.Value != "")
             {
-                objEntity1.strLanddocumentDocCode = hdnLanddocument_code.Value;
-                objEntity1.strLanddocument = hdnLanddocument_name.Value;
+                objEntity1.strLanddocumentDocCode = HdnLanddocument_Code.Value;
+                objEntity1.strLanddocument = HdnLanddocument_Name.Value;
             }
             else
             {
@@ -1351,10 +1345,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strLanddocument = null;
             }
 
-            if (hdnstatutory_name.Value != "")
+            if (HdnStatutory_Name.Value != "")
             {
-                objEntity1.strStatutoryClearancesDocCode = hdnstatutory_code.Value;
-                objEntity1.strStatutoryClearances = hdnstatutory_name.Value;
+                objEntity1.strStatutoryClearancesDocCode = HdnStatutory_Code.Value;
+                objEntity1.strStatutoryClearances = HdnStatutory_Name.Value;
             }
             else
             {
@@ -1362,10 +1356,10 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 objEntity1.strStatutoryClearances = null;
             }
 
-            if (hdnStampPaper_name.Value != "")
+            if (HdnStampPaper_Name.Value != "")
             {
-                objEntity1.strNonjudicialStampDocCode = hdnStampPaper_code.Value;
-                objEntity1.strNonjudicialStamp = hdnStampPaper_name.Value;
+                objEntity1.strNonjudicialStampDocCode = HdnStampPaper_Code.Value;
+                objEntity1.strNonjudicialStamp = HdnStampPaper_Name.Value;
             }
             else
             {

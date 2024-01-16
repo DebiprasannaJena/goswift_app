@@ -24,7 +24,7 @@ using System.IO;
 
 public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 {
-    string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
+   readonly string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -39,8 +39,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             if (Request.QueryString["InctUniqueNo"] != null)
             {
-                PostpopulateDataComm(Convert.ToInt16(Request.QueryString["InctUniqueNo"]));
-
+                PostpopulateDataComm();
             }
             else
             {
@@ -50,12 +49,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Txt_PC_EMI_Date.Attributes.Add("readonly", "readonly");
                 Txt_Uam_Date.Attributes.Add("readonly", "readonly");
                 Txt_TL_Sanction_Date.Attributes.Add("readonly", "readonly");
-
                 Txt_TL_Availed_Date.Attributes.Add("readonly", "readonly");
                 Txt_WC_Sanction_Date.Attributes.Add("readonly", "readonly");
                 Txt_WC_Availed_Date.Attributes.Add("readonly", "readonly");
-
-
                 Div_UAM_No.Visible = false;
                 Div_UAM_date.Visible = false;
                 Div_EIM_No.Visible = false;
@@ -73,15 +69,13 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         }
     }
 
-
-    public void PostpopulateDataComm(int id)
+    public void PostpopulateDataComm()
     {
         try
         {
             DataSet dslivePre = IncentiveManager.ProvisionalThrustsectorpopulateDatainDraft(Convert.ToInt16(Request.QueryString["InctUniqueNo"]));
             DataTable dtindustryPre = dslivePre.Tables[0];////////////Industrial Unit's Details
             DataTable dtProductionPre = dslivePre.Tables[1];///////////production & employment
-
             DataTable dtProductionDetBefPre = dslivePre.Tables[2];///////////Term Loan Details
             DataTable dtProductionDetAftPre = dslivePre.Tables[3];///////////Working Capital Loan Details
             DataTable dtInvestmentPre = dslivePre.Tables[4];///////////Product Details
@@ -89,8 +83,8 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             DataTable dtMoFTermLoanPre = dslivePre.Tables[6];///////////investment details
             DataTable dtMoFWorkingLoanPre = dslivePre.Tables[7];///////////Other Document List
 
-
             #region IndustrailUnit
+
             if (dtindustryPre.Rows.Count > 0)
             {
                 Txt_EnterPrise_Name.Text = dtindustryPre.Rows[0]["vchEnterpriseName"].ToString().Trim();
@@ -205,7 +199,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Txt_Other_Fixed_Asset_Before.Text = dtProductionPre.Rows[0]["decLoadUnloadAmtBefore"].ToString();
                 Txt_Loadig_Before.Text = dtProductionPre.Rows[0]["decMarginMoneyForworkingAmtBefore"].ToString();
                 Txt_Margine_money.Text = dtProductionPre.Rows[0]["decElectricalInstAmtBefore"].ToString();
-
                 Txt_Total_Capital_invst.Text = dtProductionPre.Rows[0]["decTotalAmtBefore"].ToString();
 
                 Txt_Land_After.Text = dtProductionPre.Rows[0]["decLandAmtAfter"].ToString();
@@ -218,8 +211,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Txt_Total_Capital_After.Text = dtProductionPre.Rows[0]["decTotalAmtAfter"].ToString();
 
                 #endregion
-
-                //#region MEANS OF FINANCE
 
                 Txt_Equity_Amt.Text = dtMeansFinancePre.Rows[0]["decEquity"].ToString();
 
@@ -239,7 +230,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Rad_IPR_Incentive_avail.SelectedValue = dtindustryPre.Rows[0]["intIPRinctiveAvel"].ToString();
                 Txt_Swm_approve.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
 
-                ///----------------------------------------Other File Upload----------------------------------------------------------/////
+                ///----------------------------------------Other File Upload----------------------------------------------------------///
 
                 for (int i = 0; i < dtMoFWorkingLoanPre.Rows.Count; i++)
                 {
@@ -248,257 +239,255 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
                     if (vchDocId == "D282")
                     {
-                        hdnPowerattpre_name.Value = vchFileName;
-                        hypPowerattpre.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypPowerattpre.Visible = true;
-                        lnkDPowerattpre.Visible = true;
-                        lblPowerattpre.Visible = true;
-                        flPowerattpre.Enabled = false;
+                        HdnPowerattpre_Name.Value = vchFileName;
+                        HypPowerattpre.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypPowerattpre.Visible = true;
+                        LnkDPowerattpre.Visible = true;
+                        LblPowerattpre.Visible = true;
+                        FluPowerattpre.Enabled = false;
                     }
                     else if (vchDocId == "D283")
                     {
-                        certofreg_name.Value = vchFileName;
-                        hypVwcertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwcertofreg.Visible = true;
-                        lnkDcertofreg.Visible = true;
-                        lblcertofreg.Visible = true;
-                        flcertofreg.Enabled = false;
+                        HdnCertofreg_Name.Value = vchFileName;
+                        HypvwCertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwCertofreg.Visible = true;
+                        LnkDCertofreg.Visible = true;
+                        LblCertofreg.Visible = true;
+                        FluCertofreg.Enabled = false;
                     }
                     else if (vchDocId == "D284")
                     {
-                        hdnAppDPR_Name.Value = vchFileName;
-                        hypVwAppDPR.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwAppDPR.Visible = true;
-                        lnkDAppDPR.Visible = true;
-                        lblAppDPR.Visible = true;
-                        flAppDPR.Enabled = false;
+                        HdnAppDPR_Name.Value = vchFileName;
+                        HypVwAppDPR.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwAppDPR.Visible = true;
+                        LnkDAppDPR.Visible = true;
+                        LblAppDPR.Visible = true;
+                        FlAppDPR.Enabled = false;
                     }
                     else if (vchDocId == "D285")
                     {
-                        hdnEIN_Name.Value = vchFileName;
-                        hypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwEIN.Visible = true;
-                        lnkDEIN.Visible = true;
-                        lblEIN.Visible = true;
-                        flEIN.Enabled = false;
+                        HdnEIN_Name.Value = vchFileName;
+                        HypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwEIN.Visible = true;
+                        LnkDEIN.Visible = true;
+                        LblEIN.Visible = true;
+                        FluEIN.Enabled = false;
                     }
                     else if (vchDocId == "D286")
                     {
-                        hdnPlantmachinery_Name.Value = vchFileName;
-                        hyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hyVwPlantmachinery.Visible = true;
-                        lnkDPlantmachinery.Visible = true;
-                        lblPlantmachinery.Visible = true;
-                        flPlantmachinery.Enabled = false;
+                        HdnPlantmachinery_Name.Value = vchFileName;
+                        HyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HyVwPlantmachinery.Visible = true;
+                        LnkDPlantmachinery.Visible = true;
+                        LblPlantmachinery.Visible = true;
+                        FluPlantmachinery.Enabled = false;
                     }
                     else if (vchDocId == "D287")
                     {
-                        hdnCapitalInvst_Name.Value = vchFileName;
-                        hypVwCapitalInvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwCapitalInvst.Visible = true;
-                        lnkDCapitalInvst.Visible = true;
-                        lblCapitalInvst.Visible = true;
-                        flCapitalInvst.Enabled = false;
+                        HdnCapitalInvst_Name.Value = vchFileName;
+                        HypVwCapitalInvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwCapitalInvst.Visible = true;
+                        LnkDCapitalInvst.Visible = true;
+                        LblCapitalInvst.Visible = true;
+                        FluCapitalInvst.Enabled = false;
                     }
                     else if (vchDocId == "D288")
                     {
-                        hdnInvplantmachinary_name.Value = vchFileName;
-                        hypVwInvplantmachinary.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwInvplantmachinary.Visible = true;
-                        lnkDInvplantmachinary.Visible = true;
-                        lblInvplantmachinary.Visible = true;
-                        flInvplantmachinary.Enabled = false;
+                        HdnInvplantmachinary_Name.Value = vchFileName;
+                        HypVwInvplantmachinary.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwInvplantmachinary.Visible = true;
+                        LnkDInvplantmachinary.Visible = true;
+                        LblInvplantmachinary.Visible = true;
+                        FluInvplantmachinary.Enabled = false;
                     }
                     else if (vchDocId == "D289")
                     {
-                        hdnproposedprod_name.Value = vchFileName;
-                        hypVwproposedprod.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwproposedprod.Visible = true;
-                        lnkDproposedprod.Visible = true;
-                        lblproposedprod.Visible = true;
-                        flproposedprod.Enabled = false;
+                        HdnProposedprod_Name.Value = vchFileName;
+                        HypVwProposedprod.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwProposedprod.Visible = true;
+                        LnkDproposedprod.Visible = true;
+                        LblProposedprod.Visible = true;
+                        FluProposedprod.Enabled = false;
                     }
                     else if (vchDocId == "D290")
                     {
-                        hdnpresentstageimplemnt_name.Value = vchFileName;
-                        hypVwpresentstageimplemnt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwpresentstageimplemnt.Visible = true;
-                        lnkDpresentstageimplemnt.Visible = true;
-                        lblpresentstageimplemnt.Visible = true;
-                        flpresentstageimplemnt.Enabled = false;
+                        HdnPresentstageimplemnt_Name.Value = vchFileName;
+                        HypVwpresentstageimplemnt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwpresentstageimplemnt.Visible = true;
+                        LnkDpresentstageimplemnt.Visible = true;
+                        LblPresentstageimplemnt.Visible = true;
+                        FluPresentstageimplemnt.Enabled = false;
                     }
                     else if (vchDocId == "D291")
                     {
-                        hdnmigrantindustrial_name.Value = vchFileName;
-                        hypvwmigrantindustrial.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwmigrantindustrial.Visible = true;
-                        lnkDmigrantindustrial.Visible = true;
-                        lblmigrantindustrial.Visible = true;
-                        flmigrantindustrial.Enabled = false;
+                        HdnMigrantindustrial_Name.Value = vchFileName;
+                        HypvwMigrantindustrial.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwMigrantindustrial.Visible = true;
+                        LnkDmigrantindustrial.Visible = true;
+                        LblMigrantindustrial.Visible = true;
+                        FluMigrantindustrial.Enabled = false;
                     }
                     else if (vchDocId == "D292")
                     {
-                        hdnfixedcapitalinvst_name.Value = vchFileName;
-                        hypvwfixedcapitalinvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwfixedcapitalinvst.Visible = true;
-                        lnkDfixedcapitalinvst.Visible = true;
-                        lblfixedcapitalinvst.Visible = true;
-                        flfixedcapitalinvst.Enabled = false;
+                        HdnFixedcapitalinvst_Name.Value = vchFileName;
+                        HypvwFixedcapitalinvst.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwFixedcapitalinvst.Visible = true;
+                        LnkDfixedcapitalinvst.Visible = true;
+                        LblFixedcapitalinvst.Visible = true;
+                        FluFixedcapitalinvst.Enabled = false;
                     }
                     else if (vchDocId == "D293")
                     {
-                        hdncatagoryfalpriority_name.Value = vchFileName;
-                        hypvwcatagoryfalpriority.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwcatagoryfalpriority.Visible = true;
-                        lnkDcatagoryfalpriority.Visible = true;
-                        lblcatagoryfalpriority.Visible = true;
-                        flcatagoryfalpriority.Enabled = false;
+                        HdnCatagoryfalpriority_Name.Value = vchFileName;
+                        HypvwCatagoryfalpriority.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwCatagoryfalpriority.Visible = true;
+                        LnkDcatagoryfalpriority.Visible = true;
+                        LblCatagoryfalpriority.Visible = true;
+                        FluCatagoryfalpriority.Enabled = false;
                     }
 
                     else if (vchDocId == "D294")
                     {
-                        Powerattpost_name.Value = vchFileName;
-                        hypvwPowerattpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwPowerattpost.Visible = true;
-                        lnkDPowerattpost.Visible = true;
-                        lblPowerattpost.Visible = true;
-                        flPowerattpost.Enabled = false;
+                        HdnPowerattpost_Name.Value = vchFileName;
+                        HypvwPowerattpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwPowerattpost.Visible = true;
+                        LnkDPowerattpost.Visible = true;
+                        LblPowerattpost.Visible = true;
+                        FluPowerattPost.Enabled = false;
                     }
                     else if (vchDocId == "D295")
                     {
-                        hdnpporthrustcertificate_name.Value = vchFileName;
-                        hypvwpporthrustcertificate.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwpporthrustcertificate.Visible = true;
-                        lnkDpporthrustcertificate.Visible = true;
-                        lblpporthrustcertificate.Visible = true;
-                        flpporthrustcertificate.Enabled = false;
+                        HdnPporthrustcertificate_Name.Value = vchFileName;
+                        HypvwPporthrustcertificate.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwPporthrustcertificate.Visible = true;
+                        LnkDpporthrustcertificate.Visible = true;
+                        LblPporthrustcertificate.Visible = true;
+                        FluPporthrustcertificate.Enabled = false;
                     }
                     else if (vchDocId == "D296")
                     {
-                        hdncertofregpost_name.Value = vchFileName;
-                        hypvwcertofregpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwcertofregpost.Visible = true;
-                        lnkDcertofregpost.Visible = true;
-                        lblcertofregpost.Visible = true;
-                        flcertofregpost.Enabled = false;
+                        HdnCertofregpost_Name.Value = vchFileName;
+                        HypvwCertofregpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwCertofregpost.Visible = true;
+                        LnkDcertofregpost.Visible = true;
+                        LblCertofregpost.Visible = true;
+                        FluCertofregpost.Enabled = false;
                     }
                     else if (vchDocId == "D297")
                     {
-                        hdnAppDPRpost_name.Value = vchFileName;
-                        hypvwAppDPRpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwAppDPRpost.Visible = true;
-                        lnkDAppDPRpost.Visible = true;
-                        lblAppDPRpost.Visible = true;
-                        flAppDPRpost.Enabled = false;
+                        HdnAppDPRpost_Name.Value = vchFileName;
+                        HypvwAppDPRpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwAppDPRpost.Visible = true;
+                        LnkDAppDPRpost.Visible = true;
+                        LblAppDPRpost.Visible = true;
+                        FluAppDPRpost.Enabled = false;
                     }
                     else if (vchDocId == "D298")
                     {
-                        hdnPCorEINPost_name.Value = vchFileName;
-                        hypvwPCorEINPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwPCorEINPost.Visible = true;
-                        lnkDPCorEINPost.Visible = true;
-                        lblPCorEINPost.Visible = true;
-                        flPCorEINPost.Enabled = false;
+                        HdnPCorEINPost_Name.Value = vchFileName;
+                        HypvwPCorEINPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwPCorEINPost.Visible = true;
+                        LnkDPCorEINPost.Visible = true;
+                        LblPCorEINPost.Visible = true;
+                        FluPCorEINPost.Enabled = false;
                     }
                     else if (vchDocId == "D299")
                     {
-                        hdnloansancorFIappliedpost_name.Value = vchFileName;
-                        hypvwloansancorFIappliedpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwloansancorFIappliedpost.Visible = true;
-                        lnkDloansancorFIappliedpost.Visible = true;
-                        lblloansancorFIappliedpost.Visible = true;
-                        flloansancorFIappliedpost.Enabled = false;
+                        HdnLoansancorFIappliedpost_Name.Value = vchFileName;
+                        HypvwLoansancorFIappliedpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwLoansancorFIappliedpost.Visible = true;
+                        LnkDloansancorFIappliedpost.Visible = true;
+                        LblLoansancorFIappliedpost.Visible = true;
+                        FluLoansancorFIappliedpost.Enabled = false;
                     }
                     else if (vchDocId == "D300")
                     {
-                        hdnCapitalInvstPost_name.Value = vchFileName;
-                        hypvwCapitalInvstPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwCapitalInvstPost.Visible = true;
-                        lnkDCapitalInvstPost.Visible = true;
-                        lblCapitalInvstPost.Visible = true;
-                        flCapitalInvstPost.Enabled = false;
+                        HdnCapitalInvstPost_Name.Value = vchFileName;
+                        HypvwCapitalInvstPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwCapitalInvstPost.Visible = true;
+                        LnkDCapitalInvstPost.Visible = true;
+                        LblCapitalInvstPost.Visible = true;
+                        FluCapitalInvstPost.Enabled = false;
                     }
                     else if (vchDocId == "D301")
                     {
-                        hdnflInvplantmachinaryPost_name.Value = vchFileName;
-                        hypvwInvplantmachinaryPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwInvplantmachinaryPost.Visible = true;
-                        lnkDInvplantmachinaryPost.Visible = true;
-                        lblInvplantmachinaryPost.Visible = true;
-                        flInvplantmachinaryPost.Enabled = false;
+                        HdnInvplantmachinaryPost_Name.Value = vchFileName;
+                        HypvwInvplantmachinaryPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwInvplantmachinaryPost.Visible = true;
+                        LnkDInvplantmachinaryPost.Visible = true;
+                        LblInvplantmachinaryPost.Visible = true;
+                        FluInvplantmachinaryPost.Enabled = false;
 
                     }
                     else if (vchDocId == "D302")
                     {
-                        hdnPlantmachinerypost_name.Value = vchFileName;
-                        hypvwPlantmachinerypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwPlantmachinerypost.Visible = true;
-                        lnkDPlantmachinerypost.Visible = true;
-                        lblPlantmachinerypost.Visible = true;
-                        flPlantmachinerypost.Enabled = false;
+                        HdnPlantmachinerypost_Name.Value = vchFileName;
+                        HypvwPlantmachinerypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwPlantmachinerypost.Visible = true;
+                        LnkDPlantmachinerypost.Visible = true;
+                        LblPlantmachinerypost.Visible = true;
+                        FluPlantmachinerypost.Enabled = false;
 
                     }
                     else if (vchDocId == "D303")
                     {
-                        hdnproductionormanufactpost_name.Value = vchFileName;
-                        hypvwproductionormanufactpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwproductionormanufactpost.Visible = true;
-                        lnkDproductionormanufactpost.Visible = true;
-                        lblproductionormanufactpost.Visible = true;
-                        flproductionormanufactpost.Enabled = false;
+                        HdnProductionormanufactpost_Name.Value = vchFileName;
+                        HypvwProductionormanufactpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwProductionormanufactpost.Visible = true;
+                        LnkDproductionormanufactpost.Visible = true;
+                        LblProductionormanufactpost.Visible = true;
+                        FluProductionormanufactpost.Enabled = false;
 
                     }
                     else if (vchDocId == "D304")
                     {
-                        hdncatagoryfalprioritypost_name.Value = vchFileName;
-                        hypvwcatagoryfalprioritypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwcatagoryfalprioritypost.Visible = true;
-                        lnkDcatagoryfalprioritypost.Visible = true;
-                        lblcatagoryfalprioritypost.Visible = true;
-                        flcatagoryfalprioritypost.Enabled = false;
+                        HdnCatagoryfalprioritypost_Name.Value = vchFileName;
+                        HypvwCatagoryfalprioritypost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwCatagoryfalprioritypost.Visible = true;
+                        LnkDcatagoryfalprioritypost.Visible = true;
+                        LblCatagoryfalprioritypost.Visible = true;
+                        FluCatagoryfalprioritypost.Enabled = false;
 
                     }
                     else if (vchDocId == "D305")
                     {
-                        hdnclearancefromPCB_name.Value = vchFileName;
-                        hypvwclearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwclearancefromPCB.Visible = true;
-                        lnkDclearancefromPCB.Visible = true;
-                        lblclearancefromPCB.Visible = true;
-                        flclearancefromPCB.Enabled = false;
+                        HdnClearancefromPCB_Name.Value = vchFileName;
+                        HypvwClearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwClearancefromPCB.Visible = true;
+                        LnkDclearancefromPCB.Visible = true;
+                        LblClearancefromPCB.Visible = true;
+                        FluClearancefromPCB.Enabled = false;
 
                     }
                     else if (vchDocId == "D306")
                     {
-                        hdnmigratedindustunitpost_name.Value = vchFileName;
-                        hypvwmigratedindustunitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwmigratedindustunitpost.Visible = true;
-                        lnkDmigratedindustunitpost.Visible = true;
-                        lblmigratedindustunitpost.Visible = true;
-                        flmigratedindustunitpost.Enabled = false;
+                        HdnMigratedindustunitpost_Name.Value = vchFileName;
+                        HypvwMigratedindustunitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwMigratedindustunitpost.Visible = true;
+                        LnkDmigratedindustunitpost.Visible = true;
+                        LblMigratedindustunitpost.Visible = true;
+                        FluMigratedindustunitpost.Enabled = false;
 
                     }
                     else if (vchDocId == "D307")
                     {
-                        hdnproductionforMSMEPost_name.Value = vchFileName;
-                        hypvwproductionforMSMEPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwproductionforMSMEPost.Visible = true;
-                        lnkDproductionforMSMEPost.Visible = true;
-                        lblproductionforMSMEPost.Visible = true;
-                        flproductionforMSMEPost.Enabled = false;
+                        HdnProductionforMSMEPost_Name.Value = vchFileName;
+                        HypvwProductionforMSMEPost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwProductionforMSMEPost.Visible = true;
+                        LnkDproductionforMSMEPost.Visible = true;
+                        LblProductionforMSMEPost.Visible = true;
+                        FluProductionforMSMEPost.Enabled = false;
                     }
                     else if (vchDocId == "D308")
                     {
-                        hdnproductionforMSMEPost_name.Value = vchFileName;
-                        hypvwEmpoweredcommitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwEmpoweredcommitpost.Visible = true;
-                        lnkDEmpoweredcommitpost.Visible = true;
-                        lblEmpoweredcommitpost.Visible = true;
-                        flEmpoweredcommitpost.Enabled = false;
+                        HdnEmpoweredcommitpost_Name.Value = vchFileName;
+                        HypvwEmpoweredcommitpost.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwEmpoweredcommitpost.Visible = true;
+                        LnkDEmpoweredcommitpost.Visible = true;
+                        LblEmpoweredcommitpost.Visible = true;
+                        FluEmpoweredcommitpost.Enabled = false;
                     }
-
                 }
-
             }
             #endregion
         }
@@ -579,16 +568,15 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
     private void FillData()
     {
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
-        Basic_Unit_Details_Entity objEntity = new Basic_Unit_Details_Entity();
-        DataSet ds = new DataSet();
+        Basic_Unit_Details_Entity objEntity = new Basic_Unit_Details_Entity();       
         try
         {
             objEntity.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
-            ds = objBAL.Basic_Unit_Details_V(objEntity);
+            DataSet ds = objBAL.Basic_Unit_Details_V(objEntity);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 /*----------------------------------------------------------------------------*/
-                ///// Common Information 
+                /// Common Information 
 
                 string strDataSource = ds.Tables[0].Rows[0]["vch_Data_Source"].ToString();
                 string strPcStatus = ds.Tables[0].Rows[0]["vch_PC_Status"].ToString();
@@ -600,18 +588,15 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 string strNewPcFound = ds.Tables[0].Rows[0]["vch_New_PC_Found"].ToString();
 
                 /*----------------------------------------------------------------------------*/
-                ////// If new PC found then assign strDataSource=PC
-                ////// Only when data present in basic table and a new PC found 
+                /// If new PC found then assign strDataSource=PC
+                /// Only when data present in basic table and a new PC found 
                 /*----------------------------------------------------------------------------*/
-                if (strDataSource == "BASIC")
+                if (strDataSource == "BASIC" && strNewPcFound == "Y")
                 {
-                    if (strNewPcFound == "Y")
-                    {
                         strDataSource = "PC";
-                    }
                 }
                 /*----------------------------------------------------------------------------*/
-                ////// Value Assigned to HiddenField for use in Validation
+                /// Value Assigned to HiddenField for use in Validation
                 Hid_Is_Exist_Before.Value = strIsExistBefore;
                 Hid_Is_Exist_After.Value = strIsExistAfter;
                 Hid_Data_Source.Value = strDataSource;
@@ -1061,7 +1046,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
     {
         ModalPopupExtender2.Hide();
 
-
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
         Basic_Unit_Details_Entity objEntity1 = new Basic_Unit_Details_Entity();
 
@@ -1070,7 +1054,9 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region Production Item Before
 
             /*---------------------------------------------------------------------*/
-            ////// Add Production Item Before
+            /// Add Production Item Before
+            /*---------------------------------------------------------------------*/
+
             List<BasicProductionItemBefore> listProdBefore = new List<BasicProductionItemBefore>();
 
             for (int i = 0; i < Grd_Production_Before.Rows.Count; i++)
@@ -1100,11 +1086,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             #endregion
 
-
             #region Term Loan
             /*---------------------------------------------------------------------*/
-            ////// Add Term Loan
-
+            /// Add Term Loan
+            /*---------------------------------------------------------------------*/
             List<BasicTermLoan> listTL = new List<BasicTermLoan>();
 
             for (int i = 0; i < Grd_TL.Rows.Count; i++)
@@ -1171,7 +1156,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             /*---------------------------------------------------------------------*/
             ///Industrial Unit Details Section
-
+            /*---------------------------------------------------------------------*/
             objEntity1.strEnterpriseName = Txt_EnterPrise_Name.Text;
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
             objEntity1.strIndustryAddress = Txt_Industry_Address.Text;
@@ -1214,7 +1199,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region InvestmentDetailsSection
 
             /*----------------------------------------------------------*/
-            ////// Investment Details Section
+            /// Investment Details Section
             /*----------------------------------------------------------*/
             objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_total_emp_Number.Text == "" ? "0" : Txt_total_emp_Number.Text);
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text);
@@ -1267,7 +1252,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.decMarginMoneyForworkingAmtBefore = decMarginMoneyForworkingBefore;
 
             /*---------------------------------------------------------------------*/
-            ///// Investment Details (After)
+            /// Investment Details (After)
             /*---------------------------------------------------------------------*/
             decimal decLandAfter = 0;
             decimal decBuildingAfter = 0;
@@ -1338,10 +1323,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             /*---------------------------------------------------------------------*/
             /// Other Document Section
             /*---------------------------------------------------------------------*/         
-            if (hdnPowerattpre_name.Value != "")
+            if (HdnPowerattpre_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyPreDocCode = hdnPowerattpre_code.Value;
-                objEntity1.strPworofAttorneyPre = hdnPowerattpre_name.Value;
+                objEntity1.strPworofAttorneyPreDocCode = HdnPowerattpre_Code.Value;
+                objEntity1.strPworofAttorneyPre = HdnPowerattpre_Name.Value;
             }
             else
             {
@@ -1349,10 +1334,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPre = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCodepre = certofreg_code.Value;
-                objEntity1.strCertificateofregistrationpre = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCodepre = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistrationpre = HdnCertofreg_Name.Value;
             }
             else
             {
@@ -1360,10 +1345,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationpre = null;
             }
 
-            if (hdnAppDPR_Name.Value != "")
+            if (HdnAppDPR_Name.Value != "")
             {
-                objEntity1.strApproveDPRDocCodePre = hdnAppDPR_Code.Value;
-                objEntity1.strApproveDPRPre = hdnAppDPR_Name.Value;
+                objEntity1.strApproveDPRDocCodePre = HdnAppDPR_Code.Value;
+                objEntity1.strApproveDPRPre = HdnAppDPR_Name.Value;
             }
             else
             {
@@ -1371,10 +1356,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRPre = null;
             }
 
-            if (hdnEIN_Name.Value != "")
+            if (HdnEIN_Name.Value != "")
             {
-                objEntity1.strEINapprovalDocCodePre = hdnEIN_Code.Value;
-                objEntity1.strEINapprovalPre = hdnEIN_Name.Value;
+                objEntity1.strEINapprovalDocCodePre = HdnEIN_Code.Value;
+                objEntity1.strEINapprovalPre = HdnEIN_Name.Value;
             }
             else
             {
@@ -1382,10 +1367,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEINapprovalPre = null;
             }
 
-            if (hdnPlantmachinery_Name.Value != "")
+            if (HdnPlantmachinery_Name.Value != "")
             {
-                objEntity1.strBalacingEquipmentDocCodePre = hdnPlantmachinery_Code.Value;
-                objEntity1.strBalacingEquipmentPre = hdnPlantmachinery_Name.Value;
+                objEntity1.strBalacingEquipmentDocCodePre = HdnPlantmachinery_Code.Value;
+                objEntity1.strBalacingEquipmentPre = HdnPlantmachinery_Name.Value;
             }
             else
             {
@@ -1393,10 +1378,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentPre = null;
             }
 
-            if (hdnCapitalInvst_Name.Value != "")
+            if (HdnCapitalInvst_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCodePre = hdnCapitalInvst_Code.Value;
-                objEntity1.strCapitalInvstPre = hdnCapitalInvst_Name.Value;
+                objEntity1.strCapitalInvstDocCodePre = HdnCapitalInvst_Code.Value;
+                objEntity1.strCapitalInvstPre = HdnCapitalInvst_Name.Value;
             }
             else
             {
@@ -1404,10 +1389,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstPre = null;
             }
 
-            if (hdnInvplantmachinary_name.Value != "")
+            if (HdnInvplantmachinary_Name.Value != "")
             {
-                objEntity1.strInvestmentplantmachinaryDocCodePre = hdnInvplantmachinary_code.Value;
-                objEntity1.strInvestmentplantmachinaryPre = hdnInvplantmachinary_name.Value;
+                objEntity1.strInvestmentplantmachinaryDocCodePre = HdnInvplantmachinary_Code.Value;
+                objEntity1.strInvestmentplantmachinaryPre = HdnInvplantmachinary_Name.Value;
             }
             else
             {
@@ -1415,10 +1400,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryPre = null;
             }
 
-            if (hdnproposedprod_name.Value != "")
+            if (HdnProposedprod_Name.Value != "")
             {
-                objEntity1.strProposedprodDocCodePre = hdnproposedprod_code.Value;
-                objEntity1.strProposedprodPre = hdnproposedprod_name.Value;
+                objEntity1.strProposedprodDocCodePre = HdnProposedprod_Code.Value;
+                objEntity1.strProposedprodPre = HdnProposedprod_Name.Value;
             }
             else
             {
@@ -1426,10 +1411,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strProposedprodPre = null;
             }
 
-            if (hdnpresentstageimplemnt_name.Value != "")
+            if (HdnPresentstageimplemnt_Name.Value != "")
             {
-                objEntity1.strPresentStageImplentDocCodePre = hdnpresentstageimplemnt_code.Value;
-                objEntity1.strPresentStageImplentPre = hdnpresentstageimplemnt_name.Value;
+                objEntity1.strPresentStageImplentDocCodePre = HdnPresentstageimplemnt_Code.Value;
+                objEntity1.strPresentStageImplentPre = HdnPresentstageimplemnt_Name.Value;
             }
             else
             {
@@ -1437,10 +1422,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPresentStageImplentPre = null;
             }
 
-            if (hdnmigrantindustrial_name.Value != "")
+            if (HdnMigrantindustrial_Name.Value != "")
             {
-                objEntity1.strMigrantIndustryunitDocCodePre = hdnmigrantindustrial_code.Value;
-                objEntity1.strMigrantIndustryunitPre = hdnmigrantindustrial_name.Value;
+                objEntity1.strMigrantIndustryunitDocCodePre = HdnMigrantindustrial_Code.Value;
+                objEntity1.strMigrantIndustryunitPre = HdnMigrantindustrial_Name.Value;
             }
             else
             {
@@ -1448,10 +1433,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitPre = null;
             }
 
-            if (hdnfixedcapitalinvst_name.Value != "")
+            if (HdnFixedcapitalinvst_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCodePre = hdnfixedcapitalinvst_code.Value;
-                objEntity1.strfixedcapitalinvstPre = hdnfixedcapitalinvst_name.Value;
+                objEntity1.strfixedcapitalinvstDocCodePre = HdnFixedcapitalinvst_Code.Value;
+                objEntity1.strfixedcapitalinvstPre = HdnFixedcapitalinvst_Name.Value;
             }
             else
             {
@@ -1459,10 +1444,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstPre = null;
             }
 
-            if (hdncatagoryfalpriority_name.Value != "")
+            if (HdnCatagoryfalpriority_Name.Value != "")
             {
-                objEntity1.strPriorityorThrustsectorDocCodePre = hdncatagoryfalpriority_code.Value;
-                objEntity1.strPriorityorThrustsectorPre = hdncatagoryfalpriority_name.Value;
+                objEntity1.strPriorityorThrustsectorDocCodePre = HdnCatagoryfalpriority_Code.Value;
+                objEntity1.strPriorityorThrustsectorPre = HdnCatagoryfalpriority_Name.Value;
             }
             else
             {
@@ -1470,10 +1455,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorPre = null;
             }
 
-            if (Powerattpost_name.Value != "")
+            if (HdnPowerattpost_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyPostDocCode = hdnPowerattpost_code.Value;
-                objEntity1.strPworofAttorneyPost = Powerattpost_name.Value;
+                objEntity1.strPworofAttorneyPostDocCode = HdnPowerattpost_Code.Value;
+                objEntity1.strPworofAttorneyPost = HdnPowerattpost_Name.Value;
             }
             else
             {
@@ -1481,10 +1466,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPost = null;
             }
 
-            if (hdnpporthrustcertificate_name.Value != "")
+            if (HdnPporthrustcertificate_Name.Value != "")
             {
-                objEntity1.strPPorThrustStatusCertPostDocCode = hdnpporthrustcertificate_code.Value;
-                objEntity1.strPPorThrustStatusCertPost = hdnpporthrustcertificate_name.Value;
+                objEntity1.strPPorThrustStatusCertPostDocCode = HdnPporthrustcertificate_Code.Value;
+                objEntity1.strPPorThrustStatusCertPost = HdnPporthrustcertificate_Name.Value;
             }
             else
             {
@@ -1492,10 +1477,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPPorThrustStatusCertPost = null;
             }
 
-            if (hdncertofregpost_name.Value != "")
+            if (HdnCertofregpost_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCodepost = hdncertofregpost_code.Value;
-                objEntity1.strCertificateofregistrationpost = hdncertofregpost_name.Value;
+                objEntity1.strCertificateofregistrationDocCodepost = HdnCertofregpost_Code.Value;
+                objEntity1.strCertificateofregistrationpost = HdnCertofregpost_Name.Value;
             }
             else
             {
@@ -1503,10 +1488,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationpost = null;
             }
 
-            if (hdnAppDPRpost_name.Value != "")
+            if (HdnAppDPRpost_Name.Value != "")
             {
-                objEntity1.strApproveDPRDocCodePost = hdnAppDPRpost_code.Value;
-                objEntity1.strApproveDPRPost = hdnAppDPRpost_name.Value;
+                objEntity1.strApproveDPRDocCodePost = HdnAppDPRpost_Code.Value;
+                objEntity1.strApproveDPRPost = HdnAppDPRpost_Name.Value;
             }
             else
             {
@@ -1514,10 +1499,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRPost = null;
             }
 
-            if (hdnPCorEINPost_name.Value != "")
+            if (HdnPCorEINPost_Name.Value != "")
             {
-                objEntity1.strPcDocCodePost = hdnPCorEINPost_code.Value;
-                objEntity1.strPcPost = hdnPCorEINPost_name.Value;
+                objEntity1.strPcDocCodePost = HdnPCorEINPost_Code.Value;
+                objEntity1.strPcPost = HdnPCorEINPost_Name.Value;
             }
             else
             {
@@ -1525,10 +1510,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPcPost = null;
             }
 
-            if (hdnloansancorFIappliedpost_name.Value != "")
+            if (HdnLoansancorFIappliedpost_Name.Value != "")
             {
-                objEntity1.strSanctionbankorFIDocCodePost = hdnloansancorFIappliedpost_code.Value;
-                objEntity1.strSanctionbankorFIPost = hdnloansancorFIappliedpost_name.Value;
+                objEntity1.strSanctionbankorFIDocCodePost = HdnLoansancorFIappliedpost_Code.Value;
+                objEntity1.strSanctionbankorFIPost = HdnLoansancorFIappliedpost_Name.Value;
             }
             else
             {
@@ -1536,10 +1521,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strSanctionbankorFIPost = null;
             }
 
-            if (hdnCapitalInvstPost_name.Value != "")
+            if (HdnCapitalInvstPost_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCodePost = hdnCapitalInvstPost_code.Value;
-                objEntity1.strCapitalInvstPost = hdnCapitalInvstPost_name.Value;
+                objEntity1.strCapitalInvstDocCodePost = HdnCapitalInvstPost_Code.Value;
+                objEntity1.strCapitalInvstPost = HdnCapitalInvstPost_Name.Value;
             }
             else
             {
@@ -1547,10 +1532,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstPost = null;
             }
 
-            if (hdnflInvplantmachinaryPost_name.Value != "")
+            if (HdnInvplantmachinaryPost_Name.Value != "")
             {
-                objEntity1.strInvestmentplantmachinaryDocCodePost = hdnflInvplantmachinaryPost_code.Value;
-                objEntity1.strInvestmentplantmachinaryPost = hdnflInvplantmachinaryPost_name.Value;
+                objEntity1.strInvestmentplantmachinaryDocCodePost = HdnInvplantmachinaryPost_Code.Value;
+                objEntity1.strInvestmentplantmachinaryPost = HdnInvplantmachinaryPost_Name.Value;
             }
             else
             {
@@ -1558,10 +1543,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryPost = null;
             }
 
-            if (hdnPlantmachinerypost_name.Value != "")
+            if (HdnPlantmachinerypost_Name.Value != "")
             {
-                objEntity1.strBalacingEquipmentDocCodePost = hdnPlantmachinerypost_code.Value;
-                objEntity1.strBalacingEquipmentPost = hdnPlantmachinerypost_name.Value;
+                objEntity1.strBalacingEquipmentDocCodePost = HdnPlantmachinerypost_Code.Value;
+                objEntity1.strBalacingEquipmentPost = HdnPlantmachinerypost_Name.Value;
             }
             else
             {
@@ -1569,10 +1554,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentPost = null;
             }
 
-            if (hdnproductionormanufactpost_name.Value != "")
+            if (HdnProductionormanufactpost_Name.Value != "")
             {
-                objEntity1.strServiceProvideDocCodePost = hdnproductionormanufactpost_code.Value;
-                objEntity1.strServiceProvidePost = hdnproductionormanufactpost_name.Value;
+                objEntity1.strServiceProvideDocCodePost = HdnProductionormanufactpost_Code.Value;
+                objEntity1.strServiceProvidePost = HdnProductionormanufactpost_Name.Value;
             }
             else
             {
@@ -1580,10 +1565,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strServiceProvidePost = null;
             }
 
-            if (hdncatagoryfalprioritypost_name.Value != "")
+            if (HdnCatagoryfalprioritypost_Name.Value != "")
             {
-                objEntity1.strPriorityorThrustsectorDocCodePost = hdncatagoryfalprioritypost_code.Value;
-                objEntity1.strPriorityorThrustsectorPost = hdncatagoryfalprioritypost_name.Value;
+                objEntity1.strPriorityorThrustsectorDocCodePost = HdnCatagoryfalprioritypost_Code.Value;
+                objEntity1.strPriorityorThrustsectorPost = HdnCatagoryfalprioritypost_Name.Value;
             }
             else
             {
@@ -1591,10 +1576,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorPost = null;
             }
 
-            if (hdnclearancefromPCB_name.Value != "")
+            if (HdnClearancefromPCB_Name.Value != "")
             {
-                objEntity1.strClearancefromPCBDocCodePost = hdnclearancefromPCB_code.Value;
-                objEntity1.strClearancefromPCBPost = hdnclearancefromPCB_name.Value;
+                objEntity1.strClearancefromPCBDocCodePost = HdnClearancefromPCB_Code.Value;
+                objEntity1.strClearancefromPCBPost = HdnClearancefromPCB_Name.Value;
             }
             else
             {
@@ -1602,10 +1587,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strClearancefromPCBPost = null;
             }
 
-            if (hdnmigratedindustunitpost_name.Value != "")
+            if (HdnMigratedindustunitpost_Name.Value != "")
             {
-                objEntity1.strMigrantIndustryunitDocCodePost = hdnmigratedindustunitpost_code.Value;
-                objEntity1.strMigrantIndustryunitPost = hdnmigratedindustunitpost_name.Value;
+                objEntity1.strMigrantIndustryunitDocCodePost = HdnMigratedindustunitpost_Code.Value;
+                objEntity1.strMigrantIndustryunitPost = HdnMigratedindustunitpost_Name.Value;
             }
             else
             {
@@ -1613,10 +1598,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitPost = null;
             }
 
-            if (hdnproductionforMSMEPost_name.Value != "")
+            if (HdnProductionforMSMEPost_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCodePost = hdnproductionforMSMEPost_code.Value;
-                objEntity1.strfixedcapitalinvstPost = hdnproductionforMSMEPost_name.Value;
+                objEntity1.strfixedcapitalinvstDocCodePost = HdnProductionforMSMEPost_Code.Value;
+                objEntity1.strfixedcapitalinvstPost = HdnProductionforMSMEPost_Name.Value;
             }
             else
             {
@@ -1624,10 +1609,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstPost = null;
             }
 
-            if (hdnEmpoweredcommitpost_name.Value != "")
+            if (HdnEmpoweredcommitpost_Name.Value != "")
             {
-                objEntity1.strEmpoweredCommitteeDocCodePost = hdnEmpoweredcommitpost_code.Value;
-                objEntity1.strEmpoweredCommitteePost = hdnEmpoweredcommitpost_name.Value;
+                objEntity1.strEmpoweredCommitteeDocCodePost = HdnEmpoweredcommitpost_Code.Value;
+                objEntity1.strEmpoweredCommitteePost = HdnEmpoweredcommitpost_Name.Value;
             }
             else
             {
@@ -1724,223 +1709,220 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkUPowerattpre.ID))
+            if (string.Equals(lnk.ID, LnkUPowerattpre.ID))
             {
-                if (flPowerattpre.HasFile)
+                if (FluPowerattpre.HasFile)
                 {
 
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PoweofAttorneyPre";
-                    UploadDocument(flPowerattpre, hdnPowerattpre_name, strFileName, hypPowerattpre, lblPowerattpre, lnkDPowerattpre, "InctBasicDoc");
+                    UploadDocument(FluPowerattpre, HdnPowerattpre_Name, strFileName, HypPowerattpre, LblPowerattpre, LnkDPowerattpre, "InctBasicDoc");
                 }
 
             }
-            else if (string.Equals(lnk.ID, lnkUcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkUCertofreg.ID))
             {
-                if (flcertofreg.HasFile)
+                if (FluCertofreg.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_MEMORANDUMPRE";
-                    UploadDocument(flcertofreg, certofreg_name, strFileName, hypVwcertofreg, lblcertofreg, lnkDcertofreg, "InctBasicDoc");
+                    UploadDocument(FluCertofreg, HdnCertofreg_Name, strFileName, HypvwCertofreg, LblCertofreg, LnkDCertofreg, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUAppDPR.ID))
+            else if (string.Equals(lnk.ID, LnkUAppDPR.ID))
             {
-                if (flAppDPR.HasFile)
+                if (FlAppDPR.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_DPRPRE";
-                    UploadDocument(flAppDPR, hdnAppDPR_Name, strFileName, hypVwAppDPR, lblAppDPR, lnkDAppDPR, "InctBasicDoc");
+                    UploadDocument(FlAppDPR, HdnAppDPR_Name, strFileName, HypVwAppDPR, LblAppDPR, LnkDAppDPR, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUEIN.ID))
+            else if (string.Equals(lnk.ID, LnkUEIN.ID))
             {
-                if (flEIN.HasFile)
+                if (FluEIN.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_EINPRE";
-                    UploadDocument(flEIN, hdnEIN_Name, strFileName, hypVwEIN, lblEIN, lnkDEIN, "InctBasicDoc");
+                    UploadDocument(FluEIN, HdnEIN_Name, strFileName, HypVwEIN, LblEIN, LnkDEIN, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPlantmachinery.ID))
+            else if (string.Equals(lnk.ID, LnkUPlantmachinery.ID))
             {
-                if (flPlantmachinery.HasFile)
+                if (FluPlantmachinery.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_Plant&MachineryPre";
-                    UploadDocument(flPlantmachinery, hdnPlantmachinery_Name, strFileName, hyVwPlantmachinery, lblPlantmachinery, lnkDPlantmachinery, "InctBasicDoc");
+                    UploadDocument(FluPlantmachinery, HdnPlantmachinery_Name, strFileName, HyVwPlantmachinery, LblPlantmachinery, LnkDPlantmachinery, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUCapitalInvst.ID))
+            else if (string.Equals(lnk.ID, LnkUCapitalInvst.ID))
             {
-                if (flCapitalInvst.HasFile)
+                if (FluCapitalInvst.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_CapitalInvestmentPre";
-                    UploadDocument(flCapitalInvst, hdnCapitalInvst_Name, strFileName, hypVwCapitalInvst, lblCapitalInvst, lnkDCapitalInvst, "InctBasicDoc");
+                    UploadDocument(FluCapitalInvst, HdnCapitalInvst_Name, strFileName, HypVwCapitalInvst, LblCapitalInvst, LnkDCapitalInvst, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUInvplantmachinary.ID))
+            else if (string.Equals(lnk.ID, LnkUInvplantmachinary.ID))
             {
-                if (flInvplantmachinary.HasFile)
+                if (FluInvplantmachinary.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_IvtPlant&machineryPre";
-                    UploadDocument(flInvplantmachinary, hdnInvplantmachinary_name, strFileName, hypVwInvplantmachinary, lblInvplantmachinary, lnkDInvplantmachinary, "InctBasicDoc");
+                    UploadDocument(FluInvplantmachinary, HdnInvplantmachinary_Name, strFileName, HypVwInvplantmachinary, LblInvplantmachinary, LnkDInvplantmachinary, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUproposedprod.ID))
+            else if (string.Equals(lnk.ID, LnkUproposedprod.ID))
             {
-                if (flproposedprod.HasFile)
+                if (FluProposedprod.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_ProposedprodPre";
-                    UploadDocument(flproposedprod, hdnproposedprod_name, strFileName, hypVwproposedprod, lblproposedprod, lnkDproposedprod, "InctBasicDoc");
+                    UploadDocument(FluProposedprod, HdnProposedprod_Name, strFileName, HypVwProposedprod, LblProposedprod, LnkDproposedprod, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUpresentstageimplemnt.ID))
+            else if (string.Equals(lnk.ID, LnkUpresentstageimplemnt.ID))
             {
-                if (flpresentstageimplemnt.HasFile)
+                if (FluPresentstageimplemnt.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PresentStageImplementationPre";
-                    UploadDocument(flpresentstageimplemnt, hdnpresentstageimplemnt_name, strFileName, hypVwpresentstageimplemnt, lblpresentstageimplemnt, lnkDpresentstageimplemnt, "InctBasicDoc");
+                    UploadDocument(FluPresentstageimplemnt, HdnPresentstageimplemnt_Name, strFileName, HypVwpresentstageimplemnt, LblPresentstageimplemnt, LnkDpresentstageimplemnt, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUmigrantindustrial.ID))
+            else if (string.Equals(lnk.ID, LnkUmigrantindustrial.ID))
             {
-                if (flmigrantindustrial.HasFile)
+                if (FluMigrantindustrial.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_MigrantindustrialPre";
-                    UploadDocument(flmigrantindustrial, hdnmigrantindustrial_name, strFileName, hypvwmigrantindustrial, lblmigrantindustrial, lnkDmigrantindustrial, "InctBasicDoc");
+                    UploadDocument(FluMigrantindustrial, HdnMigrantindustrial_Name, strFileName, HypvwMigrantindustrial, LblMigrantindustrial, LnkDmigrantindustrial, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUfixedcapitalinvst.ID))
+            else if (string.Equals(lnk.ID, LnkUfixedcapitalinvst.ID))
             {
-                if (flfixedcapitalinvst.HasFile)
+                if (FluFixedcapitalinvst.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_FixedcapitalinvstPre";
-                    UploadDocument(flfixedcapitalinvst, hdnfixedcapitalinvst_name, strFileName, hypvwfixedcapitalinvst, lblfixedcapitalinvst, lnkDfixedcapitalinvst, "InctBasicDoc");
+                    UploadDocument(FluFixedcapitalinvst, HdnFixedcapitalinvst_Name, strFileName, HypvwFixedcapitalinvst, LblFixedcapitalinvst, LnkDfixedcapitalinvst, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUcatagoryfalpriority.ID))
+            else if (string.Equals(lnk.ID, LnkUcatagoryfalpriority.ID))
             {
-                if (flcatagoryfalpriority.HasFile)
+                if (FluCatagoryfalpriority.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_CatagoryfalpriorityPre";
-                    UploadDocument(flcatagoryfalpriority, hdncatagoryfalpriority_name, strFileName, hypvwcatagoryfalpriority, lblcatagoryfalpriority, lnkDcatagoryfalpriority, "InctBasicDoc");
+                    UploadDocument(FluCatagoryfalpriority, HdnCatagoryfalpriority_Name, strFileName, HypvwCatagoryfalpriority, LblCatagoryfalpriority, LnkDcatagoryfalpriority, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPowerattpost.ID))
+            else if (string.Equals(lnk.ID, LnkUPowerattpost.ID))
             {
-                if (flPowerattpost.HasFile)
+                if (FluPowerattPost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PoweofAttorneypost";
-                    UploadDocument(flPowerattpost, Powerattpost_name, strFileName, hypvwPowerattpost, lblPowerattpost, lnkDPowerattpost, "InctBasicDoc");
+                    UploadDocument(FluPowerattPost, HdnPowerattpost_Name, strFileName, HypvwPowerattpost, LblPowerattpost, LnkDPowerattpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUpporthrustcertificate.ID))
+            else if (string.Equals(lnk.ID, LnkUpporthrustcertificate.ID))
             {
-                if (flpporthrustcertificate.HasFile)
+                if (FluPporthrustcertificate.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "PPorthrustcertificatePost";
-                    UploadDocument(flpporthrustcertificate, hdnpporthrustcertificate_name, strFileName, hypvwpporthrustcertificate, lblpporthrustcertificate, lnkDpporthrustcertificate, "InctBasicDoc");
+                    UploadDocument(FluPporthrustcertificate, HdnPporthrustcertificate_Name, strFileName, HypvwPporthrustcertificate, LblPporthrustcertificate, LnkDpporthrustcertificate, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUcertofregpost.ID))
+            else if (string.Equals(lnk.ID, LnkUcertofregpost.ID))
             {
-                if (flcertofregpost.HasFile)
+                if (FluCertofregpost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Certofregpost";
-                    UploadDocument(flcertofregpost, hdncertofregpost_name, strFileName, hypvwcertofregpost, lblcertofregpost, lnkDcertofregpost, "InctBasicDoc");
+                    UploadDocument(FluCertofregpost, HdnCertofregpost_Name, strFileName, HypvwCertofregpost, LblCertofregpost, LnkDcertofregpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUAppDPRpost.ID))
+            else if (string.Equals(lnk.ID, LnkUAppDPRpost.ID))
             {
-                if (flAppDPRpost.HasFile)
+                if (FluAppDPRpost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "AppDPRpost";
-                    UploadDocument(flAppDPRpost, hdnAppDPRpost_name, strFileName, hypvwAppDPRpost, lblAppDPRpost, lnkDAppDPRpost, "InctBasicDoc");
+                    UploadDocument(FluAppDPRpost, HdnAppDPRpost_Name, strFileName, HypvwAppDPRpost, LblAppDPRpost, LnkDAppDPRpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPCorEINPost.ID))
+            else if (string.Equals(lnk.ID, LnkUPCorEINPost.ID))
             {
-                if (flPCorEINPost.HasFile)
+                if (FluPCorEINPost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "PCorEINPost";
-                    UploadDocument(flPCorEINPost, hdnPCorEINPost_name, strFileName, hypvwPCorEINPost, lblPCorEINPost, lnkDPCorEINPost, "InctBasicDoc");
+                    UploadDocument(FluPCorEINPost, HdnPCorEINPost_Name, strFileName, HypvwPCorEINPost, LblPCorEINPost, LnkDPCorEINPost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUloansancorFIappliedpost.ID))
+            else if (string.Equals(lnk.ID, LnkUloansancorFIappliedpost.ID))
             {
-                if (flloansancorFIappliedpost.HasFile)
+                if (FluLoansancorFIappliedpost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "LoansancorFIappliedpost";
-                    UploadDocument(flloansancorFIappliedpost, hdnloansancorFIappliedpost_name, strFileName, hypvwloansancorFIappliedpost, lblloansancorFIappliedpost, lnkDloansancorFIappliedpost, "InctBasicDoc");
+                    UploadDocument(FluLoansancorFIappliedpost, HdnLoansancorFIappliedpost_Name, strFileName, HypvwLoansancorFIappliedpost, LblLoansancorFIappliedpost, LnkDloansancorFIappliedpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUCapitalInvstPost.ID))
+            else if (string.Equals(lnk.ID, LnkUCapitalInvstPost.ID))
             {
-                if (flCapitalInvstPost.HasFile)
+                if (FluCapitalInvstPost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "CapitalInvstPost";
-                    UploadDocument(flCapitalInvstPost, hdnCapitalInvstPost_name, strFileName, hypvwCapitalInvstPost, lblCapitalInvstPost, lnkDCapitalInvstPost, "InctBasicDoc");
+                    UploadDocument(FluCapitalInvstPost, HdnCapitalInvstPost_Name, strFileName, HypvwCapitalInvstPost, LblCapitalInvstPost, LnkDCapitalInvstPost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUInvplantmachinaryPost.ID))
+            else if (string.Equals(lnk.ID, LnkUInvplantmachinaryPost.ID))
             {
-                if (flInvplantmachinaryPost.HasFile)
+                if (FluInvplantmachinaryPost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "InvplantmachinaryPost";
-                    UploadDocument(flInvplantmachinaryPost, hdnflInvplantmachinaryPost_name, strFileName, hypvwInvplantmachinaryPost, lblInvplantmachinaryPost, lnkDInvplantmachinaryPost, "InctBasicDoc");
+                    UploadDocument(FluInvplantmachinaryPost, HdnInvplantmachinaryPost_Name, strFileName, HypvwInvplantmachinaryPost, LblInvplantmachinaryPost, LnkDInvplantmachinaryPost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPlantmachinerypost.ID))
+            else if (string.Equals(lnk.ID, LnkUPlantmachinerypost.ID))
             {
-                if (flPlantmachinerypost.HasFile)
+                if (FluPlantmachinerypost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Plantmachinerypost";
-                    UploadDocument(flPlantmachinerypost, hdnPlantmachinerypost_name, strFileName, hypvwPlantmachinerypost, lblPlantmachinerypost, lnkDPlantmachinerypost, "InctBasicDoc");
+                    UploadDocument(FluPlantmachinerypost, HdnPlantmachinerypost_Name, strFileName, HypvwPlantmachinerypost, LblPlantmachinerypost, LnkDPlantmachinerypost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUproductionormanufactpost.ID))
+            else if (string.Equals(lnk.ID, LnkUproductionormanufactpost.ID))
             {
-                if (flproductionormanufactpost.HasFile)
+                if (FluProductionormanufactpost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Productionormanufactpost";
-                    UploadDocument(flproductionormanufactpost, hdnproductionormanufactpost_name, strFileName, hypvwproductionormanufactpost, lblproductionormanufactpost, lnkDproductionormanufactpost, "InctBasicDoc");
+                    UploadDocument(FluProductionormanufactpost, HdnProductionormanufactpost_Name, strFileName, HypvwProductionormanufactpost, LblProductionormanufactpost, LnkDproductionormanufactpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUcatagoryfalprioritypost.ID))
+            else if (string.Equals(lnk.ID, LnkUcatagoryfalprioritypost.ID))
             {
-                if (flcatagoryfalprioritypost.HasFile)
+                if (FluCatagoryfalprioritypost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Catagoryfalprioritypost";
-                    UploadDocument(flcatagoryfalprioritypost, hdncatagoryfalprioritypost_name, strFileName, hypvwcatagoryfalprioritypost, lblcatagoryfalprioritypost, lnkDcatagoryfalprioritypost, "InctBasicDoc");
+                    UploadDocument(FluCatagoryfalprioritypost, HdnCatagoryfalprioritypost_Name, strFileName, HypvwCatagoryfalprioritypost, LblCatagoryfalprioritypost, LnkDcatagoryfalprioritypost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUclearancefromPCB.ID))
+            else if (string.Equals(lnk.ID, LnkUclearancefromPCB.ID))
             {
-                if (flclearancefromPCB.HasFile)
+                if (FluClearancefromPCB.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "ClearancefromPCBpost";
-                    UploadDocument(flclearancefromPCB, hdnclearancefromPCB_name, strFileName, hypvwclearancefromPCB, lblclearancefromPCB, lnkDclearancefromPCB, "InctBasicDoc");
+                    UploadDocument(FluClearancefromPCB, HdnClearancefromPCB_Name, strFileName, HypvwClearancefromPCB, LblClearancefromPCB, LnkDclearancefromPCB, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUmigratedindustunitpost.ID))
+            else if (string.Equals(lnk.ID, LnkUmigratedindustunitpost.ID))
             {
-                if (flmigratedindustunitpost.HasFile)
+                if (FluMigratedindustunitpost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Migratedindustunitpost";
-                    UploadDocument(flmigratedindustunitpost, hdnmigratedindustunitpost_name, strFileName, hypvwmigratedindustunitpost, lblmigratedindustunitpost, lnkDmigratedindustunitpost, "InctBasicDoc");
+                    UploadDocument(FluMigratedindustunitpost, HdnMigratedindustunitpost_Name, strFileName, HypvwMigratedindustunitpost, LblMigratedindustunitpost, LnkDmigratedindustunitpost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUproductionforMSMEPost.ID))
+            else if (string.Equals(lnk.ID, LnkUproductionforMSMEPost.ID))
             {
-                if (flproductionforMSMEPost.HasFile)
+                if (FluProductionforMSMEPost.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "ProductionforMSMEPost";
-                    UploadDocument(flproductionforMSMEPost, hdnproductionforMSMEPost_name, strFileName, hypvwproductionforMSMEPost, lblproductionforMSMEPost, lnkDproductionforMSMEPost, "InctBasicDoc");
+                    UploadDocument(FluProductionforMSMEPost, HdnProductionforMSMEPost_Name, strFileName, HypvwProductionforMSMEPost, LblProductionforMSMEPost, LnkDproductionforMSMEPost, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUEmpoweredcommitpost.ID))
+            else if (string.Equals(lnk.ID, LnkUEmpoweredcommitpost.ID) && (FluEmpoweredcommitpost.HasFile))
             {
-                if (flEmpoweredcommitpost.HasFile)
-                {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "Empoweredcommitpost";
-                    UploadDocument(flEmpoweredcommitpost, hdnEmpoweredcommitpost_name, strFileName, hypvwEmpoweredcommitpost, lblEmpoweredcommitpost, lnkDEmpoweredcommitpost, "InctBasicDoc");
-                }
+                    UploadDocument(FluEmpoweredcommitpost, HdnEmpoweredcommitpost_Name, strFileName, HypvwEmpoweredcommitpost, LblEmpoweredcommitpost, LnkDEmpoweredcommitpost, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -1954,113 +1936,113 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkDPowerattpre.ID))
+            if (string.Equals(lnk.ID, LnkDPowerattpre.ID))
             {
-                UpdFileRemove(hdnPowerattpre_name, lnkUPowerattpre, lnkDPowerattpre, hypPowerattpre, lblPowerattpre, flPowerattpre, "InctBasicDoc");
+                UpdFileRemove(HdnPowerattpre_Name, LnkUPowerattpre, LnkDPowerattpre, HypPowerattpre, LblPowerattpre, FluPowerattpre, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkDCertofreg.ID))
             {
-                UpdFileRemove(certofreg_name, lnkUcertofreg, lnkDcertofreg, hypVwcertofreg, lblcertofreg, flcertofreg, "InctBasicDoc");
+                UpdFileRemove(HdnCertofreg_Name, LnkUCertofreg, LnkDCertofreg, HypvwCertofreg, LblCertofreg, FluCertofreg, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDAppDPR.ID))
+            else if (string.Equals(lnk.ID, LnkDAppDPR.ID))
             {
-                UpdFileRemove(hdnAppDPR_Name, lnkUAppDPR, lnkDAppDPR, hypVwAppDPR, lblAppDPR, flAppDPR, "InctBasicDoc");
+                UpdFileRemove(HdnAppDPR_Name, LnkUAppDPR, LnkDAppDPR, HypVwAppDPR, LblAppDPR, FlAppDPR, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDEIN.ID))
+            else if (string.Equals(lnk.ID, LnkDEIN.ID))
             {
-                UpdFileRemove(hdnEIN_Name, lnkUEIN, lnkDEIN, hypVwEIN, lblEIN, flEIN, "InctBasicDoc");
+                UpdFileRemove(HdnEIN_Name, LnkUEIN, LnkDEIN, HypVwEIN, LblEIN, FluEIN, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPlantmachinery.ID))
+            else if (string.Equals(lnk.ID, LnkDPlantmachinery.ID))
             {
-                UpdFileRemove(hdnPlantmachinery_Name, lnkUPlantmachinery, lnkDPlantmachinery, hyVwPlantmachinery, lblPlantmachinery, flPlantmachinery, "InctBasicDoc");
+                UpdFileRemove(HdnPlantmachinery_Name, LnkUPlantmachinery, LnkDPlantmachinery, HyVwPlantmachinery, LblPlantmachinery, FluPlantmachinery, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDCapitalInvst.ID))
+            else if (string.Equals(lnk.ID, LnkDCapitalInvst.ID))
             {
-                UpdFileRemove(hdnCapitalInvst_Name, lnkUCapitalInvst, lnkDCapitalInvst, hypVwCapitalInvst, lblCapitalInvst, flCapitalInvst, "InctBasicDoc");
+                UpdFileRemove(HdnCapitalInvst_Name, LnkUCapitalInvst, LnkDCapitalInvst, HypVwCapitalInvst, LblCapitalInvst, FluCapitalInvst, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDInvplantmachinary.ID))
+            else if (string.Equals(lnk.ID, LnkDInvplantmachinary.ID))
             {
-                UpdFileRemove(hdnInvplantmachinary_name, lnkUInvplantmachinary, lnkDInvplantmachinary, hypVwInvplantmachinary, lblInvplantmachinary, flInvplantmachinary, "InctBasicDoc");
+                UpdFileRemove(HdnInvplantmachinary_Name, LnkUInvplantmachinary, LnkDInvplantmachinary, HypVwInvplantmachinary, LblInvplantmachinary, FluInvplantmachinary, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDproposedprod.ID))
+            else if (string.Equals(lnk.ID, LnkDproposedprod.ID))
             {
-                UpdFileRemove(hdnproposedprod_name, lnkUproposedprod, lnkDproposedprod, hypVwproposedprod, lblproposedprod, flproposedprod, "InctBasicDoc");
+                UpdFileRemove(HdnProposedprod_Name, LnkUproposedprod, LnkDproposedprod, HypVwProposedprod, LblProposedprod, FluProposedprod, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDpresentstageimplemnt.ID))
+            else if (string.Equals(lnk.ID, LnkDpresentstageimplemnt.ID))
             {
-                UpdFileRemove(hdnpresentstageimplemnt_name, lnkUpresentstageimplemnt, lnkDpresentstageimplemnt, hypVwpresentstageimplemnt, lblpresentstageimplemnt, flpresentstageimplemnt, "InctBasicDoc");
+                UpdFileRemove(HdnPresentstageimplemnt_Name, LnkUpresentstageimplemnt, LnkDpresentstageimplemnt, HypVwpresentstageimplemnt, LblPresentstageimplemnt, FluPresentstageimplemnt, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDmigrantindustrial.ID))
+            else if (string.Equals(lnk.ID, LnkDmigrantindustrial.ID))
             {
-                UpdFileRemove(hdnmigrantindustrial_name, lnkUmigrantindustrial, lnkDmigrantindustrial, hypvwmigrantindustrial, lblmigrantindustrial, flpresentstageimplemnt, "InctBasicDoc");
+                UpdFileRemove(HdnMigrantindustrial_Name, LnkUmigrantindustrial, LnkDmigrantindustrial, HypvwMigrantindustrial, LblMigrantindustrial, FluMigrantindustrial, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDfixedcapitalinvst.ID))
+            else if (string.Equals(lnk.ID, LnkDfixedcapitalinvst.ID))
             {
-                UpdFileRemove(hdnfixedcapitalinvst_name, lnkUfixedcapitalinvst, lnkDfixedcapitalinvst, hypvwfixedcapitalinvst, lblfixedcapitalinvst, flfixedcapitalinvst, "InctBasicDoc");
+                UpdFileRemove(HdnFixedcapitalinvst_Name, LnkUfixedcapitalinvst, LnkDfixedcapitalinvst, HypvwFixedcapitalinvst, LblFixedcapitalinvst, FluFixedcapitalinvst, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcatagoryfalpriority.ID))
+            else if (string.Equals(lnk.ID, LnkDcatagoryfalpriority.ID))
             {
-                UpdFileRemove(hdncatagoryfalpriority_name, lnkUcatagoryfalpriority, lnkDcatagoryfalpriority, hypvwcatagoryfalpriority, lblcatagoryfalpriority, flcatagoryfalpriority, "InctBasicDoc");
+                UpdFileRemove(HdnCatagoryfalpriority_Name, LnkUcatagoryfalpriority, LnkDcatagoryfalpriority, HypvwCatagoryfalpriority, LblCatagoryfalpriority, FluCatagoryfalpriority, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPowerattpost.ID))
+            else if (string.Equals(lnk.ID, LnkDPowerattpost.ID))
             {
-                UpdFileRemove(Powerattpost_name, lnkUPowerattpost, lnkDPowerattpost, hypvwPowerattpost, lblPowerattpost, flPowerattpost, "InctBasicDoc");
+                UpdFileRemove(HdnPowerattpost_Name, LnkUPowerattpost, LnkDPowerattpost, HypvwPowerattpost, LblPowerattpost, FluPowerattPost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDpporthrustcertificate.ID))
+            else if (string.Equals(lnk.ID, LnkDpporthrustcertificate.ID))
             {
-                UpdFileRemove(hdnpporthrustcertificate_name, lnkUpporthrustcertificate, lnkDpporthrustcertificate, hypvwpporthrustcertificate, lblpporthrustcertificate, flpporthrustcertificate, "InctBasicDoc");
+                UpdFileRemove(HdnPporthrustcertificate_Name, LnkUpporthrustcertificate, LnkDpporthrustcertificate, HypvwPporthrustcertificate, LblPporthrustcertificate, FluPporthrustcertificate, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcertofregpost.ID))
+            else if (string.Equals(lnk.ID, LnkDcertofregpost.ID))
             {
-                UpdFileRemove(hdncertofregpost_name, lnkUcertofregpost, lnkDcertofregpost, hypvwcertofregpost, lblcertofregpost, flcertofregpost, "InctBasicDoc");
+                UpdFileRemove(HdnCertofregpost_Name, LnkUcertofregpost, LnkDcertofregpost, HypvwCertofregpost, LblCertofregpost, FluCertofregpost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDAppDPRpost.ID))
+            else if (string.Equals(lnk.ID, LnkDAppDPRpost.ID))
             {
-                UpdFileRemove(hdnAppDPRpost_name, lnkUAppDPRpost, lnkDAppDPRpost, hypvwAppDPRpost, lblAppDPRpost, flAppDPRpost, "InctBasicDoc");
+                UpdFileRemove(HdnAppDPRpost_Name, LnkUAppDPRpost, LnkDAppDPRpost, HypvwAppDPRpost, LblAppDPRpost, FluAppDPRpost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPCorEINPost.ID))
+            else if (string.Equals(lnk.ID, LnkDPCorEINPost.ID))
             {
-                UpdFileRemove(hdnPCorEINPost_name, lnkUPCorEINPost, lnkDPCorEINPost, hypvwPCorEINPost, lblPCorEINPost, flPCorEINPost, "InctBasicDoc");
+                UpdFileRemove(HdnPCorEINPost_Name, LnkUPCorEINPost, LnkDPCorEINPost, HypvwPCorEINPost, LblPCorEINPost, FluPCorEINPost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDloansancorFIappliedpost.ID))
+            else if (string.Equals(lnk.ID, LnkDloansancorFIappliedpost.ID))
             {
-                UpdFileRemove(hdnloansancorFIappliedpost_name, lnkUloansancorFIappliedpost, lnkDloansancorFIappliedpost, hypvwloansancorFIappliedpost, lblloansancorFIappliedpost, flloansancorFIappliedpost, "InctBasicDoc");
+                UpdFileRemove(HdnLoansancorFIappliedpost_Name, LnkUloansancorFIappliedpost, LnkDloansancorFIappliedpost, HypvwLoansancorFIappliedpost, LblLoansancorFIappliedpost, FluLoansancorFIappliedpost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDCapitalInvstPost.ID))
+            else if (string.Equals(lnk.ID, LnkDCapitalInvstPost.ID))
             {
-                UpdFileRemove(hdnCapitalInvstPost_name, lnkUCapitalInvstPost, lnkDCapitalInvstPost, hypvwCapitalInvstPost, lblCapitalInvstPost, flCapitalInvstPost, "InctBasicDoc");
+                UpdFileRemove(HdnCapitalInvstPost_Name, LnkUCapitalInvstPost, LnkDCapitalInvstPost, HypvwCapitalInvstPost, LblCapitalInvstPost, FluCapitalInvstPost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDInvplantmachinaryPost.ID))
+            else if (string.Equals(lnk.ID, LnkDInvplantmachinaryPost.ID))
             {
-                UpdFileRemove(hdnflInvplantmachinaryPost_name, lnkUInvplantmachinaryPost, lnkDInvplantmachinaryPost, hypvwInvplantmachinaryPost, lblInvplantmachinaryPost, flInvplantmachinaryPost, "InctBasicDoc");
+                UpdFileRemove(HdnInvplantmachinaryPost_Name, LnkUInvplantmachinaryPost, LnkDInvplantmachinaryPost, HypvwInvplantmachinaryPost, LblInvplantmachinaryPost, FluInvplantmachinaryPost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPlantmachinerypost.ID))
+            else if (string.Equals(lnk.ID, LnkDPlantmachinerypost.ID))
             {
-                UpdFileRemove(hdnPlantmachinerypost_name, lnkUPlantmachinerypost, lnkDPlantmachinerypost, hypvwPlantmachinerypost, lblPlantmachinerypost, flPlantmachinerypost, "InctBasicDoc");
+                UpdFileRemove(HdnPlantmachinerypost_Name, LnkUPlantmachinerypost, LnkDPlantmachinerypost, HypvwPlantmachinerypost, LblPlantmachinerypost, FluPlantmachinerypost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDproductionormanufactpost.ID))
+            else if (string.Equals(lnk.ID, LnkDproductionormanufactpost.ID))
             {
-                UpdFileRemove(hdnproductionormanufactpost_name, lnkUproductionormanufactpost, lnkDproductionormanufactpost, hypvwproductionormanufactpost, lblproductionormanufactpost, flproductionormanufactpost, "InctBasicDoc");
+                UpdFileRemove(HdnProductionormanufactpost_Name, LnkUproductionormanufactpost, LnkDproductionormanufactpost, HypvwProductionormanufactpost, LblProductionormanufactpost, FluProductionormanufactpost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcatagoryfalprioritypost.ID))
+            else if (string.Equals(lnk.ID, LnkDcatagoryfalprioritypost.ID))
             {
-                UpdFileRemove(hdncatagoryfalprioritypost_name, lnkUcatagoryfalprioritypost, lnkDcatagoryfalprioritypost, hypvwcatagoryfalprioritypost, lblcatagoryfalprioritypost, flcatagoryfalprioritypost, "InctBasicDoc");
+                UpdFileRemove(HdnCatagoryfalprioritypost_Name, LnkUcatagoryfalprioritypost, LnkDcatagoryfalprioritypost, HypvwCatagoryfalprioritypost, LblCatagoryfalprioritypost, FluCatagoryfalprioritypost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDclearancefromPCB.ID))
+            else if (string.Equals(lnk.ID, LnkDclearancefromPCB.ID))
             {
-                UpdFileRemove(hdnclearancefromPCB_name, lnkUclearancefromPCB, lnkDclearancefromPCB, hypvwclearancefromPCB, lblclearancefromPCB, flclearancefromPCB, "InctBasicDoc");
+                UpdFileRemove(HdnClearancefromPCB_Name, LnkUclearancefromPCB, LnkDclearancefromPCB, HypvwClearancefromPCB, LblClearancefromPCB, FluClearancefromPCB, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDmigratedindustunitpost.ID))
+            else if (string.Equals(lnk.ID, LnkDmigratedindustunitpost.ID))
             {
-                UpdFileRemove(hdnmigratedindustunitpost_name, lnkUmigratedindustunitpost, lnkDmigratedindustunitpost, hypvwmigratedindustunitpost, lblmigratedindustunitpost, flmigratedindustunitpost, "InctBasicDoc");
+                UpdFileRemove(HdnMigratedindustunitpost_Name, LnkUmigratedindustunitpost, LnkDmigratedindustunitpost, HypvwMigratedindustunitpost, LblMigratedindustunitpost, FluMigratedindustunitpost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDproductionforMSMEPost.ID))
+            else if (string.Equals(lnk.ID, LnkDproductionforMSMEPost.ID))
             {
-                UpdFileRemove(hdnproductionforMSMEPost_name, lnkUproductionforMSMEPost, lnkDproductionforMSMEPost, hypvwproductionforMSMEPost, lblproductionforMSMEPost, flproductionforMSMEPost, "InctBasicDoc");
+                UpdFileRemove(HdnProductionforMSMEPost_Name, LnkUproductionforMSMEPost, LnkDproductionforMSMEPost, HypvwProductionforMSMEPost, LblProductionforMSMEPost, FluProductionforMSMEPost, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDEmpoweredcommitpost.ID))
+            else if (string.Equals(lnk.ID, LnkDEmpoweredcommitpost.ID))
             {
-                UpdFileRemove(hdnEmpoweredcommitpost_name, lnkUEmpoweredcommitpost, lnkDEmpoweredcommitpost, hypvwEmpoweredcommitpost, lblEmpoweredcommitpost, flEmpoweredcommitpost, "InctBasicDoc");
+                UpdFileRemove(HdnEmpoweredcommitpost_Name, LnkUEmpoweredcommitpost, LnkDEmpoweredcommitpost, HypvwEmpoweredcommitpost, LblEmpoweredcommitpost, FluEmpoweredcommitpost, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -2109,7 +2091,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 }
                 objItem.vchOtherUnit = lblOtherUnit.Text == "" ? null : lblOtherUnit.Text;
                 objItem.decValue = Convert.ToDecimal(lblValue.Text == "" ? "0" : lblValue.Text);
-                objItem.chItemFor = "B"; //// Before
+                objItem.chItemFor = "B"; /// Before
 
                 listProdBefore.Add(objItem);
             }
@@ -2212,7 +2194,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region ProductionandEmploymentDetails Section
 
             /*----------------------------------------------------------*/
-            ////// Production and Employment Details Section
+            /// Production and Employment Details Section
             /*----------------------------------------------------------*/
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
             objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
@@ -2234,7 +2216,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region InvestmentDetailsSection
 
             /*----------------------------------------------------------*/
-            ////// Investment Details Section
+            /// Investment Details Section
             /*----------------------------------------------------------*/
             objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_total_emp_Number.Text == "" ? "0" : Txt_total_emp_Number.Text);
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text);
@@ -2286,7 +2268,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.decMarginMoneyForworkingAmtBefore = decMarginMoneyForworkingBefore;
 
             /*---------------------------------------------------------------------*/
-            ///// Investment Details (After)
+            /// Investment Details (After)
             /*---------------------------------------------------------------------*/
             decimal decLandAfter = 0;
             decimal decBuildingAfter = 0;
@@ -2341,7 +2323,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             #region MeansofFinanceSection
 
             /*---------------------------------------------------------------------*/
-            ////// Means of Finance Section
+            /// Means of Finance Section
             /*---------------------------------------------------------------------*/
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text == "" ? "0" : Txt_Equity_Amt.Text);
             objEntity1.intProjectClearance = Convert.ToInt32(Rad_Clearnce_PCB.SelectedValue);
@@ -2356,10 +2338,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             /*---------------------------------------------------------------------*/
             /// Other Document Section
             /*---------------------------------------------------------------------*/           
-            if (hdnPowerattpre_name.Value != "")
+            if (HdnPowerattpre_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyPreDocCode = hdnPowerattpre_code.Value;
-                objEntity1.strPworofAttorneyPre = hdnPowerattpre_name.Value;
+                objEntity1.strPworofAttorneyPreDocCode = HdnPowerattpre_Code.Value;
+                objEntity1.strPworofAttorneyPre = HdnPowerattpre_Name.Value;
             }
             else
             {
@@ -2367,21 +2349,21 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPre = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCodepre = certofreg_code.Value;
-                objEntity1.strCertificateofregistrationpre = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCodepre = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistrationpre = HdnCertofreg_Name.Value;
             }
             else
-            {
+            {   
                 objEntity1.strCertificateofregistrationDocCodepre = null;
                 objEntity1.strCertificateofregistrationpre = null;
             }
 
-            if (hdnAppDPR_Name.Value != "")
+            if (HdnAppDPR_Name.Value != "")
             {
-                objEntity1.strApproveDPRDocCodePre = hdnAppDPR_Code.Value;
-                objEntity1.strApproveDPRPre = hdnAppDPR_Name.Value;
+                objEntity1.strApproveDPRDocCodePre = HdnAppDPR_Code.Value;
+                objEntity1.strApproveDPRPre = HdnAppDPR_Name.Value;
             }
             else
             {
@@ -2389,10 +2371,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRPre = null;
             }
 
-            if (hdnEIN_Name.Value != "")
+            if (HdnEIN_Name.Value != "")
             {
-                objEntity1.strEINapprovalDocCodePre = hdnEIN_Code.Value;
-                objEntity1.strEINapprovalPre = hdnEIN_Name.Value;
+                objEntity1.strEINapprovalDocCodePre = HdnEIN_Code.Value;
+                objEntity1.strEINapprovalPre = HdnEIN_Name.Value;
             }
             else
             {
@@ -2400,10 +2382,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strEINapprovalPre = null;
             }
 
-            if (hdnPlantmachinery_Name.Value != "")
+            if (HdnPlantmachinery_Name.Value != "")
             {
-                objEntity1.strBalacingEquipmentDocCodePre = hdnPlantmachinery_Code.Value;
-                objEntity1.strBalacingEquipmentPre = hdnPlantmachinery_Name.Value;
+                objEntity1.strBalacingEquipmentDocCodePre = HdnPlantmachinery_Code.Value;
+                objEntity1.strBalacingEquipmentPre = HdnPlantmachinery_Name.Value;
             }
             else
             {
@@ -2411,10 +2393,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentPre = null;
             }
 
-            if (hdnCapitalInvst_Name.Value != "")
+            if (HdnCapitalInvst_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCodePre = hdnCapitalInvst_Code.Value;
-                objEntity1.strCapitalInvstPre = hdnCapitalInvst_Name.Value;
+                objEntity1.strCapitalInvstDocCodePre = HdnCapitalInvst_Code.Value;
+                objEntity1.strCapitalInvstPre = HdnCapitalInvst_Name.Value;
             }
             else
             {
@@ -2422,10 +2404,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstPre = null;
             }
 
-            if (hdnInvplantmachinary_name.Value != "")
+            if (HdnInvplantmachinary_Name.Value != "")
             {
-                objEntity1.strInvestmentplantmachinaryDocCodePre = hdnInvplantmachinary_code.Value;
-                objEntity1.strInvestmentplantmachinaryPre = hdnInvplantmachinary_name.Value;
+                objEntity1.strInvestmentplantmachinaryDocCodePre = HdnInvplantmachinary_Code.Value;
+                objEntity1.strInvestmentplantmachinaryPre = HdnInvplantmachinary_Name.Value;
             }
             else
             {
@@ -2433,10 +2415,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryPre = null;
             }
 
-            if (hdnproposedprod_name.Value != "")
+            if (HdnProposedprod_Name.Value != "")
             {
-                objEntity1.strProposedprodDocCodePre = hdnproposedprod_code.Value;
-                objEntity1.strProposedprodPre = hdnproposedprod_name.Value;
+                objEntity1.strProposedprodDocCodePre = HdnProposedprod_Code.Value;
+                objEntity1.strProposedprodPre = HdnProposedprod_Name.Value;
             }
             else
             {
@@ -2444,10 +2426,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strProposedprodPre = null;
             }
 
-            if (hdnpresentstageimplemnt_name.Value != "")
+            if (HdnPresentstageimplemnt_Name.Value != "")
             {
-                objEntity1.strPresentStageImplentDocCodePre = hdnpresentstageimplemnt_code.Value;
-                objEntity1.strPresentStageImplentPre = hdnpresentstageimplemnt_name.Value;
+                objEntity1.strPresentStageImplentDocCodePre = HdnPresentstageimplemnt_Code.Value;
+                objEntity1.strPresentStageImplentPre = HdnPresentstageimplemnt_Name.Value;
             }
             else
             {
@@ -2455,10 +2437,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPresentStageImplentPre = null;
             }
 
-            if (hdnmigrantindustrial_name.Value != "")
+            if (HdnMigrantindustrial_Name.Value != "")
             {
-                objEntity1.strMigrantIndustryunitDocCodePre = hdnmigrantindustrial_code.Value;
-                objEntity1.strMigrantIndustryunitPre = hdnmigrantindustrial_name.Value;
+                objEntity1.strMigrantIndustryunitDocCodePre = HdnMigrantindustrial_Code.Value;
+                objEntity1.strMigrantIndustryunitPre = HdnMigrantindustrial_Name.Value;
             }
             else
             {
@@ -2466,10 +2448,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitPre = null;
             }
 
-            if (hdnfixedcapitalinvst_name.Value != "")
+            if (HdnFixedcapitalinvst_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCodePre = hdnfixedcapitalinvst_code.Value;
-                objEntity1.strfixedcapitalinvstPre = hdnfixedcapitalinvst_name.Value;
+                objEntity1.strfixedcapitalinvstDocCodePre = HdnFixedcapitalinvst_Code.Value;
+                objEntity1.strfixedcapitalinvstPre = HdnFixedcapitalinvst_Name.Value;
             }
             else
             {
@@ -2477,10 +2459,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstPre = null;
             }
 
-            if (hdncatagoryfalpriority_name.Value != "")
+            if (HdnCatagoryfalpriority_Name.Value != "")
             {
-                objEntity1.strPriorityorThrustsectorDocCodePre = hdncatagoryfalpriority_code.Value;
-                objEntity1.strPriorityorThrustsectorPre = hdncatagoryfalpriority_name.Value;
+                objEntity1.strPriorityorThrustsectorDocCodePre = HdnCatagoryfalpriority_Code.Value;
+                objEntity1.strPriorityorThrustsectorPre = HdnCatagoryfalpriority_Name.Value;
             }
             else
             {
@@ -2488,10 +2470,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorPre = null;
             }
             
-            if (Powerattpost_name.Value != "")
+            if (HdnPowerattpost_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyPostDocCode = hdnPowerattpost_code.Value;
-                objEntity1.strPworofAttorneyPost = Powerattpost_name.Value;
+                objEntity1.strPworofAttorneyPostDocCode = HdnPowerattpost_Code.Value;
+                objEntity1.strPworofAttorneyPost = HdnPowerattpost_Name.Value;
             }
             else
             {
@@ -2499,10 +2481,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPworofAttorneyPost = null;
             }
 
-            if (hdnpporthrustcertificate_name.Value != "")
+            if (HdnPporthrustcertificate_Name.Value != "")
             {
-                objEntity1.strPPorThrustStatusCertPostDocCode = hdnpporthrustcertificate_code.Value;
-                objEntity1.strPPorThrustStatusCertPost = hdnpporthrustcertificate_name.Value;
+                objEntity1.strPPorThrustStatusCertPostDocCode = HdnPporthrustcertificate_Code.Value;
+                objEntity1.strPPorThrustStatusCertPost = HdnPporthrustcertificate_Name.Value;
             }
             else
             {
@@ -2510,10 +2492,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPPorThrustStatusCertPost = null;
             }
 
-            if (hdncertofregpost_name.Value != "")
+            if (HdnCertofregpost_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCodepost = hdncertofregpost_code.Value;
-                objEntity1.strCertificateofregistrationpost = hdncertofregpost_name.Value;
+                objEntity1.strCertificateofregistrationDocCodepost = HdnCertofregpost_Code.Value;
+                objEntity1.strCertificateofregistrationpost = HdnCertofregpost_Name.Value;
             }
             else
             {
@@ -2521,10 +2503,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCertificateofregistrationpost = null;
             }
 
-            if (hdnAppDPRpost_name.Value != "")
+            if (HdnAppDPRpost_Name.Value != "")
             {
-                objEntity1.strApproveDPRDocCodePost = hdnAppDPRpost_code.Value;
-                objEntity1.strApproveDPRPost = hdnAppDPRpost_name.Value;
+                objEntity1.strApproveDPRDocCodePost = HdnAppDPRpost_Code.Value;
+                objEntity1.strApproveDPRPost = HdnAppDPRpost_Name.Value;
             }
             else
             {
@@ -2532,10 +2514,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strApproveDPRPost = null;
             }
 
-            if (hdnPCorEINPost_name.Value != "")
+            if (HdnPCorEINPost_Name.Value != "")
             {
-                objEntity1.strPcDocCodePost = hdnPCorEINPost_code.Value;
-                objEntity1.strPcPost = hdnPCorEINPost_name.Value;
+                objEntity1.strPcDocCodePost = HdnPCorEINPost_Code.Value;
+                objEntity1.strPcPost = HdnPCorEINPost_Name.Value;
             }
             else
             {
@@ -2543,10 +2525,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPcPost = null;
             }
 
-            if (hdnloansancorFIappliedpost_name.Value != "")
+            if (HdnLoansancorFIappliedpost_Name.Value != "")
             {
-                objEntity1.strSanctionbankorFIDocCodePost = hdnloansancorFIappliedpost_code.Value;
-                objEntity1.strSanctionbankorFIPost = hdnloansancorFIappliedpost_name.Value;
+                objEntity1.strSanctionbankorFIDocCodePost = HdnLoansancorFIappliedpost_Code.Value;
+                objEntity1.strSanctionbankorFIPost = HdnLoansancorFIappliedpost_Name.Value;
             }
             else
             {
@@ -2554,10 +2536,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strSanctionbankorFIPost = null;
             }
 
-            if (hdnCapitalInvstPost_name.Value != "")
+            if (HdnCapitalInvstPost_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCodePost = hdnCapitalInvstPost_code.Value;
-                objEntity1.strCapitalInvstPost = hdnCapitalInvstPost_name.Value;
+                objEntity1.strCapitalInvstDocCodePost = HdnCapitalInvstPost_Code.Value;
+                objEntity1.strCapitalInvstPost = HdnCapitalInvstPost_Name.Value;
             }
             else
             {
@@ -2565,10 +2547,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strCapitalInvstPost = null;
             }
 
-            if (hdnflInvplantmachinaryPost_name.Value != "")
+            if (HdnInvplantmachinaryPost_Name.Value != "")
             {
-                objEntity1.strInvestmentplantmachinaryDocCodePost = hdnflInvplantmachinaryPost_code.Value;
-                objEntity1.strInvestmentplantmachinaryPost = hdnflInvplantmachinaryPost_name.Value;
+                objEntity1.strInvestmentplantmachinaryDocCodePost = HdnInvplantmachinaryPost_Code.Value;
+                objEntity1.strInvestmentplantmachinaryPost = HdnInvplantmachinaryPost_Name.Value;
             }
             else
             {
@@ -2576,10 +2558,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strInvestmentplantmachinaryPost = null;
             }
 
-            if (hdnPlantmachinerypost_name.Value != "")
+            if (HdnPlantmachinerypost_Name.Value != "")
             {
-                objEntity1.strBalacingEquipmentDocCodePost = hdnPlantmachinerypost_code.Value;
-                objEntity1.strBalacingEquipmentPost = hdnPlantmachinerypost_name.Value;
+                objEntity1.strBalacingEquipmentDocCodePost = HdnPlantmachinerypost_Code.Value;
+                objEntity1.strBalacingEquipmentPost = HdnPlantmachinerypost_Name.Value;
             }
             else
             {
@@ -2587,10 +2569,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strBalacingEquipmentPost = null;
             }
 
-            if (hdnproductionormanufactpost_name.Value != "")
+            if (HdnProductionormanufactpost_Name.Value != "")
             {
-                objEntity1.strServiceProvideDocCodePost = hdnproductionormanufactpost_code.Value;
-                objEntity1.strServiceProvidePost = hdnproductionormanufactpost_name.Value;
+                objEntity1.strServiceProvideDocCodePost = HdnProductionormanufactpost_Code.Value;
+                objEntity1.strServiceProvidePost = HdnProductionormanufactpost_Name.Value;
             }
             else
             {
@@ -2598,10 +2580,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strServiceProvidePost = null;
             }
 
-            if (hdncatagoryfalprioritypost_name.Value != "")
+            if (HdnCatagoryfalprioritypost_Name.Value != "")
             {
-                objEntity1.strPriorityorThrustsectorDocCodePost = hdncatagoryfalprioritypost_code.Value;
-                objEntity1.strPriorityorThrustsectorPost = hdncatagoryfalprioritypost_name.Value;
+                objEntity1.strPriorityorThrustsectorDocCodePost = HdnCatagoryfalprioritypost_Code.Value;
+                objEntity1.strPriorityorThrustsectorPost = HdnCatagoryfalprioritypost_Name.Value;
             }
             else
             {
@@ -2609,10 +2591,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strPriorityorThrustsectorPost = null;
             }
 
-            if (hdnclearancefromPCB_name.Value != "")
+            if (HdnClearancefromPCB_Name.Value != "")
             {
-                objEntity1.strClearancefromPCBDocCodePost = hdnclearancefromPCB_code.Value;
-                objEntity1.strClearancefromPCBPost = hdnclearancefromPCB_name.Value;
+                objEntity1.strClearancefromPCBDocCodePost = HdnClearancefromPCB_Code.Value;
+                objEntity1.strClearancefromPCBPost = HdnClearancefromPCB_Name.Value;
             }
             else
             {
@@ -2620,10 +2602,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strClearancefromPCBPost = null;
             }
 
-            if (hdnmigratedindustunitpost_name.Value != "")
+            if (HdnMigratedindustunitpost_Name.Value != "")
             {
-                objEntity1.strMigrantIndustryunitDocCodePost = hdnmigratedindustunitpost_code.Value;
-                objEntity1.strMigrantIndustryunitPost = hdnmigratedindustunitpost_name.Value;
+                objEntity1.strMigrantIndustryunitDocCodePost = HdnMigratedindustunitpost_Code.Value;
+                objEntity1.strMigrantIndustryunitPost = HdnMigratedindustunitpost_Name.Value;
             }
             else
             {
@@ -2631,10 +2613,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strMigrantIndustryunitPost = null;
             }
 
-            if (hdnproductionforMSMEPost_name.Value != "")
+            if (HdnProductionforMSMEPost_Name.Value != "")
             {
-                objEntity1.strfixedcapitalinvstDocCodePost = hdnproductionforMSMEPost_code.Value;
-                objEntity1.strfixedcapitalinvstPost = hdnproductionforMSMEPost_name.Value;
+                objEntity1.strfixedcapitalinvstDocCodePost = HdnProductionforMSMEPost_Code.Value;
+                objEntity1.strfixedcapitalinvstPost = HdnProductionforMSMEPost_Name.Value;
             }
             else
             {
@@ -2642,10 +2624,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 objEntity1.strfixedcapitalinvstPost = null;
             }
 
-            if (hdnEmpoweredcommitpost_name.Value != "")
+            if (HdnEmpoweredcommitpost_Name.Value != "")
             {
-                objEntity1.strEmpoweredCommitteeDocCodePost = hdnEmpoweredcommitpost_code.Value;
-                objEntity1.strEmpoweredCommitteePost = hdnEmpoweredcommitpost_name.Value;
+                objEntity1.strEmpoweredCommitteeDocCodePost = HdnEmpoweredcommitpost_Code.Value;
+                objEntity1.strEmpoweredCommitteePost = HdnEmpoweredcommitpost_Name.Value;
             }
             else
             {
@@ -2666,7 +2648,6 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             if (Request.QueryString["key"] != null)
             {
                 objEntity1.strIncentiveNumber = Request.QueryString["key"].ToString();
-
             }
             else
             {

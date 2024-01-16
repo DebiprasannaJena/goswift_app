@@ -41,7 +41,7 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
             Div_Clearance_pcb.Visible = false;
             if (Request.QueryString["InctUniqueNo"] != null)
             {
-                 PostpopulateDataComm(Convert.ToInt16(Request.QueryString["InctUniqueNo"]));
+                 PostpopulateDataComm();
             }
             else
             {
@@ -65,7 +65,7 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
         }
     }
 
-    public void PostpopulateDataComm(int id)
+    public void PostpopulateDataComm()
     {
         try
         {
@@ -222,75 +222,75 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
 
                     if (vchDocId == "D334")
                     {
-                        hdnPoweratt_name.Value = vchFileName;
-                        hypPoweratt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypPoweratt.Visible = true;
-                        lnkDPoweratt.Visible = true;
-                        lblPoweratt.Visible = true;
-                        flPoweratt.Enabled = false;
+                        HdnPoweratt_Name.Value = vchFileName;
+                        HypPoweratt.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypPoweratt.Visible = true;
+                        LnkDPoweratt.Visible = true;
+                        LblPoweratt.Visible = true;
+                        FluPoweratt.Enabled = false;
                     }
                     else if (vchDocId == "D335")
                     {
-                        certofreg_name.Value = vchFileName;
-                        hypVwcertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwcertofreg.Visible = true;
-                        lnkDcertofreg.Visible = true;
-                        lblcertofreg.Visible = true;
-                        flcertofreg.Enabled = false;
+                        HdnCertofreg_Name.Value = vchFileName;
+                        HypVwCertofreg.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwCertofreg.Visible = true;
+                        LnkDcertofreg.Visible = true;
+                        LblCertofreg.Visible = true;
+                        FluCertofreg.Enabled = false;
                     }
                     else if (vchDocId == "D336")
                     {
-                        hdnEIN_Name.Value = vchFileName;
-                        hypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwEIN.Visible = true;
-                        lnkDEIN.Visible = true;
-                        lblEIN.Visible = true;
-                        flEIN.Enabled = false;
+                        HdnEIN_Name.Value = vchFileName;
+                        HypVwEIN.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwEIN.Visible = true;
+                        LnkDEIN.Visible = true;
+                        LblEIN.Visible = true;
+                        FluEIN.Enabled = false;
                     }
                     else if (vchDocId == "D337")
                     {
-                        hdnPlantmachinery_Name.Value = vchFileName;
-                        hyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hyVwPlantmachinery.Visible = true;
-                        lnkDPlantmachinery.Visible = true;
-                        lblPlantmachinery.Visible = true;
-                        flPlantmachinery.Enabled = false;
+                        HdnPlantmachinery_Name.Value = vchFileName;
+                        HyVwPlantmachinery.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HyVwPlantmachinery.Visible = true;
+                        LnkDPlantmachinery.Visible = true;
+                        LblPlantmachinery.Visible = true;
+                        FluPlantmachinery.Enabled = false;
                     }
                     else if (vchDocId == "D338")
                     {
-                        hdnloansancorFIapplied_name.Value = vchFileName;
-                        hypvwloansancorFIapplied.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypvwloansancorFIapplied.Visible = true;
-                        lnkDloansancorFIapplied.Visible = true;
-                        lblloansancorFIapplied.Visible = true;
-                        flloansancorFIapplied.Enabled = false;
+                        HdnLoansancorFIapplied_Name.Value = vchFileName;
+                        HypvwLoansancorFIapplied.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypvwLoansancorFIapplied.Visible = true;
+                        LnkDloansancorFIapplied.Visible = true;
+                        LblLoansancorFIapplied.Visible = true;
+                        FluLoansancorFIapplied.Enabled = false;
                     }
                     else if (vchDocId == "D339")
                     {
-                        hdnIncentiveAvail_name.Value = vchFileName;
-                        hypVwIncentiveAvail.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwIncentiveAvail.Visible = true;
-                        lnkDIncentiveAvail.Visible = true;
-                        lblIncentiveAvail.Visible = true;
-                        flIncentiveAvail.Enabled = false;
+                        HdnIncentiveAvail_Name.Value = vchFileName;
+                        HypVwIncentiveAvail.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwIncentiveAvail.Visible = true;
+                        LnkDIncentiveAvail.Visible = true;
+                        LblIncentiveAvail.Visible = true;
+                        FluIncentiveAvail.Enabled = false;
                     }
                     else if (vchDocId == "D340")
                     {
-                        hdnUndertakingeffect_name.Value = vchFileName;
-                        hypVwUndertakingeffect.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwUndertakingeffect.Visible = true;
-                        lnkDUndertakingeffect.Visible = true;
-                        lblUndertakingeffect.Visible = true;
-                        flUndertakingeffect.Enabled = false;
+                        HdnUndertakingeffect_Name.Value = vchFileName;
+                        HypVwUndertakingeffect.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwUndertakingeffect.Visible = true;
+                        LnkDUndertakingeffect.Visible = true;
+                        LblUndertakingeffect.Visible = true;
+                        FluUndertakingeffect.Enabled = false;
                     }
                     else if (vchDocId == "D341")
                     {
-                        hdnclearancefromPCB_name.Value = vchFileName;
-                        hypVwclearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
-                        hypVwclearancefromPCB.Visible = true;
-                        lnkDclearancefromPCB.Visible = true;
-                        lblclearancefromPCB.Visible = true;
-                        flclearancefromPCB.Enabled = false;
+                        HdnClearancefromPCB_Name.Value = vchFileName;
+                        HypVwClearancefromPCB.NavigateUrl = "../incentives/Files/InctBasicDoc/" + vchFileName;
+                        HypVwClearancefromPCB.Visible = true;
+                        LnkDClearancefromPCB.Visible = true;
+                        LblClearancefromPCB.Visible = true;
+                        FluClearancefromPCB.Enabled = false;
                     }
                 }
                 #endregion
@@ -373,11 +373,11 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
     {
         IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
         Basic_Unit_Details_Entity objEntity = new Basic_Unit_Details_Entity();
-        DataSet ds = new DataSet();
+      
         try
         {
             objEntity.intCreatedBy = Convert.ToInt32(Session["InvestorId"]);
-            ds = objBAL.Basic_Unit_Details_V(objEntity);
+            DataSet ds = objBAL.Basic_Unit_Details_V(objEntity);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 /*----------------------------------------------------------------------------*/
@@ -397,12 +397,9 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 /// If new PC found then assign strDataSource=PC
                 /// Only when data present in basic table and a new PC found 
                 /*----------------------------------------------------------------------------*/
-                if (strDataSource == "BASIC")
+                if (strDataSource == "BASIC" && strNewPcFound == "Y")
                 {
-                    if (strNewPcFound == "Y")
-                    {
                         strDataSource = "PC";
-                    }
                 }
                 /*----------------------------------------------------------------------------*/
                 /// Value Assigned to HiddenField for use in Validation
@@ -862,71 +859,68 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkUPoweratt.ID))
+            if (string.Equals(lnk.ID, LnkUPoweratt.ID))
             {
-                if (flPoweratt.HasFile)
+                if (FluPoweratt.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "__PoweofAttorneyMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flPoweratt, hdnPoweratt_name, strFileName, hypPoweratt, lblPoweratt, lnkDPoweratt, "InctBasicDoc");
+                    UploadDocument(FluPoweratt, HdnPoweratt_Name, strFileName, HypPoweratt, LblPoweratt, LnkDPoweratt, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkUcertofreg.ID))
             {
-                if (flcertofreg.HasFile)
+                if (FluCertofreg.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_MemorandumMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flcertofreg, certofreg_name, strFileName, hypVwcertofreg, lblcertofreg, lnkDcertofreg, "InctBasicDoc");
+                    UploadDocument(FluCertofreg, HdnCertofreg_Name, strFileName, HypVwCertofreg, LblCertofreg, LnkDcertofreg, "InctBasicDoc");
                 }
             }
 
-            else if (string.Equals(lnk.ID, lnkUEIN.ID))
+            else if (string.Equals(lnk.ID, LnkUEIN.ID))
             {
-                if (flEIN.HasFile)
+                if (FluEIN.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_EINMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flEIN, hdnEIN_Name, strFileName, hypVwEIN, lblEIN, lnkDEIN, "InctBasicDoc");
+                    UploadDocument(FluEIN, HdnEIN_Name, strFileName, HypVwEIN, LblEIN, LnkDEIN, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUPlantmachinery.ID))
+            else if (string.Equals(lnk.ID, LnkUPlantmachinery.ID))
             {
-                if (flPlantmachinery.HasFile)
+                if (FluPlantmachinery.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_Plant&MachineryMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flPlantmachinery, hdnPlantmachinery_Name, strFileName, hyVwPlantmachinery, lblPlantmachinery, lnkDPlantmachinery, "InctBasicDoc");
+                    UploadDocument(FluPlantmachinery, HdnPlantmachinery_Name, strFileName, HyVwPlantmachinery, LblPlantmachinery, LnkDPlantmachinery, "InctBasicDoc");
                 }
             }
 
-            else if (string.Equals(lnk.ID, lnkUloansancorFIapplied.ID))
+            else if (string.Equals(lnk.ID, LnkUloansancorFIapplied.ID))
             {
-                if (flloansancorFIapplied.HasFile)
+                if (FluLoansancorFIapplied.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_LoansancorMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flloansancorFIapplied, hdnloansancorFIapplied_name, strFileName, hypvwloansancorFIapplied, lblloansancorFIapplied, lnkDloansancorFIapplied, "InctBasicDoc");
+                    UploadDocument(FluLoansancorFIapplied, HdnLoansancorFIapplied_Name, strFileName, HypvwLoansancorFIapplied, LblLoansancorFIapplied, LnkDloansancorFIapplied, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUIncentiveAvail.ID))
+            else if (string.Equals(lnk.ID, LnkUIncentiveAvail.ID))
             {
-                if (flIncentiveAvail.HasFile)
+                if (FluIncentiveAvail.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_IncentiveAvailMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flIncentiveAvail, hdnIncentiveAvail_name, strFileName, hypVwIncentiveAvail, lblIncentiveAvail, lnkDIncentiveAvail, "InctBasicDoc");
+                    UploadDocument(FluIncentiveAvail, HdnIncentiveAvail_Name, strFileName, HypVwIncentiveAvail, LblIncentiveAvail, LnkDIncentiveAvail, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUUndertakingeffect.ID))
+            else if (string.Equals(lnk.ID, LnkUUndertakingeffect.ID))
             {
-                if (flUndertakingeffect.HasFile)
+                if (FluUndertakingeffect.HasFile)
                 {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_UndertakingeffectMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flUndertakingeffect, hdnUndertakingeffect_name, strFileName, hypVwUndertakingeffect, lblUndertakingeffect, lnkDUndertakingeffect, "InctBasicDoc");
+                    UploadDocument(FluUndertakingeffect, HdnUndertakingeffect_Name, strFileName, HypVwUndertakingeffect, LblUndertakingeffect, LnkDUndertakingeffect, "InctBasicDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, lnkUclearancefromPCB.ID))
+            else if (string.Equals(lnk.ID, LnkUClearancefromPCB.ID) && (FluClearancefromPCB.HasFile))
             {
-                if (flclearancefromPCB.HasFile)
-                {
                     string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_ClearancefromPCBMigrateUndustrialunitIPR-2022";
-                    UploadDocument(flclearancefromPCB, hdnclearancefromPCB_name, strFileName, hypVwclearancefromPCB, lblclearancefromPCB, lnkDclearancefromPCB, "InctBasicDoc");
-                }
+                    UploadDocument(FluClearancefromPCB, HdnClearancefromPCB_Name, strFileName, HypVwClearancefromPCB, LblClearancefromPCB, LnkDClearancefromPCB, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -940,37 +934,37 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
         try
         {
             LinkButton lnk = (LinkButton)sender;
-            if (string.Equals(lnk.ID, lnkDPoweratt.ID))
+            if (string.Equals(lnk.ID, LnkDPoweratt.ID))
             {
-                UpdFileRemove(hdnPoweratt_name, lnkUPoweratt, lnkDPoweratt, hypPoweratt, lblPoweratt, flPoweratt, "InctBasicDoc");
+                UpdFileRemove(HdnPoweratt_Name, LnkUPoweratt, LnkDPoweratt, HypPoweratt, LblPoweratt, FluPoweratt, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDcertofreg.ID))
+            else if (string.Equals(lnk.ID, LnkDcertofreg.ID))
             {
-                UpdFileRemove(certofreg_name, lnkUcertofreg, lnkDcertofreg, hypVwcertofreg, lblcertofreg, flcertofreg, "InctBasicDoc");
+                UpdFileRemove(HdnCertofreg_Name, LnkUcertofreg, LnkDcertofreg, HypVwCertofreg, LblCertofreg, FluCertofreg, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDEIN.ID))
+            else if (string.Equals(lnk.ID, LnkDEIN.ID))
             {
-                UpdFileRemove(hdnEIN_Name, lnkUEIN, lnkDEIN, hypVwEIN, lblEIN, flEIN, "InctBasicDoc");
+                UpdFileRemove(HdnEIN_Name, LnkUEIN, LnkDEIN, HypVwEIN, LblEIN, FluEIN, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDPlantmachinery.ID))
+            else if (string.Equals(lnk.ID, LnkDPlantmachinery.ID))
             {
-                UpdFileRemove(hdnPlantmachinery_Name, lnkUPlantmachinery, lnkDPlantmachinery, hyVwPlantmachinery, lblPlantmachinery, flPlantmachinery, "InctBasicDoc");
+                UpdFileRemove(HdnPlantmachinery_Name, LnkUPlantmachinery, LnkDPlantmachinery, HyVwPlantmachinery, LblPlantmachinery, FluPlantmachinery, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDIncentiveAvail.ID))
+            else if (string.Equals(lnk.ID, LnkDIncentiveAvail.ID))
             {
-                UpdFileRemove(hdnIncentiveAvail_name, lnkUIncentiveAvail, lnkDIncentiveAvail, hypVwIncentiveAvail, lblIncentiveAvail, flIncentiveAvail, "InctBasicDoc");
+                UpdFileRemove(HdnIncentiveAvail_Name, LnkUIncentiveAvail, LnkDIncentiveAvail, HypVwIncentiveAvail, LblIncentiveAvail, FluIncentiveAvail, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDUndertakingeffect.ID))
+            else if (string.Equals(lnk.ID, LnkDUndertakingeffect.ID))
             {
-                UpdFileRemove(hdnUndertakingeffect_name, lnkUUndertakingeffect, lnkDUndertakingeffect, hypVwUndertakingeffect, lblUndertakingeffect, flUndertakingeffect, "InctBasicDoc");
+                UpdFileRemove(HdnUndertakingeffect_Name, LnkUUndertakingeffect, LnkDUndertakingeffect, HypVwUndertakingeffect, LblUndertakingeffect, FluUndertakingeffect, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDloansancorFIapplied.ID))
+            else if (string.Equals(lnk.ID, LnkDloansancorFIapplied.ID))
             {
-                UpdFileRemove(hdnloansancorFIapplied_name, lnkUloansancorFIapplied, lnkDloansancorFIapplied, hypvwloansancorFIapplied, lblloansancorFIapplied, flloansancorFIapplied, "InctBasicDoc");
+                UpdFileRemove(HdnLoansancorFIapplied_Name, LnkUloansancorFIapplied, LnkDloansancorFIapplied, HypvwLoansancorFIapplied, LblLoansancorFIapplied, FluLoansancorFIapplied, "InctBasicDoc");
             }
-            else if (string.Equals(lnk.ID, lnkDclearancefromPCB.ID))
+            else if (string.Equals(lnk.ID, LnkDClearancefromPCB.ID))
             {
-                UpdFileRemove(hdnclearancefromPCB_name, lnkUclearancefromPCB, lnkDclearancefromPCB, hypVwclearancefromPCB, lblclearancefromPCB, flclearancefromPCB, "InctBasicDoc");
+                UpdFileRemove(HdnClearancefromPCB_Name, LnkUClearancefromPCB, LnkDClearancefromPCB, HypVwClearancefromPCB, LblClearancefromPCB, FluClearancefromPCB, "InctBasicDoc");
             }
         }
         catch (Exception ex)
@@ -1400,10 +1394,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
             /*---------------------------------------------------------------------*/
             ///Other Document Section
             /*---------------------------------------------------------------------*/
-            if (hdnPoweratt_name.Value != "")
+            if (HdnPoweratt_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyDocCode = hdnPoweratt_code.Value;
-                objEntity1.strPworofAttorney = hdnPoweratt_name.Value;
+                objEntity1.strPworofAttorneyDocCode = HdnPoweratt_Code.Value;
+                objEntity1.strPworofAttorney = HdnPoweratt_Name.Value;
             }
             else
             {
@@ -1411,10 +1405,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strPworofAttorney = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCode = certofreg_code.Value;
-                objEntity1.strCertificateofregistration = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCode = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistration = HdnCertofreg_Name.Value;
             }
             else
             {
@@ -1422,10 +1416,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strCertificateofregistration = null;
             }
 
-            if (hdnEIN_Name.Value != "")
+            if (HdnEIN_Name.Value != "")
             {
-                objEntity1.strEINapprovalDocCode = hdnEIN_Code.Value;
-                objEntity1.strEINapproval = hdnEIN_Name.Value;
+                objEntity1.strEINapprovalDocCode = HdnEIN_Code.Value;
+                objEntity1.strEINapproval = HdnEIN_Name.Value;
             }
             else
             {
@@ -1433,10 +1427,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strEINapproval = null;
             }
 
-            if (hdnPlantmachinery_Name.Value != "")
+            if (HdnPlantmachinery_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCode = hdnPlantmachinery_Code.Value;
-                objEntity1.strCapitalInvst = hdnPlantmachinery_Name.Value;
+                objEntity1.strCapitalInvstDocCode = HdnPlantmachinery_Code.Value;
+                objEntity1.strCapitalInvst = HdnPlantmachinery_Name.Value;
             }
             else
             {
@@ -1444,10 +1438,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strCapitalInvst = null;
             }
 
-            if (hdnloansancorFIapplied_name.Value != "")
+            if (HdnLoansancorFIapplied_Name.Value != "")
             {
-                objEntity1.strloansancorFIappliedDocCode = hdnloansancorFIapplied_code.Value;
-                objEntity1.strloansancorFIapplied = hdnloansancorFIapplied_name.Value;
+                objEntity1.strloansancorFIappliedDocCode = HdnLoansancorFIapplied_Code.Value;
+                objEntity1.strloansancorFIapplied = HdnLoansancorFIapplied_Name.Value;
             }
             else
             {
@@ -1455,10 +1449,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strloansancorFIapplied = null;
             }
 
-            if (hdnIncentiveAvail_name.Value != "")
+            if (HdnIncentiveAvail_Name.Value != "")
             {
-                objEntity1.strIncentiveAvailDocCode = hdnIncentiveAvail_code.Value;
-                objEntity1.strIncentiveAvail = hdnIncentiveAvail_name.Value;
+                objEntity1.strIncentiveAvailDocCode = HdnIncentiveAvail_Code.Value;
+                objEntity1.strIncentiveAvail = HdnIncentiveAvail_Name.Value;
             }
             else
             {
@@ -1466,10 +1460,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strIncentiveAvail = null;
             }
 
-            if (hdnUndertakingeffect_name.Value != "")
+            if (HdnUndertakingeffect_Name.Value != "")
             {
-                objEntity1.strUndertakingeffectDocCode = hdnUndertakingeffect_code.Value;
-                objEntity1.strUndertakingeffect = hdnUndertakingeffect_name.Value;
+                objEntity1.strUndertakingeffectDocCode = HdnUndertakingeffect_Code.Value;
+                objEntity1.strUndertakingeffect = HdnUndertakingeffect_Name.Value;
             }
             else
             {
@@ -1477,10 +1471,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strUndertakingeffect = null;
             }
 
-            if (hdnclearancefromPCB_name.Value != "")
+            if (HdnClearancefromPCB_Name.Value != "")
             {
-                objEntity1.strclearancefromPCBDocCode = hdnclearancefromPCB_code.Value;
-                objEntity1.strclearancefromPCB = hdnclearancefromPCB_name.Value;
+                objEntity1.strclearancefromPCBDocCode = HdnClearancefromPCB_Code.Value;
+                objEntity1.strclearancefromPCB = HdnClearancefromPCB_Name.Value;
             }
             else
             {
@@ -1840,10 +1834,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
             /// Other Document Section
             /*----------------------------------------------------------*/
 
-            if (hdnPoweratt_name.Value != "")
+            if (HdnPoweratt_Name.Value != "")
             {
-                objEntity1.strPworofAttorneyDocCode = hdnPoweratt_code.Value;
-                objEntity1.strPworofAttorney = hdnPoweratt_name.Value;
+                objEntity1.strPworofAttorneyDocCode = HdnPoweratt_Code.Value;
+                objEntity1.strPworofAttorney = HdnPoweratt_Name.Value;
             }
             else
             {
@@ -1851,10 +1845,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strPworofAttorney = null;
             }
 
-            if (certofreg_name.Value != "")
+            if (HdnCertofreg_Name.Value != "")
             {
-                objEntity1.strCertificateofregistrationDocCode = certofreg_code.Value;
-                objEntity1.strCertificateofregistration = certofreg_name.Value;
+                objEntity1.strCertificateofregistrationDocCode = HdnCertofreg_Code.Value;
+                objEntity1.strCertificateofregistration = HdnCertofreg_Name.Value;
             }
             else
             {
@@ -1862,10 +1856,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strCertificateofregistration = null;
             }
 
-            if (hdnEIN_Name.Value != "")
+            if (HdnEIN_Name.Value != "")
             {
-                objEntity1.strEINapprovalDocCode = hdnEIN_Code.Value;
-                objEntity1.strEINapproval = hdnEIN_Name.Value;
+                objEntity1.strEINapprovalDocCode = HdnEIN_Code.Value;
+                objEntity1.strEINapproval = HdnEIN_Name.Value;
             }
             else
             {
@@ -1873,10 +1867,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strEINapproval = null;
             }
 
-            if (hdnPlantmachinery_Name.Value != "")
+            if (HdnPlantmachinery_Name.Value != "")
             {
-                objEntity1.strCapitalInvstDocCode = hdnPlantmachinery_Code.Value;
-                objEntity1.strCapitalInvst = hdnPlantmachinery_Name.Value;
+                objEntity1.strCapitalInvstDocCode = HdnPlantmachinery_Code.Value;
+                objEntity1.strCapitalInvst = HdnPlantmachinery_Name.Value;
             }
             else
             {
@@ -1884,10 +1878,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strCapitalInvst = null;
             }
 
-            if (hdnloansancorFIapplied_name.Value != "")
+            if (HdnLoansancorFIapplied_Name.Value != "")
             {
-                objEntity1.strloansancorFIappliedDocCode = hdnloansancorFIapplied_code.Value;
-                objEntity1.strloansancorFIapplied = hdnloansancorFIapplied_name.Value;
+                objEntity1.strloansancorFIappliedDocCode = HdnLoansancorFIapplied_Code.Value;
+                objEntity1.strloansancorFIapplied = HdnLoansancorFIapplied_Name.Value;
             }
             else
             {
@@ -1895,10 +1889,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strloansancorFIapplied = null;
             }
 
-            if (hdnIncentiveAvail_name.Value != "")
+            if (HdnIncentiveAvail_Name.Value != "")
             {
-                objEntity1.strIncentiveAvailDocCode = hdnIncentiveAvail_code.Value;
-                objEntity1.strIncentiveAvail = hdnIncentiveAvail_name.Value;
+                objEntity1.strIncentiveAvailDocCode = HdnIncentiveAvail_Code.Value;
+                objEntity1.strIncentiveAvail = HdnIncentiveAvail_Name.Value;
             }
             else
             {
@@ -1906,10 +1900,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strIncentiveAvail = null;
             }
 
-            if (hdnUndertakingeffect_name.Value != "")
+            if (HdnUndertakingeffect_Name.Value != "")
             {
-                objEntity1.strUndertakingeffectDocCode = hdnUndertakingeffect_code.Value;
-                objEntity1.strUndertakingeffect = hdnUndertakingeffect_name.Value;
+                objEntity1.strUndertakingeffectDocCode = HdnUndertakingeffect_Code.Value;
+                objEntity1.strUndertakingeffect = HdnUndertakingeffect_Name.Value;
             }
             else
             {
@@ -1917,10 +1911,10 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
                 objEntity1.strUndertakingeffect = null;
             }
 
-            if (hdnclearancefromPCB_name.Value != "")
+            if (HdnClearancefromPCB_Name.Value != "")
             {
-                objEntity1.strclearancefromPCBDocCode = hdnclearancefromPCB_code.Value;
-                objEntity1.strclearancefromPCB = hdnclearancefromPCB_name.Value;
+                objEntity1.strclearancefromPCBDocCode = HdnClearancefromPCB_Code.Value;
+                objEntity1.strclearancefromPCB = HdnClearancefromPCB_Name.Value;
             }
             else
             {
