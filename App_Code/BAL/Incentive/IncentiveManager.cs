@@ -300,5 +300,20 @@ public static class IncentiveManager
     {
         return Provider.StampDutyExemptionpopulateDatainDraft(intUNQINCID);
     }
-
+    public static DataSet ExemptionLandIndustrialUse_populateDatainDraft(int intUNQINCID)
+    {
+        return Provider.ExemptionLandIndustrialUse_populateDatainDraft(intUNQINCID);
+    }
+    public static DataSet ExemptionLandIndustrialUse_ViewData(int intUNQINCID)
+    {
+        return Provider.ExemptionLandIndustrialUse_ViewData(intUNQINCID);
+    }
+    public static DataSet MigratedIndustrialUnit_populateDatainDraft(int intUNQINCID)
+    {
+        return Provider.MigratedIndustrialUnit_populateDatainDraft(intUNQINCID);
+    }
+    public static DataSet MigratedIndustrialUnit_ViewData(int intUNQINCID)
+    {
+        return Provider.MigratedIndustrialUnit_ViewData(intUNQINCID);
+    }
 }

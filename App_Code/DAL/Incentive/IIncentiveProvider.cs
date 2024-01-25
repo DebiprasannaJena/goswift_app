@@ -86,5 +86,9 @@ public interface IIncentiveProvider
     DataSet ProvisionalThrustsectorpopulateDatainDraft(int intUNQINCID);
     DataSet StampDutyExemptionpopulateData(int intUNQINCID);
     DataSet StampDutyExemptionpopulateDatainDraft(int intUNQINCID);
+    DataSet ExemptionLandIndustrialUse_populateDatainDraft(int intUNQINCID);
+    DataSet ExemptionLandIndustrialUse_ViewData(int intUNQINCID);
+    DataSet MigratedIndustrialUnit_populateDatainDraft(int intUNQINCID);
+    DataSet MigratedIndustrialUnit_ViewData(int intUNQINCID);
     
 }

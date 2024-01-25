@@ -20,6 +20,8 @@
 <%--<%@ Register Src="~/includes/investormenu.ascx" TagName="investoemenu" TagPrefix="uc4" %>--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <title> </title>
+    
     <uc1:doctype ID="doctype" runat="server" />
     <link href="../css/custom.css" rel="stylesheet" type="text/css" />
     <link href="../css/incentive.css" rel="stylesheet" type="text/css"/>
@@ -79,7 +81,7 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-    <uc2:header ID="header" runat="server" />
+     <uc2:header ID="header" runat="server" />
         <div class="container">
             <div class="container wrapper">
                 <div class="registration-div investors-bg investboxconain">

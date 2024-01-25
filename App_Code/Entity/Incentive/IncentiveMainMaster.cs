@@ -449,6 +449,8 @@ namespace EntityLayer.Incentive
         public List<BasicProductionItemAfter> ProductionItem_AF { get; set; }
         public List<BasicTermLoan> TermLoan { get; set; }
         public List<BasicWorkingCapitalLoan> WorkingCapitalLoan { get; set; }
+        public List<LandConverted> Land_tobe_converted { get; set; }
+        public List<IncentiveAvailed> Incentive_Availeds { get; set; }
 
         public string strInctFlow { get; set; }
         /*----------------------------------------------------------------*/
@@ -529,10 +531,21 @@ namespace EntityLayer.Incentive
         public string strfixedcapitalinvstPost { get; set;}
         public string strEmpoweredCommitteeDocCodePost { get; set;}
         public string strEmpoweredCommitteePost { get; set;}
-
-//--------------------------------------------------------------------------//
-      //Add by Debiprasanna on Dt:16-08-2023
-      public string strProposedLocation { get; set; }
+        public string strEINapprovalDocCode { get; set; }
+        public string strEINapproval { get; set; }
+        public string strCapitalInvstDocCode { get; set; }
+        public string strCapitalInvst { get; set; }
+        public string strloansancorFIappliedDocCode { get; set; }
+        public string strloansancorFIapplied { get; set; }
+        public string strIncentiveAvailDocCode { get; set; }
+        public string strIncentiveAvail { get; set; }
+        public string strUndertakingeffectDocCode { get; set; }
+        public string strUndertakingeffect { get; set; }
+        public string strclearancefromPCBDocCode { get; set; }
+        public string strclearancefromPCB { get; set; }
+        //--------------------------------------------------------------------------//
+        //Add by Debiprasanna on Dt:16-08-2023
+        public string strProposedLocation { get; set; }
       public string strPrsentStatus { get; set; }
       public string strDeed { get; set; }
       public decimal decSdeClaimed { get; set; }
@@ -568,7 +581,26 @@ namespace EntityLayer.Incentive
       public string strProvisionalPrioritycetificate { get; set; }
       public string strEmpoweredCommitteeDocCode { get; set; }
       public string strEmpoweredCommittee { get; set; }
-
+ //----------------------------------------------------------------------------//
+     //Add by Debiprasanna Jena on Dt:29-11-2023
+     public string strNameoffinancer { get; set; }
+     public decimal decCostofproject { get; set; }
+     public decimal decAreaofLandRequired { get; set; }
+     public decimal decAreaofLandAcquired { get; set; }
+     public int intParticularsLandtobeconverted { get; set; }
+     public string strThrustorPrioritySector { get; set; }
+     public string strProvisionalPriorityorThruststatusDocCode { get; set; }
+     public string strProvisionalPriorityorThruststatus { get; set; }
+     public string strApprovalDetailsprojrctDocCode { get; set; }
+     public string strApprovalDetailsprojrct { get; set; }
+     public string strApprisalsupportexpansionDocCode { get; set; }
+     public string strApprisalsupportexpansion { get; set; }
+     public string strLanddocumentDocCode { get; set; }
+     public string strLanddocument{ get; set; }
+     public string strStatutoryClearancesDocCode { get; set; }
+     public string strStatutoryClearances { get; set; }
+     public string strNonjudicialStampDocCode { get; set; }
+     public string strNonjudicialStamp { get; set; }
     }
 
     [Serializable]
@@ -1128,4 +1160,24 @@ namespace EntityLayer.Incentive
 
     }
     #endregion
+
+    [Serializable]
+    public class LandConverted
+    {
+        public string vchMouza { get; set; }  
+        public string vchKhataNo { get; set; }   
+        public string vchPlotNo { get; set; }
+        public string vchArea { get; set; }
+        public string vchPresentKisam { get; set; }
+    }
+
+    [Serializable]
+    public class IncentiveAvailed
+    {
+        public string vchIncentive { get; set; }
+        public Decimal decValue { get; set; }
+        public Decimal decPeriod { get; set; }
+        public string vchIPRApplica { get; set; }
+
+    }
 }

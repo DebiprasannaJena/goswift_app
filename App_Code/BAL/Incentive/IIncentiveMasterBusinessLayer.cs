@@ -145,5 +145,9 @@ namespace BusinessLogicLayer.Incentive
         string Thrust_Priority_Draft(Basic_Unit_Details_Entity objInctEntity);
         string Stamp_Duty_Exemption_AED(Basic_Unit_Details_Entity objInctEntity);
         string Stamp_Duty_Exemption_Draft(Basic_Unit_Details_Entity objInctEntity);
+        string Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objInctEntity);
+        string Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objInctEntity);
+        string Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objInctEntity);
+        string Migrated_Industrial_Unit_Draft(Basic_Unit_Details_Entity objInctEntity);
     }
 }
