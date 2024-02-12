@@ -10,6 +10,7 @@ using System.Security.Cryptography.Pkcs;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Threading;
 
 public partial class TestNSDL : System.Web.UI.Page
 {
@@ -17,6 +18,39 @@ public partial class TestNSDL : System.Web.UI.Page
     {
 
     }
+
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            LblMsg4.Text = "";
+            PANValidationNSDL obj = new PANValidationNSDL();
+            //string panResponse = obj.GetPANStatusFromNSDL("AAAPW9785A", "VINITA BHANUSHALI", "02/09/1928");
+            string panResponse = obj.GetPANStatusFromNSDL(TxtPan.Text.Trim(), TxtName.Text, TxtDob.Text);
+
+            LblMsg4.Text = panResponse;
+        }
+        catch (Exception ex)
+        {
+            Response.Write(ex.Message.ToString());
+        }
+    }
+
+    public string MakeRandom(int pl)
+    {
+        Thread.Sleep(10);
+        string possibles = "0123456789";
+        char[] passwords = new char[pl];
+        Random rd = new Random();
+
+        for (int i = 0; i < pl; i++)
+        {
+            passwords[i] = possibles[rd.Next(0, possibles.Length)];
+        }
+        return new string(passwords);
+    }
+
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Write(NSDLResponse(TextBox1.Text));
@@ -86,7 +120,7 @@ public partial class TestNSDL : System.Web.UI.Page
         // create the signature
         signedCms.ComputeSignature(signer);
         return signedCms.Encode();
-    }   
+    }
     public bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
     {
         return true;
