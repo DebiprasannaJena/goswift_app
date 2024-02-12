@@ -177,6 +177,12 @@ public partial class ServiceInstructionExternal : System.Web.UI.Page
                 lblMessage.Text = "Department of Energy";
                 ServiceModalPopup.Show();
             }
+            else if (str_FormId == "16") // New Power Connection Service
+            {
+                lblMessage.Text = "New Power connection";
+                ServiceModalPopup.Show();
+            }
+
         }
         catch (Exception ex)
         {
@@ -286,7 +292,59 @@ public partial class ServiceInstructionExternal : System.Web.UI.Page
         {
             Response.Redirect(ConfigurationManager.AppSettings["DGSETREDIRECTIONURL"].ToString());
         }
+        else if (str_FormId == "16") // New Power Connection Service
+        {
+            Data = Energydept();
+            // string keyvalue = "252e80b4e5d9cfc8b369ad98dcc87b5e";
+            //string token = GeenerateToken(Data, keyvalue);
+
+            var client = new RestClient("https://mobidyut.com:8095/NewConnection/NewServiceConnectionGoSwift");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Cookie", "ASP.NET_SessionId=4hat4ggly4rwdyyw4vvgexpu");
+
+
+            request.AddParameter("application/json", Data, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+
+            //Response.Write(response.Content);
+
+            Response.Write("<script type='text/javascript' language='javascript'>");
+            Response.Write("var newWindow = window.open('', '_blank');");
+            Response.Write("newWindow.document.write('" + response.Content + "');");
+            Response.Write("</script>");
+
+            Response.End();
+
+
+
+
+
+        }
     }
+
+
+
+    public string GeenerateToken(string requestData, string key)
+    {
+        UTF8Encoding encoder = new UTF8Encoding();
+
+        byte[] hashValue;
+        byte[] keybyt = encoder.GetBytes(key);
+        byte[] message = encoder.GetBytes(requestData);
+
+        HMACSHA256 hashString = new HMACSHA256(keybyt);
+        string hex = "";
+
+        hashValue = hashString.ComputeHash(message);
+        foreach (byte x in hashValue)
+        {
+            hex += String.Format("{0:x2}", x);
+        }
+        return hex;
+    }
+
     protected void BtnNo_Click(object sender, EventArgs e)
     {
         lblMessage.Text = "";
@@ -473,6 +531,81 @@ public partial class ServiceInstructionExternal : System.Web.UI.Page
         }
         return EncryptValue;
     }
+
+    private string Energydept()
+    {
+        string EncryptValue = "";
+        DataTable dt = new DataTable();
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            try
+            {
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USP_Energy_SERVICE_DISPLAY";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@INT_INVESTOR_ID", Convert.ToInt32(Session["InvestorId"].ToString()));
+                cmd.Parameters.AddWithValue("@VCH_ACTION", "INDUSTRYINFO");
+                cmd.Parameters.AddWithValue("@VCH_APPLICATION_UNQ_KEY", "");
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Util.LogError(ex, "Energy");
+
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+            string output = objSvc.ExternalServiceData("GA", Convert.ToInt32(str_FormId), str_ProposalNo, Convert.ToInt32(Session["InvestorId"]), Session["PAN"].ToString());
+            if (output != "")
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    string Industry_name = Uri.EscapeDataString(dt.Rows[0]["VCH_INV_NAME"].ToString());
+                   // EncryptValue = "appln_id=" + output + "&service_code=" + str_FormId.ToString() + "&pan=" + dt.Rows[0]["VCH_PAN"].ToString() + "&name=" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "&mobile_number=" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "&email=" + dt.Rows[0]["VCH_EMAIL"].ToString() + "&est_name=" + Industry_name;
+                    //  string body = @"{""serviceid"":"""",""lastName"":""testu"",""mobile"":""8979787889"",""goSwiftAapplicationId"":""2023051525000002""}";
+
+                     //EncryptValue = "{\"serviceid\":\"" + str_FormId.ToString() + "\",\"goSwiftApplicationId\":\"" + output + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\"}";
+
+                     string jsondata = "{\"serviceId\":\"" + str_FormId.ToString() + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\",\"goSwiftApplicationId\":\"" + output + "\"}";
+
+                   
+
+                    string keyvalue = "252e80b4e5d9cfc8b369ad98dcc87b5e";
+                    string token = GeenerateToken(jsondata, keyvalue);
+
+                     EncryptValue = "{\r\n    \"data\":{\"serviceId\":\"" + str_FormId.ToString() + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\",\"goSwiftApplicationId\":\"" + output + "\"},\"token\":\"" + token + "\"\r\n}";
+
+                   
+
+
+
+
+
+                }
+                else
+                {
+                     EncryptValue = "{\"serviceid\":\"\",\"goSwiftApplicationId\":\"\",\"name\":\"\",\"pan\":\"\",\"email\":\"\",\"mobile\":\"\"}";
+                   // EncryptValue = "appln_id=" + output + "&service_code=" + str_FormId.ToString() + "&pan=" + "" + "&name=" + "" + "&mobile_number=" + "" + "&email=" + "" + "&est_name=''";
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "Energy");
+        }
+        return EncryptValue;
+    }
+
 
     private string FOREST()
     {
