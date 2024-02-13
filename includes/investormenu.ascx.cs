@@ -17,15 +17,8 @@ using System.Threading;
 
 public partial class includes_investormenu : System.Web.UI.UserControl
 {
-
-    
-
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-
-        
-
         if (Session["UserId"] == null || Session["IndustryType"] == null)
         {
             Response.Redirect("~/LogOut.aspx", false);
@@ -67,8 +60,6 @@ public partial class includes_investormenu : System.Web.UI.UserControl
 
         try
         {
-           
-
             /*-----------------------------------------------------------*/
             /// Display Manage Menu If the Unit is Main Unit (Parent Unit)
             /*-----------------------------------------------------------*/
@@ -97,21 +88,18 @@ public partial class includes_investormenu : System.Web.UI.UserControl
             DWHServiceReference.Registration[] App;
             App = validate.GetOtherAppsForUser(validate.URLEncryption(ConfigurationManager.AppSettings["DWHEncryptionKey"]), Session["UID"].ToString(), "");
 
-            if (App != null)
+            if (App != null && App.Length != 0)
             {
-                if (App.Length != 0)
+                for (int i = 0; i < App.Length; i++)
                 {
-                    for (int i = 0; i < App.Length; i++)
-                    {
-                        othermenulist.Visible = true;
-                        HtmlGenericControl li = new HtmlGenericControl("li");
-                        OtherApps.Controls.Add(li);
-                        HtmlGenericControl anchor = new HtmlGenericControl("a");
-                        anchor.Attributes.Add("href", "AppRedirect.aspx?Key=" + App[i].AppKey + "&AppName=" + App[i].AppAlias + "");
-                        anchor.Attributes.Add("target", "_blank");
-                        anchor.InnerText = App[i].AppAlias;
-                        li.Controls.Add(anchor);
-                    }
+                    othermenulist.Visible = true;
+                    HtmlGenericControl li = new HtmlGenericControl("li");
+                    OtherApps.Controls.Add(li);
+                    HtmlGenericControl anchor = new HtmlGenericControl("a");
+                    anchor.Attributes.Add("href", "AppRedirect.aspx?Key=" + App[i].AppKey + "&AppName=" + App[i].AppAlias + "");
+                    anchor.Attributes.Add("target", "_blank");
+                    anchor.InnerText = App[i].AppAlias;
+                    li.Controls.Add(anchor);
                 }
             }
         }
@@ -138,14 +126,10 @@ public partial class includes_investormenu : System.Web.UI.UserControl
 
     string FormatJSON(string name, string value)
     {
-        //return "\"\"" + name + "\"\": " + "\"\"" + value + "\"\"";
-
         return "\"" + name + "\":" + "\"" + value + "\"";
     }
     protected void BtnYes_Click(object sender, EventArgs e)
     {
-        
-
         try
         {
             LoginDetails objLogindt = new LoginDetails();
@@ -154,88 +138,83 @@ public partial class includes_investormenu : System.Web.UI.UserControl
             objLogindt.strAction = "IUP";
             objLogindt.strUniqueId = Session["UID"].ToString();
 
-            Util.LogRequestResponse("SAMLInvestormenu", "Investorid", "[strUniqueId]:- " + Session["UID"].ToString());
+            Util.LogRequestResponse("SAMLInvestorMenu", "Investorid", "[strUniqueId]:- " + Session["UID"].ToString());
 
             DataTable dt = objBAL.viewInvestorDetails(objLogindt);
-            if(dt.Rows[0]["VCH_CIN_NUMBER"].ToString() == "" && dt.Rows[0]["INT_ENTITY_TYPE"].ToString() == "0")
+            if (dt.Rows[0]["VCH_CIN_NUMBER"].ToString() == "" && dt.Rows[0]["INT_ENTITY_TYPE"].ToString() == "0")
             {
-                // Response.Redirect("~/EditInvestorProfile.aspx", false);
-
                 InformationModalpopup2.Show();
             }
             else
             {
-                var client = new RestClient("https://dev-nsws.investindia.gov.in/auth/realms/madhyam/userOrg/redirect/user/odisha?clientId=portal-dev");
-
-                client.Timeout = 15000;
-
-                var request = new RestRequest(Method.POST);
-
-                request.AddHeader("Content-Type", "application/json");
-
-                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
 
                 string txtpan = dt.Rows[0]["VCH_PAN"].ToString();
                 string email = dt.Rows[0]["VCH_EMAIL"].ToString();
                 string entitytype = dt.Rows[0]["INT_ENTITY_TYPE"].ToString();
                 string cinnumber = dt.Rows[0]["VCH_CIN_NUMBER"].ToString();
 
-                var body = @"{" + FormatJSON("pan", txtpan) + "," + FormatJSON("cin", cinnumber) + "," + FormatJSON("entityType", entitytype) + "," + FormatJSON("email", email) + "}";
+                var body = @"{" + FormatJSON("pan", txtpan)
+                          + "," + FormatJSON("cin", cinnumber)
+                          + "," + FormatJSON("entityType", entitytype)
+                          + "," + FormatJSON("email", email)
+                          + "}";
 
-                Util.LogRequestResponse("SAMLInvestormenu", "InputRequestToSAMLAPI", "[InputJsonData]:- " + body);
 
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+                //ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+
+                /*---------------------------------------------------------------------------------*/
+                ///Get the Precheck API Address from web.config file.
+                /*---------------------------------------------------------------------------------*/
+                string strPreCheckApiUrl = ConfigurationManager.AppSettings["NswsPreCheckApiUrl"].ToString();
+
+                var client = new RestClient(strPreCheckApiUrl)
+                {
+                    Timeout = 15000
+                };
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
                 request.AddParameter("application/json", body, ParameterType.RequestBody);
 
+                Util.LogRequestResponse("SAMLInvestormenu", "InputRequestToSAMLAPI", "[InputJsonData]:- " + body);
                 IRestResponse response = client.Execute(request);
 
-                Util.LogRequestResponse("SAMLInvestormenu", "GetResponseFromSAMLAPI", "[ResponseStatusCode]:- " + response.StatusCode.ToString());
-
-                Util.LogRequestResponse("SAMLInvestormenu", "GetResponseFromSAMLAPI", "[ResponseContent]:- " + response.Content);
+                Util.LogRequestResponse("SAMLInvestorMenu", "GetResponseFromSAMLAPI", "[ResponseStatusCode]:- " + response.StatusCode.ToString());
+                Util.LogRequestResponse("SAMLInvestorMenu", "GetResponseFromSAMLAPI", "[ResponseContent]:- " + response.Content);
 
                 if (response.Content.ToString() != "")
                 {
-
-                    if( response.StatusCode.ToString()== "BadRequest")
+                    if (response.StatusCode.ToString() == "BadRequest")
                     {
-
                         var data = (JObject)JsonConvert.DeserializeObject(response.Content.ToString());
-
-
                         string[] splitdata = response.Content.ToString().Split(':');
-
                         string removedata = splitdata[0].ToString().Remove(0, 1);
 
-
                         string panInformation = "";
-                        
                         if (removedata == "\"pan\"")
                         {
                             panInformation = data["pan"].Value<string>();
-                           
+
                             ServiceModalPopup.Hide();
                             lbl_message.InnerText = panInformation;
                             InformationModalpopup.Show();
-                            
                         }
                         else if (removedata == "\"email\"")
                         {
                             panInformation = data["email"].Value<string>();
-                            
+
                             ServiceModalPopup.Hide();
                             lbl_message.InnerText = panInformation;
-                            InformationModalpopup.Show();                        
-                           
-                        
+                            InformationModalpopup.Show();
                         }
                         else if (removedata == "\"cin\"")
                         {
                             panInformation = data["cin"].Value<string>();
 
                             ServiceModalPopup.Hide();
-                            lbl_message.InnerText ="Invalid CIN Number"+panInformation;
+                            lbl_message.InnerText = "Invalid CIN Number" + panInformation;
                             InformationModalpopup.Show();
-
-
                         }
                         else if (removedata == "\"error\"")
                         {
@@ -244,8 +223,6 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                             ServiceModalPopup.Hide();
                             lbl_message.InnerText = panInformation;
                             InformationModalpopup.Show();
-
-
                         }
                         else if (removedata == "\"companyName\"")
                         {
@@ -254,8 +231,6 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                             ServiceModalPopup.Hide();
                             lbl_message.InnerText = panInformation;
                             InformationModalpopup.Show();
-
-
                         }
                         else if (removedata == "\"llpin\"")
                         {
@@ -264,30 +239,20 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                             ServiceModalPopup.Hide();
                             lbl_message.InnerText = panInformation;
                             InformationModalpopup.Show();
-
-
                         }
-
-
                     }
                     else
                     {
                         Response.Redirect("~/SAMLprecheck.aspx?txtpan=" + txtpan + "&email=" + email + "&entitytype=" + entitytype + "&cinnumber=" + cinnumber, false);
                     }
-
-
                 }
-
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Util.LogError(ex, "OtherMenu");
         }
-        
     }
-
-
 
     protected void Btn_ok_Click(object sender, EventArgs e)
     {
@@ -309,7 +274,6 @@ public partial class includes_investormenu : System.Web.UI.UserControl
         InformationModalpopup.Hide();
         InformationModalpopup2.Hide();
     }
-
     protected void Btn_yes_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/EditInvestorProfile.aspx", false);
