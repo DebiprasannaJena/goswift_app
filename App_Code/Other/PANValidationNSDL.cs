@@ -1,6 +1,8 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Configuration;
+using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Net.Security;
@@ -20,6 +22,7 @@ public class PANValidationNSDL
 
     }
 
+    SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
     public string GetPANStatusFromNSDL(string strPAN)
     {
         string strResponse = "";
@@ -141,6 +144,64 @@ public class PANValidationNSDL
             request.AddParameter("application/json", requestJsonBody, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             var output = response.Content.ToString();
+
+            /*---------------------------------------------------------------------------------*/
+            ///Log the request and response data.
+            /*---------------------------------------------------------------------------------*/
+            var jsonObject = JObject.Parse(output);
+            string response_Code = (string)jsonObject["response_Code"];
+
+            JArray outputData = (JArray)jsonObject["outputData"];
+            string dob = "";
+            string name = "";
+            string pan_status = "";
+            string pan = "";
+            string seeding_status = "";
+
+            if (response_Code == "1")
+            {
+                if (outputData.Count > 0)
+                {
+                    foreach (JObject item in outputData)
+                    {
+                        dob = (string)item["dob"];
+                        name = (string)item["name"];
+                        pan_status = (string)item["pan_status"];
+                        pan = (string)item["pan"];
+                        seeding_status = (string)item["seeding_status"];
+
+                    }
+                }
+
+            }
+                conn.Open();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "USP_NSDL_PAN_VALIDATION_LOG_AED";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@ReqUserId", strPanUserId);
+            cmd.Parameters.AddWithValue("@ReqTransactionId", transactionId);
+            cmd.Parameters.AddWithValue("@ReqTime", requestTime);
+            cmd.Parameters.AddWithValue("@ReqRecordCount", 1);
+            cmd.Parameters.AddWithValue("@ReqApiVersion", 4);
+            cmd.Parameters.AddWithValue("@ReqPan", strPAN);
+            cmd.Parameters.AddWithValue("@ReqAppName", strName);
+            cmd.Parameters.AddWithValue("@ReqDob", strDob);
+            cmd.Parameters.AddWithValue("@ReqSignatureValue", strSignature);
+            cmd.Parameters.AddWithValue("@ResUserId", strPanUserId);
+            cmd.Parameters.AddWithValue("@ResRecordCount", 1);
+            cmd.Parameters.AddWithValue("@ResTime", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
+            cmd.Parameters.AddWithValue("@ResTransactionId", transactionId);
+            cmd.Parameters.AddWithValue("@ResApiVersion", 4);
+            cmd.Parameters.AddWithValue("@ResCode",Convert.ToInt32( response_Code));
+            cmd.Parameters.AddWithValue("@ResPan", pan);
+            cmd.Parameters.AddWithValue("@ResPanStatus", pan_status);
+            cmd.Parameters.AddWithValue("@ResAppName", name);
+            cmd.Parameters.AddWithValue("@ResDob", dob);
+            cmd.Parameters.AddWithValue("@ResSeedingStatus", seeding_status);
+            cmd.ExecuteNonQuery();
 
             return output;
         }

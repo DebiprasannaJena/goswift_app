@@ -18,9 +18,13 @@
 <%@ Register Src="~/includes/webheader.ascx" TagName="header" TagPrefix="uc2" %>
 <%@ Register Src="~/includes/simplefooter.ascx" TagName="footer" TagPrefix="uc3" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc2" %>
+
+
+
 <!DOCTYPE html>
 <html>
 <head id="Head1" runat="server">
+
     <title></title>
     <uc1:doctype ID="doctype" runat="server" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
@@ -153,6 +157,19 @@
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
                 return false;
             }
+
+            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
         }
 
         /*--------------------------------------------------------------*/
@@ -162,6 +179,7 @@
             if (blankFieldValidation('Txt_PAN', 'PAN', projname) == false) {
                 return false;
             }
+            
             if ($('#Txt_PAN').val().length != 10) {
                 jAlert('<strong>PAN should be 10 digits.</strong>', projname);
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
@@ -173,6 +191,20 @@
                 jAlert('<strong>Invalid PAN card number !</strong>', projname);
                 $('#Txt_PAN').val('');
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
+                return false;
+            }
+
+            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+
+            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
             if ($('#Txt_User_Id').val() == "") {
@@ -539,11 +571,39 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
 
 
 
+            //$('.datePicker').datepicker({
+            //    format: "dd-M-yyyy",
+            //    changeMonth: true,
+            //    changeYear: true,
+            //    autoclose: true
+            //});
+            //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+            //function EndRequestHandler(sender, args) {
+            //    $('.datePicker').datepicker({
+            //        format: 'dd-M-yyyy',
+            //        autoclose: true
+            //    });
+            //}
+
+
+
+            $('.datePicker').datepicker({
+                format: "dd-M-yyyy",
+                changeMonth: true,
+                changeYear: true,
+                autoclose: true
+            });
+            
+
            
         });
 
 
     </script>
+
+
+    
     <script type="text/javascript">
         $(function () {
             $("#DrpDwn_Entity_Type").change(function () {
@@ -705,6 +765,37 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter the Company PAN number !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
+                                                         <label for="email" class="col-sm-3 col-md-2">
+                                                            Enter the PAN Holder Name
+                                                        </label>
+                                                        <div class="col-sm-6 col-md-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server"  ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')" ></asp:TextBox>
+                                                            <a data-toggle="tooltip" class="fieldinfo" title="Please enter PAN Holder Name !">
+                                                                <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                                        </div>
+
+
+
+                                                        
+                                                        
+                                                        
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <label for="email" class="col-sm-3 col-md-2">
+                                                            Enter the DOB (dd/mm/yyyy)
+                                                        </label>
+
+                                                        <div class="col-sm-6 col-md-4">
+                                                            <span class="colon">:</span>
+                                                            <div class="input-group date datePicker">
+                                                            <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                        </div>
+
+
                                                         <div class="col-sm-3 col-md-6">
                                                             <asp:Button ID="Btn_PAN_Validate" runat="server" Text="Validate & Check Availability"
                                                                 OnClientClick="return ValidateAtCheckMailBtn();" CssClass=" btn btn-success"
@@ -1310,4 +1401,5 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
         <uc3:footer ID="footer" runat="server" />
     </form>
 </body>
+  
 </html>
