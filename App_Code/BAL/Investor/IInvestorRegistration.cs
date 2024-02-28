@@ -23,6 +23,10 @@ namespace BusinessLogicLayer.Investor
         DataTable GetInvestorName(InvestorDetails objprop);
         [OperationContract]
         DataTable BindEntityType(string action);
+        [OperationContract]
+        DataTable BindRegdCountry(string action);
+        [OperationContract]
+        DataTable BindRegdState(string action, int countryid);
     }
     
 }

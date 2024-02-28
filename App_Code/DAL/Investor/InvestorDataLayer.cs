@@ -50,6 +50,18 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@INT_CATEGORY", objInvestor.intCategoryId);
                 cmd.Parameters.AddWithValue("@INT_ENTITY_TYPE", objInvestor.intEntitytype); // add by anil
                 cmd.Parameters.AddWithValue("@VCH_CIN_NUMBER", objInvestor.strCINnumber); // add by anil
+                cmd.Parameters.AddWithValue("@VCH_REG_ADDRESS_2", objInvestor.StrRegAddress_2);
+                cmd.Parameters.AddWithValue("@INT_REG_COUNTRY", objInvestor.IntRegCountry);
+                cmd.Parameters.AddWithValue("@VCH_REG_STATE", objInvestor.StrRegState);
+                cmd.Parameters.AddWithValue("@VCH_REG_CITY", objInvestor.StrRegCity);
+                cmd.Parameters.AddWithValue("@VCH_REG_PIN", objInvestor.StrRegPincode);
+                cmd.Parameters.AddWithValue("@VCH_SL_ADDRESS_2", objInvestor.StrSlAddress_2);
+                cmd.Parameters.AddWithValue("@INT_SL_COUNTRY", objInvestor.IntSlCountry);
+                cmd.Parameters.AddWithValue("@VCH_SL_STATE", objInvestor.StrSlState);
+                cmd.Parameters.AddWithValue("@VCH_SL_CITY", objInvestor.StrSlCity);
+                cmd.Parameters.AddWithValue("@VCH_SL_PIN", objInvestor.StrSlPincode);
+                cmd.Parameters.AddWithValue("@VCH_LLPIN_NUMBER", objInvestor.StrLLPINumber);
+
                 cmd.Parameters.AddWithValue("@VCHMSG_OUT", SqlDbType.VarChar);
                 cmd.Parameters["@VCHMSG_OUT"].Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
@@ -953,6 +965,7 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@P_INT_CREATED_BY", objEntity.IntCreatedBy);
                 cmd.Parameters.AddWithValue("@P_VCH_UNIQUE_ID", objEntity.strUniqueId);
                 cmd.Parameters.AddWithValue("@P_VCH_LICENCE_DOC", objEntity.strLicenceDoc);
+                cmd.Parameters.AddWithValue("@P_VCH_APPROVALREMARK", objEntity.strApprovalRemarks);
 
                 SqlParameter par1 = new SqlParameter("@P_VCH_OUT_MSG", SqlDbType.VarChar, 100);
                 par1.Direction = ParameterDirection.Output;
@@ -1302,6 +1315,72 @@ namespace DataAcessLayer.Investor
             catch (Exception ex)
             {
                 throw ex.InnerException;
+            }
+            finally
+            {
+                cmd = null;
+            }
+            return dt;
+        }
+
+
+        public DataTable BindRegdCountry(string action)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USP_INVESTOR_REGISTRATION_DETAILS";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Action", action);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+
+            catch (Exception ex)
+            {
+                throw ex.InnerException;
+            }
+            finally
+            {
+                cmd = null;
+            }
+            return dt;
+        }
+
+        public DataTable BindRegdState(string action, int countryid)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USP_INVESTOR_REGISTRATION_DETAILS";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Action", action);
+                cmd.Parameters.AddWithValue("@INT_COUNTRYID", countryid);              
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (NullReferenceException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             finally
             {

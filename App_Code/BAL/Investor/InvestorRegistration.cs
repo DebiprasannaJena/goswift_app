@@ -87,5 +87,13 @@ namespace BusinessLogicLayer.Investor
         {
             return objDataAccess.BindEntityType(action);
         }
+        public DataTable BindRegdCountry(string action)
+        {
+            return objDataAccess.BindRegdCountry(action);
+        }
+        public DataTable BindRegdState(string action, int countryid)
+        {
+            return objDataAccess.BindRegdState(action, countryid);
+        }
     }
 }

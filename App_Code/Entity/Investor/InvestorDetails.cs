@@ -68,5 +68,17 @@ namespace EntityLayer.Investor
         public string strCINnumber { get; set; }
 
         public int intEntitytype { get; set; }
+        public string strApprovalRemarks { get; set; }
+        public string StrRegAddress_2 { get; set; }
+        public int IntRegCountry { get; set; }
+        public string StrRegState { get; set; }
+        public string StrRegCity { get; set; }
+        public string StrRegPincode { get; set; }
+        public string StrSlAddress_2 { get; set; }
+        public int IntSlCountry { get; set; }
+        public string StrSlState { get; set; }
+        public string StrSlCity { get; set; }
+        public string StrSlPincode { get; set; }
+        public string StrLLPINumber { get; set; }
     }
 }
