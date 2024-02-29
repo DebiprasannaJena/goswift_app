@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using InvestorService;
 using BusinessLogicLayer.Investor;
 using EntityLayer.Investor;
 using System.ServiceModel;
@@ -17,7 +16,7 @@ public partial class EditInvestorProfile : SessionCheck
     #region Declaration And Variables
 
     /////// Get Project Name From Web.Config File   
-    string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
+    string StrProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
 
     string action = "";
 
@@ -60,7 +59,6 @@ public partial class EditInvestorProfile : SessionCheck
     ///// Button Update
     protected void Btn_Update_Click(object sender, EventArgs e)
     {
-        CommonHelperCls ob = new CommonHelperCls();
         InvestorDetails objInvDet = new InvestorDetails();
         InvestorBusinessLayer objService = new InvestorBusinessLayer();
 
@@ -71,14 +69,15 @@ public partial class EditInvestorProfile : SessionCheck
             /// For Non-Industrial user (means the value Session["IndustryType"] is 2), the profile will be changed only at GOSWIFT end.
             /// For Industrial user (means the value Session["IndustryType"] is 1), the profile will be changed both at GOSWIFT and DWH ends. 
             /*---------------------------------------------------------------------------------------------------------------*/
-
+            /*---------------------------------*/
+            //For Server side validation.
+            /*---------------------------------*/
             if (Txt_First_Name.Text.Trim() == "")
             {
                 Txt_First_Name.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter name of the applicant.</strong>');", true);
                 Txt_First_Name.Focus();
                 return;
-
             }
             if (string.IsNullOrWhiteSpace(Txt_Mobile_No.Text))
             {
@@ -99,28 +98,16 @@ public partial class EditInvestorProfile : SessionCheck
                 Txt_Mobile_No.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Txt_Address.Text))
+            if (string.IsNullOrWhiteSpace(Txt_Address_1.Text))
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please registration enter address !</strong>');", true);
-                Txt_Address.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please registration enter address-1 !</strong>');", true);
+                Txt_Address_1.Focus();
                 return;
             }
-            if (string.IsNullOrWhiteSpace(Txt_Site_Loc.Text))
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location address !</strong>');", true);
-                Txt_Site_Loc.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(Txt_RegAddress_Invst.Text))
+            if (string.IsNullOrWhiteSpace(Txt_RegAddress_2.Text))
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration address-2 !</strong>');", true);
-                Txt_RegAddress_Invst.Focus();
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(Txt_SitAddress_Invst.Text))
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location address-2 !</strong>');", true);
-                Txt_SitAddress_Invst.Focus();
+                Txt_RegAddress_2.Focus();
                 return;
             }
             if (DrpRegdCountry.SelectedIndex == 0)
@@ -129,18 +116,18 @@ public partial class EditInvestorProfile : SessionCheck
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration country name !</strong>');", true);
                 return;
             }
-            string selectedregCountryValue = DrpRegdCountry.SelectedValue;
-             if (selectedregCountryValue == "1")
-             {
-                string selectedregStateText = DrpRegdState.SelectedItem.Text;
+            string SelectedregCountryValue = DrpRegdCountry.SelectedValue;
+            if (SelectedregCountryValue == "1")
+            {
+                string SelectedregStateText = DrpRegdState.SelectedItem.Text;
 
-                if (selectedregStateText == "--Select--")
+                if (SelectedregStateText == "--Select--")
                 {
                     DrpRegdState.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration state name !</strong>');", true);
                     return;
                 }
-             }
+            }
             else
             {
                 string stateName = TxtRegdState.Text.Trim();
@@ -151,45 +138,10 @@ public partial class EditInvestorProfile : SessionCheck
                     return;
                 }
             }
-            if (DrpSlCountry.SelectedIndex == 0)
-            {
-                DrpSlCountry.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location country name !</strong>');", true);
-                return;
-            }
-            string selectedslCountryValue = DrpSlCountry.SelectedValue;
-            if (selectedslCountryValue == "1")
-            {
-                string selectedslStateText = DrpSlState.SelectedItem.Text;
-
-                if (selectedslStateText == "--Select--")
-                {
-                    DrpSlState.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location state name !</strong>');", true);
-                    return;
-                }
-            }
-            else
-            {
-                string stateName = Txt_SL_State.Text.Trim();
-                if (string.IsNullOrEmpty(stateName))
-                {
-                    Txt_SL_State.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location state name !</strong>');", true);
-                    return;
-                }
-            }
             if (string.IsNullOrEmpty(Txt_Regd_City.Text))
             {
                 Txt_Regd_City.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration city name !</strong>');", true);
-                return;
-            }
-            
-            if (string.IsNullOrEmpty(Txt_Sl_City.Text))
-            {
-                Txt_Sl_City.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
                 return;
             }
             if (string.IsNullOrEmpty(Txt_Regd_Pincode.Text))
@@ -198,13 +150,58 @@ public partial class EditInvestorProfile : SessionCheck
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration pincode !</strong>');", true);
                 return;
             }
-            string pincode = Txt_Regd_Pincode.Text.Trim();
+            string Pincode = Txt_Regd_Pincode.Text.Trim();
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(pincode, @"^\d{6}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Pincode, @"^\d{6}$"))
             {
-              
                 Txt_Regd_Pincode.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>  Please enter a valid 6 - digit registration pincode. !</strong>');", true);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Txt_Site_Loc_1.Text))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location address !</strong>');", true);
+                Txt_Site_Loc_1.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(Txt_SitAddress_2.Text))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location address-2 !</strong>');", true);
+                Txt_SitAddress_2.Focus();
+                return;
+            }
+            if (DrpSlCountry.SelectedIndex == 0)
+            {
+                DrpSlCountry.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location country name !</strong>');", true);
+                return;
+            }
+            string SelectedslCountryValue = DrpSlCountry.SelectedValue;
+            if (SelectedslCountryValue == "1")
+            {
+                string SelectedslStateText = DrpSlState.SelectedItem.Text;
+
+                if (SelectedslStateText == "--Select--")
+                {
+                    DrpSlState.Focus();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location state name !</strong>');", true);
+                    return;
+                }
+            }
+            else
+            {
+                string StateName = Txt_SL_State.Text.Trim();
+                if (string.IsNullOrEmpty(StateName))
+                {
+                    Txt_SL_State.Focus();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location state name !</strong>');", true);
+                    return;
+                }
+            }
+            if (string.IsNullOrEmpty(Txt_Sl_City.Text))
+            {
+                Txt_Sl_City.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
                 return;
             }
             if (string.IsNullOrEmpty(Txt_Sl_Pincode.Text))
@@ -213,11 +210,10 @@ public partial class EditInvestorProfile : SessionCheck
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location pincode !</strong>');", true);
                 return;
             }
-            string slpincode = Txt_Sl_Pincode.Text.Trim();
+            string Slpincode = Txt_Sl_Pincode.Text.Trim();
 
-            if (!System.Text.RegularExpressions.Regex.IsMatch(slpincode, @"^\d{6}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Slpincode, @"^\d{6}$"))
             {
-
                 Txt_Sl_Pincode.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>  Please enter a valid 6 - digit site location pincode. !</strong>');", true);
                 return;
@@ -228,62 +224,60 @@ public partial class EditInvestorProfile : SessionCheck
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
                 return;
             }
-            int selectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-            if (selectedEntityType == 1)
+            int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+            if (SelectedEntityType == 1)
             {
-                // Assuming Txt_CIN_Number is the ID of your TextBox control for CIN number input
-                string selectedCINno = Txt_CIN_Number.Text.Trim();
-
-                if (selectedCINno == "")
+                string SelectedCINno = Txt_CIN_Number.Text.Trim();
+                if (SelectedCINno == "")
                 {
                     Txt_CIN_Number.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter CIN number.</strong>');", true);
                     return;
                 }
-                if (selectedCINno.Length != 21)
+                if (SelectedCINno.Length > 21)
                 {
                     Txt_CIN_Number.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number should be 21 digits.</strong>');", true);
                     return;
                 }
                 // Regex pattern for CIN number validation
-                string cinRegexPattern = @"^([L|U]{1})([0-9]{5})([A-Za-z]{2})([0-9]{4})([A-Za-z]{3})([0-9]{6})$";
+                string CinRegexPattern = @"^([L|U]{1})([0-9]{5})([A-Za-z]{2})([0-9]{4})([A-Za-z]{3})([0-9]{6})$";
 
-                if (!System.Text.RegularExpressions.Regex.IsMatch(selectedCINno, cinRegexPattern))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(SelectedCINno, CinRegexPattern))
                 {
                     Txt_CIN_Number.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter a valid CIN number in the format L/U-12345AB1234XYZ123456.</strong>');", true);
                     return;
                 }
             }
-            else if (selectedEntityType == 2)
+            else if (SelectedEntityType == 2)
             {
-                string selectedLLPINno = Txt_LLPIN_Number.Text.Trim();
+                string SelectedLLPINno = Txt_LLPIN_Number.Text.Trim();
 
-                if (string.IsNullOrEmpty(selectedLLPINno))
+                if (string.IsNullOrEmpty(SelectedLLPINno))
                 {
                     Txt_LLPIN_Number.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter LLPIN number.</strong>');", true);
                     return;
                 }
-                //if (selectedLLPINno.Length != 16)
-                //{
-                //    Txt_LLPIN_Number.Focus();
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number should be 16 digits.</strong>');", true);
-                //    return;
-                //}
+                if (SelectedLLPINno.Length > 7)
+                {
+                    Txt_LLPIN_Number.Focus();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number should be 7 digits.</strong>');", true);
+                    return;
+                }
                 // Regex pattern for LLPIN number validation
                 string llpinRegexPattern = @"^([a-zA-Z]{2,3})-([0-9]{4})$";
 
-                if (!System.Text.RegularExpressions.Regex.IsMatch(selectedLLPINno, llpinRegexPattern))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(SelectedLLPINno, llpinRegexPattern))
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter a valid LLPIN number in the format XX-1234 or XXX-1234.</strong>');", true);
                     return;
                 }
             }
-            string strIndustryType = Convert.ToString(Session["IndustryType"]);
+            string StrIndustryType = Convert.ToString(Session["IndustryType"]);
 
-            if (strIndustryType == "1") ////Industrial User
+            if (StrIndustryType == "1") ////Industrial User
             {
                 #region Industrial User
 
@@ -297,48 +291,44 @@ public partial class EditInvestorProfile : SessionCheck
 
                 objEnt.INTSALUTATION = Convert.ToInt32(DrpDwn_Salutation.SelectedValue);
                 objEnt.VCHPROMOTERFNAME = Txt_First_Name.Text.Trim();
-                //objEnt.VCHPROMOTERMNAME = Txt_Middle_Name.Text.Trim();
-               // objEnt.VCHPROMOTERLNAME = Txt_Last_Name.Text.Trim();
-                objEnt.VCHADDRESS = Txt_Address.Text.Trim();
-                objEnt.VCHCORADDRESS = Convert.ToString(Txt_Site_Loc.Text);
+                objEnt.VCHADDRESS = Txt_Address_1.Text.Trim();
+                objEnt.VCHCORADDRESS = Convert.ToString(Txt_Site_Loc_1.Text);
                 objEnt.VCHMOBILENO = Txt_Mobile_No.Text.Trim();
                 objEnt.VCHEMAILID = Txt_Email_Id.Text;
                 objEnt.VCHUSERNAME = Session["UserId"].ToString();
-               
-                
-                objEnt.VCH_REG_ADDRESS_2 = Txt_RegAddress_Invst.Text.Trim();
-                objEnt.INT_REG_COUNTRY= Convert.ToInt32(DrpRegdCountry.SelectedValue);
-                if(DrpRegdCountry.SelectedValue == "1")
+                objEnt.VCH_REG_ADDRESS_2 = Txt_RegAddress_2.Text.Trim();//Add by Debi
+                objEnt.INT_REG_COUNTRY= Convert.ToInt32(DrpRegdCountry.SelectedValue);//Add by Debi
+                if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
                 {
-                    objEnt.VCH_REG_STATE = DrpRegdState.SelectedItem.Text;
+                    objEnt.VCH_REG_STATE = DrpRegdState.SelectedItem.Text;//Add by Debi
                 }
                 else
                 {
-                    objEnt.VCH_REG_STATE = TxtRegdState.Text;
+                    objEnt.VCH_REG_STATE = TxtRegdState.Text;//Add by Debi
                 }
-                objEnt.VCH_REG_CITY = Txt_Regd_City.Text.Trim();
-                objEnt.VCH_REG_PIN = Txt_Regd_Pincode.Text.Trim();
-                objEnt.VCH_SL_ADDRESS_2= Txt_SitAddress_Invst.Text.Trim();
-                objEnt.INT_SL_COUNTRY= Convert.ToInt32(DrpSlCountry.SelectedValue);
-                if (DrpSlCountry.SelectedValue == "1")
+                objEnt.VCH_REG_CITY = Txt_Regd_City.Text.Trim();//Add by Debi
+                objEnt.VCH_REG_PIN = Txt_Regd_Pincode.Text.Trim();//Add by Debi
+                objEnt.VCH_SL_ADDRESS_2= Txt_SitAddress_2.Text.Trim();//Add by Debi
+                objEnt.INT_SL_COUNTRY= Convert.ToInt32(DrpSlCountry.SelectedValue);//Add by Debi
+                if (DrpSlCountry.SelectedValue == "1")//Add by Debi
                 {
-                    objEnt.VCH_SL_STATE = DrpSlState.SelectedItem.Text;
+                    objEnt.VCH_SL_STATE = DrpSlState.SelectedItem.Text;//Add by Debi
                 }
                 else
                 {
-                    objEnt.VCH_SL_STATE = Txt_SL_State.Text.Trim();
+                    objEnt.VCH_SL_STATE = Txt_SL_State.Text.Trim();//Add by Debi
                 }
-                objEnt.VCH_SL_CITY = Txt_Sl_City.Text.Trim();
-                objEnt.VCH_SL_PIN = Txt_Sl_Pincode.Text.Trim();
-                if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue)==1)
+                objEnt.VCH_SL_CITY = Txt_Sl_City.Text.Trim();//Add by Debi
+                objEnt.VCH_SL_PIN = Txt_Sl_Pincode.Text.Trim();//Add by Debi
+                if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue)==1)//Add by Debi
                 {
-                    objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+                    objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
                     objEnt.VCHCINNUMBER = Convert.ToString(Txt_CIN_Number.Text.Trim());// add by anil
                 }
-                else if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                else if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)//Add by Debi
                 {
-                    objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-                    objEnt.VCH_LLPIN_NUMBER = Txt_LLPIN_Number.Text.Trim();
+                    objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
+                    objEnt.VCH_LLPIN_NUMBER = Txt_LLPIN_Number.Text.Trim();//Add by Debi
                 }
                 else
                 {
@@ -346,15 +336,15 @@ public partial class EditInvestorProfile : SessionCheck
                 }
                 /*----------------------------------------------------------------*/
                 /////// Generate Encryption Key (Security key to access Data Warehouse servce methods)
-                string strEncryptionKey = ConfigurationManager.AppSettings["DWHEncryptionKey"];
-                string strSecurityKey = objSrvRef.KeyEncryption(strEncryptionKey);
+                string StrEncryptionKey = ConfigurationManager.AppSettings["DWHEncryptionKey"];
+                string StrSecurityKey = objSrvRef.KeyEncryption(StrEncryptionKey);
 
                 /*-----------------------------------------------------------------*/
                 /////// DML opertion through service
-                string strReturnVal = objSrvRef.ProfileUpdate(objEnt, strSecurityKey);
-                if (strReturnVal != "")
+                string StrReturnVal = objSrvRef.ProfileUpdate(objEnt, StrSecurityKey);
+                if (StrReturnVal != "")
                 {
-                    if (strReturnVal == "5") ////// Success
+                    if (StrReturnVal == "5") ////// Success
                     {
                         /*-----------------------------------------------------------------*/
                         ///// After succcessfully update in data warehouse,update in goswift database
@@ -362,54 +352,46 @@ public partial class EditInvestorProfile : SessionCheck
                         objInvDet.strAction = "U";
                         objInvDet.Salutation = Convert.ToInt32(DrpDwn_Salutation.SelectedValue);
                         objInvDet.strContactFirstName = Txt_First_Name.Text.Trim();
-                       // objInvDet.strContactMiddleName = Txt_Middle_Name.Text.Trim();
-                       // objInvDet.strContactLastName = Txt_Last_Name.Text.Trim();
-                        objInvDet.strAddress = Txt_Address.Text.Trim();
-                        objInvDet.strSiteAddress = Convert.ToString(Txt_Site_Loc.Text);
+                        objInvDet.strAddress = Txt_Address_1.Text.Trim();
+                        objInvDet.strSiteAddress = Convert.ToString(Txt_Site_Loc_1.Text);
                         objInvDet.MobNo = Txt_Mobile_No.Text.Trim();
                         objInvDet.strEmail = Txt_Email_Id.Text;
                         objInvDet.strUserID = Session["InvestorId"].ToString();
-                        
-                        objInvDet.StrRegAddress_2 = Txt_RegAddress_Invst.Text.Trim();
-                        objInvDet.IntRegCountry = Convert.ToInt32(DrpRegdCountry.SelectedValue);
-                        if (DrpRegdCountry.SelectedValue == "1")
+                        objInvDet.StrRegAddress_2 = Txt_RegAddress_2.Text.Trim();//Add by Debi
+                        objInvDet.IntRegCountry = Convert.ToInt32(DrpRegdCountry.SelectedValue);//Add by Debi
+                        if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
                         {
-                            objInvDet.StrRegState = DrpRegdState.SelectedItem.Text;
+                            objInvDet.StrRegState = DrpRegdState.SelectedItem.Text;//Add by Debi
                         }
                         else
                         {
-                            objInvDet.StrRegState = TxtRegdState.Text;
+                            objInvDet.StrRegState = TxtRegdState.Text;//Add by Debi
                         }
-                        objInvDet.StrRegCity = Txt_Regd_City.Text.Trim();
-                        objInvDet.StrRegPincode = Txt_Regd_Pincode.Text.Trim();
-                        objInvDet.StrSlAddress_2 = Txt_SitAddress_Invst.Text.Trim();
-                        objInvDet.IntSlCountry = Convert.ToInt32(DrpSlCountry.SelectedValue);
-                        if (DrpSlCountry.SelectedValue == "1")
+                        objInvDet.StrRegCity = Txt_Regd_City.Text.Trim();//Add by Debi
+                        objInvDet.StrRegPincode = Txt_Regd_Pincode.Text.Trim();//Add by Debi
+                        objInvDet.StrSlAddress_2 = Txt_SitAddress_2.Text.Trim();//Add by Debi
+                        objInvDet.IntSlCountry = Convert.ToInt32(DrpSlCountry.SelectedValue);//Add by Debi
+                        if (DrpSlCountry.SelectedValue == "1")//Add by Debi
                         {
-                            objInvDet.StrSlState = DrpSlState.SelectedItem.Text;
+                            objInvDet.StrSlState = DrpSlState.SelectedItem.Text;//Add by Debi
                         }
                         else
                         {
-                            objInvDet.StrSlState = Txt_SL_State.Text.Trim();
+                            objInvDet.StrSlState = Txt_SL_State.Text.Trim();//Add by Debi
                         }
-                        objInvDet.StrSlCity = Txt_Sl_City.Text.Trim();
-                        objInvDet.StrSlPincode = Txt_Sl_Pincode.Text.Trim();
-                        if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                        objInvDet.StrSlCity = Txt_Sl_City.Text.Trim();//Add by Debi
+                        objInvDet.StrSlPincode = Txt_Sl_Pincode.Text.Trim();//Add by Debi
+                        objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
+                        if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)//Add by Debi
+                        {                          
+                            objInvDet.strCINnumber = Convert.ToString(Txt_CIN_Number.Text.Trim());//Add by Debi
+                        }
+                        else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)//Add by Debi
                         {
-                            objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-                            objInvDet.strCINnumber = Convert.ToString(Txt_CIN_Number.Text.Trim());
+                            objInvDet.StrLLPINumber = Txt_LLPIN_Number.Text.Trim();//Add by Debi
                         }
-                        else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
-                        {
-                            objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-                            objInvDet.StrLLPINumber = Txt_LLPIN_Number.Text.Trim();
-                        }
-                        else
-                        {
-                            objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-                        }
-                        string strRetval = Convert.ToString(objService.InvestorData(objInvDet));
-                        if (strRetval == "2")
+                        string StrRetval = Convert.ToString(objService.InvestorData(objInvDet));
+                        if (StrRetval == "2")
                         {
                             if (Request.QueryString["app"] != null)
                             {
@@ -425,42 +407,40 @@ public partial class EditInvestorProfile : SessionCheck
                                 }
                                 else
                                 {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data updated successfully !</strong>', '" + strProjName + "'); </script>", false);
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data updated successfully !</strong>', '" + StrProjName + "'); </script>", false);
                                     return;
                                 }
                             }
                             else
                             {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data updated successfully !</strong>', '" + strProjName + "'); </script>", false);
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Data updated successfully !</strong>', '" + StrProjName + "'); </script>", false);
                                 return;
-
                             }
                         }
-                        else if (strRetval == "3")
+                        else if (StrRetval == "3")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('Internal server error,Please try after sometime !');", true);
                         }
-                        else if (strRetval == "1")
+                        else if (StrRetval == "1")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('CIN numebr already exists !');", true);
                         }
-                        else if (strRetval == "4")
+                        else if (StrRetval == "4")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('LLPI numebr already exists !');", true);
                         }
                     }
-                    else if (strReturnVal == "11")
+                    else if (StrReturnVal == "11")
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid user id !</strong>', '" + strProjName + "'); </script>", false);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid user id !</strong>', '" + StrProjName + "'); </script>", false);
                         return;
                     }
-                    else if (strReturnVal == "20")
+                    else if (StrReturnVal == "20")
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Unit name already exists !</strong>', '" + strProjName + "'); </script>", false);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Unit name already exists !</strong>', '" + StrProjName + "'); </script>", false);
                         return;
                     }
                 }
-
                 #endregion
             }
             
@@ -468,13 +448,7 @@ public partial class EditInvestorProfile : SessionCheck
         catch (Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
-        }
-        finally
-        {
-            ob = null;
-            objInvDet = null;
-            objService = null;
-        }
+        }      
     }
 
     /////Button Back
@@ -485,8 +459,6 @@ public partial class EditInvestorProfile : SessionCheck
         {
             Response.Redirect("InvesterDashboard.aspx");
         }
-        
-
     }
 
     #endregion
@@ -496,36 +468,29 @@ public partial class EditInvestorProfile : SessionCheck
     ///// Fill Investor Information
     public void FillInvestorInfo(string UserId)
     {
-        DataTable dt = new DataTable();
         try
         {
-            dt = CommonHelperCls.ViewInvestorDetails(Session["InvestorId"].ToString(), "V");
+            DataTable dt = CommonHelperCls.ViewInvestorDetails(Session["InvestorId"].ToString(), "V");
             if (dt.Rows.Count > 0)
             {
-                
-                string strPan = dt.Rows[0]["VCH_PAN"].ToString();
-                Session["Pan"] = strPan;
+                string StrPan_number = dt.Rows[0]["VCH_PAN"].ToString();//Add by Debi 
+                Session["Pan"] = StrPan_number;//Add by Debi
                 Txt_Unit_Name.Text = dt.Rows[0]["VCH_INV_NAME"].ToString();
-
                 DrpDwn_Salutation.SelectedValue = dt.Rows[0]["INT_SALUTATION"].ToString();
-                Txt_First_Name.Text = dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString();
-               // Txt_Middle_Name.Text = dt.Rows[0]["VCH_CONTACT_MIDDLENAME"].ToString();
-              //  Txt_Last_Name.Text = dt.Rows[0]["VCH_CONTACT_LASTNAME"].ToString();
+                Txt_First_Name.Text = dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString();             
                 Txt_Mobile_No.Text = dt.Rows[0]["VCH_OFF_MOBILE"].ToString();
                 Txt_Email_Id.Text = dt.Rows[0]["VCH_EMAIL"].ToString();
-                Txt_Address.Text = dt.Rows[0]["VCH_ADDRESS"].ToString();
-                Txt_Site_Loc.Text = dt.Rows[0]["VCH_SITELOCATION"].ToString();
-                
+                Txt_Address_1.Text = dt.Rows[0]["VCH_ADDRESS"].ToString();
+                Txt_Site_Loc_1.Text = dt.Rows[0]["VCH_SITELOCATION"].ToString();//Add by Debi
                 DrpDwn_Entity_Type.SelectedValue= dt.Rows[0]["INT_ENTITY_TYPE"].ToString(); // add by anil
-                Hid_Pan_Number.Value = strPan;
-                if (DrpDwn_Entity_Type.SelectedValue == "1")
+                Hid_Pan_Number.Value = StrPan_number;//Add by Debi
+                if (DrpDwn_Entity_Type.SelectedValue == "1")//Add by Debi
                 {
-
                     Div1.Visible = true;
                     Div2.Visible = false;
                     Txt_CIN_Number.Text= dt.Rows[0]["VCH_CIN_NUMBER"].ToString(); // add by anil
                 }
-                else if (DrpDwn_Entity_Type.SelectedValue == "2")
+                else if (DrpDwn_Entity_Type.SelectedValue == "2")//Add by Debi
                 {
                     Div1.Visible = false;
                     Div2.Visible = true;
@@ -533,60 +498,52 @@ public partial class EditInvestorProfile : SessionCheck
                 }
                 else
                 {
-                   
                     Div1.Visible = false;
                     Div2.Visible = false;
                 }
-                Txt_RegAddress_Invst.Text = dt.Rows[0]["VCH_REG_ADDRESS_2"].ToString();
-                DrpRegdCountry.SelectedValue = dt.Rows[0]["INT_REG_COUNTRY"].ToString(); 
+                Txt_RegAddress_2.Text = dt.Rows[0]["VCH_REG_ADDRESS_2"].ToString();//Add by Debi
+                DrpRegdCountry.SelectedValue = dt.Rows[0]["INT_REG_COUNTRY"].ToString(); //Add by Debi
 
-                if (DrpRegdCountry.SelectedValue == "1")
+                if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
                 {
-                    DrpRegdCountry_SelectedIndexChanged(null, EventArgs.Empty);
+                    DrpRegdCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
                     st3.Visible = true;
                     st4.Visible = false;
                     TxtRegdState.Text = "";
-                    DrpRegdState.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();
+                    DrpRegdState.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
                 }
                 else
                 {
                     st4.Visible = true;
                     st3.Visible = false;
                     TxtRegdState.Text = "";
-                    TxtRegdState.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();
+                    TxtRegdState.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
                 }
-                Txt_Regd_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();
-                Txt_Regd_Pincode.Text = dt.Rows[0]["VCH_REG_PIN"].ToString();
-                Txt_SitAddress_Invst.Text = dt.Rows[0]["VCH_SL_ADDRESS_2"].ToString();
-                DrpSlCountry.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();
-                if (DrpSlCountry.SelectedValue == "1")
+                Txt_Regd_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
+                Txt_Regd_Pincode.Text = dt.Rows[0]["VCH_REG_PIN"].ToString();//Add by Debi
+                Txt_SitAddress_2.Text = dt.Rows[0]["VCH_SL_ADDRESS_2"].ToString();//Add by Debi
+                DrpSlCountry.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();//Add by Debi
+                if (DrpSlCountry.SelectedValue == "1")//Add by Debi
                 {
-                    DrpSlCountry_SelectedIndexChanged(null, EventArgs.Empty);
+                    DrpSlCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
                     st1.Visible = true;
                     st2.Visible = false;
                     Txt_SL_State.Text = "";
-                    DrpSlState.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();
+                    DrpSlState.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
                 }
                 else
                 {
                     st2.Visible = true;
-                    st1.Visible = false;
-                   // Txt_SL_State.Text = "";
-                    Txt_SL_State.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();
+                    st1.Visible = false;                 
+                    Txt_SL_State.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
                 }
-                Txt_Sl_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();
-                Txt_Sl_Pincode.Text = dt.Rows[0]["VCH_SL_PIN"].ToString();
-
-
+                Txt_Sl_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
+                Txt_Sl_Pincode.Text = dt.Rows[0]["VCH_SL_PIN"].ToString();//Add by Debi
             }
         }
         catch (Exception ex)
         {
             throw ex.InnerException;
-        }
-        finally
-        {
-            dt = null;
         }
     }
 
@@ -595,15 +552,11 @@ public partial class EditInvestorProfile : SessionCheck
     {
         Txt_Unit_Name.Text = "";
         Txt_First_Name.Text = "";
-       // Txt_Middle_Name.Text = "";
-       // Txt_Last_Name.Text = "";
         Txt_Mobile_No.Text = "";
-        Txt_Address.Text = "";
+        Txt_Address_1.Text = "";
         Txt_CIN_Number.Text = "";
         DrpDwn_Salutation.SelectedIndex = 0;
         DrpDwn_Entity_Type.SelectedIndex = 0;
-
-
     }
 
 
@@ -629,7 +582,7 @@ public partial class EditInvestorProfile : SessionCheck
     }
 
     /// <summary>
-    /// For bind Regd Country  data 
+    /// For bind Registration Country  data 
     /// </summary>
     public void FillRegdCountry()
     {
@@ -648,7 +601,9 @@ public partial class EditInvestorProfile : SessionCheck
             throw ex.InnerException;
         }
     }
-
+    /// <summary>
+    /// For bind Site Location Country  data 
+    /// </summary>
     public void FillSLCountry()
     {
         try
@@ -668,42 +623,38 @@ public partial class EditInvestorProfile : SessionCheck
     }
 
     #endregion
-
+    /// <summary>
+    /// For entity type dropdwon change event 
+    /// </summary>
     protected void DrpDwn_Entity_Type_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            
                 if (DrpDwn_Entity_Type.SelectedValue == "1")
                 {
                     Div1.Visible = true;
-                    Div2.Visible = false;
-                    Txt_CIN_Number.Text = "";
-                    Txt_LLPIN_Number.Text = "";
-
+                    Div2.Visible = false; 
                 }
                 else if (DrpDwn_Entity_Type.SelectedValue == "2")
 
                 {
                     Div1.Visible = false;
-                    Div2.Visible = true;
-                    Txt_CIN_Number.Text = "";
-                    Txt_LLPIN_Number.Text = "";
+                    Div2.Visible = true;                   
                 }               
                 else
                 {
                     Div1.Visible = false;
                     Div2.Visible = false;
                 }
-
-            
         }
        catch(Exception ex)
         {
-            throw ex;
+            Util.LogError(ex, "ProfileUpdate");
         }
     }
-
+    /// <summary>
+    /// For registration country dropdwon change event 
+    /// </summary>
     protected void DrpRegdCountry_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -728,15 +679,15 @@ public partial class EditInvestorProfile : SessionCheck
                 st3.Visible = false;
                 TxtRegdState.Text = "";
             }
-            
-
         }
         catch (Exception ex)
         {
-            Util.LogError(ex, "Registration");
+            Util.LogError(ex, "ProfileUpdate");
         }
     }
-
+    /// <summary>
+    /// For site location country dropdwon change event 
+    /// </summary>
     protected void DrpSlCountry_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
@@ -764,7 +715,7 @@ public partial class EditInvestorProfile : SessionCheck
         }
         catch (Exception ex)
         {
-            Util.LogError(ex, "Registration");
+            Util.LogError(ex, "ProfileUpdate");
         }
     }
 }

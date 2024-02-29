@@ -70,91 +70,7 @@
     <script src="js/WebValidation.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
 
-        //function Validate() {
-
-        //    if (blankFieldValidation('Txt_Unit_Name', 'Unit Name', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    if (DropDownValidation('DrpDwn_Salutation', '0', 'Prefix of Name', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    if (blankFieldValidation('Txt_First_Name', 'First Name', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    if (blankFieldValidation('Txt_Last_Name', 'Last Name', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    //            if (EmailValidation('txtEmail', 'Email ID', 'SWP') == false) {
-        //    //                return false;
-        //    //            }
-        //    //            if (blankFieldValidation('txtEmail', 'Email Address', 'SWP') == false) {
-        //    //                return false;
-        //    //            }
-        //    //function emailCheck() {
-        //    //    var email = document.getElementById('#txtEmail');
-        //    //    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        //    //    if (!filter.test(email.value) || txtEmail.value == "") {
-        //    //        jAlert('<strong>Invalid Email_Address !</strong>', 'SWP');
-        //    //        document.getElementById('txtEmail').focus();
-        //    //        return false;
-        //    //    }
-        //    //}
-
-
-           
-
-
-        //    if (blankFieldValidation('Txt_Address', 'Address', 'SWP') == false) {
-        //        return false;
-        //    }
-           
-        //    if (blankFieldValidation('Txt_RegAddress_Invst', 'Address', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    if (blankFieldValidation('Txt_Mobile_No', 'Mobile Number', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    if (WhiteSpaceValidation1st('Txt_Mobile_No', 'Mobile Number', 'SWP') == false) {
-        //        return false;
-        //    }
-        //    var val = ($("#Txt_Mobile_No").val());
-        //    if (($("#Txt_Mobile_No").val()).substring(0, 1) == '0') {
-        //        jAlert('Mobile Number should not be start with zero !');
-        //        $("#Txt_Mobile_No").val('');
-        //        $("#Txt_Mobile_No").focus();
-        //        return false;
-        //    }
-        //    if (($("#Txt_Mobile_No").val().length < 10) && ($("#Txt_Mobile_No").val().length > 0)) {
-        //        jAlert('<strong>Mobile Number can not be less then 10 characters !</strong>', 'SWP');
-        //        $("#Txt_Mobile_No").focus();
-        //        return false;
-        //    }
-
-        //    //if (blankFieldValidation('Txt_CIN_No', 'CIN number', 'SWP') == false) {
-        //    //    return false;
-        //    //}
-        //    //if ($('#Txt_CIN_No').val().substring(0, 1) == '0') {
-        //    //    jAlert('<strong>CIN number should not be start with zero !</strong>', 'SWP');
-        //    //    $('#Txt_CIN_No').val('');
-        //    //    $('#Txt_CIN_No').focus();
-        //    //    return false;
-        //    //}
-        //    //if ($('#Txt_CIN_No').val().length != 21) {
-        //    //    jAlert('<strong>CIN number should be 21 digits !</strong>', 'SWP');
-        //    //    $("#Txt_CIN_No").focus();
-        //    //    return false;
-        //    //}
-        //    //if (WhiteSpaceValidation1st('Txt_CIN_No', 'CIN number', 'SWP') == false) {
-        //    //    return false;
-        //    //}
-
-        //    if (DropDownValidation('DrpDwn_Entity_Type', '0', 'Entity Type', 'SWP') == false) {
-        //        $("#popup_ok").click(function () { $("#DrpDwn_Entity_Type").focus(); });
-        //        return false;
-        //    }
-        //}
-      
-        // Function to validate dropdown selection
+        ///Function to validate dropdown selection
         function EntityTypeValide() {
                 debugger;
             var entityType = $('#DrpDwn_Entity_Type').val();
@@ -167,25 +83,24 @@
                 switch (fourthLetter) {
                     case 'C':
                         if (entityType == 1) {
+                           
                             $("#Div1").show();
                         }
                         else
                         {
-
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
                                 $("#Div2").hide();
                                 
+                                
                             });
-
-                            //alert('PAN number does not match the selected entity type .');
-                            //$('#DrpDwn_Entity_Type').val('0'); // Reset dropdown selection
                         }
                         break;
                     case 'F':
                         if (entityType == 2 || entityType == 9) {
+                            
                             $("#Div2").show();
 
                         } else {
@@ -211,6 +126,7 @@
                                 $("#Div1").hide();
                                 $("#Div2").hide();
                             });
+                            
                         }
                         break;
                     case 'H':
@@ -239,15 +155,13 @@
                                 $("#Div1").hide();
                                 $("#Div2").hide();
                             });
+                            
                         }
                         break;
-                    
                 }
         }
         
       
-
-
         function ValidateDate() {
             debugger;
             if (DropDownValidation('DrpDwn_Salutation', '0', 'Prefix of Name', 'SWP') == false) {
@@ -278,33 +192,18 @@
                 $("#Txt_Mobile_No").focus();
                 return false;
             }
-            if (blankFieldValidation('Txt_Address', 'Registration address', 'SWP') == false) {
+            if (blankFieldValidation('Txt_Address_1', 'Registration address-1', 'SWP') == false) {
                 return false;
             }
-            if (!WhiteSpaceValidation1st('Txt_Address', 'Registration address', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_Address").focus(); });
+            if (!WhiteSpaceValidation1st('Txt_Address_1', 'Registration address-1', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_Address_1").focus(); });
                 return false;
             }
-            if (blankFieldValidation('Txt_Site_Loc', 'Site location address', 'SWP') == false) {
+            if (blankFieldValidation('Txt_RegAddress_2', 'Registration address-2', 'SWP') == false) {
                 return false;
             }
-            if (!WhiteSpaceValidation1st('Txt_Site_Loc', 'Site location address', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_Site_Loc").focus(); });
-                return false;
-            }
-
-            if (blankFieldValidation('Txt_RegAddress_Invst', 'Registration address-2', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_RegAddress_Invst', 'Registration address-2', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_RegAddress_Invst").focus(); });
-                return false;
-            }
-            if (blankFieldValidation('Txt_SitAddress_Invst', 'Site location address-2', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_SitAddress_Invst', 'Site location address-2', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_SitAddress_Invst").focus(); });
+            if (!WhiteSpaceValidation1st('Txt_RegAddress_2', 'Registration address-2', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_RegAddress_2").focus(); });
                 return false;
             }
             if (DropDownValidation('DrpRegdCountry', '0', 'registration country name', 'SWP') == false) {
@@ -329,8 +228,43 @@
                 if (!WhiteSpaceValidation1st('TxtRegdState', 'registration state name', 'SWP')) {
                     $("#popup_ok").click(function () { $("#TxtRegdState").focus(); });
                     return false;
-                }               
+                }
             }
+            if (blankFieldValidation('Txt_Regd_City', 'Registration city name', 'SWP') == false) {
+                return false;
+            }
+            if (!WhiteSpaceValidation1st('Txt_Regd_City', 'Registration city name', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_Regd_City").focus(); });
+                return false;
+            }
+            if (blankFieldValidation('Txt_Regd_Pincode', 'Registration pincode', 'SWP') == false) {
+                return false;
+            }
+            if (!WhiteSpaceValidation1st('Txt_Regd_Pincode', 'Registration pincode', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_Regd_Pincode").focus(); });
+                return false;
+            }
+            var pincode = $('#Txt_Regd_Pincode').val().trim();
+            if (!/^\d{6}$/.test(pincode)) {
+                jAlert('<strong>Please enter a valid 6-digit registration pincode.</strong>', 'SWP');
+                $("#popup_ok").click(function () { $("#Txt_Regd_Pincode").focus(); });
+                return false;
+            }
+            if (blankFieldValidation('Txt_Site_Loc_1', 'Site location address-1', 'SWP') == false) {
+                return false;
+            }
+            if (!WhiteSpaceValidation1st('Txt_Site_Loc_1', 'Site location address-1', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_Site_Loc_1").focus(); });
+                return false;
+            }
+            if (blankFieldValidation('Txt_SitAddress_2', 'Site location address-2', 'SWP') == false) {
+                return false;
+            }
+            if (!WhiteSpaceValidation1st('Txt_SitAddress_2', 'Site location address-2', 'SWP')) {
+                $("#popup_ok").click(function () { $("#Txt_SitAddress_2").focus(); });
+                return false;
+            }
+            
             if (DropDownValidation('DrpSlCountry', '0', 'Site location country name', 'SWP') == false) {
                 return false;
             }
@@ -355,13 +289,7 @@
                     return false;
                 }              
             }
-            if (blankFieldValidation('Txt_Regd_City', 'Registration city name', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_Regd_City', 'Registration city name', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_Regd_City").focus(); });
-                return false;
-            }
+           
             if (blankFieldValidation('Txt_Sl_City', 'Site location city name', 'SWP') == false) {
                 return false;
             }
@@ -369,19 +297,7 @@
                 $("#popup_ok").click(function () { $("#Txt_Sl_City").focus(); });
                 return false;
             }
-            if (blankFieldValidation('Txt_Regd_Pincode', 'Registration pincode', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_Regd_Pincode', 'Registration pincode', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_Regd_Pincode").focus(); });
-                return false;
-            }
-            var pincode = $('#Txt_Regd_Pincode').val().trim();
-            if (!/^\d{6}$/.test(pincode)) {
-                jAlert('<strong>Please enter a valid 6-digit registration pincode.</strong>', 'SWP');
-                $("#popup_ok").click(function () { $("#Txt_Regd_Pincode").focus(); });
-                return false;
-            }
+           
             if (blankFieldValidation('Txt_Sl_Pincode', 'Site location pincode', 'SWP') == false) {
                 return false;
             }
@@ -417,6 +333,17 @@
                     $("#popup_ok").click(function () { $("#Txt_CIN_Number").focus(); });
                     return false;
                 }
+                if ($('#Txt_CIN_No').val().substring(0, 1) == '0') {
+                jAlert('<strong>CIN number should not be start with zero !</strong>', 'SWP');
+                $('#Txt_CIN_No').val('');
+                $('#Txt_CIN_No').focus();
+                return false;
+                }
+                if ($('#Txt_CIN_No').val().length > 21) {
+                jAlert('<strong>CIN number should be 21 digits !</strong>', 'SWP');
+                $("#Txt_CIN_No").focus();
+                return false;
+                }
             }
             else if (selectedEnitytype == 2)
             {
@@ -434,6 +361,17 @@
                 if (!llpinRegex.test(selectedLLPINno)) {
                     jAlert('<strong>Please enter a valid LLPIN number in the format XX-1234 or XXX-1234.</strong>', 'SWP');
                     $("#popup_ok").click(function () { $("#Txt_LLPIN_Number").focus(); });
+                    return false;
+                }
+                if ($('#Txt_LLPIN_Number').val().substring(0, 1) == '0') {
+                    jAlert('<strong>LLPIN number should not be start with zero !</strong>', 'SWP');
+                    $('#Txt_LLPIN_Number').val('');
+                    $('#Txt_LLPIN_Number').focus();
+                    return false;
+                }
+                if ($('#Txt_LLPIN_Number').val().length > 7) {
+                    jAlert('<strong>LLPIN number should be 7 digits !</strong>', 'SWP');
+                    $("#Txt_LLPIN_Number").focus();
                     return false;
                 }
             }
@@ -537,29 +475,13 @@
                                         </div>
                                         <div class="col-sm-9">
                                             <asp:TextBox ID="Txt_First_Name" CssClass="form-control" runat="server"
-                                                                        placeholder="Full name of the applicant" MaxLength="100"></asp:TextBox><span class="mandetory">*</span>
-                                           <%-- <asp:TextBox ID="Txt_First_Name" CssClass="form-control" runat="server" placeholder="First Name"></asp:TextBox>--%>
+                                                                        placeholder="Full name of the applicant" MaxLength="100"></asp:TextBox><span class="mandetory">*</span>                                          
                                             <cc1:FilteredTextBoxExtender ID="txtFirstName1" runat="server" Enabled="True" TargetControlID="Txt_First_Name"
                                                 FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;/\|{}[]">
                                             </cc1:FilteredTextBoxExtender>
                                             <span class="mandetory">*</span>
-                                        </div>
-                                        <%--<div class="col-sm-2">
-                                            <asp:TextBox ID="Txt_Middle_Name" CssClass="form-control" runat="server" placeholder="Middle Name"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="txtMiddleName1" runat="server" Enabled="True" TargetControlID="Txt_Middle_Name"
-                                                FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;/\|{}[]">
-                                            </cc1:FilteredTextBoxExtender>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <asp:TextBox ID="Txt_Last_Name" CssClass="form-control" runat="server" placeholder="Last Name"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender5" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Last_Name" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;/\|{}[]">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>--%>
+                                        </div>                                     
                                         <div class="clearfix">
                                         </div>
                                     </div>
@@ -594,33 +516,33 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2">
-                                           Registration Address</label>
+                                           Registration Address-1</label>
                                         <div class="col-sm-4">
                                             <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Address" CssClass="form-control height95" TextMode="MultiLine"
-                                                onKeyUp="return TextCounter('Txt_Address','Label4',250)" MaxLength="250" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="Txt_Address_1" CssClass="form-control height95" TextMode="MultiLine"
+                                                onKeyUp="return TextCounter('Txt_Address_1','Label4',250)" MaxLength="250" runat="server"></asp:TextBox>
                                             <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label4" runat="server" Text="250" Style="font-size: 14px" Height="20px" />
                                                 Characters )</span>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Address" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                TargetControlID="Txt_Address_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;">
                                             </cc1:FilteredTextBoxExtender>
                                             <span class="mandetory">*</span>
                                         </div>
                                         <label class="col-sm-2">
-                                           Site Location Address</label>
+                                           Site Location Address-1</label>
                                          <div class="col-sm-4">
                                             <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Site_Loc" autocomplete="off" CssClass="form-control height95"
-                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_Site_Loc','Label3',250)"
+                                            <asp:TextBox ID="Txt_Site_Loc_1" autocomplete="off" CssClass="form-control height95"
+                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_Site_Loc_1','Label3',250)"
                                                 MaxLength="250" runat="server"></asp:TextBox>
                                             <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px;
                                                 color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label3" runat="server" Text="250" Style="font-size: 14px" Height="20px" />
                                                 Characters )</span>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender14" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Site_Loc" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                TargetControlID="Txt_Site_Loc_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;">
                                             </cc1:FilteredTextBoxExtender>
                                         </div>
@@ -629,36 +551,36 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                            <label for="Txt_RegAddress_Invst" class="col-sm-2">
+                                            <label for="Txt_RegAddress_2" class="col-sm-2">
                                           Registration Address-2
                                         </label>
                                        <div class="col-sm-4">
                                             <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_RegAddress_Invst" CssClass="form-control height95" TextMode="MultiLine"
-                                                onKeyUp="return TextCounter('Txt_RegAddress_Invst','Label5',128)" MaxLength="128" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="Txt_RegAddress_2" CssClass="form-control height95" TextMode="MultiLine"
+                                                onKeyUp="return TextCounter('Txt_RegAddress_2','Label5',128)" MaxLength="128" runat="server"></asp:TextBox>
                                             <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label5" runat="server" Text="128" Style="font-size: 14px" Height="20px" />
                                                 Characters )</span>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" Enabled="True"
-                                                TargetControlID="Txt_RegAddress_Invst" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                TargetControlID="Txt_RegAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;">
                                             </cc1:FilteredTextBoxExtender>
                                             <span class="mandetory">*</span>
                                         </div>
-                                        <label for="Txt_SitAddress_Invst" class="col-sm-2">
+                                        <label for="Txt_SitAddress_2" class="col-sm-2">
                                             Site Location Address-2
                                         </label>
                                         <div class="col-sm-4">
                                             <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_SitAddress_Invst" autocomplete="off" CssClass="form-control height95"
-                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_SitAddress_Invst','Label6',128)"
+                                            <asp:TextBox ID="Txt_SitAddress_2" autocomplete="off" CssClass="form-control height95"
+                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_SitAddress_2','Label6',128)"
                                                 MaxLength="128" runat="server"></asp:TextBox>
                                             <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px;
                                                 color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label6" runat="server" Text="128" Style="font-size: 14px" Height="20px" />
                                                 Characters )</span>
                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" Enabled="True"
-                                                TargetControlID="Txt_SitAddress_Invst" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                TargetControlID="Txt_SitAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;">
                                             </cc1:FilteredTextBoxExtender>
                                         </div>
@@ -805,7 +727,7 @@
                                             Entity Type</label>
                                         <div class="col-sm-4">
                                             <span class="colon">:</span>
-                                            <asp:DropDownList ID="DrpDwn_Entity_Type" runat="server" OnSelectedIndexChanged="DrpDwn_Entity_Type_SelectedIndexChanged" onchange="EntityTypeValide()" AutoPostBack="true" CssClass="form-control"
+                                            <asp:DropDownList ID="DrpDwn_Entity_Type" runat="server" OnSelectedIndexChanged="DrpDwn_Entity_Type_SelectedIndexChanged" onchange="EntityTypeValide()"  AutoPostBack="true" CssClass="form-control"
                                                                  ToolTip="Entity Type name here.">
                                                                 <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                                             </asp:DropDownList>
@@ -836,7 +758,7 @@
                                         <div class="col-sm-4">
                                             <span class="colon">:</span>
                                            <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
-                                                            MaxLength="16" runat="server"></asp:TextBox>
+                                                            MaxLength="7" runat="server"></asp:TextBox>
                                              <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
                                                 TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
                                                 InvalidChars="&quot;'<>&;">
