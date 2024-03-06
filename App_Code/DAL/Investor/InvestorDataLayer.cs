@@ -389,6 +389,10 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@INT_INDUSTRY_TYPE", objInvestor.INT_INDUSTRY_TYPE); // add by anil sahoo
                 cmd.Parameters.AddWithValue("@INT_ENTITY_TYPE", objInvestor.intEntitytype);// add by anil sahoo
                 cmd.Parameters.AddWithValue("@VCH_CIN_NUMBER", objInvestor.strCINnumber);// add by anil sahoo
+                cmd.Parameters.AddWithValue("@VCH_PAN_HOLDER_NAME", objInvestor.strPanHolderName); // add by anil
+
+                cmd.Parameters.AddWithValue("@VCH_DOB", objInvestor.strDOB); // add by anil
+
 
                 SqlParameter par1 = new SqlParameter("@VCHMSG_OUT", SqlDbType.VarChar, 100);
                 par1.Direction = ParameterDirection.Output;
