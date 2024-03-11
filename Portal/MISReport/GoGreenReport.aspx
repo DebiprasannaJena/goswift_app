@@ -103,7 +103,7 @@
             </div>
             <div class="header-title">
                 <h1>
-                    District Wise Report Details</h1>
+                    District Wise Go-Green Report</h1>
             </div>
         </section>
         <section class="content">
