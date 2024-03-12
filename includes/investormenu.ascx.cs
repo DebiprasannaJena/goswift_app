@@ -15,6 +15,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Threading;
 using Spire.Pdf.Fields;
+using System.Text.RegularExpressions;
 
 public partial class includes_investormenu : System.Web.UI.UserControl
 {
@@ -150,15 +151,19 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
 
-                //var strTokenUrl = "https://ssoinvestodisha.odisha.gov.in/realms/goswift-dev/protocol/openid-connect/token";
-                //var strBrowserSessionUrl = "https://ssoinvestodisha.odisha.gov.in/realms/goswift-dev/browser-session/init?publicClient=nsws-rev-openid";
+                //string strTokenUrl = ConfigurationManager.AppSettings["NswsRevTokenUrl"].ToString();
+                //string strBrowserSessionUrl = ConfigurationManager.AppSettings["NswsRevBrowserSessionUrl"].ToString();
+                //string strDefaultUserPwd = ConfigurationManager.AppSettings["NswsRevDefaultUserPwd"].ToString();
 
-                var strTokenUrl = "http://localhost:8080/realms/rlm-goswift-dev/protocol/openid-connect/token";
-                var strBrowserSessionUrl = "http://localhost:8080/realms/rlm-goswift-dev/browser-session/init?publicClient=client-nsws-openid2";
+                var strTokenUrl = "https://ssoinvestodisha.odisha.gov.in/realms/rlm-goswift-dev/protocol/openid-connect/token";
+                var strBrowserSessionUrl = "https://ssoinvestodisha.odisha.gov.in/realms/rlm-goswift-dev/browser-session/init?publicClient=client-nsws-browser-session-openid";
+
+                //var strTokenUrl = "http://localhost:8080/realms/rlm-goswift-dev/protocol/openid-connect/token";
+                //var strBrowserSessionUrl = "http://localhost:8080/realms/rlm-goswift-dev/browser-session/init?publicClient=client-nsws-openid2";
 
                 string strPwd = "csmpl@123";///Default password used for keycloak users
-                string strClientId = "client-nsws-openid";///nsws-rev-openid
-                string strClientSecret = "jKBBf2m9zuUI16F5ynYsU786H6hD4qiN"; //"YW6bBp2frLz9Hu6koDXkfXWXtslvyFzF"
+                string strClientId = "client-nsws-token-openid";///nsws-rev-openid
+                string strClientSecret = "DFe7xnvFEEJCxBuNhPS3egZqgoAr74PL"; //"YW6bBp2frLz9Hu6koDXkfXWXtslvyFzF"
 
                 /*---------------------------------------------------------------------------------*/
                 ///Generate Token using OIDC protocol.
@@ -200,12 +205,42 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                         Util.LogRequestResponse("SamlInvestorMenu", "RedirectionToNsws", "[BrowserSessionReceivedSuccess]:- " + "Browser Session Found");
 
                         /*---------------------------------------------------------------------------------*/
+                        ///Get cookies from response and set cookies on the browser.
+                        /*---------------------------------------------------------------------------------*/
+                        string xyz = (string)responseRedirectApi.Headers
+                                                       .Where(x => x.Name == "Set-Cookie")
+                                                       .Select(x => x.Value)
+                                                       .FirstOrDefault();
+
+
+                        List<RestResponseCookie> lstCookies = (List<RestResponseCookie>)responseRedirectApi.Cookies;
+                        foreach (var varCookie in lstCookies)
+                        {
+                            string strCookiesName = varCookie.Name;
+                            string strCookiesValue = varCookie.Value;
+
+                            ///Clear the cookies.
+                            ClearCookie(strCookiesName);
+
+                            //Create a new HttpCookie instance to assign cookies.
+                            System.Web.HttpCookie objCookie = new System.Web.HttpCookie(strCookiesName)
+                            {
+                                Value = strCookiesValue,
+                                Expires = DateTime.Now.AddDays(1)
+                            };
+
+                            //Add the cookie to the browser
+                            Response.Cookies.Add(objCookie);
+                        }
+
+                        /*---------------------------------------------------------------------------------*/
                         ///Initiate Pre-check API call
                         /*---------------------------------------------------------------------------------*/
                         string strPan = dt.Rows[0]["VCH_PAN"].ToString();
                         string strEmail = dt.Rows[0]["VCH_EMAIL"].ToString();
                         string strEntityType = dt.Rows[0]["INT_ENTITY_TYPE"].ToString();
                         string strCinNumber = dt.Rows[0]["VCH_CIN_NUMBER"].ToString();
+                        string strLlpinNumber = dt.Rows[0]["VCH_LLPIN_NUMBER"].ToString();
                         string strCompanyName = dt.Rows[0]["VCH_INV_NAME"].ToString();
 
                         var reqBody = "";
@@ -213,6 +248,14 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                         {
                             reqBody = @"{" + FormatJSON("pan", strPan)
                                      + "," + FormatJSON("cin", strCinNumber)
+                                     + "," + FormatJSON("entityType", strEntityType)
+                                     + "," + FormatJSON("email", strEmail)
+                                     + "}";
+                        }
+                        else if (strEntityType == "2") ///Limited Liability Partnership
+                        {
+                            reqBody = @"{" + FormatJSON("pan", strPan)
+                                     + "," + FormatJSON("llpin", strLlpinNumber)
                                      + "," + FormatJSON("entityType", strEntityType)
                                      + "," + FormatJSON("email", strEmail)
                                      + "}";
@@ -231,7 +274,7 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                         /*---------------------------------------------------------------------------------*/
                         ///Get the Precheck API Address from web.config file.
                         /*---------------------------------------------------------------------------------*/
-                        string strPreCheckApiUrl = ConfigurationManager.AppSettings["NswsPreCheckApiUrl"].ToString();                 
+                        string strPreCheckApiUrl = ConfigurationManager.AppSettings["NswsPreCheckApiUrl"].ToString();
 
                         var client = new RestClient(strPreCheckApiUrl)
                         {
@@ -321,6 +364,9 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                             Util.LogRequestResponse("SAMLInvestorMenu", "RedirectionToNsws", "[ResponseHeaderLocationFromPreCheckApi]:- " + strResponseLocation);
 
                             ModalPopupConsent.Hide();
+                            /*---------------------------------------------------------------------------------*/
+                            ///Redirect to NSWS portal.
+                            /*---------------------------------------------------------------------------------*/
                             string strScript = "window.open('" + strResponseLocation + "', '_blank');";
                             ScriptManager.RegisterStartupScript(BtnValidationYes, this.GetType(), "RedirectScript", strScript, true);
                         }
@@ -336,7 +382,7 @@ public partial class includes_investormenu : System.Web.UI.UserControl
                 }
                 else
                 {
-                    Util.LogRequestResponse("SamlInvestorMenu", "RedirectionToNsws", "[AccessTokenResponseError]:- " + responseToken.Content.ToString());
+                    Util.LogRequestResponse("SamlInvestorMenu", "RedirectionToNsws", "[AccessTokenResponseError] " + "[ResponseStatusCode]:- " + responseToken.StatusCode + "[ResponseContent]:- " + responseToken.Content.ToString());
 
                     ModalPopupConsent.Hide();
                     LblMsg.InnerText = "Something went wrong, Please try again.";
@@ -347,6 +393,18 @@ public partial class includes_investormenu : System.Web.UI.UserControl
         catch (Exception ex)
         {
             Util.LogError(ex, "SAMLInvestorMenu");
+        }
+    }
+
+    protected void ClearCookie(string cookieName)
+    {
+        if (Request.Cookies[cookieName] != null)
+        {
+            System.Web.HttpCookie cookie = new System.Web.HttpCookie(cookieName)
+            {
+                Expires = DateTime.Now.AddDays(-1) // Expire the cookie by setting its expiration date in the past.
+            };
+            Response.Cookies.Add(cookie);
         }
     }
 

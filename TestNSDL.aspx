@@ -35,6 +35,15 @@
             <asp:Label ID="LblMsg4" runat="server" Font-Bold="true"></asp:Label>
 
 
+            <asp:Button ID="Btn_SAML_Request"
+                runat="server" Text="SAML-Request" OnClick="Btn_SAML_Request_Click" />
+            <br />
+            <br />
+            <asp:Button ID="Btn_Get_Cookies"
+                runat="server" Text="Get Cookies" OnClick="Btn_Get_Cookies_Click" />
+
+
+
         </div>
     </form>
 </body>

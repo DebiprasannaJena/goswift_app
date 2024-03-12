@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System;
 using System.Configuration;
+using System.Linq;
 using System.Net;
 
 public partial class SAMLprecheck : System.Web.UI.Page
@@ -44,7 +45,25 @@ public partial class SAMLprecheck : System.Web.UI.Page
             request.AddParameter("application/json", body, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
 
+
+
+
+
+
+
+
+
             Util.LogRequestResponse("SamlPreCheckApi", "GetResponseFromSamlApi", "[Response]:- " + response.Content);
+
+            //string x = response.Headers["Location"].ToString();
+
+            
+
+            string location = (string)response.Headers
+                          .Where(x => x.Name == "Location")
+                          .Select(x => x.Value)
+                          .FirstOrDefault();
+
             Response.Write(response.Content);
         }
         catch (Exception ex)

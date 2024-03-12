@@ -69,6 +69,15 @@
             </div>
         </div>
     </div>
+
+
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+            <asp:ListItem>Yes</asp:ListItem>
+            <asp:ListItem>No</asp:ListItem>
+        </asp:RadioButtonList>
+
+         <asp:Button ID="Button2" runat="server" Text="Precheck API " style="color:blue" OnClick="Button2_Click"/>
+        <asp:Label ID="Label2" runat="server"  style="color: orangered;" ></asp:Label>
     </form>
 </body>
 </html>
