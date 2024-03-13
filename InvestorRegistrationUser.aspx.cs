@@ -77,7 +77,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 FillSector();
 
                 //fill entity type
-                FillEntityType();
+               // FillEntityType();
                 //Dynamic Notification 
                 if (ConfigurationManager.AppSettings["Notice"].ToString() == "On")
                 {
@@ -337,23 +337,23 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
     /// <summary>
     /// For bind entity type data 
     /// </summary>
-    public void FillEntityType()
-    {
-        try
-        {
-            action = "FE";
-            DataTable dtentitytype = objRegService.BindDistrict(action);
-            DrpDwn_Entity_Type.DataSource = dtentitytype;
-            DrpDwn_Entity_Type.DataTextField = "vchEntityName";
-            DrpDwn_Entity_Type.DataValueField = "intEntityCode";
-            DrpDwn_Entity_Type.DataBind();
-            DrpDwn_Entity_Type.Items.Insert(0, new ListItem("--Select--", "0"));
-        }
-        catch (Exception ex)
-        {
-            throw ex.InnerException;
-        }
-    }
+    //public void FillEntityType()
+    //{
+    //    try
+    //    {
+    //        action = "FE";
+    //        DataTable dtentitytype = objRegService.BindDistrict(action);
+    //        DrpDwn_Entity_Type.DataSource = dtentitytype;
+    //        DrpDwn_Entity_Type.DataTextField = "vchEntityName";
+    //        DrpDwn_Entity_Type.DataValueField = "intEntityCode";
+    //        DrpDwn_Entity_Type.DataBind();
+    //        DrpDwn_Entity_Type.Items.Insert(0, new ListItem("--Select--", "0"));
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        throw ex.InnerException;
+    //    }
+    //}
 
     #endregion
 
@@ -579,24 +579,24 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
             }
 
-            if (Txt_CIN_No.Text.Trim() == "")
-            {
-                Txt_CIN_No.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter CIN number.</strong>');", true);
-                return;
-            }
-            if (Txt_CIN_No.Text.Trim().Length != 21)
-            {
-                Txt_CIN_No.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number should be 21 digits.</strong>');", true);
-                return;
-            }
-            if (DrpDwn_Entity_Type.SelectedIndex == 0)
-            {
-                DrpDwn_Entity_Type.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
-                return;
-            }
+            //if (Txt_CIN_No.Text.Trim() == "")
+            //{
+            //    Txt_CIN_No.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter CIN number.</strong>');", true);
+            //    return;
+            //}
+            //if (Txt_CIN_No.Text.Trim().Length != 21)
+            //{
+            //    Txt_CIN_No.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number should be 21 digits.</strong>');", true);
+            //    return;
+            //}
+            //if (DrpDwn_Entity_Type.SelectedIndex == 0)
+            //{
+            //    DrpDwn_Entity_Type.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
+            //    return;
+            //}
 
             if (Txt_Pwd.Text.Trim() == "")
             {
@@ -712,8 +712,8 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 objInvEntity.StrVCH_PROP_NAME = Txt_Proprietorship_Name.Text;
                 objInvEntity.INT_INDUSTRY_TYPE = 1;   // add by anil sahoo for Industry type
 
-                objInvEntity.intEntitytype= Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-                objInvEntity.strCINnumber = Convert.ToString(Txt_CIN_No.Text.Trim());
+               // objInvEntity.intEntitytype= Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+               // objInvEntity.strCINnumber = Convert.ToString(Txt_CIN_No.Text.Trim());
 
                 /*---------------------------------------------------------------*/
                 ///DML Operation

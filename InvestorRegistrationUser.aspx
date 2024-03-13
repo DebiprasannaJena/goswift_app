@@ -1141,7 +1141,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                     </div>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <%--<div class="form-group">
                                                     <div class="row">
                                                        
                                                         <label for="District" class="col-sm-3 col-md-2">
@@ -1167,7 +1167,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                            
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>--%>
                                             </div>
                                         </div>
                                     </div>
