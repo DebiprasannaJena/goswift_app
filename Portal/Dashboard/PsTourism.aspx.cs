@@ -68,7 +68,7 @@ public partial class Portal_Dashboard_PsTourism : SessionCheck
                     /*-----------------------------------------------------------------*/
                     ///Fill Dropdownlist for Financial Year
                     /*-----------------------------------------------------------------*/
-
+                    DistrictSelect();
                     commonMethodobj.FillFinancialYear(ddlFinacialYear); //bind both value 2016-17 and  text 2016-17  FinalcealYear on master tracker
                     commonMethodobj.FillFinancialYear(ddlyearquery); //bind both value 2016-17 and  text 2016-17  FinalcealYear on Normal platform
                     commonMethodobj.FillFinancialYear(ddlPealYear); //bind both value 2016-17 and  text 2016-17  FinalcealYear on Normal platform
