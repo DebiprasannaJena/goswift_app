@@ -801,12 +801,12 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 ///Common class used for PAN validation from NSDL portal.
                 /*---------------------------------------------------------------*/
                 PANValidationNSDL objPan = new PANValidationNSDL();
-                string strVal = objPan.GetPANStatusFromNSDL(Txt_PAN.Text);
+                // string strVal = objPan.GetPANStatusFromNSDL(Txt_PAN.Text);
 
-                string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text , Txt_Panname.Text, Txt_dob.Text);
+                string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Panname.Text, Txt_dob.Text);
 
 
-               
+
 
                 var jsonObject = JObject.Parse(panResponse);
                 string response_Code = (string)jsonObject["response_Code"];
@@ -820,28 +820,28 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
 
                 if (response_Code == "1")
                 {
-                   if (outputData.Count > 0)
-                   {
-                       foreach (JObject item in outputData)
-                       {
+                    if (outputData.Count > 0)
+                    {
+                        foreach (JObject item in outputData)
+                        {
                             dob = (string)item["dob"];
                             name = (string)item["name"];
                             pan_status = (string)item["pan_status"];
                             pan = (string)item["pan"];
                             seeding_status = (string)item["seeding_status"];
-                   
-                       }
-                   }
+
+                        }
+                    }
 
                     if (pan_status == "D")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
                     }
-                    else if(pan_status == "EC")
+                    else if (pan_status == "EC")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
                     }
-                    else if(pan_status == "EA")
+                    else if (pan_status == "EA")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
                     }
@@ -885,13 +885,13 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
                     }
-                    else if(pan_status == "E")
+                    else if (pan_status == "E")
                     {
                         if (name == "N")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name in your card dose not match please reenter correct name !</strong>');", true);
                         }
-                        else if(name == "Y")
+                        else if (name == "Y")
                         {
                             Txt_Unit_Name.Text = Txt_Panname.Text;
                             Txt_Unit_Name.Enabled = false;
@@ -914,6 +914,8 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 ///Write the response log, got from NSDL portal.
                 /*---------------------------------------------------------------*/
                 Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + panResponse);
+
+                //Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strVal);
 
                 //if (strVal == "2")
                 //{

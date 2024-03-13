@@ -153,6 +153,19 @@
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
                 return false;
             }
+
+            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
         }
 
         /*--------------------------------------------------------------*/
@@ -175,6 +188,22 @@
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
                 return false;
             }
+
+            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+                return false;
+            }
+
+            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+                return false;
+            }
+
+
             if ($('#Txt_User_Id').val() == "") {
                 jAlert('<strong>Please click on Check Availability button to validate PAN !</strong>', projname);
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
@@ -493,6 +522,14 @@
             //                    $('#spanMandatory3').show();
             //                }
             //            });
+
+
+            $('.datePicker').datepicker({
+                format: "dd-M-yyyy",
+                changeMonth: true,
+                changeYear: true,
+                autoclose: true
+            })
         });
 
 
@@ -645,6 +682,37 @@
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter the Company PAN number !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
+
+                                                        <label for="email" class="col-sm-3 col-md-2">
+                                                            Enter the PAN Holder Name
+                                                        </label>
+                                                        <div class="col-sm-6 col-md-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server"  ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')" ></asp:TextBox>
+                                                            <a data-toggle="tooltip" class="fieldinfo" title="Please enter PAN Holder Name !">
+                                                                <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+                                                        </div>
+
+
+
+
+
+                                                        
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <label for="email" class="col-sm-3 col-md-2">
+                                                            Enter the DOB (dd/mm/yyyy)
+                                                        </label>
+
+                                                        <div class="col-sm-6 col-md-4">
+                                                            <span class="colon">:</span>
+                                                            <div class="input-group date datePicker">
+                                                            <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                        </div>
+
                                                         <div class="col-sm-3 col-md-6">
                                                             <asp:Button ID="Btn_PAN_Validate" runat="server" Text="Validate & Check Availability"
                                                                 OnClientClick="return ValidateAtCheckMailBtn();" CssClass=" btn btn-success"

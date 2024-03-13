@@ -765,6 +765,14 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter the Company PAN number !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
+                                                        <%--<div class="col-sm-3 col-md-6">
+                                                            <asp:Button ID="Btn_PAN_Validate" runat="server" Text="Validate & Check Availability"
+                                                                OnClientClick="return ValidateAtCheckMailBtn();" CssClass=" btn btn-success"
+                                                                OnClick="Btn_PAN_Validate_Click" ToolTip="Click here to validate PAN." />&nbsp;&nbsp;
+                                                        <asp:Label ID="Lbl_Msg" runat="server"></asp:Label>
+                                                            <asp:Image ID="Img_Success" runat="server" ImageUrl="~/images/successfulTick.png" />
+                                                        </div>--%>
+
                                                          <label for="email" class="col-sm-3 col-md-2">
                                                             Enter the PAN Holder Name
                                                         </label>
@@ -1099,7 +1107,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                         </label>
                                                         <div class="col-sm-9 col-md-4" style="display: block;">
                                                             <span id="EINNo" style="display: block; font-family: Verdana; font-size: 11px;"><a
-                                                                href="https://odishamsme.nic.in/contents/login.aspx" target="_blank">Click here
+                                                                href="https://odishamsme.nic.in/user/MSME_Entrepreneur_Login.aspx" target="_blank">Click here
                                                             to apply for EIN number.</a></span> <span id="IEMNo" style="display: block; font-family: Verdana; font-size: 11px;"><a href=" https://services.dpiit.gov.in/lms/login" target="_blank">Click here to apply for IEM number.</a></span> <span id="UAadhaarNo" style="display: block; font-family: Verdana; font-size: 11px;"><a href="https://udyamregistration.gov.in/Government-India/Ministry-MSME-registration.htm"
                                                                 target="_blank">Click here to apply for Udyog Aadhaar number.</a></span>
                                                             <span id="UdyamReg" style="display: block; font-family: Verdana; font-size: 11px;"><a

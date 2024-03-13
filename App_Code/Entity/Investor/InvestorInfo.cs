@@ -70,6 +70,11 @@ namespace EntityLayer.Investor
         public string strCINnumber { get; set; }
 
         public int intEntitytype { get; set; }
+
+        public string strPanHolderName { get; set; }
+
+        public string strDOB { get; set; }
+
         #endregion
 
 
