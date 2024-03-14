@@ -77,6 +77,13 @@ public partial class Portal_MISReport_Peal_MisAllStatusRpt : System.Web.UI.Page
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("50-1000 CR (SLSWCA)", "2"));
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("> 1000 Cr (HLCA)", "3"));
                     }
+                    else if((Convert.ToInt32(Session["UserId"]) == 557)) // ADD BY ANIL FOR idco user login investment amount filter
+                    {
+                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("-ALL-", "0"));
+                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("0-50 Cr (DLSWCA)", "1"));
+                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("50-1000 CR (SLSWCA)", "2"));
+                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("> 1000 Cr (HLCA)", "3"));
+                    }                 
                     else
                     {
                         ///// For DIC
