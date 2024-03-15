@@ -61,6 +61,9 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@VCH_SL_CITY", objInvestor.StrSlCity);
                 cmd.Parameters.AddWithValue("@VCH_SL_PIN", objInvestor.StrSlPincode);
                 cmd.Parameters.AddWithValue("@VCH_LLPIN_NUMBER", objInvestor.StrLLPINumber);
+                cmd.Parameters.AddWithValue("@VCH_CIN_DATA", objInvestor.StrCINLLPINnumber);// add by anil
+
+
 
                 cmd.Parameters.AddWithValue("@VCHMSG_OUT", SqlDbType.VarChar);
                 cmd.Parameters["@VCHMSG_OUT"].Direction = ParameterDirection.Output;
@@ -387,8 +390,7 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@VCH_USER_DESIGNATION", objInvestor.strDesignation);
                 cmd.Parameters.AddWithValue("@VCH_PROP_NAME", objInvestor.StrVCH_PROP_NAME);
                 cmd.Parameters.AddWithValue("@INT_INDUSTRY_TYPE", objInvestor.INT_INDUSTRY_TYPE); // add by anil sahoo
-                //cmd.Parameters.AddWithValue("@INT_ENTITY_TYPE", objInvestor.intEntitytype);// add by anil sahoo
-                //cmd.Parameters.AddWithValue("@VCH_CIN_NUMBER", objInvestor.strCINnumber);// add by anil sahoo
+                
                 cmd.Parameters.AddWithValue("@VCH_PAN_HOLDER_NAME", objInvestor.strPanHolderName); // add by anil
 
                 cmd.Parameters.AddWithValue("@VCH_DOB", objInvestor.strDOB); // add by anil

@@ -368,31 +368,9 @@
 
 
 
-            if (DropDownValidation('DrpDwn_Entity_Type', '0', 'Entity Type', projname) == false) {
-                $("#popup_ok").click(function () { $("#DrpDwn_Entity_Type").focus(); });
-                return false;
-            }
+            
 
-            if ($('#DrpDwn_Entity_Type').val() == "1") {
-
-                if (blankFieldValidation('Txt_CIN_No', 'CIN number', projname) == false) {
-                    return false;
-                }
-                if ($('#Txt_CIN_No').val().substring(0, 1) == '0') {
-                    jAlert('<strong>CIN number should not be start with zero !</strong>', projname);
-                    $('#Txt_CIN_No').val('');
-                    $('#Txt_CIN_No').focus();
-                    return false;
-                }
-                if ($('#Txt_CIN_No').val().length != 21) {
-                    jAlert('<strong>CIN number should be 21 digits !</strong>', projname);
-                    $("#Txt_CIN_No").focus();
-                    return false;
-                }
-                if (WhiteSpaceValidation1st('Txt_CIN_No', 'CIN number', projname) == false) {
-                    return false;
-                }
-            }
+            
            
 
 
@@ -762,6 +740,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
                                                             <asp:TextBox ID="Txt_PAN" CssClass="form-control" runat="server" MaxLength="10" ToolTip="Enter Company PAN Number Here."></asp:TextBox>
+                                                            <span class="mandetory">*</span>
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter the Company PAN number !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
@@ -773,21 +752,17 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                             <asp:Image ID="Img_Success" runat="server" ImageUrl="~/images/successfulTick.png" />
                                                         </div>--%>
 
-                                                         <label for="email" class="col-sm-3 col-md-2">
+                                                        <label for="email" class="col-sm-3 col-md-2">
                                                             Enter the PAN Holder Name
                                                         </label>
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
-                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server"  ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')" ></asp:TextBox>
+                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server" ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter PAN Holder Name !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
 
-
-
-                                                        
-                                                        
-                                                        
                                                     </div>
 
                                                     <div class="row">
@@ -798,9 +773,10 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
                                                             <div class="input-group date datePicker">
-                                                            <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
-                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                        </div>
+                                                                <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
+
+                                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            </div>
                                                         </div>
 
 
@@ -1141,33 +1117,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                     </div>
                                                 </div>
 
-                                                <%--<div class="form-group">
-                                                    <div class="row">
-                                                       
-                                                        <label for="District" class="col-sm-3 col-md-2">
-                                                            Constitution of Company/Entity Type
-                                                        </label>
-                                                        <div class="col-sm-9 col-md-4">
-                                                            <span class="colon">:</span>
-                                                            <asp:DropDownList ID="DrpDwn_Entity_Type" runat="server" CssClass="form-control"
-                                                                 ToolTip="Select Constitution of Company/Entity Type name here.">
-                                                                <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
-                                                            </asp:DropDownList>
-                                                            <span class="mandetory">*</span>
-                                                        </div>
-                                                         <label for="Category" class="col-sm-3 col-md-2">
-                                                            CIN Number
-                                                        </label>
-                                                        <div class="col-sm-9 col-md-4">
-                                                            <span class="colon">:</span>
-                                                            
-                                                           <asp:TextBox ID="Txt_CIN_No" autocomplete="off" CssClass="form-control height95" Onkeypress="return inputLimiter(event,'NameCharactersAndNumbers')"
-                                                                MaxLength="21" runat="server" ToolTip="Enter CIN number here."></asp:TextBox>
-                                                            <span class="mandetory" id="spnrequird">*</span>
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>--%>
+                                                
                                             </div>
                                         </div>
                                     </div>

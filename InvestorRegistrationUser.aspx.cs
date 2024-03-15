@@ -402,6 +402,20 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid PAN card number.</strong>');", true);
                 return;
             }
+            if (Txt_Panname.Text.Trim() == "")
+            {
+                Txt_Panname.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter PAN holder name.</strong>');", true);
+                return;
+            }
+            if(Txt_dob.Text.Trim() == "")
+            {
+                Txt_dob.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter PAN holder Date Of Birth.</strong>');", true);
+                return;
+            }
+
+
             /*---------------------------------------------------------------*/
             if (Txt_User_Id.Text.Trim() == "")
             {
@@ -579,24 +593,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
             }
 
-            //if (Txt_CIN_No.Text.Trim() == "")
-            //{
-            //    Txt_CIN_No.Focus();
-            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter CIN number.</strong>');", true);
-            //    return;
-            //}
-            //if (Txt_CIN_No.Text.Trim().Length != 21)
-            //{
-            //    Txt_CIN_No.Focus();
-            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number should be 21 digits.</strong>');", true);
-            //    return;
-            //}
-            //if (DrpDwn_Entity_Type.SelectedIndex == 0)
-            //{
-            //    DrpDwn_Entity_Type.Focus();
-            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
-            //    return;
-            //}
+            
 
             if (Txt_Pwd.Text.Trim() == "")
             {
@@ -711,9 +708,9 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 objInvEntity.intUserLevel = 1; ///// This specify first level user                
                 objInvEntity.StrVCH_PROP_NAME = Txt_Proprietorship_Name.Text;
                 objInvEntity.INT_INDUSTRY_TYPE = 1;   // add by anil sahoo for Industry type
+                objInvEntity.strPanHolderName = Txt_Panname.Text;  // add by anil
+                objInvEntity.strDOB = Txt_dob.Text;  // add by anil
 
-               // objInvEntity.intEntitytype= Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
-               // objInvEntity.strCINnumber = Convert.ToString(Txt_CIN_No.Text.Trim());
 
                 /*---------------------------------------------------------------*/
                 ///DML Operation
@@ -803,7 +800,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 PANValidationNSDL objPan = new PANValidationNSDL();
                 // string strVal = objPan.GetPANStatusFromNSDL(Txt_PAN.Text);
 
-                string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Panname.Text, Txt_dob.Text);
+                 string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Panname.Text, Txt_dob.Text);
 
 
 
