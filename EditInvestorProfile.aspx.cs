@@ -10,6 +10,9 @@ using System.ServiceModel;
 using System.Data;
 using DWHServiceReference;
 using System.Configuration;
+using RestSharp;
+using Newtonsoft.Json;
+using System.Net;
 
 public partial class EditInvestorProfile : SessionCheck
 {
@@ -72,6 +75,46 @@ public partial class EditInvestorProfile : SessionCheck
             /*---------------------------------*/
             //For Server side validation.
             /*---------------------------------*/
+
+            if (Hid_cin_llpn.Value == "")
+            {
+                Btn_CIN.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                return;
+            }
+
+            if(Hid_cin_llpn.Value == "No Data")
+            {
+                Btn_CIN.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                return;
+            }
+            /*---------------------------------------------------------------*/
+            ///Check whether the CIN or LLPIN, which was validated is the same during insertion
+            /*---------------------------------------------------------------*/
+            if (ViewState["CinNumber"] != null)
+            {
+                if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                {
+                    if (Convert.ToString( ViewState["CinNumber"]) != Txt_CIN_Number.Text)
+                    {
+                        Btn_CIN.Focus();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                        return;
+                    }
+                }
+                else if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                {
+                    if (Convert.ToString( ViewState["CinNumber"]) != Txt_LLPIN_Number.Text)
+                    {
+                        Btn_CIN.Focus();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                        return;
+                    }
+                }
+                    
+            }
+
             if (Txt_First_Name.Text.Trim() == "")
             {
                 Txt_First_Name.Focus();
@@ -260,10 +303,10 @@ public partial class EditInvestorProfile : SessionCheck
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter LLPIN number.</strong>');", true);
                     return;
                 }
-                if (SelectedLLPINno.Length > 7)
+                if (SelectedLLPINno.Length > 8)
                 {
                     Txt_LLPIN_Number.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number should be 7 digits.</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number should be 8 digits.</strong>');", true);
                     return;
                 }
                 // Regex pattern for LLPIN number validation
@@ -271,10 +314,11 @@ public partial class EditInvestorProfile : SessionCheck
 
                 if (!System.Text.RegularExpressions.Regex.IsMatch(SelectedLLPINno, llpinRegexPattern))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter a valid LLPIN number in the format XX-1234 or XXX-1234.</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter a valid LLPIN number in the format XXX-1234.</strong>');", true);
                     return;
                 }
             }
+            
             string StrIndustryType = Convert.ToString(Session["IndustryType"]);
 
             if (StrIndustryType == "1") ////Industrial User
@@ -340,7 +384,7 @@ public partial class EditInvestorProfile : SessionCheck
                 string StrSecurityKey = objSrvRef.KeyEncryption(StrEncryptionKey);
 
                 /*-----------------------------------------------------------------*/
-                /////// DML opertion through service
+                /////// DML opertion through DWH service
                 string StrReturnVal = objSrvRef.ProfileUpdate(objEnt, StrSecurityKey);
                 if (StrReturnVal != "")
                 {
@@ -390,7 +434,7 @@ public partial class EditInvestorProfile : SessionCheck
                         {
                             objInvDet.StrLLPINumber = Txt_LLPIN_Number.Text.Trim();//Add by Debi
                         }
-                        string StrRetval = Convert.ToString(objService.InvestorData(objInvDet));
+                        string StrRetval = Convert.ToString(objService.InvestorData(objInvDet)); // data update in GOSWIFT DB
                         if (StrRetval == "2")
                         {
                             if (Request.QueryString["app"] != null)
@@ -488,18 +532,23 @@ public partial class EditInvestorProfile : SessionCheck
                 {
                     Div1.Visible = true;
                     Div2.Visible = false;
+                    Div3.Visible = true;
                     Txt_CIN_Number.Text= dt.Rows[0]["VCH_CIN_NUMBER"].ToString(); // add by anil
+                    Btn_CIN.Text = "Validate CIN Number";
                 }
                 else if (DrpDwn_Entity_Type.SelectedValue == "2")//Add by Debi
                 {
                     Div1.Visible = false;
                     Div2.Visible = true;
+                    Div3.Visible = true;
                     Txt_LLPIN_Number.Text = dt.Rows[0]["VCH_LLPIN_NUMBER"].ToString(); // add by anil
+                    Btn_CIN.Text = "Validate LLPIN Number";
                 }
                 else
                 {
                     Div1.Visible = false;
                     Div2.Visible = false;
+                    Div3.Visible = false;
                 }
                 Txt_RegAddress_2.Text = dt.Rows[0]["VCH_REG_ADDRESS_2"].ToString();//Add by Debi
                 DrpRegdCountry.SelectedValue = dt.Rows[0]["INT_REG_COUNTRY"].ToString(); //Add by Debi
@@ -633,18 +682,23 @@ public partial class EditInvestorProfile : SessionCheck
                 if (DrpDwn_Entity_Type.SelectedValue == "1")
                 {
                     Div1.Visible = true;
-                    Div2.Visible = false; 
+                    Div2.Visible = false;
+                    Div3.Visible = true;
+                Btn_CIN.Text = "Validate CIN Number";
                 }
                 else if (DrpDwn_Entity_Type.SelectedValue == "2")
 
                 {
                     Div1.Visible = false;
-                    Div2.Visible = true;                   
+                    Div2.Visible = true;    
+                    Div3.Visible = true;
+                Btn_CIN.Text = "Validate LLPIN Number";
                 }               
                 else
                 {
                     Div1.Visible = false;
                     Div2.Visible = false;
+                    Div3.Visible = false;
                 }
         }
        catch(Exception ex)
@@ -717,5 +771,143 @@ public partial class EditInvestorProfile : SessionCheck
         {
             Util.LogError(ex, "ProfileUpdate");
         }
+    }
+
+    protected void Btn_CIN_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            InvestorDetails objInvDet = new InvestorDetails();
+            InvestorBusinessLayer objService = new InvestorBusinessLayer();
+
+            // CIN  api KEY
+            string StrCINLLPINurlKey = ConfigurationManager.AppSettings["CinLlpinurl"];
+            string StrCinTokenUserIdKey = ConfigurationManager.AppSettings["CinTokenUserId"];
+            string StrCinTokenPasswordKey = ConfigurationManager.AppSettings["CinTokenPassword"];
+            //var client = new RestClient("http://182.79.115.45:8280");
+
+
+            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[REQUEST_For_GenerateToken_Url]:- " + StrCINLLPINurlKey + " - [REQUEST_For_GenerateToken_UserId]:- " + StrCinTokenUserIdKey+ "- [REQUEST_For_GenerateToken_Password]:- "+ StrCinTokenPasswordKey);
+
+
+            // Token generation for CIN validate
+            var client = new RestClient(StrCINLLPINurlKey);
+            client.Timeout = -1;
+
+            var Tokenrequest = new RestRequest("/token", Method.POST);
+            Tokenrequest.AddHeader("Authorization", "Basic ME4wUDBtQm1NdGVGcTNZX1c5cjdZRkxQZWswYTpwQmVWd3hzTjdJWnVfcEdKUzk1MFZoUmxjQVlh");
+            Tokenrequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            Tokenrequest.AddParameter("grant_type", "password");
+            Tokenrequest.AddParameter("username", StrCinTokenUserIdKey);
+            Tokenrequest.AddParameter("password", StrCinTokenPasswordKey);
+            IRestResponse TokenResponse = client.Execute(Tokenrequest);
+            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_StatusCode]:- " + TokenResponse.StatusCode);
+
+
+            if (TokenResponse.StatusCode == HttpStatusCode.OK)
+            {
+                if (TokenResponse.Content.ToString() != "")
+                {
+                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Content]:- " + TokenResponse.Content);
+
+                    string strAccessToke = JsonConvert.DeserializeObject<Dictionary<string, object>>(TokenResponse.Content)["access_token"].ToString();
+
+                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Token]:- " + strAccessToke);
+
+                    var Datarequest = (RestRequest)null;
+                    if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                    {
+                        Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text, Method.GET);
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_CIN_Number.Text);
+                    }
+                    else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                    {
+                        Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text, Method.GET);
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_LLPIN_Number.Text);
+                    }
+
+                    Datarequest.AddHeader("Authorization", "Bearer " + strAccessToke);
+                    IRestResponse Dataresponse = client.Execute(Datarequest); ////  CIN or LLPIN number validate api call
+
+
+                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_StatusCode]:- " + Dataresponse.StatusCode);
+
+                    if (Dataresponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
+                        Hid_cin_llpn.Value = message;
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_Content]:- " + Dataresponse.Content);
+
+
+                        if (message == "No Data")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid CIN or LLPIN number !</strong>', '" + StrProjName + "'); </script>", false);
+                            return;
+                        }
+                        else if (message == "Data fetched Successfully")
+                        {
+
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
+
+                            // base64 encode
+
+                            byte[] bytesToEncode = System.Text.Encoding.UTF8.GetBytes(Dataresponse.Content);
+
+                            // Perform Base64 encoding
+                            string encodedString = Convert.ToBase64String(bytesToEncode);
+
+                            if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                            {
+                                ViewState["CinNumber"] = Txt_CIN_Number.Text;
+                            }
+                            else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                            {
+                                ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
+                            }
+                            else
+                            {
+                                ViewState["CinNumber"] = null;
+                            }
+
+
+                            objInvDet.strAction = "UCV";
+                            objInvDet.strUserID = Session["InvestorId"].ToString();
+                            objInvDet.StrCINLLPINnumber = encodedString;
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + encodedString);
+                            string StrReturndata = Convert.ToString(objService.InvestorData(objInvDet)); // CIN or LLPIN validation data update in GOSWIFT DB
+
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + encodedString+" -[DataUpdateStatus] :-"+ StrReturndata);
+                        }
+                    }
+                    else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong> Invalied Token ! <strong>');", true);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
+                    }
+
+
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No Data find !<strong>');", true);
+                }
+
+            }
+            else if (TokenResponse.StatusCode != HttpStatusCode.OK)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
+            }
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "ProfileUpdate");
+        }
+
+
+
+        
     }
 }

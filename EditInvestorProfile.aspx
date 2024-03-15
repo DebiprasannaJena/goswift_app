@@ -85,6 +85,7 @@
                         if (entityType == 1) {
                            
                             $("#Div1").show();
+                            $("#Div3").show();
                         }
                         else
                         {
@@ -92,8 +93,9 @@
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
+                                $("#Div1").hide();
                                 $("#Div2").hide();
-                                
+                                $("#Div3").hide();
                                 
                             });
                         }
@@ -102,7 +104,7 @@
                         if (entityType == 2 || entityType == 9) {
                             
                             $("#Div2").show();
-
+                            $("#Div3").show();
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
@@ -110,12 +112,16 @@
                                 $('#DrpDwn_Entity_Type').val('0'); // Reset dropdown selection
                                 
                                 $("#Div1").hide();
+                                $("#Div2").hide();
+                                $("#Div3").hide();
                             });
                         }
                         break;
                     case 'P':
                         if (entityType == 3) {
-                           
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
                            
                         } else {
 
@@ -125,6 +131,7 @@
                                 $('#DrpDwn_Entity_Type').val('0');
                                 $("#Div1").hide();
                                 $("#Div2").hide();
+                                $("#Div3").hide();
                             });
                             
                         }
@@ -132,7 +139,9 @@
                     case 'H':
                         if (entityType == 7) {
 
-
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
@@ -140,12 +149,16 @@
                                 $('#DrpDwn_Entity_Type').val('0');
                                 $("#Div1").hide();
                                 $("#Div2").hide();
+                                $("#Div3").hide();
                             });
                         }
                         break;
                     case 'T':
                         if (entityType == 5) {
 
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
 
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
@@ -154,6 +167,7 @@
                                 $('#DrpDwn_Entity_Type').val('0');
                                 $("#Div1").hide();
                                 $("#Div2").hide();
+                                $("#Div3").hide();
                             });
                             
                         }
@@ -164,6 +178,14 @@
       
         function ValidateDate() {
             debugger;
+
+            var panNumber = $('#Hid_cin_llpn').val();
+            if (panNumber == '') {
+                jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>', 'SWP');
+               
+                return false;
+            }
+
             if (DropDownValidation('DrpDwn_Salutation', '0', 'Prefix of Name', 'SWP') == false) {
                 return false;
             }
@@ -316,6 +338,9 @@
             }
             var selectedEnitytype = $('#DrpDwn_Entity_Type').val();
             if (selectedEnitytype == 1) {
+
+               // EntityTypeValide();
+
                 var selectedCINno = $('#Txt_CIN_Number').val().trim();
                 if (selectedCINno == '') {
                     jAlert('<strong>Please enter CIN number.</strong>', 'SWP');
@@ -333,20 +358,23 @@
                     $("#popup_ok").click(function () { $("#Txt_CIN_Number").focus(); });
                     return false;
                 }
-                if ($('#Txt_CIN_No').val().substring(0, 1) == '0') {
+                if ($('#Txt_CIN_Number').val().substring(0, 1) == '0') {
                 jAlert('<strong>CIN number should not be start with zero !</strong>', 'SWP');
-                $('#Txt_CIN_No').val('');
-                $('#Txt_CIN_No').focus();
+                $('#Txt_CIN_Number').val('');
+                $('#Txt_CIN_Number').focus();
                 return false;
                 }
-                if ($('#Txt_CIN_No').val().length > 21) {
-                jAlert('<strong>CIN number should be 21 digits !</strong>', 'SWP');
-                $("#Txt_CIN_No").focus();
-                return false;
+                if ($('#Txt_CIN_Number').val().length > 21) {
+                    jAlert('<strong>CIN number should be 21 digits !</strong>', 'SWP');
+                    $("#Txt_CIN_Number").focus();
+                    return false;
                 }
+
+
             }
-            else if (selectedEnitytype == 2)
-            {
+            else if (selectedEnitytype == 2) {
+               // EntityTypeValide();
+
                 var selectedLLPINno = $('#Txt_LLPIN_Number').val().trim();
                 if (selectedLLPINno == '') {
                     jAlert('<strong>Please enter LLPIN number.</strong>', 'SWP');
@@ -359,7 +387,7 @@
                 }
                 var llpinRegex = /^([a-zA-Z]{2,3})-([0-9]{4})$/;
                 if (!llpinRegex.test(selectedLLPINno)) {
-                    jAlert('<strong>Please enter a valid LLPIN number in the format XX-1234 or XXX-1234.</strong>', 'SWP');
+                    jAlert('<strong>Please enter a valid LLPIN number in the format XXX-1234.</strong>', 'SWP');
                     $("#popup_ok").click(function () { $("#Txt_LLPIN_Number").focus(); });
                     return false;
                 }
@@ -369,12 +397,124 @@
                     $('#Txt_LLPIN_Number').focus();
                     return false;
                 }
-                if ($('#Txt_LLPIN_Number').val().length > 7) {
-                    jAlert('<strong>LLPIN number should be 7 digits !</strong>', 'SWP');
+                if ($('#Txt_LLPIN_Number').val().length > 8) {
+                    jAlert('<strong>LLPIN number should be 8 digits !</strong>', 'SWP');
                     $("#Txt_LLPIN_Number").focus();
                     return false;
                 }
+
             }
+            else {
+               // EntityTypeValide();
+            }
+
+
+            var entityType = $('#DrpDwn_Entity_Type').val();
+            var panNumber = $('#Hid_Pan_Number').val();
+            debugger;
+
+            // Get the 4th letter of PAN number
+            var fourthLetter = panNumber.charAt(3).toUpperCase();
+
+            // Validate based on entity type
+            switch (fourthLetter) {
+                case 'C':
+                    if (entityType == 1) {
+                        $("#Div1").show();
+                        $("#Div3").show();
+                    }
+                    else {
+
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
+
+                        });
+                        return false;
+
+                    }
+                    break;
+                case 'F':
+                    if (entityType == 2 || entityType == 9) {
+                        $("#Div2").show();
+                        $("#Div3").show();
+
+                    } else {
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0'); // Reset dropdown selection
+
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
+                        });
+                        return false;
+                    }
+                    break;
+                case 'P':
+                    if (entityType == 3) {
+                        $("#Div1").hide();
+                        $("#Div2").hide();
+                        $("#Div3").hide();
+
+                    } else {
+
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
+                        });
+                        return false;
+                    }
+                    break;
+                case 'H':
+                    if (entityType == 7) {
+                        $("#Div1").hide();
+                        $("#Div2").hide();
+                        $("#Div3").hide();
+
+                    } else {
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
+                        });
+                        return false;
+                    }
+                    break;
+                case 'T':
+                    if (entityType == 5) {
+                        $("#Div1").hide();
+                        $("#Div2").hide();
+                        $("#Div3").hide();
+
+                    } else {
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div1").hide();
+                            $("#Div2").hide();
+                            $("#Div3").hide();
+                        });
+                        return false;
+                    }
+                    break;
+
+            }
+
+
         }
 
     </script>
@@ -735,43 +875,89 @@
                                             
                                             
                                         </div>
-                                      <div runat="server" id="Div1">
-                                        <label class="col-sm-2">
-                                           CIN Number</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                             <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number" 
-                                                            MaxLength="21" runat="server"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
-                                                TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                          </div>
+                                         <%--<div runat="server" id="Div1">
+                                             <label class="col-sm-2">
+                                                 CIN Number</label>
+                                             <div class="col-sm-4">
+                                                 <span class="colon">:</span>
+                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number"
+                                                     MaxLength="21" runat="server"></asp:TextBox>
+                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
+                                                     TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                     InvalidChars="&quot;'<>&;">
+                                                 </cc1:FilteredTextBoxExtender>
+                                                 <span class="mandetory">*</span>
+                                             </div>
+                                             <div class="clearfix">
+                                             </div>
+                                         </div>
 
-                                      <div runat="server" id="Div2">
-                                        <label class="col-sm-2">
-                                          LLPIN Number</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                           <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
-                                                            MaxLength="7" runat="server"></asp:TextBox>
-                                             <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
-                                                TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                          </div>
+                                         <div runat="server" id="Div2">
+                                             <label class="col-sm-2">
+                                                 LLPIN Number</label>
+                                             <div class="col-sm-4">
+                                                 <span class="colon">:</span>
+                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
+                                                     MaxLength="7" runat="server"></asp:TextBox>
+                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
+                                                     TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                     InvalidChars="&quot;'<>&;">
+                                                 </cc1:FilteredTextBoxExtender>
+                                                 <span class="mandetory">*</span>
+                                             </div>
+                                             <div class="clearfix">
+                                             </div>
+                                         </div>--%>
                                         <div class="clearfix">
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <div runat="server" id="Div1">
+                                             <label class="col-sm-2">
+                                                 CIN Number</label>
+                                             <div class="col-sm-4">
+                                                 <span class="colon">:</span>
+                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number"
+                                                     MaxLength="21" runat="server"></asp:TextBox>
+                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
+                                                     TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                     InvalidChars="&quot;'<>&;">
+                                                 </cc1:FilteredTextBoxExtender>
+                                                 <span class="mandetory">*</span>
+                                             </div>
+                                             <%--<div class="clearfix">
+                                                 <asp:Button ID="Btn_CIN" runat="server" Text="Validate CIN Number" CssClass=" btn btn-warning"
+                                                OnClick="Btn_CIN_Click" />
+                                             </div>--%>
+                                         </div>
+
+                                         <div runat="server" id="Div2">
+                                             <label class="col-sm-2">
+                                                 LLPIN Number</label>
+                                             <div class="col-sm-4">
+                                                 <span class="colon">:</span>
+                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
+                                                     MaxLength="8" runat="server"></asp:TextBox>
+                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
+                                                     TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                     InvalidChars="&quot;'<>&;">
+                                                 </cc1:FilteredTextBoxExtender>
+                                                 <span class="mandetory">*</span>
+                                             </div>
+                                             <%--<div class="clearfix">
+                                                 <asp:Button ID="Btn_LLPIN" runat="server" Text="Validate LLPIN Number" CssClass=" btn btn-warning"
+                                                OnClick="Btn_CIN_Click" />
+                                             </div>--%>
+                                         </div>
+
+                                        <div runat="server" id="Div3">
+                                            <asp:Button ID="Btn_CIN" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning"
+                                                OnClick="Btn_CIN_Click" />
+                                        </div>
+                                        
+                                    </div>
+                                     <asp:HiddenField ID="Hid_cin_llpn" runat="server" />
                                    <asp:HiddenField ID="Hid_Pan_Number" runat="server" />
                                 </div>
                                 <div class="form-footer">

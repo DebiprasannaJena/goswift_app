@@ -80,5 +80,7 @@ namespace EntityLayer.Investor
         public string StrSlCity { get; set; }
         public string StrSlPincode { get; set; }
         public string StrLLPINumber { get; set; }
+
+        public string StrCINLLPINnumber { get; set; }
     }
 }
