@@ -123,9 +123,10 @@
                     <div class="col-sm-12">
                         <ol style="padding-left: 20px;">
                             <li style="padding-bottom: 7px;">Entity Type</li>
-                            <li style="padding-bottom: 7px;">CIN</li>
                             <li style="padding-bottom: 7px;">Postal Address</li>
                             <li style="padding-bottom: 7px;">Registartion Address</li>
+                            <li style="padding-bottom: 7px;">CIN (If the Entity type is Incorporated Company)</li>
+                            <li style="padding-bottom: 7px;">LLPIN (If the Entity type is Limited Liability Partnership)</li>
                         </ol>
                     </div>
                     <div class="col-sm-12">
