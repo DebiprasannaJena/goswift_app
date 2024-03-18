@@ -773,6 +773,11 @@ public partial class EditInvestorProfile : SessionCheck
         }
     }
 
+
+    /// <summary>
+    /// This function use fro Validate CIN and LLPIN numebr from MCA side
+    /// </summary>
+    
     protected void Btn_CIN_Click(object sender, EventArgs e)
     {
         try
@@ -784,8 +789,7 @@ public partial class EditInvestorProfile : SessionCheck
             string StrCINLLPINurlKey = ConfigurationManager.AppSettings["CinLlpinurl"];
             string StrCinTokenUserIdKey = ConfigurationManager.AppSettings["CinTokenUserId"];
             string StrCinTokenPasswordKey = ConfigurationManager.AppSettings["CinTokenPassword"];
-            //var client = new RestClient("http://182.79.115.45:8280");
-
+            
 
             Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[REQUEST_For_GenerateToken_Url]:- " + StrCINLLPINurlKey + " - [REQUEST_For_GenerateToken_UserId]:- " + StrCinTokenUserIdKey+ "- [REQUEST_For_GenerateToken_Password]:- "+ StrCinTokenPasswordKey);
 
@@ -841,27 +845,30 @@ public partial class EditInvestorProfile : SessionCheck
 
                         if (message == "No Data")
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid CIN or LLPIN number !</strong>', '" + StrProjName + "'); </script>", false);
-                            return;
+                            if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                            {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid CIN number !</strong>', '" + StrProjName + "'); </script>", false);
+                                return;
+                            }
+                            else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                            {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid LLPIN number !</strong>', '" + StrProjName + "'); </script>", false);
+                                return;
+                            }
+
+
                         }
                         else if (message == "Data fetched Successfully")
                         {
 
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
-
-                            // base64 encode
-
-                            byte[] bytesToEncode = System.Text.Encoding.UTF8.GetBytes(Dataresponse.Content);
-
-                            // Perform Base64 encoding
-                            string encodedString = Convert.ToBase64String(bytesToEncode);
-
                             if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
                             {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
                                 ViewState["CinNumber"] = Txt_CIN_Number.Text;
                             }
                             else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
                             {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
                                 ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
                             }
                             else
@@ -872,11 +879,11 @@ public partial class EditInvestorProfile : SessionCheck
 
                             objInvDet.strAction = "UCV";
                             objInvDet.strUserID = Session["InvestorId"].ToString();
-                            objInvDet.StrCINLLPINnumber = encodedString;
-                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + encodedString);
+                            objInvDet.StrCinLlpinData = Base64encription(Dataresponse.Content);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content));
                             string StrReturndata = Convert.ToString(objService.InvestorData(objInvDet)); // CIN or LLPIN validation data update in GOSWIFT DB
 
-                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + encodedString+" -[DataUpdateStatus] :-"+ StrReturndata);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content)+ " -[DataUpdateStatus] :-"+ StrReturndata);
                         }
                     }
                     else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
@@ -906,8 +913,26 @@ public partial class EditInvestorProfile : SessionCheck
             Util.LogError(ex, "ProfileUpdate");
         }
 
+    }
 
+    /// <summary>
+    /// This function use  for base64 data encription
+    /// </summary>
 
+    public string Base64encription(string data) 
+    {
+        try
+        {
+            byte[] bytesToEncode = System.Text.Encoding.UTF8.GetBytes(data);
+
+            // Perform Base64 encoding
+            string encodedString = Convert.ToBase64String(bytesToEncode);
+            return encodedString;
+        }
+        catch (Exception ex)
+        {
+            throw ex.InnerException;
+        }
         
     }
 }
