@@ -59,6 +59,8 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
+            Txt_dob.Attributes.Add("readonly", "readonly");           
+
             Txt_PAN.Focus();
             CommonHelperCls ob = new CommonHelperCls();
 

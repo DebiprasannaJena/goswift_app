@@ -32,7 +32,7 @@ public partial class includes_investormenu : System.Web.UI.UserControl
 {
     string strUserId = "";
     string strUniqueId = "";
- 
+
     readonly string strTokenUrl = ConfigurationManager.AppSettings["NswsRevTokenUrl"].ToString();
     readonly string strBrowserSessionUrl = ConfigurationManager.AppSettings["NswsRevBrowserSessionUrl"].ToString();
     readonly string strDefaultUserPwd = ConfigurationManager.AppSettings["NswsRevDefaultUserPwd"].ToString();
@@ -53,8 +53,8 @@ public partial class includes_investormenu : System.Web.UI.UserControl
             Response.Redirect("~/LogOut.aspx", false);
         }
 
-        strUserId = Session["UserId"].ToString();
-        strUniqueId = Session["UID"].ToString();
+        strUserId = Convert.ToString(Session["UserId"]);
+        strUniqueId = Convert.ToString(Session["UID"]);
 
         /*---------------------------------------------------------------------------------------------------*/
 
@@ -150,7 +150,7 @@ public partial class includes_investormenu : System.Web.UI.UserControl
     {
         try
         {
-            /*---------------------------------------------------------------------------------*/    
+            /*---------------------------------------------------------------------------------*/
             ///To log in to the NSWS portal via Single-Sign-On(SSO), follow below steps:
             ///(1)Get an access token from the Keycloak server using the OIDC (OpenID Connect) protocol.
             ///(2)Upon receiving the token, create a browser session by invoking the API located in the jar file within the provider folder of the Keycloak server.
@@ -529,7 +529,7 @@ public partial class includes_investormenu : System.Web.UI.UserControl
             {
                 ArrReturnStatus[0] = "0"; ///Failure
 
-                Util.LogRequestResponse("SamlInvestorMenu", "IntrospectAccessToken", "[IntrospectResponseError]" + "[ResponseStatusCode]:- " + responseIntro.StatusCode + " [ResponseContent]:- " + responseIntro.Content.ToString());               
+                Util.LogRequestResponse("SamlInvestorMenu", "IntrospectAccessToken", "[IntrospectResponseError]" + "[ResponseStatusCode]:- " + responseIntro.StatusCode + " [ResponseContent]:- " + responseIntro.Content.ToString());
             }
         }
         catch (Exception ex)

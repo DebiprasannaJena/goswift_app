@@ -16,10 +16,8 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Src="~/includes/webdoctype.ascx" TagName="doctype" TagPrefix="uc1" %>
 <%@ Register Src="~/includes/webheader.ascx" TagName="header" TagPrefix="uc2" %>
-<%@ Register Src="~/includes/simplefooter.ascx" TagName="footer" TagPrefix="uc3" %>
+<%@ Register Src="~/includes/webfooter.ascx" TagName="footer" TagPrefix="uc3" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc2" %>
-
-
 
 <!DOCTYPE html>
 <html>
@@ -28,7 +26,37 @@
     <title></title>
     <uc1:doctype ID="doctype" runat="server" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css" />
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+
     <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+            $('.fieldinfo').attr('tabindex', '-1')
+
+            //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+            //function EndRequestHandler(sender, args) {
+            //    $('.datePicker').datepicker({
+            //        format: 'dd-M-yyyy',
+            //        autoclose: true
+            //    });
+            //}
+
+            $('.datePicker').datepicker({
+                format: "dd/mm/yyyy",
+                changeMonth: true,
+                changeYear: true,
+                autoclose: true
+            });
+        });
+
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
         function inputLimiter(e, allow) {
             var AllowableCharacters = '';
 
@@ -179,7 +207,7 @@
             if (blankFieldValidation('Txt_PAN', 'PAN', projname) == false) {
                 return false;
             }
-            
+
             if ($('#Txt_PAN').val().length != 10) {
                 jAlert('<strong>PAN should be 10 digits.</strong>', projname);
                 $("#popup_ok").click(function () { $("#Txt_PAN").focus(); });
@@ -368,16 +396,16 @@
 
 
 
-            
-
-            
-           
 
 
-            
-            
 
-           
+
+
+
+
+
+
+
 
 
 
@@ -461,7 +489,7 @@
             if (docName != '0') {
 
                 $('#Lbl_Doc_Name').html("Upload " + docName + " Document");
-$("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
+                $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
 
                 if (docName == "EIN") {
                     $('#EINNo').show();
@@ -522,66 +550,12 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
 
         /*--------------------------------------------------------------*/
 
-        
+
 
 
         /*--------------------------------------------------------------*/
 
     </script>
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            $('.fieldinfo').attr('tabindex', '-1')
-
-            //            $("#DrpDwn_Invest_Level").change(function () {
-            //                debugger;
-            //                var invLev = $('#DrpDwn_Invest_Level').val();
-            //                if (invLev == 2) {
-            //                    $('#spanMandatory1').hide();
-            //                    $('#spanMandatory2').hide();
-            //                    $('#spanMandatory3').hide();
-            //                }
-            //                else {
-            //                    $('#spanMandatory1').show();
-            //                    $('#spanMandatory2').show();
-            //                    $('#spanMandatory3').show();
-            //                }
-            //            });
-
-
-
-            //$('.datePicker').datepicker({
-            //    format: "dd-M-yyyy",
-            //    changeMonth: true,
-            //    changeYear: true,
-            //    autoclose: true
-            //});
-            //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
-
-            //function EndRequestHandler(sender, args) {
-            //    $('.datePicker').datepicker({
-            //        format: 'dd-M-yyyy',
-            //        autoclose: true
-            //    });
-            //}
-
-
-
-            $('.datePicker').datepicker({
-                format: "dd-M-yyyy",
-                changeMonth: true,
-                changeYear: true,
-                autoclose: true
-            });
-            
-
-           
-        });
-
-
-    </script>
-
-
-    
     <script type="text/javascript">
         $(function () {
             $("#DrpDwn_Entity_Type").change(function () {
@@ -594,7 +568,6 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                 else {
                     $('#spnrequird').show();
                 }
-                
 
             });
 
@@ -661,6 +634,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
 
         });
     </script>
+
     <style type="text/css">
         .footer-top {
             display: none;
@@ -697,9 +671,9 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
         <div class="container wrapper">
             <div class="registration-div">
                 <div id="exTab1" class="">
-                    <div runat="server" visible="true" id="divScrollingText" style="color: #0d3fd1; font-size: 14px; font-family: Verdana; font-style:italic; font-weight: 600; padding-top: 5px;">
-                     </div>
-                     <%--<marquee style=" overflow: hidden; position: relative; background: #fefefe;
+                    <div runat="server" visible="true" id="divScrollingText" style="color: #0d3fd1; font-size: 14px; font-family: Verdana; font-style: italic; font-weight: 600; padding-top: 5px;">
+                    </div>
+                    <%--<marquee style=" overflow: hidden; position: relative; background: #fefefe;
                     color: Red; font-style:italic; ">Due to maintenance activity, Online PAN Verification services will not be available to PAN verification users between 1AM to 4AM on December 10, 2022.</marquee>--%>
                     <div class="wizard">
                         <h2 class="pageTittle">
@@ -707,9 +681,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                 <div class="ringring"></div>
                                 <div class="circle"></div>
                             </div>
-
                             &nbsp;Industrial User Registration <span class="mandatoryspan pull-right">( * ) Marked fields are mandatory</span></h2>
-                       
 
                         <div class="wizard-inner">
                             <div class="connecting-line">
@@ -767,18 +739,16 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
 
                                                     <div class="row">
                                                         <label for="email" class="col-sm-3 col-md-2">
-                                                            Enter the DOB (dd/mm/yyyy)
+                                                            Enter the DOB
                                                         </label>
 
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
                                                             <div class="input-group date datePicker">
-                                                                <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
-
+                                                                <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" placeholder="DD/MM/YYYY"></asp:TextBox>
                                                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                             </div>
                                                         </div>
-
 
                                                         <div class="col-sm-3 col-md-6">
                                                             <asp:Button ID="Btn_PAN_Validate" runat="server" Text="Validate & Check Availability"
@@ -1117,7 +1087,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                                                     </div>
                                                 </div>
 
-                                                
+
                                             </div>
                                         </div>
                                     </div>
@@ -1356,8 +1326,7 @@ $("#Txt_EIN_IEM").attr('title', "Enter " + docName + " Number Here.");
                 <asp:HiddenField ID="hdnVisibleAcc" runat="server" />
             </asp:Panel>
         </div>
-        <uc3:footer ID="footer" runat="server" />
+         <uc3:footer ID="footer" runat="server" />
     </form>
 </body>
-  
 </html>
