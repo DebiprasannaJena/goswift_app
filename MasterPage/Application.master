@@ -239,8 +239,11 @@
         </asp:ContentPlaceHolder>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-                <strong>Copyright &copy; 2023 <a href="#">Invest Odisha </a>,</strong> All rights reserved.
-            </footer>
+       <script>
+        document.write('<strong>Copyright &copy; ' + new Date().getFullYear() + ' <a href="#">Invest Odisha</a>, </strong> All rights reserved.');
+        </script>
+      </footer>
+
     </div>
     <!-- /.wrapper -->
     <!-- Start js

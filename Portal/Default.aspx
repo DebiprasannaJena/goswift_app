@@ -139,6 +139,7 @@
 
         }
     </script>
+     
     <style>
         input[type="checkbox"], input[type="radio"]
         {
@@ -241,8 +242,19 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        &copy; Copyright 2023 Invest Odisha, All Rights Reserved.</div>
+   
+      <div class="footer" id="footer">
+        &copy; Copyright <span id="currentYear"></span> Invest Odisha, All Rights Reserved.
+    </div>
+
+    <!-- JavaScript code to update the year dynamically -->
+  <script type="text/javascript">
+      // Get the current year
+      var currentYear = new Date().getFullYear();
+      // Update the year in the footer
+      document.getElementById('currentYear').textContent = currentYear;
+  </script>
+
     <!-- /.content-wrapper -->
     <!-- jQuery -->
     <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>

@@ -13,9 +13,22 @@
 </section>
 <section class="gofooter">
     <div class="container">
-        <div class="col-sm-7">
-            <p>Copyright &copy; 2023 Invest Odisha, All Rights Reserved.<a href="#">Term of Use</a><a href="#">Rate this Website</a></p>
-        </div>      
+         <div class="col-sm-7">
+        <p id="copyright">
+            Copyright &copy; <span id="year"></span> Invest Odisha, All Rights Reserved.
+            <a href="#">Term of Use</a>
+            <a href="#">Rate this Website</a>
+        </p>
+    </div>
+
+    <!-- JavaScript code to update the year dynamically -->
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+        // Update the year in the HTML
+        document.getElementById('year').textContent = currentYear;
+    </script>
+         
         <div id="divLastUpdate" style="text-align:right;color:#aaaeb7" runat="server"></div>
         
         <div id="divUpdateText" style="text-align:right;color:#aaaeb7" runat="server">The dashboard information is updated on a daily basis</div>

@@ -2,12 +2,20 @@
 <div class="container footer-container">
 <div class="footer-wrapper bg-footertop">
   
-  <div class="footer">
-    <div class="">
-    
-      <p>Copyright &copy; 2023 Invest Odisha, All Rights Reserved.</p>
+     <div class="footer">
+        <p id="copyright">
+            Copyright &copy; <span id="currentYear"></span> Invest Odisha, All Rights Reserved.
+        </p>
     </div>
-  </div>
+    <!-- JavaScript code to update the year dynamically -->
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+        // Update the year in the footer
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
+
+
 </div>
 </div>
 <!--//	Footer //--> 
