@@ -70,7 +70,7 @@
     <script src="js/WebValidation.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
 
-        var projname = '<%=System.Configuration.ConfigurationManager.AppSettings["MCA"] %>';
+        var MCAValidation = '<%=System.Configuration.ConfigurationManager.AppSettings["MCAValidation"] %>';
 
 
         ///Function to validate dropdown selection

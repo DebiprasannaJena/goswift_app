@@ -77,7 +77,7 @@ public partial class EditInvestorProfile : SessionCheck
             //For Server side validation.
             /*---------------------------------*/
 
-            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCA"];
+            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
 
             if(StrMcaOnOffKey== "ON")
             {
@@ -790,7 +790,7 @@ public partial class EditInvestorProfile : SessionCheck
     {
         try
         {
-            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCA"];
+            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
 
            if (StrMcaOnOffKey == "ON")
            { 
