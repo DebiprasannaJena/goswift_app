@@ -61,7 +61,7 @@ namespace DataAcessLayer.Investor
                 cmd.Parameters.AddWithValue("@VCH_SL_CITY", objInvestor.StrSlCity);
                 cmd.Parameters.AddWithValue("@VCH_SL_PIN", objInvestor.StrSlPincode);
                 cmd.Parameters.AddWithValue("@VCH_LLPIN_NUMBER", objInvestor.StrLLPINumber);
-                cmd.Parameters.AddWithValue("@VCH_CIN_DATA", objInvestor.StrCINLLPINnumber);// add by anil
+                cmd.Parameters.AddWithValue("@VCH_CIN_DATA", objInvestor.StrCinLlpinData);// add by anil
 
 
 

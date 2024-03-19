@@ -70,6 +70,9 @@
     <script src="js/WebValidation.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript">
 
+        var MCAValidation = '<%=System.Configuration.ConfigurationManager.AppSettings["MCAValidation"] %>';
+
+
         ///Function to validate dropdown selection
         function EntityTypeValide() {
                 debugger;
@@ -178,13 +181,16 @@
       
         function ValidateDate() {
             debugger;
+            if (projname == 'ON') {
 
-            var panNumber = $('#Hid_cin_llpn').val();
-            if (panNumber == '') {
-                jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>', 'SWP');
-               
-                return false;
+                var panNumber = $('#Hid_cin_llpn').val();
+                if (panNumber == '') {
+                    jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>', 'SWP');
+
+                    return false;
+                }
             }
+            
 
             if (DropDownValidation('DrpDwn_Salutation', '0', 'Prefix of Name', 'SWP') == false) {
                 return false;

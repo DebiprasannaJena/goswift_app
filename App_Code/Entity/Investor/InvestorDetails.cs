@@ -81,6 +81,6 @@ namespace EntityLayer.Investor
         public string StrSlPincode { get; set; }
         public string StrLLPINumber { get; set; }
 
-        public string StrCINLLPINnumber { get; set; }
+        public string StrCinLlpinData  { get; set; }// add by anil
     }
 }
