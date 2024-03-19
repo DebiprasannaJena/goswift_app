@@ -790,6 +790,11 @@ public partial class EditInvestorProfile : SessionCheck
     {
         try
         {
+            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCA"];
+
+           if (StrMcaOnOffKey == "ON")
+           { 
+
             InvestorDetails objInvDet = new InvestorDetails();
             InvestorBusinessLayer objService = new InvestorBusinessLayer();
 
@@ -914,6 +919,12 @@ public partial class EditInvestorProfile : SessionCheck
             else if (TokenResponse.StatusCode != HttpStatusCode.OK)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
+            }
+
+           }
+            else
+            {
+                Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[WEBConfig key OFF]");
             }
         }
         catch(Exception ex)
