@@ -71,49 +71,57 @@ public partial class EditInvestorProfile : SessionCheck
             /// Both Industrial and Non-Industrial user can update their own profile details.
             /// For Non-Industrial user (means the value Session["IndustryType"] is 2), the profile will be changed only at GOSWIFT end.
             /// For Industrial user (means the value Session["IndustryType"] is 1), the profile will be changed both at GOSWIFT and DWH ends. 
+            /// For CIN or LLPIN number validation first check WEB config key ON 
             /*---------------------------------------------------------------------------------------------------------------*/
             /*---------------------------------*/
             //For Server side validation.
             /*---------------------------------*/
 
-            if (Hid_cin_llpn.Value == "")
+            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCA"];
+
+            if(StrMcaOnOffKey== "ON")
             {
-                Btn_CIN.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
-                return;
+                if (Hid_cin_llpn.Value == "")
+                {
+                    Btn_CIN.Focus();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                    return;
+                }
+
+                if (Hid_cin_llpn.Value == "No Data")
+                {
+                    Btn_CIN.Focus();
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                    return;
+                }
+                /*---------------------------------------------------------------*/
+                ///Check whether the CIN or LLPIN, which was validated is the same during insertion
+                /*---------------------------------------------------------------*/
+                if (ViewState["CinNumber"] != null)
+                {
+                    if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                    {
+                        if (Convert.ToString(ViewState["CinNumber"]) != Txt_CIN_Number.Text)
+                        {
+                            Btn_CIN.Focus();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                            return;
+                        }
+                    }
+                    else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                    {
+                        if (Convert.ToString(ViewState["CinNumber"]) != Txt_LLPIN_Number.Text)
+                        {
+                            Btn_CIN.Focus();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
+                            return;
+                        }
+                    }
+
+                }
             }
 
-            if(Hid_cin_llpn.Value == "No Data")
-            {
-                Btn_CIN.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
-                return;
-            }
-            /*---------------------------------------------------------------*/
-            ///Check whether the CIN or LLPIN, which was validated is the same during insertion
-            /*---------------------------------------------------------------*/
-            if (ViewState["CinNumber"] != null)
-            {
-                if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
-                {
-                    if (Convert.ToString( ViewState["CinNumber"]) != Txt_CIN_Number.Text)
-                    {
-                        Btn_CIN.Focus();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
-                        return;
-                    }
-                }
-                else if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
-                {
-                    if (Convert.ToString( ViewState["CinNumber"]) != Txt_LLPIN_Number.Text)
-                    {
-                        Btn_CIN.Focus();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
-                        return;
-                    }
-                }
-                    
-            }
+            
 
             if (Txt_First_Name.Text.Trim() == "")
             {
