@@ -50,6 +50,7 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
+            Txt_Dob.Attributes.Add("readonly", "readonly");
             Txt_PAN.Focus();
             CommonHelperCls ob = new CommonHelperCls();
 
@@ -472,6 +473,8 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
                 objInvEntity.intUserLevel = 1; ///// This specify first level user              
                 objInvEntity.StrVCH_PROP_NAME = Txt_Proprietorship_Name.Text;
                 objInvEntity.INT_INDUSTRY_TYPE = 2; // add by anil sahoo for Non-Industry type
+                objInvEntity.strPanHolderName = Txt_Pan_Holder_Name.Text;  // add by anil
+                objInvEntity.strDOB = Txt_Dob.Text;  // add by anil
 
                 /*---------------------------------------------------------------*/
                 ///DML Operation
@@ -552,20 +555,20 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
                 // string strVal = objPan.GetPANStatusFromNSDL(Txt_PAN.Text);
 
 
-                string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Panname.Text, Txt_dob.Text);
+                string strPanResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Pan_Holder_Name.Text, Txt_Dob.Text);
 
 
 
 
-                var jsonObject = JObject.Parse(panResponse);
-                string response_Code = (string)jsonObject["response_Code"];
+                var JsonObject = JObject.Parse(strPanResponse);
+                string response_Code = (string)JsonObject["response_Code"];
 
-                JArray outputData = (JArray)jsonObject["outputData"];
-                string dob = "";
-                string name = "";
-                string pan_status = "";
-                string pan = "";
-                string seeding_status = "";
+                JArray outputData = (JArray)JsonObject["outputData"];
+                string strDob = "";
+                string strName = "";
+                string strPan_Status = "";
+                string strPan = "";
+                string strSeeding_status = "";
 
                 if (response_Code == "1")
                 {
@@ -573,76 +576,76 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
                     {
                         foreach (JObject item in outputData)
                         {
-                            dob = (string)item["dob"];
-                            name = (string)item["name"];
-                            pan_status = (string)item["pan_status"];
-                            pan = (string)item["pan"];
-                            seeding_status = (string)item["seeding_status"];
+                            strDob = (string)item["dob"];
+                            strName = (string)item["name"];
+                            strPan_Status = (string)item["pan_status"];
+                            strPan = (string)item["pan"];
+                            strSeeding_status = (string)item["seeding_status"];
 
                         }
                     }
 
-                    if (pan_status == "D")
+                    if (strPan_Status == "D")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
                     }
-                    else if (pan_status == "EC")
+                    else if (strPan_Status == "EC")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EA")
+                    else if (strPan_Status == "EA")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "ED")
+                    else if (strPan_Status == "ED")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EI")
+                    else if (strPan_Status == "EI")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EL")
+                    else if (strPan_Status == "EL")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EM")
+                    else if (strPan_Status == "EM")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EP")
+                    else if (strPan_Status == "EP")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "ES")
+                    else if (strPan_Status == "ES")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EU")
+                    else if (strPan_Status == "EU")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "X")
+                    else if (strPan_Status == "X")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
                     }
-                    else if (pan_status == "F")
+                    else if (strPan_Status == "F")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
                     }
-                    else if (pan_status == "N")
+                    else if (strPan_Status == "N")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
                     }
-                    else if (pan_status == "E")
+                    else if (strPan_Status == "E")
                     {
-                        if (name == "N")
+                        if (strName == "N")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name in your card dose not match please reenter correct name !</strong>');", true);
                         }
-                        else if (name == "Y")
+                        else if (strName == "Y")
                         {
-                            Txt_Unit_Name.Text = Txt_Panname.Text;
+                            Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
                             Txt_Unit_Name.Enabled = false;
                         }
 
@@ -662,7 +665,7 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
                 /*---------------------------------------------------------------*/
                 ///Write the response log, got from NSDL portal.
                 /*---------------------------------------------------------------*/
-                Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + panResponse);
+                Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strPanResponse);
 
                 //if (strVal == "2")
                 //{

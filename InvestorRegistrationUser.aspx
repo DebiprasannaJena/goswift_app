@@ -36,15 +36,6 @@
         $(document).ready(function () {
             $('.fieldinfo').attr('tabindex', '-1')
 
-            //Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
-
-            //function EndRequestHandler(sender, args) {
-            //    $('.datePicker').datepicker({
-            //        format: 'dd-M-yyyy',
-            //        autoclose: true
-            //    });
-            //}
-
             $('.datePicker').datepicker({
                 format: "dd/mm/yyyy",
                 changeMonth: true,
@@ -118,47 +109,6 @@
             });
 
 
-            //$('#Txt_Email_Id').change(function () {
-            //    checkUserNameAvail();
-            //});
-
-            //function checkUserNameAvail() {
-            //    //debugger;
-            //    $("#divAvailImg").html("");
-            //    var email = $('#Txt_Email_Id').val();
-            //    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            //    if (filter.test(email) == false) {
-            //        jAlert('<strong>Invalid email address !</strong>', projname);
-            //        $("#Txt_Email_Id").focus();
-            //        $('#Txt_Email_Id').val('');
-            //        return false;
-            //    }
-
-            //    $.ajax({
-            //        type: "POST",
-            //        url: "InvestorRegistrationUser.aspx/checkMailAvail", //It calls our web method  
-            //        contentType: "application/json; charset=utf-8",
-            //        data: "{'strEmailId':'" + email + "'}",
-            //        dataType: "json",
-            //        success: function (msg) {
-            //            var response = JSON.stringify(msg);
-            //            //  alert(msg.d);
-            //            if (msg.d == '1') {
-            //                //alert('This email is already exists !!');
-            //                $("#Txt_Email_Id").val('');
-            //                $("#Txt_Email_Id").focus();
-            //                $("#divAvailImg").html("<img src='images/cancel-square.png' />");
-            //                //$("#divAvailImg").html("<img src='images/cancel-square.png' /> <span style='color:red;'>That email is taken.Try another.</span>");
-            //            }
-            //            else {
-            //                $("#divAvailImg").html("<img src='images/active.png' />");
-            //                //$("#divAvailImg").html("<img src='images/active.png' /> <span style='color:green;'>Available</span>");
-            //            }
-            //        },
-            //        error: function (d) {
-            //        }
-            //    });
-            //}
         }
 
     </script>
@@ -186,16 +136,16 @@
                 return false;
             }
 
-            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (blankFieldValidation('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (blankFieldValidation('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
         }
@@ -222,17 +172,17 @@
                 return false;
             }
 
-            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (blankFieldValidation('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
 
-            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (blankFieldValidation('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
             if ($('#Txt_User_Id').val() == "") {
@@ -247,9 +197,7 @@
             if (blankFieldValidation('Txt_First_Name', 'First name', projname) == false) {
                 return false;
             }
-            //if (blankFieldValidation('Txt_Last_Name', 'Last name', projname) == false) {
-            //    return false;
-            //}
+           
             if (blankFieldValidation('Txt_Address', 'Address', projname) == false) {
                 return false;
             }
@@ -326,34 +274,7 @@
                 }
             }
 
-            //            if ($('#DrpDwn_Invest_Level').val() == "1") {
-
-            //                if (DropDownValidation('DrpDwn_License_Type', '0', 'IEM/Production Certificate', projname) == false) {
-            //                    $("#popup_ok").click(function () { $("#DrpDwn_License_Type").focus(); });
-            //                    return false;
-            //                }
-            //                if (blankFieldValidation('Txt_EIN_IEM', 'IEM/Production Certificate number', projname) == false) {
-            //                    return false;
-            //                }
-            //                if ($('#FileUpload_Licence_Doc').val() == "") {
-            //                    jAlert('<strong>Please upload document in support of IEM/Production Certificate !</strong>');
-            //                    $("#FileUpload_Licence_Doc").focus();
-            //                    return false;
-            //                }
-            //            }
-
-            //            if ($('#DrpDwn_License_Type').val() != "0") {
-
-            //                if (blankFieldValidation('Txt_EIN_IEM', 'EIN/PC/Udyog Aadhaar/Udyam Registration number', projname) == false) {
-            //                    return false;
-            //                }
-
-            //                if ($('#FileUpload_Licence_Doc').val() == "") {
-            //                    jAlert('<strong>Please upload document in support of EIN/PC/Udyog Aadhaar/Udyam Registration !</strong>');
-            //                    $("#FileUpload_Licence_Doc").focus();
-            //                    return false;
-            //                }
-            //            }
+            
 
             if (DropDownValidation('DrpDwn_District', '0', 'district', projname) == false) {
                 $("#popup_ok").click(function () { $("#DrpDwn_District").focus(); });
@@ -394,21 +315,6 @@
             //      return false;
             //  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             if (blankFieldValidation('Txt_User_Id', 'User ID', projname) == false) {
                 return false;
             }
@@ -433,11 +339,7 @@
             if (blankFieldValidation('Txt_Answer', 'Answer', projname) == false) {
                 return false;
             }
-            //            if (blankFieldValidation('Txt_Captcha', 'Captcha', projname) == false) {
-            //                return false;
-            //            }
-
-
+        
 
         }
 
@@ -460,6 +362,8 @@
 
         /*--------------------------------------------------------------*/
         ////// FileUpload validation
+        /*--------------------------------------------------------------*/
+
 
         function validateFile(e) {
             var ids = e.id;
@@ -474,7 +378,7 @@
 
                     jAlert('<strong>File size must be less then 4 MB ! </strong>', projname);
                     $("#" + ids).val(null);
-                    //e.preventDefault();
+                   
                     return false;
                 }
             }
@@ -673,8 +577,7 @@
                 <div id="exTab1" class="">
                     <div runat="server" visible="true" id="divScrollingText" style="color: #0d3fd1; font-size: 14px; font-family: Verdana; font-style: italic; font-weight: 600; padding-top: 5px;">
                     </div>
-                    <%--<marquee style=" overflow: hidden; position: relative; background: #fefefe;
-                    color: Red; font-style:italic; ">Due to maintenance activity, Online PAN Verification services will not be available to PAN verification users between 1AM to 4AM on December 10, 2022.</marquee>--%>
+                    
                     <div class="wizard">
                         <h2 class="pageTittle">
                             <div class="ring-container">
@@ -729,7 +632,7 @@
                                                         </label>
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
-                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server" ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')"></asp:TextBox>
+                                                            <asp:TextBox ID="Txt_Pan_Holder_Name" CssClass="form-control" runat="server" ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')"></asp:TextBox>
                                                             <span class="mandetory">*</span>
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter PAN Holder Name !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
@@ -745,7 +648,7 @@
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
                                                             <div class="input-group date datePicker">
-                                                                <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" placeholder="DD/MM/YYYY"></asp:TextBox>
+                                                                <asp:TextBox ID="Txt_Dob" CssClass="form-control" runat="server" placeholder="DD/MM/YYYY"  ToolTip="Enter PAN Holder DOB Here." ></asp:TextBox>
                                                                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                             </div>
                                                         </div>
@@ -1284,9 +1187,7 @@
                                 <p>
                                     The PAN provided by you already exists for the following unit(s):
                                 </p>
-                                <%--     <div class="form-group">
-                                <div class="row">
-                                    <div class="col-sm-12">--%>
+
                                 <div class="listdiv">
                                     <asp:GridView ID="GrdUserList" runat="server" AutoGenerateColumns="false" class="table    table-bordered table-hover">
                                         <Columns>
@@ -1298,9 +1199,7 @@
                                         </Columns>
                                     </asp:GridView>
                                 </div>
-                                <%--  </div>
-                                </div>
-                            </div>--%>
+
                                 <div>
                                     <span style="color: Red; font-family: Verdana;">Do you want to register as a subsidiary
                                     unit? ?</span>

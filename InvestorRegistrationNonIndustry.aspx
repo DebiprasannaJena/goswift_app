@@ -14,7 +14,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Src="~/includes/webdoctype.ascx" TagName="doctype" TagPrefix="uc1" %>
 <%@ Register Src="~/includes/webheader.ascx" TagName="header" TagPrefix="uc2" %>
-<%@ Register Src="~/includes/simplefooter.ascx" TagName="footer" TagPrefix="uc3" %>
+<%@ Register Src="~/includes/webfooter.ascx" TagName="footer" TagPrefix="uc3" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc2" %>
 
 <!DOCTYPE html>
@@ -24,6 +24,26 @@
     <title></title>
     <uc1:doctype ID="doctype" runat="server" />
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
+
+    <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css" />
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+
+
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $('.fieldinfo').attr('tabindex', '-1')
+
+            $('.datePicker').datepicker({
+                format: "dd/mm/yyyy",
+                changeMonth: true,
+                changeYear: true,
+                autoclose: true
+            });
+        });
+
+    </script>
+
     <script language="javascript" type="text/javascript">
         function inputLimiter(e, allow) {
             var AllowableCharacters = '';
@@ -85,48 +105,6 @@
                 }
             });
 
-
-            //$('#Txt_Email_Id').change(function () {
-            //    checkUserNameAvail();
-            //});
-
-            //function checkUserNameAvail() {
-            //    //debugger;
-            //    $("#divAvailImg").html("");
-            //    var email = $('#Txt_Email_Id').val();
-            //    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            //    if (filter.test(email) == false) {
-            //        jAlert('<strong>Invalid email address !</strong>', projname);
-            //        $("#Txt_Email_Id").focus();
-            //        $('#Txt_Email_Id').val('');
-            //        return false;
-            //    }
-
-            //    $.ajax({
-            //        type: "POST",
-            //        url: "InvestorRegistrationUser.aspx/checkMailAvail", //It calls our web method  
-            //        contentType: "application/json; charset=utf-8",
-            //        data: "{'strEmailId':'" + email + "'}",
-            //        dataType: "json",
-            //        success: function (msg) {
-            //            var response = JSON.stringify(msg);
-            //            //  alert(msg.d);
-            //            if (msg.d == '1') {
-            //                //alert('This email is already exists !!');
-            //                $("#Txt_Email_Id").val('');
-            //                $("#Txt_Email_Id").focus();
-            //                $("#divAvailImg").html("<img src='images/cancel-square.png' />");
-            //                //$("#divAvailImg").html("<img src='images/cancel-square.png' /> <span style='color:red;'>That email is taken.Try another.</span>");
-            //            }
-            //            else {
-            //                $("#divAvailImg").html("<img src='images/active.png' />");
-            //                //$("#divAvailImg").html("<img src='images/active.png' /> <span style='color:green;'>Available</span>");
-            //            }
-            //        },
-            //        error: function (d) {
-            //        }
-            //    });
-            //}
         }
 
     </script>
@@ -154,16 +132,16 @@
                 return false;
             }
 
-            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (blankFieldValidation('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (blankFieldValidation('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
         }
@@ -189,17 +167,17 @@
                 return false;
             }
 
-            if (blankFieldValidation('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (blankFieldValidation('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_Panname', 'PAN holder name', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Pan_Holder_Name', 'PAN holder name', projname) == false) {
                 return false;
             }
 
-            if (blankFieldValidation('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (blankFieldValidation('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_dob', 'Date Of Birth', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Dob', 'Date Of Birth', projname) == false) {
                 return false;
             }
 
@@ -215,7 +193,7 @@
             }
             if (blankFieldValidation('Txt_First_Name', 'First name', projname) == false) {
                 return false;
-            }           
+            }
             if (blankFieldValidation('Txt_Mobile_No', 'Mobile number', projname) == false) {
                 return false;
             }
@@ -262,109 +240,10 @@
                 $("#popup_ok").click(function () { $("#DrpDwn_Block").focus(); });
                 return false;
             }
-            //if (DropDownValidation('DrpDwn_Invest_Level', '0', 'Investment level', projname) == false) {
-            //    $("#popup_ok").click(function () { $("#DrpDwn_Invest_Level").focus(); });
-            //    return false;
-            //}
+            
             if (blankFieldValidation('Txt_Site_Loc', 'Proposed site location', projname) == false) {
                 return false;
             }
-
-            //if ($('#DrpDwn_Invest_Level').val() == "1") {
-
-            //    if (DropDownValidation('DrpDwn_License_Type', '0', 'IEM/Production Certificate', projname) == false) {
-            //        $("#popup_ok").click(function () { $("#DrpDwn_License_Type").focus(); });
-            //        return false;
-            //    }
-            //    if (blankFieldValidation('Txt_EIN_IEM', 'IEM/Production Certificate number', projname) == false) {
-            //        return false;
-            //    }
-            //    if ($('#FileUpload_Licence_Doc').val() == "") {
-            //        jAlert('<strong>Please upload document in support of IEM/Production Certificate !</strong>');
-            //        $("#FileUpload_Licence_Doc").focus();
-            //        return false;
-            //    }
-            //}
-
-            //if ($('#DrpDwn_Invest_Level').val() == "2") {
-
-            //    if (DropDownValidation('DrpDwn_License_Type', '0', 'EIN/Production Certificate/Udyog Aadhaar/Udyam Registration', projname) == false) {
-            //        $("#popup_ok").click(function () { $("#DrpDwn_License_Type").focus(); });
-            //        return false;
-            //    }
-            //    if (blankFieldValidation('Txt_EIN_IEM', 'EIN/Production Certificate/Udyog Aadhaar/Udyam Registration number', projname) == false) {
-            //        return false;
-            //    }
-            //    if ($('#FileUpload_Licence_Doc').val() == "") {
-            //        jAlert('<strong>Please upload document in support of EIN/Production Certificate/Udyog Aadhaar/Udyam Registration !</strong>');
-            //        $("#FileUpload_Licence_Doc").focus();
-            //        return false;
-            //    }
-            //}
-
-
-
-
-            //            if ($('#DrpDwn_Invest_Level').val() == "1") {
-
-            //                if (DropDownValidation('DrpDwn_License_Type', '0', 'IEM/Production Certificate', projname) == false) {
-            //                    $("#popup_ok").click(function () { $("#DrpDwn_License_Type").focus(); });
-            //                    return false;
-            //                }
-            //                if (blankFieldValidation('Txt_EIN_IEM', 'IEM/Production Certificate number', projname) == false) {
-            //                    return false;
-            //                }
-            //                if ($('#FileUpload_Licence_Doc').val() == "") {
-            //                    jAlert('<strong>Please upload document in support of IEM/Production Certificate !</strong>');
-            //                    $("#FileUpload_Licence_Doc").focus();
-            //                    return false;
-            //                }
-            //            }
-
-            //            if ($('#DrpDwn_License_Type').val() != "0") {
-
-            //                if (blankFieldValidation('Txt_EIN_IEM', 'EIN/PC/Udyog Aadhaar/Udyam Registration number', projname) == false) {
-            //                    return false;
-            //                }
-
-            //                if ($('#FileUpload_Licence_Doc').val() == "") {
-            //                    jAlert('<strong>Please upload document in support of EIN/PC/Udyog Aadhaar/Udyam Registration !</strong>');
-            //                    $("#FileUpload_Licence_Doc").focus();
-            //                    return false;
-            //                }
-            //            }
-
-
-            //if (DropDownValidation('DrpDwn_Sector', '0', 'sector', projname) == false) {
-            //    $("#popup_ok").click(function () { $("#DrpDwn_Sector").focus(); });
-            //    return false;
-            //}
-            //if (DropDownValidation('DrpDwn_Sub_Sector', '0', 'sub sector', projname) == false) {
-            //    $("#popup_ok").click(function () { $("#DrpDwn_Sub_Sector").focus(); });
-            //    return false;
-            //}
-
-            //if (WhiteSpaceValidation1st('Txt_GSTIN', 'GSTIN', projname) == false) {
-            //    return false;
-            //}
-            //if (SpecialCharacter1st('Txt_GSTIN', 'GSTIN', projname) == false) {
-            //    return false;
-            //}
-            //if ($('#Txt_GSTIN').val() != "") {
-            //    if ($("#Txt_GSTIN").val().length < 15) {
-            //        jAlert('<strong>GST identification no. can not be less then 15 characters !</strong>');
-            //        $("#Txt_GSTIN").focus();
-            //        return false;
-            //    }
-            //}
-
-            //  var GSTN = /^([0-9]){2}([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}([0-9]){1}([a-zA-Z]){1}([0-9]){1}?$/;
-            //  if (document.getElementById("txtGSTIN").value.search(GSTN) == -1) {
-            //      jAlert('<strong>Invalid GST Identification No.</strong>', projname);
-            //      $(document.getElementById("txtGSTIN")).val('');
-            //      $(document.getElementById("txtGSTIN")).focus();
-            //      return false;
-            //  }
 
 
             if (blankFieldValidation('Txt_User_Id', 'User ID', projname) == false) {
@@ -391,9 +270,7 @@
             if (blankFieldValidation('Txt_Answer', 'Answer', projname) == false) {
                 return false;
             }
-            //            if (blankFieldValidation('Txt_Captcha', 'Captcha', projname) == false) {
-            //                return false;
-            //            }
+            
         }
 
         /*--------------------------------------------------------------*/
@@ -413,84 +290,9 @@
             }
         }
 
-        /*--------------------------------------------------------------*/
-        ////// FileUpload validation
+        
 
-        //function validateFile(e) {
-        //    var ids = e.id;
-        //    var fileExtension = ['pdf'];
-        //    if ($.inArray($("#" + ids).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
-        //        jAlert('<strong>Only .pdf format is allowed.</strong>', projname);
-        //        $("#" + ids).val(null);
-        //        return false;
-        //    }
-        //    else {
-        //        if ((e.files[0].size > parseInt(4 * 1024 * 1024)) && ($("#" + ids).val() != '')) {
-
-        //            jAlert('<strong>File size must be less then 4 MB ! </strong>', projname);
-        //            $("#" + ids).val(null);
-        //            //e.preventDefault();
-        //            return false;
-        //        }
-        //    }
-        //}
-
-        /*--------------------------------------------------------------*/
-
-        //function showDocName() {
-
-        //    var docName = $('#DrpDwn_License_Type').val();
-
-        //    if (docName != '0') {
-
-        //        $('#Lbl_Doc_Name').html("Upload " + docName + " Document");
-
-        //        if (docName == "EIN") {
-        //            $('#EINNo').show();
-        //            $('#IEMNo').hide();
-        //            $('#UAadhaarNo').hide();
-        //            $('#UdyamReg').hide();
-        //        }
-        //        else if (docName == "IEM") {
-        //            $('#EINNo').hide();
-        //            $('#IEMNo').show();
-        //            $('#UAadhaarNo').hide();
-        //            $('#UdyamReg').hide();
-        //        }
-        //        else if (docName == "Udyog Aadhaar") {
-        //            $('#EINNo').hide();
-        //            $('#IEMNo').hide();
-        //            $('#UAadhaarNo').show();
-        //            $('#UdyamReg').hide();
-        //        }
-        //        else if (docName == "Production Certificate") {
-        //            $('#EINNo').hide();
-        //            $('#IEMNo').hide();
-        //            $('#UAadhaarNo').hide();
-        //            $('#UdyamReg').hide();
-        //        }
-        //        else if (docName == "Udyam Registration") {
-        //            $('#EINNo').hide();
-        //            $('#IEMNo').hide();
-        //            $('#UAadhaarNo').hide();
-        //            $('#UdyamReg').show();
-        //        }
-        //        else {
-        //            $('#EINNo').show();
-        //            $('#IEMNo').show();
-        //            $('#UAadhaarNo').show();
-        //            $('#UdyamReg').show();
-        //        }
-        //    }
-        //    else {
-        //        $('#Lbl_Doc_Name').html("Upload EIN/IEM/Udyog Aadhaar/Production Certificate/Udyam Registration Document");
-        //        $('#EINNo').show();
-        //        $('#IEMNo').show();
-        //        $('#UAadhaarNo').show();
-        //        $('#UdyamReg').show();
-        //    }
-        //}
-
+        
         /*--------------------------------------------------------------*/
 
         function limitText(limitField, limitCount, limitNum) {
@@ -501,39 +303,10 @@
             }
         }
 
-        /*--------------------------------------------------------------*/       
+        /*--------------------------------------------------------------*/
 
     </script>
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            $('.fieldinfo').attr('tabindex', '-1')
-
-            //            $("#DrpDwn_Invest_Level").change(function () {
-            //                debugger;
-            //                var invLev = $('#DrpDwn_Invest_Level').val();
-            //                if (invLev == 2) {
-            //                    $('#spanMandatory1').hide();
-            //                    $('#spanMandatory2').hide();
-            //                    $('#spanMandatory3').hide();
-            //                }
-            //                else {
-            //                    $('#spanMandatory1').show();
-            //                    $('#spanMandatory2').show();
-            //                    $('#spanMandatory3').show();
-            //                }
-            //            });
-
-
-            $('.datePicker').datepicker({
-                format: "dd-M-yyyy",
-                changeMonth: true,
-                changeYear: true,
-                autoclose: true
-            })
-        });
-
-
-    </script>
+    
     <script type="text/javascript">
         $(function () {
             $("#Txt_Pwd").bind("keyup", function () {
@@ -636,8 +409,7 @@
                 <div id="exTab1" class="">
                     <div runat="server" visible="true" id="divScrollingText" style="color: #0d3fd1; font-size: 14px; font-family: Verdana; font-style:italic; font-weight: 600; padding-top: 5px;">
                      </div>
-                    <%-- <marquee style=" overflow: hidden; position: relative; background: #fefefe;
-                    color: Red; font-style:italic; ">Due to maintenance activity, Online PAN Verification services will not be available to PAN verification users between 1AM to 4AM on December 10, 2022.</marquee>--%>
+                   
                     <div class="wizard">
 
                         <h2 class="pageTittle">
@@ -678,8 +450,8 @@
                                                         </label>
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
-                                                            <asp:TextBox ID="Txt_PAN" CssClass="form-control" runat="server" MaxLength="10" ToolTip="Enter Company PAN Number Here."></asp:TextBox>
-                                                            <a data-toggle="tooltip" class="fieldinfo" title="Please enter the Company PAN number !">
+                                                            <asp:TextBox ID="Txt_PAN" CssClass="form-control" runat="server" MaxLength="10" ToolTip="Enter PAN Number Here."></asp:TextBox>
+                                                            <a data-toggle="tooltip" class="fieldinfo" title="Please enter the PAN number !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
 
@@ -688,29 +460,25 @@
                                                         </label>
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
-                                                            <asp:TextBox ID="Txt_Panname" CssClass="form-control" runat="server"  ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')" ></asp:TextBox>
+                                                            <asp:TextBox ID="Txt_Pan_Holder_Name" CssClass="form-control" runat="server" ToolTip="Enter PAN Holder Name Here." Onkeypress="return inputLimiter(event,'NameCharacters')"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
                                                             <a data-toggle="tooltip" class="fieldinfo" title="Please enter PAN Holder Name !">
                                                                 <i class="fa fa-question-circle" aria-hidden="true"></i></a>
                                                         </div>
 
-
-
-
-
-                                                        
                                                     </div>
                                                     <div class="row">
 
                                                         <label for="email" class="col-sm-3 col-md-2">
-                                                            Enter the DOB (dd/mm/yyyy)
+                                                            Enter the DOB
                                                         </label>
 
                                                         <div class="col-sm-6 col-md-4">
                                                             <span class="colon">:</span>
                                                             <div class="input-group date datePicker">
-                                                            <asp:TextBox ID="Txt_dob" CssClass="form-control" runat="server" TabIndex="1" AutoComplete="Off"></asp:TextBox>
-                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                                        </div>
+                                                                <asp:TextBox ID="Txt_Dob" CssClass="form-control" runat="server" placeholder="DD/MM/YYYY" ToolTip="Enter PAN Holder DOB Here."></asp:TextBox>
+                                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            </div>
                                                         </div>
 
                                                         <div class="col-sm-3 col-md-6">

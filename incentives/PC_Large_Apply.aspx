@@ -13,6 +13,7 @@
     <script type="text/javascript" src="../js/WebValidation.js"> </script>
     <script src="../js/decimalrstr.js" type="text/javascript"></script>
     <script src="../js/Incentive/JS_Inct_Common_Validation.js" type="text/javascript"></script>
+
     <%--<script type="text/javascript" src="../js/Incentive/Js_PCFormLarge.js"></script>--%>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -1718,7 +1719,11 @@
             width: 900px;
             height: 550px;
         }
+
+
+
     </style>
+
     <script type="text/javascript">
         $(document).ready(function () {
             $('.datePicker').datepicker({
@@ -1733,6 +1738,7 @@
     <uc2:header ID="header" runat="server" />
     <asp:ScriptManager ID="sm1" runat="server">
     </asp:ScriptManager>
+    <div class="container wrapper">
     <div class="registration-div investors-bg">
         <div id="exTab1" class="container">
             <div class="investrs-tab">
@@ -3967,6 +3973,9 @@
         </div>
         <asp:HiddenField ID="hdnPeal" runat="server" Value="0" />
     </div>
+
+        <uc3:footer ID="footer" runat="server" />
+    </div>
     <asp:HiddenField ID="hdnOfflineEmd" runat="server" />
     <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlOfflineEmd"
         TargetControlID="hdnOfflineEmd" BackgroundCssClass="modalBackground">
@@ -3999,7 +4008,7 @@
             </div>
         </div>
     </asp:Panel>
-    <uc3:footer ID="footer" runat="server" />
+    
     <asp:UpdateProgress ID="updateProgress" runat="server">
         <ProgressTemplate>
             <div class="overlay">

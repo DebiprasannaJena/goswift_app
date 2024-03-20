@@ -79,11 +79,15 @@
 </head>
 <body>
     <form id="form2" runat="server">
+         <uc2:header ID="header" runat="server" />
     <div class="container">
         <asp:HiddenField ID="hdnUserType" runat="server" />
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-        <uc2:header ID="header" runat="server" />
+       
+        <div class="container wrapper">
+
+        
         <div class="registration-div investors-bg">
             <div id="exTab1" class="">
                 <div class="investrs-tab">
@@ -427,6 +431,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
     </div>
     <uc3:footer ID="footer" runat="server" />

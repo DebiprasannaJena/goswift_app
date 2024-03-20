@@ -166,6 +166,8 @@
 </head>
 <body>
     <form id="form2" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
         <uc2:header ID="header" runat="server" />
         <div class="container wrapper">
             <div class="registration-div investors-bg">

@@ -59,7 +59,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
 
         if (!Page.IsPostBack)
         {
-            Txt_dob.Attributes.Add("readonly", "readonly");           
+            Txt_Dob.Attributes.Add("readonly", "readonly");           
 
             Txt_PAN.Focus();
             CommonHelperCls ob = new CommonHelperCls();
@@ -78,8 +78,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 ///Fill Sectors
                 FillSector();
 
-                //fill entity type
-               // FillEntityType();
+                
                 //Dynamic Notification 
                 if (ConfigurationManager.AppSettings["Notice"].ToString() == "On")
                 {
@@ -336,26 +335,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
         }
     }
 
-    /// <summary>
-    /// For bind entity type data 
-    /// </summary>
-    //public void FillEntityType()
-    //{
-    //    try
-    //    {
-    //        action = "FE";
-    //        DataTable dtentitytype = objRegService.BindDistrict(action);
-    //        DrpDwn_Entity_Type.DataSource = dtentitytype;
-    //        DrpDwn_Entity_Type.DataTextField = "vchEntityName";
-    //        DrpDwn_Entity_Type.DataValueField = "intEntityCode";
-    //        DrpDwn_Entity_Type.DataBind();
-    //        DrpDwn_Entity_Type.Items.Insert(0, new ListItem("--Select--", "0"));
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        throw ex.InnerException;
-    //    }
-    //}
+    
 
     #endregion
 
@@ -404,15 +384,15 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid PAN card number.</strong>');", true);
                 return;
             }
-            if (Txt_Panname.Text.Trim() == "")
+            if (Txt_Pan_Holder_Name.Text.Trim() == "")
             {
-                Txt_Panname.Focus();
+                Txt_Pan_Holder_Name.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter PAN holder name.</strong>');", true);
                 return;
             }
-            if(Txt_dob.Text.Trim() == "")
+            if(Txt_Dob.Text.Trim() == "")
             {
-                Txt_dob.Focus();
+                Txt_Dob.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter PAN holder Date Of Birth.</strong>');", true);
                 return;
             }
@@ -710,8 +690,8 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 objInvEntity.intUserLevel = 1; ///// This specify first level user                
                 objInvEntity.StrVCH_PROP_NAME = Txt_Proprietorship_Name.Text;
                 objInvEntity.INT_INDUSTRY_TYPE = 1;   // add by anil sahoo for Industry type
-                objInvEntity.strPanHolderName = Txt_Panname.Text;  // add by anil
-                objInvEntity.strDOB = Txt_dob.Text;  // add by anil
+                objInvEntity.strPanHolderName = Txt_Pan_Holder_Name.Text;  // add by anil
+                objInvEntity.strDOB = Txt_Dob.Text;  // add by anil
 
 
                 /*---------------------------------------------------------------*/
@@ -802,20 +782,20 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 PANValidationNSDL objPan = new PANValidationNSDL();
                 // string strVal = objPan.GetPANStatusFromNSDL(Txt_PAN.Text);
 
-                 string panResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Panname.Text, Txt_dob.Text);
+                 string strPanResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Pan_Holder_Name.Text, Txt_Dob.Text);
 
 
 
 
-                var jsonObject = JObject.Parse(panResponse);
-                string response_Code = (string)jsonObject["response_Code"];
+                var JsonObject = JObject.Parse(strPanResponse);
+                string response_Code = (string)JsonObject["response_Code"];
 
-                JArray outputData = (JArray)jsonObject["outputData"];
-                string dob = "";
-                string name = "";
-                string pan_status = "";
-                string pan = "";
-                string seeding_status = "";
+                JArray outputData = (JArray)JsonObject["outputData"];
+                string strDob = "";
+                string strName = "";
+                string strPan_Status = "";
+                string strPan = "";
+                string strSeeding_status = "";
 
                 if (response_Code == "1")
                 {
@@ -823,76 +803,76 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                     {
                         foreach (JObject item in outputData)
                         {
-                            dob = (string)item["dob"];
-                            name = (string)item["name"];
-                            pan_status = (string)item["pan_status"];
-                            pan = (string)item["pan"];
-                            seeding_status = (string)item["seeding_status"];
+                            strDob = (string)item["dob"];
+                            strName = (string)item["name"];
+                            strPan_Status = (string)item["pan_status"];
+                            strPan = (string)item["pan"];
+                            strSeeding_status = (string)item["seeding_status"];
 
                         }
                     }
 
-                    if (pan_status == "D")
+                    if (strPan_Status == "D")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
                     }
-                    else if (pan_status == "EC")
+                    else if (strPan_Status == "EC")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EA")
+                    else if (strPan_Status == "EA")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "ED")
+                    else if (strPan_Status == "ED")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EI")
+                    else if (strPan_Status == "EI")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EL")
+                    else if (strPan_Status == "EL")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EM")
+                    else if (strPan_Status == "EM")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EP")
+                    else if (strPan_Status == "EP")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "ES")
+                    else if (strPan_Status == "ES")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "EU")
+                    else if (strPan_Status == "EU")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
                     }
-                    else if (pan_status == "X")
+                    else if (strPan_Status == "X")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
                     }
-                    else if (pan_status == "F")
+                    else if (strPan_Status == "F")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
                     }
-                    else if (pan_status == "N")
+                    else if (strPan_Status == "N")
                     {
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
                     }
-                    else if (pan_status == "E")
+                    else if (strPan_Status == "E")
                     {
-                        if (name == "N")
+                        if (strName == "N")
                         {
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name in your card dose not match please reenter correct name !</strong>');", true);
                         }
-                        else if (name == "Y")
+                        else if (strName == "Y")
                         {
-                            Txt_Unit_Name.Text = Txt_Panname.Text;
+                            Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
                             Txt_Unit_Name.Enabled = false;
                         }
 
@@ -912,7 +892,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 /*---------------------------------------------------------------*/
                 ///Write the response log, got from NSDL portal.
                 /*---------------------------------------------------------------*/
-                Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + panResponse);
+                Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strPanResponse);
 
                 //Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strVal);
 
@@ -1064,6 +1044,10 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
         Txt_Site_Loc.Text = "";
         Txt_Unit_Name.Text = "";
         Txt_User_Id.Text = "";
+        Txt_Proprietorship_Name.Text = "";
+        Txt_Dob.Text = "";
+        Txt_Pan_Holder_Name.Text = "";
+
 
         DrpDwn_Block.SelectedIndex = 0;
         DrpDwn_District.SelectedIndex = 0;
@@ -1077,7 +1061,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
         chkBoxEmail.Checked = false;
         chkBoxSMS.Checked = false;        
         Session["InvRegOTP"] = "";
-        Txt_Proprietorship_Name.Text = "";
+       
         proprietor.Visible = false;
     }
 
