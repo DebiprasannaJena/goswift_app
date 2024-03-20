@@ -29,8 +29,7 @@
     </li>
     <li class="menudashboard"><a href="../InvesterDashboard.aspx"><i class="fa fa-tachometer"></i>Dashboard</a></li>
     <li class="menunswsredirect" id="nswsmenu" runat="server">
-        <asp:LinkButton ID="LinkBtnNswsRedirect" runat="server" OnClick="LinkBtnNswsRedirect_Click" ><i class="fa fa-tachometer"></i>Go 
-            to<br /> NSWS</asp:LinkButton>
+        <asp:LinkButton ID="LinkBtnNswsRedirect" runat="server" OnClick="LinkBtnNswsRedirect_Click" ><i class="fa fa-tachometer"></i>NSWS</asp:LinkButton>
     </li>
 </ul>
 
