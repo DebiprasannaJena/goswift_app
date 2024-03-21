@@ -48,31 +48,11 @@
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     Applicant Name</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-4">
                                     <span class="colon">:</span>
                                     <asp:Label ID="Lbl_Applicant_Name" runat="server" CssClass="form-control-static"></asp:Label>
                                 </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2">
-                                    Address</label>
-                                <div class="col-sm-10">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_Address" runat="server" CssClass="form-control-static"></asp:Label>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2">
-                                    Mobile No</label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_Mobile_No" runat="server" CssClass="form-control-static"></asp:Label>
-                                </div>
-                                <label class="col-sm-2">
+                                 <label class="col-sm-2">
                                     Email Id
                                 </label>
                                 <div class="col-sm-4">
@@ -82,17 +62,180 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
-                            <hr />
                             <div class="form-group">
                                 <label class="col-sm-2">
-                                    Site Location</label>
-                                <div class="col-sm-10">
+                                   Registration Address-1</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Address" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                               
+                                <label class="col-sm-2">
+                                    Site Location Address-1</label>
+                                <div class="col-sm-4">
                                     <span class="colon">:</span>
                                     <asp:Label ID="Lbl_Site_Location" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>                               
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2">
+                                   Registration Address-2</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Regd_Address_2" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                   Site Location Address-2</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Sl_Address_2" runat="server" CssClass="form-control-static"></asp:Label>
                                 </div>
                                 <div class="clearfix">
                                 </div>
                             </div>
+
+                               <div class="form-group">
+                                <label class="col-sm-2">
+                                   Registration Country</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Regd_Country" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                   Site Location Country</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Sl_Country" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2">
+                                   Registration State</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Regd_State" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                   Site Location State</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Sl_State" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                   Registration City</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Regd_City" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                   Site Location City</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Sl_City" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                   Registration Pincode</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Regd_Pincode" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                   Site Location Pincode</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Sl_Pincode" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+
+
+                            </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Entity Type</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Enity_Type" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                  <div runat="server" id="Div_Cin" visible="false">
+                                <label class="col-sm-2">
+                                   CIN Number</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_CIN_Number" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                  </div>
+
+                                   <div runat="server" id="Div_Llpin" visible="false">
+                                <label class="col-sm-2">
+                                   LLPIN Number</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_LLPIN_Number" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                  </div>
+                                
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+                               <div class="form-group">
+                                    <div runat="server" id="Div_Cin_Data" visible="false">
+                                <label class="col-sm-2">
+                                    CIN Data</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                   <asp:LinkButton ID="DownloadLink" runat="server" OnClick="DownloadLink_Click">
+                                         <i class="fa fa-download"></i> 
+                                     </asp:LinkButton>
+                                    <asp:Label ID="Lbl_Cin_Data" runat="server" CssClass="form-control-static" ForeColor="Red"></asp:Label>
+                                </div>
+                                        </div>
+                                    <div runat="server" id="Div_Llpin_Date" visible="false">
+                                <label class="col-sm-2">
+                                   LLPIN Data
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                     <asp:LinkButton ID="LlpiData_Download" runat="server" OnClick="LlpiData_Download_Click">
+                                         <i class="fa fa-download"></i> 
+                                     </asp:LinkButton>
+                                    <asp:Label ID="Lbl_Llpin_Data" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                        </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                              <label class="col-sm-2">  
+                                    Mobile No</label>
+                                <div class="col-sm-10">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Mobile_No" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>                              
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
+                            <hr />
+                            
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     Investment Level</label>
@@ -110,6 +253,9 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
+
+                           
+
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     PAN</label>
@@ -127,6 +273,25 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2">
+                                   Pan Holder Name</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Pan_Holder_Name" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                    Dob
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Dob" runat="server" CssClass="form-control-static"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     <asp:Label ID="Lbl_Doc_Type" runat="server"></asp:Label>
@@ -242,6 +407,16 @@
                                     <span class="colon">:</span>
                                     <asp:Label ID="Lbl_Rejection_Cause" runat="server" CssClass="form-control-static"
                                         Font-Bold="true" ForeColor="Red"></asp:Label>
+                                </div>
+
+
+                                <label class="col-sm-2">
+                                    Approval Remark 
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Approval_Remark" runat="server" CssClass="form-control-static"
+                                        Font-Bold="true" ForeColor="BlueViolet"></asp:Label>
                                 </div>
                                 <div class="clearfix">
                                 </div>

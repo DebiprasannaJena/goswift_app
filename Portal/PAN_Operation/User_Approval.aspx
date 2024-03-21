@@ -18,6 +18,8 @@
     <script type="text/javascript">
 
         var projname = '<%=System.Configuration.ConfigurationManager.AppSettings["ProjectName"] %>';
+        
+
 
         /*----------------------------------------------------------------*/
 
@@ -66,13 +68,33 @@
 
         /*----------------------------------------------------------------*/
 
-        function limitText(limitField, limitCount, limitNum) {
-            if (limitField.value.length > limitNum) {
-                limitField.value = limitField.value.substring(0, limitNum);
-            } else {
-                limitCount.value = limitNum - limitField.value.length;
+        function limitText(limitField, limitCountId, limitNum) {
+            var limitCount = document.getElementById(limitCountId);
+
+            if (limitCount) {
+                var remainingChars = limitNum - limitField.value.length;
+                limitCount.value = remainingChars >= 0 ? remainingChars : 0;
             }
         }
+
+      function checkvalidationforApproval() {
+            if (blankFieldValidation('ContentPlaceHolder1_Txt_Approve_Remark', 'Approval remarks', projname) == false) {
+                return false;
+            }
+            var ApprovalRemark = $('#ContentPlaceHolder1_Txt_Approve_Remark').val().length;
+            if (ApprovalRemark < 2 || ApprovalRemark > 250) {
+                jAlert('<strong>The minimum and maximum length of the approval remarks should be 2 to 250 character.</strong>', projname);
+                $("#popup_ok").click(function () { $("#ContentPlaceHolder1_Txt_Approve_Remark").focus(); });
+                return false;
+            }
+            if (WhiteSpaceValidation1st('ContentPlaceHolder1_Txt_Approve_Remark', 'Approval Remarks', projname) == false) {
+                return false;
+            }
+            if (WhiteSpaceValidationLast('ContentPlaceHolder1_Txt_Approve_Remark', 'Approval Remarks', projname) == false) {
+                return false;
+            }
+        }
+
 
     </script>
     <style type="text/css">
@@ -316,16 +338,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="row">
+                            <div class="form-group">                            
+                                 <div class="row">
                                     <label class="col-sm-2">
-                                        Rejection Cause</label>
+                                       Rejection Cause</label>
                                     <div class="col-sm-4">
                                         <span class="colon">:</span>
                                         <asp:TextBox ID="Txt_Rejection_Cause" runat="server" TextMode="MultiLine" MaxLength="250"
-                                            CssClass="form-control" onKeyUp="limitText(this,this.form.count,250);" onKeyDown="limitText(this,this.form.count,250);"></asp:TextBox>
+                                            CssClass="form-control" onKeyUp="limitText(this, 'count', 250);" onKeyDown="limitText(this, 'count', 250);"></asp:TextBox>                                        
                                         <small>Maximum
-                                            <input name="count" class="inputCss" readonly="readonly" style="font-weight: bold;
+                                            <input id="count" class="inputCss" readonly="readonly" style="font-weight: bold;
                                                 color: red; width: 26px;" type="text" value="250" />
                                             Characters Left</small>
                                     </div>
@@ -349,5 +371,75 @@
                 </div>
             </div>
         </asp:Panel>
+
+<asp:HiddenField ID="Hid_Approval_Pop" runat="server" />
+        <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel2"
+            TargetControlID="Hid_Pop" BackgroundCssClass="modalBackground" CancelControlID="Btn_Cancel">
+        </cc1:ModalPopupExtender>
+        <asp:Panel ID="Panel2" runat="server" CssClass="modalfade" Style="display: none;">
+            <div id="undertakingipr2024">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header bg-purpul">
+                            <h4 class="modal-title">
+                                Approval unit</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h4>
+                                Unit Details.</h4>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2">
+                                        Unit Name</label>
+                                    <div class="col-sm-4">
+                                        <span class="colon">:</span>
+                                        <asp:Label ID="Lbl_Investor_Name_Approve" runat="server" CssClass="form-control-static"
+                                            Font-Bold="true"></asp:Label>
+                                        <asp:HiddenField ID="Hid_Investor_Id_Approve" runat="server" />
+                                        <asp:HiddenField ID="Hid_Email_Id_Approve" runat="server" />
+                                        <asp:HiddenField ID="Hid_Mobile_No_Approve" runat="server" />
+                                         <asp:HiddenField ID="Hid_Industry_Type" runat="server"  />
+                                    </div>
+                                    <label class="col-sm-2">
+                                        User Id</label>
+                                    <div class="col-sm-4">
+                                        <span class="colon">:</span>
+                                        <asp:Label ID="Lbl_User_Id_Approve" runat="server" CssClass="form-control-static"
+                                            Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-sm-2">
+                                       Approval Remark</label>
+                                    <div class="col-sm-4">
+                                        <span class="colon">:</span>
+                                        <asp:TextBox ID="Txt_Approve_Remark" runat="server" TextMode="MultiLine" MaxLength="250"
+                                            CssClass="form-control" onKeyUp="limitText(this, 'countId', 250);" onKeyDown="limitText(this, 'countId', 250);"></asp:TextBox>                                        
+                                        <small>Maximum
+                                            <input id="countId" class="inputCss" readonly="readonly" style="font-weight: bold;
+                                                color: red; width: 26px;" type="text" value="250" />
+                                            Characters Left</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">                              
+                                <div class="col-sm-3">
+                                    <asp:Button ID="Btn_Approve_Submit" OnClick="Btn_Approve_Submit_Click"  runat="server" Text="Submit" 
+                                        class="btn btn-success" ToolTip="Click Here to Proceed" OnClientClick="return checkvalidationforApproval();" />
+                                    <asp:Button ID="Btn_Approve_Cencel" runat="server" Text="Cancel" class="btn btn-danger" ToolTip="Click Here to Cancel the Approve !!" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
+
     </div>
 </asp:Content>

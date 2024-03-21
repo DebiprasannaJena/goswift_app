@@ -110,8 +110,6 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
                 /*------------------------------------------------------*/
                 ////// SMS Section
                 /*------------------------------------------------------*/
-                //string strSMSContent = "The registration of your unit " + strUnitName + " is successfully activated by department for your use.";
-                //bool smsStatus = objComm.SendSmsNew(strMobileNo, strSMSContent);
                 //The registration of your unit [INDUSTRY NAME] is successfully activated by department for your use. 
 
                 objInvDet.strAction = "ST2";
@@ -163,10 +161,7 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
                 /*------------------------------------------------------*/
                 ////// SMS Section
                 /*------------------------------------------------------*/
-                //string strSMSContent = "The registration of your unit " + strUnitName + " is not activated by the department.";
-                //bool smsStatus = objComm.SendSmsNew(strMobileNo, strSMSContent);
-                //The registration of your unit[INDUSTRY NAME] is not activated by the department.
-
+               
                 objInvDet.strAction = "ST3";
                 DataTable dtcontent = objInvService.GetSMSContent(objInvDet);
                 if (dtcontent.Rows.Count > 0)
@@ -208,9 +203,6 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
     /////// Approve Unit
     protected void LnkBtn_Approve_Click(object sender, EventArgs e)
     {
-        InvestorBusinessLayer objBAL = new InvestorBusinessLayer();
-        InvestorDetails objEntity = new InvestorDetails();
-
         try
         {
             LinkButton btn = (LinkButton)sender;
@@ -219,170 +211,26 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
             /*--------------------------------------------------------------------------*/
 
             HiddenField Hid_Investor_Id = (HiddenField)row.FindControl("Hid_Investor_Id");
-            HiddenField Hid_Industry_Type = (HiddenField)row.FindControl("Hid_Industry_Type");
+          
+            LinkButton LnkBtn_Inv_Name_Approval = (LinkButton)row.FindControl("LnkBtn_Inv_Name");
+            Label Lbl_User_Id_Approval = (Label)row.FindControl("Lbl_User_Id");
+            Label Lbl_Email_Id = (Label)row.FindControl("Lbl_Email_Id");
+            Label Lbl_Mobile_No = (Label)row.FindControl("Lbl_Mobile_No");
+            Label Lbl_Industry_type= (Label)row.FindControl("Lbl_Industry_type");
+            Lbl_Investor_Name_Approve.Text = LnkBtn_Inv_Name_Approval.Text;
+            Lbl_User_Id_Approve.Text = Lbl_User_Id_Approval.Text;
+            Hid_Investor_Id_Approve.Value = Hid_Investor_Id.Value;
+            Hid_Email_Id_Approve.Value = Lbl_Email_Id.Text;
+            Hid_Mobile_No_Approve.Value = Lbl_Mobile_No.Text;
+            Hid_Industry_Type.Value = Lbl_Industry_type.Text;
+            ModalPopupExtender2.Show();
+            Txt_Approve_Remark.Text = " ";
 
-            if (Hid_Industry_Type.Value == "1") ///// Industry
-            {
-                DataTable dt = new DataTable();
-                objEntity.strAction = "V4";
-                objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id.Value);
-
-                /////// Select Data
-                dt = objBAL.UserManagementView(objEntity);
-                if (dt.Rows.Count > 0)
-                {
-                    /*-----------------------------------------------------------------*/
-                    /////// Service Initialization
-                    DWHServiceHostClient objSrvRef = new DWHServiceHostClient();
-                    DWH_Model objEnt = new DWH_Model();
-
-                    /*-----------------------------------------------------------------*/
-                    /////// Assign value to property
-
-                    string strUnitName = Convert.ToString(dt.Rows[0]["VCH_INV_NAME"]);
-                    string strEmailId = Convert.ToString(dt.Rows[0]["VCH_EMAIL"]);
-                    string strMobileNo = Convert.ToString(dt.Rows[0]["VCH_OFF_MOBILE"]);
-
-                    objEnt.VCHINDUSTRYNAME = strUnitName;
-                    objEnt.VCHEMAILID = strEmailId;
-                    objEnt.VCHMOBILENO = strMobileNo;
-                    objEnt.INTSALUTATION = Convert.ToInt32(dt.Rows[0]["INT_SALUTATION"]);
-                    objEnt.VCHPROMOTERFNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_FIRSTNAME"]);
-                    objEnt.VCHPROMOTERMNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_MIDDLENAME"]);
-                    objEnt.VCHPROMOTERLNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_LASTNAME"]);
-                    objEnt.VCHADDRESS = Convert.ToString(dt.Rows[0]["VCH_ADDRESS"]);
-                    objEnt.VCHUSERNAME = Convert.ToString(dt.Rows[0]["VCH_INV_USERID"]);
-                    objEnt.VCHPASSWORD = Convert.ToString(dt.Rows[0]["VCH_INV_PASSWORD"]);
-                    objEnt.INTDISTRICT = Convert.ToInt32(dt.Rows[0]["INT_DISTRICT"]);
-                    objEnt.INTBLOCK = Convert.ToInt32(dt.Rows[0]["INT_BLOCK"]);
-                    objEnt.INTSECTOR = Convert.ToInt32(dt.Rows[0]["INT_SECTOR"]);
-                    objEnt.INTSUBSECTOR = Convert.ToInt32(dt.Rows[0]["INT_SUBSECTOR"]);
-                    objEnt.INTPARENTID = Convert.ToInt32(dt.Rows[0]["INT_PARENT_ID"]);
-                    objEnt.VCHPANNO = Convert.ToString(dt.Rows[0]["VCH_PAN"]);
-                    objEnt.VCHEINIEM = Convert.ToString(dt.Rows[0]["VCH_EIN_IEM"]);
-                    objEnt.VCHLICENCENOTYPE = Convert.ToString(dt.Rows[0]["VCH_LICENCE_NO_TYPE"]);
-                    objEnt.VCHLICENCEDOC = Convert.ToString(dt.Rows[0]["VCH_LICENCE_DOC"]);
-                    objEnt.INTUSERLEVEL = Convert.ToInt32(dt.Rows[0]["INT_USER_LEVEL"]);
-                    objEnt.VCHUSERUNIQUEID = Convert.ToString(dt.Rows[0]["VCH_UNIQUE_ID_PARENT"]);
-                    objEnt.VCHCORADDRESS = Convert.ToString(dt.Rows[0]["VCH_SITELOCATION"]);
-                    objEnt.VCHTINNO = Convert.ToString(dt.Rows[0]["VCH_GSTIN"]);
-                    objEnt.INTINDUSTRYCATEGORY = Convert.ToInt32(dt.Rows[0]["INT_CATEGORY"]);
-                    objEnt.INTENTITYTYPE = Convert.ToInt32(dt.Rows[0]["INT_ENTITY_TYPE"]);  // add by anil
-                    objEnt.VCHCINNUMBER = Convert.ToString(dt.Rows[0]["VCH_CIN_NUMBER"]);  // add by anil
-
-                    //objList.intsecur = Convert.ToString(dt.Rows[0]["INT_SEC_QUES"]);
-                    //objList.vchan = Convert.ToString(dt.Rows[0]["VCH_SEC_ANSWER"]);
-                    //objList.intcre = Convert.ToString(dt.Rows[0]["INT_CREATED_BY"]);
-                    //objList.vchcrea = Convert.ToString(dt.Rows[0]["DTM_CREATED_ON"]);
-                    //objList.VCHINDUSTRYNAME = Convert.ToString(dt.Rows[0]["INT_UPDATED_BY"]);
-                    //objList.VCHINDUSTRYNAME = Convert.ToString(dt.Rows[0]["DTM_UPDATED_ON"]);
-                    //objList.intsts = Convert.ToString(dt.Rows[0]["INT_STATUS"]);
-                    //objList.intot = Convert.ToString(dt.Rows[0]["INT_OTP_STATUS"]);
-                    //objList.VCHREm = Convert.ToString(dt.Rows[0]["VCH_REMARKS"]);
-                    //objList.vch = Convert.ToString(dt.Rows[0]["INT_COUNTRY"]); 
-
-                    /*-----------------------------------------------------------------*/
-                    /////// Generate Encryption Key (Security key to access Data Warehouse servce methods)
-                    string strEncryptionKey = ConfigurationManager.AppSettings["DWHEncryptionKey"];
-                    string strSecurityKey = objSrvRef.KeyEncryption(strEncryptionKey);
-
-                    /*-----------------------------------------------------------------*/
-                    /////// DML opertion through service
-                    string strReturnVal = objSrvRef.UserRegistration(objEnt, strSecurityKey);
-                    if (strReturnVal != "")
-                    {
-                        string[] strArrRetVal = strReturnVal.Split('_');
-
-                        if (strArrRetVal[0] == "1")
-                        {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User name already exists !</strong>', '" + strProjName + "'); </script>", false);
-                            return;
-                        }
-                        else if (strArrRetVal[0] == "2")
-                        {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Mobile number already exists !</strong>', '" + strProjName + "'); </script>", false);
-                            return;
-                        }
-                        else if (strArrRetVal[0] == "3")
-                        {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Email id already exists !</strong>', '" + strProjName + "'); </script>", false);
-                            return;
-                        }
-                        else if (strArrRetVal[0] == "5")
-                        {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>CIN number already exists !</strong>', '" + strProjName + "'); </script>", false);
-                            return;
-                        }
-                        else if (strArrRetVal[0] == "4")
-                        {
-                            string strUniqueId = strArrRetVal[1];
-
-                            /*-----------------------------------------------------------------*/
-                            objEntity.strAction = "AP";
-                            objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id.Value);
-                            objEntity.IntCreatedBy = Convert.ToInt32(Session["Userid"]);
-                            objEntity.strUniqueId = strUniqueId;
-
-                            //////// DML Operation
-                            string strReturnStatus = objBAL.UserManagementAED(objEntity);
-                            if (strReturnStatus == "1")
-                            {
-                                ////// Send Email and SMS for User Approval Confirmation
-                                SendEmailSms(strEmailId, strMobileNo, strUnitName, "", 1);
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User Approved Successfully !</strong>', '" + strProjName + "'); </script>", false);
-                                FillGrid();
-                            }
-                            else if (strReturnStatus == "2")
-                            {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Internal Server Error,Please Try After Sometime !</strong>', '" + strProjName + "'); </script>", false);
-                            }
-                        }
-
-                    }
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Something went wrong,Please try again !</strong>', '" + strProjName + "'); </script>", false);
-                }
-            }
-            else if (Hid_Industry_Type.Value == "2") ///// Non Industry Type .by anil sahoo
-            {
-                objEntity.strAction = "AP";
-                objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id.Value);
-                objEntity.IntCreatedBy = Convert.ToInt32(Session["Userid"]);
-                Guid Uniqe_id = Guid.NewGuid(); /// for generate unique id localy . by anil sahoo
-                objEntity.strUniqueId = Convert.ToString(Uniqe_id);
-
-                //////// DML Operation
-                string strReturnStatus = objBAL.UserManagementAED(objEntity);
-                if (strReturnStatus == "1")// approve
-                {
-
-                    Label Lbl_Mobil_No = (Label)row.FindControl("Lbl_Mobile_No");
-                    Label Lbl_Email_id = (Label)row.FindControl("Lbl_Email_Id");
-                    //HiddenField Hid_Investor_Name = (HiddenField)row.FindControl("Hid_Investor_Name");
-                    LinkButton LnkBtn_Inv_Name = (LinkButton)row.FindControl("LnkBtn_Inv_Name");
-
-                    ////// Send Email and SMS for User Approval Confirmation
-                    SendEmailSms(Lbl_Email_id.Text, Lbl_Mobil_No.Text, LnkBtn_Inv_Name.Text, "", 1);
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User Approved Successfully !</strong>', '" + strProjName + "'); </script>", false);
-                    FillGrid();
-                }
-                else if (strReturnStatus == "2")
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Internal Server Error,Please Try After Sometime !</strong>', '" + strProjName + "'); </script>", false);
-                }
-            }
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "UserApproval");
-        }
-        finally
-        {
-            objBAL = null;
-            objEntity = null;
-        }
+        }       
     }
 
     /////// Confirm Before Rejection of Unit
@@ -406,6 +254,7 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
             Hid_Mobile_No_Reject.Value = Lbl_Mobile_No.Text;
 
             ModalPopupExtender1.Show();
+            Txt_Rejection_Cause.Text = " ";
         }
         catch (Exception ex)
         {
@@ -478,4 +327,152 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
     }
 
     #endregion
+
+    protected void Btn_Approve_Submit_Click(object sender, EventArgs e)
+    {
+        InvestorBusinessLayer objBAL = new InvestorBusinessLayer();
+        InvestorDetails objEntity = new InvestorDetails();
+
+        try
+        {
+            if (Hid_Industry_Type.Value == "Industry") ///// Industry
+            { 
+                objEntity.strAction = "V4";
+                objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id_Approve.Value);
+
+                /////// Select Data
+                DataTable dt = objBAL.UserManagementView(objEntity);
+                if (dt.Rows.Count > 0)
+                {
+                    /*-----------------------------------------------------------------*/
+                    /////// Service Initialization
+                    DWHServiceHostClient objSrvRef = new DWHServiceHostClient();
+                    DWH_Model objEnt = new DWH_Model();
+
+                    /*-----------------------------------------------------------------*/
+                    /////// Assign value to property
+
+                    string strUnitName = Convert.ToString(dt.Rows[0]["VCH_INV_NAME"]);
+                    string strEmailId = Convert.ToString(dt.Rows[0]["VCH_EMAIL"]);
+                    string strMobileNo = Convert.ToString(dt.Rows[0]["VCH_OFF_MOBILE"]);
+
+                    objEnt.VCHINDUSTRYNAME = strUnitName;
+                    objEnt.VCHEMAILID = strEmailId;
+                    objEnt.VCHMOBILENO = strMobileNo;
+                    objEnt.INTSALUTATION = Convert.ToInt32(dt.Rows[0]["INT_SALUTATION"]);
+                    objEnt.VCHPROMOTERFNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_FIRSTNAME"]);
+                    objEnt.VCHPROMOTERMNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_MIDDLENAME"]);
+                    objEnt.VCHPROMOTERLNAME = Convert.ToString(dt.Rows[0]["VCH_CONTACT_LASTNAME"]);
+                    objEnt.VCHADDRESS = Convert.ToString(dt.Rows[0]["VCH_ADDRESS"]);
+                    objEnt.VCHUSERNAME = Convert.ToString(dt.Rows[0]["VCH_INV_USERID"]);
+                    objEnt.VCHPASSWORD = Convert.ToString(dt.Rows[0]["VCH_INV_PASSWORD"]);
+                    objEnt.INTDISTRICT = Convert.ToInt32(dt.Rows[0]["INT_DISTRICT"]);
+                    objEnt.INTBLOCK = Convert.ToInt32(dt.Rows[0]["INT_BLOCK"]);
+                    objEnt.INTSECTOR = Convert.ToInt32(dt.Rows[0]["INT_SECTOR"]);
+                    objEnt.INTSUBSECTOR = Convert.ToInt32(dt.Rows[0]["INT_SUBSECTOR"]);
+                    objEnt.INTPARENTID = Convert.ToInt32(dt.Rows[0]["INT_PARENT_ID"]);
+                    objEnt.VCHPANNO = Convert.ToString(dt.Rows[0]["VCH_PAN"]);
+                    objEnt.VCHEINIEM = Convert.ToString(dt.Rows[0]["VCH_EIN_IEM"]);
+                    objEnt.VCHLICENCENOTYPE = Convert.ToString(dt.Rows[0]["VCH_LICENCE_NO_TYPE"]);
+                    objEnt.VCHLICENCEDOC = Convert.ToString(dt.Rows[0]["VCH_LICENCE_DOC"]);
+                    objEnt.INTUSERLEVEL = Convert.ToInt32(dt.Rows[0]["INT_USER_LEVEL"]);
+                    objEnt.VCHUSERUNIQUEID = Convert.ToString(dt.Rows[0]["VCH_UNIQUE_ID_PARENT"]);
+                    objEnt.VCHCORADDRESS = Convert.ToString(dt.Rows[0]["VCH_SITELOCATION"]);
+                    objEnt.VCHTINNO = Convert.ToString(dt.Rows[0]["VCH_GSTIN"]);
+                    objEnt.INTINDUSTRYCATEGORY = Convert.ToInt32(dt.Rows[0]["INT_CATEGORY"]);
+                    objEnt.VCHAPPROVALREMARKS = Txt_Approve_Remark.Text;                 
+                    /*-----------------------------------------------------------------*/
+                    /////// Generate Encryption Key (Security key to access Data Warehouse servce methods)
+                    string strEncryptionKey = ConfigurationManager.AppSettings["DWHEncryptionKey"];
+                    string strSecurityKey = objSrvRef.KeyEncryption(strEncryptionKey);
+
+                    /*-----------------------------------------------------------------*/
+                    /////// DML opertion through service
+                    string strReturnVal = objSrvRef.UserRegistration(objEnt, strSecurityKey);
+                    if (strReturnVal != "")
+                    {
+                        string[] strArrRetVal = strReturnVal.Split('_');
+
+                        if (strArrRetVal[0] == "1")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User name already exists !</strong>', '" + strProjName + "'); </script>", false);
+                            return;
+                        }
+                        else if (strArrRetVal[0] == "2")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Mobile number already exists !</strong>', '" + strProjName + "'); </script>", false);
+                            return;
+                        }
+                        else if (strArrRetVal[0] == "3")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Email id already exists !</strong>', '" + strProjName + "'); </script>", false);
+                            return;
+                        }
+                        else if (strArrRetVal[0] == "5")
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>CIN number already exists !</strong>', '" + strProjName + "'); </script>", false);
+                            return;
+                        }
+                        else if (strArrRetVal[0] == "4")
+                        {
+                            string strUniqueId = strArrRetVal[1];
+
+                            /*-----------------------------------------------------------------*/
+                            objEntity.strAction = "AP";
+                            objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id_Approve.Value);
+                            objEntity.IntCreatedBy = Convert.ToInt32(Session["Userid"]);
+                            objEntity.strUniqueId = strUniqueId;
+                            objEntity.strApprovalRemarks = Txt_Approve_Remark.Text;
+
+                            //////// DML Operation
+                            string strReturnStatus = objBAL.UserManagementAED(objEntity);
+                            if (strReturnStatus == "1")
+                            {
+                                ////// Send Email and SMS for User Approval Confirmation
+                                SendEmailSms(strEmailId, strMobileNo, strUnitName, Txt_Approve_Remark.Text, 1);
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User Approved Successfully !</strong>', '" + strProjName + "'); </script>", false);
+                                FillGrid();
+                            }
+                            else if (strReturnStatus == "2")
+                            {
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Internal Server Error,Please Try After Sometime !</strong>', '" + strProjName + "'); </script>", false);
+                            }
+                        }
+
+                    }
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Something went wrong,Please try again !</strong>', '" + strProjName + "'); </script>", false);
+                }
+            }
+            else if (Hid_Industry_Type.Value == "Non-Industry") ///// Non Industry Type .by anil sahoo
+            {
+                objEntity.strAction = "AP";
+                objEntity.IntInvestorId = Convert.ToInt32(Hid_Investor_Id_Approve.Value);
+                objEntity.IntCreatedBy = Convert.ToInt32(Session["Userid"]);
+                Guid Uniqe_id = Guid.NewGuid(); /// for generate unique id localy . by anil sahoo
+                objEntity.strUniqueId = Convert.ToString(Uniqe_id);
+                objEntity.strApprovalRemarks = Txt_Approve_Remark.Text;
+                //////// DML Operation
+                string strReturnStatus = objBAL.UserManagementAED(objEntity);
+                if (strReturnStatus == "1")// approve
+                {
+
+                    ////// Send Email and SMS for User Approval Confirmation
+                    SendEmailSms(Hid_Email_Id_Approve.Value, Hid_Mobile_No_Approve.Value, Lbl_Investor_Name_Approve.Text, Txt_Approve_Remark.Text, 1);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>User Approved Successfully !</strong>', '" + strProjName + "'); </script>", false);
+                    FillGrid();
+                }
+                else if (strReturnStatus == "2")
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Internal Server Error,Please Try After Sometime !</strong>', '" + strProjName + "'); </script>", false);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserApproval");
+        }
+    }
 }

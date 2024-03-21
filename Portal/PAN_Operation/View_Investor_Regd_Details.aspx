@@ -192,26 +192,7 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2">
-                                    Constitution of Company/Entity Type
-                                </label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_Entity_type" runat="server" CssClass="form-control-static" Font-Bold="true"
-                                        ForeColor="Red"></asp:Label>
-                                </div>
-                                <label class="col-sm-2">
-                                    CIN NUMBER
-                                </label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_cin_number" runat="server" CssClass="form-control-static"></asp:Label>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
+                     
                             <hr />
                             <div class="form-group">
                                 <label class="col-sm-2">

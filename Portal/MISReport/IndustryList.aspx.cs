@@ -123,7 +123,16 @@ public partial class Portal_MISReport_IndustryList : System.Web.UI.Page
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 Label las = e.Row.FindControl("Lbl_Approval_Status") as Label;
-
+                Label Lbl_REJECTION_CAUSE= e.Row.FindControl("Lbl_REJECTION_CAUSE") as Label;
+                Label Lbl_Approve_Remark = e.Row.FindControl("Lbl_Approve_Remark") as Label;
+                if(Lbl_REJECTION_CAUSE.Text == " " || Lbl_REJECTION_CAUSE.Text == "")
+                {
+                    Lbl_REJECTION_CAUSE.Text = "-NA-";
+                }
+                if (Lbl_Approve_Remark.Text == "")
+                {
+                    Lbl_Approve_Remark.Text = "-NA-";
+                }
                 if (las.Text == "Pending")
                 {
                     las.ForeColor = System.Drawing.Color.Blue;

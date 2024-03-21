@@ -172,8 +172,6 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                 Lbl_Alias_Name.Text = Convert.ToString(dt.Rows[0]["VCH_INV_USERID_ALIAS"]);
 
                 Lbl_AppBy.Text= Convert.ToString(dt.Rows[0]["INT_APPROVED_BY"]);
-                //Lbl_AppBy.Text= Convert.ToString(dt.Rows[0]["REJECTED_BY"]);
-
                 /*-------------------------------------------------------------------*/
 
                 string strOTPStatus = Convert.ToString(dt.Rows[0]["INT_OTP_STATUS"]);//add by debiprasanna
@@ -275,16 +273,7 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                 else
                 {
                     Lbl_Sub_Sector.Text = "-NA-";
-                }
-                //Lbl_AppBy.Text = Convert.ToString(dt.Rows[0]["INT_APPROVED_BY"]);
-                //if (Convert.ToString(dt.Rows[0]["INT_APPROVED_BY"]) != "")
-                //{
-                //    Lbl_AppBy.Text = Convert.ToString(dt.Rows[0]["vch_Approveby"]);
-                //}
-                //else
-                //{
-                //    Lbl_AppBy.Text = "-NA-";
-                //}
+                }               
                 //Add by Debiprasanna
                 string strApprovalStatuss = Convert.ToString(dt.Rows[0]["INT_APPROVAL_STATUS"]);
 
@@ -323,9 +312,7 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                 else
                 {
                     Lbl_Approval_Date_1st_Level.Text = "-NA-";                   
-                }
-                //Lbl_Approval_Date_1st_Level.Text = strApprovalDate1stLevel;
-
+                }            
                 string strApprovalStatus1stLevel = Convert.ToString(dt.Rows[0]["INT_APPROVAL_STATUS_1ST_LEVEL"]);
                 if (strApprovalStatus1stLevel == "1")
                 {
@@ -373,25 +360,6 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
 
                 /*------------------------------------------------------------------------*/
                 ///approved by or rejected by 
-
-                if (Convert.ToString(dt.Rows[0]["INT_ENTITY_TYPE"]) != "0")
-                {
-                    Lbl_Entity_type.Text = Convert.ToString(dt.Rows[0]["vchEntityName"]);
-                }
-                else
-                {
-                    Lbl_Entity_type.Text = "-NA-";
-                }
-
-                if (Convert.ToString(dt.Rows[0]["VCH_CIN_NUMBER"]) != "")
-                {
-                    Lbl_cin_number.Text = Convert.ToString(dt.Rows[0]["VCH_CIN_NUMBER"]);
-                }
-                else
-                {
-                    Lbl_cin_number.Text = "-NA-";
-                }
-
             }
         }
         catch (Exception ex)

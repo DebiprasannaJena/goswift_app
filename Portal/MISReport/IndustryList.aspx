@@ -141,6 +141,12 @@
                                                             Font-Bold="true" ForeColor="Red"></asp:Label>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Approve Remark">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="Lbl_Approve_Remark" runat="server" Text='<%# Eval("VCH_APPROVALREMARK") %>'
+                                                            Font-Bold="true" ForeColor="BlueViolet"></asp:Label>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
                                             <EmptyDataTemplate>
                                                 No Data Found !!
