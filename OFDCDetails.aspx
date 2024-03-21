@@ -515,6 +515,7 @@
             </asp:UpdatePanel>
         </div>
     </div>
+          <uc3:footer ID="footer" runat="server" />
     </form>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <title>SWP(Single Window Portal)</title>
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
     <script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css"/>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -301,10 +301,7 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                    </div>
-                    <div id="divLastUpdate" style="text-align:left;color:black" runat="server"></div>
-                    
-                    <div id="divUpdateText" style="text-align:left;color:black" runat="server">The dashboard information is updated on a daily basis</div>
+                    </div>                   
                 </div>
             </div>
         </div>

@@ -23,67 +23,9 @@ public partial class PublicDashBoardService : System.Web.UI.Page
             txtToDate.Text = strTodate;
             ScriptManager.RegisterStartupScript(this, this.GetType(), "onload", "<script>setDateValues('" + strFromDate + "','" + strTodate + "');</script>", false);
 
-            //if (Session["UserId"] != null)
-            //{
-            //    int intLevelId = Convert.ToInt32(Session["LevelID"].ToString());
-            //    int intDepartMentId = Convert.ToInt32(Session["DeptId"]);
-            //    if (intLevelId == 1 || intLevelId == 4) //admin or dic login
-            //    {
-            //        CommonBindDropDown(drpDepartment, "DD", string.Empty);
-            //    }
-            //    else if (intLevelId == 2)
-            //    {
-            //        BindDeptDropdown(intDepartMentId);
-            //    }
-
-            //    BindDistrict();
-            //    if (intLevelId == 4) //for DIC Users
-            //    {
-            //        int intDistrictid = Convert.ToInt32(Session["Pealuserid"].ToString());
-            //        System.Web.UI.WebControls.ListItem lstDistrict = ddlDistrict.Items.FindByValue(intDistrictid.ToString());
-            //        ddlDistrict.Items.Clear();
-            //        ddlDistrict.Items.Add(lstDistrict);
-            //        ddlDistrict.SelectedIndex = 0;
-
-            //    }
-            //    BindGridView();
-            //}
-            //else
-            //{
-            //    Response.Redirect("../SessionTimeout.aspx");
-            //}
-
-
-
-
-            //int intLevelId = Convert.ToInt32(Session["LevelID"].ToString());
-            //int intDepartMentId = Convert.ToInt32(Session["DeptId"]);
-            //if (intLevelId == 1 || intLevelId == 4) //admin or dic login
-            //{
-            //    CommonBindDropDown(drpDepartment, "DD", string.Empty);
-            //}
-            //else if (intLevelId == 2)
-            //{
-            //    BindDeptDropdown(intDepartMentId);
-            //}
-
             CommonBindDropDown(drpDepartment, "DD", string.Empty);
-
-            BindDistrict();
-            //if (intLevelId == 4) //for DIC Users
-            //{
-            //    int intDistrictid = Convert.ToInt32(Session["Pealuserid"].ToString());
-            //    System.Web.UI.WebControls.ListItem lstDistrict = ddlDistrict.Items.FindByValue(intDistrictid.ToString());
-            //    ddlDistrict.Items.Clear();
-            //    ddlDistrict.Items.Add(lstDistrict);
-            //    ddlDistrict.SelectedIndex = 0;
-
-            //}
-
-            BindGridView();
-            //Added on 13-10-2022 by Arabinda Tripathy
-            DateTime crdate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            divLastUpdate.InnerText = "Last reviewed and updated on : " + crdate.ToString("dd-MMM-yyyy"); //DateTime.Now.ToShortDateString(); //#aaaeb7
+            BindDistrict();         
+            BindGridView();          
         }
     }
 
@@ -91,12 +33,11 @@ public partial class PublicDashBoardService : System.Web.UI.Page
     {
         try
         {
-            ProposalBAL objService = new ProposalBAL();
-            List<ProjectInfo> objProjList = new List<ProjectInfo>();
+            ProposalBAL objService = new ProposalBAL();           
             ProjectInfo objProp = new ProjectInfo();
             objProp.strAction = "DT";
             objProp.vchProposalNo = " ";
-            objProjList = objService.PopulateProjDropdowns(objProp).ToList();
+            List<ProjectInfo> objProjList = objService.PopulateProjDropdowns(objProp).ToList();
             ddlDistrict.DataSource = objProjList;
             ddlDistrict.DataTextField = "vchDistName";
             ddlDistrict.DataValueField = "intDistId";
@@ -130,18 +71,8 @@ public partial class PublicDashBoardService : System.Web.UI.Page
             intDepartmentId = drpDepartment.SelectedValue != "0" ? Convert.ToInt32(drpDepartment.SelectedValue) : 0,
             intServiceId = drpService.SelectedIndex > 0 ? Convert.ToInt32(drpService.SelectedValue) : 0
         };
-
-        //int intLevelId = Convert.ToInt32(Session["LevelID"].ToString());
-        //int intDepartMentId = Convert.ToInt32(Session["DeptId"]);
-        //if (intLevelId == 4)
-        //{
-        //    objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-        //}
-
         /*------------------------------------------------------------*/
-
-        List<MIS_ChildServiceRpt> lstChildServices = new List<MIS_ChildServiceRpt>();
-        lstChildServices = MisReportServices.View_ChildServices_MISReport_New(objSearch);
+        List<MIS_ChildServiceRpt> lstChildServices = MisReportServices.View_ChildServices_MISReport_New(objSearch);
 
         /*---------------------------------------------------------------------------------------*/
         //// Add a static record for the department of Health and Family Welfare (H&FW) [Dept Id=9].        
@@ -197,14 +128,6 @@ public partial class PublicDashBoardService : System.Web.UI.Page
                 strSearchDetails.Append(drpService.SelectedItem.Text.Trim());
                 strSearchDetails.Append("<br/>");
             }
-
-            //if (ddlDistrict.SelectedIndex > 0 || intLevelId == 4)
-            //{
-            //    strSearchDetails.Append("<strong>District - </strong>");
-            //    strSearchDetails.Append(ddlDistrict.SelectedItem.Text.Trim());
-            //    strSearchDetails.Append("<br/>");
-            //}
-
             strSearchDetails.Append("<strong>From Date - </strong>");
             strSearchDetails.Append(txtFromDate.Text.Trim());
             strSearchDetails.Append("<br/>");
@@ -217,7 +140,6 @@ public partial class PublicDashBoardService : System.Web.UI.Page
     }
     private void CommonBindDropDown(DropDownList drp, string strActionCode, string strProposalNo)
     {
-        List<ProjectInfo> objProjList = new List<ProjectInfo>();
         ProposalBAL objProposalBal = new ProposalBAL();
         ProjectInfo objProp = new ProjectInfo()
         {
@@ -225,38 +147,14 @@ public partial class PublicDashBoardService : System.Web.UI.Page
             vchProposalNo = strProposalNo
         };
 
-        objProjList = objProposalBal.PopulateProjDropdowns(objProp).ToList();
+        List<ProjectInfo> objProjList = objProposalBal.PopulateProjDropdowns(objProp).ToList();
         drp.DataSource = objProjList;
         drp.DataTextField = "vchserviceName";
         drp.DataValueField = "intserviceid";
         drp.DataBind();
         drp.Items.Insert(0, new ListItem("-Select-", "0"));
     }
-    //private void BindDeptDropdown(int intDepartmentId)
-    //{
-    //    int desId = Convert.ToInt32(Session["desId"].ToString());
-    //    RptSearch objSearch = new RptSearch()
-    //    {
-    //        strActionCode = "drp",
-    //        intDepartmentId = intDepartmentId,
-    //    };
-
-    //    if (desId == 3)
-    //    {
-    //        objSearch.strActionCode = "ddl";
-    //    }
-    //    Dictionary<int, string> dcDept = new Dictionary<int, string>();
-
-    //    dcDept = MisReportServices.ViewDepartmentListByUser(objSearch);
-
-    //    drpDepartment.DataSource = dcDept;
-    //    drpDepartment.DataTextField = "value";
-    //    drpDepartment.DataValueField = "key";
-    //    drpDepartment.DataBind();
-
-    //    drpDepartment.SelectedValue = intDepartmentId.ToString();
-    //    CommonBindDropDown(drpService, "SS", drpDepartment.SelectedValue);
-    //}
+   
     private void GetDefaultFromAndToDate(out string strFromDate, out string strToDate)
     {
         strFromDate = string.Empty;
@@ -289,7 +187,6 @@ public partial class PublicDashBoardService : System.Web.UI.Page
             int intService = drpService.SelectedIndex > 0 ? Convert.ToInt32(drpService.SelectedValue) : 0;
             hyp.Visible = true;
             StringBuilder strNavigateUrl = new StringBuilder();
-            //strNavigateUrl.Append("~/Portal/MISReport/");
             strNavigateUrl.Append(strPageName);
             strNavigateUrl.Append("?intId=");
             strNavigateUrl.Append(grdDepartment.DataKeys[gRow.RowIndex].Value);
@@ -319,7 +216,6 @@ public partial class PublicDashBoardService : System.Web.UI.Page
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             HyperLink hypDepartment = (HyperLink)e.Row.FindControl("hypDepartment");
-            //ShowHideHyperlink(hypDepartment, null, e.Row, "SN", "ChildServiceRptDtls.aspx");
             ShowHideHyperlink(hypDepartment, null, e.Row, "SN", "PublicChildServiceDetails.aspx");
         }
     }
@@ -331,11 +227,6 @@ public partial class PublicDashBoardService : System.Web.UI.Page
             CommonBindDropDown(drpService, "SS", drpDepartment.SelectedValue);
         }
     }
-
-    //public override void VerifyRenderingInServerForm(Control control)
-    //{
-
-    //}
 
     protected void btnSearch_Click(object sender, EventArgs e)
     {

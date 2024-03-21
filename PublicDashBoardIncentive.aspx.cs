@@ -13,7 +13,6 @@ using BusinessLogicLayer.Dashboard;
 public partial class PublicDashBoardIncentive : System.Web.UI.Page
 {
     ProposalBAL objService = new ProposalBAL();
-    IncentiveMisReport objSWP = new IncentiveMisReport();
     MisReportServices objserviceDashboard = new MisReportServices();
 
     protected void Page_Load(object sender, EventArgs e)
@@ -31,10 +30,7 @@ public partial class PublicDashBoardIncentive : System.Web.UI.Page
                 txtToDate.Text = strTodate;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "onload", "<script>setDateValues('" + strFromDate + "','" + strTodate + "');</script>", false);
                 BindDistrict();
-                BindGridView();
-                //Added on 13-10-2022 by Arabinda Tripathy
-                DateTime crdate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-                divLastUpdate.InnerText = "Last reviewed and updated on : " + crdate.ToString("dd-MMM-yyyy"); //DateTime.Now.ToShortDateString(); //#aaaeb7
+                BindGridView();              
             }
             catch (Exception ex)
             {
@@ -63,21 +59,20 @@ public partial class PublicDashBoardIncentive : System.Web.UI.Page
                 strToDate = DateTime.Today.ToString("dd-MMM-yyyy");
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
     }
     private void BindDistrict()
     {
         try
-        {
-            List<ProjectInfo> objProjList = new List<ProjectInfo>();
+        {            
             ProjectInfo objProp = new ProjectInfo();
 
             objProp.strAction = "DT";
             objProp.vchProposalNo = " ";
-            objProjList = objService.PopulateProjDropdowns(objProp).ToList();
+            List<ProjectInfo> objProjList = objService.PopulateProjDropdowns(objProp).ToList();
 
             ddlIncentiveDistrict.DataSource = objProjList;
             ddlIncentiveDistrict.DataTextField = "vchDistName";
@@ -88,9 +83,9 @@ public partial class PublicDashBoardIncentive : System.Web.UI.Page
             list.Value = "0";
             ddlIncentiveDistrict.Items.Insert(0, list);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
     }
     private void BindGridView()
@@ -114,16 +109,15 @@ public partial class PublicDashBoardIncentive : System.Web.UI.Page
 
             };
 
-            objserviceDashboard = new MisReportServices();
-            List<IncentiveMisReport> objswpDashboardList = new List<IncentiveMisReport>();
-            objswpDashboardList = objserviceDashboard.GetIncentiveMISReportDtls(objSearch).ToList();
+            objserviceDashboard = new MisReportServices();      
+            List<IncentiveMisReport> objswpDashboardList = objserviceDashboard.GetIncentiveMISReportDtls(objSearch).ToList();
 
             grdIncentive.DataSource = objswpDashboardList;
             grdIncentive.DataBind();
         }
         catch (Exception ex)
         {
-            throw ex;
+            throw ex.InnerException;
         }
     }
 

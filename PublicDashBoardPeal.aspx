@@ -316,9 +316,7 @@
                             </Columns>
                         </asp:GridView>
                     </div>
-                    <div id="divLastUpdate" style="text-align:left;color:black" runat="server"></div>
-                   
-                    <div id="divUpdateText" style="text-align:left;color:black" runat="server">The dashboard information is updated on a daily basis</div>
+                 
                 </div>
             </div>
         </div>

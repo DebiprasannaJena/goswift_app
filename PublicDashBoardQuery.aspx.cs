@@ -13,7 +13,6 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
 {
     DashboardBusinessLayer objserviceDashboard = new DashboardBusinessLayer();
     SWPDashboard objSWP = new SWPDashboard();
-    SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -26,14 +25,10 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
             GetDefaultFromAndToDate(out strFromDate, out strTodate);
             txtFromDate.Text = strFromDate;
             txtToDate.Text = strTodate;
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "onload", "<script>setDateValues('" + strFromDate + "','" + strTodate + "');</script>", false);
-            //FillFinYrPortlet();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "onload", "<script>setDateValues('" + strFromDate + "','" + strTodate + "');</script>", false);           
             ViewQueryService();
             ViewQueryServicePeal();
-            ViewQueryServiceIncentive();
-            //Added on 13-10-2022 by Arabinda Tripathy
-            DateTime crdate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            divLastUpdate.InnerText = "Last reviewed and updated on : " + crdate.ToString("dd-MMM-yyyy"); //DateTime.Now.ToShortDateString(); //#aaaeb7
+            ViewQueryServiceIncentive();          
         }
     }
 
@@ -54,33 +49,7 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
             strToDate = DateTime.Today.ToString("dd-MMM-yyyy");
         }
     }
-    //private void FillFinYrPortlet()
-    //{
-    //    try
-    //    {
-    //        objSWP = new SWPDashboard();
-    //        objserviceDashboard = new DashboardBusinessLayer();
-    //        objSWP.strAction = "FY";
-    //        List<SWPDashboard> objCICGFINYear = objserviceDashboard.FillFinacialYear(objSWP).ToList();
-    //        ddlYear.DataSource = objCICGFINYear;
-    //        ddlYear.DataTextField = "Year";
-    //        ddlYear.DataValueField = "Year";
-    //        ddlYear.DataBind();
-
-    //        if (Convert.ToInt32(DateTime.Now.Month.ToString()) < 3)
-    //        {
-    //            ddlYear.SelectedValue = (Convert.ToInt32(DateTime.Now.Year.ToString()) - 1) + "-" + (Convert.ToInt32(DateTime.Now.ToString("yy")));
-    //        }
-    //        else
-    //        {
-    //            ddlYear.SelectedValue = (Convert.ToInt32(DateTime.Now.Year.ToString())) + "-" + (Convert.ToInt32(DateTime.Now.ToString("yy")) + 1);
-    //        }
-    //    }
-    //    catch (Exception)
-    //    {
-    //        throw;
-    //    }
-    //}
+   
     private void ViewQueryService()
     {
         objSWP = new SWPDashboard();
@@ -89,8 +58,7 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
         GetDefaultFromAndToDate(out strFromDate, out strTodate);
         try
         {
-            objSWP.strAction = "QV";
-            //objSWP.Year = ddlYear.SelectedValue;
+            objSWP.strAction = "QV";         
             objSWP.strFromDate = string.IsNullOrEmpty(txtFromDate.Text.Trim()) ? strFromDate : txtFromDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             objSWP.strToDate = string.IsNullOrEmpty(txtToDate.Text.Trim()) ? strTodate : txtToDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             List<SWPDashboard> objServiceStatus = objserviceDashboard.GetServicesQuery(objSWP).ToList();
@@ -115,9 +83,9 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
                 spQueryMaxTimeService.Text = "0";
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
         finally
         {
@@ -133,8 +101,7 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
         GetDefaultFromAndToDate(out strFromDate, out strTodate);
         try
         {
-            objSWP.strAction = "QPV";
-            //objSWP.Year = ddlYear.SelectedValue;
+            objSWP.strAction = "QPV";           
             objSWP.strFromDate = string.IsNullOrEmpty(txtFromDate.Text.Trim()) ? strFromDate : txtFromDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             objSWP.strToDate = string.IsNullOrEmpty(txtToDate.Text.Trim()) ? strTodate : txtToDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             List<SWPDashboard> objServiceStatus = objserviceDashboard.GetPEALQuery(objSWP).ToList();
@@ -159,9 +126,9 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
                 spQueryMaxTimePeal.Text = "0";
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
         finally
         {
@@ -177,8 +144,7 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
         GetDefaultFromAndToDate(out strFromDate, out strTodate);
         try
         {
-            objSWP.strAction = "IQV";
-            //objSWP.Year = ddlYear.SelectedValue;
+            objSWP.strAction = "IQV";          
             objSWP.strFromDate = string.IsNullOrEmpty(txtFromDate.Text.Trim()) ? strFromDate : txtFromDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             objSWP.strToDate = string.IsNullOrEmpty(txtToDate.Text.Trim()) ? strTodate : txtToDate.Text.Trim(); //Added by Bhagyashree Das on Dt. 03-Feb-2021
             List<SWPDashboard> objServiceStatus = objserviceDashboard.GetiNCENTIVEQuery(objSWP).ToList();
@@ -203,9 +169,9 @@ public partial class PublicDashBoardQuery : System.Web.UI.Page
                 spQueryMaxTimeIncentive.Text = "0";
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
         finally
         {

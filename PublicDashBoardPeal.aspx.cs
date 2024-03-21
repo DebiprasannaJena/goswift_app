@@ -28,10 +28,7 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
             drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("> 1000 Cr (HLCA)", "3"));
             BindSector();
             BindDistrict();
-            fillGridview();
-            //Added on 13-10-2022 by Arabinda Tripathy
-            DateTime crdate = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            divLastUpdate.InnerText = "Last reviewed and updated on : " + crdate.ToString("dd-MMM-yyyy"); //DateTime.Now.ToShortDateString(); //#aaaeb7
+            fillGridview();         
         }
     }
 
@@ -39,12 +36,11 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
     {
         try
         {
-            ProposalBAL objService = new ProposalBAL();
-            List<ProjectInfo> objProjList = new List<ProjectInfo>();
+            ProposalBAL objService = new ProposalBAL();          
             ProjectInfo objProp = new ProjectInfo();
             objProp.strAction = "DT";
             objProp.vchProposalNo = " ";
-            objProjList = objService.PopulateProjDropdowns(objProp).ToList();
+            List<ProjectInfo> objProjList = objService.PopulateProjDropdowns(objProp).ToList();
             ddlDistrict.DataSource = objProjList;
             ddlDistrict.DataTextField = "vchDistName";
             ddlDistrict.DataValueField = "intDistId";
@@ -79,13 +75,12 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
     {
         try
         {
-            ProposalBAL objService = new ProposalBAL();
-            List<ProjectInfo> objProjList = new List<ProjectInfo>();
+            ProposalBAL objService = new ProposalBAL();          
             ProjectInfo objProp = new ProjectInfo();
 
             objProp.strAction = "SE";
             objProp.vchProposalNo = "";
-            objProjList = objService.PopulateProjDropdowns(objProp).ToList();
+            List<ProjectInfo> objProjList = objService.PopulateProjDropdowns(objProp).ToList();
 
             ddlSector.DataSource = objProjList;
             ddlSector.DataTextField = "vchSectorName";
@@ -130,8 +125,7 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
     private void fillGridview()
     {
         try
-        {
-            // int intLevelId = Convert.ToInt32(Session["LevelID"]);
+        {          
             grdPealDetails.DataSource = null;
             grdPealDetails.DataBind();
 
@@ -161,52 +155,17 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
                 intUserId = Convert.ToInt32(0)
             };
 
-            //if (Session["desId"].ToString() == "97")
-            //{
-            //    objSearch.intProjectType = 2;
-            //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-            //}
-
-            //if ((Convert.ToInt32(Session["UserId"]) == 166) || (Convert.ToInt32(Session["UserId"]) == 167)) //IT Toursim
-            //{
-            //    objSearch.intProjectType = 2;
-            //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-            //}
-
-            //if (intLevelId == 4)
-            //{
-            //    if (Session["desId"].ToString() == "126") ///// For collector
-            //    {
-            //        objSearch.strActionCode = "c";
-            //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-            //        objSearch.intUserId = 0;
-            //    }
-            //    else
-            //    {
-            //        /*---------------------------------------------------------------*/
-            //        //// In case of DIC user,If you want to display MIS report for respective district then use action 'U'
-            //        //// In case of DIC user,If you want to display MIS report for all districts then use action 'V' (As Admin User)
-            //        /*---------------------------------------------------------------*/
-            //        objSearch.strActionCode = "V"; //// Added by Sushant Jena On Dt:- 12-Feb-2020
-            //        //objSearch.strActionCode = "u"; //// Commented by Sushant Jena On Dt:- 12-Feb-2020
-            //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-            //        objSearch.intProjectType = 2;
-            //        objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-            //    }
-            //}
-
             /*---------------------------------------------------------------*/
             //// Display IT and Tourism details with district wise details.
             /*---------------------------------------------------------------*/
-            List<PealMisReport> lstPealRpt = new List<PealMisReport>();
-            lstPealRpt = MisReportServices.PEAL_MisReportLogic2(objSearch);
+           
+            List<PealMisReport> lstPealRpt = MisReportServices.PEAL_MisReportLogic2(objSearch);
 
             if (ddlSector.SelectedIndex > 0)
             {
                 if (ddlSector.SelectedValue == "10") //// IT Sector
-                {
-                    List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-                    lstPealRpt1 = BindITPeal();
+                {                 
+                    List<PealMisReport> lstPealRpt1 = BindITPeal();
 
                     var deliveryModel = new PealMisReport();
                     deliveryModel.intDistrictId = Convert.ToInt32(lstPealRpt1[0].intDistrictId);
@@ -237,9 +196,8 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
                     lstPealRpt.Add(deliveryModel);
                 }
                 else if (ddlSector.SelectedValue == "38") //// Tourism Sector
-                {
-                    List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-                    lstPealRpt1 = BindToursimPeal();
+                {                
+                    List<PealMisReport> lstPealRpt1 = BindToursimPeal();
 
                     var deliveryModel = new PealMisReport();
                     deliveryModel.intDistrictId = Convert.ToInt32(lstPealRpt1[0].intDistrictId);
@@ -274,9 +232,8 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
                 for (int i = 0; i <= 1; i++)
                 {
                     if (i == 0)
-                    {
-                        List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-                        lstPealRpt1 = BindITPeal();
+                    {                      
+                        List<PealMisReport> lstPealRpt1 = BindITPeal();
 
                         var deliveryModel = new PealMisReport();
                         deliveryModel.intDistrictId = Convert.ToInt32(lstPealRpt1[0].intDistrictId);
@@ -308,8 +265,8 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
 
                     if (i == 1)
                     {
-                        List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-                        lstPealRpt1 = BindToursimPeal();
+                        
+                        List<PealMisReport> lstPealRpt1 = BindToursimPeal();
 
                         var deliveryModel = new PealMisReport();
                         deliveryModel.intDistrictId = Convert.ToInt32(lstPealRpt1[0].intDistrictId);
@@ -395,9 +352,7 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
         }
     }
     private List<PealMisReport> BindITPeal()
-    {
-
-        //int intLevelId = Convert.ToInt32(Session["LevelID"]);
+    {     
         grdPealDetails.DataSource = null;
         grdPealDetails.DataBind();
 
@@ -424,42 +379,13 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
             strToDate = string.IsNullOrEmpty(txtToDate.Text.Trim()) ? strToDate : txtToDate.Text.Trim(),
             intInvestmentAmt = drpInvestmentAmt.SelectedIndex > 0 ? Convert.ToInt32(drpInvestmentAmt.SelectedValue) : 0,
             intUserId = Convert.ToInt32(0)
-        };
-        //if (Session["desId"].ToString() == "97")
-        //{
-        //    objSearch.intProjectType = 2;
-        //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //}
-        //if ((Convert.ToInt32(Session["UserId"]) == 167)) //IT 
-        //{
-        //    objSearch.intProjectType = 2;
-        //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //}
-        //if (intLevelId == 4)
-        //{
-        //    if (Session["desId"].ToString() == "126")
-        //    {
-        //        objSearch.strActionCode = "Ic";
-        //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-        //        objSearch.intUserId = 0;
-        //    }
-        //    else
-        //    {
-        //        objSearch.strActionCode = "Iu";
-        //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-        //        objSearch.intProjectType = 2;
-        //        objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //    }
-        //}
-        List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-        lstPealRpt1 = MisReportServices.PEAL_MisReportLogic2(objSearch);
+        };             
+        List<PealMisReport> lstPealRpt1 = MisReportServices.PEAL_MisReportLogic2(objSearch);
         return lstPealRpt1;
 
     }
     private List<PealMisReport> BindToursimPeal()
     {
-
-        //int intLevelId = Convert.ToInt32(Session["LevelID"]);
         grdPealDetails.DataSource = null;
         grdPealDetails.DataBind();
 
@@ -486,35 +412,8 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
             strToDate = string.IsNullOrEmpty(txtToDate.Text.Trim()) ? strToDate : txtToDate.Text.Trim(),
             intInvestmentAmt = drpInvestmentAmt.SelectedIndex > 0 ? Convert.ToInt32(drpInvestmentAmt.SelectedValue) : 0,
             intUserId = Convert.ToInt32(0)
-        };
-        //if (Session["desId"].ToString() == "97")
-        //{
-        //    objSearch.intProjectType = 2;
-        //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //}
-        //if ((Convert.ToInt32(Session["UserId"]) == 166)) //Toursim
-        //{
-        //    objSearch.intProjectType = 2;
-        //    objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //}
-        //if (intLevelId == 4)
-        //{
-        //    if (Session["desId"].ToString() == "126")
-        //    {
-        //        objSearch.strActionCode = "Tc";
-        //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-        //        objSearch.intUserId = 0;
-        //    }
-        //    else
-        //    {
-        //        objSearch.strActionCode = "Tu";
-        //        objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-        //        objSearch.intProjectType = 2;
-        //        objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
-        //    }
-        //}
-        List<PealMisReport> lstPealRpt1 = new List<PealMisReport>();
-        lstPealRpt1 = MisReportServices.PEAL_MisReportLogic2(objSearch);
+        };             
+        List<PealMisReport> lstPealRpt1 = MisReportServices.PEAL_MisReportLogic2(objSearch);
         return lstPealRpt1;
     }
 
@@ -522,9 +421,6 @@ public partial class PublicDashBoardPeal : System.Web.UI.Page
     {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            //int intLevelId = Convert.ToInt32(Session["levelId"]);
-            //hdnLavelVal.Value = intLevelId.ToString();
-            //hdnDesgid.Value = Session["desId"].ToString();
             for (int cnt = 2; cnt < e.Row.Cells.Count; cnt++)
             {
                 e.Row.Cells[cnt].Style["text-align"] = "right";

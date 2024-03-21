@@ -33,17 +33,7 @@ public partial class OFDC_Details : System.Web.UI.Page
     #region PageLoad
     protected void Page_Load(object sender, EventArgs e)
     {
-        try
-        {
-            if (!Page.IsPostBack)
-            {
-
-            }
-        }
-        catch (Exception ex)
-        {
-            Util.LogError(ex, "OFDC");
-        }
+        
     }
     #endregion
     protected void ddlFirmType_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,141 +107,108 @@ public partial class OFDC_Details : System.Web.UI.Page
     {
         if (txtFilmName.Text == "")
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Film Name.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Film Name.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);          
         }
         else if (txtFilmLanguage.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Film Language.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProductionHouse.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Production House(s) Name.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtEstimateCost.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Estimated Cost.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtTentativeDuration.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Tentative Duration Of Film.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlImpa.SelectedIndex <= 0)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select Film Subsidary Bodies.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtRegdNo.Text == "" && ddlImpa.SelectedValue=="1")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registration Number.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtRegdDate.Text == "" && ddlImpa.SelectedValue=="1")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select Registration Date.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Full Address Of Registered Office.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registered Office Telephone Number.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerEmail.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registered Office Email Id.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedIndex <= 0)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select producer's firm.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorName.Text=="")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "1" && fluProprietorDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "1" && !fluProprietorDoc.HasFile)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload An Affidavit.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "2" && fluManagerDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "2" && !fluManagerDoc.HasFile)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload Partnership Deed.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtDirectorName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Managing Director.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtShareholdersAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Shareholder.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtDirectorNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Managing Director.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "3" && fluDirectorDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "3" && !fluDirectorDoc.HasFile)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload Articles Of Association.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtFilmDetails.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Previous Film Details.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else
         {
-            try
-            {
-               //sendMail("Data Capture For OFDC", "", "go.swift@abmindia.com", true);
-            }
-            catch(Exception ex) {
-                Util.LogError(ex, "OFDCSave");
-            }
             Reset();
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Thank You.You have successfully registered in GO SWIFT.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
     }
     protected void btndraft_Click(object sender, EventArgs e)
@@ -259,139 +216,106 @@ public partial class OFDC_Details : System.Web.UI.Page
         if (txtFilmName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Film Name.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtFilmLanguage.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Film Language.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProductionHouse.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Production House(s) Name.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtEstimateCost.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Estimated Cost.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtTentativeDuration.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Tentative Duration Of Film.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlImpa.SelectedIndex <= 0)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select Film Subsidary Bodies.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtRegdNo.Text == "" && ddlImpa.SelectedValue == "1")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registration Number.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtRegdDate.Text == "" && ddlImpa.SelectedValue == "1")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select Registration Date.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Full Address Of Registered Office.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registered Office Telephone Number.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtProducerEmail.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Registered Office Email Id.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedIndex <= 0)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Select producer's firm.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "1" && txtProprietorNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Proprietor.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "1" && fluProprietorDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "1" && !fluProprietorDoc.HasFile )
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload An Affidavit.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "2" && txtManagerNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Managing Partner.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "2" && fluManagerDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "2" && !fluManagerDoc.HasFile)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload Partnership Deed.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtDirectorName.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Name Of The Managing Director.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtShareholdersAddress.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Address Of The Shareholder.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (ddlFirmType.SelectedValue == "3" && txtDirectorNumber.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Phone Number Of The Managing Director.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
-        else if (ddlFirmType.SelectedValue == "3" && fluDirectorDoc.HasFile == false)
+        else if (ddlFirmType.SelectedValue == "3" && !fluDirectorDoc.HasFile)
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Upload Articles Of Association.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else if (txtFilmDetails.Text == "")
         {
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please Enter Previous Film Details.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
         else
         {
-            try
-            {
-               // sendMail("Data Capture For OFDC", "", "go.swift@abmindia.com", true);
-            }
-            catch(Exception ex) {
-                Util.LogError(ex, "OFDCDraft");
-            }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Thank You.You have successfully registered in GO SWIFT.</strong>', '" + Messages.TitleOfProject + "'); </script>", false);
-            return;
         }
     }
     protected void sendMail(string strSubject, string strBody, string toEmail, bool enbleSSl)
@@ -439,7 +363,7 @@ public partial class OFDC_Details : System.Web.UI.Page
 
             //Check for the attchment
 
-            if (fluProprietorDoc.HasFile==true)
+            if (fluProprietorDoc.HasFile)
             {
                 HttpPostedFile file = fluProprietorDoc.PostedFile;
                 string Name = "OFDC_Proprietor";
@@ -447,7 +371,7 @@ public partial class OFDC_Details : System.Web.UI.Page
                 file.SaveAs(Server.MapPath("~/OFDC/") + fileName);
                 mail.Attachments.Add(new Attachment(file.InputStream, fileName));          
             }
-            if (fluManagerDoc.HasFile == true)
+            if (fluManagerDoc.HasFile )
             {
                 HttpPostedFile file = fluManagerDoc.PostedFile;
                 string Name = "OFDC_Partnership";
@@ -455,7 +379,7 @@ public partial class OFDC_Details : System.Web.UI.Page
                 file.SaveAs(Server.MapPath("~/OFDC/") + fileName);
                 mail.Attachments.Add(new Attachment(file.InputStream, fileName));
             }
-            if (fluDirectorDoc.HasFile == true)
+            if (fluDirectorDoc.HasFile)
             {
                 HttpPostedFile file = fluDirectorDoc.PostedFile;
                 string Name = "OFDC_Company";
@@ -476,7 +400,7 @@ public partial class OFDC_Details : System.Web.UI.Page
         catch(Exception ex)
         {
             Util.LogError(ex, "OFDCMail");
-            return;
+           
         }
     }
 }
