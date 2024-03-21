@@ -19,7 +19,14 @@ public partial class EditInvestorProfile : SessionCheck
     #region Declaration And Variables
 
     /////// Get Project Name From Web.Config File   
-    string StrProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
+    string StrProjName = ConfigurationManager.AppSettings["ProjectName"].ToString();
+
+    // CIN validation  api KEY
+    string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
+    string StrCINLLPINurlKey = ConfigurationManager.AppSettings["CinLlpinurl"];
+    string StrCinTokenUserIdKey = ConfigurationManager.AppSettings["CinTokenUserId"];
+    string StrCinTokenPasswordKey = ConfigurationManager.AppSettings["CinTokenPassword"];
+
 
     string action = "";
 
@@ -46,14 +53,14 @@ public partial class EditInvestorProfile : SessionCheck
                     FillEntityType();
                     FillRegdCountry();
                     FillSLCountry();
-                    FillInvestorInfo(Session["InvestorId"].ToString());                 
+                    FillInvestorInfo(Session["InvestorId"].ToString());
                 }
                 catch (Exception ex)
                 {
                     Util.LogError(ex, "ProfileUpdate");
                 }
             }
-            
+
         }
     }
 
@@ -77,18 +84,20 @@ public partial class EditInvestorProfile : SessionCheck
             //For Server side validation.
             /*---------------------------------*/
 
-            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
+            // string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
 
-            if(StrMcaOnOffKey== "ON")
+            int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+
+            if (StrMcaOnOffKey == "ON")
             {
-                if (Hid_cin_llpn.Value == "")
+                if (Hid_Cin_Llpin.Value == "")
                 {
                     Btn_CIN.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
                     return;
                 }
 
-                if (Hid_cin_llpn.Value == "No Data")
+                if (Hid_Cin_Llpin.Value == "No Data")
                 {
                     Btn_CIN.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
@@ -97,20 +106,23 @@ public partial class EditInvestorProfile : SessionCheck
                 /*---------------------------------------------------------------*/
                 ///Check whether the CIN or LLPIN, which was validated is the same during insertion
                 /*---------------------------------------------------------------*/
-                if (ViewState["CinNumber"] != null)
+
+                string StrCinLlpinNumber = Convert.ToString(ViewState["CinNumber"]);
+
+                if (StrCinLlpinNumber != null)
                 {
-                    if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                    if (SelectedEntityType == 1)
                     {
-                        if (Convert.ToString(ViewState["CinNumber"]) != Txt_CIN_Number.Text)
+                        if (StrCinLlpinNumber != Txt_CIN_Number.Text)
                         {
                             Btn_CIN.Focus();
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
                             return;
                         }
                     }
-                    else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
+                    else if (SelectedEntityType == 2)
                     {
-                        if (Convert.ToString(ViewState["CinNumber"]) != Txt_LLPIN_Number.Text)
+                        if (StrCinLlpinNumber != Txt_LLPIN_Number.Text)
                         {
                             Btn_CIN.Focus();
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>');", true);
@@ -121,7 +133,7 @@ public partial class EditInvestorProfile : SessionCheck
                 }
             }
 
-            
+
 
             if (Txt_First_Name.Text.Trim() == "")
             {
@@ -161,30 +173,30 @@ public partial class EditInvestorProfile : SessionCheck
                 Txt_RegAddress_2.Focus();
                 return;
             }
-            if (DrpRegdCountry.SelectedIndex == 0)
+            if (DrpDwn_RegdCountry.SelectedIndex == 0)
             {
-                DrpRegdCountry.Focus();
+                DrpDwn_RegdCountry.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration country name !</strong>');", true);
                 return;
             }
-            string SelectedregCountryValue = DrpRegdCountry.SelectedValue;
+            string SelectedregCountryValue = DrpDwn_RegdCountry.SelectedValue;
             if (SelectedregCountryValue == "1")
             {
-                string SelectedregStateText = DrpRegdState.SelectedItem.Text;
+                string SelectedregStateText = DrpDwn_RegdState.SelectedItem.Text;
 
                 if (SelectedregStateText == "--Select--")
                 {
-                    DrpRegdState.Focus();
+                    DrpDwn_RegdState.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration state name !</strong>');", true);
                     return;
                 }
             }
             else
             {
-                string stateName = TxtRegdState.Text.Trim();
+                string stateName = Txt_RegdState.Text.Trim();
                 if (string.IsNullOrEmpty(stateName))
                 {
-                    TxtRegdState.Focus();
+                    Txt_RegdState.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration state name !</strong>');", true);
                     return;
                 }
@@ -221,20 +233,20 @@ public partial class EditInvestorProfile : SessionCheck
                 Txt_SitAddress_2.Focus();
                 return;
             }
-            if (DrpSlCountry.SelectedIndex == 0)
+            if (DrpDwn_SlCountry.SelectedIndex == 0)
             {
-                DrpSlCountry.Focus();
+                DrpDwn_SlCountry.Focus();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location country name !</strong>');", true);
                 return;
             }
-            string SelectedslCountryValue = DrpSlCountry.SelectedValue;
+            string SelectedslCountryValue = DrpDwn_SlCountry.SelectedValue;
             if (SelectedslCountryValue == "1")
             {
-                string SelectedslStateText = DrpSlState.SelectedItem.Text;
+                string SelectedslStateText = DrpDwn_SlState.SelectedItem.Text;
 
                 if (SelectedslStateText == "--Select--")
                 {
-                    DrpSlState.Focus();
+                    DrpDwn_SlState.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location state name !</strong>');", true);
                     return;
                 }
@@ -275,7 +287,7 @@ public partial class EditInvestorProfile : SessionCheck
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
                 return;
             }
-            int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+            //int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
             if (SelectedEntityType == 1)
             {
                 string SelectedCINno = Txt_CIN_Number.Text.Trim();
@@ -326,7 +338,7 @@ public partial class EditInvestorProfile : SessionCheck
                     return;
                 }
             }
-            
+
             string StrIndustryType = Convert.ToString(Session["IndustryType"]);
 
             if (StrIndustryType == "1") ////Industrial User
@@ -349,22 +361,22 @@ public partial class EditInvestorProfile : SessionCheck
                 objEnt.VCHEMAILID = Txt_Email_Id.Text;
                 objEnt.VCHUSERNAME = Session["UserId"].ToString();
                 objEnt.VCH_REG_ADDRESS_2 = Txt_RegAddress_2.Text.Trim();//Add by Debi
-                objEnt.INT_REG_COUNTRY= Convert.ToInt32(DrpRegdCountry.SelectedValue);//Add by Debi
-                if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
+                objEnt.INT_REG_COUNTRY = Convert.ToInt32(DrpDwn_RegdCountry.SelectedValue);//Add by Debi
+                if (DrpDwn_RegdCountry.SelectedValue == "1")//Add by Debi
                 {
-                    objEnt.VCH_REG_STATE = DrpRegdState.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_REG_STATE = DrpDwn_RegdState.SelectedItem.Text;//Add by Debi
                 }
                 else
                 {
-                    objEnt.VCH_REG_STATE = TxtRegdState.Text;//Add by Debi
+                    objEnt.VCH_REG_STATE = Txt_RegdState.Text;//Add by Debi
                 }
                 objEnt.VCH_REG_CITY = Txt_Regd_City.Text.Trim();//Add by Debi
                 objEnt.VCH_REG_PIN = Txt_Regd_Pincode.Text.Trim();//Add by Debi
-                objEnt.VCH_SL_ADDRESS_2= Txt_SitAddress_2.Text.Trim();//Add by Debi
-                objEnt.INT_SL_COUNTRY= Convert.ToInt32(DrpSlCountry.SelectedValue);//Add by Debi
-                if (DrpSlCountry.SelectedValue == "1")//Add by Debi
+                objEnt.VCH_SL_ADDRESS_2 = Txt_SitAddress_2.Text.Trim();//Add by Debi
+                objEnt.INT_SL_COUNTRY = Convert.ToInt32(DrpDwn_SlCountry.SelectedValue);//Add by Debi
+                if (DrpDwn_SlCountry.SelectedValue == "1")//Add by Debi
                 {
-                    objEnt.VCH_SL_STATE = DrpSlState.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_SL_STATE = DrpDwn_SlState.SelectedItem.Text;//Add by Debi
                 }
                 else
                 {
@@ -372,12 +384,12 @@ public partial class EditInvestorProfile : SessionCheck
                 }
                 objEnt.VCH_SL_CITY = Txt_Sl_City.Text.Trim();//Add by Debi
                 objEnt.VCH_SL_PIN = Txt_Sl_Pincode.Text.Trim();//Add by Debi
-                if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue)==1)//Add by Debi
+                if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)//Add by Debi
                 {
                     objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
                     objEnt.VCHCINNUMBER = Convert.ToString(Txt_CIN_Number.Text.Trim());// add by anil
                 }
-                else if(Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)//Add by Debi
+                else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)//Add by Debi
                 {
                     objEnt.INTENTITYTYPE = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
                     objEnt.VCH_LLPIN_NUMBER = Txt_LLPIN_Number.Text.Trim();//Add by Debi
@@ -410,22 +422,22 @@ public partial class EditInvestorProfile : SessionCheck
                         objInvDet.strEmail = Txt_Email_Id.Text;
                         objInvDet.strUserID = Session["InvestorId"].ToString();
                         objInvDet.StrRegAddress_2 = Txt_RegAddress_2.Text.Trim();//Add by Debi
-                        objInvDet.IntRegCountry = Convert.ToInt32(DrpRegdCountry.SelectedValue);//Add by Debi
-                        if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
+                        objInvDet.IntRegCountry = Convert.ToInt32(DrpDwn_RegdCountry.SelectedValue);//Add by Debi
+                        if (DrpDwn_RegdCountry.SelectedValue == "1")//Add by Debi
                         {
-                            objInvDet.StrRegState = DrpRegdState.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrRegState = DrpDwn_RegdState.SelectedItem.Text;//Add by Debi
                         }
                         else
                         {
-                            objInvDet.StrRegState = TxtRegdState.Text;//Add by Debi
+                            objInvDet.StrRegState = Txt_RegdState.Text;//Add by Debi
                         }
                         objInvDet.StrRegCity = Txt_Regd_City.Text.Trim();//Add by Debi
                         objInvDet.StrRegPincode = Txt_Regd_Pincode.Text.Trim();//Add by Debi
                         objInvDet.StrSlAddress_2 = Txt_SitAddress_2.Text.Trim();//Add by Debi
-                        objInvDet.IntSlCountry = Convert.ToInt32(DrpSlCountry.SelectedValue);//Add by Debi
-                        if (DrpSlCountry.SelectedValue == "1")//Add by Debi
+                        objInvDet.IntSlCountry = Convert.ToInt32(DrpDwn_SlCountry.SelectedValue);//Add by Debi
+                        if (DrpDwn_SlCountry.SelectedValue == "1")//Add by Debi
                         {
-                            objInvDet.StrSlState = DrpSlState.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrSlState = DrpDwn_SlState.SelectedItem.Text;//Add by Debi
                         }
                         else
                         {
@@ -435,7 +447,7 @@ public partial class EditInvestorProfile : SessionCheck
                         objInvDet.StrSlPincode = Txt_Sl_Pincode.Text.Trim();//Add by Debi
                         objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
                         if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)//Add by Debi
-                        {                          
+                        {
                             objInvDet.strCINnumber = Convert.ToString(Txt_CIN_Number.Text.Trim());//Add by Debi
                         }
                         else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)//Add by Debi
@@ -495,12 +507,12 @@ public partial class EditInvestorProfile : SessionCheck
                 }
                 #endregion
             }
-            
+
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
-        }      
+        }
     }
 
     /////Button Back
@@ -529,69 +541,71 @@ public partial class EditInvestorProfile : SessionCheck
                 Session["Pan"] = StrPan_number;//Add by Debi
                 Txt_Unit_Name.Text = dt.Rows[0]["VCH_INV_NAME"].ToString();
                 DrpDwn_Salutation.SelectedValue = dt.Rows[0]["INT_SALUTATION"].ToString();
-                Txt_First_Name.Text = dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString();             
+                Txt_First_Name.Text = dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString();
                 Txt_Mobile_No.Text = dt.Rows[0]["VCH_OFF_MOBILE"].ToString();
                 Txt_Email_Id.Text = dt.Rows[0]["VCH_EMAIL"].ToString();
                 Txt_Address_1.Text = dt.Rows[0]["VCH_ADDRESS"].ToString();
                 Txt_Site_Loc_1.Text = dt.Rows[0]["VCH_SITELOCATION"].ToString();//Add by Debi
-                DrpDwn_Entity_Type.SelectedValue= dt.Rows[0]["INT_ENTITY_TYPE"].ToString(); // add by anil
+                DrpDwn_Entity_Type.SelectedValue = dt.Rows[0]["INT_ENTITY_TYPE"].ToString(); // add by anil
                 Hid_Pan_Number.Value = StrPan_number;//Add by Debi
-                if (DrpDwn_Entity_Type.SelectedValue == "1")//Add by Debi
+
+                int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
+                if (SelectedEntityType == 1)//Add by Debi
                 {
-                    Div1.Visible = true;
-                    Div2.Visible = false;
-                    Div3.Visible = true;
-                    Txt_CIN_Number.Text= dt.Rows[0]["VCH_CIN_NUMBER"].ToString(); // add by anil
+                    Div_CIN.Visible = true;
+                    Div_LLPIN.Visible = false;
+                    Div_CIN_LLPIN_Btn.Visible = true;
+                    Txt_CIN_Number.Text = dt.Rows[0]["VCH_CIN_NUMBER"].ToString(); // add by anil
                     Btn_CIN.Text = "Validate CIN Number";
                 }
-                else if (DrpDwn_Entity_Type.SelectedValue == "2")//Add by Debi
+                else if (SelectedEntityType == 2)//Add by Debi
                 {
-                    Div1.Visible = false;
-                    Div2.Visible = true;
-                    Div3.Visible = true;
+                    Div_CIN.Visible = false;
+                    Div_LLPIN.Visible = true;
+                    Div_CIN_LLPIN_Btn.Visible = true;
                     Txt_LLPIN_Number.Text = dt.Rows[0]["VCH_LLPIN_NUMBER"].ToString(); // add by anil
                     Btn_CIN.Text = "Validate LLPIN Number";
                 }
                 else
                 {
-                    Div1.Visible = false;
-                    Div2.Visible = false;
-                    Div3.Visible = false;
+                    Div_CIN.Visible = false;
+                    Div_LLPIN.Visible = false;
+                    Div_CIN_LLPIN_Btn.Visible = false;
                 }
                 Txt_RegAddress_2.Text = dt.Rows[0]["VCH_REG_ADDRESS_2"].ToString();//Add by Debi
-                DrpRegdCountry.SelectedValue = dt.Rows[0]["INT_REG_COUNTRY"].ToString(); //Add by Debi
+                DrpDwn_RegdCountry.SelectedValue = dt.Rows[0]["INT_REG_COUNTRY"].ToString(); //Add by Debi
 
-                if (DrpRegdCountry.SelectedValue == "1")//Add by Debi
+                if (DrpDwn_RegdCountry.SelectedValue == "1")//Add by Debi
                 {
-                    DrpRegdCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
+                    DrpDwn_RegdCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
                     st3.Visible = true;
                     st4.Visible = false;
-                    TxtRegdState.Text = "";
-                    DrpRegdState.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                    Txt_RegdState.Text = "";
+                    DrpDwn_RegdState.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
                 }
                 else
                 {
                     st4.Visible = true;
                     st3.Visible = false;
-                    TxtRegdState.Text = "";
-                    TxtRegdState.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                    Txt_RegdState.Text = "";
+                    Txt_RegdState.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
                 }
                 Txt_Regd_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
                 Txt_Regd_Pincode.Text = dt.Rows[0]["VCH_REG_PIN"].ToString();//Add by Debi
                 Txt_SitAddress_2.Text = dt.Rows[0]["VCH_SL_ADDRESS_2"].ToString();//Add by Debi
-                DrpSlCountry.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();//Add by Debi
-                if (DrpSlCountry.SelectedValue == "1")//Add by Debi
+                DrpDwn_SlCountry.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();//Add by Debi
+                if (DrpDwn_SlCountry.SelectedValue == "1")//Add by Debi
                 {
-                    DrpSlCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
+                    DrpDwn_SlCountry_SelectedIndexChanged(null, EventArgs.Empty);//Add by Debi
                     st1.Visible = true;
                     st2.Visible = false;
                     Txt_SL_State.Text = "";
-                    DrpSlState.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
+                    DrpDwn_SlState.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
                 }
                 else
                 {
                     st2.Visible = true;
-                    st1.Visible = false;                 
+                    st1.Visible = false;
                     Txt_SL_State.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
                 }
                 Txt_Sl_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
@@ -612,6 +626,7 @@ public partial class EditInvestorProfile : SessionCheck
         Txt_Mobile_No.Text = "";
         Txt_Address_1.Text = "";
         Txt_CIN_Number.Text = "";
+
         DrpDwn_Salutation.SelectedIndex = 0;
         DrpDwn_Entity_Type.SelectedIndex = 0;
     }
@@ -647,11 +662,11 @@ public partial class EditInvestorProfile : SessionCheck
         {
             action = "FC";
             DataTable dtregdcountry = objRegService.BindRegdCountry(action);
-            DrpRegdCountry.DataSource = dtregdcountry;
-            DrpRegdCountry.DataTextField = "VCH_COUNTRY_NAME";
-            DrpRegdCountry.DataValueField = "INT_COUNTRYID";
-            DrpRegdCountry.DataBind();
-            DrpRegdCountry.Items.Insert(0, new ListItem("--Select--", "0"));
+            DrpDwn_RegdCountry.DataSource = dtregdcountry;
+            DrpDwn_RegdCountry.DataTextField = "VCH_COUNTRY_NAME";
+            DrpDwn_RegdCountry.DataValueField = "INT_COUNTRYID";
+            DrpDwn_RegdCountry.DataBind();
+            DrpDwn_RegdCountry.Items.Insert(0, new ListItem("--Select--", "0"));
         }
         catch (Exception ex)
         {
@@ -667,11 +682,11 @@ public partial class EditInvestorProfile : SessionCheck
         {
             action = "FC";
             DataTable dtslcountry = objRegService.BindRegdCountry(action);
-            DrpSlCountry.DataSource = dtslcountry;
-            DrpSlCountry.DataTextField = "VCH_COUNTRY_NAME";
-            DrpSlCountry.DataValueField = "INT_COUNTRYID";
-            DrpSlCountry.DataBind();
-            DrpSlCountry.Items.Insert(0, new ListItem("--Select--", "0"));
+            DrpDwn_SlCountry.DataSource = dtslcountry;
+            DrpDwn_SlCountry.DataTextField = "VCH_COUNTRY_NAME";
+            DrpDwn_SlCountry.DataValueField = "INT_COUNTRYID";
+            DrpDwn_SlCountry.DataBind();
+            DrpDwn_SlCountry.Items.Insert(0, new ListItem("--Select--", "0"));
         }
         catch (Exception ex)
         {
@@ -687,29 +702,31 @@ public partial class EditInvestorProfile : SessionCheck
     {
         try
         {
-                if (DrpDwn_Entity_Type.SelectedValue == "1")
-                {
-                    Div1.Visible = true;
-                    Div2.Visible = false;
-                    Div3.Visible = true;
-                Btn_CIN.Text = "Validate CIN Number";
-                }
-                else if (DrpDwn_Entity_Type.SelectedValue == "2")
+            int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
 
-                {
-                    Div1.Visible = false;
-                    Div2.Visible = true;    
-                    Div3.Visible = true;
+            if (SelectedEntityType == 1)
+            {
+                Div_CIN.Visible = true;
+                Div_LLPIN.Visible = false;
+                Div_CIN_LLPIN_Btn.Visible = true;
+                Btn_CIN.Text = "Validate CIN Number";
+            }
+            else if (SelectedEntityType == 2)
+
+            {
+                Div_CIN.Visible = false;
+                Div_LLPIN.Visible = true;
+                Div_CIN_LLPIN_Btn.Visible = true;
                 Btn_CIN.Text = "Validate LLPIN Number";
-                }               
-                else
-                {
-                    Div1.Visible = false;
-                    Div2.Visible = false;
-                    Div3.Visible = false;
-                }
+            }
+            else
+            {
+                Div_CIN.Visible = false;
+                Div_LLPIN.Visible = false;
+                Div_CIN_LLPIN_Btn.Visible = false;
+            }
         }
-       catch(Exception ex)
+        catch (Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
         }
@@ -717,29 +734,29 @@ public partial class EditInvestorProfile : SessionCheck
     /// <summary>
     /// For registration country dropdwon change event 
     /// </summary>
-    protected void DrpRegdCountry_SelectedIndexChanged(object sender, EventArgs e)
+    protected void DrpDwn_RegdCountry_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
             action = "FRS";
-            DataTable dtregdstate = objRegService.BindRegdState(action, Convert.ToInt32(DrpRegdCountry.SelectedValue));
-            DrpRegdState.DataSource = dtregdstate;
-            DrpRegdState.DataTextField = "VCH_STATE";
-            DrpRegdState.DataValueField = "INT_STATE_ID";
-            DrpRegdState.DataBind();
-            DrpRegdState.Items.Insert(0, new ListItem("--Select--", "0"));
+            DataTable dtregdstate = objRegService.BindRegdState(action, Convert.ToInt32(DrpDwn_RegdCountry.SelectedValue));
+            DrpDwn_RegdState.DataSource = dtregdstate;
+            DrpDwn_RegdState.DataTextField = "VCH_STATE";
+            DrpDwn_RegdState.DataValueField = "INT_STATE_ID";
+            DrpDwn_RegdState.DataBind();
+            DrpDwn_RegdState.Items.Insert(0, new ListItem("--Select--", "0"));
 
-            if(Convert.ToInt32( DrpRegdCountry.SelectedValue) == 1)
+            if (Convert.ToInt32(DrpDwn_RegdCountry.SelectedValue) == 1)
             {
                 st3.Visible = true;
                 st4.Visible = false;
-                TxtRegdState.Text = "";
+                Txt_RegdState.Text = "";
             }
             else
             {
                 st4.Visible = true;
                 st3.Visible = false;
-                TxtRegdState.Text = "";
+                Txt_RegdState.Text = "";
             }
         }
         catch (Exception ex)
@@ -750,19 +767,19 @@ public partial class EditInvestorProfile : SessionCheck
     /// <summary>
     /// For site location country dropdwon change event 
     /// </summary>
-    protected void DrpSlCountry_SelectedIndexChanged(object sender, EventArgs e)
+    protected void DrpDwn_SlCountry_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
             action = "FRS";
-            DataTable dtregdstate = objRegService.BindRegdState(action, Convert.ToInt32(DrpSlCountry.SelectedValue));
-            DrpSlState.DataSource = dtregdstate;
-            DrpSlState.DataTextField = "VCH_STATE";
-            DrpSlState.DataValueField = "INT_STATE_ID";
-            DrpSlState.DataBind();
-            DrpSlState.Items.Insert(0, new ListItem("--Select--", "0"));
+            DataTable dtregdstate = objRegService.BindRegdState(action, Convert.ToInt32(DrpDwn_SlCountry.SelectedValue));
+            DrpDwn_SlState.DataSource = dtregdstate;
+            DrpDwn_SlState.DataTextField = "VCH_STATE";
+            DrpDwn_SlState.DataValueField = "INT_STATE_ID";
+            DrpDwn_SlState.DataBind();
+            DrpDwn_SlState.Items.Insert(0, new ListItem("--Select--", "0"));
 
-            if (Convert.ToInt32(DrpSlCountry.SelectedValue) == 1)
+            if (Convert.ToInt32(DrpDwn_SlCountry.SelectedValue) == 1)
             {
                 st1.Visible = true;
                 st2.Visible = false;
@@ -785,149 +802,147 @@ public partial class EditInvestorProfile : SessionCheck
     /// <summary>
     /// This function use fro Validate CIN and LLPIN numebr from MCA side
     /// </summary>
-    
+
     protected void Btn_CIN_Click(object sender, EventArgs e)
     {
         try
         {
-            string StrMcaOnOffKey = ConfigurationManager.AppSettings["MCAValidation"];
+           
 
-           if (StrMcaOnOffKey == "ON")
-           { 
-
-            InvestorDetails objInvDet = new InvestorDetails();
-            InvestorBusinessLayer objService = new InvestorBusinessLayer();
-
-            // CIN  api KEY
-            string StrCINLLPINurlKey = ConfigurationManager.AppSettings["CinLlpinurl"];
-            string StrCinTokenUserIdKey = ConfigurationManager.AppSettings["CinTokenUserId"];
-            string StrCinTokenPasswordKey = ConfigurationManager.AppSettings["CinTokenPassword"];
-            
-
-            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[REQUEST_For_GenerateToken_Url]:- " + StrCINLLPINurlKey + " - [REQUEST_For_GenerateToken_UserId]:- " + StrCinTokenUserIdKey+ "- [REQUEST_For_GenerateToken_Password]:- "+ StrCinTokenPasswordKey);
-
-
-            // Token generation for CIN validate
-            var client = new RestClient(StrCINLLPINurlKey);
-            client.Timeout = -1;
-
-            var Tokenrequest = new RestRequest("/token", Method.POST);
-            Tokenrequest.AddHeader("Authorization", "Basic ME4wUDBtQm1NdGVGcTNZX1c5cjdZRkxQZWswYTpwQmVWd3hzTjdJWnVfcEdKUzk1MFZoUmxjQVlh");
-            Tokenrequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-            Tokenrequest.AddParameter("grant_type", "password");
-            Tokenrequest.AddParameter("username", StrCinTokenUserIdKey);
-            Tokenrequest.AddParameter("password", StrCinTokenPasswordKey);
-            IRestResponse TokenResponse = client.Execute(Tokenrequest);
-            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_StatusCode]:- " + TokenResponse.StatusCode);
-
-
-            if (TokenResponse.StatusCode == HttpStatusCode.OK)
+            if (StrMcaOnOffKey == "ON")
             {
-                if (TokenResponse.Content.ToString() != "")
+
+                InvestorDetails objInvDet = new InvestorDetails();
+                InvestorBusinessLayer objService = new InvestorBusinessLayer();
+
+                
+                Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[REQUEST_For_GenerateToken_Url]:- " + StrCINLLPINurlKey + " - [REQUEST_For_GenerateToken_UserId]:- " + StrCinTokenUserIdKey + "- [REQUEST_For_GenerateToken_Password]:- " + StrCinTokenPasswordKey);
+
+
+                // Token generation for CIN validate
+                var client = new RestClient(StrCINLLPINurlKey);
+                client.Timeout = -1;
+
+                var Tokenrequest = new RestRequest("/token", Method.POST);
+                Tokenrequest.AddHeader("Authorization", "Basic ME4wUDBtQm1NdGVGcTNZX1c5cjdZRkxQZWswYTpwQmVWd3hzTjdJWnVfcEdKUzk1MFZoUmxjQVlh");
+                Tokenrequest.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+                Tokenrequest.AddParameter("grant_type", "password");
+                Tokenrequest.AddParameter("username", StrCinTokenUserIdKey);
+                Tokenrequest.AddParameter("password", StrCinTokenPasswordKey);
+                IRestResponse TokenResponse = client.Execute(Tokenrequest);
+                Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_StatusCode]:- " + TokenResponse.StatusCode);
+
+
+                if (TokenResponse.StatusCode == HttpStatusCode.OK)
                 {
-                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Content]:- " + TokenResponse.Content);
-
-                    string strAccessToke = JsonConvert.DeserializeObject<Dictionary<string, object>>(TokenResponse.Content)["access_token"].ToString();
-
-                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Token]:- " + strAccessToke);
-
-                    var Datarequest = (RestRequest)null;
-                    if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
+                    if (TokenResponse.Content.ToString() != "")
                     {
-                        Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text, Method.GET);
-                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_CIN_Number.Text);
-                    }
-                    else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
-                    {
-                        Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text, Method.GET);
-                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_LLPIN_Number.Text);
-                    }
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Content]:- " + TokenResponse.Content);
 
-                    Datarequest.AddHeader("Authorization", "Bearer " + strAccessToke);
-                    IRestResponse Dataresponse = client.Execute(Datarequest); ////  CIN or LLPIN number validate api call
+                        string strAccessToke = JsonConvert.DeserializeObject<Dictionary<string, object>>(TokenResponse.Content)["access_token"].ToString();
 
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Token]:- " + strAccessToke);
 
-                    Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_StatusCode]:- " + Dataresponse.StatusCode);
+                        var Datarequest = (RestRequest)null;
 
-                    if (Dataresponse.StatusCode == HttpStatusCode.OK)
-                    {
-                        string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
-                        Hid_cin_llpn.Value = message;
-                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_Content]:- " + Dataresponse.Content);
+                        int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
 
-
-                        if (message == "No Data")
+                        if (SelectedEntityType == 1)
                         {
-                            if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
-                            {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid CIN number !</strong>', '" + StrProjName + "'); </script>", false);
-                                return;
-                            }
-                            else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
-                            {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid LLPIN number !</strong>', '" + StrProjName + "'); </script>", false);
-                                return;
-                            }
-
-
+                            Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text, Method.GET);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_CIN_Number.Text);
                         }
-                        else if (message == "Data fetched Successfully")
+                        else if (SelectedEntityType == 2)
                         {
-
-                            if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)
-                            {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
-                                ViewState["CinNumber"] = Txt_CIN_Number.Text;
-                            }
-                            else if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 2)
-                            {
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
-                                ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
-                            }
-                            else
-                            {
-                                ViewState["CinNumber"] = null;
-                            }
-
-
-                            objInvDet.strAction = "UCV";
-                            objInvDet.strUserID = Session["InvestorId"].ToString();
-                            objInvDet.StrCinLlpinData = Base64encription(Dataresponse.Content);
-                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content));
-                            string StrReturndata = Convert.ToString(objService.InvestorData(objInvDet)); // CIN or LLPIN validation data update in GOSWIFT DB
-
-                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content)+ " -[DataUpdateStatus] :-"+ StrReturndata);
+                            Datarequest = new RestRequest("/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text, Method.GET);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_TokenApi_Cin]:- " + Txt_LLPIN_Number.Text);
                         }
-                    }
-                    else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
-                    {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong> Invalied Token ! <strong>');", true);
+
+                        Datarequest.AddHeader("Authorization", "Bearer " + strAccessToke);
+                        IRestResponse Dataresponse = client.Execute(Datarequest); ////  CIN or LLPIN number validate api call
+
+
+                        Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_StatusCode]:- " + Dataresponse.StatusCode);
+
+                        if (Dataresponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
+                            Hid_Cin_Llpin.Value = message;
+                            Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[Response_Form_CINdataApi_Content]:- " + Dataresponse.Content);
+
+
+                            if (message.ToUpper() == "NO DATA")
+                            {
+                                if (SelectedEntityType == 1)
+                                {
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid CIN number !</strong>', '" + StrProjName + "'); </script>", false);
+                                    return;
+                                }
+                                else if (SelectedEntityType == 2)
+                                {
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid LLPIN number !</strong>', '" + StrProjName + "'); </script>", false);
+                                    return;
+                                }
+
+
+                            }
+                            else if (message.ToUpper() == "DATA FETCHED SUCCESSFULLY")
+                            {
+
+                                if (SelectedEntityType == 1)
+                                {
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
+                                    ViewState["CinNumber"] = Txt_CIN_Number.Text;
+                                }
+                                else if (SelectedEntityType == 2)
+                                {
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
+                                    ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
+                                }
+                                else
+                                {
+                                    ViewState["CinNumber"] = null;
+                                }
+
+
+                                objInvDet.strAction = "UCV";
+                                objInvDet.strUserID = Session["InvestorId"].ToString();
+                                objInvDet.StrCinLlpinData = Base64encription(Dataresponse.Content);
+                                Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content));
+                                string StrReturndata = Convert.ToString(objService.InvestorData(objInvDet)); // CIN or LLPIN validation data update in GOSWIFT DB
+
+                                Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64encription(Dataresponse.Content) + " -[DataUpdateStatus] :-" + StrReturndata);
+                            }
+                        }
+                        else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong> Invalied Token ! <strong>');", true);
+                        }
+                        else
+                        {
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
+                        }
+
+
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No Data find !<strong>');", true);
                     }
 
-
                 }
-                else
+                else if (TokenResponse.StatusCode != HttpStatusCode.OK)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No Data find !<strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
                 }
 
             }
-            else if (TokenResponse.StatusCode != HttpStatusCode.OK)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
-            }
-
-           }
             else
             {
                 Util.LogRequestResponse("ProfileUpdate", "GetCINStatusFromMCA", "[WEBConfig key OFF]");
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
         }
@@ -938,7 +953,7 @@ public partial class EditInvestorProfile : SessionCheck
     /// This function use  for base64 data encription
     /// </summary>
 
-    public string Base64encription(string data) 
+    public string Base64encription(string data)
     {
         try
         {
@@ -952,6 +967,6 @@ public partial class EditInvestorProfile : SessionCheck
         {
             throw ex.InnerException;
         }
-        
+
     }
 }

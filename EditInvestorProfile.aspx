@@ -87,8 +87,8 @@
                     case 'C':
                         if (entityType == 1) {
                            
-                            $("#Div1").show();
-                            $("#Div3").show();
+                            $("#Div_CIN").show();
+                            $("#Div_CIN_LLPIN_Btn").show();
                         }
                         else
                         {
@@ -96,9 +96,9 @@
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
-                                $("#Div1").hide();
-                                $("#Div2").hide();
-                                $("#Div3").hide();
+                                $("#Div_CIN").hide();
+                                $("#Div_LLPIN").hide();
+                                $("#Div_CIN_LLPIN_Btn").hide();
                                 
                             });
                         }
@@ -106,25 +106,25 @@
                     case 'F':
                         if (entityType == 2 || entityType == 9) {
                             
-                            $("#Div2").show();
-                            $("#Div3").show();
+                            $("#Div_LLPIN").show();
+                            $("#Div_CIN_LLPIN_Btn").show();
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0'); // Reset dropdown selection
                                 
-                                $("#Div1").hide();
-                                $("#Div2").hide();
-                                $("#Div3").hide();
+                                $("#Div_CIN").hide();
+                                $("#Div_LLPIN").hide();
+                                $("#Div_CIN_LLPIN_Btn").hide();
                             });
                         }
                         break;
                     case 'P':
                         if (entityType == 3) {
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                            
                         } else {
 
@@ -132,9 +132,9 @@
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
-                                $("#Div1").hide();
-                                $("#Div2").hide();
-                                $("#Div3").hide();
+                                $("#Div_CIN").hide();
+                                $("#Div_LLPIN").hide();
+                                $("#Div_CIN_LLPIN_Btn").hide();
                             });
                             
                         }
@@ -142,35 +142,35 @@
                     case 'H':
                         if (entityType == 7) {
 
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
-                                $("#Div1").hide();
-                                $("#Div2").hide();
-                                $("#Div3").hide();
+                                $("#Div_CIN").hide();
+                                $("#Div_LLPIN").hide();
+                                $("#Div_CIN_LLPIN_Btn").hide();
                             });
                         }
                         break;
                     case 'T':
                         if (entityType == 5) {
 
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
 
                         } else {
                             jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                             $("#popup_ok").click(function () {
                                 $("#DrpDwn_Entity_Type").focus();
                                 $('#DrpDwn_Entity_Type').val('0');
-                                $("#Div1").hide();
-                                $("#Div2").hide();
-                                $("#Div3").hide();
+                                $("#Div_CIN").hide();
+                                $("#Div_LLPIN").hide();
+                                $("#Div_CIN_LLPIN_Btn").hide();
                             });
                             
                         }
@@ -181,9 +181,9 @@
       
         function ValidateDate() {
             debugger;
-            if (projname == 'ON') {
+            if (MCAValidation == 'ON') {
 
-                var panNumber = $('#Hid_cin_llpn').val();
+                var panNumber = $('#Hid_Cin_Llpin').val();
                 if (panNumber == '') {
                     jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>', 'SWP');
 
@@ -234,27 +234,27 @@
                 $("#popup_ok").click(function () { $("#Txt_RegAddress_2").focus(); });
                 return false;
             }
-            if (DropDownValidation('DrpRegdCountry', '0', 'registration country name', 'SWP') == false) {
+            if (DropDownValidation('DrpDwn_RegdCountry', '0', 'registration country name', 'SWP') == false) {
                 return false;
             }
-            var selectedCountry = $('#DrpRegdCountry').val();
+            var selectedCountry = $('#DrpDwn_RegdCountry').val();
             if (selectedCountry == 1) {
-                var selectedState = $('#DrpRegdState option:selected').text();
+                var selectedState = $('#DrpDwn_RegdState option:selected').text();
                 if (selectedState == '--Select--') {
                     jAlert('<strong>Please select registration state name.</strong>', 'SWP');
-                    $("#popup_ok").click(function () { $("#DrpRegdState").focus(); });
+                    $("#popup_ok").click(function () { $("#DrpDwn_RegdState").focus(); });
                     return false;
                 }
             }
             else {
-                var stateName = $('#TxtRegdState').val().trim();
+                var stateName = $('#Txt_RegdState').val().trim();
                 if (stateName == '') {
                     jAlert('<strong>Please enter registration state name.</strong>', 'SWP');
-                    $("#popup_ok").click(function () { $("#TxtRegdState").focus(); });
+                    $("#popup_ok").click(function () { $("#Txt_RegdState").focus(); });
                     return false;
                 }
-                if (!WhiteSpaceValidation1st('TxtRegdState', 'registration state name', 'SWP')) {
-                    $("#popup_ok").click(function () { $("#TxtRegdState").focus(); });
+                if (!WhiteSpaceValidation1st('Txt_RegdState', 'registration state name', 'SWP')) {
+                    $("#popup_ok").click(function () { $("#Txt_RegdState").focus(); });
                     return false;
                 }
             }
@@ -293,15 +293,15 @@
                 return false;
             }
             
-            if (DropDownValidation('DrpSlCountry', '0', 'Site location country name', 'SWP') == false) {
+            if (DropDownValidation('DrpDwn_SlCountry', '0', 'Site location country name', 'SWP') == false) {
                 return false;
             }
-            var selectedCountry = $('#DrpSlCountry').val();
+            var selectedCountry = $('#DrpDwn_SlCountry').val();
             if (selectedCountry == 1) {
-                var selectedState = $('#DrpSlState option:selected').text();
+                var selectedState = $('#DrpDwn_SlState option:selected').text();
                 if (selectedState == '--Select--') {
                     jAlert('<strong>Please select site location state name.</strong>', 'SWP');
-                    $("#popup_ok").click(function () { $("#DrpSlState").focus(); });
+                    $("#popup_ok").click(function () { $("#DrpDwn_SlState").focus(); });
                     return false;
                 }
             }
@@ -426,8 +426,8 @@
             switch (fourthLetter) {
                 case 'C':
                     if (entityType == 1) {
-                        $("#Div1").show();
-                        $("#Div3").show();
+                        $("#Div_CIN").show();
+                        $("#Div_CIN_LLPIN_Btn").show();
                     }
                     else {
 
@@ -435,9 +435,9 @@
                         $("#popup_ok").click(function () {
                             $("#DrpDwn_Entity_Type").focus();
                             $('#DrpDwn_Entity_Type').val('0');
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
 
                         });
                         return false;
@@ -446,8 +446,8 @@
                     break;
                 case 'F':
                     if (entityType == 2 || entityType == 9) {
-                        $("#Div2").show();
-                        $("#Div3").show();
+                        $("#Div_LLPIN").show();
+                        $("#Div_CIN_LLPIN_Btn").show();
 
                     } else {
                         jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
@@ -455,18 +455,18 @@
                             $("#DrpDwn_Entity_Type").focus();
                             $('#DrpDwn_Entity_Type').val('0'); // Reset dropdown selection
 
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                         });
                         return false;
                     }
                     break;
                 case 'P':
                     if (entityType == 3) {
-                        $("#Div1").hide();
-                        $("#Div2").hide();
-                        $("#Div3").hide();
+                        $("#Div_CIN").hide();
+                        $("#Div_LLPIN").hide();
+                        $("#Div_CIN_LLPIN_Btn").hide();
 
                     } else {
 
@@ -474,45 +474,45 @@
                         $("#popup_ok").click(function () {
                             $("#DrpDwn_Entity_Type").focus();
                             $('#DrpDwn_Entity_Type').val('0');
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                         });
                         return false;
                     }
                     break;
                 case 'H':
                     if (entityType == 7) {
-                        $("#Div1").hide();
-                        $("#Div2").hide();
-                        $("#Div3").hide();
+                        $("#Div_CIN").hide();
+                        $("#Div_LLPIN").hide();
+                        $("#Div_CIN_LLPIN_Btn").hide();
 
                     } else {
                         jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                         $("#popup_ok").click(function () {
                             $("#DrpDwn_Entity_Type").focus();
                             $('#DrpDwn_Entity_Type').val('0');
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                         });
                         return false;
                     }
                     break;
                 case 'T':
                     if (entityType == 5) {
-                        $("#Div1").hide();
-                        $("#Div2").hide();
-                        $("#Div3").hide();
+                        $("#Div_CIN").hide();
+                        $("#Div_LLPIN").hide();
+                        $("#Div_CIN_LLPIN_Btn").hide();
 
                     } else {
                         jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                         $("#popup_ok").click(function () {
                             $("#DrpDwn_Entity_Type").focus();
                             $('#DrpDwn_Entity_Type').val('0');
-                            $("#Div1").hide();
-                            $("#Div2").hide();
-                            $("#Div3").hide();
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
                         });
                         return false;
                     }
@@ -573,420 +573,378 @@
 </head>
 <body>
     <form id="form2" runat="server">
-    <asp:ScriptManager ID="InvestRegUser" runat="server">
-    </asp:ScriptManager>
-    <uc2:header ID="header" runat="server" />
-    <div class="container wrapper">
-        <div class="registration-div investors-bg">
-            <div id="exTab1" class="">
-                <div class="investrs-tab">
-                    <uc4:investoemenu ID="ineste" runat="server" />
-                </div>
-                <div class="tab-content clearfix">
-                    <div class="tab-pane active" id="1a">
-                        <div class="form-sec">
-                            <div class="form-header">
-                                <a href="EditInvestorProfile.aspx" title="Edit Profile" class="pull-right proposalbtn active">
-                                    Edit Profile</a> <a href="ChangeUserIdInvestor.aspx" title="Create Alternate User Name"
+        <asp:ScriptManager ID="InvestRegUser" runat="server">
+        </asp:ScriptManager>
+        <uc2:header ID="header" runat="server" />
+        <div class="container wrapper">
+            <div class="registration-div investors-bg">
+                <div id="exTab1" class="">
+                    <div class="investrs-tab">
+                        <uc4:investoemenu ID="ineste" runat="server" />
+                    </div>
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="1a">
+                            <div class="form-sec">
+                                <div class="form-header">
+                                    <a href="EditInvestorProfile.aspx" title="Edit Profile" class="pull-right proposalbtn active">Edit Profile</a> <a href="ChangeUserIdInvestor.aspx" title="Create Alternate User Name"
                                         class="pull-right proposalbtn ">Create Alternate User Name</a>
-                                <h2>
-                                    Investor Details</h2>
-                            </div>
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                    <ContentTemplate>
-                            <div class="form-body">
-                                <div class="col-sm-12 ">
-                                    <div class="form-group">
-                                        <label class="col-sm-2">
-                                            Unit Name</label>
-                                        <div class="col-sm-10">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Unit_Name" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2">
-                                            Name of the Applicant
-                                        </label>
-                                        <div class="col-sm-1 ">
-                                            <span class="colon">:</span>
-                                            <asp:DropDownList ID="DrpDwn_Salutation" runat="server" CssClass="form-control">
-                                                <asp:ListItem Text="Mr" Value="1"></asp:ListItem>
-                                                <asp:ListItem Text="Ms" Value="2"></asp:ListItem>
-                                            </asp:DropDownList>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <asp:TextBox ID="Txt_First_Name" CssClass="form-control" runat="server"
-                                                                        placeholder="Full name of the applicant" MaxLength="100"></asp:TextBox><span class="mandetory">*</span>                                          
-                                            <cc1:FilteredTextBoxExtender ID="txtFirstName1" runat="server" Enabled="True" TargetControlID="Txt_First_Name"
-                                                FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;/\|{}[]">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>                                     
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2">
-                                            Email Id</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Email_Id" autocomplete="off" CssClass="form-control height95"
-                                                MaxLength="250" runat="server" Enabled="false"></asp:TextBox><span class="mandetory"> *</span>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender16" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Email_Id" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <label class="col-sm-2">
-                                            Mobile Number</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Mobile_No" CssClass="form-control" runat="server" MaxLength="10"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender_Txt_Mobile_No" runat="server"
-                                                Enabled="True" FilterType="Numbers" TargetControlID="Txt_Mobile_No" />
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Mobile_No" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2">
-                                           Registration Address-1</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Address_1" CssClass="form-control height95" TextMode="MultiLine"
-                                                onKeyUp="return TextCounter('Txt_Address_1','Label4',250)" MaxLength="250" runat="server"></asp:TextBox>
-                                            <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
+                                    <h2>Investor Details</h2>
+                                </div>
+                                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                    <ContentTemplate>
+                                        <div class="form-body">
+                                            <div class="col-sm-12 ">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Unit Name</label>
+                                                    <div class="col-sm-10">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Unit_Name" CssClass="form-control" runat="server" Enabled="false"></asp:TextBox>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Name of the Applicant
+                                                    </label>
+                                                    <div class="col-sm-1 ">
+                                                        <span class="colon">:</span>
+                                                        <asp:DropDownList ID="DrpDwn_Salutation" runat="server" CssClass="form-control">
+                                                            <asp:ListItem Text="Mr" Value="1"></asp:ListItem>
+                                                            <asp:ListItem Text="Ms" Value="2"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="col-sm-9">
+                                                        <asp:TextBox ID="Txt_First_Name" CssClass="form-control" runat="server"
+                                                            placeholder="Full name of the applicant" MaxLength="100"></asp:TextBox><span class="mandetory">*</span>
+                                                        <cc1:FilteredTextBoxExtender ID="txtFirstName1" runat="server" Enabled="True" TargetControlID="Txt_First_Name"
+                                                            FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;/\|{}[]">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Email Id</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Email_Id" autocomplete="off" CssClass="form-control height95"
+                                                            MaxLength="250" runat="server" Enabled="false"></asp:TextBox><span class="mandetory"> *</span>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender16" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_Email_Id" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <label class="col-sm-2">
+                                                        Mobile Number</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Mobile_No" CssClass="form-control" runat="server" MaxLength="10"></asp:TextBox>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender_Txt_Mobile_No" runat="server"
+                                                            Enabled="True" FilterType="Numbers" TargetControlID="Txt_Mobile_No" />
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_Mobile_No" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Registration Address-1</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Address_1" CssClass="form-control height95" TextMode="MultiLine"
+                                                            onKeyUp="return TextCounter('Txt_Address_1','Label4',250)" MaxLength="250" runat="server"></asp:TextBox>
+                                                        <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label4" runat="server" Text="250" Style="font-size: 14px" Height="20px" />
-                                                Characters )</span>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Address_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <label class="col-sm-2">
-                                           Site Location Address-1</label>
-                                         <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Site_Loc_1" autocomplete="off" CssClass="form-control height95"
-                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_Site_Loc_1','Label3',250)"
-                                                MaxLength="250" runat="server"></asp:TextBox>
-                                            <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px;
-                                                color: red">(&nbsp;Maximum&nbsp;
+                                                            Characters )</span>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender6" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_Address_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <label class="col-sm-2">
+                                                        Site Location Address-1</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Site_Loc_1" autocomplete="off" CssClass="form-control height95"
+                                                            TextMode="MultiLine" onKeyUp="return TextCounter('Txt_Site_Loc_1','Label3',250)"
+                                                            MaxLength="250" runat="server"></asp:TextBox>
+                                                        <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label3" runat="server" Text="250" Style="font-size: 14px" Height="20px" />
-                                                Characters )</span>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender14" runat="server" Enabled="True"
-                                                TargetControlID="Txt_Site_Loc_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                        </div>
-                                     
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                            <label for="Txt_RegAddress_2" class="col-sm-2">
-                                          Registration Address-2
-                                        </label>
-                                       <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_RegAddress_2" CssClass="form-control height95" TextMode="MultiLine"
-                                                onKeyUp="return TextCounter('Txt_RegAddress_2','Label5',128)" MaxLength="128" runat="server"></asp:TextBox>
-                                            <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
+                                                            Characters )</span>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender14" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_Site_Loc_1" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                    </div>
+
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Txt_RegAddress_2" class="col-sm-2">
+                                                        Registration Address-2
+                                                    </label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_RegAddress_2" CssClass="form-control height95" TextMode="MultiLine"
+                                                            onKeyUp="return TextCounter('Txt_RegAddress_2','Label5',128)" MaxLength="128" runat="server"></asp:TextBox>
+                                                        <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label5" runat="server" Text="128" Style="font-size: 14px" Height="20px" />
-                                                Characters )</span>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" Enabled="True"
-                                                TargetControlID="Txt_RegAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <label for="Txt_SitAddress_2" class="col-sm-2">
-                                            Site Location Address-2
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_SitAddress_2" autocomplete="off" CssClass="form-control height95"
-                                                TextMode="MultiLine" onKeyUp="return TextCounter('Txt_SitAddress_2','Label6',128)"
-                                                MaxLength="128" runat="server"></asp:TextBox>
-                                            <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px;
-                                                color: red">(&nbsp;Maximum&nbsp;
+                                                            Characters )</span>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_RegAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <label for="Txt_SitAddress_2" class="col-sm-2">
+                                                        Site Location Address-2
+                                                    </label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_SitAddress_2" autocomplete="off" CssClass="form-control height95"
+                                                            TextMode="MultiLine" onKeyUp="return TextCounter('Txt_SitAddress_2','Label6',128)"
+                                                            MaxLength="128" runat="server"></asp:TextBox>
+                                                        <span class="mandetory">*</span> <span class="mandatory" style="font-size: 14px; color: red">(&nbsp;Maximum&nbsp;
                                                 <asp:Label ID="Label6" runat="server" Text="128" Style="font-size: 14px" Height="20px" />
-                                                Characters )</span>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" Enabled="True"
-                                                TargetControlID="Txt_SitAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                InvalidChars="&quot;'<>&;">
-                                            </cc1:FilteredTextBoxExtender>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
+                                                            Characters )</span>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server" Enabled="True"
+                                                            TargetControlID="Txt_SitAddress_2" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                            InvalidChars="&quot;'<>&;">
+                                                        </cc1:FilteredTextBoxExtender>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
 
-                                 <div class="form-group">
-                                        <label class="col-sm-2">
-                                          Registration Country</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                          <asp:DropDownList CssClass="form-control" TabIndex="17" ID="DrpRegdCountry" runat="server"
-                                                            AutoPostBack="true" OnSelectedIndexChanged="DrpRegdCountry_SelectedIndexChanged" >
-                                                            <asp:ListItem Value="0">---Select---</asp:ListItem>
-                                                        </asp:DropDownList>                                                                                             
-                                            <span class="mandetory">*</span>
-                                            
-                                        </div>
-                                       
-                                      
-                                      <label class="col-sm-2">
-                                          Site Location Country</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                          <asp:DropDownList CssClass="form-control" TabIndex="17" ID="DrpSlCountry" runat="server"
-                                                            AutoPostBack="true" OnSelectedIndexChanged="DrpSlCountry_SelectedIndexChanged" >
-                                                            <asp:ListItem Value="0">---Select---</asp:ListItem>
-                                                        </asp:DropDownList>                                                                                             
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                      <div class="clearfix">
-                                        </div>
-                                    </div>
-
-                                     <div class="form-group"> 
-                                     <div runat="server" id="st3">
-                                        <label class="col-sm-2">
-                                           Registration State</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpRegdState" runat="server">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Registration Country</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:DropDownList CssClass="form-control" TabIndex="17" ID="DrpDwn_RegdCountry" runat="server"
+                                                            AutoPostBack="true" OnSelectedIndexChanged="DrpDwn_RegdCountry_SelectedIndexChanged">
                                                             <asp:ListItem Value="0">---Select---</asp:ListItem>
                                                         </asp:DropDownList>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        
-                                          </div>
+                                                        <span class="mandetory">*</span>
 
-                                      <div runat="server" id="st4">
-                                        <label class="col-sm-2">
-                                           Registration State</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                           <asp:TextBox CssClass="form-control" TabIndex="19" ID="TxtRegdState" Onkeypress="return inputLimiter(event,'NameCharacters')"
-                                                            MaxLength="100" runat="server"></asp:TextBox>
-                                            <span class="mandetory">*</span>
-                                        </div>                                     
-                                          </div>   
-                                         
-                                          <div runat="server" id="st1">
-                                        <label class="col-sm-2">
-                                           Site Location State</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpSlState" runat="server">
+                                                    </div>
+
+
+                                                    <label class="col-sm-2">
+                                                        Site Location Country</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:DropDownList CssClass="form-control" TabIndex="17" ID="DrpDwn_SlCountry" runat="server"
+                                                            AutoPostBack="true" OnSelectedIndexChanged="DrpDwn_SlCountry_SelectedIndexChanged">
                                                             <asp:ListItem Value="0">---Select---</asp:ListItem>
                                                         </asp:DropDownList>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                          </div>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
 
-                                      <div runat="server" id="st2">
-                                        <label class="col-sm-2">
-                                           Site Location State</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                           <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_SL_State" Onkeypress="return inputLimiter(event,'NameCharacters')"
-                                                            MaxLength="100" runat="server"></asp:TextBox>
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                          </div> 
-
-                                    </div>
-
-                                       
-                                 <div class="form-group">
-                                        <label class="col-sm-2">
-                                           Registration City</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Regd_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')"
-                                                            MaxLength="100"></asp:TextBox>
-                                           
-                                           
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                       
-                                     <label class="col-sm-2">
-                                           Site Location City</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Sl_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')"
-                                                            MaxLength="100"></asp:TextBox>
-                                            <span class="mandetory">*</span>
-                                        </div>                                  
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-
-
-                                      <div class="form-group">                                       
-                                        <label class="col-sm-2">
-                                           Registration Pincode</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Regd_Pincode" CssClass="form-control" runat="server" MaxLength="6"></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender7" runat="server"
-                                                Enabled="True" FilterType="Numbers" TargetControlID="Txt_Regd_Pincode" />
-                                            <span class="mandetory">*</span>
-                                        </div>
-
-                                        <label class="col-sm-2">
-                                           Site Location Pincode</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:TextBox ID="Txt_Sl_Pincode" CssClass="form-control" runat="server" MaxLength="6" ToolTip="Pincode enter here."></asp:TextBox>
-                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender8" runat="server"
-                                                Enabled="True" FilterType="Numbers" TargetControlID="Txt_Sl_Pincode" />
-                                            <span class="mandetory">*</span>
-                                        </div>
-                                      
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
-
-
-                                     <div class="form-group">
-                                        <label class="col-sm-2">
-                                            Entity Type</label>
-                                        <div class="col-sm-4">
-                                            <span class="colon">:</span>
-                                            <asp:DropDownList ID="DrpDwn_Entity_Type" runat="server" OnSelectedIndexChanged="DrpDwn_Entity_Type_SelectedIndexChanged" onchange="EntityTypeValide()"  AutoPostBack="true" CssClass="form-control"
-                                                                 ToolTip="Entity Type name here.">
-                                                                <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                                                <div class="form-group">
+                                                    <div runat="server" id="st3">
+                                                        <label class="col-sm-2">
+                                                            Registration State</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_RegdState" runat="server">
+                                                                <asp:ListItem Value="0">---Select---</asp:ListItem>
                                                             </asp:DropDownList>
-                                           <span class="mandetory"> *</span>
-                                            
-                                            
-                                        </div>
-                                         <%--<div runat="server" id="Div1">
-                                             <label class="col-sm-2">
-                                                 CIN Number</label>
-                                             <div class="col-sm-4">
-                                                 <span class="colon">:</span>
-                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number"
-                                                     MaxLength="21" runat="server"></asp:TextBox>
-                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
-                                                     TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                     InvalidChars="&quot;'<>&;">
-                                                 </cc1:FilteredTextBoxExtender>
-                                                 <span class="mandetory">*</span>
-                                             </div>
-                                             <div class="clearfix">
-                                             </div>
-                                         </div>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
 
-                                         <div runat="server" id="Div2">
-                                             <label class="col-sm-2">
-                                                 LLPIN Number</label>
-                                             <div class="col-sm-4">
-                                                 <span class="colon">:</span>
-                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
-                                                     MaxLength="7" runat="server"></asp:TextBox>
-                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
-                                                     TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                     InvalidChars="&quot;'<>&;">
-                                                 </cc1:FilteredTextBoxExtender>
-                                                 <span class="mandetory">*</span>
-                                             </div>
-                                             <div class="clearfix">
-                                             </div>
-                                         </div>--%>
-                                        <div class="clearfix">
-                                        </div>
-                                    </div>
+                                                    </div>
 
-                                    <div class="form-group">
-                                        <div runat="server" id="Div1">
-                                             <label class="col-sm-2">
-                                                 CIN Number</label>
-                                             <div class="col-sm-4">
-                                                 <span class="colon">:</span>
-                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number"
-                                                     MaxLength="21" runat="server"></asp:TextBox>
-                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
-                                                     TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                     InvalidChars="&quot;'<>&;">
-                                                 </cc1:FilteredTextBoxExtender>
-                                                 <span class="mandetory">*</span>
-                                             </div>
-                                             <%--<div class="clearfix">
-                                                 <asp:Button ID="Btn_CIN" runat="server" Text="Validate CIN Number" CssClass=" btn btn-warning"
-                                                OnClick="Btn_CIN_Click" />
-                                             </div>--%>
-                                         </div>
+                                                    <div runat="server" id="st4">
+                                                        <label class="col-sm-2">
+                                                            Registration State</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_RegdState" Onkeypress="return inputLimiter(event,'NameCharacters')"
+                                                                MaxLength="100" runat="server"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+                                                    </div>
 
-                                         <div runat="server" id="Div2">
-                                             <label class="col-sm-2">
-                                                 LLPIN Number</label>
-                                             <div class="col-sm-4">
-                                                 <span class="colon">:</span>
-                                                 <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
-                                                     MaxLength="8" runat="server"></asp:TextBox>
-                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
-                                                     TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
-                                                     InvalidChars="&quot;'<>&;">
-                                                 </cc1:FilteredTextBoxExtender>
-                                                 <span class="mandetory">*</span>
-                                             </div>
-                                             <%--<div class="clearfix">
-                                                 <asp:Button ID="Btn_LLPIN" runat="server" Text="Validate LLPIN Number" CssClass=" btn btn-warning"
-                                                OnClick="Btn_CIN_Click" />
-                                             </div>--%>
-                                         </div>
+                                                    <div runat="server" id="st1">
+                                                        <label class="col-sm-2">
+                                                            Site Location State</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_SlState" runat="server">
+                                                                <asp:ListItem Value="0">---Select---</asp:ListItem>
+                                                            </asp:DropDownList>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
 
-                                        <div runat="server" id="Div3">
-                                            <asp:Button ID="Btn_CIN" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning"
-                                                OnClick="Btn_CIN_Click" />
+                                                    <div runat="server" id="st2">
+                                                        <label class="col-sm-2">
+                                                            Site Location State</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_SL_State" Onkeypress="return inputLimiter(event,'NameCharacters')"
+                                                                MaxLength="100" runat="server"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Registration City</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Regd_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')"
+                                                            MaxLength="100"></asp:TextBox>
+
+
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+
+                                                    <label class="col-sm-2">
+                                                        Site Location City</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Sl_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')"
+                                                            MaxLength="100"></asp:TextBox>
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Registration Pincode</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Regd_Pincode" CssClass="form-control" runat="server" MaxLength="6"></asp:TextBox>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender7" runat="server"
+                                                            Enabled="True" FilterType="Numbers" TargetControlID="Txt_Regd_Pincode" />
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+
+                                                    <label class="col-sm-2">
+                                                        Site Location Pincode</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:TextBox ID="Txt_Sl_Pincode" CssClass="form-control" runat="server" MaxLength="6" ToolTip="Pincode enter here."></asp:TextBox>
+                                                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender8" runat="server"
+                                                            Enabled="True" FilterType="Numbers" TargetControlID="Txt_Sl_Pincode" />
+                                                        <span class="mandetory">*</span>
+                                                    </div>
+
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-2">
+                                                        Entity Type</label>
+                                                    <div class="col-sm-4">
+                                                        <span class="colon">:</span>
+                                                        <asp:DropDownList ID="DrpDwn_Entity_Type" runat="server" OnSelectedIndexChanged="DrpDwn_Entity_Type_SelectedIndexChanged" onchange="EntityTypeValide()" AutoPostBack="true" CssClass="form-control"
+                                                            ToolTip="Entity Type name here.">
+                                                            <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
+                                                        </asp:DropDownList>
+                                                        <span class="mandetory">*</span>
+
+
+                                                    </div>
+
+                                                    <div class="clearfix">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div runat="server" id="Div_CIN">
+                                                        <label class="col-sm-2">
+                                                            CIN Number</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_CIN_Number"
+                                                                MaxLength="21" runat="server"></asp:TextBox>
+                                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender4" runat="server" Enabled="True"
+                                                                TargetControlID="Txt_CIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                                InvalidChars="&quot;'<>&;">
+                                                            </cc1:FilteredTextBoxExtender>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div runat="server" id="Div_LLPIN">
+                                                        <label class="col-sm-2">
+                                                            LLPIN Number</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox CssClass="form-control" TabIndex="19" ID="Txt_LLPIN_Number"
+                                                                MaxLength="8" runat="server"></asp:TextBox>
+                                                            <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" runat="server" Enabled="True"
+                                                                TargetControlID="Txt_LLPIN_Number" FilterMode="InvalidChars" FilterType="Custom,Numbers,LowercaseLetters,UppercaseLetters"
+                                                                InvalidChars="&quot;'<>&;">
+                                                            </cc1:FilteredTextBoxExtender>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div runat="server" id="Div_CIN_LLPIN_Btn">
+                                                        <asp:Button ID="Btn_CIN" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning"
+                                                            OnClick="Btn_CIN_Click" />
+                                                    </div>
+
+                                                </div>
+                                                <asp:HiddenField ID="Hid_Cin_Llpin" runat="server" />
+                                                <asp:HiddenField ID="Hid_Pan_Number" runat="server" />
+                                            </div>
+                                            <div class="form-footer">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <asp:Button ID="Btn_Back" runat="server" Text="Back" CssClass=" btn btn-warning"
+                                                            OnClick="Btn_Back_Click" />
+                                                        <asp:Button ID="Btn_Update" runat="server" Text="Update" CssClass=" btn btn-success"
+                                                            OnClick="Btn_Update_Click" OnClientClick="return ValidateDate();" />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        
-                                    </div>
-                                     <asp:HiddenField ID="Hid_cin_llpn" runat="server" />
-                                   <asp:HiddenField ID="Hid_Pan_Number" runat="server" />
-                                </div>
-                                <div class="form-footer">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <asp:Button ID="Btn_Back" runat="server" Text="Back" CssClass=" btn btn-warning"
-                                                OnClick="Btn_Back_Click" />
-                                            <asp:Button ID="Btn_Update" runat="server" Text="Update" CssClass=" btn btn-success"
-                                                OnClick="Btn_Update_Click" OnClientClick="return ValidateDate();" />
-                                        </div>
-                                    </div>
-                                </div>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+
                             </div>
-                        </ContentTemplate>
-                              </asp:UpdatePanel> 
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <uc3:footer ID="footer" runat="server" />
+        <uc3:footer ID="footer" runat="server" />
     </form>
 </body>
 </html>
