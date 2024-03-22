@@ -105,7 +105,7 @@ public class PANValidationNSDL
             ///Get the signature using pfx file
             /*---------------------------------------------------------------------------------*/
             UTF8Encoding encoding = new System.Text.UTF8Encoding();
-            X509Certificate2 m = new X509Certificate2(HttpContext.Current.Server.MapPath("~/PFX/") + strCertificateName, strPFXPassword);
+            X509Certificate2 m = new X509Certificate2(HttpContext.Current.Server.MapPath("~/PFX/" + strCertificateName), strPFXPassword);
             byte[] bytes = encoding.GetBytes(strData);
             byte[] sig = Sign(bytes, m);
             string strSignature = Convert.ToBase64String(sig);
@@ -174,7 +174,7 @@ public class PANValidationNSDL
                 }
 
             }
-                conn.Open();
+            conn.Open();
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -195,7 +195,7 @@ public class PANValidationNSDL
             cmd.Parameters.AddWithValue("@ResTime", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
             cmd.Parameters.AddWithValue("@ResTransactionId", transactionId);
             cmd.Parameters.AddWithValue("@ResApiVersion", 4);
-            cmd.Parameters.AddWithValue("@ResCode",Convert.ToInt32( response_Code));
+            cmd.Parameters.AddWithValue("@ResCode", Convert.ToInt32(response_Code));
             cmd.Parameters.AddWithValue("@ResPan", pan);
             cmd.Parameters.AddWithValue("@ResPanStatus", pan_status);
             cmd.Parameters.AddWithValue("@ResAppName", name);

@@ -284,6 +284,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
         Txt_Address.Text = "";
         Txt_Mobile_No.Text = "";
         Txt_Email_Id.Text = "";
+        
     }
 
     /// <summary>
@@ -751,6 +752,19 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
         
     }
 
+    /// <summary>
+    /// Function for clear data base on pan validation 
+    /// </summary>
+    public void PanValidationFieldClear()
+    {
+        Txt_PAN.Text = "";
+        Txt_Pan_Holder_Name.Text = "";
+        Txt_Dob.Text = "";
+        Txt_Unit_Name.Text = "";
+        Txt_User_Id.Text = "";
+
+    }
+
     //// Validate PAN
     protected void Btn_PAN_Validate_Click(object sender, EventArgs e)
     {
@@ -794,8 +808,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 string strDob = "";
                 string strName = "";
                 string strPan_Status = "";
-                string strPan = "";
-                string strSeeding_status = "";
+                
 
                 if (response_Code == "1")
                 {
@@ -806,69 +819,108 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                             strDob = (string)item["dob"];
                             strName = (string)item["name"];
                             strPan_Status = (string)item["pan_status"];
-                            strPan = (string)item["pan"];
-                            strSeeding_status = (string)item["seeding_status"];
+                           
 
                         }
                     }
 
                     if (strPan_Status == "D")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EC")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EA")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "ED")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EI")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EL")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EM")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EP")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "ES")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "EU")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "X")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "F")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "N")
                     {
+                        PanValidationFieldClear();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
+                        return;
                     }
                     else if (strPan_Status == "E")
                     {
-                        if (strName == "N")
+                        if (strName == "N" && strDob=="N")
                         {
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name in your card dose not match please reenter correct name !</strong>');", true);
+                            PanValidationFieldClear();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name and DOB in your card dose not match please reenter correct name and DOB !</strong>');", true);
+                            return;
+                        }
+                        else if(strName == "N")
+                        {
+                            PanValidationFieldClear();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name  in your card dose not match please reenter correct name  !</strong>');", true);
+                            return;
+                        }
+                        else if (strDob == "N")
+                        {
+                            PanValidationFieldClear();
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>DOB in your card dose not match please reenter correct DOB !</strong>');", true);
+                            return;
                         }
                         else if (strName == "Y")
                         {
