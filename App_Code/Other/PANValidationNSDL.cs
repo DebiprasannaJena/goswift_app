@@ -11,18 +11,28 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Web;
+using System.Linq;
+using System.Data;
+using AdminApp.Model;
+using RestSharp.Validation;
 
 /// <summary>
 /// Summary description for PANValidationNSDL
 /// </summary>
 public class PANValidationNSDL
 {
+    readonly SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+
     public PANValidationNSDL()
     {
-
     }
 
-    SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+    /// <summary>
+    /// This method is used to validate PAN by using PAN as a single parameter.
+    /// As of March 2024, this method has become obsolete.
+    /// </summary>
+    /// <param name="strPAN"></param>
+    /// <returns></returns>
     public string GetPANStatusFromNSDL(string strPAN)
     {
         string strResponse = "";
@@ -78,6 +88,14 @@ public class PANValidationNSDL
         return strResponse;
     }
 
+    /// <summary>
+    /// This method validates PAN by utilizing PAN, PAN holder's name, and date of birth as parameters.
+    /// This method is applicable from March 2024 onwards.
+    /// </summary>
+    /// <param name="strPAN"></param>
+    /// <param name="strName"></param>
+    /// <param name="strDob"></param>
+    /// <returns></returns>
     public string GetPANStatusFromNSDL(string strPAN, string strName, string strDob)
     {
         string strResponse = "";
@@ -92,6 +110,8 @@ public class PANValidationNSDL
             string strPFXPassword = ConfigurationManager.AppSettings["PanPWD"];
             string strCertificateName = ConfigurationManager.AppSettings["Certificatename"];
 
+            Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[RequestCredentials]:- " + strPanUserId + " - " + strURL + " - " + strPFXPassword + " - " + strCertificateName);
+
             /*---------------------------------------------------------------------------------*/
             ///Generate JSON string for digital sign.
             /*---------------------------------------------------------------------------------*/
@@ -101,26 +121,30 @@ public class PANValidationNSDL
                             + "," + FormatJSON("dob", strDob)
                             + "}]";
 
+            Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[RequestData]:- " + strData);
+
             /*---------------------------------------------------------------------------------*/
             ///Get the signature using pfx file
             /*---------------------------------------------------------------------------------*/
             UTF8Encoding encoding = new System.Text.UTF8Encoding();
-            X509Certificate2 m = new X509Certificate2(HttpContext.Current.Server.MapPath("~/PFX/" + strCertificateName), strPFXPassword);
+            X509Certificate2 m = new X509Certificate2(HttpContext.Current.Server.MapPath("~/PFX/") + strCertificateName, strPFXPassword);
             byte[] bytes = encoding.GetBytes(strData);
             byte[] sig = Sign(bytes, m);
             string strSignature = Convert.ToBase64String(sig);
 
+            Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[ConvertedSignature]:- " + strSignature);
+
             /*---------------------------------------------------------------------------------*/
             ///Prepare the data to be posted to NSDL server.
             /*---------------------------------------------------------------------------------*/
-            var randomNo = MakeRandom(3);
-            var requestTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"); ///"2024-02-08T15:17:11"  
-            var transactionId = strPanUserId + ":" + DateTime.Now.ToString("yyyyMMddHHmmssfffff") + randomNo;
+            string strRandomNo = MakeRandom(3);
+            string strRequestTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"); ///"2024-02-08T15:17:11"  
+            string strTransactionId = strPanUserId + ":" + DateTime.Now.ToString("yyyyMMddHHmmssfffff") + strRandomNo;
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
-            ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
-
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+            ServicePointManager.Expect100Continue = true;
 
             var client = new RestClient(strURL)
             {
@@ -129,8 +153,8 @@ public class PANValidationNSDL
             var request = new RestRequest(Method.POST);
             request.AddHeader("User_ID", strPanUserId);
             request.AddHeader("Records_count", "1");
-            request.AddHeader("Request_time", requestTime); ///"2024-01-08-11.35.50.511211"
-            request.AddHeader("Transaction_ID", transactionId);///"V0175701:1234567890ABcdefGHIJH"
+            request.AddHeader("Request_time", strRequestTime); ///"2024-01-08-11.35.50.511211"
+            request.AddHeader("Transaction_ID", strTransactionId);///"V0175701:1234567890ABcdefGHIJH"
             request.AddHeader("Version", "4");
             request.AddHeader("Content-Type", "application/json");
 
@@ -140,70 +164,84 @@ public class PANValidationNSDL
                                     + FormatJSON("signature", strSignature)
                                     + "}";
 
+            Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[RequestJsonBody]:- " + requestJsonBody);
 
             request.AddParameter("application/json", requestJsonBody, ParameterType.RequestBody);
-            IRestResponse response = client.Execute(request);
-            var output = response.Content.ToString();
+            IRestResponse objRestResponse = client.Execute(request);
 
-            /*---------------------------------------------------------------------------------*/
-            ///Log the request and response data.
-            /*---------------------------------------------------------------------------------*/
-            var jsonObject = JObject.Parse(output);
-            string response_Code = (string)jsonObject["response_Code"];
-
-            JArray outputData = (JArray)jsonObject["outputData"];
-            string dob = "";
-            string name = "";
-            string pan_status = "";
-            string pan = "";
-            string seeding_status = "";
-
-            if (response_Code == "1")
+            if (objRestResponse.StatusCode == HttpStatusCode.OK)
             {
-                if (outputData.Count > 0)
-                {
-                    foreach (JObject item in outputData)
-                    {
-                        dob = (string)item["dob"];
-                        name = (string)item["name"];
-                        pan_status = (string)item["pan_status"];
-                        pan = (string)item["pan"];
-                        seeding_status = (string)item["seeding_status"];
+                var strResponseContent = objRestResponse.Content.ToString();
 
+                Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[ResponseStatusCode]:- " + objRestResponse.StatusCode + " -[ResponseContent]:- " + strResponseContent);
+
+                /*---------------------------------------------------------------------------------*/
+                ///Log the request and response data.
+                /*---------------------------------------------------------------------------------*/
+                string strResDobStatus = "";
+                string strResNameStatus = "";
+                string strResPanStatus = "";
+                string strResPan = "";
+                string strResSeedingStatus = "";
+
+                var jsonObject = JObject.Parse(strResponseContent);
+                string strResponseCode = (string)jsonObject["response_Code"];
+
+                JArray outputData = (JArray)jsonObject["outputData"];
+                if (strResponseCode == "1" && outputData.Count > 0)
+                {
+                    foreach (JObject item in outputData.OfType<JObject>())
+                    {
+                        strResDobStatus = (string)item["dob"];
+                        strResNameStatus = (string)item["name"];
+                        strResPanStatus = (string)item["pan_status"];
+                        strResPan = (string)item["pan"];
+                        strResSeedingStatus = (string)item["seeding_status"];
                     }
                 }
 
+                /*---------------------------------------------------------------------------------*/
+
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand
+                {
+                    Connection = conn,
+                    CommandType = System.Data.CommandType.StoredProcedure,
+                    CommandText = "USP_NSDL_PAN_VALIDATION_LOG_AED"
+                };
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@ReqUserId", strPanUserId);
+                cmd.Parameters.AddWithValue("@ReqTransactionId", strTransactionId);
+                cmd.Parameters.AddWithValue("@ReqTime", strRequestTime);
+                cmd.Parameters.AddWithValue("@ReqRecordCount", 1);
+                cmd.Parameters.AddWithValue("@ReqApiVersion", 4);
+                cmd.Parameters.AddWithValue("@ReqPan", strPAN);
+                cmd.Parameters.AddWithValue("@ReqAppName", strName);
+                cmd.Parameters.AddWithValue("@ReqDob", strDob);
+                cmd.Parameters.AddWithValue("@ReqSignatureValue", strSignature);
+                cmd.Parameters.AddWithValue("@ResUserId", strPanUserId);
+                cmd.Parameters.AddWithValue("@ResRecordCount", 1);
+                cmd.Parameters.AddWithValue("@ResTime", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
+                cmd.Parameters.AddWithValue("@ResTransactionId", strTransactionId);
+                cmd.Parameters.AddWithValue("@ResApiVersion", 4);
+                cmd.Parameters.AddWithValue("@ResCode", Convert.ToInt32(strResponseCode));
+                cmd.Parameters.AddWithValue("@ResPan", strResPan);
+                cmd.Parameters.AddWithValue("@ResPanStatus", strResPanStatus);
+                cmd.Parameters.AddWithValue("@ResAppName", strResNameStatus);
+                cmd.Parameters.AddWithValue("@ResDob", strResDobStatus);
+                cmd.Parameters.AddWithValue("@ResSeedingStatus", strResSeedingStatus);
+                cmd.ExecuteNonQuery();
+
+                return strResponseContent;
             }
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn;
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "USP_NSDL_PAN_VALIDATION_LOG_AED";
-            cmd.Parameters.Clear();
-            cmd.Parameters.AddWithValue("@ReqUserId", strPanUserId);
-            cmd.Parameters.AddWithValue("@ReqTransactionId", transactionId);
-            cmd.Parameters.AddWithValue("@ReqTime", requestTime);
-            cmd.Parameters.AddWithValue("@ReqRecordCount", 1);
-            cmd.Parameters.AddWithValue("@ReqApiVersion", 4);
-            cmd.Parameters.AddWithValue("@ReqPan", strPAN);
-            cmd.Parameters.AddWithValue("@ReqAppName", strName);
-            cmd.Parameters.AddWithValue("@ReqDob", strDob);
-            cmd.Parameters.AddWithValue("@ReqSignatureValue", strSignature);
-            cmd.Parameters.AddWithValue("@ResUserId", strPanUserId);
-            cmd.Parameters.AddWithValue("@ResRecordCount", 1);
-            cmd.Parameters.AddWithValue("@ResTime", DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss"));
-            cmd.Parameters.AddWithValue("@ResTransactionId", transactionId);
-            cmd.Parameters.AddWithValue("@ResApiVersion", 4);
-            cmd.Parameters.AddWithValue("@ResCode", Convert.ToInt32(response_Code));
-            cmd.Parameters.AddWithValue("@ResPan", pan);
-            cmd.Parameters.AddWithValue("@ResPanStatus", pan_status);
-            cmd.Parameters.AddWithValue("@ResAppName", name);
-            cmd.Parameters.AddWithValue("@ResDob", dob);
-            cmd.Parameters.AddWithValue("@ResSeedingStatus", seeding_status);
-            cmd.ExecuteNonQuery();
-
-            return output;
+            else
+            {
+                Util.LogRequestResponse("PanValidation", "GetPANStatusFromNSDL", "[ResponseStatusCode]:- " + objRestResponse.StatusCode);
+            }
         }
         catch (Exception ex)
         {
@@ -212,6 +250,14 @@ public class PANValidationNSDL
 
         return strResponse;
     }
+
+    /// <summary>
+    /// This method is used to generate digital signatures for byte data.
+    /// </summary>
+    /// <param name="data"></param>
+    /// <param name="certificate"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
     public static byte[] Sign(byte[] data, X509Certificate2 certificate)
     {
         if (data == null)
@@ -224,32 +270,57 @@ public class PANValidationNSDL
             throw new ArgumentNullException("certificate");
         }
 
-        // setup the data to sign
+        /*-----------------------------------------------*/
+        /// Setup the data to sign
+        /*-----------------------------------------------*/
         ContentInfo content = new ContentInfo(data);
         SignedCms signedCms = new SignedCms(content, false);
         CmsSigner signer = new CmsSigner(SubjectIdentifierType.IssuerAndSerialNumber, certificate);
-        // create the signature
+
+        /*-----------------------------------------------*/
+        /// Create the signature
+        /*-----------------------------------------------*/
         signedCms.ComputeSignature(signer);
         return signedCms.Encode();
     }
+
+    /// <summary>
+    /// Method used to accept all SSL certificates.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="certificate"></param>
+    /// <param name="chain"></param>
+    /// <param name="sslPolicyErrors"></param>
+    /// <returns></returns>
     private bool AcceptAllCertifications(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
     {
         return true;
     }
 
+    /// <summary>
+    /// This method is used to convert two strings in JSON string format.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="value"></param>
+    /// <returns></returns>
     string FormatJSON(string name, string value)
     {
         return "\"" + name + "\":" + "\"" + value + "\"";
     }
 
-    public string MakeRandom(int pl)
+    /// <summary>
+    /// This method is used generate numeric random number.
+    /// </summary>
+    /// <param name="intLength"></param>
+    /// <returns></returns>
+    public string MakeRandom(int intLength)
     {
         Thread.Sleep(10);
         string possibles = "0123456789";
-        char[] passwords = new char[pl];
+        char[] passwords = new char[intLength];
         Random rd = new Random();
 
-        for (int i = 0; i < pl; i++)
+        for (int i = 0; i < intLength; i++)
         {
             passwords[i] = possibles[rd.Next(0, possibles.Length)];
         }
