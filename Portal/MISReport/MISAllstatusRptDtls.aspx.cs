@@ -180,7 +180,10 @@ public partial class Portal_MISReport_MISAllstatusRptDtls : System.Web.UI.Page
             intStatus = !string.IsNullOrEmpty(Request.QueryString["status"]) ? Convert.ToInt32(Request.QueryString["status"]) : 0
         };
 
-
+        if (Convert.ToInt32(Session["UserId"]) == 557)// for idco user only
+        {
+            objSearch.intProjectType = 0;
+        }
 
         List<Mis_ChildServiceDtls> lstDetails = new List<Mis_ChildServiceDtls>();
 

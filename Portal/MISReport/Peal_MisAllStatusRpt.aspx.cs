@@ -70,20 +70,13 @@ public partial class Portal_MISReport_Peal_MisAllStatusRpt : System.Web.UI.Page
                     ///// Set respective district for DIC/Collector user.    
                     // SetDrpForDistrictUser(); //// Commented by Sushant Jena On Dt:13-Feb-2020 in order to display all the district data to DIC user.
 
-                    if (designationId == 126) ///// Collector
+                    if (designationId == 126 || (Convert.ToInt32(Session["UserId"]) == 557)) ///// Collector  
                     {
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("-ALL-", "0"));
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("0-50 Cr (DLSWCA)", "1"));
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("50-1000 CR (SLSWCA)", "2"));
                         drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("> 1000 Cr (HLCA)", "3"));
-                    }
-                    else if((Convert.ToInt32(Session["UserId"]) == 557)) // ADD BY ANIL FOR idco user login investment amount filter
-                    {
-                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("-ALL-", "0"));
-                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("0-50 Cr (DLSWCA)", "1"));
-                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("50-1000 CR (SLSWCA)", "2"));
-                        drpInvestmentAmt.Items.Add(new System.Web.UI.WebControls.ListItem("> 1000 Cr (HLCA)", "3"));
-                    }                 
+                    }                                    
                     else
                     {
                         ///// For DIC
@@ -181,7 +174,15 @@ public partial class Portal_MISReport_Peal_MisAllStatusRpt : System.Web.UI.Page
                     objSearch.strActionCode = "V"; //// Added by Sushant Jena On Dt:- 12-Feb-2020
                     //objSearch.strActionCode = "u"; //// Commented by Sushant Jena On Dt:- 12-Feb-2020
                     objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-                    objSearch.intProjectType = 2;
+                    if(Convert.ToInt32(Session["UserId"]) == 557) // for idco user login
+                    {
+                        objSearch.intProjectType = 0;
+                    }
+                    else
+                    {
+                        objSearch.intProjectType = 2;
+                    }
+                   
                     objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
                 }
             }
@@ -529,7 +530,15 @@ public partial class Portal_MISReport_Peal_MisAllStatusRpt : System.Web.UI.Page
                 {
                     objSearch.strActionCode = "Iu";
                     objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-                    objSearch.intProjectType = 2;
+                    if(Convert.ToInt32(Session["UserId"]) == 557) // for idco user login
+                    {
+                        objSearch.intProjectType = 0;
+                    }
+                    else
+                    {
+                        objSearch.intProjectType = 2;
+                    }
+                    
                     objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
                 }
             }
@@ -615,7 +624,15 @@ public partial class Portal_MISReport_Peal_MisAllStatusRpt : System.Web.UI.Page
                 {
                     objSearch.strActionCode = "Tu";
                     objSearch.intDistrictId = Convert.ToInt32(ddlDistrict.SelectedValue);
-                    objSearch.intProjectType = 2;
+                    if (Convert.ToInt32(Session["UserId"]) == 557)
+                    {
+                        objSearch.intProjectType = 0;
+                    }
+                    else
+                    {
+                        objSearch.intProjectType = 2;
+                    }
+                        
                     objSearch.intInvestmentAmt = Convert.ToInt32(drpInvestmentAmt.SelectedValue);
                 }
             }

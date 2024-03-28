@@ -101,19 +101,23 @@ public partial class EditInvestorProfile : SessionCheck
 
             if (StrValidateCinLlpin == "ON")
             {
-                if (Hid_Cin_Llpin.Value == "")
+                if(intEntityTypeValue == 1 || intEntityTypeValue == 2)
                 {
-                    BtnValidateCinLlpin.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
-                    return;
-                }
+                    if (Hid_Cin_Llpin.Value == "")
+                    {
+                        BtnValidateCinLlpin.Focus();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
+                        return;
+                    }
 
-                if (Hid_Cin_Llpin.Value == "No Data")
-                {
-                    BtnValidateCinLlpin.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
-                    return;
+                    if (Hid_Cin_Llpin.Value == "No Data")
+                    {
+                        BtnValidateCinLlpin.Focus();
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
+                        return;
+                    }
                 }
+                
 
                 /*---------------------------------------------------------------*/
                 ///Check whether the CIN or LLPIN, which was validated is the same during insertion
@@ -487,9 +491,15 @@ public partial class EditInvestorProfile : SessionCheck
                             objInvDet.StrLLPINumber = Txt_LLPIN_Number.Text.Trim();//Add by Debi
                         }
 
+                        if (ViewState["CinLlpinData"] != null)
+                        {
+                            objInvDet.StrCinLlpinData = ViewState["CinLlpinData"].ToString();
+                        }
+
                         string StrRetval = Convert.ToString(objService.InvestorData(objInvDet)); // data update in GOSWIFT DB
                         if (StrRetval == "2")
                         {
+                            ViewState["CinLlpinData"] = null;
                             if (Request.QueryString["app"] != null)
                             {
                                 if (Convert.ToString(Request.QueryString["app"]) == "CICG")
@@ -574,7 +584,7 @@ public partial class EditInvestorProfile : SessionCheck
 
                 #region InputValidation
 
-                if (strEntityType == "")
+                if (strEntityType == "0")
                 {
                     DrpDwn_Entity_Type.Focus();
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select entity type !</strong>');", true);
@@ -706,17 +716,9 @@ public partial class EditInvestorProfile : SessionCheck
                                 ///Don't update the CIN on the table here. Save when the user click on Update button.
                                 ///Only store the base64 converted value here and push that value during data submission.
 
-
-                                InvestorDetails objInvDet = new InvestorDetails();
-                                InvestorBusinessLayer objService = new InvestorBusinessLayer();
-
-                                objInvDet.strAction = "UCV";
-                                objInvDet.strUserID = Session["InvestorId"].ToString();
-                                objInvDet.StrCinLlpinData = Base64Encryption(Dataresponse.Content);
+                                ViewState["CinLlpinData"] = Base64Encryption(Dataresponse.Content);
                                 Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(Dataresponse.Content));
-                                string StrReturndata = Convert.ToString(objService.InvestorData(objInvDet)); // CIN or LLPIN validation data update in GOSWIFT DB
-
-                                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(Dataresponse.Content) + " -[DataUpdateStatus] :-" + StrReturndata);
+                               
                             }
                         }
                         else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
@@ -960,15 +962,20 @@ public partial class EditInvestorProfile : SessionCheck
         {
             int SelectedEntityType = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);
 
-            if (SelectedEntityType == 1)
-            {
-                Div_CIN.Visible = true;
-                Div_LLPIN.Visible = false;
-                Div_CIN_LLPIN_Btn.Visible = true;
-                BtnValidateCinLlpin.Text = "Validate CIN Number";
-            }
-            else if (SelectedEntityType == 2)
+            string StrPan_Number = Convert.ToString(Hid_Pan_Number.Value);
 
+            char[] Char_Pan_Number = StrPan_Number.ToCharArray();
+            if (Char_Pan_Number[3].ToString().ToUpper() == "C" && SelectedEntityType == 1)
+            {
+               
+                
+                    Div_CIN.Visible = true;
+                    Div_LLPIN.Visible = false;
+                    Div_CIN_LLPIN_Btn.Visible = true;
+                    BtnValidateCinLlpin.Text = "Validate CIN Number";
+                
+            }
+            else if (Char_Pan_Number[3].ToString().ToUpper() == "F" && SelectedEntityType == 2)
             {
                 Div_CIN.Visible = false;
                 Div_LLPIN.Visible = true;

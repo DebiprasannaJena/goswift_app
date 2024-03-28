@@ -182,14 +182,23 @@
 
         function ValidateDate() {
             debugger;
-            if (MCAValidation == 'ON') {
 
-                var panNumber = $('#Hid_Cin_Llpin').val();
-                if (panNumber == '') {
-                    jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>', 'SWP');
-                    return false;
+            var selectedEnitytype = $('#DrpDwn_Entity_Type').val();
+            if (selectedEnitytype == 1 || selectedEnitytype == 2)
+            {
+
+                if (MCAValidation == 'ON')
+                {
+
+                   var panNumber = $('#Hid_Cin_Llpin').val();
+                   if (panNumber == '') {
+                       jAlert('<strong>Please click on button to validate CIN/LLPIN.</strong>', 'SWP');
+                       return false;
+                   }
                 }
             }
+
+            
 
             if (DropDownValidation('DrpDwn_Salutation', '0', 'Prefix of Name', 'SWP') == false) {
                 return false;
@@ -209,13 +218,13 @@
             }
             var val = ($("#Txt_Mobile_No").val());
             if (($("#Txt_Mobile_No").val()).substring(0, 1) == '0') {
-                jAlert('Mobile Number should not be start with zero !');
+                jAlert('Mobile Number should not be start with zero.');
                 $("#Txt_Mobile_No").val('');
                 $("#Txt_Mobile_No").focus();
                 return false;
             }
-            if (($("#Txt_Mobile_No").val().length < 10) && ($("#Txt_Mobile_No").val().length > 0)) {
-                jAlert('<strong>Mobile Number can not be less then 10 characters !</strong>', 'SWP');
+            if ($("#Txt_Mobile_No").val().length != 10) {
+                jAlert('<strong>The mobile number should be 10 digits .</strong>', 'SWP');
                 $("#Txt_Mobile_No").focus();
                 return false;
             }
@@ -341,7 +350,7 @@
             if (DropDownValidation('DrpDwn_Entity_Type', '0', 'entity type', 'SWP') == false) {
                 return false;
             }
-            var selectedEnitytype = $('#DrpDwn_Entity_Type').val();
+            
             if (selectedEnitytype == 1) {
 
                 // EntityTypeValide();
@@ -364,13 +373,13 @@
                     return false;
                 }
                 if ($('#Txt_CIN_Number').val().substring(0, 1) == '0') {
-                    jAlert('<strong>CIN number should not be start with zero !</strong>', 'SWP');
+                    jAlert('<strong>CIN number should not be start with zero.</strong>', 'SWP');
                     $('#Txt_CIN_Number').val('');
                     $('#Txt_CIN_Number').focus();
                     return false;
                 }
-                if ($('#Txt_CIN_Number').val().length > 21) {
-                    jAlert('<strong>CIN number should be 21 digits !</strong>', 'SWP');
+                if ($('#Txt_CIN_Number').val().length != 21) {
+                    jAlert('<strong>CIN number should be 21 digits .</strong>', 'SWP');
                     $("#Txt_CIN_Number").focus();
                     return false;
                 }
@@ -395,13 +404,13 @@
                     return false;
                 }
                 if ($('#Txt_LLPIN_Number').val().substring(0, 1) == '0') {
-                    jAlert('<strong>LLPIN number should not be start with zero !</strong>', 'SWP');
+                    jAlert('<strong>LLPIN number should not be start with zero .</strong>', 'SWP');
                     $('#Txt_LLPIN_Number').val('');
                     $('#Txt_LLPIN_Number').focus();
                     return false;
                 }
-                if ($('#Txt_LLPIN_Number').val().length > 8) {
-                    jAlert('<strong>LLPIN number should be 8 digits !</strong>', 'SWP');
+                if ($('#Txt_LLPIN_Number').val().length != 8) {
+                    jAlert('<strong>LLPIN number should be 8 digits .</strong>', 'SWP');
                     $("#Txt_LLPIN_Number").focus();
                     return false;
                 }
@@ -517,6 +526,34 @@
             }
         }
 
+
+        function CinLlipnValiDate()
+        { 
+            if (DropDownValidation('DrpDwn_Entity_Type', '0', 'entity type', 'SWP') == false) {
+                return false;
+            }
+            var selectedEnitytype = $('#DrpDwn_Entity_Type').val();
+            if (selectedEnitytype != 1 && selectedEnitytype != 2)
+            {
+                jAlert('<strong>Invalid entity type.</strong>', 'SWP');
+                return false;
+            }
+            if (selectedEnitytype == 1 && $('#Txt_CIN_Number').val().trim() == '')
+            {
+                jAlert('<strong>Please enter CIN number.</strong>', 'SWP');
+                $("#popup_ok").click(function () { $("#Txt_CIN_Number").focus(); });
+                return false;
+            }
+            if (selectedEnitytype == 2 && $('#Txt_LLPIN_Number').val().trim() == '')
+            {
+                jAlert('<strong>Please enter LLPIN number.</strong>', 'SWP');
+                $("#popup_ok").click(function () { $("#Txt_LLPIN_Number").focus(); });
+                return false;
+
+            }
+
+        }
+
     </script>
 
     <script language="javascript" type="text/javascript">
@@ -529,7 +566,7 @@
                         var path1_length2 = checkfileupload.lastIndexOf('.');
                         var path1_extension = checkfileupload.substr(path1_length2 + 1, path1_length1);
                         if ((path1_extension.toUpperCase() != "JPG") && (path1_extension.toUpperCase() != "JPEG") && (path1_extension.toUpperCase() != "BMP") && (path1_extension.toUpperCase() != "GIF")) {
-                            jAlert("<strong>Invalid File! \n Please Upload JPG,JPEG,BMP,GIF files only !</strong>", 'SWP');
+                            jAlert("<strong>Invalid File! \n Please Upload JPG,JPEG,BMP,GIF files only .</strong>", 'SWP');
                             sender.value = "";
                             return false;
                         }
@@ -865,7 +902,7 @@
                                                         </div>
                                                     </div>
                                                     <div runat="server" id="Div_CIN_LLPIN_Btn">
-                                                        <asp:Button ID="BtnValidateCinLlpin" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning" OnClick="BtnValidateCinLlpin_Click" />
+                                                        <asp:Button ID="BtnValidateCinLlpin" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning" OnClick="BtnValidateCinLlpin_Click" OnClientClick="return CinLlipnValiDate();" />
                                                     </div>
                                                 </div>
                                                 <asp:HiddenField ID="Hid_Cin_Llpin" runat="server" />

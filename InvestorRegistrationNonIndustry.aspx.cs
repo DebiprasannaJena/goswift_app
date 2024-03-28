@@ -524,18 +524,6 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
        
     }
 
-    /// <summary>
-    /// Function for clear data base on pan validation 
-    /// </summary>
-    public void PanValidationFieldClear()
-    {
-        Txt_PAN.Text = "";
-        Txt_Pan_Holder_Name.Text = "";
-        Txt_Dob.Text = "";
-        Txt_Unit_Name.Text = "";
-        Txt_User_Id.Text = "";
-
-    }
 
     //// Validate PAN
     protected void Btn_PAN_Validate_Click(object sender, EventArgs e)
@@ -548,6 +536,8 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
             string strValidateNSDL = ConfigurationManager.AppSettings["ValidateNSDLPAN"].ToString();
 
             ViewState["PANTYPE"] = string.Empty;
+            ViewState["checkedPan"] = null;
+            Txt_User_Id.Text = "";
 
             if (strValidateNSDL == "OFF") ////PAN will not go for NSDL validation
             {
@@ -571,274 +561,278 @@ public partial class InvestorRegistrationNonIndustry : System.Web.UI.Page
 
                 string strPanResponse = objPan.GetPANStatusFromNSDL(Txt_PAN.Text, Txt_Pan_Holder_Name.Text, Txt_Dob.Text);
 
+                /*---------------------------------------------------------------*/
+                ///Write the response log, got from NSDL portal.
+                /*---------------------------------------------------------------*/
+                Util.LogRequestResponse("NonIndustryRegistration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strPanResponse);
 
-
-
-                var JsonObject = JObject.Parse(strPanResponse);
-                string response_Code = (string)JsonObject["response_Code"];
-
-                JArray outputData = (JArray)JsonObject["outputData"];
-                string strDob = "";
-                string strName = "";
-                string strPan_Status = "";
-               
-
-                if (response_Code == "1")
+                if (strPanResponse != "")
                 {
-                    if (outputData.Count > 0)
+                    var JsonObject = JObject.Parse(strPanResponse);
+                    string response_Code = (string)JsonObject["response_Code"];
+
+                    JArray outputData = (JArray)JsonObject["outputData"];
+                    string strResDobStatus = "";
+                    string strResNameStatus = "";
+                    string strResPanStatus = "";
+
+
+                    if (response_Code == "1" && outputData.Count > 0)
                     {
-                        foreach (JObject item in outputData)
+                        foreach (JObject item in outputData.OfType<JObject>())
                         {
-                            strDob = (string)item["dob"];
-                            strName = (string)item["name"];
-                            strPan_Status = (string)item["pan_status"];
+                            strResDobStatus = (string)item["dob"];
+                            strResNameStatus = (string)item["name"];
+                            strResPanStatus = (string)item["pan_status"];
+                        }
+
+                        if (strResPanStatus == "D")
+                        {
                            
-
-                        }
-                    }
-
-                    if (strPan_Status == "D")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EC")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EA")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "ED")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EI")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EL")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EM")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EP")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "ES")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "EU")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "X")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "F")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "N")
-                    {
-                        PanValidationFieldClear();
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
-                        return;
-                    }
-                    else if (strPan_Status == "E")
-                    {
-                        if (strName == "N" && strDob == "N")
-                        {
-                            PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name and DOB in your card dose not match please reenter correct name and DOB !</strong>');", true);
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
                             return;
                         }
-                        else if (strName == "N")
+                        else if (strResPanStatus == "EC")
                         {
-                            PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Name  in your card dose not match please reenter correct name  !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
                             return;
                         }
-                        else if (strDob == "N")
+                        else if (strResPanStatus == "EA")
                         {
-                            PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>DOB in your card dose not match please reenter correct DOB !</strong>');", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
                             return;
                         }
-                        else if (strName == "Y")
+                        else if (strResPanStatus == "ED")
                         {
-                            Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
-                            Txt_Unit_Name.Enabled = false;
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "EI")
+                        {
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "EL")
+                        {
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "EM")
+                        {
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "EP")
+                        {
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "ES")
+                        {
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "EU")
+                        {
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "X")
+                        {
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "F")
+                        {
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "N")
+                        {
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
+                            return;
+                        }
+                        else if (strResPanStatus == "E")
+                        {
+                            if (strResNameStatus == "N" && strResDobStatus == "N")
+                            {
+                               
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name and date of birth do not match with the PAN provided. Please enter the correct name and date of birth !</strong>');", true);
+                                return;
+                            }
+                            else if (strResNameStatus == "N")
+                            {
+                                
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name does not match with the PAN provided. Please enter the correct name !</strong>');", true);
+                                return;
+                            }
+                            else if (strResDobStatus == "N")
+                            {
+                                
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The date of birth does not match with the PAN provided. Please enter the correct date of birth. !</strong>');", true);
+                                return;
+                            }
+                            else if (strResNameStatus == "Y")
+                            {
+                                Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
+                                Txt_Unit_Name.Enabled = false;
+                            }
+
+                            /*---------------------------------------------------------------*/
+                            ///Validate PAN from GOSWIFT.
+                            /*---------------------------------------------------------------*/
+                            CheckPan(Txt_PAN.Text.ToString().Trim());
                         }
 
-                        /*---------------------------------------------------------------*/
-                        ///Validate PAN from GOSWIFT.
-                        /*---------------------------------------------------------------*/
-                        CheckPan(Txt_PAN.Text.ToString().Trim());
+
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again !</strong>');", true);
                     }
 
+                    #region OldPanValidationCode
+                    //if (strVal == "2")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>System Error !</strong>');", true);
+                    //}
+                    //else if (strVal == "3")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Authentication Failure !</strong>');", true);
+                    //    return;
+                    //}
+                    //else if (strVal == "4")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User not authorized !</strong>');", true);
+                    //}
+                    //else if (strVal == "5")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No PANs Entered !</strong>');", true);
+                    //}
+                    //else if (strVal == "6")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User validity has expired !</strong>');", true);
+                    //}
+                    //else if (strVal == "7")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Number of PANs exceeds the limit (5) !</strong>');", true);
+                    //}
+                    //else if (strVal == "8")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not enough balance !</strong>');", true);
+                    //}
+                    //else if (strVal == "9")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not an HTTPs request !</strong>');", true);
+                    //}
+                    //else if (strVal == "10")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>POST method not used !</strong>');", true);
+                    //}
+                    //else if (strVal == "11")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>SLAB_CHANGE_RUNNING !</strong>');", true);
+                    //}
+                    //else if (strVal == "12")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid version number entered !</strong>');", true);
+                    //}
+                    //else if (strVal == "15")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID not sent in Input request and only PAN sent !</strong>');", true);
+                    //}
+                    //else if (strVal == "16")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Certificate Revocation List issued by the Certifying Authorities is expired !</strong>');", true);
+                    //}
+                    //else if (strVal == "17")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User id Deactivated !</strong>');", true);
+                    //}
+                    //else if (strVal == "18")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID not present in database or Wrong certificate used !</strong>');", true);
+                    //}
+                    //else if (strVal == "19")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Signature sent in input request is blank !</strong>');", true);
+                    //}
+                    //else if (strVal == "20")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID and PAN not sent in Input request !</strong>');", true);
+                    //}
+                    //else if (strVal == "21")
+                    //{
+                    //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Only ^ sent in Input request !</strong>');", true);
+                    //}
+                    //else
+                    //{
+                    //    string[] strValueArr = strVal.Split('^');
+
+                    //    if (strValueArr[2] == "E")
+                    //    {
+                    //        if (strValueArr[4].Trim() == "")
+                    //        {
+                    //            ///For Industries
+                    //            Txt_Unit_Name.Text = strValueArr[3];
+                    //            Txt_Unit_Name.Enabled = false;
+                    //            proprietor.Visible = false;
+                    //            ViewState["PANTYPE"] = "INDUSTRY";
+                    //        }
+                    //        else
+                    //        {
+                    //            ///For Individual
+                    //            proprietor.Visible = true;
+                    //            ViewState["PANTYPE"] = "INDIVISUAL";
+                    //            if (strValueArr[5].Trim() != "")
+                    //            {
+                    //                Txt_Proprietorship_Name.Text = strValueArr[4] + " " + strValueArr[5] + " " + strValueArr[3];
+                    //            }
+                    //            else
+                    //            {
+                    //                Txt_Proprietorship_Name.Text = strValueArr[4] + " " + strValueArr[3];
+                    //            }
+                    //        }
+
+                    //        /*---------------------------------------------------------------*/
+                    //        ///Validate PAN from GOSWIFT.
+                    //        /*---------------------------------------------------------------*/
+                    //        CheckPan(Txt_PAN.Text.ToString().Trim());
+                    //    }
+                    //    else if (strValueArr[2] == "F")
+                    //    {
+                    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Fake PAN No !</strong>');", true);
+                    //    }
+                    //    else if (strValueArr[2] == "N")
+                    //    {
+                    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid PAN !</strong>');", true);
+                    //    }
+                    //    else
+                    //    {
+                    //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No Response !</strong>');", true);
+                    //    }
+                    //}
+
+                    #endregion
 
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something is wrong !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again !</strong>');", true);
                 }
 
-                /*---------------------------------------------------------------*/
-                ///Write the response log, got from NSDL portal.
-                /*---------------------------------------------------------------*/
-                Util.LogRequestResponse("Registration", "GetPANStatusFromNSDL", "[REQUEST_PAN]:- " + Txt_PAN.Text + " - [RESPONSE_FROM_NSDL]:- " + strPanResponse);
-
-                //if (strVal == "2")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>System Error !</strong>');", true);
-                //}
-                //else if (strVal == "3")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Authentication Failure !</strong>');", true);
-                //    return;
-                //}
-                //else if (strVal == "4")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User not authorized !</strong>');", true);
-                //}
-                //else if (strVal == "5")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No PANs Entered !</strong>');", true);
-                //}
-                //else if (strVal == "6")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User validity has expired !</strong>');", true);
-                //}
-                //else if (strVal == "7")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Number of PANs exceeds the limit (5) !</strong>');", true);
-                //}
-                //else if (strVal == "8")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not enough balance !</strong>');", true);
-                //}
-                //else if (strVal == "9")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not an HTTPs request !</strong>');", true);
-                //}
-                //else if (strVal == "10")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>POST method not used !</strong>');", true);
-                //}
-                //else if (strVal == "11")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>SLAB_CHANGE_RUNNING !</strong>');", true);
-                //}
-                //else if (strVal == "12")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid version number entered !</strong>');", true);
-                //}
-                //else if (strVal == "15")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID not sent in Input request and only PAN sent !</strong>');", true);
-                //}
-                //else if (strVal == "16")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Certificate Revocation List issued by the Certifying Authorities is expired !</strong>');", true);
-                //}
-                //else if (strVal == "17")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User id Deactivated !</strong>');", true);
-                //}
-                //else if (strVal == "18")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID not present in database or Wrong certificate used !</strong>');", true);
-                //}
-                //else if (strVal == "19")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Signature sent in input request is blank !</strong>');", true);
-                //}
-                //else if (strVal == "20")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>User ID and PAN not sent in Input request !</strong>');", true);
-                //}
-                //else if (strVal == "21")
-                //{
-                //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Only ^ sent in Input request !</strong>');", true);
-                //}
-                //else
-                //{
-                //    string[] strValueArr = strVal.Split('^');
-
-                //    if (strValueArr[2] == "E")
-                //    {
-                //        if (strValueArr[4].Trim() == "")
-                //        {
-                //            ///For Industries
-                //            Txt_Unit_Name.Text = strValueArr[3];
-                //            Txt_Unit_Name.Enabled = false;
-                //            proprietor.Visible = false;
-                //            ViewState["PANTYPE"] = "INDUSTRY";
-                //        }
-                //        else
-                //        {
-                //            ///For Individual
-                //            proprietor.Visible = true;
-                //            ViewState["PANTYPE"] = "INDIVISUAL";
-                //            if (strValueArr[5].Trim() != "")
-                //            {
-                //                Txt_Proprietorship_Name.Text = strValueArr[4] + " " + strValueArr[5] + " " + strValueArr[3];
-                //            }
-                //            else
-                //            {
-                //                Txt_Proprietorship_Name.Text = strValueArr[4] + " " + strValueArr[3];
-                //            }
-                //        }
-
-                //        /*---------------------------------------------------------------*/
-                //        ///Validate PAN from GOSWIFT.
-                //        /*---------------------------------------------------------------*/
-                //        CheckPan(Txt_PAN.Text.ToString().Trim());
-                //    }
-                //    else if (strValueArr[2] == "F")
-                //    {
-                //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Fake PAN No !</strong>');", true);
-                //    }
-                //    else if (strValueArr[2] == "N")
-                //    {
-                //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid PAN !</strong>');", true);
-                //    }
-                //    else
-                //    {
-                //        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>No Response !</strong>');", true);
-                //    }
-                //}
             }
         }
         catch (Exception ex)

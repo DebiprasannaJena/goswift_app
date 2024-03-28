@@ -150,14 +150,14 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
             {
                 if (Path.GetExtension(FileUpload_Doc.FileName).ToLower() != ".pdf")
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please upload only .pdf file !</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please upload only .pdf file .</strong>', '" + strProjName + "'); </script>", false);
                     bReturnValue = false;
                     return bReturnValue;
                 }
 
                 if (!IsFileValid(FileUpload_Doc))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid file type (or) file name may contain dots !</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid file type (or) file name may contain dots .</strong>', '" + strProjName + "'); </script>", false);
                     bReturnValue = false;
                     return bReturnValue;
                 }
@@ -165,7 +165,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 int fileSize = FileUpload_Doc.PostedFile.ContentLength;
                 if (fileSize > (4 * 1024 * 1024))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>File size is too large. Maximum file size permitted is 4 MB !</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>File size is too large. Maximum file size permitted is 4 MB .</strong>', '" + strProjName + "'); </script>", false);
                     bReturnValue = false;
                     return bReturnValue;
                 }
@@ -242,7 +242,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                         Txt_PAN.Text = "";
                         Txt_User_Id.Text = "";
                         ModalPopupExtender1.Hide();
-                        ClientScript.RegisterClientScriptBlock(this.GetType(), "validate", "<script>jAlert('<strong>Registration for unit under this PAN has been applied earlier and currently is in pending stage. Please wait till approval or contact to the administrator !</strong>');</script>");
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "validate", "<script>jAlert('<strong>Registration for unit under this PAN has been applied earlier and currently is in pending stage. Please wait till approval or contact to the administrator .</strong>');</script>");
                     }
                 }
 
@@ -252,7 +252,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
             else
             {
                 ClearAutoFillControl();
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "validate", "<script>jAlert('<strong>This PAN is available for registration and It will treated as your main unit.<br/>Please confirm this is your company PAN number !</strong>');</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "validate", "<script>jAlert('<strong>This PAN is available for registration and It will treated as your main unit.<br/>Please confirm this is your company PAN number .</strong>');</script>");
 
                 string strRandNo = MakeRandom(3);
 
@@ -481,7 +481,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
             if (DrpDwn_License_Type.SelectedIndex == 0)
             {
                 DrpDwn_License_Type.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select license type !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select license type .</strong>');", true);
                 return;
             }
 
@@ -494,7 +494,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 if (Txt_EIN_IEM.Text.Trim() == "")
                 {
                     Txt_EIN_IEM.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter IEM/Production Certificate number !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter IEM/Production Certificate number .</strong>');", true);
                     return;
                 }
 
@@ -507,7 +507,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please upload document in support of IEM/Production Certificate !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please upload document in support of IEM/Production Certificate .</strong>');", true);
                     bRetVal = false;
                     return;
                 }
@@ -517,7 +517,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 if (Txt_EIN_IEM.Text.Trim() == "")
                 {
                     Txt_EIN_IEM.Focus();
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter EIN/PC/Udyog Aadhaar/Udyam Registration number !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter EIN/PC/Udyog Aadhaar/Udyam Registration number .</strong>');", true);
                     return;
                 }
 
@@ -530,7 +530,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please upload document in support of EIN/PC/Udyog Aadhaar/Udyam Registration !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please upload document in support of EIN/PC/Udyog Aadhaar/Udyam Registration .</strong>');", true);
                     bRetVal = false;
                     return;
                 }
@@ -541,25 +541,25 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
             if (DrpDwn_District.SelectedIndex == 0)
             {
                 DrpDwn_District.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select district !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select district .</strong>');", true);
                 return;
             }
             if (DrpDwn_Block.SelectedIndex == 0)
             {
                 DrpDwn_Block.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select block !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select block .</strong>');", true);
                 return;
             }
             if (DrpDwn_Sector.SelectedIndex == 0)
             {
                 DrpDwn_Sector.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select sector !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select sector .</strong>');", true);
                 return;
             }
             if (DrpDwn_Sub_Sector.SelectedIndex == 0)
             {
                 DrpDwn_Sub_Sector.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select sub sector !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select sub sector .</strong>');", true);
                 return;
             }
             if (Txt_GSTIN.Text.Trim() != "")
@@ -626,13 +626,13 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
             {
                 if (Convert.ToString(ViewState["checkedPan"]) != Txt_PAN.Text)
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on Check Availability button to validate PAN !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on Check Availability button to validate PAN.</strong>');", true);
                     return;
                 }
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on Check Availability button to validate PAN !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on Check Availability button to validate PAN.</strong>');", true);
                 return;
             }
 
@@ -697,11 +697,11 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 string strResult = objRegService.InvestorRegistrationBAL(objInvEntity, "I");
                 if (strResult == "1") ///// Duplicate EIN/IEM Number Found
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>The EIN/IEM/Udyog Aadhaar/Production Certificate number provided by you is already exists !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>The EIN/IEM/Udyog Aadhaar/Production Certificate number provided by you is already exists .</strong>');", true);
                 }
                 else if (strResult == "2") //// Success
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>Data Saved Successfully !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>Data Saved Successfully .</strong>');", true);
 
                     Session["InvRegUser"] = objInvEntity;
                     Session["MobileNo"] = Txt_Mobile_No.Text.Trim();
@@ -719,20 +719,20 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
                 else if (strResult == "3") //// Error
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error. Please try again after sometime !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error. Please try again after sometime .</strong>');", true);
                 }
                 else if (strResult == "4") //// Duplicate Unit Name Found
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The unit name provided by you is already exists, Please try with a different unit name !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The unit name provided by you is already exists, Please try with a different unit name .</strong>');", true);
                 }
 
                 else if (strResult == "6") //// Duplicate User Id Found
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid user id,Please Validate and Check Availibilty of PAN again !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalid user id,Please Validate and Check Availibilty of PAN again.</strong>');", true);
                 }
                 else if (strResult == "7") ///// Duplicate CIN Number Found
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>The CIN number provided by you is already exists !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Success", "jAlert('<strong>The CIN number provided by you is already exists.</strong>');", true);
                 }
             }
             else
@@ -748,17 +748,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
 
     }
 
-    /// <summary>
-    /// Function for clear data base on pan validation 
-    /// </summary>
-    public void PanValidationFieldClear()
-    {
-        Txt_PAN.Text = "";
-        Txt_Pan_Holder_Name.Text = "";
-        Txt_Dob.Text = "";
-        Txt_Unit_Name.Text = "";
-        Txt_User_Id.Text = "";
-    }
+    
 
     //// Validate PAN
     protected void Btn_PAN_Validate_Click(object sender, EventArgs e)
@@ -820,100 +810,100 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
 
                         if (strResPanStatus == "D")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>PANs deleted.</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EC")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database !</strong>');", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Acquisition in ITD database.</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EA")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Amalgamation in ITD database.</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "ED")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Death in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EI")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Dissolution in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EL")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database !</strong>');", true);
+                           
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Liquidated in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EM")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Merger in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EP")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Partition in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "ES")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Split in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "EU")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Existing and Valid but event marked as Under Liquidation in ITD database .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "X")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Deactivated .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "F")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Marked as Fake .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "N")
                         {
-                            //PanValidationFieldClear();
-                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN !</strong>');", true);
+                            
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Not present in Income Tax Department (ITD) database/Invalid PAN .</strong>');", true);
                             return;
                         }
                         else if (strResPanStatus == "E")
                         {
                             if (strResNameStatus == "N" && strResDobStatus == "N")
                             {
-                                //PanValidationFieldClear();
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name and date of birth do not match with the PAN provided. Please enter the correct name and date of birth !</strong>');", true);
+                                
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name and date of birth do not match with the PAN provided. Please enter the correct name and date of birth .</strong>');", true);
                                 return;
                             }
                             else if (strResNameStatus == "N")
                             {
-                                //PanValidationFieldClear();
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name does not match with the PAN provided. Please enter the correct name !</strong>');", true);
+                               
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The name does not match with the PAN provided. Please enter the correct name .</strong>');", true);
                                 return;
                             }
                             else if (strResDobStatus == "N")
                             {
-                                //PanValidationFieldClear();
-                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The date of birth does not match with the PAN provided. Please enter the correct date of birth. !</strong>');", true);
+                                
+                                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>The date of birth does not match with the PAN provided. Please enter the correct date of birth. </strong>');", true);
                                 return;
                             }
                             else if (strResNameStatus == "Y")
@@ -930,7 +920,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again !</strong>');", true);
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again .</strong>');", true);
                     }
 
                     #region OldPanValidationCode
@@ -1061,7 +1051,7 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 }
                 else
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again !</strong>');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Something went wrong, Please try again .</strong>');", true);
                 }
             }
         }
