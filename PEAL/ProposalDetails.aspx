@@ -11,22 +11,26 @@
 <head id="Head1" runat="server">
     <uc1:doctype ID="doctype" runat="server" />
     <link rel="stylesheet" type="text/css" href="../css/custom.css" />
-    <script>
+ 
+
+    <script type="text/javascript">
         $(document).ready(function () {
-            $('.menuproposal').addClass('active');
             $("#printbtn").click(function () {
                 window.print();
             });
+            $('.menuproposal').addClass('active');
+           
         })
     </script>
+
+
+
     <style type="text/css">
         .panel-group .panel {
             border-radius: 0;
             box-shadow: none;
             border-color: #EEEEEE;
         }
-
-
 
         .panel-title {
             font-size: 14px;
@@ -162,6 +166,8 @@
                 width: 50%;
             }
         }
+
+         
     </style>
 </head>
 <body>
@@ -169,19 +175,22 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
         <uc2:header ID="header" runat="server" />
+         <div class="container">   
         <div class="container wrapper">
-            <div class="registration-div investors-bg">
-                <div class="investrs-tab">
-                    <div class="iconsdiv tab-icondiv">
+            <div class="registration-div investors-bg">  
+                 <div class="investrs-tab">                      
+                     <uc5:PealMenu ID="PealMenu1" runat="server" />
+                </div>
+                   <div class="iconsdiv tab-icondiv">
                         <a href="javascript:void(0);" title="Print" id="printbtn" class="pull-right printbtn">
                             <i class="fa fa-print"></i></a>
-                        <%--<a href="javascript:void(0)" title="PDF" id="A1"  class="pull-right printbtn"><i class="fa fa-file-pdf-o"></i></a>--%>
+                   
+                       <%-- <a href="javascript:void(0)" title="PDF" id="A1"  class="pull-right printbtn"><i class="fa fa-file-pdf-o"></i></a>--%>
                         <a href="javascript:history.back()" title="Back" id="A2" class="pull-right printbtn">
                             <i class="fa fa-chevron-circle-left"></i></a>
                     </div>
-                    <uc5:PealMenu ID="PealMenu1" runat="server" />
-                </div>
-                <div class="form-sec">
+                <div class="form-sec">  
+                   
                     <div class="form-header">
                         <h2>Proposal Details</h2>
                     </div>
@@ -2159,12 +2168,16 @@
                                 </asp:Repeater>
                             </div>
                             <br />
+                            
                         </div>
+                       
                         <!-- panel-group -->
                     </div>
                 </div>
             </div>
         </div>
+             </div>
+       
         <uc3:footer ID="footer" runat="server" />
     </form>
 </body>

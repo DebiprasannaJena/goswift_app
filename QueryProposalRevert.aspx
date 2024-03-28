@@ -69,12 +69,11 @@
             border: 1px solid #d0d0d0;
         }
     </style>
-    <script>
+    <script type="text/javascript">
 
-        $(document).ready(function () {
-
+        $(document).ready(function () {            
             $('.menuproposal').addClass('active');
-            $("#printbtn").click(function () {
+            $("#printbtn").click(function () {              
                 window.print();
             });
         });
@@ -178,8 +177,9 @@
     <form id="form2" runat="server">
     <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </cc1:ToolkitScriptManager>
-    <div class="container">
         <uc2:header ID="header" runat="server" />
+         <div class="container">   
+        <div class="container wrapper">
         <div class="registration-div investors-bg">
             <div class="">
                 <div id="exTab1">
@@ -595,7 +595,9 @@
                 </div>
             </div>
         </div>
-    </div>
+            </div>
+             </div>
+  
     <uc3:footer ID="footer" runat="server" />
     <asp:HiddenField ID="HiddenField1" runat="server" />
     </form>
