@@ -63,7 +63,7 @@ public partial class Investor_ViewInvestor :SessionCheck
         LinkButton btn = (LinkButton)(sender);
         string InvID = btn.CommandArgument;
         int intinvid = Convert.ToInt32(InvID);
-        TextBox TextBox1 = btn.FindControl("txtRemark") as TextBox;
+        TextBox TxtRemark = btn.FindControl("TxtRemark") as TextBox;
         
                objInvestor.strAction ="V";
                objInvestor.intInvId = Convert.ToInt32(InvID);
@@ -78,11 +78,11 @@ public partial class Investor_ViewInvestor :SessionCheck
                 
                  StrOut = objSSO.NewIndustryRegistration("A", objListinv[0].strEmail, objSSO.URLEncryption(objListinv[0].strPassword), objListinv[0].strIndName, objListinv[0].strSecAnswer, objListinv[0].strPanno, objListinv[0].strSiteAddress, objListinv[0].strAddress, objListinv[0].MobNo, objListinv[0].intSectorId, objListinv[0].intSubSectorId, objListinv[0].intCategoryId, objListinv[0].intDistrictId, objListinv[0].intBlockId, objListinv[0].decInvstAmount, "", objSSO.URLEncryption(System.Configuration.ConfigurationManager.AppSettings["SSOKey"].ToString()), "", 0);
                  
-                    if (StrOut.Contains(",") == true)
-                 {
+                    if (StrOut.Contains(","))
+                    {
                      if (StrOut.Split(',')[0].ToString() == "1")
                      {
-                         string StrRemark = TextBox1.Text.ToString();
+                         string StrRemark = TxtRemark.Text.ToString();
                          string strAction = "APV";
                          result = objService.InvApprovalDetails(objInvestor, strAction, intinvid, StrRemark);
                          string strInvestorUId = StrOut.Split(',')[1].ToString();
@@ -110,7 +110,7 @@ public partial class Investor_ViewInvestor :SessionCheck
                          }
                         
                          smsStatus = comm.SendSmsNew("" + dtcontent.Rows[0]["vchSMSContent"].ToString() + " ", SMSContent);
-                         string str = comm.UpdateMailSMSStaus("InvestorApproved", strmobile, InvtoEmail[0], strSubject, "0", "0", 0, "0", SMSContent, SMSContent, smsStatus, mailStatus);
+                          comm.UpdateMailSMSStaus("InvestorApproved", strmobile, InvtoEmail[0], strSubject, "0", "0", 0, "0", SMSContent, SMSContent, smsStatus, mailStatus);
                        
                          ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('Investor Profile Approved Successfully !', '" + strprojname + "'); </script>", false);
                          FillInvestorInfo();
@@ -125,7 +125,7 @@ public partial class Investor_ViewInvestor :SessionCheck
                          ScriptManager.RegisterStartupScript(this, GetType(), "OnClick", "<script> jAlert('Service Error!', '" + strprojname + "'); </script>", false);
                          FillInvestorInfo();
                      }
-                 }
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -179,8 +179,8 @@ public partial class Investor_ViewInvestor :SessionCheck
         LinkButton btn = (LinkButton)(sender);
         string InvID = btn.CommandArgument;
         int intinvid = Convert.ToInt32(InvID);
-        TextBox TextBox1 = btn.FindControl("txtRemark") as TextBox;
-        string StrRejRemark = TextBox1.Text.ToString();
+        TextBox TxtRemark = btn.FindControl("TxtRemark") as TextBox;
+        string StrRejRemark = TxtRemark.Text.ToString();
         string strAction = "REJ";
         result = objService.InvApprovalDetails(objInvestor, strAction, intinvid, StrRejRemark);
         CommonHelperCls comm = new CommonHelperCls();
@@ -193,7 +193,6 @@ public partial class Investor_ViewInvestor :SessionCheck
         {
             strSubject = dtcontent.Rows[0]["vchEvent"].ToString();
             SMSContent = dtcontent.Rows[0]["vchSMSContent"].ToString().Replace("[USERID]", dtlogdetails.Rows[0]["VCH_EMAIL"].ToString());
-            string strdecpass = dtlogdetails.Rows[0]["VCH_EMAIL"].ToString();
             SMSContent = SMSContent.Replace("[UNITNAME]", dtlogdetails.Rows[0]["VCH_INV_NAME"].ToString());         
             InvtoEmail[0] = dtlogdetails.Rows[0]["VCH_EMAIL"].ToString();
           
@@ -251,36 +250,36 @@ public partial class Investor_ViewInvestor :SessionCheck
         for (int i = 0; i < gvInvestor.Rows.Count; i++)
         {
 
-            Label lblAppRejStatus = (Label)gvInvestor.Rows[i].FindControl("lblAppRejStatus");
-            Label lblverfied = (Label)gvInvestor.Rows[i].FindControl("lblverfied");
+            Label LblAppRejStatus = (Label)gvInvestor.Rows[i].FindControl("LblAppRejStatus");
+            Label LblVerfied = (Label)gvInvestor.Rows[i].FindControl("LblVerfied");
             
-            if (lblAppRejStatus.Text == "2")
+            if (LblAppRejStatus.Text == "2")
             {
                 ((LinkButton)gvInvestor.Rows[i].FindControl("lbtnStatusReject")).Visible = false;
                 ((LinkButton)gvInvestor.Rows[i].FindControl("lbtnStatusApprove")).Visible = false;
-                ((Label)gvInvestor.Rows[i].FindControl("lblAppRejStatus")).Visible = true;
-                ((Label)gvInvestor.Rows[i].FindControl("lblAppRejStatus")).Text = "Rejected";
-                ((TextBox)gvInvestor.Rows[i].FindControl("txtRemark")).Visible = false;
-                ((Label)gvInvestor.Rows[i].FindControl("lblRemarks")).Visible = true;
+                ((Label)gvInvestor.Rows[i].FindControl("LblAppRejStatus")).Visible = true;
+                ((Label)gvInvestor.Rows[i].FindControl("LblAppRejStatus")).Text = "Rejected";
+                ((TextBox)gvInvestor.Rows[i].FindControl("TxtRemark")).Visible = false;
+                ((Label)gvInvestor.Rows[i].FindControl("LblRemarks")).Visible = true;
             }
-            else if (lblAppRejStatus.Text == "1")//Approved
+            else if (LblAppRejStatus.Text == "1")//Approved
             {
                 ((LinkButton)gvInvestor.Rows[i].FindControl("lbtnStatusApprove")).Visible = false;
                 ((LinkButton)gvInvestor.Rows[i].FindControl("lbtnStatusReject")).Visible = false;
-                ((Label)gvInvestor.Rows[i].FindControl("lblAppRejStatus")).Visible = true;
-                ((Label)gvInvestor.Rows[i].FindControl("lblAppRejStatus")).Text = "Approved";
-                ((TextBox)gvInvestor.Rows[i].FindControl("txtRemark")).Visible = false;
-                ((Label)gvInvestor.Rows[i].FindControl("lblRemarks")).Visible = true;
+                ((Label)gvInvestor.Rows[i].FindControl("LblAppRejStatus")).Visible = true;
+                ((Label)gvInvestor.Rows[i].FindControl("LblAppRejStatus")).Text = "Approved";
+                ((TextBox)gvInvestor.Rows[i].FindControl("TxtRemark")).Visible = false;
+                ((Label)gvInvestor.Rows[i].FindControl("LblRemarks")).Visible = true;
             }
-            if (lblverfied.Text == "1")
+            if (LblVerfied.Text == "1")
             {
-                ((Image)gvInvestor.Rows[i].FindControl("imgApprStatus")).Visible = true;
-                ((Image)gvInvestor.Rows[i].FindControl("imgApprStatus")).ImageUrl = "~/images/verification-symbol.png";
+                ((Image)gvInvestor.Rows[i].FindControl("ImgApprStatus")).Visible = true;
+                ((Image)gvInvestor.Rows[i].FindControl("ImgApprStatus")).ImageUrl = "~/images/verification-symbol.png";
             }
             else
             {
-                ((Image)gvInvestor.Rows[i].FindControl("imgApprStatus")).Visible = true;
-                ((Image)gvInvestor.Rows[i].FindControl("imgApprStatus")).ImageUrl = "~/images/cancel-square.png";
+                ((Image)gvInvestor.Rows[i].FindControl("ImgApprStatus")).Visible = true;
+                ((Image)gvInvestor.Rows[i].FindControl("ImgApprStatus")).ImageUrl = "~/images/cancel-square.png";
             }
         }
     }
@@ -305,20 +304,20 @@ public partial class Investor_ViewInvestor :SessionCheck
     {
         if (gvInvestor.Rows.Count > 0)
         {
-            this.lblPaging.Visible = true;
+            this.LblPaging.Visible = true;
             lbtnAll.Visible = true;
             if (gvInvestor.PageIndex + 1 == gvInvestor.PageCount)
             {
-                this.lblPaging.Text = "Results <b>" + gvInvestor.Rows[0].Cells[0].Text + "</b> - <b>" + intRetVal + "</b> Of <b>" + count + "</b>";
+                this.LblPaging.Text = "Results <b>" + gvInvestor.Rows[0].Cells[0].Text + "</b> - <b>" + intRetVal + "</b> Of <b>" + count + "</b>";
             }
             else
             {
-                this.lblPaging.Text = "Results <b>" + gvInvestor.Rows[0].Cells[0].Text + "</b> - <b>" + (int.Parse(gvInvestor.Rows[0].Cells[0].Text) + (gvInvestor.PageSize - 1)) + "</b> Of <b>" + count + "</b>";
+                this.LblPaging.Text = "Results <b>" + gvInvestor.Rows[0].Cells[0].Text + "</b> - <b>" + (int.Parse(gvInvestor.Rows[0].Cells[0].Text) + (gvInvestor.PageSize - 1)) + "</b> Of <b>" + count + "</b>";
             }
         }
         else
         {
-            this.lblPaging.Visible = false;
+            this.LblPaging.Visible = false;
             lbtnAll.Visible = false;
         }
     }
