@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MISAllstatusRptDtls.aspx.cs"
-    Inherits="Portal_MISReport_MISAllstatusRptDtls" %>
+    Inherits="Portal_MISReport_MISAllstatusRptDtls" EnableEventValidation="false" %>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
@@ -41,16 +41,16 @@
     </div>
     <div class="table-responsive" style="overflow: hidden;">
         <div style="text-align: right; width: 100%; text-align: right;" class="NOPRINT pagelist">
-            <asp:Label ID="lblDetails" runat="server"></asp:Label>
-            <asp:DropDownList ID="ddlNoOfRec" ToolTip="Page Size" Width="80px" runat="server"
+            <asp:Label ID="Lbl_Details" runat="server"></asp:Label>
+            <asp:DropDownList ID="DrpDwn_NoOfRec" ToolTip="Page Size" Width="80px" runat="server"
                 AutoPostBack="True" OnSelectedIndexChanged="ddlNoOfRec_SelectedIndexChanged"
                 CssClass="form-control NOPRINT" Style="display: inline">
             </asp:DropDownList>
         </div>
-        <asp:Label ID="lblSearchDetails" runat="server"></asp:Label>
+        <asp:Label ID="Lbl_Search_Details" runat="server"></asp:Label>
         <br /><br />
-        <asp:GridView ID="grdPealDetails" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
-            CssClass="table table-bordered table-responsive" ShowFooter="true" OnRowDataBound="grdPealDetails_RowDataBound">
+        <asp:GridView ID="GrdPealDetails" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
+            CssClass="table table-bordered table-responsive" ShowFooter="true" OnRowDataBound="GrdPealDetails_RowDataBound">
             <Columns>
                 <asp:TemplateField HeaderText="Sl#">
                     <ItemTemplate>
@@ -91,7 +91,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <%--   <asp:HiddenField ID="HiddenField1" runat="server" Value="Blank Value" />--%>
-            <asp:HiddenField ID="hdnPgindex" runat="server" Value="Blank Value" />
+            <asp:HiddenField ID="Hdn_Pgindex" runat="server" Value="Blank Value" />
         </div>
     </div>
     </form>

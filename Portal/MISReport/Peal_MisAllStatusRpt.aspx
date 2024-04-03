@@ -42,13 +42,13 @@
                 toDate = new Date();
             }
 
-            $("#" + appendId + "txtFromDate").datepicker({
+            $("#" + appendId + "Txt_From_Date").datepicker({
                 format: "dd-M-yyyy",
                 changeMonth: true,
                 changeYear: true,
                 autoclose: true
             }).datepicker("setDate", fromDate);
-            $("#" + appendId + "txtToDate").datepicker({
+            $("#" + appendId + "Txt_To_Date").datepicker({
                 format: "dd-M-yyyy",
                 changeMonth: true,
                 changeYear: true,
@@ -80,7 +80,7 @@
                 Actq = 'q';
             }
             if (dstid == "0") {
-                var e = document.getElementById("ContentPlaceHolder1_ddlDistrict");
+                var e = document.getElementById("ContentPlaceHolder1_DrpDwn_District");
                 var dstid = e.options[e.selectedIndex].value;
             }
             else {
@@ -99,13 +99,13 @@
             else {
                 intProjectType = 0;
             }
-            var fDate = $("#ContentPlaceHolder1_txtFromDate").val();
-            var tDate = $("#ContentPlaceHolder1_txtToDate").val();
+            var fDate = $("#ContentPlaceHolder1_Txt_From_Date").val();
+            var tDate = $("#ContentPlaceHolder1_Txt_To_Date").val();
 
-            var e = document.getElementById("ContentPlaceHolder1_ddlSector");
+            var e = document.getElementById("ContentPlaceHolder1_DrpDwn_Sector");
             var Secid = e.options[e.selectedIndex].value;
 
-            var e = document.getElementById("ContentPlaceHolder1_drpInvestmentAmt");
+            var e = document.getElementById("ContentPlaceHolder1_DrpDwn_InvestmentAmt");
             try {
                 var InvAmt = e.options[e.selectedIndex].value;
             }
@@ -123,8 +123,8 @@
         /*-----------------------------------------------------------------------*/
 
         function ValidatePage() {
-            var fDate = $("#ContentPlaceHolder1_txtFromDate").val();
-            var tDate = $("#ContentPlaceHolder1_txtToDate").val();
+            var fDate = $("#ContentPlaceHolder1_Txt_From_Date").val();
+            var tDate = $("#ContentPlaceHolder1_Txt_To_Date").val();
             if (fDate == null || fDate == undefined || fDate == '') {
                 jAlert('<strong>Please select from date.</strong>', 'GO-SWIFT');
                 return false;
@@ -208,7 +208,7 @@
                                     <div class="col-sm-3">
                                         <label for="Country">
                                             District</label>
-                                        <asp:DropDownList CssClass="form-control" TabIndex="16" ID="ddlDistrict" runat="server">
+                                        <asp:DropDownList CssClass="form-control" TabIndex="16" ID="DrpDwn_District" runat="server">
                                             <asp:ListItem Value="0">---Select---</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
@@ -217,7 +217,7 @@
                                             From Date
                                         </label>
                                         <div class="input-group  date datePicker">
-                                            <asp:TextBox runat="server" class="form-control" ID="txtFromDate" name="txtFromDate"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control" ID="Txt_From_Date" name="txtFromDate"></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@
                                             To Date
                                         </label>
                                         <div class="input-group  date datePicker">
-                                            <asp:TextBox runat="server" class="form-control" ID="txtToDate"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control" ID="Txt_To_Date"></asp:TextBox>
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
                                         <label for="State">
                                             Investment Amount
                                         </label>
-                                        <asp:DropDownList ID="drpInvestmentAmt" runat="server" CssClass="form-control" TabIndex="5">
+                                        <asp:DropDownList ID="DrpDwn_InvestmentAmt" runat="server" CssClass="form-control" TabIndex="5">
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -242,7 +242,7 @@
                                     <div class="col-sm-3" runat="server" id="Div1">
                                         <label for="State">
                                             Sector of activity</label>
-                                        <asp:DropDownList ID="ddlSector" runat="server" CssClass="form-control" TabIndex="5">
+                                        <asp:DropDownList ID="DrpDwn_Sector" runat="server" CssClass="form-control" TabIndex="5">
                                             <asp:ListItem Text="--Select--" Value="0"></asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
@@ -396,9 +396,9 @@
                                     </Columns>
                                 </asp:GridView>
                                 <div class="table-responsive" id="viewTable" runat="server">
-                                    <asp:GridView ID="GridView1" runat="server" class="table table-bordered table-hover"
+                                    <asp:GridView ID="Grid_Excel_Export" runat="server" class="table table-bordered table-hover"
                                         AutoGenerateColumns="false" EmptyDataText="No Record(s) found...." ShowFooter="true"
-                                        OnRowDataBound="GridView1_RowDataBound" DataKeyNames="intDistrictId">
+                                        OnRowDataBound="Grid_Excel_Export_RowDataBound" DataKeyNames="intDistrictId">
                                         <Columns>
                                             <asp:TemplateField HeaderText="Sl#">
                                                 <ItemTemplate>

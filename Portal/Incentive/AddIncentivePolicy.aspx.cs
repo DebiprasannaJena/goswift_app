@@ -25,26 +25,35 @@ using BusinessLogicLayer.Incentive;
 using DataAcessLayer.Incentive;
 using EntityLayer.Incentive;
 using System.Collections.Specialized;
+using System.Configuration;
 
 public partial class Master_AddIncentive : System.Web.UI.Page
 {
     /////// Get Project Name From Web.Config File   
-    string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
+   readonly string StrProjName = ConfigurationManager.AppSettings["ProjectName"].ToString();
 
     /////// Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        try 
+        { 
+        
+           if (!IsPostBack)
+           {
+               Txt_Policy_Effect_Date.Attributes.Add("readonly", "readonly");
+               FillSector();
+           
+               if (Request.QueryString["ID"] != null)
+               {
+                   FillEditData();
+                   Btn_Submit.Text = "Update";
+                   Btn_Reset.Text = "Cancel";
+               }
+           }
+        }
+        catch(Exception ex)
         {
-            Txt_Policy_Effect_Date.Attributes.Add("readonly", "readonly");
-            fillSector();
-
-            if (Request.QueryString["ID"] != null)
-            {
-                fillEditData();
-                Btn_Submit.Text = "Update";
-                Btn_Reset.Text = "Cancel";
-            }
+            Util.LogError(ex, "Incentive");
         }
     }
 
@@ -61,17 +70,16 @@ public partial class Master_AddIncentive : System.Web.UI.Page
             {
                 if (FU_Policy_Doc.HasFile)
                 {
-                    string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PLCDOC";
-                    UploadDocument(FU_Policy_Doc, Hid_Policy_Doc_File_Name, strFileName, Hyp_View_Policy_Doc, Lbl_Msg_Policy_Doc, LnkBtn_Delete_Policy_Doc, "PolicyDoc");
+                    string StrFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_PLCDOC";
+                    UploadDocument(FU_Policy_Doc, Hid_Policy_Doc_File_Name, StrFileName, Hyp_View_Policy_Doc, Lbl_Msg_Policy_Doc, LnkBtn_Delete_Policy_Doc, "PolicyDoc");
                 }
             }
-            else if (string.Equals(lnk.ID, LnkBtn_Upload_Amend_Doc.ID))
+            else if (string.Equals(lnk.ID, LnkBtn_Upload_Amend_Doc.ID) && FU_Amendment_Doc.HasFile)
             {
-                if (FU_Amendment_Doc.HasFile)
-                {
-                    string strFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_AMENDDOC";
-                    UploadDocument(FU_Amendment_Doc, Hid_Amend_Doc_File_Name, strFileName, Hyp_View_Amend_Doc, Lbl_Msg_Amend_Doc, LnkBtn_Delete_Amend_Doc, "PolicyDoc");
-                }
+                
+                    string StrFileName = string.Format("{0:yyyyMMddhhmmss}", DateTime.Now) + "_AMENDDOC";
+                    UploadDocument(FU_Amendment_Doc, Hid_Amend_Doc_File_Name, StrFileName, Hyp_View_Amend_Doc, Lbl_Msg_Amend_Doc, LnkBtn_Delete_Amend_Doc, "PolicyDoc");
+                
             }
         }
         catch (Exception ex)
@@ -100,45 +108,45 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         }
     }
     //// Method to Upload Document
-    private void UploadDocument(FileUpload FileUpload_Document, HiddenField Hid_File_Name, string strFileName, HyperLink Hyp_Document, Label Lbl_Upload_Msg, LinkButton LnkBtn_Delete_Doc, string strFoldername)
+    private void UploadDocument(FileUpload FileUpload_Document, HiddenField Hid_File_Name, string StrFileName, HyperLink Hyp_Document, Label Lbl_Upload_Msg, LinkButton LnkBtn_Delete_Doc, string StrFolderName)
     {
         try
         {
-            string strMainFolderPath = Server.MapPath(string.Format("../Incentive/{0}/", strFoldername));
-            if (!Directory.Exists(strMainFolderPath))
+            string StrMainFolderPath = Server.MapPath(string.Format("../Incentive/{0}/", StrFolderName));
+            if (!Directory.Exists(StrMainFolderPath))
             {
-                Directory.CreateDirectory(strMainFolderPath);
+                Directory.CreateDirectory(StrMainFolderPath);
             }
 
             if (FileUpload_Document.HasFile)
             {
-                string filename = string.Empty;
+                string FileName = string.Empty;
                 if (Path.GetExtension(FileUpload_Document.FileName).ToLower() != ".pdf")
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please upload .pdf file Only !!</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Please upload .pdf file Only .</strong>', '" + StrProjName + "'); </script>", false);
                     return;
                 }
 
                 if (!IsFileValid(FileUpload_Document))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid file type (or) File name may contain dots !!</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>Invalid file type (or) File name may contain dots.</strong>', '" + StrProjName + "'); </script>", false);
                     return;
                 }
 
                 int fileSize = FileUpload_Document.PostedFile.ContentLength;
                 if (fileSize > (4 * 1024 * 1024))
                 {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>File size is too large. Maximum file size permitted is 4 MB !!</strong>', '" + strProjName + "'); </script>", false);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('<strong>File size is too large. Maximum file size permitted is 4 MB .</strong>', '" + StrProjName + "'); </script>", false);
                     return;
                 }
                 else
                 {
-                    filename = strFileName + Path.GetExtension(FileUpload_Document.FileName);
+                    FileName = StrFileName + Path.GetExtension(FileUpload_Document.FileName);
                 }
 
-                FileUpload_Document.SaveAs(strMainFolderPath + filename);
-                Hid_File_Name.Value = filename;
-                Hyp_Document.NavigateUrl = string.Format("../Incentive/{0}/{1}", strFoldername, filename);
+                FileUpload_Document.SaveAs(StrMainFolderPath + FileName);
+                Hid_File_Name.Value = FileName;
+                Hyp_Document.NavigateUrl = string.Format("../Incentive/{0}/{1}", StrFolderName, FileName);
                 Hyp_Document.Visible = true;
                 LnkBtn_Delete_Doc.Visible = true;
                 Lbl_Upload_Msg.Visible = true;
@@ -151,16 +159,16 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         }
     }
     //// Method to Delete Document
-    private void UpdFileRemove(HiddenField Hid_File_Name, LinkButton LnkBtn_Upload_Doc, LinkButton LnkBtn_Delete_Doc, HyperLink Hyp_Document, Label Lbl_Upload_Msg, FileUpload FileUpload_Document, string strFolderName)
+    private void UpdFileRemove(HiddenField Hid_File_Name, LinkButton LnkBtn_Upload_Doc, LinkButton LnkBtn_Delete_Doc, HyperLink Hyp_Document, Label Lbl_Upload_Msg, FileUpload FileUpload_Document, string StrFolderName)
     {
         try
         {
-            string fileName = Hid_File_Name.Value;
-            string path = string.Format("../Incentive/{0}/{1}", strFolderName, fileName);
-            string completePath = Server.MapPath(path);
-            if (File.Exists(completePath))
+            string FileName = Hid_File_Name.Value;
+            string Path = string.Format("../Incentive/{0}/{1}", StrFolderName, FileName);
+            string CompletePath = Server.MapPath(Path);
+            if (File.Exists(CompletePath))
             {
-                File.Delete(completePath);
+                File.Delete(CompletePath);
             }
 
             Hid_File_Name.Value = "";
@@ -180,18 +188,15 @@ public partial class Master_AddIncentive : System.Web.UI.Page
     {
         string[] allowedImageTyps = { "application/pdf" };
         string[] allowedExtension = { ".pdf" };
-        StringCollection imageTypes = new StringCollection();
-        StringCollection imageExtension = new StringCollection();
-        imageTypes.AddRange(allowedImageTyps);
-        imageExtension.AddRange(allowedExtension);
-        string strFiletype = MimeType.GetMimeType(FileUpload1.FileBytes, FileUpload1.FileName);
-        string fileExt = System.IO.Path.GetExtension(FileUpload1.FileName);// 
-        int count = FileUpload1.FileName.Count(f => f == '.');
+        StringCollection ImageTypes = new StringCollection();
+        StringCollection ImageExtension = new StringCollection();
+        ImageTypes.AddRange(allowedImageTyps);
+        ImageExtension.AddRange(allowedExtension);
+        string StrFiletype = MimeType.GetMimeType(FileUpload1.FileBytes, FileUpload1.FileName);
+        string FileExt = Path.GetExtension(FileUpload1.FileName);
+        int Count = FileUpload1.FileName.Count(f => f == '.');
 
-        string filename = System.IO.Path.GetFileNameWithoutExtension(FileUpload1.FileName);
-        CommonFunctions cmmf = new CommonFunctions();
-
-        if (imageTypes.Contains(strFiletype) && imageExtension.Contains(fileExt) && count == 1)
+        if (ImageTypes.Contains(StrFiletype) && ImageExtension.Contains(FileExt) && Count == 1)
         {
             return true;
         }
@@ -207,14 +212,14 @@ public partial class Master_AddIncentive : System.Web.UI.Page
     #region FunctionUsed
 
     //// Bind Sector Name
-    private void fillSector()
+    private void FillSector()
     {
-        IncentiveMaster objEntity = new IncentiveMaster();
-        IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
+        IncentiveMaster ObjEntity = new IncentiveMaster();
+        IncentiveMasterBusinessLayer ObjBAL = new IncentiveMasterBusinessLayer();
         try
         {
-            objEntity.Action = "L";
-            objBAL.BindDropdown(DrpDwn_Sector, objEntity);
+            ObjEntity.Action = "L";
+            ObjBAL.BindDropdown(DrpDwn_Sector, ObjEntity);
         }
         catch (Exception ex)
         {
@@ -222,20 +227,20 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         }
         finally
         {
-            objEntity = null;
-            objBAL = null;
+            ObjEntity = null;
+            ObjBAL = null;
         }
     }
     //// Bind Filtered SubSector
-    private void fillSubSectorFiltered()
+    private void FillSubSectorFiltered()
     {
-        IncentiveMaster objEntity = new IncentiveMaster();
-        IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
+        IncentiveMaster ObjEntity = new IncentiveMaster();
+        IncentiveMasterBusinessLayer ObjBAL = new IncentiveMasterBusinessLayer();
         try
         {
-            objEntity.Action = "sub";
-            objEntity.Param_2 = DrpDwn_Sector.SelectedValue;
-            objBAL.BindDropdown(DrpDwn_Sub_Sector, objEntity);
+            ObjEntity.Action = "sub";
+            ObjEntity.Param_2 = DrpDwn_Sector.SelectedValue;
+            ObjBAL.BindDropdown(DrpDwn_Sub_Sector, ObjEntity);
         }
         catch (Exception ex)
         {
@@ -243,24 +248,24 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         }
         finally
         {
-            objEntity = null;
-            objBAL = null;
+            ObjEntity = null;
+            ObjBAL = null;
         }
     }
     ///// Fill Data for Edit
-    private void fillEditData()
+    private void FillEditData()
     {
         DataSet ds = new DataSet();
-        IncentiveMasterBusinessLayer objLayer = new IncentiveMasterBusinessLayer();
-        Policy_Master_Entity objEntity = new Policy_Master_Entity();
+        IncentiveMasterBusinessLayer ObjLayer = new IncentiveMasterBusinessLayer();
+        Policy_Master_Entity ObjEntity = new Policy_Master_Entity();
         try
         {
-            objEntity.strAction = "E";
-            objEntity.intPageNo = 0;
-            objEntity.intPageSize = 0;
-            objEntity.intPolicyId = Convert.ToInt32(Request.QueryString["ID"].ToString());
+            ObjEntity.strAction = "E";
+            ObjEntity.intPageNo = 0;
+            ObjEntity.intPageSize = 0;
+            ObjEntity.intPolicyId = Convert.ToInt32(Request.QueryString["ID"].ToString());
 
-            ds = objLayer.Policy_Master_View(objEntity);
+            ds = ObjLayer.Policy_Master_View(ObjEntity);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Grd_Section.DataSource = ds.Tables[1];
@@ -273,7 +278,7 @@ public partial class Master_AddIncentive : System.Web.UI.Page
                 DrpDwn_Sector.SelectedValue = ds.Tables[0].Rows[0]["intSecTagId"].ToString();
 
                 ////// Fill Filtered Sub-Sector
-                fillSubSectorFiltered();
+                FillSubSectorFiltered();
 
                 DrpDwn_Sub_Sector.SelectedValue = ds.Tables[0].Rows[0]["intSubSecTagId"].ToString();
                 DrpDwn_Policy_Category.SelectedValue = ds.Tables[0].Rows[0]["intPlcCat"].ToString();
@@ -315,15 +320,10 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         {
             Util.LogError(ex, "Incentive");
         }
-        finally
-        {
-            ds = null;
-            objLayer = null;
-            objEntity = null;
-        }
+        
     }
     ///// Clear Input Fields
-    private void clearFields()
+    private void ClearFields()
     {
         Txt_Description.Text = "";
         Txt_Policy_Code.Text = "";
@@ -353,19 +353,19 @@ public partial class Master_AddIncentive : System.Web.UI.Page
     //// Button Submit and Update
     protected void Btn_Submit_Click(object sender, EventArgs e)
     {
-        IncentiveMasterBusinessLayer objBAL = new IncentiveMasterBusinessLayer();
-        Policy_Master_Entity objEntity = new Policy_Master_Entity();
+        IncentiveMasterBusinessLayer ObjBAL = new IncentiveMasterBusinessLayer();
+        Policy_Master_Entity ObjEntity = new Policy_Master_Entity();
         try
         {
             if (Request.QueryString["ID"] == null)
             {
-                objEntity.strAction = "A";
-                objEntity.intPolicyId = 0;
+                ObjEntity.strAction = "A";
+                ObjEntity.intPolicyId = 0;
             }
             else
             {
-                objEntity.strAction = "U";
-                objEntity.intPolicyId = Convert.ToInt32(Request.QueryString["ID"].ToString());
+                ObjEntity.strAction = "U";
+                ObjEntity.intPolicyId = Convert.ToInt32(Request.QueryString["ID"].ToString());
             }
 
             /*---------------------------------------------------------------------*/
@@ -373,7 +373,7 @@ public partial class Master_AddIncentive : System.Web.UI.Page
 
             #region Policy Section Details
 
-            List<SectionMasterItem> listSection = new List<SectionMasterItem>();
+            List<SectionMasterItem> ListSection = new List<SectionMasterItem>();
 
             for (int i = 0; i < Grd_Section.Rows.Count; i++)
             {
@@ -385,110 +385,106 @@ public partial class Master_AddIncentive : System.Web.UI.Page
                 objItem.vchSectionNo = Lbl_Section_No.Text;
                 objItem.vchSectionName = Lbl_Section_Name.Text;
 
-                listSection.Add(objItem);
+                ListSection.Add(objItem);
             }
 
-            objEntity.listSectionItem = listSection;
+            ObjEntity.listSectionItem = ListSection;
 
             #endregion
 
             /*---------------------------------------------------------------------*/
 
-            objEntity.strPolicyCode = Convert.ToString(Txt_Policy_Code.Text.Trim());
-            objEntity.strPolicyName = Convert.ToString(Txt_Policy_Name.Text.Trim());
-            objEntity.strEffectiveDate = Convert.ToString(Txt_Policy_Effect_Date.Text);
+            ObjEntity.strPolicyCode = Convert.ToString(Txt_Policy_Code.Text.Trim());
+            ObjEntity.strPolicyName = Convert.ToString(Txt_Policy_Name.Text.Trim());
+            ObjEntity.strEffectiveDate = Convert.ToString(Txt_Policy_Effect_Date.Text);
 
             /*---------------------------------------------------------------------*/
 
             if (Hid_Policy_Doc_File_Name.Value != "")
             {
-                objEntity.strPolicyDocs = Hid_Policy_Doc_File_Name.Value;
+                ObjEntity.strPolicyDocs = Hid_Policy_Doc_File_Name.Value;
             }
             else
             {
-                objEntity.strPolicyDocs = null;
+                ObjEntity.strPolicyDocs = null;
             }
 
             /*---------------------------------------------------------------------*/
 
             if (Hid_Amend_Doc_File_Name.Value != "")
             {
-                objEntity.strAmendmentDoc = Hid_Amend_Doc_File_Name.Value;
+                ObjEntity.strAmendmentDoc = Hid_Amend_Doc_File_Name.Value;
             }
             else
             {
-                objEntity.strAmendmentDoc = null;
+                ObjEntity.strAmendmentDoc = null;
             }
 
             /*---------------------------------------------------------------------*/
 
-            objEntity.strDecription = Convert.ToString(Txt_Description.Text);
+            ObjEntity.strDecription = Convert.ToString(Txt_Description.Text);
 
             /*---------------------------------------------------------------------*/
 
             if (DrpDwn_Sector.SelectedIndex > 0)
             {
-                objEntity.intSectorId = Convert.ToInt32(DrpDwn_Sector.SelectedValue);
+                ObjEntity.intSectorId = Convert.ToInt32(DrpDwn_Sector.SelectedValue);
             }
             else
             {
-                objEntity.intSectorId = 0;
+                ObjEntity.intSectorId = 0;
             }
 
             /*---------------------------------------------------------------------*/
 
             if (DrpDwn_Sub_Sector.SelectedIndex > 0)
             {
-                objEntity.intSubSectorId = Convert.ToInt32(DrpDwn_Sub_Sector.SelectedValue);
+                ObjEntity.intSubSectorId = Convert.ToInt32(DrpDwn_Sub_Sector.SelectedValue);
             }
             else
             {
-                objEntity.intSubSectorId = 0;
+                ObjEntity.intSubSectorId = 0;
             }
 
             /*---------------------------------------------------------------------*/
 
-            objEntity.intPolicyCat = Convert.ToInt32(DrpDwn_Policy_Category.SelectedValue);
-            objEntity.intCreatedBy = Convert.ToInt32(Session["UserId"].ToString());
+            ObjEntity.intPolicyCat = Convert.ToInt32(DrpDwn_Policy_Category.SelectedValue);
+            ObjEntity.intCreatedBy = Convert.ToInt32(Session["UserId"].ToString());
 
             /*---------------------------------------------------------------------*/
             ///// Add and Update
-            string strRetvalue = objBAL.Policy_Master_AED(objEntity);
-            if (strRetvalue == "1")
+            string StrRetvalue = ObjBAL.Policy_Master_AED(ObjEntity);
+            if (StrRetvalue == "1")
             {
-                clearFields();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage(strRetvalue) + " !</strong>','" + strProjName + "')", true);
+                ClearFields();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage(StrRetvalue) + ".</strong>','" + StrProjName + "')", true);
             }
-            else if (strRetvalue == "2")
+            else if (StrRetvalue == "2")
             {
-                clearFields();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script>alertredirect('<strong>" + Messages.ShowMessage(strRetvalue) + "!</strong>');</script>", false);
+                ClearFields();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script>alertredirect('<strong>" + Messages.ShowMessage(StrRetvalue) + ".</strong>');</script>", false);
             }
-            else if (strRetvalue == "5")
+            else if (StrRetvalue == "5")
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage(strRetvalue) + " !</strong>','" + strProjName + "')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage(StrRetvalue) + ".</strong>','" + StrProjName + "')", true);
             }
             else
             {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage("4") + " !</strong>','" + strProjName + "')", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>" + Messages.ShowMessage("4") + ".</strong>','" + StrProjName + "')", true);
             }
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "Incentive");
         }
-        finally
-        {
-            objBAL = null;
-            objEntity = null;
-        }
+        
     }
     //// Button Reset and Cancel
     protected void Btn_Reset_Click(object sender, EventArgs e)
     {
         if (Btn_Reset.Text == "Reset")
         {
-            clearFields();
+            ClearFields();
         }
         else if (Btn_Reset.Text == "Cancel")
         {
@@ -524,10 +520,7 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         {
             Util.LogError(ex, "Incentive");
         }
-        finally
-        {
-            table = null;
-        }
+        
     }
     //// ImageButton Delete
     protected void ImgBtn_Delete_Section_Click(object sender, ImageClickEventArgs e)
@@ -535,8 +528,8 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         DataTable table = new DataTable();
         try
         {
-            ImageButton imgbtn = (ImageButton)sender;
-            int RowID = Convert.ToInt16(imgbtn.CommandArgument);
+            ImageButton ImgBtn = (ImageButton)sender;
+            int RowID = Convert.ToInt16(ImgBtn.CommandArgument);
 
             table.Columns.Add("vchSectionNo", typeof(string));
             table.Columns.Add("vchSectionName", typeof(string));
@@ -559,14 +552,11 @@ public partial class Master_AddIncentive : System.Web.UI.Page
         {
             Util.LogError(ex, "Incentive");
         }
-        finally
-        {
-            table = null;
-        }
+        
     }
     //// DropDownList SelectedIndexChanged
     protected void DrpDwn_Sector_SelectedIndexChanged(object sender, EventArgs e)
     {
-        fillSubSectorFiltered();
+        FillSubSectorFiltered();
     }
 }
