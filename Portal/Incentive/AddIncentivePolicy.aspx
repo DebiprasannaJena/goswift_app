@@ -21,22 +21,22 @@
     </asp:ScriptManager>
     <div class="content-wrapper">
         <div class="content-header">
-            <%--<section class="content-header">--%>
+
             <div class="header-icon">
                 <i class="fa fa-dashboard"></i>
             </div>
             <div class="header-title">
-                <h1>
-                    Manage Incentive Policies</h1>
+                <h1>Manage Incentive Policies</h1>
                 <ul class="breadcrumb">
                     <li><a href="javscript:void(0)"><i class="fa fa-home"></i></a></li>
-                    <li><a>Incentive Policy</a></li><li><a>Add Policy</a></li>
+                    <li><a>Incentive Policy</a></li>
+                    <li><a>Add Policy</a></li>
                 </ul>
             </div>
-            <%--</section>--%>
+
         </div>
         <div class="content">
-            <%--<section class="content">--%>
+
             <div class="row">
                 <div class="col-sm-12">
                     <div class="panel panel-bd lobidisable">
@@ -50,8 +50,7 @@
                                 </a>
                             </div>
                         </div>
-                        <%--  <asp:UpdatePanel ID="udpDiv" runat="server">
-                            <ContentTemplate>--%>
+
                         <div class="ibox-content">
                             <br />
                             <div class="form-group">
@@ -60,12 +59,7 @@
                                 <div class="col-md-3 col-sm-3">
                                     <span class="colon">:</span>
                                     <asp:TextBox ID="Txt_Policy_Code" CssClass="form-control" MaxLength="50" runat="server"></asp:TextBox>
-                                   <%-- <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender27" runat="server" TargetControlID="Txt_Policy_Code"
-                                        FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom" ValidChars=",-/. ">
-                                    </cc1:FilteredTextBoxExtender>--%>
-                                    <%--  <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender151t1" runat="server" FilterType="Custom,UppercaseLetters,LowercaseLetters,Numbers"
-                                             TargetControlID="Txt_Policy_Code">
-                                            </cc1:FilteredTextBoxExtender>--%>
+
                                     <span class="mandetory">*</span>
                                 </div>
                                 <label class="col-md-offset-1 col-md-2 col-sm-3">
@@ -73,10 +67,7 @@
                                 <div class="col-md-3 col-sm-3">
                                     <span class="colon">:</span>
                                     <asp:TextBox ID="Txt_Policy_Name" MaxLength="200" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <%--  <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender5" runat="server" Enabled="True"
-                                                FilterType="Custom,UppercaseLetters,LowercaseLetters,Numbers" ValidChars="/-()\. "
-                                                FilterMode="ValidChars" TargetControlID="Txt_Policy_Name">
-                                            </cc1:FilteredTextBoxExtender>--%>
+
                                     <span class="mandetory">*</span>
                                 </div>
                                 <div class="clearfix">
@@ -185,14 +176,11 @@
                                     <asp:TextBox ID="Txt_Description" Rows="5" onKeyUp="limitText(this,this.form.count,500);"
                                         TextMode="MultiLine" MaxLength="500" CssClass="form-control" runat="server" onKeyDown="limitText(this,this.form.count,500);"></asp:TextBox>
                                     <a href="#" data-toggle="tooltip" class="fieldinfo" title="It can accept both alphabets and numbers.Special Characters like !  # $ % & ( )  + , - . / : ; < = > ? @ [ \ ] are allowed">
-                                        <i class="fa fa-question-circle" aria-hidden="true"></i></a><small><small>Maximum
-                                            <input name="count" class="inputCss" readonly="readonly" style="font-weight: bold;
-                                                color: red; width: 26px;" type="text" value="500" />
+                                        <i class="fa fa-question-circle" aria-hidden="true"></i></a><small>Maximum
+                                            <input name="count" class="inputCss" readonly="readonly" style="font-weight: bold; color: red; width: 26px;"
+                                                type="text" value="500" />
                                             Characters Left</small>
-                                            <%-- <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender9" runat="server" Enabled="True"
-                                                        FilterType="Custom,UppercaseLetters,LowercaseLetters,Numbers" ValidChars="!# $ % & ( ) + , - . / : ; < = > ? @ [ \ ]  "
-                                                        FilterMode="ValidChars" TargetControlID="Txt_Description">
-                                                    </cc1:FilteredTextBoxExtender>--%>
+
                                 </div>
                                 <div class="clearfix">
                                 </div>
@@ -202,22 +190,17 @@
                                 <div class="col-sm-12">
                                     <table width="100%" class="table table-bordered">
                                         <tr>
-                                            <td width="5%">
-                                                Slno
+                                            <td width="5%">Slno
                                             </td>
-                                            <td width="20%">
-                                                Policy Section No.
+                                            <td width="20%">Policy Section No.
                                             </td>
-                                            <td>
-                                                Policy Section Name
+                                            <td>Policy Section Name
                                             </td>
-                                            <td width="10%">
-                                                Add More
+                                            <td width="10%">Add More
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                -
+                                            <td>-
                                             </td>
                                             <td>
                                                 <asp:TextBox ID="Txt_Policy_Section" MaxLength="50" CssClass="form-control" runat="server"></asp:TextBox>
@@ -276,17 +259,11 @@
                             </div>
                         </div>
                         <br />
-                        <%-- </ContentTemplate>
-                            <Triggers>
-                                <asp:PostBackTrigger ControlID="Btn_Submit" />
-                                <asp:PostBackTrigger ControlID="LnkBtn_Upload_Policy_Doc" />
-                                <asp:PostBackTrigger ControlID="LnkBtn_Upload_Amend_Doc" />
-                            </Triggers>
-                        </asp:UpdatePanel>--%>
+
                     </div>
                 </div>
             </div>
-            <%--</section>--%>
+
         </div>
     </div>
     <script type="text/javascript">
@@ -353,7 +330,7 @@
             }
 
             if ($('#ContentPlaceHolder1_Hid_Policy_Doc_File_Name').val() == '') {
-                jAlert('<strong>Please Upload Policy Document !!</strong>', projname);
+                jAlert('<strong>Please Upload Policy Document.</strong>', projname);
                 $("#popup_ok").click(function () { $("#ContentPlaceHolder1_FU_Policy_Doc").focus(); });
                 return false;
             }
@@ -369,7 +346,7 @@
             if ($("#ContentPlaceHolder1_Grd_Section tr").length > 0) {
             }
             else {
-                jAlert('<strong>Please Insert Atleast One Record for Policy Section !!</strong>', projname);
+                jAlert('<strong>Please Insert Atleast One Record for Policy Section.</strong>', projname);
                 return false;
             }
         }
@@ -425,28 +402,7 @@
             });
         }
 
-        /*--------------------------------------------------------------*/
-
-        //        function ConfirmAction(cntr) {
-        //            var strValue = $('#' + cntr).val();
-        //            if (strValue == 'Update') {
-
-        //                if (!confirm('Are You Sure To Update?')) {
-        //                    return false;
-        //                }
-        //                else {
-        //                    return true;
-        //                }
-        //            }
-        //            else {
-        //                if (!confirm('Are You Sure To Save?')) {
-        //                    return false;
-        //                }
-        //                else {
-        //                    return true;
-        //                }
-        //            }
-        //        }
+        
 
         function TestFunction(str) {
             alert('hi');
