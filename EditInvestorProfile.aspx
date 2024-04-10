@@ -903,6 +903,8 @@
                                                     </div>
                                                     <div runat="server" id="Div_CIN_LLPIN_Btn">
                                                         <asp:Button ID="BtnValidateCinLlpin" runat="server" Text="Validate CIN/LLPIN Number" CssClass=" btn btn-warning" OnClick="BtnValidateCinLlpin_Click" OnClientClick="return CinLlipnValiDate();" />
+                                                        <asp:Image ID="Img_Success" runat="server" ImageUrl="~/images/successfulTick.png" />
+                                                        <asp:Label runat="server" ID="Lbl_CompName" ForeColor="Blue"></asp:Label>
                                                     </div>
                                                 </div>
                                                 <asp:HiddenField ID="Hid_Cin_Llpin" runat="server" />

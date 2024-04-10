@@ -46,6 +46,7 @@ public partial class EditInvestorProfile : SessionCheck
         }
 
         /*------------------------------------------------------------------------*/
+       
 
         if (!IsPostBack)
         {
@@ -56,6 +57,7 @@ public partial class EditInvestorProfile : SessionCheck
 
                 try
                 {
+                    Img_Success.Visible = false;
                     ob.BindDropDown(DrpDwn_Salutation, "ID", "VCH_SALUTATION", "Select ID, VCH_SALUTATION from M_SALUTATION");
                     FillEntityType();
                     FillRegdCountry();
@@ -105,6 +107,7 @@ public partial class EditInvestorProfile : SessionCheck
                 {
                     if (Hid_Cin_Llpin.Value == "")
                     {
+                        Img_Success.Visible = false;
                         BtnValidateCinLlpin.Focus();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
                         return;
@@ -112,6 +115,7 @@ public partial class EditInvestorProfile : SessionCheck
 
                     if (Hid_Cin_Llpin.Value == "No Data")
                     {
+                        Img_Success.Visible = false;
                         BtnValidateCinLlpin.Focus();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN/LLPIN !</strong>');", true);
                         return;
@@ -129,12 +133,14 @@ public partial class EditInvestorProfile : SessionCheck
                 {
                     if (intEntityTypeValue == 1 && StrCinLlpinNumber != Txt_CIN_Number.Text)
                     {
+                        Img_Success.Visible = false;
                         BtnValidateCinLlpin.Focus();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate CIN !</strong>');", true);
                         return;
                     }
                     else if (intEntityTypeValue == 2 && StrCinLlpinNumber != Txt_LLPIN_Number.Text)
                     {
+                        Img_Success.Visible = false;
                         BtnValidateCinLlpin.Focus();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please click on button to validate LLPIN !</strong>');", true);
                         return;
@@ -500,6 +506,8 @@ public partial class EditInvestorProfile : SessionCheck
                         if (StrRetval == "2")
                         {
                             ViewState["CinLlpinData"] = null;
+                            Img_Success.Visible = false;
+                            Lbl_CompName.Text = "";
                             if (Request.QueryString["app"] != null)
                             {
                                 if (Convert.ToString(Request.QueryString["app"]) == "CICG")
@@ -572,7 +580,7 @@ public partial class EditInvestorProfile : SessionCheck
     }
 
     /// <summary>
-    /// This function use fro Validate CIN and LLPIN numebr from MCA side
+    /// This function use for Validate CIN and LLPIN numebr from MCA side
     /// </summary>
     protected void BtnValidateCinLlpin_Click(object sender, EventArgs e)
     {
@@ -679,6 +687,8 @@ public partial class EditInvestorProfile : SessionCheck
                         if (Dataresponse.StatusCode == HttpStatusCode.OK)
                         {
                             string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
+                            
+
                             Hid_Cin_Llpin.Value = message;
 
                             Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + TokenResponse.StatusCode + " -[ResponseContent]:- " + Dataresponse.Content);
@@ -698,19 +708,32 @@ public partial class EditInvestorProfile : SessionCheck
                             }
                             else if (message.ToUpper() == "DATA FETCHED SUCCESSFULLY")
                             {
+                                var Response = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content);
+                                var Responsedata = (List<object>)Response["data"];
+                                string StrCompanyName = "";
+                                foreach (var item in Responsedata)
+                                {
+                                    var CompanyData = JsonConvert.DeserializeObject<CompanyData>(item.ToString());
+                                    StrCompanyName = CompanyData.companyName ;
+                                }
                                 if (strEntityType == "1")
                                 {
                                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_CIN_Number.Text;
+                                    Img_Success.Visible = true;
+                                    Lbl_CompName.Text = StrCompanyName;
                                 }
                                 else if (strEntityType == "2")
                                 {
                                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
+                                    Img_Success.Visible = true;
+                                    Lbl_CompName.Text = StrCompanyName;
                                 }
                                 else
                                 {
                                     ViewState["CinNumber"] = null;
+                                    Img_Success.Visible = false;
                                 }
 
                                 ///Don't update the CIN on the table here. Save when the user click on Update button.

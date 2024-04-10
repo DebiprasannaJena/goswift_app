@@ -83,4 +83,11 @@ namespace EntityLayer.Investor
 
         public string StrCinLlpinData  { get; set; }// add by anil
     }
+
+    public class CompanyData
+    {
+        public string CIN { get; set; }
+        public string companyName { get; set; }
+        
+    }
 }
