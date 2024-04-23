@@ -230,6 +230,11 @@ public partial class ApplicationDetails : SessionCheck
                     LnkServiceApply.NavigateUrl = ConfigurationManager.AppSettings["TreeTransitReapply"].ToString()+ "?appln_id="+lblApplctionNo.Text+ "&service_code="+svcid1+ "&UserId="+ StrInvestorId;
                     LnkServiceApply.Visible = true;
                 }
+                if(svcid1 == "16" && Status == "4") // for new Power connection reapply
+                {
+                    LnkServiceApply.NavigateUrl = ConfigurationManager.AppSettings["TreeTransitReapply"].ToString() + "?appln_id=" + lblApplctionNo.Text + "&service_code=" + svcid1 + "&UserId=" + StrInvestorId;
+                    LnkServiceApply.Visible = true;
+                }
 
                 //Added by manoj kumar behera
 
