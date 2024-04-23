@@ -236,6 +236,16 @@
                         <td colspan="2">
                             <hr style="border: 1px solid #15CCD9" />
                             <br />
+                            <asp:Button ID="Button5" runat="server" Text="Token generate" CssClass="btn btn-success" OnClick="Button5_Click"/>
+                            <asp:Label ID="Label5" runat="server"></asp:Label>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <hr style="border: 1px solid #15CCD9" />
+                            <br />
 
                             <asp:TextBox ID="TxtFilePath" runat="server" CssClass="form-control"></asp:TextBox>
                             <asp:Button ID="BtnGetFileName" runat="server" Text="Get File Names" CssClass="btn btn-primary"
@@ -245,6 +255,8 @@
                               
                         </td>
                     </tr>
+
+
                 </table>
 
                 <div class="table-responsive">
@@ -276,8 +288,16 @@
                             <br />
             <div>
                 <label>DWH Text decript</label> <asp:TextBox ID="Txt_Decript" runat="server" Width="300px" CssClass="form-control"></asp:TextBox>
-              <%--  <asp:Button ID="btn_decript" runat="server" Text="Decript" OnClick="btn_decript_Click"/>--%>
+                <%--<asp:Button ID="btn_decript" runat="server" Text="Decript" OnClick="btn_decript_Click"/>--%>
                 <label runat="server" id="lbl_decript"></label>
+            </div>
+
+            <hr style="border: 1px solid #15CCD9" />
+                            <br />
+            <div>
+                <label>CIN NUMBER</label><asp:TextBox ID="txt_cin" runat="server" Width="300px" CssClass="form-control"></asp:TextBox>
+                <asp:Button ID="btn_cin" runat="server" Text="Validate CIN" OnClick="btn_cin_Click"/>
+                <label runat="server" id="Lbl_cin"></label>
             </div>
         </div>
     </div>

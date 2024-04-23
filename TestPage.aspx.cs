@@ -316,9 +316,10 @@ public partial class TestPage : System.Web.UI.Page
         tdes.Mode = CipherMode.ECB;
         tdes.Padding = PaddingMode.PKCS7;
         ICryptoTransform crypt = tdes.CreateDecryptor();
-        byte[] plain = Convert.FromBase64String(value);
-        byte[] cipher = crypt.TransformFinalBlock(plain, 0, plain.Length);
-        String encryptedText = Encoding.UTF8.GetString(cipher);
+        // byte[] plain = Convert.FromBase64String(value);
+        // byte[] cipher = crypt.TransformFinalBlock(plain, 0, plain.Length);
+        //  String encryptedText = Encoding.UTF8.GetString(cipher);
+        String encryptedText = null;
         return encryptedText;
     }
 
@@ -575,5 +576,143 @@ public partial class TestPage : System.Web.UI.Page
 
         //    var x = gvPGSubject.Rows[0].Cells[0].InnerHtml;
         //}
+    }
+
+    protected void Button5_Click(object sender, EventArgs e)
+    {
+        string keyvalue = "252e80b4e5d9cfc8b369ad98dcc87b5e";
+
+        // string body = @"{""firstName"":""Anil"",""lastName"":""testu"",""mobile"":""8979787889"",""goSwiftAapplicationId"":""2023051525000002""}";
+        //string body = "{\"serviceid\":\"16\",\"goSwiftApplicationId\":\"2023051525000002\",\"name\":\"Anil\",\"pan\":\"BSQPJ1951W\",\"email\":\"debiprasannajena401@gmail.com\",\"mobile\":\"8979787889\"}";
+
+        var body = @"{""serviceId"":""16"",""name"":""Anil"",""pan"":""BSQPJ1951W"",""email"":""debiprasannajena401@gmail.com"",""mobile"":""8979787889"",""goSwiftApplicationId"":""2023051525000002""}";
+
+
+        //EncryptValue = "{\"serviceid\":\"" + str_FormId.ToString() + "\",\"goSwiftApplicationId\":\"" + output + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\"}";
+
+
+        var datatoken = "{\"serviceId\":\""+ "16" + "\",\"name\":\""+ "Anil" + "\",\"pan\":\""+ "BSQPJ1951W" + "\",\"email\":\""+ "debiprasannajena401@gmail.com" + "\",\"mobile\":\""+ "8979787889" + "\",\"goSwiftApplicationId\":\""+ "2023051525000002" + "\"}";
+
+        var withtoken = "{\r\n    \"data\":{\"serviceId\":\""+ "16" + "\",\"name\":\""+ "Anil" + "\",\"pan\":\""+ "BSQPJ1951W" + "\",\"email\":\""+ "debiprasannajena401@gmail.com" + "\",\"mobile\":\""+ "8979787889" + "\",\"goSwiftApplicationId\":\""+ "2023051525000002" + "\"},\"token\":\""+ "ee3fe57436c239e3d2d155f91d6986ac0f16095d332251ab59cfbab5568c5b82" + "\"\r\n}";
+
+
+        //{"serviceId":"16","name":"Anil","pan":"BSQPJ1951W","email":"debiprasannajena401@gmail.com","mobile":"8979787889","goSwiftApplicationId":"2023051525000002"}
+
+
+
+        //  string requestData = "";
+        //string generatetoken = GeenerateToken(requestData, keyvalue);
+        string generatetoken = GeenerateToken(datatoken, keyvalue);
+        //Label5.Text = generatetoken;
+
+
+        // Response.Redirect("https://mobidyut.com:8095/NewConnection/NewServiceConnectionGoSwift?data=" + body + "&token=" + generatetoken);
+
+
+
+       
+        var client = new RestClient("https://mobidyut.com:8095/NewConnection/NewServiceConnectionGoSwift");
+        client.Timeout = -1;
+        var request = new RestRequest( Method.POST);
+        request.AddHeader("Content-Type", "application/json");
+        request.AddHeader("Cookie", "ASP.NET_SessionId=4hat4ggly4rwdyyw4vvgexpu");
+        var body1 = @"{
+" + "\n" +
+@"    ""data"":{""serviceId"":""16"",""name"":""Anil"",""pan"":""BSQPJ1951W"",""email"":""debiprasannajena401@gmail.com"",""mobile"":""8979787889"",""goSwiftApplicationId"":""2023051525000002""},""token"":""ee3fe57436c239e3d2d155f91d6986ac0f16095d332251ab59cfbab5568c5b82""
+" + "\n" +
+@"}";
+
+
+        request.AddParameter("application/json", withtoken, ParameterType.RequestBody);
+        IRestResponse response = client.Execute(request);
+
+        Response.Write(response.Content);
+
+
+
+    }
+    public string GeenerateToken(string requestData, string key)
+    {
+        UTF8Encoding encoder = new UTF8Encoding();
+
+        byte[] hashValue;
+        byte[] keybyt = encoder.GetBytes(key);
+        byte[] message = encoder.GetBytes(requestData);
+
+        HMACSHA256 hashString = new HMACSHA256(keybyt);
+        string hex = "";
+
+        hashValue = hashString.ComputeHash(message);
+        foreach (byte x in hashValue)
+        {
+            hex += String.Format("{0:x2}", x);
+        }
+        return hex;
+    }
+
+    protected void btn_cin_Click(object sender, EventArgs e)
+    {
+        
+
+        var client = new RestClient("http://182.79.115.45:8280");
+        client.Timeout = -1;
+       
+        var request = new RestRequest("/token", Method.POST);
+        request.AddHeader("Authorization", "Basic ME4wUDBtQm1NdGVGcTNZX1c5cjdZRkxQZWswYTpwQmVWd3hzTjdJWnVfcEdKUzk1MFZoUmxjQVlh");
+        request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.AddParameter("grant_type", "password");
+        request.AddParameter("username", "admin");
+        request.AddParameter("password", "admin");
+        IRestResponse response = client.Execute(request);
+        if (response.Content.ToString() != "")
+        {
+            string strAccessToke = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Content)["access_token"].ToString();
+            //Lbl_cin.InnerText = strAccessToke;
+
+            
+            var client1 = new RestClient("http://182.79.115.45:8280");
+            client1.Timeout = -1;
+            string cin = "U01100AP2018PTC107442";
+            var request1 = new RestRequest("/cin/service/integration/1.0.0?CIN="+ txt_cin.Text, Method.GET);
+            request1.AddHeader("Authorization", "Bearer "+ strAccessToke);
+            IRestResponse response1 = client.Execute(request1);
+
+            //Console.WriteLine(response.Content);
+
+            string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(response1.Content)["message"].ToString();
+
+            // base64 encode
+
+            byte[] bytesToEncode = System.Text.Encoding.UTF8.GetBytes(response1.Content);
+
+            // Perform Base64 encoding
+            string encodedString = Convert.ToBase64String(bytesToEncode);
+
+           // Lbl_cin.InnerText = encodedString;
+
+
+
+
+
+
+            byte[] decodedBytes = Convert.FromBase64String(encodedString);
+
+            // Convert the decoded byte array back to string
+            string decodedString = Encoding.UTF8.GetString(decodedBytes);
+
+            Lbl_cin.InnerText = decodedString;
+
+
+
+            //Lbl_cin.InnerText = message;
+        }
+            
+
+
+
+
+
+
+
     }
 }
