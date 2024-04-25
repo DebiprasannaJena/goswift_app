@@ -16,14 +16,14 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Configuration;
 using System.Web.UI.HtmlControls;
-
+using System.Data.SqlClient;
 
 public partial class TestPage : System.Web.UI.Page
 {
     //SWPDashboard objSWP = new SWPDashboard();
     //DashboardBusinessLayer objserviceDashboard = new DashboardBusinessLayer();
     //CommonDashboardFunction DashboradCommon = new CommonDashboardFunction();
-
+    SqlConnection objConn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
     CommonDashboardFunction DashboradCommon = new CommonDashboardFunction();
 
     protected void Page_Load(object sender, EventArgs e)
@@ -311,7 +311,7 @@ public partial class TestPage : System.Web.UI.Page
         System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
         AesManaged tdes = new AesManaged();
         string key = "S!aM#s$PgA&pP(lI&cA@t!)Io#Np@R$d";
-        byte[] barrImg =  Encoding.ASCII.GetBytes(key); //(byte[])key;
+        byte[] barrImg = Encoding.ASCII.GetBytes(key); //(byte[])key;
         tdes.Key = barrImg; //GetFileBytes(HttpContext.Current.Server.MapPath("IND/") + "IND.key");
         tdes.Mode = CipherMode.ECB;
         tdes.Padding = PaddingMode.PKCS7;
@@ -591,9 +591,9 @@ public partial class TestPage : System.Web.UI.Page
         //EncryptValue = "{\"serviceid\":\"" + str_FormId.ToString() + "\",\"goSwiftApplicationId\":\"" + output + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\"}";
 
 
-        var datatoken = "{\"serviceId\":\""+ "16" + "\",\"name\":\""+ "Anil" + "\",\"pan\":\""+ "BSQPJ1951W" + "\",\"email\":\""+ "debiprasannajena401@gmail.com" + "\",\"mobile\":\""+ "8979787889" + "\",\"goSwiftApplicationId\":\""+ "2023051525000002" + "\"}";
+        var datatoken = "{\"serviceId\":\"" + "16" + "\",\"name\":\"" + "Anil" + "\",\"pan\":\"" + "BSQPJ1951W" + "\",\"email\":\"" + "debiprasannajena401@gmail.com" + "\",\"mobile\":\"" + "8979787889" + "\",\"goSwiftApplicationId\":\"" + "2023051525000002" + "\"}";
 
-        var withtoken = "{\r\n    \"data\":{\"serviceId\":\""+ "16" + "\",\"name\":\""+ "Anil" + "\",\"pan\":\""+ "BSQPJ1951W" + "\",\"email\":\""+ "debiprasannajena401@gmail.com" + "\",\"mobile\":\""+ "8979787889" + "\",\"goSwiftApplicationId\":\""+ "2023051525000002" + "\"},\"token\":\""+ "ee3fe57436c239e3d2d155f91d6986ac0f16095d332251ab59cfbab5568c5b82" + "\"\r\n}";
+        var withtoken = "{\r\n    \"data\":{\"serviceId\":\"" + "16" + "\",\"name\":\"" + "Anil" + "\",\"pan\":\"" + "BSQPJ1951W" + "\",\"email\":\"" + "debiprasannajena401@gmail.com" + "\",\"mobile\":\"" + "8979787889" + "\",\"goSwiftApplicationId\":\"" + "2023051525000002" + "\"},\"token\":\"" + "ee3fe57436c239e3d2d155f91d6986ac0f16095d332251ab59cfbab5568c5b82" + "\"\r\n}";
 
 
         //{"serviceId":"16","name":"Anil","pan":"BSQPJ1951W","email":"debiprasannajena401@gmail.com","mobile":"8979787889","goSwiftApplicationId":"2023051525000002"}
@@ -610,10 +610,10 @@ public partial class TestPage : System.Web.UI.Page
 
 
 
-       
+
         var client = new RestClient("https://mobidyut.com:8095/NewConnection/NewServiceConnectionGoSwift");
         client.Timeout = -1;
-        var request = new RestRequest( Method.POST);
+        var request = new RestRequest(Method.POST);
         request.AddHeader("Content-Type", "application/json");
         request.AddHeader("Cookie", "ASP.NET_SessionId=4hat4ggly4rwdyyw4vvgexpu");
         var body1 = @"{
@@ -652,11 +652,11 @@ public partial class TestPage : System.Web.UI.Page
 
     protected void btn_cin_Click(object sender, EventArgs e)
     {
-        
+
 
         var client = new RestClient("http://182.79.115.45:8280");
         client.Timeout = -1;
-       
+
         var request = new RestRequest("/token", Method.POST);
         request.AddHeader("Authorization", "Basic ME4wUDBtQm1NdGVGcTNZX1c5cjdZRkxQZWswYTpwQmVWd3hzTjdJWnVfcEdKUzk1MFZoUmxjQVlh");
         request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -669,12 +669,12 @@ public partial class TestPage : System.Web.UI.Page
             string strAccessToke = JsonConvert.DeserializeObject<Dictionary<string, object>>(response.Content)["access_token"].ToString();
             //Lbl_cin.InnerText = strAccessToke;
 
-            
+
             var client1 = new RestClient("http://182.79.115.45:8280");
             client1.Timeout = -1;
             string cin = "U01100AP2018PTC107442";
-            var request1 = new RestRequest("/cin/service/integration/1.0.0?CIN="+ txt_cin.Text, Method.GET);
-            request1.AddHeader("Authorization", "Bearer "+ strAccessToke);
+            var request1 = new RestRequest("/cin/service/integration/1.0.0?CIN=" + txt_cin.Text, Method.GET);
+            request1.AddHeader("Authorization", "Bearer " + strAccessToke);
             IRestResponse response1 = client.Execute(request1);
 
             //Console.WriteLine(response.Content);
@@ -688,7 +688,7 @@ public partial class TestPage : System.Web.UI.Page
             // Perform Base64 encoding
             string encodedString = Convert.ToBase64String(bytesToEncode);
 
-           // Lbl_cin.InnerText = encodedString;
+            // Lbl_cin.InnerText = encodedString;
 
 
 
@@ -706,7 +706,7 @@ public partial class TestPage : System.Web.UI.Page
 
             //Lbl_cin.InnerText = message;
         }
-            
+
 
 
 
@@ -715,4 +715,176 @@ public partial class TestPage : System.Web.UI.Page
 
 
     }
+
+    protected void Btn_Peal_Data_Push_Click(object sender, EventArgs e)
+    {
+
+
+        //        var client = new RestClient("http://192.168.10.168/mosarkar/App/API/mosarkarservice.php");
+        //        var request = new RestRequest(Method.POST);
+        //        request.AddHeader("Content-Type", "application/json");
+        //        request.AddHeader("Authorization", "Basic bW9zYXJrYXJfcG9ydGFsOm1vc2Fya2FyIzI4QDIwMjA=");
+        //        request.AddHeader("Cookie", "PHPSESSID=90pqnlhdnkcjsfksgn1qocurn2");
+
+        //        // Create JSON body
+        //        var jsonBody = @"
+        //                  {
+        //                       ""method"": ""OutboundDataSubmit"",
+        //                       ""dept_code"": ""IND@16"",
+        //                       ""service_code"": ""IND@16@SLS"",
+        //         ""data"": [
+        //        {
+        //            ""district_id"": 2,
+        //            ""name"": ""Star Packing"",
+        //            ""mobile"": ""7978911963"",
+        //            ""age"": 0,
+        //            ""gender"": 0,
+        //            ""department_institution_id"": 1170,
+        //            ""registration_date"": ""2021-11-15"",
+        //            ""registration_no"": ""2022082062"",
+        //            ""other_info"": {
+        //                ""payment_date"": ""15-05-2023"",
+        //                ""installment"": ""1st installment""
+        //            }
+        //        }
+        //    ]
+        //}";
+
+        //        // Add JSON body to request
+        //        request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
+
+        //        IRestResponse response = client.Execute(request);
+        //        Response.Write(response.Content.ToString());
+        //        Lbl_Msg.Text = response.Content;
+
+        if (objConn.State == ConnectionState.Closed)
+        {
+            objConn.Open();
+        }
+        try
+        {
+            //SqlCommand objCommand = new SqlCommand();
+            //SqlDataAdapter objDa = new SqlDataAdapter();
+            //DataTable objds = new DataTable();
+            //objCommand.CommandText = "USP_FETCH_PROPOSAL_DETAILS";
+            //objCommand.CommandType = CommandType.StoredProcedure;
+            //objCommand.Connection = objConn;
+            //objCommand.Parameters.AddWithValue("@P_VCH_ACTION", "PDS");
+            //objDa.SelectCommand = objCommand;
+            //objDa.Fill(objds);
+
+
+            //int RowCount = objds.Rows.Count;
+
+            //for (int i = 0; i < objds.Rows.Count; i += RowCount)
+            //{
+            //    // Process the  DataTable
+            //    foreach (DataRow row in objds.Rows)
+            //    {
+            //        string CompName = Convert.ToString(row["vchCompName"]);
+            //        string MobileNo = Convert.ToString(row["vchCorMobileNo"]);
+
+            //        string RegistrationDateStr = Convert.ToString(row["CreatedOn"]);
+            //        string formattedDate = Convert.ToDateTime(RegistrationDateStr).ToString("yyyy-MM-dd");
+
+
+            //        string RegistrationNo = Convert.ToString(row["vchProposalNo"]);
+            //        string ConstitutionType = Convert.ToString(row["ConstitutionType"]);
+            //        string Email = Convert.ToString(row["vchEmail"]);
+
+            //        string uri = ConfigurationManager.AppSettings["MoSarkarurl"].ToString();
+
+
+            //        var client = new RestClient(uri);
+            //        var request = new RestRequest(Method.POST);
+            //        request.AddHeader("Content-Type", "application/json");
+            //        request.AddHeader("Authorization", "Basic bW9zYXJrYXJfcG9ydGFsOm1vc2Fya2FyIzI4QDIwMjA=");
+            //        request.AddHeader("Cookie", "PHPSESSID=90pqnlhdnkcjsfksgn1qocurn2");
+            //        var body = "{" + FormatJSON("method", "OutboundDataSubmit") + "," + FormatJSON("dept_code", "IND@16") + "," + FormatJSON("service_code", "IND@16@SLS") + "," + "\"data\": [" + "{" + FormatJSON("district_id", "20") + "," + FormatJSON("name", CompName) + "," + FormatJSON("mobile", MobileNo) + "," + FormatJSON("age", "0") + "," + FormatJSON("gender", "0") + "," + FormatJSON("department_institution_id", "1170") + "," + FormatJSON("registration_date", formattedDate) + "," + FormatJSON("registration_no", RegistrationNo) + "," + "\"other_info\": {" + FormatJSON("Constitution_Type", ConstitutionType) + "," + FormatJSON("email", Email) + "}" + "}" + "]" + "}";
+            //        // Add JSON body to request
+            //        request.AddParameter("application/json", body, ParameterType.RequestBody);
+
+            //        IRestResponse response = client.Execute(request);
+            //        Response.Write(response.Content.ToString());
+            //        string Data= response.Content;
+
+
+            // Lbl_Msg.Text = response.Content;
+
+            //}
+            //}
+
+            SqlCommand objCommand = new SqlCommand();
+            SqlDataAdapter objDa = new SqlDataAdapter();
+            DataTable objds = new DataTable();
+            objCommand.CommandText = "USP_FETCH_PROPOSAL_DETAILS";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Connection = objConn;
+            objCommand.Parameters.AddWithValue("@P_VCH_ACTION", "PDS");
+            objDa.SelectCommand = objCommand;
+            objDa.Fill(objds);
+
+            // Create a list to store all data
+            List<object> data = new List<object>();
+
+            // Process all rows from the DataTable
+            foreach (DataRow row in objds.Rows)
+            {
+                string CompName = Convert.ToString(row["vchCompName"]);
+                string MobileNo = Convert.ToString(row["vchCorMobileNo"]);
+                string RegistrationDate = Convert.ToDateTime(row["CreatedOn"]).ToString("yyyy-MM-dd");
+                string RegistrationNo = Convert.ToString(row["vchProposalNo"]);
+                string ConstitutionType = Convert.ToString(row["ConstitutionType"]);
+                string Email = Convert.ToString(row["vchEmail"]);
+
+                // Create  the current record
+                var record = new
+                {
+                    district_id= "20",
+                    name = CompName,
+                    mobile = MobileNo,
+                    age= "0",
+                    gender = "0",
+                    department_institution_id ="1170",
+                    registration_date = RegistrationDate,
+                    registration_no = RegistrationNo,
+                    other_info = new
+                    {
+                        Constitution_Type = ConstitutionType,
+                        email = Email
+                    }
+                };
+                // Add the current record to the data
+                data.Add(record);
+            }
+            // Construct the complete JSON body for the request
+            var body = new
+            {
+                method = "OutboundDataSubmit",
+                dept_code = "IND@16",
+                service_code = "IND@16@SLS",
+                data = data
+            };
+            string uri = ConfigurationManager.AppSettings["MoSarkarurl"].ToString();
+            // Serialize the body object to JSON without formatting
+            string jsonBody = JsonConvert.SerializeObject(body, Formatting.None);
+            var client = new RestClient(uri);
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddHeader("Authorization", "Basic bW9zYXJrYXJfcG9ydGFsOm1vc2Fya2FyIzI4QDIwMjA=");
+            request.AddHeader("Cookie", "PHPSESSID=90pqnlhdnkcjsfksgn1qocurn2");
+            request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+            Response.Write(response.Content.ToString());
+           
+            Lbl_Msg_Peal.Text = response.Content;
+        }
+        catch (Exception ex)
+        {
+           
+            Util.LogError(ex, "PealDetailsDataSchedular");
+        }
+    }
+  
 }

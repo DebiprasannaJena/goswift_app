@@ -299,8 +299,22 @@
                 <asp:Button ID="btn_cin" runat="server" Text="Validate CIN" OnClick="btn_cin_Click"/>
                 <label runat="server" id="Lbl_cin"></label>
             </div>
+            <div>
+                        <td colspan="2">
+                            <hr style="border: 1px solid #15CCD9" />
+                            <br />
+                            <h3 style="color: Blue;">
+                                            Test Peal Data Push Service</h3>
+                            <br />
+                            <asp:Button ID="Btn_Peal_Data_Push" runat="server" Text="Peal Data Push" CssClass="btn btn-success" OnClick="Btn_Peal_Data_Push_Click"/>
+                            <asp:Label ID="Lbl_Msg_Peal" runat="server"></asp:Label>
+                     </td>
+
+                    </div>
+             
         </div>
     </div>
+         
     <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
     <asp:Button ID="Button3" runat="server" Text="File Download" OnClick="Button3_Click" />
     <%----------------------------------------------------------------------------------------------------------%>
