@@ -32,6 +32,7 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Globalization;
 
 #endregion
 
@@ -688,7 +689,14 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                 objInvEntity.StrVCH_PROP_NAME = Txt_Proprietorship_Name.Text;
                 objInvEntity.INT_INDUSTRY_TYPE = 1;   // add by anil sahoo for Industry type
                 objInvEntity.strPanHolderName = Txt_Pan_Holder_Name.Text;  // add by anil
-                objInvEntity.strDOB = Txt_Dob.Text;  // add by anil
+                // Parse the input date with the specified format
+                DateTime ParsedDateDOB = DateTime.ParseExact(Txt_Dob.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                // Format the parsed date to the desired format
+                string FormattedDateDOB = ParsedDateDOB.ToString("yyyy-MM-dd");
+
+                objInvEntity.strDOB = FormattedDateDOB;// add by anil
+
+               
 
 
                 /*---------------------------------------------------------------*/
@@ -908,14 +916,31 @@ public partial class InvestorRegistrationUser : System.Web.UI.Page
                             }
                             else if (strResNameStatus == "Y")
                             {
-                                Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
-                                Txt_Unit_Name.Enabled = false;
+
+                                char[] charArray = Txt_PAN.Text.ToCharArray();
+
+                                if (charArray[3].ToString().ToUpper() == "C")
+                                {
+                                    Txt_Unit_Name.Text = Txt_Pan_Holder_Name.Text;
+                                    Txt_Unit_Name.Enabled = false;
+                                    proprietor.Visible = false;
+                                    ViewState["PANTYPE"] = "INDUSTRY";
+                                }
+                                else
+                                {
+                                    proprietor.Visible = true;
+                                    ViewState["PANTYPE"] = "INDIVISUAL";
+                                    Txt_Proprietorship_Name.Text = Txt_Pan_Holder_Name.Text;
+                                }
+
+                                /*---------------------------------------------------------------*/
+                                ///Validate PAN from GOSWIFT.
+                                /*---------------------------------------------------------------*/
+                                CheckPan(Txt_PAN.Text.ToString().Trim());
+
                             }
 
-                            /*---------------------------------------------------------------*/
-                            ///Validate PAN from GOSWIFT.
-                            /*---------------------------------------------------------------*/
-                            CheckPan(Txt_PAN.Text.ToString().Trim());
+                            
                         }
                     }
                     else
