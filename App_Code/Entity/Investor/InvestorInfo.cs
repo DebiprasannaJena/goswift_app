@@ -67,9 +67,9 @@ namespace EntityLayer.Investor
         #region Add by Anil Sahoo
         public int INT_INDUSTRY_TYPE { get; set; }
 
-        public string strCINnumber { get; set; }
+      //  public string strCINnumber { get; set; }
 
-        public int intEntitytype { get; set; }
+      //  public int intEntitytype { get; set; }
 
         public string strPanHolderName { get; set; }
 

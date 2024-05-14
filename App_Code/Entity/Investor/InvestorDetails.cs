@@ -84,10 +84,60 @@ namespace EntityLayer.Investor
         public string StrCinLlpinData  { get; set; }// add by anil
     }
 
+
+    #region for CIN and LLPN validation add by anil
     public class CompanyData
     {
+      
+
         public string CIN { get; set; }
         public string companyName { get; set; }
-        
+        public string incorporationDate { get; set; }
+        public string companyStatus { get; set; }
+        public string ROCName { get; set; }
+        public string addressType { get; set; }
+        public string addressLine1 { get; set; }
+        public string addressLine2 { get; set; }
+        public string area { get; set; }
+        public string city { get; set; }
+        public string district { get; set; }
+        public int pincode { get; set; }
+        public string state { get; set; }
+        public string country { get; set; }
+        public string emailAddress { get; set; }
+        public string contactNumber { get; set; }
+        public string financialYear { get; set; }
+        public string profitLoss { get; set; }
+        public string turnover { get; set; }
+        public string financialRange { get; set; }
+        public string isAuditStatusApplicable { get; set; }
+        public string auditStatus { get; set; }
+        public string type { get; set; }
+
     }
+
+
+    public class DirectorData
+    {
+        public string CIN { get; set; }
+        public string CompanyName { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string DIN { get; set; }
+        public string DOB { get; set; }
+        public string FatherFirstName { get; set; }
+        public string FatherMidName { get; set; }
+        public string FatherLastName { get; set; }
+        public string DINStatus { get; set; }
+        public string AssociationStatus { get; set; }
+    }
+
+    public class DirectorDataList
+    {
+        public List<DirectorData> Data { get; set; }
+    }
+
+
+    #endregion
 }

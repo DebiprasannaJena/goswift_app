@@ -13,28 +13,37 @@ public partial class Portal_MISReport_ChildService_UserDtls : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        try
         {
-            CommonFunctions.PopulatePageSize(ddlNoOfRec);
-            hdnPgindex.Value = "1";
+
+           if (!IsPostBack)
+            {
+             CommonFunctions.PopulatePageSize(DrpDwn_NoOfRec);
+            Hdn_Pgindex.Value = "1";
             if (!string.IsNullOrEmpty(Request.QueryString["hdn"]))
             {
-                hdnPgindex.Value = Request.QueryString["hdn"];
+                Hdn_Pgindex.Value = Request.QueryString["hdn"];
             }
             else
             {
-                hdnPgindex.Value = "1";
+                Hdn_Pgindex.Value = "1";
             }
             if (Request.QueryString["pSize"] != null)
             {
-                ddlNoOfRec.SelectedValue = Request.QueryString["pSize"];
+                DrpDwn_NoOfRec.SelectedValue = Request.QueryString["pSize"];
             }
             else
             {
-                ddlNoOfRec.SelectedValue = "10";
+                DrpDwn_NoOfRec.SelectedValue = "10";
             }
 
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+              BindGridView(Convert.ToInt32(Hdn_Pgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "ChildServiceDetail");
         }
     }
 
@@ -48,12 +57,12 @@ public partial class Portal_MISReport_ChildService_UserDtls : System.Web.UI.Page
     {
         try
         {
-            hdnPgindex.Value = (string)((sender as LinkButton).CommandArgument);
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            Hdn_Pgindex.Value = (sender as LinkButton).CommandArgument;
+            BindGridView(Convert.ToInt32(Hdn_Pgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
-            Util.LogError(ex, "Incentive");
+            Util.LogError(ex, "ChildServiceDetail");
         }
     }
 
@@ -66,130 +75,164 @@ public partial class Portal_MISReport_ChildService_UserDtls : System.Web.UI.Page
     {
         try
         {
-            hdnPgindex.Value = "1";
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            Hdn_Pgindex.Value = "1";
+            BindGridView(Convert.ToInt32(Hdn_Pgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
-            Util.LogError(ex, "Incentive");
+            Util.LogError(ex, "ChildServiceDetail");
         }
     }
     #endregion
 
     protected void grdService_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        if (e.Row.RowType == DataControlRowType.DataRow)
+        try
         {
-            int Rowid = 0;
-            if (Convert.ToInt32(hdnPgindex.Value) > 1)
+            if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                Rowid = (Convert.ToInt32(hdnPgindex.Value) - 1) * Convert.ToInt32(ddlNoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
+                int Rowid = 0;
+                if (Convert.ToInt32(Hdn_Pgindex.Value) > 1)
+                {
+                    Rowid = (Convert.ToInt32(Hdn_Pgindex.Value) - 1) * Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
+                }
+                else
+                {
+                    Rowid = e.Row.DataItemIndex + 1;
+                }
+                e.Row.Cells[0].Text = Rowid.ToString();
             }
-            else
-            {
-                Rowid = e.Row.DataItemIndex + 1;
-            }
-            e.Row.Cells[0].Text = Rowid.ToString();
         }
+        catch(Exception ex)
+        {
+            throw ex.InnerException;
+        }
+        
     }
 
-    private void BindGridView(int intPageIndex, int intPageSize)
+    private void BindGridView(int IntPageIndex, int IntPageSize)
     {
-        lblSearchDetails.Text = string.Empty;
-        divExport.Visible = false;
-        grdService.DataSource = null;
-        grdService.DataBind();
-        string strFromDate= string.Empty,  strTodate= string.Empty;
-        GetDefaultFromAndToDate(out strFromDate, out strTodate);
-        RptSearch objSearch = new RptSearch()
+        try 
+        { 
+        Lbl_SearchDetails.Text = string.Empty;
+        DivExport.Visible = false;
+        GrdService.DataSource = null;
+        GrdService.DataBind();
+        string StrFromDate= string.Empty,  StrTodate= string.Empty;
+        GetDefaultFromAndToDate(out StrFromDate, out StrTodate);
+        RptSearch ObjSearch = new RptSearch()
         {
             strActionCode = "st",
-            intPageSize = intPageSize,
-            intIntPageIndex = intPageIndex,
-            strToDate = string.IsNullOrEmpty(Request.QueryString["tDate"]) ? strTodate : Request.QueryString["tDate"],
-            strFromDate = string.IsNullOrEmpty(Request.QueryString["fdate"]) ? strFromDate : Request.QueryString["fdate"],
+            intPageSize = IntPageSize,
+            intIntPageIndex = IntPageIndex,
+            strToDate = string.IsNullOrEmpty(Request.QueryString["tDate"]) ? StrTodate : Request.QueryString["tDate"],
+            strFromDate = string.IsNullOrEmpty(Request.QueryString["fdate"]) ? StrFromDate : Request.QueryString["fdate"],
             intDepartmentId = string.IsNullOrEmpty(Request.QueryString["dId"]) ? 0 : Convert.ToInt32(Request.QueryString["dId"]),
             intServiceId = string.IsNullOrEmpty(Request.QueryString["SId"]) ? 0 : Convert.ToInt32(Request.QueryString["SId"]),
             intUserId = string.IsNullOrEmpty(Request.QueryString["intId"]) ? 0 : Convert.ToInt32(Request.QueryString["intId"]),
             intStatus = string.IsNullOrEmpty(Request.QueryString["status"]) ? 0 : Convert.ToInt32(Request.QueryString["status"])
         };
 
-        List<Mis_ChildServiceDtls> lstChildServices = new List<Mis_ChildServiceDtls>();
-        lstChildServices = MisReportServices.View_ChildServices_UserWiseDetails_MISReport(objSearch);
-        grdService.DataSource = lstChildServices;
-        grdService.DataBind();
-        if (grdService.Rows.Count > 0)
+       
+        List<Mis_ChildServiceDtls> LstChildServices = MisReportServices.View_ChildServices_UserWiseDetails_MISReport(ObjSearch);
+        GrdService.DataSource = LstChildServices;
+        GrdService.DataBind();
+        if (GrdService.Rows.Count > 0)
         {
-            divExport.Visible = true;
-            ddlNoOfRec.Visible = true;
+            DivExport.Visible = true;
+            DrpDwn_NoOfRec.Visible = true;
             rptPager.Visible = true;
-            CommonFunctions.PopulatePager(rptPager, Convert.ToInt32(lstChildServices[0].intRowCount), Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            CommonFunctions.PopulatePager(rptPager, Convert.ToInt32(LstChildServices[0].intRowCount), Convert.ToInt32(Hdn_Pgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
 
             /****************code to show paging details in the label************/
-            int intPIndex = Convert.ToInt32(hdnPgindex.Value);
-            int intStartIndex = 1, intEndIndex = 0;
-            int intPSize = Convert.ToInt32(ddlNoOfRec.SelectedValue);
-            intStartIndex = ((intPIndex - 1) * intPSize) + 1;
-            if (intPSize == grdService.Rows.Count)
+            int IntPIndex = Convert.ToInt32(Hdn_Pgindex.Value);
+            int IntStartIndex = 1, IntEndIndex = 0;
+            int IntPSize = Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue);
+            IntStartIndex = ((IntPIndex - 1) * IntPSize) + 1;
+            if (IntPSize == GrdService.Rows.Count)
             {
-                intEndIndex = intPSize * intPIndex;
+                IntEndIndex = IntPSize * IntPIndex;
             }
             else
             {
-                intEndIndex = grdService.Rows.Count + (intPSize * (intPIndex - 1));
+                IntEndIndex = GrdService.Rows.Count + (IntPSize * (IntPIndex - 1));
 
             }
-            lblDetails.Text = intStartIndex.ToString() + "-" + intEndIndex.ToString() + " of " + Convert.ToInt32(lstChildServices[0].intRowCount).ToString();
-            StringBuilder strSearchDetails = new StringBuilder();
+            Lbl_Details.Text = IntStartIndex.ToString() + "-" + IntEndIndex.ToString() + " of " + Convert.ToInt32(LstChildServices[0].intRowCount).ToString();
+            StringBuilder StrSearchDetails = new StringBuilder();
             if (!string.IsNullOrEmpty(Request.QueryString["intId"]) && Request.QueryString["intId"] != "0")
             {
-                strSearchDetails.Append("<strong>User - </strong>");
-                strSearchDetails.Append(lstChildServices[0].strUsername);
-                strSearchDetails.Append("<br/>");
+                StrSearchDetails.Append("<strong>User - </strong>");
+                StrSearchDetails.Append(LstChildServices[0].strUsername);
+                StrSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["dId"]) && Request.QueryString["dId"] != "0")
             {
-                strSearchDetails.Append("<strong>Department - </strong>");
-                strSearchDetails.Append(lstChildServices[0].strDepartment);
-                strSearchDetails.Append("<br/>");
+                StrSearchDetails.Append("<strong>Department - </strong>");
+                StrSearchDetails.Append(LstChildServices[0].strDepartment);
+                StrSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["SId"]) && Request.QueryString["SId"] != "0")
             {
-                strSearchDetails.Append("<strong>Service - </strong>");
-                strSearchDetails.Append(lstChildServices[0].ServiceName);
-                strSearchDetails.Append("<br/>");
+                StrSearchDetails.Append("<strong>Service - </strong>");
+                StrSearchDetails.Append(LstChildServices[0].ServiceName);
+                StrSearchDetails.Append("<br/>");
             }
 
             if (!string.IsNullOrEmpty(Request.QueryString["fDate"]))
             {
-                strSearchDetails.Append("<strong>From Date - </strong>");
-                strSearchDetails.Append(Convert.ToDateTime(Request.QueryString["fDate"]).ToString("dd-MMM-yyyy"));
-                strSearchDetails.Append("<br/>");
+                StrSearchDetails.Append("<strong>From Date - </strong>");
+                StrSearchDetails.Append(Convert.ToDateTime(Request.QueryString["fDate"]).ToString("dd-MMM-yyyy"));
+                StrSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["tDate"]))
             {
-                strSearchDetails.Append("<strong>To Date - </strong>");
-                strSearchDetails.Append(Convert.ToDateTime(Request.QueryString["tDate"]).ToString("dd-MMM-yyyy"));
-                strSearchDetails.Append("<br/>");
+                StrSearchDetails.Append("<strong>To Date - </strong>");
+                StrSearchDetails.Append(Convert.ToDateTime(Request.QueryString["tDate"]).ToString("dd-MMM-yyyy"));
+                StrSearchDetails.Append("<br/>");
             }
 
-            lblSearchDetails.Text = strSearchDetails.ToString();
+            Lbl_SearchDetails.Text = StrSearchDetails.ToString();
         }
         else
         {
-            ddlNoOfRec.Visible = false;
+            DrpDwn_NoOfRec.Visible = false;
             rptPager.Visible = false;
+        }
+
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "ChildServiceDetail");
         }
     }
 
     protected void lnkExport_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.ExportToExcel("ChildServicesDetailsRpt", grdService, "User wise report for Child Services", lblSearchDetails.Text + "<br/>As on date -" + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
+        try
+        {
+
+       
+        IncentiveCommonFunctions.ExportToExcel("ChildServicesDetailsRpt", GrdService, "User wise report for Child Services", Lbl_SearchDetails.Text + "<br/>As on date -" + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "ChildServiceDetail");
+        }
+
     }
 
     protected void lnkPdf_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.CreatePdf("ChildServicesDetailsRpt", grdService);
+        try
+        {
+            IncentiveCommonFunctions.CreatePdf("ChildServicesDetailsRpt", GrdService);
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "ChildServiceDetail");
+        }
+        
     }
 
     public override void VerifyRenderingInServerForm(Control control)
@@ -197,20 +240,27 @@ public partial class Portal_MISReport_ChildService_UserDtls : System.Web.UI.Page
 
     }
 
-    private void GetDefaultFromAndToDate(out string strFromDate, out string strToDate)
+    private void GetDefaultFromAndToDate(out string StrFromDate, out string StrToDate)
     {
-        strFromDate = string.Empty;
-        strToDate = string.Empty;
-        int intMonth =DateTime.Today.Month;
-        if (intMonth == 1)
+        try
         {
-            strFromDate = "01-Dec-" + (DateTime.Today.Year - 1).ToString();
-            strToDate = DateTime.Today.ToString("dd-MMM-yyyy");
+        StrFromDate = string.Empty;
+        StrToDate = string.Empty;
+        int IntMonth =DateTime.Today.Month;
+        if (IntMonth == 1)
+        {
+            StrFromDate = "01-Dec-" + (DateTime.Today.Year - 1).ToString();
+            StrToDate = DateTime.Today.ToString("dd-MMM-yyyy");
         }
         else
         {
-            strFromDate = "01-" + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((DateTime.Today.Month - 1)).ToString().Substring(0, 3) + "-" + (DateTime.Today.Year).ToString();
-            strToDate = DateTime.Today.ToString("dd-MMM-yyyy");
+            StrFromDate = "01-" + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName((DateTime.Today.Month - 1)).ToString().Substring(0, 3) + "-" + (DateTime.Today.Year).ToString();
+            StrToDate = DateTime.Today.ToString("dd-MMM-yyyy");
+        }
+        }
+        catch(Exception ex)
+        {
+            throw ex.InnerException;
         }
     }
 }

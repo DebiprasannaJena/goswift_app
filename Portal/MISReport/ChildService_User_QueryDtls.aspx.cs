@@ -15,26 +15,26 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
         {
             if (!IsPostBack)
             {
-                CommonFunctions.PopulatePageSize(ddlNoOfRec);
-                hdnPgindex.Value = "1";
+                CommonFunctions.PopulatePageSize(DrpDwn_NoOfRec);
+                HdnPgindex.Value = "1";
                 if (!string.IsNullOrEmpty(Request.QueryString["hdn"]))
                 {
-                    hdnPgindex.Value = Request.QueryString["hdn"];
+                    HdnPgindex.Value = Request.QueryString["hdn"];
                 }
                 else
                 {
-                    hdnPgindex.Value = "1";
+                    HdnPgindex.Value = "1";
                 }
                 if (Request.QueryString["pSize"] != null)
                 {
-                    ddlNoOfRec.SelectedValue = Request.QueryString["pSize"];
+                    DrpDwn_NoOfRec.SelectedValue = Request.QueryString["pSize"];
                 }
                 else
                 {
-                    ddlNoOfRec.SelectedValue = "10";
+                    DrpDwn_NoOfRec.SelectedValue = "10";
                 }
 
-                BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+                BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
             }
         }
         else
@@ -47,14 +47,13 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
     /// <summary>
     /// Click event for all the link button created for the paging control
     /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+   
     protected void Page_Changed(object sender, EventArgs e)
     {
         try
         {
-            hdnPgindex.Value = (string)((sender as LinkButton).CommandArgument);
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            HdnPgindex.Value = (sender as LinkButton).CommandArgument;
+            BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
@@ -65,14 +64,13 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
     /// <summary>
     /// selected index change event for the dropdown that contains different size for the page
     /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+   
     protected void ddlNoOfRec_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
-            hdnPgindex.Value = "1";
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            HdnPgindex.Value = "1";
+            BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
@@ -86,9 +84,9 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
             int Rowid = 0;
-            if (Convert.ToInt32(hdnPgindex.Value) > 1)
+            if (Convert.ToInt32(HdnPgindex.Value) > 1)
             {
-                Rowid = (Convert.ToInt32(hdnPgindex.Value) - 1) * Convert.ToInt32(ddlNoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
+                Rowid = (Convert.ToInt32(HdnPgindex.Value) - 1) * Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
             }
             else
             {
@@ -100,17 +98,17 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
 
     private void BindGridView(int intPageIndex, int intPageSize)
     {
-        grdDepartment.DataSource = null;
-        grdDepartment.DataBind();
-        string strFromDate= string.Empty,  strTodate= string.Empty;
-        GetDefaultFromAndToDate(out strFromDate, out strTodate);
+        GrdDepartment.DataSource = null;
+        GrdDepartment.DataBind();
+        string StrFromDate= string.Empty,  StrTodate= string.Empty;
+        GetDefaultFromAndToDate(out StrFromDate, out StrTodate);
         RptSearch objSearch = new RptSearch()
         {
             strActionCode = "sq",
             intPageSize = intPageSize,
             intIntPageIndex = intPageIndex,
-            strToDate = string.IsNullOrEmpty(Request.QueryString["tDate"]) ? strTodate : Request.QueryString["tDate"],
-            strFromDate = string.IsNullOrEmpty(Request.QueryString["fdate"]) ? strFromDate : Request.QueryString["fdate"],
+            strToDate = string.IsNullOrEmpty(Request.QueryString["tDate"]) ? StrTodate : Request.QueryString["tDate"],
+            strFromDate = string.IsNullOrEmpty(Request.QueryString["fdate"]) ? StrFromDate : Request.QueryString["fdate"],
             intDepartmentId = string.IsNullOrEmpty(Request.QueryString["dId"]) ? 0 : Convert.ToInt32(Request.QueryString["dId"]),
             intServiceId = string.IsNullOrEmpty(Request.QueryString["SId"]) ? 0 : Convert.ToInt32(Request.QueryString["SId"]),
             intUserId = string.IsNullOrEmpty(Request.QueryString["intId"]) ? 0 : Convert.ToInt32(Request.QueryString["intId"]),
@@ -118,48 +116,48 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
         };
 
         
-        List<Mis_ChildServiceDtls> lstChildServices = new List<Mis_ChildServiceDtls>();
-        lstChildServices = MisReportServices.View_ChildServices_UserWiseDetails_MISReport(objSearch);
-        grdDepartment.DataSource = lstChildServices;
-        grdDepartment.DataBind();
-        if (grdDepartment.Rows.Count > 0)
+        
+        List<Mis_ChildServiceDtls> ListChildServices = MisReportServices.View_ChildServices_UserWiseDetails_MISReport(objSearch);
+        GrdDepartment.DataSource = ListChildServices;
+        GrdDepartment.DataBind();
+        if (GrdDepartment.Rows.Count > 0)
         {
-            ddlNoOfRec.Visible = true;
+            DrpDwn_NoOfRec.Visible = true;
             rptPager.Visible = true;
-            CommonFunctions.PopulatePager(rptPager, Convert.ToInt32(lstChildServices[0].intRowCount), Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            CommonFunctions.PopulatePager(rptPager, Convert.ToInt32(ListChildServices[0].intRowCount), Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
 
             /****************code to show paging details in the label************/
-            int intPIndex = Convert.ToInt32(hdnPgindex.Value);
-            int intStartIndex = 1, intEndIndex = 0;
-            int intPSize = Convert.ToInt32(ddlNoOfRec.SelectedValue);
-            intStartIndex = ((intPIndex - 1) * intPSize) + 1;
-            if (intPSize == grdDepartment.Rows.Count)
+            int IntPIndex = Convert.ToInt32(HdnPgindex.Value);
+            int IntStartIndex = 1, IntEndIndex = 0;
+            int intPSize = Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue);
+            IntStartIndex = ((IntPIndex - 1) * intPSize) + 1;
+            if (intPSize == GrdDepartment.Rows.Count)
             {
-                intEndIndex = intPSize * intPIndex;
+                IntEndIndex = intPSize * IntPIndex;
             }
             else
             {
-                intEndIndex = grdDepartment.Rows.Count + (intPSize * (intPIndex - 1));
+                IntEndIndex = GrdDepartment.Rows.Count + (intPSize * (IntPIndex - 1));
 
             }
-            lblDetails.Text = intStartIndex.ToString() + "-" + intEndIndex.ToString() + " of " + Convert.ToInt32(lstChildServices[0].intRowCount).ToString();
+            lblDetails.Text = IntStartIndex.ToString() + "-" + IntEndIndex.ToString() + " of " + Convert.ToInt32(ListChildServices[0].intRowCount).ToString();
             StringBuilder strSearchDetails = new StringBuilder();
             if (!string.IsNullOrEmpty(Request.QueryString["intId"]) && Request.QueryString["intId"] != "0")
             {
                 strSearchDetails.Append("<strong>User - </strong>");
-                strSearchDetails.Append(lstChildServices[0].strUsername);
+                strSearchDetails.Append(ListChildServices[0].strUsername);
                 strSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["dId"]) && Request.QueryString["dId"] != "0")
             {
                 strSearchDetails.Append("<strong>Department - </strong>");
-                strSearchDetails.Append(lstChildServices[0].strDepartment);
+                strSearchDetails.Append(ListChildServices[0].strDepartment);
                 strSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["SId"]) && Request.QueryString["SId"] != "0")
             {
                 strSearchDetails.Append("<strong>Service - </strong>");
-                strSearchDetails.Append(lstChildServices[0].ServiceName);
+                strSearchDetails.Append(ListChildServices[0].ServiceName);
                 strSearchDetails.Append("<br/>");
             }
             if (!string.IsNullOrEmpty(Request.QueryString["fDate"]))
@@ -181,12 +179,12 @@ public partial class Portal_MISReport_ChildService_User_QueryDtls : System.Web.U
 
     protected void lnkExport_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.ExportToExcel("ServiceQueryRpt", grdDepartment, "User wise report for Child Services", lblSearchDetails.Text + "<br/> As on date - " + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
+        IncentiveCommonFunctions.ExportToExcel("ServiceQueryRpt", GrdDepartment, "User wise report for Child Services", lblSearchDetails.Text + "<br/> As on date - " + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
     }
 
     protected void lnkPdf_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.CreatePdf("ServiceQueryRpt", grdDepartment);
+        IncentiveCommonFunctions.CreatePdf("ServiceQueryRpt", GrdDepartment);
     }
 
     public override void VerifyRenderingInServerForm(Control control)

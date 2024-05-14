@@ -14,6 +14,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using System.Net;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 public partial class EditInvestorProfile : SessionCheck
 {
@@ -24,7 +25,8 @@ public partial class EditInvestorProfile : SessionCheck
 
     /// Get keys for CIN from Web.Config File 
     readonly string StrValidateCinLlpin = ConfigurationManager.AppSettings["MCAValidation"];
-    readonly string StrCinLlpinUrl = ConfigurationManager.AppSettings["CinLlpinurl"];
+    readonly string StrCinLlpinTokenUrl = ConfigurationManager.AppSettings["CinLlpinTokenUrl"];
+    readonly string StrCinLlpinValidateUrl = ConfigurationManager.AppSettings["CinLlpinValidateUrl"];
     readonly string StrCinTokenUserId = ConfigurationManager.AppSettings["CinTokenUserId"];
     readonly string StrCinTokenPassword = ConfigurationManager.AppSettings["CinTokenPassword"];
 
@@ -628,12 +630,12 @@ public partial class EditInvestorProfile : SessionCheck
 
                 /*---------------------------------------------------------------*/
 
-                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestCredentials]" + "[RequestUrl]:- " + StrCinLlpinUrl + " - [TokenUserId]:- " + StrCinTokenUserId + "- [TokenPassword]:- " + StrCinTokenPassword);
+                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestCredentials]" + "[RequestUrl]:- " + StrCinLlpinTokenUrl + " - [TokenUserId]:- " + StrCinTokenUserId + "- [TokenPassword]:- " + StrCinTokenPassword);
 
                 /*---------------------------------------------------------------*/
                 // Generate token to validate CIN/LLPIN.
                 /*---------------------------------------------------------------*/
-                var client = new RestClient(StrCinLlpinUrl)
+                var client = new RestClient(StrCinLlpinTokenUrl)
                 {
                     Timeout = -1
                 };
@@ -661,39 +663,54 @@ public partial class EditInvestorProfile : SessionCheck
                         Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseToken]:- " + strAccessToken);
 
                         string strCinServiceUrl = "";
+                        string strDinServiceUrl = "";
                         if (strEntityType == "1")
                         {
-                            strCinServiceUrl = StrCinLlpinUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
+                            strCinServiceUrl = StrCinLlpinValidateUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
+                            strDinServiceUrl= StrCinLlpinValidateUrl + "/din/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
                         }
                         else if (strEntityType == "2")
                         {
-                            strCinServiceUrl = StrCinLlpinUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
+                            strCinServiceUrl = StrCinLlpinValidateUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
+                            strDinServiceUrl = StrCinLlpinValidateUrl + "/din/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
                         }
 
-                        Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestData]:- " + strCinServiceUrl);
+                        Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinRequestData]:- " + strCinServiceUrl);
+                        Util.LogRequestResponse("ProfileUpdate", "GetDinStatusFromMCA", "[DinRequestData]:- " + strDinServiceUrl);
 
                         /*---------------------------------------------------------------*/
                         /// Call CIN/LLPIN Service API.
                         /*---------------------------------------------------------------*/
-                        var client2 = new RestClient(strCinServiceUrl)
+                        var CinClientRequest = new RestClient(strCinServiceUrl)
                         {
                             Timeout = -1
                         };
-                        var request2 = new RestRequest(Method.GET);
-                        request2.AddHeader("Authorization", "Bearer " + strAccessToken);
-                        //request2.AddHeader("Content-Type", "application/json");
-                        IRestResponse Dataresponse = client2.Execute(request2);
-
-                        if (Dataresponse.StatusCode == HttpStatusCode.OK)
+                        var DinClientRequest = new RestClient(strDinServiceUrl)
                         {
-                            string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
-                            
+                            Timeout = -1
+                        };
+                        var Cinrequest = new RestRequest(Method.GET);
+                        Cinrequest.AddHeader("Authorization", "Bearer " + strAccessToken);
+                        //request2.AddHeader("Content-Type", "application/json");
 
-                            Hid_Cin_Llpin.Value = message;
+                        IRestResponse CinDataresponse = CinClientRequest.Execute(Cinrequest);
 
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + TokenResponse.StatusCode + " -[ResponseContent]:- " + Dataresponse.Content);
+                        IRestResponse DinDataresponse = DinClientRequest.Execute(Cinrequest);
 
-                            if (message.ToUpper() == "NO DATA")
+
+                        if (CinDataresponse.StatusCode == HttpStatusCode.OK   && DinDataresponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            string CINmessage = JsonConvert.DeserializeObject<Dictionary<string, object>>(CinDataresponse.Content)["message"].ToString();
+
+                            string DINmessage = JsonConvert.DeserializeObject<Dictionary<string, object>>(DinDataresponse.Content)["message"].ToString();
+
+                            Hid_Cin_Llpin.Value = CINmessage;
+
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CINResponseStatusCode]:- " + CinDataresponse.StatusCode + " -[ResponseContent]:- " + CinDataresponse.Content);
+
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[DINResponseStatusCode]:- " + DinDataresponse.StatusCode + " -[ResponseContent]:- " + DinDataresponse.Content);
+
+                            if (CINmessage.ToUpper() == "NO DATA")
                             {
                                 if (strEntityType == "1")
                                 {
@@ -706,16 +723,98 @@ public partial class EditInvestorProfile : SessionCheck
                                     return;
                                 }
                             }
-                            else if (message.ToUpper() == "DATA FETCHED SUCCESSFULLY")
+                            else if (CINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY" && DINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY") 
                             {
-                                var Response = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content);
-                                var Responsedata = (List<object>)Response["data"];
-                                string StrCompanyName = "";
-                                foreach (var item in Responsedata)
+                              
+                                var CINResponse = JsonConvert.DeserializeObject<Dictionary<string, List<CompanyData>>>(CinDataresponse.Content);
+
+                                string StrCINnumber = CINResponse["data"][0].CIN;
+                                string StrCompanyName = CINResponse["data"][0].companyName;
+                                string StrCompanyStatus = CINResponse["data"][0].companyStatus;
+                                string Stremail = CINResponse["data"][0].emailAddress;
+                                string StrfinancialAuditStatus = "";
+                               
+                                string StrprofitLoss = "";
+                                string StrturnOver = "";
+                                string Stryear = "";
+                                string Strincorpdate = CINResponse["data"][0].incorporationDate ;
+                                string StrregisteredAddress = CINResponse["data"][0].addressLine1;
+                                string StrrocCode = CINResponse["data"][0].ROCName;
+
+
+
+                                // Deserialize the JSON string into a list of DirectorData objects
+                                var directorDataList = JsonConvert.DeserializeObject<DirectorDataList>(DinDataresponse.Content);
+
+                                // Create an empty list to store director details
+                                var directorDetailDtos = new List<JObject>();
+
+                                foreach (var directorData in directorDataList.Data)
                                 {
-                                    var CompanyData = JsonConvert.DeserializeObject<CompanyData>(item.ToString());
-                                    StrCompanyName = CompanyData.companyName ;
+                                    var directorDetails = new JObject
+                                                       {
+                                                            { "contactNumber", "" },
+                                                            { "din", directorData.DIN },
+                                                            { "name", directorData.FirstName },
+                                                       
+                                                       
+                                                       };
+
+                                    var dinDetail = new JObject
+                                                    {
+                                                         { "dinName", "" },
+                                                         { "dinStatus", directorData.DINStatus },
+                                                         { "dob", directorData.DOB },
+                                                         { "fatherName", directorData.FatherFirstName }
+                                                    };
+
+
+                                    // Create a new JObject to combine directorDetails and dinDetail
+                                    var directorObject = new JObject
+                                                             {
+                                                                 { "directorDetails", directorDetails },
+                                                                 { "dinDetail", dinDetail }
+                                                             };
+
+                                    // Add the directorObject to the directorDetailDtos list
+                                    directorDetailDtos.Add(directorObject);
+
+
                                 }
+
+
+                                // Serialize the directorDetailDtos list to JSON format
+                                string directorDetailDtosJson = JsonConvert.SerializeObject(directorDetailDtos, Formatting.Indented);
+                                string ReplaceData = directorDetailDtosJson.Replace('[', ' ');
+                                string NewDirectorDetailDtosJson = ReplaceData.Replace(']', ' ');
+
+                                // CIN and DIN data  json 
+                                var CinDinJson = @"{
+                                      ""cinDto"": {
+                                          ""cin"": """ + StrCINnumber + @""",
+                                          ""companyName"": """ + StrCompanyName + @""",
+                                          ""companyStatus"": """ + StrCompanyStatus + @""",
+                                          ""email"": """ + Stremail + @""",
+                                          ""financialAuditStatus"": """ + StrfinancialAuditStatus + @""",
+                                          ""financialDetails"": [
+                                              {
+                                                  ""profitLoss"": """ + StrprofitLoss + @""",
+                                                  ""turnOver"": """ + StrturnOver + @""",
+                                                  ""year"": """ + Stryear + @"""
+                                              }
+                                          ],
+                                          ""incorpdate"": """ + Strincorpdate + @""",
+                                          ""registeredAddress"": """ + StrregisteredAddress + @""",
+                                          ""rocCode"": """ + StrrocCode + @"""
+                                      },
+                                      ""directorDetailDtos"": [
+                                          [" + NewDirectorDetailDtosJson + @"]
+                                      ]
+                                }";
+                             
+
+
+
                                 if (strEntityType == "1")
                                 {
                                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
@@ -739,19 +838,24 @@ public partial class EditInvestorProfile : SessionCheck
                                 ///Don't update the CIN on the table here. Save when the user click on Update button.
                                 ///Only store the base64 converted value here and push that value during data submission.
 
-                                ViewState["CinLlpinData"] = Base64Encryption(Dataresponse.Content);
-                                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(Dataresponse.Content));
                                
+
+
+
+
+                                ViewState["CinLlpinData"] = Base64Encryption(CinDinJson);
+                                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(CinDinJson));
+
                             }
                         }
-                        else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
+                        else if (CinDataresponse.StatusCode == HttpStatusCode.Unauthorized)
                         {
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + Dataresponse.StatusCode);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + CinDataresponse.StatusCode);
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalied Token ! <strong>');", true);
                         }
                         else
                         {
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + Dataresponse.StatusCode);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + CinDataresponse.StatusCode);
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
                         }
                     }

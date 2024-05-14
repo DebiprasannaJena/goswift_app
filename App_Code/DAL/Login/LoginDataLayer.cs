@@ -745,6 +745,8 @@ namespace DataAcessLayer.Login
                 cmd.Parameters.AddWithValue("@P_VCH_EIN_IEM", objLogin.strEINIEM);
                 cmd.Parameters.AddWithValue("@P_VCH_LICENCE_NO_TYPE", objLogin.strLicenseNoType);
                 cmd.Parameters.AddWithValue("@P_VCH_LICENCE_DOC", objLogin.strLicenseDoc);
+                cmd.Parameters.AddWithValue("@P_VCH_PAN_HOLDER_NAME", objLogin.strPanHolderName); // add by anil
+                cmd.Parameters.AddWithValue("@P_VCH_DOB", objLogin.strDOB);// add by anil
 
                 SqlParameter par1 = new SqlParameter("@P_VCH_OUT_MSG", SqlDbType.VarChar, 2000);
                 par1.Direction = ParameterDirection.Output;

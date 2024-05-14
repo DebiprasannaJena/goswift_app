@@ -27,25 +27,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="form-group NOPRINT" id="divExport" runat="server" visible="false" align="right">
-        <asp:LinkButton ID="LinkButton1" runat="server" CssClass=" fa fa-file-pdf-o" title="Export to PDF"
+    <div class="form-group NOPRINT" id="DivExport" runat="server" visible="false" align="right">
+        <asp:LinkButton ID="LnkBtn_ExoprtPdf" runat="server" CssClass=" fa fa-file-pdf-o" title="Export to PDF"
             OnClick="lnkPdf_Click"></asp:LinkButton>
         <a class="PrintBtn" data-tooltip="Export To Excel" data-toggle="tooltip" data-title="Excel">
-            <asp:LinkButton ID="LinkButton2" CssClass="back" runat="server" title="Export to Excel"
+            <asp:LinkButton ID="LnkBtn_ExportExcel" CssClass="back" runat="server" title="Export to Excel"
                 OnClick="lnkExport_Click"><i class="fa fa-file-excel-o"></i></asp:LinkButton>
         </a><a class="PrintBtn" id="PrintBtn" data-tooltip="Print" data-toggle="tooltip"
             data-title="Print"><i class="panel-control-icon fa fa-print"></i></a>
     </div>
     <div class="table-responsive">
         <div style="text-align: right; width: 100%; text-align: right;" class="noprint pagelist">
-            <asp:Label ID="lblDetails" runat="server"></asp:Label>
-            <asp:DropDownList ID="ddlNoOfRec" ToolTip="Page Size" Width="80px" runat="server"
+            <asp:Label ID="Lbl_Details" runat="server"></asp:Label>
+            <asp:DropDownList ID="DrpDwn_NoOfRec" ToolTip="Page Size" Width="80px" runat="server"
                 AutoPostBack="True" OnSelectedIndexChanged="ddlNoOfRec_SelectedIndexChanged"
                 CssClass="form-control" Style="display: inline">
             </asp:DropDownList>
         </div>
-        <asp:Label ID="lblSearchDetails" runat="server"></asp:Label>
-        <asp:GridView ID="grdService" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
+        <asp:Label ID="Lbl_SearchDetails" runat="server"></asp:Label>
+        <asp:GridView ID="GrdService" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
             CssClass="table table-bordered table-hover" OnRowDataBound="grdService_RowDataBound">
             <Columns>
                 <asp:TemplateField HeaderText="Sl#" ItemStyle-Width="5%">
@@ -74,7 +74,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <%--   <asp:HiddenField ID="HiddenField1" runat="server" Value="Blank Value" />--%>
-            <asp:HiddenField ID="hdnPgindex" runat="server" Value="Blank Value" />
+            <asp:HiddenField ID="Hdn_Pgindex" runat="server" Value="Blank Value" />
         </div>
     </div>
     </form>

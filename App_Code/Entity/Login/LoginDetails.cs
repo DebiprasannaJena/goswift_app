@@ -31,5 +31,7 @@ namespace EntityLayer.Login
         public string strLicenseDoc { get; set; } ///// Added by Sushant Jena On Dt.24-Sep-2018
         public int intAliasNameCount { get; set; } ///// Added by Sushant Jena On Dt.20-Nov-2018
         public int IntIndustryType { get; set; } ///// Added by Sushant Jena On Dt.01-Sep-2021
+        public string strPanHolderName { get; set; } // add by anil
+        public string strDOB { get; set; }// add by anil 
     }
 }

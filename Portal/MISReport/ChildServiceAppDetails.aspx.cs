@@ -14,10 +14,12 @@ using System.Data.SqlClient;
 using RestSharp;
 using System.Web.Script.Serialization;
 using System.IO;
+using System.Net;
+using Newtonsoft.Json;
 
 public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Page
 {
-    SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+    SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["UserId"] == null)
@@ -28,26 +30,26 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
 
         if (!IsPostBack)
         {
-            CommonFunctions.PopulatePageSize(ddlNoOfRec);
-            hdnPgindex.Value = "1";
+            CommonFunctions.PopulatePageSize(DrpDwn_NoOfRec);
+            HdnPgindex.Value = "1";
             if (!string.IsNullOrEmpty(Request.QueryString["hdn"]))
             {
-                hdnPgindex.Value = Request.QueryString["hdn"];
+                HdnPgindex.Value = Request.QueryString["hdn"];
             }
             else
             {
-                hdnPgindex.Value = "1";
+                HdnPgindex.Value = "1";
             }
             if (Request.QueryString["pSize"] != null)
             {
-                ddlNoOfRec.SelectedValue = Request.QueryString["pSize"];
+                DrpDwn_NoOfRec.SelectedValue = Request.QueryString["pSize"];
             }
             else
             {
-                ddlNoOfRec.SelectedValue = "10";
+                DrpDwn_NoOfRec.SelectedValue = "10";
             }
 
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
     }
 
@@ -61,8 +63,8 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
     {
         try
         {
-            hdnPgindex.Value = (string)((sender as LinkButton).CommandArgument);
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            HdnPgindex.Value = (sender as LinkButton).CommandArgument;
+            BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
@@ -79,8 +81,8 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
     {
         try
         {
-            hdnPgindex.Value = "1";
-            BindGridView(Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            HdnPgindex.Value = "1";
+            BindGridView(Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
         }
         catch (Exception ex)
         {
@@ -95,9 +97,9 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
         {
             int Rowid = 0;
             string EncryptValue = "";
-            if (Convert.ToInt32(hdnPgindex.Value) > 1)
+            if (Convert.ToInt32(HdnPgindex.Value) > 1)
             {
-                Rowid = (Convert.ToInt32(hdnPgindex.Value) - 1) * Convert.ToInt32(ddlNoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
+                Rowid = (Convert.ToInt32(HdnPgindex.Value) - 1) * Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue) + e.Row.DataItemIndex + 1;
             }
             else
             {
@@ -105,8 +107,7 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
             }
             e.Row.Cells[0].Text = Rowid.ToString();
 
-            // HyperLink hypApplicationNo = (HyperLink)e.Row.FindControl("hypApplicationNo");
-            //hypApplicationNo.NavigateUrl = "../Service/ServiceDetailsView.aspx?ApplicationNo=" + hypApplicationNo.Text + "&ServiceId=" + Request.QueryString["SId"] + "&type=1";
+            
 
             // Add Remarks by anil
             HiddenField HdnFieldRemarks = (HiddenField)e.Row.FindControl("HdnFieldRemarks");
@@ -156,6 +157,62 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
                 EncryptValue = FOREST(hypApplicationNo.Text.Remove(0, 1));
                 hypApplicationNo.NavigateUrl = EncryptValue;
             }
+            else if(Serviceid == 16)
+            {
+                CultureInfo culture = new CultureInfo("es-ES");
+
+                if (DateTime.Parse(Hid_Applied_Date.Value, culture).Date > DateTime.Parse("02/05/2024", culture).Date)
+                {
+
+                    string Data = ENERGY(hypApplicationNo.Text.Remove(0, 1));
+
+                    #region For allow https from http url this below part need to add
+
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+                    ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
+                    #endregion
+                    string TokenURL = ConfigurationManager.AppSettings["MoBiduytTokenGenerationUrl"].ToString();
+
+                    var Client = new RestClient(TokenURL);
+                    Client.Timeout = -1;
+                    var Request = new RestRequest(Method.POST);
+                    Request.AddHeader("Content-Type", "application/json");
+                    Request.AddHeader("Authorization", "Basic R29Td2lmdC01Mzc0ODI5NDU0NzozMzYyNzc4OTI4");
+                    Request.AddHeader("Cookie", "ASP.NET_SessionId=rq2ca2ux1rsp3e1vjyphow3x");
+                    Request.AddParameter("application/json", Data, ParameterType.RequestBody);
+                    IRestResponse EncriptionResponse = Client.Execute(Request);
+
+                    if (EncriptionResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        var strResponseContent = EncriptionResponse.Content.ToString();
+
+                        if (strResponseContent != "")
+                        {
+                            ///Get the access decrypted value.
+                            string statusEncriptedDescription = JsonConvert.DeserializeObject<Dictionary<string, object>>(EncriptionResponse.Content)["statusDescription"].ToString();
+
+                            EncryptValue = ConfigurationManager.AppSettings["MoBiduytRedirectionUrl"].ToString() + statusEncriptedDescription;
+
+
+
+                        }
+
+
+                    }
+
+                    hypApplicationNo.NavigateUrl = EncryptValue;
+                }
+                else
+                {
+                    hypApplicationNo.NavigateUrl = "../Service/ServiceDetailsView.aspx?ApplicationNo=" + hypApplicationNo.Text.Remove(0, 1) + "&ServiceId=" + Serviceid + "&type=1";
+                }
+
+
+
+
+               
+            }
             else if (Serviceid == 5 || Serviceid == 6 || Serviceid == 7 || Serviceid == 34 || Serviceid == 35 || Serviceid == 36 || Serviceid == 39 || Serviceid == 40 || Serviceid == 70 || Serviceid == 71 || Serviceid == 72) //F&B and Labour Service
             {
                 CultureInfo culture = new CultureInfo("es-ES");
@@ -187,10 +244,10 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
 
     private void BindGridView(int intPageIndex, int intPageSize)
     {
-        lblSearchDetails.Text = string.Empty;
-        grdService.DataSource = null;
-        grdService.DataBind();
-        divExport.Visible = false;
+        Lbl_SearchDetails.Text = string.Empty;
+        GrdService.DataSource = null;
+        GrdService.DataBind();
+        DivExport.Visible = false;
         string strFromDate = string.Empty;
         string strToDate = string.Empty;
         int intMonth =DateTime.Today.Month;
@@ -231,30 +288,30 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
             objSearch.intDepartmentId = string.IsNullOrEmpty(Request.QueryString["intId"]) ? 0 : Convert.ToInt32(Request.QueryString["intId"]);
             lstChildServices = MisReportServices.View_ChildServices_District_Details_Rpt(objSearch);
         }
-        grdService.DataSource = lstChildServices;
-        grdService.DataBind();
-        if (grdService.Rows.Count > 0)
+        GrdService.DataSource = lstChildServices;
+        GrdService.DataBind();
+        if (GrdService.Rows.Count > 0)
         {
-            divExport.Visible = true;
-            ddlNoOfRec.Visible = true;
-            rptPager.Visible = true;
-            CommonFunctions.PopulatePager(rptPager, Convert.ToInt32(lstChildServices[0].intRowCount), Convert.ToInt32(hdnPgindex.Value), Convert.ToInt32(ddlNoOfRec.SelectedValue));
+            DivExport.Visible = true;
+            DrpDwn_NoOfRec.Visible = true;
+            RptPager.Visible = true;
+            CommonFunctions.PopulatePager(RptPager, Convert.ToInt32(lstChildServices[0].intRowCount), Convert.ToInt32(HdnPgindex.Value), Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue));
 
             /****************code to show paging details in the label************/
-            int intPIndex = Convert.ToInt32(hdnPgindex.Value);
+            int intPIndex = Convert.ToInt32(HdnPgindex.Value);
             int intStartIndex = 1, intEndIndex = 0;
-            int intPSize = Convert.ToInt32(ddlNoOfRec.SelectedValue);
+            int intPSize = Convert.ToInt32(DrpDwn_NoOfRec.SelectedValue);
             intStartIndex = ((intPIndex - 1) * intPSize) + 1;
-            if (intPSize == grdService.Rows.Count)
+            if (intPSize == GrdService.Rows.Count)
             {
                 intEndIndex = intPSize * intPIndex;
             }
             else
             {
-                intEndIndex = grdService.Rows.Count + (intPSize * (intPIndex - 1));
+                intEndIndex = GrdService.Rows.Count + (intPSize * (intPIndex - 1));
 
             }
-            lblDetails.Text = intStartIndex.ToString() + "-" + intEndIndex.ToString() + " of " + Convert.ToInt32(lstChildServices[0].intRowCount).ToString();
+            Lbl_Details.Text = intStartIndex.ToString() + "-" + intEndIndex.ToString() + " of " + Convert.ToInt32(lstChildServices[0].intRowCount).ToString();
             StringBuilder strSearchDetails = new StringBuilder();
 
             if ((!string.IsNullOrEmpty(Request.QueryString["intId"]) && Request.QueryString["intId"] != "0") && (string.Equals(objSearch.strActionCode, "dd", StringComparison.OrdinalIgnoreCase)))
@@ -263,7 +320,7 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
                 strSearchDetails.Append(lstChildServices[0].strDepartment);
                 strSearchDetails.Append("<br/>");
             }
-            else if (string.Equals(objSearch.strActionCode, "sd", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(objSearch.strActionCode, "sd", StringComparison.OrdinalIgnoreCase))
             {
                 strSearchDetails.Append("<strong>Department - </strong>");
                 strSearchDetails.Append(lstChildServices[0].strDepartment);
@@ -331,24 +388,24 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
                 }
                 strSearchDetails.Append("<br/>");
             }
-            lblSearchDetails.Text = strSearchDetails.ToString();
+            Lbl_SearchDetails.Text = strSearchDetails.ToString();
         }
         else
         {
-            ddlNoOfRec.Visible = false;
-            rptPager.Visible = false;
+            DrpDwn_NoOfRec.Visible = false;
+            RptPager.Visible = false;
         }
     }
 
-    protected void lnkExport_Click(object sender, EventArgs e)
+    protected void LnkExcel_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.ExportToExcel("ChildServicesDetailsRpt", grdService, "User wise report for Child Services", lblSearchDetails.Text + "<br/>As on date -" + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
+        IncentiveCommonFunctions.ExportToExcel("ChildServicesDetailsRpt", GrdService, "User wise report for Child Services", Lbl_SearchDetails.Text + "<br/>As on date -" + DateTime.Today.ToString("d-MMM-yyyy"), string.Empty, true);
       
     }
 
-    protected void lnkPdf_Click(object sender, EventArgs e)
+    protected void LnkPdf_Click(object sender, EventArgs e)
     {
-        IncentiveCommonFunctions.CreatePdf("ChildServicesDetailsRpt", grdService);
+        IncentiveCommonFunctions.CreatePdf("ChildServicesDetailsRpt", GrdService);
     }
 
     public override void VerifyRenderingInServerForm(Control control)
@@ -362,12 +419,12 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
         try
         {
             SqlCommand cmd = new SqlCommand();
-            if (conn.State == ConnectionState.Closed)
+            if (Conn.State == ConnectionState.Closed)
             {
-                conn.Open();
+                Conn.Open();
             }
            
-                cmd.Connection = conn;
+                cmd.Connection = Conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "USP_BPAS_SERVICE_DISPLAY";
                 cmd.Parameters.Clear();
@@ -518,16 +575,16 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
         try
         {
             SqlCommand cmd = new SqlCommand();
-            if (conn.State == ConnectionState.Closed)
+            if (Conn.State == ConnectionState.Closed)
             {
-                conn.Open();
+                Conn.Open();
             }
            
-                cmd.Connection = conn;
+                cmd.Connection = Conn;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "USP_PAReSHRAM_SERVICE_DISPLAY";
                 cmd.Parameters.Clear();
-               //cmd.Parameters.AddWithValue("@INT_INVESTOR_ID", 0);
+              
                 cmd.Parameters.AddWithValue("@VCH_ACTION", "DRAFTSERVICEINFO");
                 cmd.Parameters.AddWithValue("@VCH_APPLICATION_UNQ_KEY", strApplicationKey);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -550,12 +607,12 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
         try
         {
             SqlCommand cmd = new SqlCommand();
-            if (conn.State == ConnectionState.Closed)
+            if (Conn.State == ConnectionState.Closed)
             {
-                conn.Open();
+                Conn.Open();
             }
 
-            cmd.Connection = conn;
+            cmd.Connection = Conn;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "USP_FOREST_SERVICE_DISPLAY";
             cmd.Parameters.Clear();
@@ -570,6 +627,52 @@ public partial class Portal_MISReport_ChildServiceAppDetails : System.Web.UI.Pag
         catch (Exception ex)
         {
             Util.LogError(ex, "ChildServiceAppDetal");
+        }
+        return EncryptValue;
+    }
+
+
+    /// <summary>
+    /// this method used create JSON data for Reapply new power connection by Mo-Biduyt api
+    /// </summary>
+    private string ENERGY(string strApplicationKey)
+    {
+        string EncryptValue = "";
+        DataTable dt = new DataTable();
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+           
+            if(Conn.State == ConnectionState.Closed)
+            {
+                Conn.Open();
+            }
+            cmd.Connection = Conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "USP_Energy_SERVICE_DISPLAY";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@INT_INVESTOR_ID", Convert.ToInt32(Session["InvestorId"].ToString()));
+            cmd.Parameters.AddWithValue("@VCH_ACTION", "DRAFTSERVICEINFO");
+            cmd.Parameters.AddWithValue("@VCH_APPLICATION_UNQ_KEY", strApplicationKey);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+
+                EncryptValue = "{\"serviceId\":\"" + dt.Rows[0]["INT_SERVICEID"].ToString() + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\",\"goSwiftApplicationId\":\"" + strApplicationKey + "\"}";
+
+            }
+            else
+            {
+                EncryptValue = "{\"serviceid\":\"\",\"goSwiftApplicationId\":\"\",\"name\":\"\",\"pan\":\"\",\"email\":\"\",\"mobile\":\"\"}";
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "Energy");
         }
         return EncryptValue;
     }
