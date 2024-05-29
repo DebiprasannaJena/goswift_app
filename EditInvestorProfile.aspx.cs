@@ -825,14 +825,14 @@ public partial class EditInvestorProfile : SessionCheck
 
                                 if (strEntityType == "1")
                                 {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN validated successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_CIN_Number.Text;
                                     Img_Success.Visible = true;
                                     Lbl_CompName.Text = StrCompanyName;
                                 }
                                 else if (strEntityType == "2")
                                 {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN validated successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
                                     Img_Success.Visible = true;
                                     Lbl_CompName.Text = StrCompanyName;
