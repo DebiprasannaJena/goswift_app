@@ -175,6 +175,15 @@
 
                     }
                     break;
+                default:
+                    jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                    $("#popup_ok").click(function () {
+                        $("#DrpDwn_Entity_Type").focus();
+                        $('#DrpDwn_Entity_Type').val('0');
+                        $("#Div_CIN").hide();
+                        $("#Div_LLPIN").hide();
+                        $("#Div_CIN_LLPIN_Btn").hide();
+                    });
             }
         }
 
