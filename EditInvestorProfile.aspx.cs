@@ -632,6 +632,8 @@ public partial class EditInvestorProfile : SessionCheck
 
                 Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestCredentials]" + "[RequestUrl]:- " + StrCinLlpinTokenUrl + " - [TokenUserId]:- " + StrCinTokenUserId + "- [TokenPassword]:- " + StrCinTokenPassword);
 
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
                 /*---------------------------------------------------------------*/
                 // Generate token to validate CIN/LLPIN.
                 /*---------------------------------------------------------------*/
@@ -725,23 +727,28 @@ public partial class EditInvestorProfile : SessionCheck
                             }
                             else if (CINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY" && DINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY") 
                             {
-                              
-                                var CINResponse = JsonConvert.DeserializeObject<Dictionary<string, List<CompanyData>>>(CinDataresponse.Content);
 
-                                string StrCINnumber = CINResponse["data"][0].CIN;
-                                string StrCompanyName = CINResponse["data"][0].companyName;
-                                string StrCompanyStatus = CINResponse["data"][0].companyStatus;
-                                string Stremail = CINResponse["data"][0].emailAddress;
-                                string StrfinancialAuditStatus = "";
-                               
-                                string StrprofitLoss = "";
-                                string StrturnOver = "";
-                                string Stryear = "";
-                                string Strincorpdate = CINResponse["data"][0].incorporationDate ;
-                                string StrregisteredAddress = CINResponse["data"][0].addressLine1;
-                                string StrrocCode = CINResponse["data"][0].ROCName;
+                                // var CINResponse = JsonConvert.DeserializeObject<Dictionary<string, List<CompanyData>>>(CinDataresponse.Content);
 
+                                CinRootData root = JsonConvert.DeserializeObject<CinRootData>(CinDataresponse.Content);
 
+                                var CompanyData = root.data[0];
+
+                                string StrCINnumber = CompanyData.CIN;   //CINResponse["data"][0].CIN;
+                                string StrCompanyName = CompanyData.companyName;  //CINResponse["data"][0].companyName;
+                                string StrCompanyStatus = CompanyData.companyStatus;  //CINResponse["data"][0].companyStatus;
+                                string Stremail = CompanyData.emailAddress;   //CINResponse["data"][0].emailAddress;
+                                string StrfinancialAuditStatus = string.IsNullOrEmpty(CompanyData.auditStatus) ? "" : CompanyData.auditStatus;
+    
+
+                                string StrprofitLoss = string.IsNullOrEmpty(CompanyData.profitLoss) ? "" : CompanyData.profitLoss; //"";
+                                string StrturnOver = string.IsNullOrEmpty(CompanyData.turnover) ? "" : CompanyData.turnover;//"";
+                                string Stryear = string.IsNullOrEmpty(CompanyData.financialYear) ? "" : CompanyData.financialYear; // "";
+                                string Strincorpdate = CompanyData.incorporationDate;  //CINResponse["data"][0].incorporationDate ;
+                                string StrregisteredAddress = CompanyData.addressLine1;  //CINResponse["data"][0].addressLine1;
+                                string StrrocCode = CompanyData.ROCName;  //CINResponse["data"][0].ROCName;
+
+                                Util.LogRequestResponse("ProfileUpdate", "GetCINdataFromMCA", "[StrrocCode]:- " + StrrocCode);
 
                                 // Deserialize the JSON string into a list of DirectorData objects
                                 var directorDataList = JsonConvert.DeserializeObject<DirectorDataList>(DinDataresponse.Content);
@@ -785,6 +792,7 @@ public partial class EditInvestorProfile : SessionCheck
 
                                 // Serialize the directorDetailDtos list to JSON format
                                 string directorDetailDtosJson = JsonConvert.SerializeObject(directorDetailDtos, Formatting.Indented);
+                                Util.LogRequestResponse("ProfileUpdate", "GetdinStatusFromMCA", "[din new format data]:- " + directorDetailDtosJson);
                                 string ReplaceData = directorDetailDtosJson.Replace('[', ' ');
                                 string NewDirectorDetailDtosJson = ReplaceData.Replace(']', ' ');
 
@@ -811,9 +819,9 @@ public partial class EditInvestorProfile : SessionCheck
                                           [" + NewDirectorDetailDtosJson + @"]
                                       ]
                                 }";
-                             
 
 
+                                Util.LogRequestResponse("ProfileUpdate", "MCANewJsonData", "[New Json format data]:- " + CinDinJson);
 
                                 if (strEntityType == "1")
                                 {

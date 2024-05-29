@@ -86,6 +86,14 @@ namespace EntityLayer.Investor
 
 
     #region for CIN and LLPN validation add by anil
+
+
+    public class CinRootData
+    {
+        public string message { get; set; }
+        public List<CompanyData> data { get; set; }
+    }
+
     public class CompanyData
     {
       
@@ -135,6 +143,7 @@ namespace EntityLayer.Investor
 
     public class DirectorDataList
     {
+        public string message { get; set; }
         public List<DirectorData> Data { get; set; }
     }
 
