@@ -1395,6 +1395,41 @@ namespace DataAcessLayer.Investor
             return dt;
         }
 
+
+        public DataTable BindRegdDist(string action, int stateid)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand();
+
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USP_INVESTOR_REGISTRATION_DETAILS";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@Action", action);
+                cmd.Parameters.AddWithValue("@INT_REG_STATE", stateid);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (NullReferenceException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd = null;
+            }
+            return dt;
+        }
+
         #endregion
     }
 }

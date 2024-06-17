@@ -563,7 +563,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <div class="header-icon">
-                        <img src="../images/naveen-patnaik.jpg" style="height: 53px;" class="img img-responsive img-thumbnail" />
+                        <img src="../images/Mohan-Charan-Majhi.jpg" style="height: 53px;" class="img img-responsive img-thumbnail" />
                     </div>
                     <div class="header-title">
                         <h1>Chief Minister DashBoard</h1>

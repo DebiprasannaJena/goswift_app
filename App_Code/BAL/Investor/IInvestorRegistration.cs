@@ -27,6 +27,8 @@ namespace BusinessLogicLayer.Investor
         DataTable BindRegdCountry(string action);
         [OperationContract]
         DataTable BindRegdState(string action, int countryid);
+        [OperationContract]
+        DataTable BindRegdDist(string action, int stateid);
     }
     
 }

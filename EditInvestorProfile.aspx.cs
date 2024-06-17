@@ -219,10 +219,24 @@ public partial class EditInvestorProfile : SessionCheck
                 return;
             }
 
-            if (string.IsNullOrEmpty(Txt_Reg_City.Text))
+            //if (string.IsNullOrEmpty(Txt_Reg_City.Text))
+            //{
+            //    Txt_Reg_City.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration city name !</strong>');", true);
+            //    return;
+            //}
+            if(DrpDwn_Reg_Country.SelectedValue=="1" && DrpDwn_Registration_Dist.SelectedIndex == 0)
+            {
+                DrpDwn_Registration_Dist.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration district name !</strong>');", true);
+                return;
+
+            }
+
+             if (DrpDwn_Reg_Country.SelectedValue != "1" && string.IsNullOrEmpty(Txt_Reg_City.Text.Trim()))
             {
                 Txt_Reg_City.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration city name !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration district/city name !</strong>');", true);
                 return;
             }
 
@@ -280,10 +294,24 @@ public partial class EditInvestorProfile : SessionCheck
                 return;
             }
 
-            if (string.IsNullOrEmpty(Txt_SL_City.Text))
+            //if (string.IsNullOrEmpty(Txt_SL_City.Text))
+            //{
+            //    Txt_SL_City.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
+            //    return;
+            //}
+
+            if(DrpDwn_SL_Country.SelectedValue == "1"  && DrpDwn_Site_Dist.SelectedIndex == 0)
+            {
+                DrpDwn_Site_Dist.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location district name !</strong>');", true);
+                return;
+            }
+
+            if (DrpDwn_SL_Country.SelectedValue != "1" && string.IsNullOrEmpty(Txt_SL_City.Text.Trim()))
             {
                 Txt_SL_City.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location  district/city name !</strong>');", true);
                 return;
             }
 
@@ -397,13 +425,17 @@ public partial class EditInvestorProfile : SessionCheck
                 if (DrpDwn_Reg_Country.SelectedValue == "1")//Add by Debi
                 {
                     objEnt.VCH_REG_STATE = DrpDwn_Reg_State.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_REG_CITY = DrpDwn_Registration_Dist.SelectedItem.Text;
                 }
                 else
                 {
                     objEnt.VCH_REG_STATE = Txt_Reg_State.Text;//Add by Debi
+                    objEnt.VCH_REG_CITY = Txt_Reg_City.Text.Trim();//Add by Debi
                 }
 
-                objEnt.VCH_REG_CITY = Txt_Reg_City.Text.Trim();//Add by Debi
+                
+
+
                 objEnt.VCH_REG_PIN = Txt_Reg_PIN_Code.Text.Trim();//Add by Debi
                 objEnt.VCH_SL_ADDRESS_2 = Txt_SL_Address_2.Text.Trim();//Add by Debi
                 objEnt.INT_SL_COUNTRY = Convert.ToInt32(DrpDwn_SL_Country.SelectedValue);//Add by Debi
@@ -411,13 +443,15 @@ public partial class EditInvestorProfile : SessionCheck
                 if (DrpDwn_SL_Country.SelectedValue == "1")//Add by Debi
                 {
                     objEnt.VCH_SL_STATE = DrpDwn_SL_State.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_SL_CITY = DrpDwn_Site_Dist.SelectedItem.Text;
                 }
                 else
                 {
                     objEnt.VCH_SL_STATE = Txt_SL_State.Text.Trim();//Add by Debi
+                    objEnt.VCH_SL_CITY = Txt_SL_City.Text.Trim();//Add by Debi
                 }
 
-                objEnt.VCH_SL_CITY = Txt_SL_City.Text.Trim();//Add by Debi
+                
                 objEnt.VCH_SL_PIN = Txt_SL_PIN_Code.Text.Trim();//Add by Debi
 
                 if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)//Add by Debi
@@ -466,13 +500,15 @@ public partial class EditInvestorProfile : SessionCheck
                         if (DrpDwn_Reg_Country.SelectedValue == "1")//Add by Debi
                         {
                             objInvDet.StrRegState = DrpDwn_Reg_State.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrRegCity = DrpDwn_Registration_Dist.SelectedItem.Text;
                         }
                         else
                         {
                             objInvDet.StrRegState = Txt_Reg_State.Text;//Add by Debi
+                            objInvDet.StrRegCity = Txt_Reg_City.Text.Trim();//Add by Debi
                         }
 
-                        objInvDet.StrRegCity = Txt_Reg_City.Text.Trim();//Add by Debi
+                        
                         objInvDet.StrRegPincode = Txt_Reg_PIN_Code.Text.Trim();//Add by Debi
                         objInvDet.StrSlAddress_2 = Txt_SL_Address_2.Text.Trim();//Add by Debi
                         objInvDet.IntSlCountry = Convert.ToInt32(DrpDwn_SL_Country.SelectedValue);//Add by Debi
@@ -480,13 +516,15 @@ public partial class EditInvestorProfile : SessionCheck
                         if (DrpDwn_SL_Country.SelectedValue == "1")//Add by Debi
                         {
                             objInvDet.StrSlState = DrpDwn_SL_State.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrSlCity = DrpDwn_Site_Dist.SelectedItem.Text;
                         }
                         else
                         {
                             objInvDet.StrSlState = Txt_SL_State.Text.Trim();//Add by Debi
+                            objInvDet.StrSlCity = Txt_SL_City.Text.Trim();//Add by Debi
                         }
 
-                        objInvDet.StrSlCity = Txt_SL_City.Text.Trim();//Add by Debi
+                       
                         objInvDet.StrSlPincode = Txt_SL_PIN_Code.Text.Trim();//Add by Debi
                         objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
 
@@ -693,7 +731,7 @@ public partial class EditInvestorProfile : SessionCheck
                         };
                         var Cinrequest = new RestRequest(Method.GET);
                         Cinrequest.AddHeader("Authorization", "Bearer " + strAccessToken);
-                        //request2.AddHeader("Content-Type", "application/json");
+                       
 
                         IRestResponse CinDataresponse = CinClientRequest.Execute(Cinrequest);
 
@@ -734,19 +772,19 @@ public partial class EditInvestorProfile : SessionCheck
 
                                 var CompanyData = root.data[0];
 
-                                string StrCINnumber = CompanyData.CIN;   //CINResponse["data"][0].CIN;
-                                string StrCompanyName = CompanyData.companyName;  //CINResponse["data"][0].companyName;
-                                string StrCompanyStatus = CompanyData.companyStatus;  //CINResponse["data"][0].companyStatus;
-                                string Stremail = CompanyData.emailAddress;   //CINResponse["data"][0].emailAddress;
+                                string StrCINnumber = CompanyData.CIN;   
+                                string StrCompanyName = CompanyData.companyName; 
+                                string StrCompanyStatus = CompanyData.companyStatus;  
+                                string Stremail = CompanyData.emailAddress;  
                                 string StrfinancialAuditStatus = string.IsNullOrEmpty(CompanyData.auditStatus) ? "" : CompanyData.auditStatus;
     
 
-                                string StrprofitLoss = string.IsNullOrEmpty(CompanyData.profitLoss) ? "" : CompanyData.profitLoss; //"";
-                                string StrturnOver = string.IsNullOrEmpty(CompanyData.turnover) ? "" : CompanyData.turnover;//"";
-                                string Stryear = string.IsNullOrEmpty(CompanyData.financialYear) ? "" : CompanyData.financialYear; // "";
-                                string Strincorpdate = CompanyData.incorporationDate;  //CINResponse["data"][0].incorporationDate ;
-                                string StrregisteredAddress = CompanyData.addressLine1;  //CINResponse["data"][0].addressLine1;
-                                string StrrocCode = CompanyData.ROCName;  //CINResponse["data"][0].ROCName;
+                                string StrprofitLoss = string.IsNullOrEmpty(CompanyData.profitLoss) ? "" : CompanyData.profitLoss; 
+                                string StrturnOver = string.IsNullOrEmpty(CompanyData.turnover) ? "" : CompanyData.turnover;
+                                string Stryear = string.IsNullOrEmpty(CompanyData.financialYear) ? "" : CompanyData.financialYear; 
+                                string Strincorpdate = CompanyData.incorporationDate; 
+                                string StrregisteredAddress = CompanyData.addressLine1;  
+                                string StrrocCode = CompanyData.ROCName; 
 
                                 Util.LogRequestResponse("ProfileUpdate", "GetCINdataFromMCA", "[StrrocCode]:- " + StrrocCode);
 
@@ -816,7 +854,7 @@ public partial class EditInvestorProfile : SessionCheck
                                           ""rocCode"": """ + StrrocCode + @"""
                                       },
                                       ""directorDetailDtos"": [
-                                          [" + NewDirectorDetailDtosJson + @"]
+                                          " + NewDirectorDetailDtosJson + @"
                                       ]
                                 }";
 
@@ -949,17 +987,29 @@ public partial class EditInvestorProfile : SessionCheck
                     Div_Reg_State_DrpDwn.Visible = true;
                     Div_Reg_State_Text.Visible = false;
                     Txt_Reg_State.Text = "";
-                    DrpDwn_Reg_State.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                   
+
+                    DrpDwn_Reg_State.SelectedValue = dt.Rows[0]["INT_REG_STATE"].ToString();
+
+                    DrpDwn_Reg_State_SelectedIndexChanged(null, EventArgs.Empty);
+                    Div_Reg_Dist_DrpDwn.Visible = true;
+                    Div_Reg_Dist_Text.Visible = false;
+                    Txt_Reg_City.Text = "";
+                    DrpDwn_Registration_Dist.SelectedValue = dt.Rows[0]["INT_REG_DIST"].ToString();
                 }
                 else
                 {
                     Div_Reg_State_Text.Visible = true;
                     Div_Reg_State_DrpDwn.Visible = false;
+                    Div_Reg_Dist_DrpDwn.Visible = false;
+                    Div_Reg_Dist_Text.Visible = true;
                     Txt_Reg_State.Text = "";
                     Txt_Reg_State.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                    Txt_Reg_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
+
                 }
 
-                Txt_Reg_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
+               
                 Txt_Reg_PIN_Code.Text = dt.Rows[0]["VCH_REG_PIN"].ToString();//Add by Debi
                 Txt_SL_Address_2.Text = dt.Rows[0]["VCH_SL_ADDRESS_2"].ToString();//Add by Debi
                 DrpDwn_SL_Country.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();//Add by Debi
@@ -970,16 +1020,26 @@ public partial class EditInvestorProfile : SessionCheck
                     Div_SL_State_DrpDwn.Visible = true;
                     Div_SL_State_Text.Visible = false;
                     Txt_SL_State.Text = "";
-                    DrpDwn_SL_State.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
+                    DrpDwn_SL_State.SelectedValue = dt.Rows[0]["INT_SL_STATE"].ToString();//Add by Debi
+                    DrpDwn_SL_State_SelectedIndexChanged(null, EventArgs.Empty);
+
+                    Div_SL_Dist_DrpDwn.Visible = true;
+                    Div_SL_Dist_Text.Visible = false;
+                    Txt_SL_City.Text = "";
+
+                    DrpDwn_Site_Dist.SelectedValue = dt.Rows[0]["INT_SL_DIST"].ToString();//Add by Debi
                 }
                 else
                 {
                     Div_SL_State_Text.Visible = true;
                     Div_SL_State_DrpDwn.Visible = false;
+                    Div_SL_Dist_DrpDwn.Visible = false;
+                    Div_SL_Dist_Text.Visible = true;
                     Txt_SL_State.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
+                    Txt_SL_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
                 }
 
-                Txt_SL_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
+               
                 Txt_SL_PIN_Code.Text = dt.Rows[0]["VCH_SL_PIN"].ToString();//Add by Debi
             }
         }
@@ -1149,13 +1209,19 @@ public partial class EditInvestorProfile : SessionCheck
             {
                 Div_Reg_State_DrpDwn.Visible = true;
                 Div_Reg_State_Text.Visible = false;
+                Div_Reg_Dist_DrpDwn.Visible = true;
+                Div_Reg_Dist_Text.Visible = false;
                 Txt_Reg_State.Text = "";
+                Txt_Reg_City.Text = "";
             }
             else
             {
                 Div_Reg_State_Text.Visible = true;
                 Div_Reg_State_DrpDwn.Visible = false;
+                Div_Reg_Dist_DrpDwn.Visible = false;
+                Div_Reg_Dist_Text.Visible = true;
                 Txt_Reg_State.Text = "";
+                
             }
         }
         catch (Exception ex)
@@ -1183,16 +1249,58 @@ public partial class EditInvestorProfile : SessionCheck
             {
                 Div_SL_State_DrpDwn.Visible = true;
                 Div_SL_State_Text.Visible = false;
+                Div_SL_Dist_DrpDwn.Visible = true;
+                Div_SL_Dist_Text.Visible = false;
                 Txt_SL_State.Text = "";
             }
             else
             {
                 Div_SL_State_Text.Visible = true;
                 Div_SL_State_DrpDwn.Visible = false;
+                Div_SL_Dist_DrpDwn.Visible = false;
+                Div_SL_Dist_Text.Visible = true;
                 Txt_SL_State.Text = "";
             }
         }
         catch (Exception ex)
+        {
+            Util.LogError(ex, "ProfileUpdate");
+        }
+    }
+
+    protected void DrpDwn_Reg_State_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+
+        
+        StrAction = "FED";
+        DataTable dtRegDist = objRegService.BindRegdDist(StrAction, Convert.ToInt32(DrpDwn_Reg_State.SelectedValue));
+        DrpDwn_Registration_Dist.DataSource = dtRegDist;
+        DrpDwn_Registration_Dist.DataTextField = "vchDistrictName";
+        DrpDwn_Registration_Dist.DataValueField = "intDistrictId";
+        DrpDwn_Registration_Dist.DataBind();
+        DrpDwn_Registration_Dist.Items.Insert(0, new ListItem("--Select--", "0"));
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "ProfileUpdate");
+        }
+    }
+
+    protected void DrpDwn_SL_State_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            StrAction = "FED";
+            DataTable dtRegDist = objRegService.BindRegdDist(StrAction, Convert.ToInt32(DrpDwn_SL_State.SelectedValue));
+            DrpDwn_Site_Dist.DataSource = dtRegDist;
+            DrpDwn_Site_Dist.DataTextField = "vchDistrictName";
+            DrpDwn_Site_Dist.DataValueField = "intDistrictId";
+            DrpDwn_Site_Dist.DataBind();
+            DrpDwn_Site_Dist.Items.Insert(0, new ListItem("--Select--", "0"));
+        }
+        catch(Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
         }
