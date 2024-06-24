@@ -73,7 +73,7 @@ object-fit: cover;
                             <li><a href="#" class="font-plus">T+</a></li>
                             <li><a href="#" class="font-normal active">T</a></li>
                             <li><a href="#" class="font-minus">T-</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=jqXi-AhpDg0&t=0s&index=2&list=PLxlD_G5mrgNItIPSMkbNSj-wDKCCR8MiH" target="_blank">Walkthrough Videos</a></li>
+                            <%--<li><a href="https://www.youtube.com/watch?v=jqXi-AhpDg0&t=0s&index=2&list=PLxlD_G5mrgNItIPSMkbNSj-wDKCCR8MiH" target="_blank">Walkthrough Videos</a></li>--%>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">User Manual<span class="caret"></span></a>
                                 <ul class="dropdown-menu" style="min-width: 93px !important; background-color: black;">

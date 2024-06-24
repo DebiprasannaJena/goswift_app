@@ -27,7 +27,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="form-group NOPRINT" id="divExport" runat="server" visible="false" align="right">
+    <div class="form-group NOPRINT" id="DivExport" runat="server" visible="false" align="right">
         <asp:LinkButton ID="LinkButton1" runat="server" CssClass=" fa fa-file-pdf-o" title="Export to PDF"
             OnClick="lnkPdf_Click"></asp:LinkButton>
         <a class="PrintBtn" data-tooltip="Export To Excel" data-toggle="tooltip" data-title="Excel">
@@ -39,13 +39,13 @@
     <div class="table-responsive">
         <div style="text-align: right; width: 100%; text-align: right;" class="noprint pagelist">
             <asp:Label ID="lblDetails" runat="server"></asp:Label>
-            <asp:DropDownList ID="ddlNoOfRec" ToolTip="Page Size" Width="80px" runat="server"
+            <asp:DropDownList ID="DrpDwn_NoOfRec" ToolTip="Page Size" Width="80px" runat="server"
                 AutoPostBack="True" OnSelectedIndexChanged="ddlNoOfRec_SelectedIndexChanged"
                 CssClass="form-control" Style="display: inline">
             </asp:DropDownList>
         </div>
         <asp:Label ID="lblSearchDetails" runat="server"></asp:Label>
-        <asp:GridView ID="grdDepartment" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
+        <asp:GridView ID="GrdDepartment" runat="server" AutoGenerateColumns="false" EmptyDataText="No Records Found...."
             CssClass="table table-bordered table-hover">
             <Columns>
                 <asp:TemplateField HeaderText="Sl#" ItemStyle-Width="5%">
@@ -78,7 +78,7 @@
                 </ItemTemplate>
             </asp:Repeater>
             <%--   <asp:HiddenField ID="HiddenField1" runat="server" Value="Blank Value" />--%>
-            <asp:HiddenField ID="hdnPgindex" runat="server" Value="Blank Value" />
+            <asp:HiddenField ID="HdnPgindex" runat="server" Value="Blank Value" />
         </div>
     </div>
     </form>

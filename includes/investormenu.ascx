@@ -145,3 +145,41 @@
         </asp:UpdatePanel>
     </div>
 </asp:Panel>
+
+
+<%--Modal Popup Section for Show except india country --%>
+
+
+<asp:LinkButton ID="LnkBtnNswsValidation" runat="server"></asp:LinkButton>
+<cc1:ModalPopupExtender ID="ModalPopupNswsRedirect" BehaviorID="mpe4" runat="server" BackgroundCssClass="modalBackground" PopupControlID="PanelNswsRedirect"
+    TargetControlID="LnkBtnNswsValidation" CancelControlID="LnkBtnNswsPopupClose">
+</cc1:ModalPopupExtender>
+<asp:Panel ID="PanelNswsRedirect" runat="server" CssClass="modalPopup" Style="display: none; width: 550px; height: 250px;"
+    ToolTip="Important Notes">
+    <div class="mhead">
+        <asp:LinkButton ID="LnkBtnNswsPopupClose" runat="server" OnClick="LnkBtnNswsPopupClose_Click"><i class="fa fa-close"></i></asp:LinkButton>
+        <span class="glyphicon glyphicon-alert"></span>
+        <h4 class="modal-title">Alert </h4>
+    </div>
+    <div class="modal-body">
+        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+            <ContentTemplate>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol style="padding-left: 20px;">
+                            <li style="padding-bottom: 7px;">Only India registor company allow to redirect NSWS portal</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="mFooter">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <asp:Button ID="BtnNswsOk" runat="server" Text="Yes" CssClass="btn btn-success" OnClick="BtnNswsOk_Click" />
+                           
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+</asp:Panel>

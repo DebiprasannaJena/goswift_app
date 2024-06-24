@@ -17,6 +17,8 @@ using RestSharp;
 using System.Web.Script.Serialization;
 using System.Text;
 using System.Security.Cryptography;
+using System.Net;
+using Newtonsoft.Json;
 
 public partial class DraftedServices : System.Web.UI.Page
 {
@@ -666,6 +668,52 @@ public partial class DraftedServices : System.Web.UI.Page
         return EncryptValue;
     }
 
+    /// <summary>
+    /// this method used create JSON data for draft application of new power connection by Mo-Biduyt api
+    /// </summary>
+    private string ENERGY(string strApplicationKey)
+    {
+        string EncryptValue = "";
+        DataTable dt = new DataTable();
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "USP_Energy_SERVICE_DISPLAY";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@INT_INVESTOR_ID", Convert.ToInt32(Session["InvestorId"].ToString()));
+            cmd.Parameters.AddWithValue("@VCH_ACTION", "DRAFTSERVICEINFO");
+            cmd.Parameters.AddWithValue("@VCH_APPLICATION_UNQ_KEY", strApplicationKey);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+       
+            if (dt.Rows.Count > 0)
+            {
+
+                 EncryptValue = "{\"serviceId\":\"" + dt.Rows[0]["INT_SERVICEID"].ToString() + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\",\"goSwiftApplicationId\":\"" + strApplicationKey + "\"}";
+
+            }
+            else
+             {
+                 EncryptValue = "{\"serviceid\":\"\",\"goSwiftApplicationId\":\"\",\"name\":\"\",\"pan\":\"\",\"email\":\"\",\"mobile\":\"\"}";
+                    
+             }
+            
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "Energy");
+        }
+        return EncryptValue;
+    }
+
+
     protected void BtnApplyMultipe_Click(object sender, EventArgs e)
     {
         try
@@ -941,6 +989,47 @@ public partial class DraftedServices : System.Web.UI.Page
 
             EncryptValue = FOREST(strApplicationKey);
             Response.Redirect(ConfigurationManager.AppSettings["TreeTransit"].ToString() + "?" + EncryptValue + "");
+        }
+        else if (svcid1 == "16") // Energy department Continu from draft stage for new power connection service
+        {
+            
+            EncryptValue = ENERGY(strApplicationKey);
+
+            #region For allow https from http url this below part need to add
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
+            #endregion
+
+            string TokenURL = ConfigurationManager.AppSettings["MoBiduytTokenGenerationUrl"].ToString();
+
+            var Client = new RestClient(TokenURL);
+            Client.Timeout = -1;
+            var Request = new RestRequest(Method.POST);
+            Request.AddHeader("Content-Type", "application/json");
+            Request.AddHeader("Authorization", "Basic R29Td2lmdC01Mzc0ODI5NDU0NzozMzYyNzc4OTI4");
+            Request.AddHeader("Cookie", "ASP.NET_SessionId=rq2ca2ux1rsp3e1vjyphow3x");
+
+            Request.AddParameter("application/json", EncryptValue, ParameterType.RequestBody);
+            IRestResponse EncriptionResponse = Client.Execute(Request);
+
+            if (EncriptionResponse.StatusCode == HttpStatusCode.OK)
+            {
+                var strResponseContent = EncriptionResponse.Content.ToString();
+
+                if (strResponseContent != "")
+                {
+                    ///Get the access token value.
+                    string statusEncriptedDescription = JsonConvert.DeserializeObject<Dictionary<string, object>>(EncriptionResponse.Content)["statusDescription"].ToString();
+
+                    string RedirectionUrl = ConfigurationManager.AppSettings["MoBiduytRedirectionUrl"].ToString() + statusEncriptedDescription;
+
+                    Response.Redirect(RedirectionUrl);
+
+                }
+            }
+
         }
     }
     protected void ExlbtnAll_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ using RestSharp;
 using Newtonsoft.Json;
 using System.Net;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 public partial class EditInvestorProfile : SessionCheck
 {
@@ -24,7 +25,8 @@ public partial class EditInvestorProfile : SessionCheck
 
     /// Get keys for CIN from Web.Config File 
     readonly string StrValidateCinLlpin = ConfigurationManager.AppSettings["MCAValidation"];
-    readonly string StrCinLlpinUrl = ConfigurationManager.AppSettings["CinLlpinurl"];
+    readonly string StrCinLlpinTokenUrl = ConfigurationManager.AppSettings["CinLlpinTokenUrl"];
+    readonly string StrCinLlpinValidateUrl = ConfigurationManager.AppSettings["CinLlpinValidateUrl"];
     readonly string StrCinTokenUserId = ConfigurationManager.AppSettings["CinTokenUserId"];
     readonly string StrCinTokenPassword = ConfigurationManager.AppSettings["CinTokenPassword"];
 
@@ -217,10 +219,24 @@ public partial class EditInvestorProfile : SessionCheck
                 return;
             }
 
-            if (string.IsNullOrEmpty(Txt_Reg_City.Text))
+            //if (string.IsNullOrEmpty(Txt_Reg_City.Text))
+            //{
+            //    Txt_Reg_City.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration city name !</strong>');", true);
+            //    return;
+            //}
+            if(DrpDwn_Reg_Country.SelectedValue=="1" && DrpDwn_Registration_Dist.SelectedIndex == 0)
+            {
+                DrpDwn_Registration_Dist.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select registration district name !</strong>');", true);
+                return;
+
+            }
+
+             if (DrpDwn_Reg_Country.SelectedValue != "1" && string.IsNullOrEmpty(Txt_Reg_City.Text.Trim()))
             {
                 Txt_Reg_City.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration city name !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter registration district/city name !</strong>');", true);
                 return;
             }
 
@@ -278,10 +294,24 @@ public partial class EditInvestorProfile : SessionCheck
                 return;
             }
 
-            if (string.IsNullOrEmpty(Txt_SL_City.Text))
+            //if (string.IsNullOrEmpty(Txt_SL_City.Text))
+            //{
+            //    Txt_SL_City.Focus();
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
+            //    return;
+            //}
+
+            if(DrpDwn_SL_Country.SelectedValue == "1"  && DrpDwn_Site_Dist.SelectedIndex == 0)
+            {
+                DrpDwn_Site_Dist.Focus();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please select site location district name !</strong>');", true);
+                return;
+            }
+
+            if (DrpDwn_SL_Country.SelectedValue != "1" && string.IsNullOrEmpty(Txt_SL_City.Text.Trim()))
             {
                 Txt_SL_City.Focus();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location city name !</strong>');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Please enter site location  district/city name !</strong>');", true);
                 return;
             }
 
@@ -395,13 +425,17 @@ public partial class EditInvestorProfile : SessionCheck
                 if (DrpDwn_Reg_Country.SelectedValue == "1")//Add by Debi
                 {
                     objEnt.VCH_REG_STATE = DrpDwn_Reg_State.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_REG_CITY = DrpDwn_Registration_Dist.SelectedItem.Text;
                 }
                 else
                 {
                     objEnt.VCH_REG_STATE = Txt_Reg_State.Text;//Add by Debi
+                    objEnt.VCH_REG_CITY = Txt_Reg_City.Text.Trim();//Add by Debi
                 }
 
-                objEnt.VCH_REG_CITY = Txt_Reg_City.Text.Trim();//Add by Debi
+                
+
+
                 objEnt.VCH_REG_PIN = Txt_Reg_PIN_Code.Text.Trim();//Add by Debi
                 objEnt.VCH_SL_ADDRESS_2 = Txt_SL_Address_2.Text.Trim();//Add by Debi
                 objEnt.INT_SL_COUNTRY = Convert.ToInt32(DrpDwn_SL_Country.SelectedValue);//Add by Debi
@@ -409,13 +443,15 @@ public partial class EditInvestorProfile : SessionCheck
                 if (DrpDwn_SL_Country.SelectedValue == "1")//Add by Debi
                 {
                     objEnt.VCH_SL_STATE = DrpDwn_SL_State.SelectedItem.Text;//Add by Debi
+                    objEnt.VCH_SL_CITY = DrpDwn_Site_Dist.SelectedItem.Text;
                 }
                 else
                 {
                     objEnt.VCH_SL_STATE = Txt_SL_State.Text.Trim();//Add by Debi
+                    objEnt.VCH_SL_CITY = Txt_SL_City.Text.Trim();//Add by Debi
                 }
 
-                objEnt.VCH_SL_CITY = Txt_SL_City.Text.Trim();//Add by Debi
+                
                 objEnt.VCH_SL_PIN = Txt_SL_PIN_Code.Text.Trim();//Add by Debi
 
                 if (Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue) == 1)//Add by Debi
@@ -464,13 +500,15 @@ public partial class EditInvestorProfile : SessionCheck
                         if (DrpDwn_Reg_Country.SelectedValue == "1")//Add by Debi
                         {
                             objInvDet.StrRegState = DrpDwn_Reg_State.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrRegCity = DrpDwn_Registration_Dist.SelectedItem.Text;
                         }
                         else
                         {
                             objInvDet.StrRegState = Txt_Reg_State.Text;//Add by Debi
+                            objInvDet.StrRegCity = Txt_Reg_City.Text.Trim();//Add by Debi
                         }
 
-                        objInvDet.StrRegCity = Txt_Reg_City.Text.Trim();//Add by Debi
+                        
                         objInvDet.StrRegPincode = Txt_Reg_PIN_Code.Text.Trim();//Add by Debi
                         objInvDet.StrSlAddress_2 = Txt_SL_Address_2.Text.Trim();//Add by Debi
                         objInvDet.IntSlCountry = Convert.ToInt32(DrpDwn_SL_Country.SelectedValue);//Add by Debi
@@ -478,13 +516,15 @@ public partial class EditInvestorProfile : SessionCheck
                         if (DrpDwn_SL_Country.SelectedValue == "1")//Add by Debi
                         {
                             objInvDet.StrSlState = DrpDwn_SL_State.SelectedItem.Text;//Add by Debi
+                            objInvDet.StrSlCity = DrpDwn_Site_Dist.SelectedItem.Text;
                         }
                         else
                         {
                             objInvDet.StrSlState = Txt_SL_State.Text.Trim();//Add by Debi
+                            objInvDet.StrSlCity = Txt_SL_City.Text.Trim();//Add by Debi
                         }
 
-                        objInvDet.StrSlCity = Txt_SL_City.Text.Trim();//Add by Debi
+                       
                         objInvDet.StrSlPincode = Txt_SL_PIN_Code.Text.Trim();//Add by Debi
                         objInvDet.intEntitytype = Convert.ToInt32(DrpDwn_Entity_Type.SelectedValue);//Add by Debi
 
@@ -628,12 +668,14 @@ public partial class EditInvestorProfile : SessionCheck
 
                 /*---------------------------------------------------------------*/
 
-                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestCredentials]" + "[RequestUrl]:- " + StrCinLlpinUrl + " - [TokenUserId]:- " + StrCinTokenUserId + "- [TokenPassword]:- " + StrCinTokenPassword);
+                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestCredentials]" + "[RequestUrl]:- " + StrCinLlpinTokenUrl + " - [TokenUserId]:- " + StrCinTokenUserId + "- [TokenPassword]:- " + StrCinTokenPassword);
+
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
 
                 /*---------------------------------------------------------------*/
                 // Generate token to validate CIN/LLPIN.
                 /*---------------------------------------------------------------*/
-                var client = new RestClient(StrCinLlpinUrl)
+                var client = new RestClient(StrCinLlpinTokenUrl)
                 {
                     Timeout = -1
                 };
@@ -661,39 +703,54 @@ public partial class EditInvestorProfile : SessionCheck
                         Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseToken]:- " + strAccessToken);
 
                         string strCinServiceUrl = "";
+                        string strDinServiceUrl = "";
                         if (strEntityType == "1")
                         {
-                            strCinServiceUrl = StrCinLlpinUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
+                            strCinServiceUrl = StrCinLlpinValidateUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
+                            strDinServiceUrl= StrCinLlpinValidateUrl + "/din/service/integration/1.0.0?CIN=" + Txt_CIN_Number.Text;
                         }
                         else if (strEntityType == "2")
                         {
-                            strCinServiceUrl = StrCinLlpinUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
+                            strCinServiceUrl = StrCinLlpinValidateUrl + "/cin/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
+                            strDinServiceUrl = StrCinLlpinValidateUrl + "/din/service/integration/1.0.0?CIN=" + Txt_LLPIN_Number.Text;
                         }
 
-                        Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[RequestData]:- " + strCinServiceUrl);
+                        Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinRequestData]:- " + strCinServiceUrl);
+                        Util.LogRequestResponse("ProfileUpdate", "GetDinStatusFromMCA", "[DinRequestData]:- " + strDinServiceUrl);
 
                         /*---------------------------------------------------------------*/
                         /// Call CIN/LLPIN Service API.
                         /*---------------------------------------------------------------*/
-                        var client2 = new RestClient(strCinServiceUrl)
+                        var CinClientRequest = new RestClient(strCinServiceUrl)
                         {
                             Timeout = -1
                         };
-                        var request2 = new RestRequest(Method.GET);
-                        request2.AddHeader("Authorization", "Bearer " + strAccessToken);
-                        //request2.AddHeader("Content-Type", "application/json");
-                        IRestResponse Dataresponse = client2.Execute(request2);
-
-                        if (Dataresponse.StatusCode == HttpStatusCode.OK)
+                        var DinClientRequest = new RestClient(strDinServiceUrl)
                         {
-                            string message = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content)["message"].ToString();
-                            
+                            Timeout = -1
+                        };
+                        var Cinrequest = new RestRequest(Method.GET);
+                        Cinrequest.AddHeader("Authorization", "Bearer " + strAccessToken);
+                       
 
-                            Hid_Cin_Llpin.Value = message;
+                        IRestResponse CinDataresponse = CinClientRequest.Execute(Cinrequest);
 
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + TokenResponse.StatusCode + " -[ResponseContent]:- " + Dataresponse.Content);
+                        IRestResponse DinDataresponse = DinClientRequest.Execute(Cinrequest);
 
-                            if (message.ToUpper() == "NO DATA")
+
+                        if (CinDataresponse.StatusCode == HttpStatusCode.OK   && DinDataresponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            string CINmessage = JsonConvert.DeserializeObject<Dictionary<string, object>>(CinDataresponse.Content)["message"].ToString();
+
+                            string DINmessage = JsonConvert.DeserializeObject<Dictionary<string, object>>(DinDataresponse.Content)["message"].ToString();
+
+                            Hid_Cin_Llpin.Value = CINmessage;
+
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CINResponseStatusCode]:- " + CinDataresponse.StatusCode + " -[ResponseContent]:- " + CinDataresponse.Content);
+
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[DINResponseStatusCode]:- " + DinDataresponse.StatusCode + " -[ResponseContent]:- " + DinDataresponse.Content);
+
+                            if (CINmessage.ToUpper() == "NO DATA")
                             {
                                 if (strEntityType == "1")
                                 {
@@ -706,26 +763,114 @@ public partial class EditInvestorProfile : SessionCheck
                                     return;
                                 }
                             }
-                            else if (message.ToUpper() == "DATA FETCHED SUCCESSFULLY")
+                            else if (CINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY" && DINmessage.ToUpper() == "DATA FETCHED SUCCESSFULLY") 
                             {
-                                var Response = JsonConvert.DeserializeObject<Dictionary<string, object>>(Dataresponse.Content);
-                                var Responsedata = (List<object>)Response["data"];
-                                string StrCompanyName = "";
-                                foreach (var item in Responsedata)
+
+                                // var CINResponse = JsonConvert.DeserializeObject<Dictionary<string, List<CompanyData>>>(CinDataresponse.Content);
+
+                                CinRootData root = JsonConvert.DeserializeObject<CinRootData>(CinDataresponse.Content);
+
+                                var CompanyData = root.data[0];
+
+                                string StrCINnumber = CompanyData.CIN;   
+                                string StrCompanyName = CompanyData.companyName; 
+                                string StrCompanyStatus = CompanyData.companyStatus;  
+                                string Stremail = CompanyData.emailAddress;  
+                                string StrfinancialAuditStatus = string.IsNullOrEmpty(CompanyData.auditStatus) ? "" : CompanyData.auditStatus;
+    
+
+                                string StrprofitLoss = string.IsNullOrEmpty(CompanyData.profitLoss) ? "" : CompanyData.profitLoss; 
+                                string StrturnOver = string.IsNullOrEmpty(CompanyData.turnover) ? "" : CompanyData.turnover;
+                                string Stryear = string.IsNullOrEmpty(CompanyData.financialYear) ? "" : CompanyData.financialYear; 
+                                string Strincorpdate = CompanyData.incorporationDate; 
+                                string StrregisteredAddress = CompanyData.addressLine1;  
+                                string StrrocCode = CompanyData.ROCName; 
+
+                                Util.LogRequestResponse("ProfileUpdate", "GetCINdataFromMCA", "[StrrocCode]:- " + StrrocCode);
+
+                                // Deserialize the JSON string into a list of DirectorData objects
+                                var directorDataList = JsonConvert.DeserializeObject<DirectorDataList>(DinDataresponse.Content);
+
+                                // Create an empty list to store director details
+                                var directorDetailDtos = new List<JObject>();
+
+                                foreach (var directorData in directorDataList.Data)
                                 {
-                                    var CompanyData = JsonConvert.DeserializeObject<CompanyData>(item.ToString());
-                                    StrCompanyName = CompanyData.companyName ;
+                                    var directorDetails = new JObject
+                                                       {
+                                                            { "contactNumber", "" },
+                                                            { "din", directorData.DIN },
+                                                            { "name", directorData.FirstName },
+                                                       
+                                                       
+                                                       };
+
+                                    var dinDetail = new JObject
+                                                    {
+                                                         { "dinName", "" },
+                                                         { "dinStatus", directorData.DINStatus },
+                                                         { "dob", directorData.DOB },
+                                                         { "fatherName", directorData.FatherFirstName }
+                                                    };
+
+
+                                    // Create a new JObject to combine directorDetails and dinDetail
+                                    var directorObject = new JObject
+                                                             {
+                                                                 { "directorDetails", directorDetails },
+                                                                 { "dinDetail", dinDetail }
+                                                             };
+
+                                    // Add the directorObject to the directorDetailDtos list
+                                    directorDetailDtos.Add(directorObject);
+
+
                                 }
+
+
+                                // Serialize the directorDetailDtos list to JSON format
+                                string directorDetailDtosJson = JsonConvert.SerializeObject(directorDetailDtos, Formatting.Indented);
+                                Util.LogRequestResponse("ProfileUpdate", "GetdinStatusFromMCA", "[din new format data]:- " + directorDetailDtosJson);
+                                string ReplaceData = directorDetailDtosJson.Replace('[', ' ');
+                                string NewDirectorDetailDtosJson = ReplaceData.Replace(']', ' ');
+
+                                // CIN and DIN data  json 
+                                var CinDinJson = @"{
+                                      ""cinDto"": {
+                                          ""cin"": """ + StrCINnumber + @""",
+                                          ""companyName"": """ + StrCompanyName + @""",
+                                          ""companyStatus"": """ + StrCompanyStatus + @""",
+                                          ""email"": """ + Stremail + @""",
+                                          ""financialAuditStatus"": """ + StrfinancialAuditStatus + @""",
+                                          ""financialDetails"": [
+                                              {
+                                                  ""profitLoss"": """ + StrprofitLoss + @""",
+                                                  ""turnOver"": """ + StrturnOver + @""",
+                                                  ""year"": """ + Stryear + @"""
+                                              }
+                                          ],
+                                          ""incorpdate"": """ + Strincorpdate + @""",
+                                          ""registeredAddress"": """ + StrregisteredAddress + @""",
+                                          ""rocCode"": """ + StrrocCode + @"""
+                                      },
+                                      ""directorDetailDtos"": [
+                                          " + NewDirectorDetailDtosJson + @"
+                                      ]
+                                }";
+
+
+                                Util.LogRequestResponse("ProfileUpdate", "MCANewJsonData", "[New Json format data]:- " + CinDinJson);
+
                                 if (strEntityType == "1")
                                 {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN number validate successfully !</strong>');", true);
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>CIN validated successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_CIN_Number.Text;
                                     Img_Success.Visible = true;
                                     Lbl_CompName.Text = StrCompanyName;
                                 }
                                 else if (strEntityType == "2")
                                 {
-                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN number validate successfully !</strong>');", true);
+                                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>LLPIN validated successfully !</strong>');", true);
                                     ViewState["CinNumber"] = Txt_LLPIN_Number.Text;
                                     Img_Success.Visible = true;
                                     Lbl_CompName.Text = StrCompanyName;
@@ -739,19 +884,24 @@ public partial class EditInvestorProfile : SessionCheck
                                 ///Don't update the CIN on the table here. Save when the user click on Update button.
                                 ///Only store the base64 converted value here and push that value during data submission.
 
-                                ViewState["CinLlpinData"] = Base64Encryption(Dataresponse.Content);
-                                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(Dataresponse.Content));
                                
+
+
+
+
+                                ViewState["CinLlpinData"] = Base64Encryption(CinDinJson);
+                                Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[CinAPIDataUpdateGOSWIFTDatabase]:- " + Base64Encryption(CinDinJson));
+
                             }
                         }
-                        else if (Dataresponse.StatusCode == HttpStatusCode.Unauthorized)
+                        else if (CinDataresponse.StatusCode == HttpStatusCode.Unauthorized)
                         {
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + Dataresponse.StatusCode);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + CinDataresponse.StatusCode);
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Invalied Token ! <strong>');", true);
                         }
                         else
                         {
-                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + Dataresponse.StatusCode);
+                            Util.LogRequestResponse("ProfileUpdate", "GetCinStatusFromMCA", "[ResponseStatusCode]:- " + CinDataresponse.StatusCode);
                             ScriptManager.RegisterStartupScript(this, this.GetType(), "Fail", "jAlert('<strong>Internal server error !<strong>');", true);
                         }
                     }
@@ -837,17 +987,29 @@ public partial class EditInvestorProfile : SessionCheck
                     Div_Reg_State_DrpDwn.Visible = true;
                     Div_Reg_State_Text.Visible = false;
                     Txt_Reg_State.Text = "";
-                    DrpDwn_Reg_State.SelectedItem.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                   
+
+                    DrpDwn_Reg_State.SelectedValue = dt.Rows[0]["INT_REG_STATE"].ToString();
+
+                    DrpDwn_Reg_State_SelectedIndexChanged(null, EventArgs.Empty);
+                    Div_Reg_Dist_DrpDwn.Visible = true;
+                    Div_Reg_Dist_Text.Visible = false;
+                    Txt_Reg_City.Text = "";
+                    DrpDwn_Registration_Dist.SelectedValue = dt.Rows[0]["INT_REG_DIST"].ToString();
                 }
                 else
                 {
                     Div_Reg_State_Text.Visible = true;
                     Div_Reg_State_DrpDwn.Visible = false;
+                    Div_Reg_Dist_DrpDwn.Visible = false;
+                    Div_Reg_Dist_Text.Visible = true;
                     Txt_Reg_State.Text = "";
                     Txt_Reg_State.Text = dt.Rows[0]["VCH_REG_STATE"].ToString();//Add by Debi
+                    Txt_Reg_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
+
                 }
 
-                Txt_Reg_City.Text = dt.Rows[0]["VCH_REG_CITY"].ToString();//Add by Debi
+               
                 Txt_Reg_PIN_Code.Text = dt.Rows[0]["VCH_REG_PIN"].ToString();//Add by Debi
                 Txt_SL_Address_2.Text = dt.Rows[0]["VCH_SL_ADDRESS_2"].ToString();//Add by Debi
                 DrpDwn_SL_Country.SelectedValue = dt.Rows[0]["INT_SL_COUNTRY"].ToString();//Add by Debi
@@ -858,16 +1020,26 @@ public partial class EditInvestorProfile : SessionCheck
                     Div_SL_State_DrpDwn.Visible = true;
                     Div_SL_State_Text.Visible = false;
                     Txt_SL_State.Text = "";
-                    DrpDwn_SL_State.SelectedItem.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
+                    DrpDwn_SL_State.SelectedValue = dt.Rows[0]["INT_SL_STATE"].ToString();//Add by Debi
+                    DrpDwn_SL_State_SelectedIndexChanged(null, EventArgs.Empty);
+
+                    Div_SL_Dist_DrpDwn.Visible = true;
+                    Div_SL_Dist_Text.Visible = false;
+                    Txt_SL_City.Text = "";
+
+                    DrpDwn_Site_Dist.SelectedValue = dt.Rows[0]["INT_SL_DIST"].ToString();//Add by Debi
                 }
                 else
                 {
                     Div_SL_State_Text.Visible = true;
                     Div_SL_State_DrpDwn.Visible = false;
+                    Div_SL_Dist_DrpDwn.Visible = false;
+                    Div_SL_Dist_Text.Visible = true;
                     Txt_SL_State.Text = dt.Rows[0]["VCH_SL_STATE"].ToString();//Add by Debi
+                    Txt_SL_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
                 }
 
-                Txt_SL_City.Text = dt.Rows[0]["VCH_SL_CITY"].ToString();//Add by Debi
+               
                 Txt_SL_PIN_Code.Text = dt.Rows[0]["VCH_SL_PIN"].ToString();//Add by Debi
             }
         }
@@ -1037,13 +1209,19 @@ public partial class EditInvestorProfile : SessionCheck
             {
                 Div_Reg_State_DrpDwn.Visible = true;
                 Div_Reg_State_Text.Visible = false;
+                Div_Reg_Dist_DrpDwn.Visible = true;
+                Div_Reg_Dist_Text.Visible = false;
                 Txt_Reg_State.Text = "";
+                Txt_Reg_City.Text = "";
             }
             else
             {
                 Div_Reg_State_Text.Visible = true;
                 Div_Reg_State_DrpDwn.Visible = false;
+                Div_Reg_Dist_DrpDwn.Visible = false;
+                Div_Reg_Dist_Text.Visible = true;
                 Txt_Reg_State.Text = "";
+                
             }
         }
         catch (Exception ex)
@@ -1071,16 +1249,58 @@ public partial class EditInvestorProfile : SessionCheck
             {
                 Div_SL_State_DrpDwn.Visible = true;
                 Div_SL_State_Text.Visible = false;
+                Div_SL_Dist_DrpDwn.Visible = true;
+                Div_SL_Dist_Text.Visible = false;
                 Txt_SL_State.Text = "";
             }
             else
             {
                 Div_SL_State_Text.Visible = true;
                 Div_SL_State_DrpDwn.Visible = false;
+                Div_SL_Dist_DrpDwn.Visible = false;
+                Div_SL_Dist_Text.Visible = true;
                 Txt_SL_State.Text = "";
             }
         }
         catch (Exception ex)
+        {
+            Util.LogError(ex, "ProfileUpdate");
+        }
+    }
+
+    protected void DrpDwn_Reg_State_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+
+        
+        StrAction = "FED";
+        DataTable dtRegDist = objRegService.BindRegdDist(StrAction, Convert.ToInt32(DrpDwn_Reg_State.SelectedValue));
+        DrpDwn_Registration_Dist.DataSource = dtRegDist;
+        DrpDwn_Registration_Dist.DataTextField = "vchDistrictName";
+        DrpDwn_Registration_Dist.DataValueField = "intDistrictId";
+        DrpDwn_Registration_Dist.DataBind();
+        DrpDwn_Registration_Dist.Items.Insert(0, new ListItem("--Select--", "0"));
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "ProfileUpdate");
+        }
+    }
+
+    protected void DrpDwn_SL_State_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            StrAction = "FED";
+            DataTable dtRegDist = objRegService.BindRegdDist(StrAction, Convert.ToInt32(DrpDwn_SL_State.SelectedValue));
+            DrpDwn_Site_Dist.DataSource = dtRegDist;
+            DrpDwn_Site_Dist.DataTextField = "vchDistrictName";
+            DrpDwn_Site_Dist.DataValueField = "intDistrictId";
+            DrpDwn_Site_Dist.DataBind();
+            DrpDwn_Site_Dist.Items.Insert(0, new ListItem("--Select--", "0"));
+        }
+        catch(Exception ex)
         {
             Util.LogError(ex, "ProfileUpdate");
         }

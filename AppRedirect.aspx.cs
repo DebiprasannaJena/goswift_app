@@ -22,6 +22,13 @@ public partial class AppRedirect : SessionCheck
                     //SSOService.ValidateService validate = new SSOService.ValidateService();
                     DWHServiceHostClient validate = new DWHServiceHostClient();
                     string url = validate.AppRedirectURL(Key, Session["UID"].ToString(), validate.URLEncryption(ConfigurationManager.AppSettings["DWHEncryptionKey"]), Session["LogId"].ToString(), Session["SSOUserId"].ToString());
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectKey", "[Key]:- " + Key);
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectUID", "[UID]:- " + Convert.ToString(Session["UID"]));
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectULREncription", "[ULREncription]:- " + ConfigurationManager.AppSettings["DWHEncryptionKey"]);
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectKey", "[LogId]:- " + Convert.ToString(Session["LogId"]));
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectKey", "[SSOUserId]:- " + Convert.ToString(Session["SSOUserId"]));
+                    Util.LogRequestResponse("SSORedirect", "SSORedirectURL", "[URL]:- " + url);
+
                     Response.Redirect(url);
                 }
                 catch (Exception ex)

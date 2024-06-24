@@ -54,9 +54,9 @@ public partial class ApplicationDetails : SessionCheck
     List<ServiceDetails> ServiceDetail = new List<ServiceDetails>();
 
     int dtval = 0;
-    DataTable dtable;
-    DataSet ds;
-    static string Str_UsrName;
+  //  DataTable dtable;
+   // DataSet ds;
+   // static string Str_UsrName;
     static string StrInvestorId;
     static int IntGridBindCount = 0;
 
@@ -72,7 +72,7 @@ public partial class ApplicationDetails : SessionCheck
             {
                 if (Session["UserId"] != null)
                 {
-                    Str_UsrName = Session["UserId"].ToString();
+                   // Str_UsrName = Session["UserId"].ToString();
                     StrInvestorId = Session["InvestorId"].ToString();
                     IntGridBindCount = 0;
                     fillDepartment();
@@ -176,8 +176,7 @@ public partial class ApplicationDetails : SessionCheck
                 HyperLink Lnkdownload = (HyperLink)e.Row.FindControl("btnDetail");
                 HyperLink CertificateDownload = (HyperLink)e.Row.FindControl("btnDownload");
                 HyperLink btnNoc = (HyperLink)e.Row.FindControl("btnNoc");
-                Label lblAppStatus = (Label)e.Row.FindControl("lblappstatsVal");
-                Label lblText = (Label)e.Row.FindControl("Label1");
+              
                 Label lblpaymentStatus = (Label)e.Row.FindControl("lblpaymentStatus");
                 Label lblpaymentAmount = (Label)e.Row.FindControl("lblpaymentAmount");
                 HyperLink btnPaymentStatus = (HyperLink)e.Row.FindControl("btnPaymentStatus");
@@ -185,7 +184,7 @@ public partial class ApplicationDetails : SessionCheck
                 //Added by Priti
                 Label lblappstatsVal = (Label)e.Row.FindControl("lblappstatsVal");
                 LinkButton btnCertificate = (LinkButton)e.Row.FindControl("btnCertificate");
-                Label lblService = (Label)e.Row.FindControl("lblServiceName");
+               
                 HiddenField Hid_App_Fee = (HiddenField)e.Row.FindControl("Hid_App_Fee"); //// Added by Sushant Jena On Dt:-15-Apr-2020
                 Label lblSubmitedOn = (Label)e.Row.FindControl("lblSubmitedOn"); //// Added by manoj kumar behera for F&B and Labour
                 CheckBox ChkBxSelect = (CheckBox)e.Row.FindControl("ChkBxSelect");
@@ -194,7 +193,7 @@ public partial class ApplicationDetails : SessionCheck
                 //Added by Priti
 
                 int INT_Chkstatus = Convert.ToInt32(gvApplicationDetails.DataKeys[e.Row.RowIndex].Values[0]);
-                string ulbcode = gvApplicationDetails.DataKeys[e.Row.RowIndex].Values[2].ToString();
+               
                 string proposalId = gvApplicationDetails.DataKeys[e.Row.RowIndex].Values[3].ToString();
                 string svcid1 = gvApplicationDetails.DataKeys[e.Row.RowIndex].Values[1].ToString();
 
@@ -225,15 +224,54 @@ public partial class ApplicationDetails : SessionCheck
                         
                 }
 
-                if((svcid1 == "25" || svcid1 == "26") && Status == "4") // for reapply
+                if((svcid1 == "25" || svcid1 == "26") && Status == "4") // for forest reapply 
                 {
                     LnkServiceApply.NavigateUrl = ConfigurationManager.AppSettings["TreeTransitReapply"].ToString()+ "?appln_id="+lblApplctionNo.Text+ "&service_code="+svcid1+ "&UserId="+ StrInvestorId;
                     LnkServiceApply.Visible = true;
                 }
-                if(svcid1 == "16" && Status == "4") // for new Power connection reapply
+                if(svcid1 == "16" && Status == "4") // for new Power connection Resubmit with meny stages
                 {
-                    LnkServiceApply.NavigateUrl = ConfigurationManager.AppSettings["TreeTransitReapply"].ToString() + "?appln_id=" + lblApplctionNo.Text + "&service_code=" + svcid1 + "&UserId=" + StrInvestorId;
+                    string RedirectionUrl = "";
+
+                   string Data = ENERGY(lblApplctionNo.Text);
+
+                    #region For allow https from http url this below part need to add
+
+                    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+                    ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
+                    #endregion
+                    string TokenURL = ConfigurationManager.AppSettings["MoBiduytTokenGenerationUrl"].ToString();
+
+                    var Client = new RestClient(TokenURL);
+                    Client.Timeout = -1;
+                    var Request = new RestRequest(Method.POST);
+                    Request.AddHeader("Content-Type", "application/json");
+                    Request.AddHeader("Authorization", "Basic R29Td2lmdC01Mzc0ODI5NDU0NzozMzYyNzc4OTI4");
+                    Request.AddHeader("Cookie", "ASP.NET_SessionId=rq2ca2ux1rsp3e1vjyphow3x");
+                    Request.AddParameter("application/json", Data, ParameterType.RequestBody);
+                    IRestResponse EncriptionResponse = Client.Execute(Request);
+
+                    if (EncriptionResponse.StatusCode == HttpStatusCode.OK)
+                    {
+                        var strResponseContent = EncriptionResponse.Content.ToString();
+
+                        if (strResponseContent != "")
+                        {
+                            ///Get the access decrypted value.
+                            string statusEncriptedDescription = JsonConvert.DeserializeObject<Dictionary<string, object>>(EncriptionResponse.Content)["statusDescription"].ToString();
+
+                            RedirectionUrl = ConfigurationManager.AppSettings["MoBiduytRedirectionUrl"].ToString() + statusEncriptedDescription;
+
+                           // Response.Redirect(RedirectionUrl);
+
+                        }
+
+
+                    }
+
                     LnkServiceApply.Visible = true;
+                    LnkServiceApply.NavigateUrl = RedirectionUrl;
                 }
 
                 //Added by manoj kumar behera
@@ -282,6 +320,57 @@ public partial class ApplicationDetails : SessionCheck
                     Lnkdownload.NavigateUrl = Value;
                     Lnkdownload.Visible = true;
                 }
+                else if(svcid1 == "16" && Status == "2") // for new power connection view details 
+                {
+
+                    CultureInfo culture = new CultureInfo("es-ES");
+                    if (DateTime.Parse(lblSubmitedOn.Text, culture).Date > DateTime.Parse("02/05/2024", culture).Date)
+                    {
+                        string RedirectionUrl = "";
+
+                        string Data = ENERGY(lblApplctionNo.Text);
+
+                        #region For allow https from http url this below part need to add
+
+                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+                        ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+
+                        #endregion
+                        string TokenURL = ConfigurationManager.AppSettings["MoBiduytTokenGenerationUrl"].ToString();
+
+                        var Client = new RestClient(TokenURL);
+                        Client.Timeout = -1;
+                        var Request = new RestRequest(Method.POST);
+                        Request.AddHeader("Content-Type", "application/json");
+                        Request.AddHeader("Authorization", "Basic R29Td2lmdC01Mzc0ODI5NDU0NzozMzYyNzc4OTI4");
+                        Request.AddHeader("Cookie", "ASP.NET_SessionId=rq2ca2ux1rsp3e1vjyphow3x");
+                        Request.AddParameter("application/json", Data, ParameterType.RequestBody);
+                        IRestResponse EncriptionResponse = Client.Execute(Request);
+
+                        if (EncriptionResponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            var strResponseContent = EncriptionResponse.Content.ToString();
+
+                            if (strResponseContent != "")
+                            {
+                                ///Get the access decrypted value.
+                                string statusEncriptedDescription = JsonConvert.DeserializeObject<Dictionary<string, object>>(EncriptionResponse.Content)["statusDescription"].ToString();
+
+                                RedirectionUrl = ConfigurationManager.AppSettings["MoBiduytRedirectionUrl"].ToString() + statusEncriptedDescription;
+
+                                //Response.Redirect(RedirectionUrl);
+
+                            }
+
+
+                        }
+
+                        Lnkdownload.NavigateUrl = RedirectionUrl;
+                        Lnkdownload.Visible = true;
+                    }
+
+                     
+                }
                 else
                 {
                     Lnkdownload.NavigateUrl = objServcStatus.GetUrl(lblApplctionNo.Text, INT_Chkstatus, svcid1, proposalId, StrInvestorId, lblSubmitedOn.Text);
@@ -312,30 +401,18 @@ public partial class ApplicationDetails : SessionCheck
                         btnNoc.NavigateUrl = Str_NocFileName;
                         btnNoc.Visible = true;
                     }
-                    else if (svcid1 == "20" && Status == "2")
+                    
+                    else if ((svcid1 == "20" || svcid1 == "29" || svcid1 == "62" || svcid1 == "63" || svcid1 == "69" || svcid1 == "73") && Status == "2")
                     {
                         CertificateDownload.NavigateUrl = strCertificateFilename;
                         CertificateDownload.Visible = true;
                     }
-                    else if (svcid1 == "29" && Status == "2")
-                    {
-                        CertificateDownload.NavigateUrl = strCertificateFilename;
-                        CertificateDownload.Visible = true;
-                    }
-                    else if ((svcid1 == "62" || svcid1 == "63") && Status == "2")
-                    {
-                        CertificateDownload.NavigateUrl = strCertificateFilename;
-                        CertificateDownload.Visible = true;
-                    }
+                    
                     else if (svcid1 == "67" || svcid1 == "68")
                     {
                         CertificateDownload.Visible = false;
                     }
-                    else if (svcid1 == "69" && Status == "2")
-                    {
-                        CertificateDownload.NavigateUrl = strCertificateFilename;
-                        CertificateDownload.Visible = true;
-                    }
+                    
                     else if ((svcid1 == "5" || svcid1 == "6" || svcid1 == "7" || svcid1 == "34" || svcid1 == "35" || svcid1 == "36" || svcid1 == "39" || svcid1 == "40" || svcid1 == "70" || svcid1 == "71" || svcid1 == "72" || svcid1 == "37") && (Status == "2" || Status == "3")) //F&B and Labour Service add by anil service number 37
                     {
                         CultureInfo culture = new CultureInfo("es-ES");
@@ -350,11 +427,7 @@ public partial class ApplicationDetails : SessionCheck
                             CertificateDownload.Visible = true;
                         }
                     }
-                    else if (svcid1 == "73" && Status == "2")
-                    {
-                        CertificateDownload.NavigateUrl = strCertificateFilename;
-                        CertificateDownload.Visible = true;
-                    }
+                    
                 }
 
                 //Service Approval Document Link Section
@@ -399,10 +472,7 @@ public partial class ApplicationDetails : SessionCheck
                         hyprQuery.Visible = true;
                     }
                 }
-                else
-                {
-
-                }
+                
 
                 //Quer Section Of Service
 
@@ -502,8 +572,8 @@ public partial class ApplicationDetails : SessionCheck
                         //Added By Manoj Kumar Behera  
                         else if (svcid1 == "20")
                         {
-                            DataTable dt = new DataTable();
-                            dt = objServcStatus.CheckPaymentType(lblApplctionNo.Text.ToString());
+                           
+                            DataTable dt = objServcStatus.CheckPaymentType(lblApplctionNo.Text.ToString());
                             if (Convert.ToInt32(dt.Rows[0]["NUM_PAYMENT_AMOUNT"]) >= 0 && Convert.ToInt32(dt.Rows[0]["num_Demand_Amount"]) <= 0)
                             {
                                 string applicationno = BPAS(lblApplctionNo.Text.ToString(), "3");
@@ -540,10 +610,7 @@ public partial class ApplicationDetails : SessionCheck
                     lblpaymentAmount.Visible = true;
                     lblpaymentAmount.Text = "Paid";
                 }
-                else if (Convert.ToInt32(lblpaymentStatus.Text) == 0 && Convert.ToDecimal(lblpaymentAmount.Text) == Convert.ToDecimal(0.0))
-                {
-
-                }
+                
                 if (svcid1 == "29")
                 {
                     string PaymntUrl = objServcStatus.GetPaymntURlForWater(lblApplctionNo.Text);
@@ -553,16 +620,15 @@ public partial class ApplicationDetails : SessionCheck
                         btnPaymentStatus.Visible = true;
                     }
                 }
-                else if (svcid1 == "20")
+                else if (svcid1 == "20" && Status == "9")
                 {
-                    if (Status == "9")
-                    {
+                    
                         string applicationno = BPAS(lblApplctionNo.Text.ToString(), "4");
                         btnPaymentStatus.NavigateUrl = ConfigurationManager.AppSettings["BPASScrutinyPaymentURL"].ToString() + applicationno;
                         btnPaymentStatus.Text = "Pay Now (Demanded Fee)";
                         btnPaymentStatus.Visible = true;
                         lblpaymentAmount.Visible = false;
-                    }
+                    
                 }
 
                 //--------------------------PAYMENT SECTION --------------------------//
@@ -572,13 +638,13 @@ public partial class ApplicationDetails : SessionCheck
                 //This region of code is to show transactionDetail//
                 HtmlGenericControl OrderList = (HtmlGenericControl)e.Row.FindControl("OrderList");
                 HtmlGenericControl OrderList1 = (HtmlGenericControl)e.Row.FindControl("OrderList1");
-                List<ServiceDetails> objOrderList = new List<ServiceDetails>();
+              
                 ServiceDetails objProp1 = new ServiceDetails();
                 objProp1.STRACTION = "D";
                 objProp1.strApplicationUnqKey = lblApplctionNo.Text;
                 //PaymentOrderDetails(ServiceDetails objService)
                 ServiceBusinessLayer objService1 = new ServiceBusinessLayer();
-                objOrderList = objService1.PaymentOrderDetails(objProp1).ToList();
+                List<ServiceDetails> objOrderList = objService1.PaymentOrderDetails(objProp1).ToList();
                 if (objOrderList.Count > 0)
                 {
 
@@ -607,7 +673,7 @@ public partial class ApplicationDetails : SessionCheck
                     }
                     strHTMlQuery = strHTMlQuery + "<tr><td></td><td>Total</td><td>" + TotalAmt + "</td></tr></table>";
                     OrderList1.InnerHtml = strHTMlQuery;
-                    // QueryHist1.InnerHtml = strHTMlQuery;
+                   
                 }
                 #endregion
             }
@@ -635,15 +701,10 @@ public partial class ApplicationDetails : SessionCheck
         {
             int rowindex = Convert.ToInt32(e.CommandArgument);
             Label lblApplctionNo = (Label)gvApplicationDetails.Rows[rowindex].FindControl("lblApplicationNo");
-            LinkButton Lnkdownload = (LinkButton)gvApplicationDetails.Rows[rowindex].FindControl("btnCertificate");
             HyperLink CertificateDownload = (HyperLink)gvApplicationDetails.Rows[rowindex].FindControl("btnDownload");
-            LinkButton lbtn = (LinkButton)gvApplicationDetails.Rows[rowindex].FindControl("lnkQuery");
             Label lblAppStatus = (Label)gvApplicationDetails.Rows[rowindex].FindControl("lblappstatsVal");
-            Label lblText = (Label)gvApplicationDetails.Rows[rowindex].FindControl("Label1");
             Label lblUpdatedOn = (Label)gvApplicationDetails.Rows[rowindex].FindControl("Label4");
-
             int INT_Chkstatus = Convert.ToInt32(gvApplicationDetails.DataKeys[rowindex].Values[0]);
-
             string proposalId = gvApplicationDetails.DataKeys[rowindex].Values[3].ToString();
             string ServiceId = gvApplicationDetails.DataKeys[rowindex].Values[1].ToString();
             if (e.CommandName == "cmdcheckStatus")
@@ -685,12 +746,12 @@ public partial class ApplicationDetails : SessionCheck
 
                     else if (ServiceId == "49")
                     {
-                        PartnershipFirm.Service1Client obj = new PartnershipFirm.Service1Client();
-                        PartnershipFirm.FirmDtl objfirm = new PartnershipFirm.FirmDtl();
-                        //objfirm = obj.GetStatus(ApplicationID,ProposalID);
-                        objfirm = obj.GetStatus(lblApplctionNo.Text, proposalId);
-                        string StatusID = objfirm.StatusId.ToString();
-                        string StatusName = objfirm.StatusName.ToString();
+                        PartnershipFirm.Service1Client ServiceObj = new PartnershipFirm.Service1Client();
+                        //PartnershipFirm.FirmDtl Objfirm = new PartnershipFirm.FirmDtl();
+
+                        PartnershipFirm.FirmDtl Objfirm = ServiceObj.GetStatus(lblApplctionNo.Text, proposalId);
+                        string StatusID = Objfirm.StatusId.ToString();
+                        string StatusName = Objfirm.StatusName.ToString();
                         IsDirectoryCreated("PF");
                         string[] msg;
                         if (StatusID == "2")
@@ -718,8 +779,8 @@ public partial class ApplicationDetails : SessionCheck
 
                     else if (ServiceId == "29")
                     {
-                        string inputJson = (new JavaScriptSerializer()).Serialize(lblApplctionNo.Text);
-                        inputJson = inputJson.TrimStart('[').TrimEnd(']');
+                       // string inputJson = (new JavaScriptSerializer()).Serialize(lblApplctionNo.Text);
+                       // inputJson = inputJson.TrimStart('[').TrimEnd(']');
                         string serviceUrl = "http://erp.idco.in/" + "sendStatusOfWaterApplFromERPtoSWP?wa_ref_no=" + lblApplctionNo.Text;
                         HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(new Uri(serviceUrl));
                         httpRequest.Accept = "application/json";
@@ -748,8 +809,8 @@ public partial class ApplicationDetails : SessionCheck
                     #region ForProfessionalTax
                     else if (ServiceId == "10")
                     {
-                        WebServiceSoapClient obj = new WebServiceSoapClient();
-                        string str = obj.PTRegistrationStatus(ConfigurationManager.AppSettings["PTKEY"].ToString(), lblApplctionNo.Text, "");
+                        WebServiceSoapClient SoapObj = new WebServiceSoapClient();
+                        string str = SoapObj.PTRegistrationStatus(ConfigurationManager.AppSettings["PTKEY"].ToString(), lblApplctionNo.Text, "");
 
                         List<CPT> list = JsonConvert.DeserializeObject<List<CPT>>(str);
                         string[] msg = objServcStatus.UpdateStatus(list[0].TokenNo.ToString(), Convert.ToInt32(ServiceId), proposalId, list[0].PT_Status.ToString(), Convert.ToInt32(list[0].Status.ToString()), "", "EXT");
@@ -773,20 +834,19 @@ public partial class ApplicationDetails : SessionCheck
                     else if (ServiceId == "20")
                     {
                         string RestServiceURL = ConfigurationManager.AppSettings["BPASCHECKSTATUSURL"].ToString();
-                        // string RedirectionURL = "http://164.100.141.98/BDALogin";
-                        try
-                        {
+                       
+                        
                             using (var client = new WebClient()) //WebClient  
                             {
                                 //Variable given by User
                                 string _uniquecode = lblApplctionNo.Text; string _SWPCode = Session["InvestorId"].ToString();
 
 
-                                string _msg = string.Empty;
+                              
                                 client.Headers.Add("Content-Type:application/json"); //Content-Type  
                                 client.Headers.Add("Accept:application/json");
                                 var result = client.DownloadString(RestServiceURL + "/FetchApplicationsByUniqueCode?_uniquecode=" + _uniquecode + "&_SWPCode=" + _SWPCode + "");
-                                string reslt = result;
+                                
                                 JavaScriptSerializer serializer = new JavaScriptSerializer();
 
                                 object a = serializer.Deserialize(result, typeof(object));
@@ -860,42 +920,18 @@ public partial class ApplicationDetails : SessionCheck
 
 
                             }
-                        }
-                        catch (Exception)
-                        {
-
-
-                        }
-
-
-                        //BPASConnectServiceClient obj = new BPASConnectServiceClient();
-                        //string retResult = obj.FetchApplications(lblApplctionNo.Text);
-                        //StringReader theReader = new StringReader(retResult);
-                        //DataSet ds = new DataSet();
-                        //ds.ReadXml(theReader);
-                        //if (ds.Tables[0].Rows[0]["ReturnMsg"].ToString() != "No application found for the user!")
-                        //{
-                        //    int intstatus = Convert.ToInt16(ds.Tables[0].Rows[0]["Statusid"].ToString());
-                        //    string statusName = ds.Tables[0].Rows[0]["StatusName"].ToString();
-                        //    string []msg = objServcStatus.UpdateStatus(lblApplctionNo.Text, Convert.ToInt32(ServiceId), proposalId, statusName, intstatus, "","EXT");
-                        //}
-                        //else
-                        //{
-                        //    lblAppStatus.Visible = true;
-                        //    lblAppStatus.Text = ds.Tables[0].Rows[0]["ReturnMsg"].ToString();
-                        //}
+                        
+                        
                     }
                     #endregion
 
                     #region ForTreeTransit
                     else if (ServiceId == "25" || ServiceId == "26")
                     {
-                        // string Url = "117.247.252.221/ttpermit_beta/users/getStatus";
-                        // string Url = " https://ttpermitodisha.in/users/getStatus";
+                       
                         string Url = ConfigurationManager.AppSettings["TreecheckStatus"].ToString();
 
-                        string[] returnval = TreeTransit(ServiceId, lblApplctionNo.Text, "TT", Url);
-                        string apppath = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
+                        string[] returnval = TreeTransit(ServiceId, lblApplctionNo.Text, "TT", Url);                      
                         string[] msg = new string[2];
                         if (returnval[1].ToString() == "2")
                         {
@@ -924,11 +960,10 @@ public partial class ApplicationDetails : SessionCheck
                     #region ForHealthAndFamily
                     else if (ServiceId == "30" || ServiceId == "31" || ServiceId == "32")
                     {
-                        // string url = "117.247.252.220:8484/dcodisha/dcstatus.php";
-                        // string url = "http://dcodishaonline.nic.in/dcodisha/dcstatus.php";
+                       
                         string url = ConfigurationManager.AppSettings["DrugcheckStatus"].ToString();
                         string[] returnval = Health(ServiceId, lblApplctionNo.Text, url);
-                        string apppath = System.AppDomain.CurrentDomain.BaseDirectory.ToString();
+                       
                         if (returnval[2] == null)
                         {
                             returnval[2] = "";
@@ -948,11 +983,10 @@ public partial class ApplicationDetails : SessionCheck
                     {
                         string url = ConfigurationManager.AppSettings["PollutioncheckStatus"].ToString();
 
-                        XmlDocument doc1 = new XmlDocument();
-                        //doc1.Load(" http://164.100.163.18/ODWS/checkStatus?serviceId=" + ServiceId + "&applicationNo=" + lblApplctionNo.Text + " ");
-                        //doc1.Load(" http://odocmms.nic.in/ODWS/checkStatus?serviceId=" + ServiceId + "&applicationNo=" + lblApplctionNo.Text + " ");
-                        doc1.Load("" + url + "?serviceId=" + ServiceId + "&applicationNo=" + lblApplctionNo.Text + " ");
-                        XmlElement root = doc1.DocumentElement;
+                        XmlDocument Xmldoc = new XmlDocument();
+
+                        Xmldoc.Load("" + url + "?serviceId=" + ServiceId + "&applicationNo=" + lblApplctionNo.Text + " ");
+                        XmlElement root = Xmldoc.DocumentElement;
                         XmlNodeList nodes = root.SelectNodes("/applicationDetail");
                         string filename1 = "";
                         string applicationID = "";
@@ -1706,6 +1740,56 @@ public partial class ApplicationDetails : SessionCheck
         }
         return EncryptValue;
     }
+
+    #endregion
+
+    #region Add by Anil Sahoo
+
+    /// <summary>
+    /// this method used create JSON data for Reapply new power connection by Mo-Biduyt api
+    /// </summary>
+    private string ENERGY(string strApplicationKey)
+    {
+        string EncryptValue = "";
+        DataTable dt = new DataTable();
+        try
+        {
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conn = new SqlConnection(connectionString);
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "USP_Energy_SERVICE_DISPLAY";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@INT_INVESTOR_ID", Convert.ToInt32(Session["InvestorId"].ToString()));
+            cmd.Parameters.AddWithValue("@VCH_ACTION", "DRAFTSERVICEINFO");
+            cmd.Parameters.AddWithValue("@VCH_APPLICATION_UNQ_KEY", strApplicationKey);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+            if (dt.Rows.Count > 0)
+            {
+
+                EncryptValue = "{\"serviceId\":\"" + dt.Rows[0]["INT_SERVICEID"].ToString() + "\",\"name\":\"" + dt.Rows[0]["VCH_CONTACT_FIRSTNAME"].ToString() + "\",\"pan\":\"" + dt.Rows[0]["VCH_PAN"].ToString() + "\",\"email\":\"" + dt.Rows[0]["VCH_EMAIL"].ToString() + "\",\"mobile\":\"" + dt.Rows[0]["VCH_OFF_MOBILE"].ToString() + "\",\"goSwiftApplicationId\":\"" + strApplicationKey + "\"}";
+
+            }
+            else
+            {
+                EncryptValue = "{\"serviceid\":\"\",\"goSwiftApplicationId\":\"\",\"name\":\"\",\"pan\":\"\",\"email\":\"\",\"mobile\":\"\"}";
+
+            }
+
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "Energy");
+        }
+        return EncryptValue;
+    }
+
 
     #endregion
 

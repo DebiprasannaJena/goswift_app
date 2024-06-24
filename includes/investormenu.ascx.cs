@@ -225,6 +225,13 @@ public partial class includes_investormenu : System.Web.UI.UserControl
             {
                 ModalPopupConsent.Hide();
                 ModalPopupValidation.Show();
+                ModalPopupNswsRedirect.Hide();
+                return;
+            }
+            else if(strRegCountry.ToUpper() != "INDIA" || strSlCountry.ToUpper() != "INDIA" || (strRegCountry.ToUpper() != "INDIA" && strSlCountry.ToUpper() != "INDIA"))
+            {
+                ModalPopupNswsRedirect.Show();
+                
                 return;
             }
 
@@ -741,16 +748,31 @@ public partial class includes_investormenu : System.Web.UI.UserControl
 
     protected void LnkBtnValidationPopupClose_Click(object sender, EventArgs e)
     {
+        ModalPopupAlert.Hide();
         ModalPopupValidation.Hide();
+        ModalPopupNswsRedirect.Hide();
     }
 
     protected void BtnValidationNo_Click(object sender, EventArgs e)
     {
         ModalPopupAlert.Hide();
         ModalPopupValidation.Hide();
+        ModalPopupNswsRedirect.Hide();
     }
     protected void BtnValidationYes_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/EditInvestorProfile.aspx", false);
+    }
+
+    protected void LnkBtnNswsPopupClose_Click(object sender, EventArgs e)
+    {
+        ModalPopupNswsRedirect.Hide();
+        ModalPopupConsent.Hide();
+    }
+
+    protected void BtnNswsOk_Click(object sender, EventArgs e)
+    {
+        ModalPopupNswsRedirect.Hide();
+        ModalPopupConsent.Hide();
     }
 }

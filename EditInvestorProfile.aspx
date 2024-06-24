@@ -104,7 +104,7 @@
                     }
                     break;
                 case 'F':
-                    if (entityType == 2 || entityType == 9) {
+                    if (entityType == 2 || entityType == 8) {
 
                         $("#Div_LLPIN").show();
                         $("#Div_CIN_LLPIN_Btn").show();
@@ -140,7 +140,7 @@
                     }
                     break;
                 case 'H':
-                    if (entityType == 7) {
+                    if (entityType == 6) {
 
                         $("#Div_CIN").hide();
                         $("#Div_LLPIN").hide();
@@ -157,7 +157,7 @@
                     }
                     break;
                 case 'T':
-                    if (entityType == 5) {
+                    if (entityType == 4) {
 
                         $("#Div_CIN").hide();
                         $("#Div_LLPIN").hide();
@@ -175,6 +175,19 @@
 
                     }
                     break;
+                default:
+                    if (entityType == 1 || entityType == 2 || entityType == 3 || entityType == 4 || entityType == 6 || entityType == 8) {
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
+                        });
+                    } 
+                    break;
+                    
             }
         }
 
@@ -253,6 +266,13 @@
                     $("#popup_ok").click(function () { $("#DrpDwn_Reg_State").focus(); });
                     return false;
                 }
+                var selectedDist = $('#DrpDwn_Registration_Dist option:selected').text();
+                if (selectedDist == '--Select--') {
+                    jAlert('<strong>Please select registration district name.</strong>', 'SWP');
+                    $("#popup_ok").click(function () { $("#DrpDwn_Registration_Dist").focus(); });
+                    return false;
+                }
+
             }
             else {
                 var stateName = $('#Txt_Reg_State').val().trim();
@@ -265,14 +285,16 @@
                     $("#popup_ok").click(function () { $("#Txt_Reg_State").focus(); });
                     return false;
                 }
+
+                if (blankFieldValidation('Txt_Reg_City', 'Registration district/city name', 'SWP') == false) {
+                    return false;
+                }
+                if (!WhiteSpaceValidation1st('Txt_Reg_City', 'Registration district/city name', 'SWP')) {
+                    $("#popup_ok").click(function () { $("#Txt_Reg_City").focus(); });
+                    return false;
+                }
             }
-            if (blankFieldValidation('Txt_Reg_City', 'Registration city name', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_Reg_City', 'Registration city name', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_Reg_City").focus(); });
-                return false;
-            }
+            
             if (blankFieldValidation('Txt_Reg_PIN_Code', 'Registration pincode', 'SWP') == false) {
                 return false;
             }
@@ -312,6 +334,13 @@
                     $("#popup_ok").click(function () { $("#DrpDwn_SL_State").focus(); });
                     return false;
                 }
+
+                var selectedSLDist = $('#DrpDwn_Site_Dist option:selected').text();
+                if (selectedSLDist == '--Select--') {
+                    jAlert('<strong>Please select site location district name.</strong>', 'SWP');
+                    $("#popup_ok").click(function () { $("#DrpDwn_Site_Dist").focus(); });
+                    return false;
+                }
             }
             else {
                 var stateName = $('#Txt_SL_State').val().trim();
@@ -324,15 +353,17 @@
                     $("#popup_ok").click(function () { $("#Txt_SL_State").focus(); });
                     return false;
                 }
+
+                if (blankFieldValidation('Txt_SL_City', 'Site location district/city name', 'SWP') == false) {
+                    return false;
+                }
+                if (!WhiteSpaceValidation1st('Txt_SL_City', 'Site location district/city name', 'SWP')) {
+                    $("#popup_ok").click(function () { $("#Txt_SL_City").focus(); });
+                    return false;
+                }
             }
 
-            if (blankFieldValidation('Txt_SL_City', 'Site location city name', 'SWP') == false) {
-                return false;
-            }
-            if (!WhiteSpaceValidation1st('Txt_SL_City', 'Site location city name', 'SWP')) {
-                $("#popup_ok").click(function () { $("#Txt_SL_City").focus(); });
-                return false;
-            }
+            
 
             if (blankFieldValidation('Txt_SL_PIN_Code', 'Site location pincode', 'SWP') == false) {
                 return false;
@@ -451,7 +482,7 @@
                     }
                     break;
                 case 'F':
-                    if (entityType == 2 || entityType == 9) {
+                    if (entityType == 2 || entityType == 8) {
                         $("#Div_LLPIN").show();
                         $("#Div_CIN_LLPIN_Btn").show();
 
@@ -488,7 +519,7 @@
                     }
                     break;
                 case 'H':
-                    if (entityType == 7) {
+                    if (entityType == 6) {
                         $("#Div_CIN").hide();
                         $("#Div_LLPIN").hide();
                         $("#Div_CIN_LLPIN_Btn").hide();
@@ -506,12 +537,25 @@
                     }
                     break;
                 case 'T':
-                    if (entityType == 5) {
+                    if (entityType == 4) {
                         $("#Div_CIN").hide();
                         $("#Div_LLPIN").hide();
                         $("#Div_CIN_LLPIN_Btn").hide();
 
                     } else {
+                        jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
+                        $("#popup_ok").click(function () {
+                            $("#DrpDwn_Entity_Type").focus();
+                            $('#DrpDwn_Entity_Type').val('0');
+                            $("#Div_CIN").hide();
+                            $("#Div_LLPIN").hide();
+                            $("#Div_CIN_LLPIN_Btn").hide();
+                        });
+                        return false;
+                    }
+                    break;
+                default:
+                    if (entityType == 1 || entityType == 2 || entityType == 3 || entityType == 4 || entityType == 6 || entityType == 8) {
                         jAlert('<strong>PAN number does not match the selected entity type.</strong>', 'SWP');
                         $("#popup_ok").click(function () {
                             $("#DrpDwn_Entity_Type").focus();
@@ -775,7 +819,7 @@
                                                             Registration State</label>
                                                         <div class="col-sm-4">
                                                             <span class="colon">:</span>
-                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_Reg_State" runat="server">
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_Reg_State" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DrpDwn_Reg_State_SelectedIndexChanged">
                                                                 <asp:ListItem Value="0">---Select---</asp:ListItem>
                                                             </asp:DropDownList>
                                                             <span class="mandetory">*</span>
@@ -797,7 +841,7 @@
                                                             Site Location State</label>
                                                         <div class="col-sm-4">
                                                             <span class="colon">:</span>
-                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_SL_State" runat="server">
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_SL_State" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DrpDwn_SL_State_SelectedIndexChanged" >
                                                                 <asp:ListItem Value="0">---Select---</asp:ListItem>
                                                             </asp:DropDownList>
                                                             <span class="mandetory">*</span>
@@ -820,20 +864,58 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label class="col-sm-2">
-                                                        Registration City</label>
-                                                    <div class="col-sm-4">
-                                                        <span class="colon">:</span>
-                                                        <asp:TextBox ID="Txt_Reg_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')" MaxLength="100"></asp:TextBox>
-                                                        <span class="mandetory">*</span>
+
+                                                    <div runat="server" id="Div_Reg_Dist_DrpDwn">
+                                                        <label class="col-sm-2">
+                                                        Registration District</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_Registration_Dist" runat="server">
+                                                                <asp:ListItem Value="0">---Select---</asp:ListItem>
+                                                            </asp:DropDownList>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+
                                                     </div>
-                                                    <label class="col-sm-2">
-                                                        Site Location City</label>
-                                                    <div class="col-sm-4">
-                                                        <span class="colon">:</span>
-                                                        <asp:TextBox ID="Txt_SL_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')" MaxLength="100"></asp:TextBox>
-                                                        <span class="mandetory">*</span>
+
+                                                    <div runat="server" id="Div_Reg_Dist_Text">
+                                                        <label class="col-sm-2">
+                                                            Registration District/City</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox ID="Txt_Reg_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')" MaxLength="100"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
+
+                                                        </div>
                                                     </div>
+                                                    
+                                                    <div runat="server" id="Div_SL_Dist_DrpDwn">
+                                                        <label class="col-sm-2">
+                                                        Site Location District</label>
+
+                                                        <div  class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:DropDownList CssClass="form-control" TabIndex="18" ID="DrpDwn_Site_Dist" runat="server">
+                                                                <asp:ListItem Value="0">---Select---</asp:ListItem>
+                                                            </asp:DropDownList>
+                                                            <span class="mandetory">*</span>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div runat="server" id="Div_SL_Dist_Text">
+                                                        <label class="col-sm-2">
+                                                            Site Location District/City</label>
+                                                        <div class="col-sm-4">
+                                                            <span class="colon">:</span>
+                                                            <asp:TextBox ID="Txt_SL_City" CssClass="form-control" runat="server" Onkeypress="return inputLimiter(event,'NameCharacters')" MaxLength="100"></asp:TextBox>
+                                                            <span class="mandetory">*</span>
+
+
+                                                        </div>
+                                                    </div>
+
                                                     <div class="clearfix">
                                                     </div>
                                                 </div>

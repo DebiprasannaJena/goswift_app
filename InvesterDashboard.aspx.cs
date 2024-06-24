@@ -86,7 +86,7 @@ public partial class InvesterProfile : SessionCheck
             ///// SPMG Section
             YEARBIND(ddlspmgyear);
             ddlspmgyear.SelectedValue = DateTime.Now.Year.ToString();// "2017";
-            InsertSPMGStatus();
+           // InsertSPMGStatus();
             ViewSPMGData();
             /*-------------------------------------------------------*/
             fillInvestorGrievance();
@@ -449,121 +449,121 @@ public partial class InvesterProfile : SessionCheck
     
     #region Dashboard SPMG Data
 
-    private void InsertSPMGStatus()
-    {
-        string finalquery = "";
-        SqlCommand cmd;
+    //private void InsertSPMGStatus()
+    //{
+    //    string finalquery = "";
+    //    SqlCommand cmd;
 
-        //Random number generate
-        string strrandomgen = MakeRandom(10);
-        var plainran = Encoding.UTF8.GetBytes(strrandomgen);
-        string randno = Convert.ToBase64String(plainran);
+    //    //Random number generate
+    //    string strrandomgen = MakeRandom(10);
+    //    var plainran = Encoding.UTF8.GetBytes(strrandomgen);
+    //    string randno = Convert.ToBase64String(plainran);
 
-        //Timestamp
-        TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
-        double unixTime = span.TotalSeconds;
-        var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
-        string plunixtime = Convert.ToBase64String(plainut);
+    //    //Timestamp
+    //    TimeSpan span = (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc));
+    //    double unixTime = span.TotalSeconds;
+    //    var plainut = Encoding.UTF8.GetBytes(unixTime.ToString());
+    //    string plunixtime = Convert.ToBase64String(plainut);
 
-        //PasswordDigest
-        string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
-        SHA256 mySHA256 = SHA256Managed.Create();
-        string finalstr = GetSha256FromString(ranpss);
-        byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
-        string ranpss1 = Convert.ToBase64String(bytes);
+    //    //PasswordDigest
+    //    string ranpss = strrandomgen + "$CSDa2017@shbo@rD$Ipic)L" + unixTime.ToString();
+    //    SHA256 mySHA256 = SHA256Managed.Create();
+    //    string finalstr = GetSha256FromString(ranpss);
+    //    byte[] bytes = Encoding.UTF8.GetBytes(finalstr);
+    //    string ranpss1 = Convert.ToBase64String(bytes);
 
-        //Financial year
-        string FinYear = ddlspmgyear.SelectedValue;
+    //    //Financial year
+    //    string FinYear = ddlspmgyear.SelectedValue;
 
-        //// SPMG Service Consume
-        string serviceUrl = "https://esuvidha.gov.in//odisha/restservices/RestServer.php?view=issuestatusbyinvestorid";
-        object input = new
-        {
-            RandomNonce = randno,
-            TimeStamp = plunixtime,
-            PasswordDigest = ranpss1,
-            FinancialYear = FinYear,
-            InvestorID = Convert.ToString(Session["UID"])
-        };
+    //    //// SPMG Service Consume
+    //    string serviceUrl = ""; // "https://esuvidha.gov.in//odisha/restservices/RestServer.php?view=issuestatusbyinvestorid";
+    //    object input = new
+    //    {
+    //        RandomNonce = randno,
+    //        TimeStamp = plunixtime,
+    //        PasswordDigest = ranpss1,
+    //        FinancialYear = FinYear,
+    //        InvestorID = Convert.ToString(Session["UID"])
+    //    };
 
-        //"2285753E-55FC-4D1D-873F-1599C1B127EC"
+    //    //"2285753E-55FC-4D1D-873F-1599C1B127EC"
 
-        string inputJson = (new JavaScriptSerializer()).Serialize(input);
-        var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
-        webRequest.Method = WebRequestMethods.Http.Post;
-        webRequest.ContentType = "application/json";
-        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
-        ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
-        ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
-        var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
-        using (var requestStream = webRequest.GetRequestStream())
-        {
-            using (var writer = new StreamWriter(requestStream))
-            {
-                writer.Write(json);
-            }
-        }
-        try
-        {
-            using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
-            {
-                using (var responseStream = webResponse.GetResponseStream())
-                {
-                    using (var reader = new StreamReader(responseStream))
-                    {
-                        try
-                        {
-                            var responseData = reader.ReadToEnd();
-                            webResponse.Close();
+    //    string inputJson = (new JavaScriptSerializer()).Serialize(input);
+    //    var webRequest = (HttpWebRequest)WebRequest.Create(serviceUrl);
+    //    webRequest.Method = WebRequestMethods.Http.Post;
+    //    webRequest.ContentType = "application/json";
+    //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+    //    ServicePointManager.SecurityProtocol = (SecurityProtocolType)768 | (SecurityProtocolType)3072;
+    //    ServicePointManager.ServerCertificateValidationCallback = ((sender, certificate, chain, sslPolicyErrors) => true);
+    //    var json = Newtonsoft.Json.JsonConvert.SerializeObject(input);
+    //    using (var requestStream = webRequest.GetRequestStream())
+    //    {
+    //        using (var writer = new StreamWriter(requestStream))
+    //        {
+    //            writer.Write(json);
+    //        }
+    //    }
+    //    try
+    //    {
+    //        using (var webResponse = (HttpWebResponse)webRequest.GetResponse())
+    //        {
+    //            using (var responseStream = webResponse.GetResponseStream())
+    //            {
+    //                using (var reader = new StreamReader(responseStream))
+    //                {
+    //                    try
+    //                    {
+    //                        var responseData = reader.ReadToEnd();
+    //                        webResponse.Close();
 
-                            string strResult = responseData.ToString();
-                            if (strResult != "")
-                            {
-                                DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
-                                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
-                                if (con.State == ConnectionState.Closed)
-                                {
-                                    con.Open();
-                                }
+    //                        string strResult = responseData.ToString();
+    //                        if (strResult != "")
+    //                        {
+    //                            DataTable DynTable = DashboradCommon.JsonStringToDataTable(strResult);
+    //                            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["AdminAppConnectionProd"].ToString());
+    //                            if (con.State == ConnectionState.Closed)
+    //                            {
+    //                                con.Open();
+    //                            }
 
-                                string query = "SELECT INT_YEAR FROM T_INVESTOR_SPMG_DTLS WHERE INT_YEAR='" + FinYear + "' AND Investor_id='" + Convert.ToString(Session["UID"]) + "'";
-                                SqlDataAdapter adp = new SqlDataAdapter(query, con);
-                                DataSet ds = new DataSet();
-                                adp.Fill(ds);
-                                if (ds.Tables[0].Rows.Count > 0)
-                                {
-                                    finalquery = "UPDATE T_INVESTOR_SPMG_DTLS SET ISSUES_RECEIVED=" + DynTable.Rows[0]["Issues Received"].ToString() + ",ISSUES_RESOLVED=" + DynTable.Rows[0]["Issues Resolved"].ToString() + "," +
-                                         "ISSUES_PENDING=" + DynTable.Rows[0]["Issues Pending"].ToString() + ",ISSUES_EXCEED=" + DynTable.Rows[0]["Issues Pending (more than 30 days)"].ToString() + ",DTM_CREATED_ON='" + DateTime.Now.ToString("dd-MMM-yy")
-                                        + "'" + " WHERE INT_YEAR=" + "'" + FinYear + "' AND Investor_id='" + Convert.ToString(Session["UID"]) + "' ";
-                                }
-                                else
-                                {
-                                    finalquery = "INSERT INTO T_INVESTOR_SPMG_DTLS(Investor_Id,ISSUES_RECEIVED,ISSUES_RESOLVED,ISSUES_PENDING,ISSUES_EXCEED,DTM_CREATED_ON,INT_YEAR)" +
-                                                 "VALUES(" + "'" + Convert.ToString(Session["UID"]) + "'," + DynTable.Rows[0]["Issues Received"].ToString() + "," + DynTable.Rows[0]["Issues Resolved"].ToString()
-                                                 + "," + DynTable.Rows[0]["Issues Pending"].ToString() + "," + DynTable.Rows[0]["Issues Pending (more than 30 days)"].ToString() + "," +
-                                                 "'" + DateTime.Now.ToString("dd-MMM-yy") + "'," + FinYear + ")";
+    //                            string query = "SELECT INT_YEAR FROM T_INVESTOR_SPMG_DTLS WHERE INT_YEAR='" + FinYear + "' AND Investor_id='" + Convert.ToString(Session["UID"]) + "'";
+    //                            SqlDataAdapter adp = new SqlDataAdapter(query, con);
+    //                            DataSet ds = new DataSet();
+    //                            adp.Fill(ds);
+    //                            if (ds.Tables[0].Rows.Count > 0)
+    //                            {
+    //                                finalquery = "UPDATE T_INVESTOR_SPMG_DTLS SET ISSUES_RECEIVED=" + DynTable.Rows[0]["Issues Received"].ToString() + ",ISSUES_RESOLVED=" + DynTable.Rows[0]["Issues Resolved"].ToString() + "," +
+    //                                     "ISSUES_PENDING=" + DynTable.Rows[0]["Issues Pending"].ToString() + ",ISSUES_EXCEED=" + DynTable.Rows[0]["Issues Pending (more than 30 days)"].ToString() + ",DTM_CREATED_ON='" + DateTime.Now.ToString("dd-MMM-yy")
+    //                                    + "'" + " WHERE INT_YEAR=" + "'" + FinYear + "' AND Investor_id='" + Convert.ToString(Session["UID"]) + "' ";
+    //                            }
+    //                            else
+    //                            {
+    //                                finalquery = "INSERT INTO T_INVESTOR_SPMG_DTLS(Investor_Id,ISSUES_RECEIVED,ISSUES_RESOLVED,ISSUES_PENDING,ISSUES_EXCEED,DTM_CREATED_ON,INT_YEAR)" +
+    //                                             "VALUES(" + "'" + Convert.ToString(Session["UID"]) + "'," + DynTable.Rows[0]["Issues Received"].ToString() + "," + DynTable.Rows[0]["Issues Resolved"].ToString()
+    //                                             + "," + DynTable.Rows[0]["Issues Pending"].ToString() + "," + DynTable.Rows[0]["Issues Pending (more than 30 days)"].ToString() + "," +
+    //                                             "'" + DateTime.Now.ToString("dd-MMM-yy") + "'," + FinYear + ")";
 
-                                }
-                                cmd = new SqlCommand(finalquery, con);
-                                cmd.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Util.LogError(ex, "InvestorDashboard");
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Util.LogError(ex, "InvestorDashboard");
-        }
-    }
+    //                            }
+    //                            cmd = new SqlCommand(finalquery, con);
+    //                            cmd.ExecuteNonQuery();
+    //                        }
+    //                    }
+    //                    catch (Exception ex)
+    //                    {
+    //                        Util.LogError(ex, "InvestorDashboard");
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Util.LogError(ex, "InvestorDashboard");
+    //    }
+    //}
     protected void btnspmg_Click(object sender, EventArgs e)
     {
-        InsertSPMGStatus();
+        //InsertSPMGStatus();
         ViewSPMGData();
     }
     private void ViewSPMGData()
