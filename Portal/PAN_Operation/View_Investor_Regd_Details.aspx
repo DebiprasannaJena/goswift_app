@@ -132,6 +132,25 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
+
+                             <div class="form-group">
+                                <label class="col-sm-2">
+                                    PAN Holder Name</label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Pan_Holder_Name" runat="server" CssClass="form-control-static" Font-Bold="true"></asp:Label>
+                                </div>
+                                <label class="col-sm-2">
+                                     DOB
+                                </label>
+                                <div class="col-sm-4">
+                                    <span class="colon">:</span>
+                                    <asp:Label ID="Lbl_Pan_Holder_Dob" runat="server" CssClass="form-control-static" Font-Bold="true"></asp:Label>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     <asp:Label ID="Lbl_Doc_Type" runat="server"></asp:Label>
@@ -278,42 +297,8 @@
                                 </div>
                             </div>
                             <hr />
-                            <div class="form-group">
-                                <label class="col-sm-3">
-                                    Approval Required (1st Level)
-                                </label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_App_Req" runat="server" CssClass="form-control-static" Font-Bold="true"></asp:Label>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3">
-                                    Approval Status (1st Level)
-                                </label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_Approval_Status_1st_Level" runat="server" CssClass="form-control-static"
-                                        Font-Bold="true"></asp:Label>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3">
-                                    Approval Date (1st Level)
-                                </label>
-                                <div class="col-sm-4">
-                                    <span class="colon">:</span>
-                                    <asp:Label ID="Lbl_Approval_Date_1st_Level" runat="server" CssClass="form-control-static"
-                                        Font-Bold="true"></asp:Label>
-                                </div>
-                                <div class="clearfix">
-                                </div>
-                            </div>
-                            <hr />
+                           
+                          
                             <div class="form-group">
                                 <label class="col-sm-2">
                                     Registration Source

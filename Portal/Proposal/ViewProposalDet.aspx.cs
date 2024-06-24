@@ -36,7 +36,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     ProposalDet objProposal = new ProposalDet();
     PromoterDet objprom = new PromoterDet();
 
-    string strRetval = "";
+    
     string filepath = "";
     string filepathidco = "";
 
@@ -55,16 +55,14 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
         {
             if (!IsPostBack)
             {
-                fillGridview();
+                FillGridview();
                 BindStatus();
                 //(START) this section of code checks if the page postback is due to genuine submit by user or by pressing "refresh"
                 ViewState["ViewStateId"] = System.Guid.NewGuid().ToString();
                 Session["SessionId"] = ViewState["ViewStateId"].ToString();
-                //(END) this section of code checks if the page postback is due to genuine submit by user or by pressing "refresh"
-                // dvPEALCerti.Visible = false;
+                //(END) this section of code checks if the page postback is due to genuine submit by user or by pressing "refresh"               
                 BindStatus1();
-              
-                //dvscore.Visible = false;
+
             }
             else
             {
@@ -86,46 +84,26 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     }
 
     #region FunctionUsed
-
-    //private void BindNodalOffcr()
-    //{
-    //    try
-    //    {
-    //        CICGService.CICGService AddAgenda = new CICGService.CICGService();
-    //        drpNodalOffcr.DataSource = AddAgenda.FillNodalOfficer();
-    //        drpNodalOffcr.DataTextField = "Name";
-    //        drpNodalOffcr.DataValueField = "Id";
-    //        drpNodalOffcr.DataBind();
-    //        ListItem list = new ListItem();
-    //        list.Text = "--Select--";
-    //        list.Value = "0";
-    //        drpNodalOffcr.Items.Insert(0, list);
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        Util.LogError(ex, "ProposalForward");
-    //    }
-    //}
+  
     private void BindStatus1()
     {
         try
         {
-            List<ProjectInfo> objProjList = new List<ProjectInfo>();
             ProjectInfo objProp = new ProjectInfo();
 
             objProp.strAction = "SM";
             objProp.vchProposalNo = " ";
-            objProjList = objService.PopulateProjDropdowns(objProp).ToList();
+            List<ProjectInfo> objProjList = objService.PopulateProjDropdowns(objProp).ToList();
 
-            drpStatusDet.DataSource = objProjList;
-            drpStatusDet.DataTextField = "vchStatusName";
-            drpStatusDet.DataValueField = "intStatusId";
-            drpStatusDet.DataBind();
+            DrpDwn_Status_Details.DataSource = objProjList;
+            DrpDwn_Status_Details.DataTextField = "vchStatusName";
+            DrpDwn_Status_Details.DataValueField = "intStatusId";
+            DrpDwn_Status_Details.DataBind();
 
             ListItem list = new ListItem();
             list.Text = "--Select--";
             list.Value = "0";
-            drpStatusDet.Items.Insert(0, list);
+            DrpDwn_Status_Details.Items.Insert(0, list);
         }
         catch (Exception ex)
         {
@@ -135,36 +113,35 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     private void BindStatus()
     {
         try
-        {
-            List<ProposalDet> objProjList = new List<ProposalDet>();
+        {           
             ProposalDet objProp = new ProposalDet();
 
             objProp.strAction = "S";
-            objProjList = objService.PopulateStatus(objProp).ToList();
+            List<ProposalDet> objProjList = objService.PopulateStatus(objProp).ToList();
 
-            drpStatus.DataSource = objProjList;
-            drpStatus.DataTextField = "strStatus";
-            drpStatus.DataValueField = "intStatus";
-            drpStatus.DataBind();
+            DrpDwnStatus.DataSource = objProjList;
+            DrpDwnStatus.DataTextField = "strStatus";
+            DrpDwnStatus.DataValueField = "intStatus";
+            DrpDwnStatus.DataBind();
 
             ListItem list = new ListItem();
             list.Text = "--Select--";
             list.Value = "0";
-            drpStatus.Items.Insert(0, list);
+            DrpDwnStatus.Items.Insert(0, list);
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "ProposalForward");
         }
     }
-    private void fillGridview()
+    private void FillGridview()
     {
         try
-        {
+        {      
             objProposal.strAction = "M";
             objProposal.intCreatedBy = Convert.ToInt32(Session["UserId"]);
-            objProposal.compName = txtCompanyName.Text.Trim();
-            objProposal.intStsdet = Convert.ToInt32(drpStatusDet.SelectedValue);
+            objProposal.compName = Txt_Company_Name.Text.Trim();
+            objProposal.intStsdet = Convert.ToInt32(DrpDwn_Status_Details.SelectedValue);
             List<ProposalDet> objProposalList = objService.getProposalDetails(objProposal).ToList();
 
             gvService.DataSource = objProposalList;
@@ -192,7 +169,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     }
     protected void btnSearch_Click(object sender, EventArgs e)
     {
-        fillGridview();
+        FillGridview();
     }
 
     #region "Display Google Paging"
@@ -201,20 +178,20 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     {
         if (gvService.Rows.Count > 0)
         {
-            this.lblPaging.Visible = true;
+            this.Lbl_Paging.Visible = true;
             lbtnAll.Visible = true;
             if (gvService.PageIndex + 1 == gvService.PageCount)
             {
-                this.lblPaging.Text = "Results <b>" + gvService.Rows[0].Cells[0].Text + "</b> - <b>" + intRecordCount + "</b> Of <b>" + intRecordCount + "</b>";
+                this.Lbl_Paging.Text = "Results <b>" + gvService.Rows[0].Cells[0].Text + "</b> - <b>" + intRecordCount + "</b> Of <b>" + intRecordCount + "</b>";
             }
             else
             {
-                this.lblPaging.Text = "Results <b>" + gvService.Rows[0].Cells[0].Text + "</b> - <b>" + (int.Parse(gvService.Rows[0].Cells[0].Text) + (gvService.PageSize - 1)) + "</b> Of <b>" + intRecordCount + "</b>";
+                this.Lbl_Paging.Text = "Results <b>" + gvService.Rows[0].Cells[0].Text + "</b> - <b>" + (int.Parse(gvService.Rows[0].Cells[0].Text) + (gvService.PageSize - 1)) + "</b> Of <b>" + intRecordCount + "</b>";
             }
         }
         else
         {
-            this.lblPaging.Visible = false;
+            this.Lbl_Paging.Visible = false;
             lbtnAll.Visible = false;
         }
     }
@@ -227,22 +204,16 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
         {
         if (e.Row.RowType == DataControlRowType.DataRow)
         {
-            
-
-            
-
             e.Row.Cells[0].Text = Convert.ToString((this.gvService.PageIndex * this.gvService.PageSize) + e.Row.RowIndex + 1);
             LinkButton btn = new LinkButton();
-            //btn = (LinkButton)e.Row.FindControl("LinkButton1");
-            //if (gvService.DataKeys[e.Row.RowIndex].Values[0].ToString() == "1")
-            //{
+            
             HiddenField hdnTextVal1 = (HiddenField)e.Row.FindControl("hdnTextVal1");
             HiddenField hdnLandReq = (HiddenField)e.Row.FindControl("hdnLandReqIDCO");
             LinkButton lnkBtn = (e.Row.FindControl("LinkButton2") as LinkButton);
             LinkButton lnkBtnAMS = (e.Row.FindControl("LinkButtonAMS") as LinkButton);
             Label lblAMS = (e.Row.FindControl("lblAMS") as Label);
             Label lblIdco = (e.Row.FindControl("lblIdco") as Label);
-            string strProposalNo = hdnTextVal1.Value;// gvService.DataKeys[e.Row.RowIndex].Values[2].ToString();
+           
             if (e.Row.Cells[2].Text == "1")
             {
                 e.Row.Cells[2].Text = "Large Industries";
@@ -256,12 +227,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 e.Row.Cells[2].Text = "MSME";
                 hdnProjectType.Value = "2";
                 lnkBtnAMS.Visible = false;
-                if (Convert.ToInt32(Session["Userid"]) == 166)
-                {
-                    dvscore.Visible = false;
-                    hdnProjectType.Value = "1";
-                }
-                else if (Convert.ToInt32(Session["Userid"]) == 167)
+                if (Convert.ToInt32(Session["Userid"]) == 166 || Convert.ToInt32(Session["Userid"]) == 167)
                 {
                     dvscore.Visible = false;
                     hdnProjectType.Value = "1";
@@ -303,30 +269,21 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 }
                 if (e.Row.Cells[2].Text == "MSME")
                 {
-
-                    //lblAMS.Visible = false;
                     lblAMS.Text = "NA";
-                    //e.Row.Cells[6].Visible = false;
                     gvService.Columns[6].Visible = false;
                 }
                 if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[5]) == "2")
                 {
-                    if (Convert.ToDecimal(hdnLandReq.Value) > 0)//Query Raised
-                    {
-                        if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[7].ToString()) == "0")
+                        if (Convert.ToDecimal(hdnLandReq.Value) > 0)//Query Raised
                         {
-                            if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[10].ToString()) == "4")
+                            if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[7].ToString()) == "0")
                             {
+                                if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[10].ToString()) == "4" || Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[10].ToString()) == "1")
+                                {
                                 lnkBtn.Visible = false;
                                 lblIdco.Visible = true;
-                                lblIdco.Text = Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[12].ToString());//"Approved";
-                            }
-                            else if (Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[10].ToString()) == "1")
-                            {
-                                lnkBtn.Visible = false;
-                                lblIdco.Visible = true;
-                                lblIdco.Text = Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[12].ToString()); //"Forwarded";
-                            }
+                                lblIdco.Text = Convert.ToString(gvService.DataKeys[e.Row.RowIndex].Values[12].ToString());
+                                }                          
                             else
                             {
                                 lnkBtn.Visible = true;
@@ -369,12 +326,8 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                     btn.Visible = false;
                 }
             }
-            // }
-            //else
-            //{ btn.Visible = false; }
-
-
-            HyperLink hprlnkproposal = (HyperLink)e.Row.FindControl("hypLink");
+            
+            HyperLink hprlnkproposal = (HyperLink)e.Row.FindControl("HypLink_Proposal_No");
             hprlnkproposal.NavigateUrl = "../Proposal/ProposalDetails.aspx?Pno=" + hdnTextVal1.Value;
             //Added By Pranay Kumar on 11-Sept-2017 for Show/Hide of Raised Query Button
             int intQueryStatus = Convert.ToInt32(gvService.DataKeys[e.Row.RowIndex].Values[3]);
@@ -393,12 +346,11 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 lbtnRaise.Visible = false;
 
             }
-
-            List<ProposalDet> objProposalList = new List<ProposalDet>();
+          
             ProposalDet objProp = new ProposalDet();
             objProp.strAction = "QD";
             objProp.strProposalNo = hdnTextVal1.Value;
-            objProposalList = objService.getRaisedQueryDetails(objProp).ToList();
+            List<ProposalDet> objProposalList = objService.getRaisedQueryDetails(objProp).ToList();
             HtmlGenericControl QueryHist = (HtmlGenericControl)e.Row.FindControl("QueryHist");
             HtmlGenericControl QueryHist1 = (HtmlGenericControl)e.Row.FindControl("QueryHist1");
             if (objProposalList.Count > 0)
@@ -445,16 +397,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 lbtnQueryDtls.Visible = false;
                 lbtnRaise.Text = strCurrQueryStatus;
                 lbtnRaise.CssClass = "label-warning label label-default";
-            }
-            //List<LandDet> objProjList1 = new List<LandDet>();
-            //LandDet objProp1 = new LandDet();
-            //objProp1.strAction = "R";
-            //objProp1.vchProposalNo = hdnTextVal1.Value;
-            //objProjList1 = objService.GETMobileNo(objProp1).ToList();
-            //if (objProjList1.Count > 0)
-            //{
-            //    txtLandRequired.Text = Convert.ToString(objProjList1[0].LandAprvByIPICOL);
-            //}
+            }          
         }
             
       }
@@ -467,7 +410,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
     protected void gvService_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         gvService.PageIndex = e.NewPageIndex;
-        fillGridview();
+        FillGridview();
     }
 
     protected void lbtnAll_Click(object sender, EventArgs e)
@@ -477,13 +420,13 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
             lbtnAll.Text = "Paging";
             gvService.PageIndex = 0;
             gvService.AllowPaging = false;
-            fillGridview();
+            FillGridview();
         }
         else
         {
             lbtnAll.Text = "All";
             gvService.AllowPaging = true;
-            fillGridview();
+            FillGridview();
         }
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
@@ -567,13 +510,13 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 }
             }
 
-            string UploadScoreCard = ScoreCardPath;
+          
             string UploadPEALCertificatefile = PEALCertificatefilepath;
 
             objProposal.strAction = "A";
             objProposal.intCreatedBy = Convert.ToInt32(Session["UserId"]);
             objProposal.vchProposalno = hdnproposalno.Value;
-            objProposal.intStatus = Convert.ToInt32(drpStatus.SelectedValue);
+            objProposal.intStatus = Convert.ToInt32(DrpDwnStatus.SelectedValue);
             objProposal.strFileName = Uploadname;
             objProposal.strPEALCertificate = UploadPEALCertificatefile;
             objProposal.strScorecard = ScoreCardPath;
@@ -582,7 +525,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
 
             string strRetVal = objService.ProposalTakeAction(objProposal);
 
-            fillGridview();
+            FillGridview();
 
             if (strRetVal == "2")
             {
@@ -590,7 +533,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 CommonHelperCls comm = new CommonHelperCls();
                 List<LandDet> objProjList = new List<LandDet>();
                 LandDet objProp = new LandDet();
-                if (Convert.ToInt32(drpStatus.SelectedValue) == 2)
+                if (Convert.ToInt32(DrpDwnStatus.SelectedValue) == 2)
                 {
                     objProp.strAction = "N";
                     objProp.vchProposalNo = hdnCreted.Value;
@@ -605,19 +548,16 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                         smsContent = Convert.ToString(objProjList[0].SMSContent);
                         toEmail[0] = Convert.ToString(objProjList[0].Email);
                         string strSubject = "SWP: Application Approved";
-                        string strBody = "Department has approved the application for New Proposal of M/s " + Convert.ToString(objProjList[0].MobileNo.ToString().Split('_')[1]) + " ,Please Log into https://invest.odisha.gov.in for further details. ";
-                        //comm.sendMail(strSubject, strBody, toEmail, true);
-                        //comm.SendSms(mobile, strBody);
-
+                        string strBody = "Department has approved the application for New Proposal of M/s " + Convert.ToString(objProjList[0].MobileNo.ToString().Split('_')[1]) + " ,Please Log into https://invest.odisha.gov.in for further details. ";                        
                         mailStatus = comm.sendMail(strSubject, strBody, toEmail, true);
                         smsStatus = comm.SendSmsNew(mobile, strBody);
                         // FOR SMS and Mail Status Update
 
-                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(drpStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
+                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(DrpDwnStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
                         // FOR SMS and Mail Status Update
                     }
                 }
-                else if (Convert.ToInt32(drpStatus.SelectedValue) == 3)
+                else if (Convert.ToInt32(DrpDwnStatus.SelectedValue) == 3)
                 {
                     objProp.strAction = "O";
                     objProp.vchProposalNo = hdnCreted.Value;
@@ -633,19 +573,16 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                         toEmail[0] = Convert.ToString(objProjList[0].Email);
                         string strSubject = "SWP: Application Reject";
                         string strBody = "Department has rejected the application for New Proposal of M/s " + Convert.ToString(objProjList[0].MobileNo.ToString().Split('_')[1]) + " ,Please Log into https://invest.odisha.gov.in for further details. ";
-                        //comm.sendMail(strSubject, strBody, toEmail, true);
-                        //comm.SendSms(mobile, strBody);
-
 
                         mailStatus = comm.sendMail(strSubject, strBody, toEmail, true);
                         smsStatus = comm.SendSmsNew(mobile, strBody);
                         // FOR SMS and Mail Status Update
 
-                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(drpStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
+                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(DrpDwnStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
                         // FOR SMS and Mail Status Update
                     }
                 }
-                else if (Convert.ToInt32(drpStatus.SelectedValue) == 7)
+                else if (Convert.ToInt32(DrpDwnStatus.SelectedValue) == 7)
                 {
                     objProp.strAction = "O";
                     objProp.vchProposalNo = hdnCreted.Value;
@@ -661,15 +598,12 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                         toEmail[0] = Convert.ToString(objProjList[0].Email);
                         string strSubject = "SWP: Application Deferred";
                         string strBody = "Department has deferred the application for New Proposal of M/s " + Convert.ToString(objProjList[0].MobileNo.ToString().Split('_')[1]) + " ,Please Log into https://invest.odisha.gov.in for further details. ";
-                        //comm.sendMail(strSubject, strBody, toEmail, true);
-                        //comm.SendSms(mobile, strBody);
-
 
                         mailStatus = comm.sendMail(strSubject, strBody, toEmail, true);
                         smsStatus = comm.SendSmsNew(mobile, strBody);
                         // FOR SMS and Mail Status Update
 
-                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(drpStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
+                        string str = comm.UpdateMailSMSStaus("PEAL", mobile, toEmail[0].ToString(), strSubject, Session["UserId"].ToString(), "1053", Convert.ToInt32(DrpDwnStatus.SelectedValue), hdnproposalno.Value, strBody, strBody, mailStatus, smsStatus);
                         // FOR SMS and Mail Status Update
                     }
                 }
@@ -692,7 +626,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
 
     private void ClearField()
     {
-        drpStatus.SelectedValue = "0";
+        DrpDwnStatus.SelectedValue = "0";
         txtRemarks.Text = "";
 
     }
@@ -746,7 +680,6 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
             httpRequest.Accept = "application/json";
             httpRequest.ContentType = "application/json";
             httpRequest.Method = "POST";
-            //httpRequest.Timeout = 15000;
             Util.LogRequestResponse("ForwardToIdco", "POST", "PASS POST METHOD ");
             using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
             {
@@ -829,22 +762,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                             MailStatus = comm.sendMail(strSubjectMsg, strBody, UAtoEmail, true);
                             str1 = comm.UpdateMailSMSStaus("Issue", "", EmailIDs, "Issue Raised", "1", "1", 1, "1", strBody, strBody, smsStatus, MailStatus);
                         }
-                    }
-                    //else
-                    //{
-                    //    objprom.vch_oas_cafno = JObject.Parse(strResult)["cafno"].ToString();
-                    //    objprom.vch_unique_application_id_from_swp = JObject.Parse(strResult)["unique_application_id_from_swp"].ToString();
-                    //    objprom.vch_industry_code = JObject.Parse(strResult)["industry_code"].ToString();
-                    //    objprom.vch_success_message = JObject.Parse(strResult)["success_message"].ToString();
-                    //    objprom.intCreatedBy = Convert.ToInt32(Session["UserId"]);
-                    //    objprom.vch_Input_String = inputJson;
-                    //    string strRetVal = objService.ProposalCNETData(objprom);
-                    //    objprom = new PromoterDet();
-                    //    objprom.vchProposalNo = JObject.Parse(strResult)["unique_application_id_from_swp"].ToString();
-                    //    objprom.intForwardIDCO = 1;
-                    //    objprom.strAction = "N";
-                    //    string retIDCOVal = objService.ProposalIDCOtatusUpdate(objprom);
-                    //}
+                    }                 
                 }
             }
         }
@@ -888,10 +806,6 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
             }
 
             Util.LogError(ex, "ProposalForward");            
-        }
-        finally
-        {
-
         }
     }
 
@@ -938,19 +852,18 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                 else { filepath = ""; }
                 objProposal.strFileName = filepath;
                 string strRetVal = objService.ProposalRaiseQuery(objProposal);
-                fillGridview();
+                FillGridview();
                 if (strRetVal == "2")
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "OnClick", "<script> jAlert('Query Raised Successfully.')</script>;", false);
                     //FOR SENDING MAIL & SMS
-                    CommonHelperCls comm = new CommonHelperCls();
-                    List<ProposalDet> objProposalList = new List<ProposalDet>();
+                    CommonHelperCls comm = new CommonHelperCls();                   
                     ProposalDet objProp = new ProposalDet();
 
                     objProp.strAction = "S";
                     objProp.strProposalNo = btnQuerySubmit.CommandArgument.ToString();
                     objProp.intCreatedBy = Convert.ToInt32(Session["UserId"]);
-                    objProposalList = objService.getRaisedQueryDetails(objProp).ToList();
+                    List<ProposalDet> objProposalList = objService.getRaisedQueryDetails(objProp).ToList();
                     string mobile = "";
                     string smsContent = "";
                     string strSubject = "";
@@ -969,10 +882,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
                         strBody = Convert.ToString(objProposalList[0].EmailBody);
                         strDeptSMSSubject = Convert.ToString(objProposalList[0].strDeptSMSSub);
                         strDeptSMSBody = Convert.ToString(objProposalList[0].strDeptSMSContent);
-                        strDeptMailSubject = Convert.ToString(objProposalList[0].strDeptMailContent);
-                        //comm.sendMail(strSubject, strBody, toEmail, true);
-                        //comm.SendSms(mobile, smsContent);
-
+                        strDeptMailSubject = Convert.ToString(objProposalList[0].strDeptMailContent);                    
 
                         mailStatus = comm.sendMail(strSubject, strBody, toEmail, true);
                         smsStatus = comm.SendSmsNew(mobile, smsContent);
@@ -1081,7 +991,7 @@ public partial class Mastermodule_ViewProposalDet : SessionCheck
             objProposal.decExtendLand = Convert.ToDecimal(txtLandRecomendBySLFC.Text.Trim());
             string strRetVal = objService.ForwardLandToIDCO(objProposal);
 
-            fillGridview();
+            FillGridview();
             /*------------------------------------------------------------*/
             //// get respons from land data updated of proposal number for each request.            
             Util.LogRequestResponse("ForwardToIdco", "ForwardLandToIDCO", strRetVal);

@@ -48,13 +48,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div style="display: inline-block; text-align: right; width: 100%">
+                                            <asp:LinkButton ID="LbtnAll" runat="server" Visible="false" CssClass="" Text="All" OnClick="LbtnAll_Click"></asp:LinkButton>
+                                            
+                                            
+                                            <asp:Label ID="LblPaging" runat="server"></asp:Label>
+                                        </div>
                             <div class="table-responsive">
                                 <asp:GridView ID="GridView1" runat="server" class="table table-bordered table-hover"
-                                    AutoGenerateColumns="false" OnRowDataBound="GridView1_RowDataBound">
+                                    AutoGenerateColumns="false" OnRowDataBound="GridView1_RowDataBound" AllowPaging="true" ShowFooter="false" Width="100%" PageSize="50" OnPageIndexChanging="GridView1_PageIndexChanging">
                                     <Columns>
                                         <asp:TemplateField HeaderText="SlNo">
-                                            <ItemTemplate>
-                                                <asp:Label runat="server" ID="Lbkl_SlNo" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                                            <ItemTemplate>                                            
+                                                  <asp:Label ID="lblsl" runat="server" Text='<%#(GridView1.PageIndex * GridView1.PageSize) + (GridView1.Rows.Count + 1)%>'></asp:Label>
                                             </ItemTemplate>
                                             <ItemStyle Width="4%" />
                                         </asp:TemplateField>
@@ -102,6 +108,7 @@
                                             <ItemStyle Width="7%" />
                                         </asp:TemplateField>
                                     </Columns>
+                                     <PagerStyle CssClass="pagination-grid no-print" />
                                     <EmptyDataTemplate>
                                         No subsidiary unit found for swapping !!
                                     </EmptyDataTemplate>

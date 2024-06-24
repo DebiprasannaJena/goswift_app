@@ -12,7 +12,7 @@
 
             });
             $('#ContentPlaceHolder1_dvPEALCerti').hide();
-            $('#ContentPlaceHolder1_drpStatus').change(function () {
+            $('#ContentPlaceHolder1_DrpDwnStatus').change(function () {
 
                 if (($(this).val() == "2")) {
                     $("#ContentPlaceHolder1_dvPEALCerti").show();
@@ -140,9 +140,9 @@
 
         function valid() {
 
-            if (document.getElementById('ContentPlaceHolder1_drpStatus').value == "0") {
+            if (document.getElementById('ContentPlaceHolder1_DrpDwnStatus').value == "0") {
                 jAlert('<strong>Please select Status !</strong>', projname);
-                document.getElementById('ContentPlaceHolder1_drpStatus').focus();
+                document.getElementById('ContentPlaceHolder1_DrpDwnStatus').focus();
                 return false;
             }
             if (document.getElementById('ContentPlaceHolder1_txtRemarks').value == "") {
@@ -154,7 +154,7 @@
                 if (!DocValid('ContentPlaceHolder1_docUpload'))
                 { return false; }
             }
-            if (document.getElementById('ContentPlaceHolder1_drpStatus').value == "2") {
+            if (document.getElementById('ContentPlaceHolder1_DrpDwnStatus').value == "2") {
                 if (document.getElementById('ContentPlaceHolder1_docPEALCerti').value == '') {
                     jAlert('<strong>Please upload PEAL Certificate !</strong>', projname);
                     document.getElementById('ContentPlaceHolder1_docPEALCerti').focus();
@@ -412,13 +412,13 @@
                     Name Of Company/Enterprises</label>
                 <div class="col-sm-3">
                     <span class="colon">:</span>
-                    <asp:TextBox ID="txtCompanyName" MaxLength="100" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="Txt_Company_Name" MaxLength="100" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
                 <label class="col-sm-2" for="State">
                     Status</label>
                 <div class="col-sm-3" runat="server" id="st3">
                     <span class="colon">:</span>
-                    <asp:DropDownList CssClass="form-control" TabIndex="17" ID="drpStatusDet" runat="server">
+                    <asp:DropDownList CssClass="form-control" TabIndex="17" ID="DrpDwn_Status_Details" runat="server">
                         <asp:ListItem Value="0">---Select---</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -432,7 +432,7 @@
             <asp:LinkButton ID="lbtnAll" runat="server" Visible="false" CssClass="" Text="All"
                 OnClick="lbtnAll_Click"></asp:LinkButton>
             &nbsp;&nbsp;
-            <asp:Label ID="lblPaging" runat="server"></asp:Label>
+            <asp:Label ID="Lbl_Paging" runat="server"></asp:Label>
         </div>
         <div class="table-responsive">
             <asp:GridView ID="gvService" class="table table-bordered table-hover" runat="server"
@@ -443,10 +443,7 @@
                     <asp:BoundField HeaderText=" Sl No." />
                     <asp:TemplateField HeaderText="Proposal No" HeaderStyle-Width="12%">
                         <ItemTemplate>
-                            <%--<a  class="label-primary label label-default"  href="ProposalDetails.aspx?Pno=<%# Eval("strFileName")%>">Details</a>--%>
-                            <%--<a  href="ProposalDetails.aspx?Pno=<%# Eval("strFileName")%>&linkm=<%# Request.QueryString["linkm"].ToString() %>&linkn=<%# Request.QueryString["linkn"].ToString() %>&btn=<%# Request.QueryString["btn"].ToString() %>&tab=<%# Request.QueryString["tab"].ToString() %>"><%# Eval("strFileName")%></a>--%>
-                            <asp:HyperLink ID="hypLink" runat="server" NavigateUrl="ProposalDetails.aspx" Text='<%# Eval("strFileName") %>'></asp:HyperLink>
-                            <%--<asp:HyperLink ID="hypLink" runat="server" NavigateUrl="'ProposalDetails.aspx?Pno=<%# Eval("strFileName")%>&linkm=<%# Request.QueryString["linkm"].ToString() %>&linkn=<%# Request.QueryString["linkn"].ToString() %>&btn=<%# Request.QueryString["btn"].ToString() %>&tab=<%# Request.QueryString["tab"].ToString() %>'" Text='<%# Eval("strFileName") %>'></asp:HyperLink>--%>
+                            <asp:HyperLink ID="HypLink_Proposal_No" runat="server" NavigateUrl="ProposalDetails.aspx" Text='<%# Eval("strFileName") %>'></asp:HyperLink>                          
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="decAmount" HeaderText="Industry Type" />
@@ -468,24 +465,7 @@
                             </asp:HiddenField>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <%--<asp:TemplateField>
-                        <HeaderTemplate>
-                            Take Action
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                            <%--<button type="button" id="myButton" class="label-warning label label-default" data-toggle="modal" data-target= '<%# "#" + Eval("intProposalId")%>'>Take Action</button>--%>
-                            <%--<asp:Button ID="Button1" runat="server" Text="Take Action" class="label-warning label label-default" data-toggle="modal" data-target= '<%# "#" + Eval("intProposalId")%>'></asp:Button>--%>
-                            <%--<asp:HiddenField ID="hdnTextVal" runat="server" Value='<%# Eval("strFileName")%>'>
-                            </asp:HiddenField>
-                            <asp:HiddenField ID="hdnLandReq" runat="server" Value='<%# Eval("decExtendLand")%>'>
-                            </asp:HiddenField>
-                            <asp:LinkButton ID="LinkButton1" Text="Take Action" OnClientClick="setvaluesOfrow(this);"
-                                runat="server" class="label-warning label label-default" data-toggle="modal"
-                                data-target="#customer1"></asp:LinkButton>
-                            <asp:HiddenField ID="hdnCretedBy" Value='<%# Eval("intCreatedBy")%>' runat="server">
-                            </asp:HiddenField>
-                        </ItemTemplate>
-                    </asp:TemplateField>--%>
+                    
                     <asp:TemplateField>
                         <HeaderTemplate>
                             Forward IDCO
@@ -667,7 +647,7 @@
                                             <div class="col-md-4">
                                                 <asp:HiddenField ID="hdnproposalno" runat="server"></asp:HiddenField>
                                                 <asp:HiddenField ID="hdnCreted" runat="server"></asp:HiddenField>
-                                                <asp:DropDownList ID="drpStatus" runat="server" class="form-control">
+                                                <asp:DropDownList ID="DrpDwnStatus" runat="server" class="form-control">
                                                 </asp:DropDownList>
                                                 <span class="mandetory">*</span>
                                             </div>
@@ -728,16 +708,7 @@
                                             <div class="clearfix">
                                             </div>
                                         </div>
-                                        <%--    <div class="form-group" id="Dvland">
-                                      
-                                       <label class="col-md-2">Land(in acre)</label>
-                                          <div class="col-md-4"> 
-                                         <asp:TextBox ID="txtLandRequired" CssClass="form-control" MaxLength="8"
-                                                TabIndex="3" onkeydown="return isNumberDecimalKey(event, this, 2);" onblur="isNumberBlur(event, this, 2);" runat="server"></asp:TextBox>
-                                           
-                                            </div>
-                                        <div class="clearfix"></div>
-                                       </div>--%>
+                                       
                                         <div class="col-md-10 col-sm-offset-2 form-group user-form-group">
                                             <asp:Button ID="btnSubmit" runat="server" Text="Save" OnClick="btnSubmit_Click" OnClientClick="return valid();"
                                                 class="btn btn-add btn-sm" />

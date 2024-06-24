@@ -27,7 +27,8 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
 {
     /////// Get Project Name From Web.Config File   
     string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
-
+    int intRetVal = 0;
+   
     /////// Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -58,17 +59,21 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
 
             GrdChildUser.DataSource = dt;
             GrdChildUser.DataBind();
+            intRetVal = dt.Rows.Count;
+            if (dt.Rows.Count > 0)
+            {
+                DisplayPaging();
+            }
+            else
+            {
+                LblPaging.Visible = false;
+                LbtnAll.Visible = false;
+            }
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "UserApproval");
-        }
-        finally
-        {
-            dt = null;
-            objBAL = null;
-            objEntity = null;
-        }
+        }       
     }
 
     ///// Clear Input Fields
@@ -132,7 +137,7 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
                     /*----------------------------------------------------------------*/
                     ////// Update SMS and Email Status in Transaction Table
                     /*----------------------------------------------------------------*/
-                    string str = objComm.UpdateMailSMSStaus("UnitRegistrationApproval", strMobileNo, InvToEmail[0], strSubject, "0", "0", 0, "0", strSMSContent, strEmailContent, smsStatus, mailStatus);
+                    objComm.UpdateMailSMSStaus("UnitRegistrationApproval", strMobileNo, InvToEmail[0], strSubject, "0", "0", 0, "0", strSMSContent, strEmailContent, smsStatus, mailStatus);
                 }
 
                 /*----------------------------------------------------------------*/
@@ -182,18 +187,14 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
                     /*----------------------------------------------------------------*/
                     ////// Update SMS and Email Status in Transaction Table
                     /*----------------------------------------------------------------*/
-                    string str = objComm.UpdateMailSMSStaus("UnitRegistrationRejection", strMobileNo, InvToEmail[0], strSubject, "0", "0", 0, "0", strSMSContent, strEmailContent, smsStatus, mailStatus);
+                    objComm.UpdateMailSMSStaus("UnitRegistrationRejection", strMobileNo, InvToEmail[0], strSubject, "0", "0", 0, "0", strSMSContent, strEmailContent, smsStatus, mailStatus);
                 }
             }
         }
         catch (Exception ex)
         {
             Util.LogError(ex, "UserApproval");
-        }
-        finally
-        {
-            objComm = null;
-        }
+        }       
     }
 
     #endregion
@@ -327,7 +328,7 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
     }
 
     #endregion
-
+    /////// Approve Unit
     protected void Btn_Approve_Submit_Click(object sender, EventArgs e)
     {
         InvestorBusinessLayer objBAL = new InvestorBusinessLayer();
@@ -475,4 +476,72 @@ public partial class Portal_PAN_Operation_User_Approval : System.Web.UI.Page
             Util.LogError(ex, "UserApproval");
         }
     }
+
+    protected void LbtnAll_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (LbtnAll.Text == "All")
+            {
+                LbtnAll.Text = "Paging";
+                GrdChildUser.PageIndex = 0;
+                GrdChildUser.AllowPaging = false;
+                FillGrid();
+            }
+            else
+            {
+                LbtnAll.Text = "All";
+                GrdChildUser.AllowPaging = true;
+                FillGrid();
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserApproval");
+        }
+    }
+
+    protected void GrdChildUser_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            GrdChildUser.PageIndex = e.NewPageIndex;
+            FillGrid();
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserApproval");
+        }
+    }
+    //// Function for Display Paging
+    private void DisplayPaging()
+    {
+        try
+        {
+            int StartRowIndex = (GrdChildUser.PageIndex * GrdChildUser.PageSize) + 1;
+            int EndRowIndex = StartRowIndex + GrdChildUser.Rows.Count - 1;
+            EndRowIndex = EndRowIndex > intRetVal ? intRetVal : EndRowIndex;
+
+            if (this.GrdChildUser.Rows.Count > 0)
+            {
+                this.LblPaging.Visible = true;
+                GrdChildUser.Visible = true;
+
+                if (this.GrdChildUser.PageIndex + 1 == this.GrdChildUser.PageCount)
+                {
+                    this.LblPaging.Text = "Results <b> " + StartRowIndex + "-" + EndRowIndex + "</b> of <b>" + intRetVal + "</b>";
+                }
+                else
+                {
+                    this.LblPaging.Text = "Results <b>" + StartRowIndex + "-" + EndRowIndex + "</b> of <b>" + intRetVal + "</b>";
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserApproval");
+        }
+
+    }
+   
 }

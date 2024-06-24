@@ -80,12 +80,12 @@ public partial class Portal_MISReport_ViewMISIndustryList : System.Web.UI.Page
                     Lbl_Address.Text = "-NA-";
                     Lbl_Address.ForeColor = Color.Red;
                 }
-                Lbl_Regd_Address_2.Text = Convert.ToString(dt.Rows[0]["VCH_REG_ADDRESS_2"]);
-                if (Lbl_Regd_Address_2.Text == "")
-                {
-                    Lbl_Regd_Address_2.Text = "-NA-";
-                    Lbl_Regd_Address_2.ForeColor = Color.Red;
-                }
+                //Lbl_Regd_Address_2.Text = Convert.ToString(dt.Rows[0]["VCH_REG_ADDRESS_2"]);
+                //if (Lbl_Regd_Address_2.Text == "")
+                //{
+                //    Lbl_Regd_Address_2.Text = "-NA-";
+                //    Lbl_Regd_Address_2.ForeColor = Color.Red;
+                //}
                 
                 Lbl_Site_Location.Text = Convert.ToString(dt.Rows[0]["VCH_SITELOCATION"]);
                 //empty
@@ -94,119 +94,119 @@ public partial class Portal_MISReport_ViewMISIndustryList : System.Web.UI.Page
                     Lbl_Site_Location.Text = "-NA-";
                     Lbl_Site_Location.ForeColor = Color.Red;
                 }
-                Lbl_Sl_Address_2.Text = Convert.ToString(dt.Rows[0]["VCH_SL_ADDRESS_2"]);
-                if (Lbl_Sl_Address_2.Text == "")
-                {
-                    Lbl_Sl_Address_2.Text = "-NA-";
-                    Lbl_Sl_Address_2.ForeColor = Color.Red;
-                } 
-                Lbl_Regd_Country.Text= Convert.ToString(dt.Rows[0]["VCH_REG_COUNTRY_NAME"]);
+                //Lbl_Sl_Address_2.Text = Convert.ToString(dt.Rows[0]["VCH_SL_ADDRESS_2"]);
+                //if (Lbl_Sl_Address_2.Text == "")
+                //{
+                //    Lbl_Sl_Address_2.Text = "-NA-";
+                //    Lbl_Sl_Address_2.ForeColor = Color.Red;
+                //} 
+                //Lbl_Regd_Country.Text= Convert.ToString(dt.Rows[0]["VCH_REG_COUNTRY_NAME"]);
 
-                if (Lbl_Regd_Country.Text == "")
-                {
-                    Lbl_Regd_Country.Text = "-NA-";
-                    Lbl_Regd_Country.ForeColor = Color.Red;
-                }
-                Lbl_Sl_Country.Text = Convert.ToString(dt.Rows[0]["VCH_SL_COUNTRY_NAME"]);
+                //if (Lbl_Regd_Country.Text == "")
+                //{
+                //    Lbl_Regd_Country.Text = "-NA-";
+                //    Lbl_Regd_Country.ForeColor = Color.Red;
+                //}
+               // Lbl_Sl_Country.Text = Convert.ToString(dt.Rows[0]["VCH_SL_COUNTRY_NAME"]);
 
-                if (Lbl_Sl_Country.Text == "")
-                {
-                    Lbl_Sl_Country.Text = "-NA-";
-                    Lbl_Sl_Country.ForeColor = Color.Red;
-                }
-                Lbl_Regd_State.Text = Convert.ToString(dt.Rows[0]["VCH_REG_STATE"]);
+               // if (Lbl_Sl_Country.Text == "")
+               // {
+               //     Lbl_Sl_Country.Text = "-NA-";
+               //     Lbl_Sl_Country.ForeColor = Color.Red;
+               // }
+               // Lbl_Regd_State.Text = Convert.ToString(dt.Rows[0]["VCH_REG_STATE"]);
 
-                if (Lbl_Regd_State.Text == "")
-                {
-                    Lbl_Regd_State.Text = "-NA-";
-                    Lbl_Regd_State.ForeColor = Color.Red;
-                }
-                Lbl_Sl_State.Text = Convert.ToString(dt.Rows[0]["VCH_SL_STATE"]);
+               // if (Lbl_Regd_State.Text == "")
+               // {
+               //     Lbl_Regd_State.Text = "-NA-";
+               //     Lbl_Regd_State.ForeColor = Color.Red;
+               // }
+               // Lbl_Sl_State.Text = Convert.ToString(dt.Rows[0]["VCH_SL_STATE"]);
 
-                if (Lbl_Sl_State.Text == "")
-                {
-                    Lbl_Sl_State.Text = "-NA-";
-                    Lbl_Sl_State.ForeColor = Color.Red;
-                }
-                Lbl_Regd_City.Text = Convert.ToString(dt.Rows[0]["VCH_REG_CITY"]);
+               // if (Lbl_Sl_State.Text == "")
+               // {
+               //     Lbl_Sl_State.Text = "-NA-";
+               //     Lbl_Sl_State.ForeColor = Color.Red;
+               // }
+               // Lbl_Regd_City.Text = Convert.ToString(dt.Rows[0]["VCH_REG_CITY"]);
 
-                if (Lbl_Regd_City.Text == "")
-                {
-                    Lbl_Regd_City.Text = "-NA-";
-                    Lbl_Regd_City.ForeColor = Color.Red;
-                }
+               // if (Lbl_Regd_City.Text == "")
+               // {
+               //     Lbl_Regd_City.Text = "-NA-";
+               //     Lbl_Regd_City.ForeColor = Color.Red;
+               // }
 
-                Lbl_Sl_City.Text = Convert.ToString(dt.Rows[0]["VCH_SL_CITY"]);
+               // Lbl_Sl_City.Text = Convert.ToString(dt.Rows[0]["VCH_SL_CITY"]);
 
-                if (Lbl_Sl_City.Text == "")
-                {
-                    Lbl_Sl_City.Text = "-NA-";
-                    Lbl_Sl_City.ForeColor = Color.Red;
-                }
+               // if (Lbl_Sl_City.Text == "")
+               // {
+               //     Lbl_Sl_City.Text = "-NA-";
+               //     Lbl_Sl_City.ForeColor = Color.Red;
+               // }
 
-                Lbl_Regd_Pincode.Text = Convert.ToString(dt.Rows[0]["VCH_REG_PIN"]);
+               // Lbl_Regd_Pincode.Text = Convert.ToString(dt.Rows[0]["VCH_REG_PIN"]);
 
-                if (Lbl_Regd_Pincode.Text == "")
-                {
-                    Lbl_Regd_Pincode.Text = "-NA-";
-                    Lbl_Regd_Pincode.ForeColor = Color.Red;
-                }
+               // if (Lbl_Regd_Pincode.Text == "")
+               // {
+               //     Lbl_Regd_Pincode.Text = "-NA-";
+               //     Lbl_Regd_Pincode.ForeColor = Color.Red;
+               // }
 
-                Lbl_Sl_Pincode.Text = Convert.ToString(dt.Rows[0]["VCH_SL_PIN"]);
+               // Lbl_Sl_Pincode.Text = Convert.ToString(dt.Rows[0]["VCH_SL_PIN"]);
 
-                if (Lbl_Sl_Pincode.Text == "")
-                {
-                    Lbl_Sl_Pincode.Text = "-NA-";
-                    Lbl_Sl_Pincode.ForeColor = Color.Red;
-                }
-                Lbl_Enity_Type.Text = Convert.ToString(dt.Rows[0]["vchEntityName"]);
-               if (Lbl_Enity_Type.Text == "Incorporated Company")
-                {
-                    Div_Cin_Data.Visible = true;
-                    Div_Cin.Visible = true;
-                    Lbl_CIN_Number.Text= Convert.ToString(dt.Rows[0]["VCH_CIN_NUMBER"]);
-                }
-                else if(Lbl_Enity_Type.Text == "Limited Liability Partnership")
-                {
-                    Div_Llpin_Date.Visible = true;
-                    Div_Llpin.Visible = true;
-                    Lbl_LLPIN_Number.Text = Convert.ToString(dt.Rows[0]["VCH_LLPIN_NUMBER"]);
-                }
-                if (Lbl_Enity_Type.Text == "")
-                {
-                    Lbl_Enity_Type.Text = "-NA-";
-                    Lbl_Enity_Type.ForeColor = Color.Red;
-                }
-                if(Lbl_CIN_Number.Text == "")
-                {
-                    Lbl_CIN_Number.Text = "-NA-";
-                    Lbl_CIN_Number.ForeColor = Color.Red;
-                }
-                if (Lbl_LLPIN_Number.Text == "")
-                {
-                    Lbl_LLPIN_Number.Text = "-NA-";
-                    Lbl_LLPIN_Number.ForeColor = Color.Red;
-                }
-                string encryptedCIN = Convert.ToString(dt.Rows[0]["VCH_CIN_DATA"]);
-                if (!string.IsNullOrEmpty(encryptedCIN))
-                {
-                    string decryptedCIN = DecryptData(encryptedCIN);
-                    Lbl_Cin_Data.Text = decryptedCIN;
-                    Lbl_Llpin_Data.Text = decryptedCIN;
-                    Lbl_Cin_Data.Visible = false;
-                    DownloadLink.Visible = true;
-                    Lbl_Llpin_Data.Visible = false;
-                    LlpiData_Download.Visible = true;
-                }
-                else
-                {
-                    Lbl_Cin_Data.Text = "-NA-";
-                    DownloadLink.Visible = false;
-                    Lbl_Cin_Data.ForeColor = Color.Red;
-                    Lbl_Llpin_Data.Text = "-NA-";
-                    LlpiData_Download.Visible = false;
-                    Lbl_Llpin_Data.ForeColor = Color.Red;
-                }
+               // if (Lbl_Sl_Pincode.Text == "")
+               // {
+               //     Lbl_Sl_Pincode.Text = "-NA-";
+               //     Lbl_Sl_Pincode.ForeColor = Color.Red;
+               // }
+               // Lbl_Enity_Type.Text = Convert.ToString(dt.Rows[0]["vchEntityName"]);
+               //if (Lbl_Enity_Type.Text == "Incorporated Company")
+               // {
+               //     Div_Cin_Data.Visible = true;
+               //     Div_Cin.Visible = true;
+               //     Lbl_CIN_Number.Text= Convert.ToString(dt.Rows[0]["VCH_CIN_NUMBER"]);
+               // }
+               // else if(Lbl_Enity_Type.Text == "Limited Liability Partnership")
+               // {
+               //     Div_Llpin_Date.Visible = true;
+               //     Div_Llpin.Visible = true;
+               //     Lbl_LLPIN_Number.Text = Convert.ToString(dt.Rows[0]["VCH_LLPIN_NUMBER"]);
+               // }
+               // if (Lbl_Enity_Type.Text == "")
+               // {
+               //     Lbl_Enity_Type.Text = "-NA-";
+               //     Lbl_Enity_Type.ForeColor = Color.Red;
+               // }
+               // if(Lbl_CIN_Number.Text == "")
+               // {
+               //     Lbl_CIN_Number.Text = "-NA-";
+               //     Lbl_CIN_Number.ForeColor = Color.Red;
+               // }
+               // if (Lbl_LLPIN_Number.Text == "")
+               // {
+               //     Lbl_LLPIN_Number.Text = "-NA-";
+               //     Lbl_LLPIN_Number.ForeColor = Color.Red;
+               // }
+               // string encryptedCIN = Convert.ToString(dt.Rows[0]["VCH_CIN_DATA"]);
+               // if (!string.IsNullOrEmpty(encryptedCIN))
+               // {
+               //     string decryptedCIN = DecryptData(encryptedCIN);
+               //     Lbl_Cin_Data.Text = decryptedCIN;
+               //     Lbl_Llpin_Data.Text = decryptedCIN;
+               //     Lbl_Cin_Data.Visible = false;
+               //     DownloadLink.Visible = true;
+               //     Lbl_Llpin_Data.Visible = false;
+               //     LlpiData_Download.Visible = true;
+               // }
+               // else
+               // {
+               //     Lbl_Cin_Data.Text = "-NA-";
+               //     DownloadLink.Visible = false;
+               //     Lbl_Cin_Data.ForeColor = Color.Red;
+               //     Lbl_Llpin_Data.Text = "-NA-";
+               //     LlpiData_Download.Visible = false;
+               //     Lbl_Llpin_Data.ForeColor = Color.Red;
+               // }
 
 
                 Lbl_District.Text = Convert.ToString(dt.Rows[0]["vchDistrictName"]);
@@ -352,12 +352,12 @@ public partial class Portal_MISReport_ViewMISIndustryList : System.Web.UI.Page
                 }
                 //empty
 
-                Lbl_Approval_Remark.Text = Convert.ToString(dt.Rows[0]["VCH_APPROVALREMARK"]);
-                if (Lbl_Approval_Remark.Text == "" || Lbl_Approval_Remark.Text == " ")
-                {
-                    Lbl_Approval_Remark.Text = "-NA-";
-                    Lbl_Approval_Remark.ForeColor = Color.BlueViolet;
-                }
+                //Lbl_Approval_Remark.Text = Convert.ToString(dt.Rows[0]["VCH_APPROVALREMARK"]);
+                //if (Lbl_Approval_Remark.Text == "" || Lbl_Approval_Remark.Text == " ")
+                //{
+                //    Lbl_Approval_Remark.Text = "-NA-";
+                //    Lbl_Approval_Remark.ForeColor = Color.BlueViolet;
+                //}
             }
         }
         catch (Exception ex)
@@ -388,34 +388,34 @@ public partial class Portal_MISReport_ViewMISIndustryList : System.Web.UI.Page
     }  
 
     //Cin data download button clik
-    protected void DownloadLink_Click(object sender, EventArgs e)
-    {       
-        // Retrieve decrypted CIN data
-        string decryptedCIN = Lbl_Cin_Data.Text;
+    //protected void DownloadLink_Click(object sender, EventArgs e)
+    //{       
+    //    // Retrieve decrypted CIN data
+    //    string decryptedCIN = Lbl_Cin_Data.Text;
 
-        // Set the content type and headers for the file download
-        Response.ContentType = "text/plain";
-        Response.AppendHeader("Content-Disposition", "attachment; filename=CIN_Data.txt");
+    //    // Set the content type and headers for the file download
+    //    Response.ContentType = "text/plain";
+    //    Response.AppendHeader("Content-Disposition", "attachment; filename=CIN_Data.txt");
 
-        // Write the decrypted data directly to the response stream
-        Response.Write(decryptedCIN);
-        Response.End();
+    //    // Write the decrypted data directly to the response stream
+    //    Response.Write(decryptedCIN);
+    //    Response.End();
 
-    }
+    //}
 
     //Llpin data download button clik
-    protected void LlpiData_Download_Click(object sender, EventArgs e)
-    {
+    //protected void LlpiData_Download_Click(object sender, EventArgs e)
+    //{
        
-        // Retrieve decrypted CIN data
-        string decryptedCIN = Lbl_Llpin_Data.Text;
+    //    // Retrieve decrypted CIN data
+    //    string decryptedCIN = Lbl_Llpin_Data.Text;
 
-        // Set the content type and headers for the file download
-        Response.ContentType = "text/plain";
-        Response.AppendHeader("Content-Disposition", "attachment; filename=LLPIN_Data.txt");
+    //    // Set the content type and headers for the file download
+    //    Response.ContentType = "text/plain";
+    //    Response.AppendHeader("Content-Disposition", "attachment; filename=LLPIN_Data.txt");
 
-        // Write the decrypted data directly to the response stream
-        Response.Write(decryptedCIN);
-        Response.End();
-    }
+    //    // Write the decrypted data directly to the response stream
+    //    Response.Write(decryptedCIN);
+    //    Response.End();
+    //}
 }

@@ -15,7 +15,7 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
 
     /////// Get Project Name From Web.Config File   
     string strProjName = System.Configuration.ConfigurationManager.AppSettings["ProjectName"].ToString();
-
+    int intRetVal = 0;
     /////// Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -23,8 +23,8 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
         {
             try
             {
-                fillGrid();
-                fillUnitName();
+                FillGrid();
+                FillUnitName();
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
     #region FunctionUsed
 
     /////// Fill Gridview
-    private void fillGrid()
+    private void FillGrid()
     {
         if (conn.State == ConnectionState.Closed)
         {
@@ -77,15 +77,26 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
 
             GridView1.DataSource = objds;
             GridView1.DataBind();
+
+            intRetVal = objds.Rows.Count;
+            if (objds.Rows.Count > 0)
+            {
+                DisplayPaging();
+            }
+            else
+            {
+                LblPaging.Visible = false;
+                LbtnAll.Visible = false;
+            }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+            throw ex.InnerException;
         }
     }
 
     /////// Fill Parent Unit Name
-    private void fillUnitName()
+    private void FillUnitName()
     {
         if (conn.State == ConnectionState.Closed)
         {
@@ -116,9 +127,9 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
 
             DrpDwn_Unit_Name.Items.Insert(0, new ListItem("-Select Unit-", "0"));
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            throw;
+          throw ex.InnerException;
         }
     }
 
@@ -127,8 +138,10 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
     int intColorType = 1;
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
     {
-        if (e.Row.RowType == DataControlRowType.DataRow)
+        try
         {
+           if (e.Row.RowType == DataControlRowType.DataRow)
+           {
             Label Lbl_Parent_Id = (Label)e.Row.FindControl("Lbl_Parent_Id");
             Button Btn_Action = (Button)e.Row.FindControl("Btn_Action");
 
@@ -158,6 +171,11 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
             e.Row.Attributes.Add("onmouseover", "this.originalcolor=this.style.backgroundColor;this.style.backgroundColor='#FDCB0A';");
             e.Row.Attributes.Add("onmouseout", "this.style.backgroundColor=this.originalcolor;");
             e.Row.Attributes["style"] = "cursor:pointer";
+           }
+        }
+        catch(Exception ex)
+        {
+            Util.LogError(ex, "UserSwap");
         }
     }
 
@@ -181,7 +199,6 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
             /////// Service Initialization (Push data to Data Warehouse)
             /*-----------------------------------------------------------------*/
             DWHServiceHostClient objSrvRef = new DWHServiceHostClient();
-            DWH_Model objSrvEntity = new DWH_Model();
 
             /*-----------------------------------------------------------------*/
             /////// Generate Encryption Key (Security key to access Data Warehouse service methods)
@@ -194,8 +211,6 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
             if (strReturnVal == "5")
             {
                 SqlCommand objCommand = new SqlCommand();
-                SqlDataAdapter objDa = new SqlDataAdapter();
-                DataTable objds = new DataTable();
 
                 objCommand.CommandText = "USP_V2_PARENT_USER_SWAPPING";
                 objCommand.CommandType = CommandType.StoredProcedure;
@@ -209,7 +224,7 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
                 if (x > 0)
                 {
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "jAlert('<strong>Unit swapped successfully !</strong>','" + strProjName + "')", true);
-                    fillGrid();
+                    FillGrid();
                 }
                 else
                 {
@@ -232,7 +247,7 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
     {
         try
         {
-            fillGrid();
+            FillGrid();
         }
         catch (Exception ex)
         {
@@ -241,4 +256,66 @@ public partial class Portal_PAN_Operation_Parent_User_Swapping : System.Web.UI.P
     }
 
     #endregion
+
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        try
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            FillGrid();
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserSwap");
+        }
+    }
+    //// Function for Display Paging
+    private void DisplayPaging()
+    {
+        try
+        {
+            if (this.GridView1.Rows.Count > 0)
+            {
+                this.LblPaging.Visible = true;
+                LbtnAll.Visible = true;
+            }
+            if (this.GridView1.PageIndex + 1 == this.GridView1.PageCount)
+            {
+                this.LblPaging.Text = "Results <b>" + ((Label)GridView1.Rows[0].FindControl("lblsl")).Text + "</b> - </b>" + intRetVal + "</b> of <b>" + intRetVal + "</b>";
+            }
+            else
+            {
+                this.LblPaging.Text = "Results <b>" + ((Label)GridView1.Rows[0].FindControl("lblsl")).Text + "</b>-<b>" + (Convert.ToInt32(((Label)GridView1.Rows[0].FindControl("lblsl")).Text) + Convert.ToInt32((GridView1.PageSize - 1))) + "</b> of <b>" + intRetVal + "</b>";
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserSwap");
+        }
+
+    }
+
+    protected void LbtnAll_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (LbtnAll.Text == "All")
+            {
+                LbtnAll.Text = "Paging";
+                GridView1.PageIndex = 0;
+                GridView1.AllowPaging = false;
+                FillGrid();
+            }
+            else
+            {
+                LbtnAll.Text = "All";
+                GridView1.AllowPaging = true;
+                FillGrid();
+            }
+        }
+        catch (Exception ex)
+        {
+            Util.LogError(ex, "UserSwap");
+        }
+    }
 }

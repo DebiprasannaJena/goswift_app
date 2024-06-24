@@ -162,6 +162,33 @@
                                                 Go to the <span style="color: Red; font-weight: bold;">mail configuration</span> page to run the monthly email scheduler. Check the internal mail settings before running the scheduler.</label>
                                         </div>
                                     </div>
+
+
+                                    
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <hr />
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group row">
+                                        <div class="col-sm-2">
+                                            <label for="User">
+                                                MoSarkar Scheduler</label>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <span class="colon">:</span>
+                                            <asp:Button ID="Btn_Mosarkar_Scheduler" runat="server" OnClick="Btn_Mosarkar_Scheduler_Click" CssClass="btn btn-pink" Text="Click to go Mosarkar scheduler"
+                                                 Width="300px" ToolTip="Click to go Mosarkar scheduler." />
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <label for="User">
+                                                Click on this button to run the <span style="color: Red; font-weight: bold;">MoSarkar</span> scheduler instantly. This will fetch all approval applications for MoSarkar and run
+                                                the scheduler immediately. This is the manual mode for running the MoSarkar scheduler. The auto scheduler and the manual scheduler use the same method.</label>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group row">
                                         <div class="col-sm-12">
                                             <hr />

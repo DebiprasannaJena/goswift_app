@@ -15,10 +15,13 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script src="../js/WebValidation.js" type="text/javascript"></script>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="../js/decimalrstr.js" type="text/javascript"></script>
     <script type="text/javascript">
 
         var projname = '<%=System.Configuration.ConfigurationManager.AppSettings["ProjectName"] %>';
-        
+
 
 
         /*----------------------------------------------------------------*/
@@ -77,7 +80,7 @@
             }
         }
 
-      function checkvalidationforApproval() {
+        function checkvalidationforApproval() {
             if (blankFieldValidation('ContentPlaceHolder1_Txt_Approve_Remark', 'Approval remarks', projname) == false) {
                 return false;
             }
@@ -98,14 +101,13 @@
 
     </script>
     <style type="text/css">
-        .modalBackground
-        {
+        .modalBackground {
             background-color: Black;
             filter: alpha(opacity=90);
             opacity: 0.6;
         }
-        .modalPopup
-        {
+
+        .modalPopup {
             background-color: #FFFFFF;
             border-width: 3px;
             border-style: solid;
@@ -124,11 +126,11 @@
                 <i class="fa fa-tachometer"></i>
             </div>
             <div class="header-title">
-                <h1>
-                    User Approval</h1>
+                <h1>User Approval</h1>
                 <ul class="breadcrumb">
                     <li><a href="javscript:void(0)"><i class="fa fa-home"></i></a></li>
-                    <li><a>Manage User</a></li><li><a>Approve User</a></li>
+                    <li><a>Manage User</a></li>
+                    <li><a>Approve User</a></li>
                 </ul>
             </div>
         </div>
@@ -161,21 +163,26 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <asp:GridView ID="GrdChildUser" runat="server" CssClass="table table-bordered table-striped bg-white"
-                                    AutoGenerateColumns="false" Width="100%">
+                                  <div style="display: inline-block; text-align: right; width: 100%">
+                                            <asp:LinkButton ID="LbtnAll" runat="server"  CssClass="" Text="All" OnClick="LbtnAll_Click"
+                                               ></asp:LinkButton>
+                                            <asp:Label ID="LblPaging" runat="server"></asp:Label>
+                                        </div>
+                                 <div class="table-responsive" id="viewTable" runat="server">
+                                <asp:GridView ID="GrdChildUser" runat="server" CssClass="table table-bordered table-hover"
+                                    AutoGenerateColumns="false" AllowPaging="true" ShowFooter="false" OnPageIndexChanging="GrdChildUser_PageIndexChanging" Width="100%" PageSize="10" >
                                     <Columns>
                                         <asp:TemplateField HeaderText="SlNo">
                                             <ItemTemplate>
-                                                <asp:Label ID="Lbl_SlNo" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>
+                                               <%-- <asp:Label ID="Lbl_SlNo" runat="server" Text='<%# Container.DataItemIndex+1 %>'></asp:Label>--%>
+                                                 <asp:Label ID="Lbl_SlNo" runat="server" Text='<%#(GrdChildUser.PageIndex * GrdChildUser.PageSize) + (GrdChildUser.Rows.Count + 1)%>'></asp:Label>
                                             </ItemTemplate>
                                             <ItemStyle Width="4%" HorizontalAlign="Center" />
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Unit Name">
                                             <ItemTemplate>
-                                               <%-- <asp:HiddenField ID="Hid_Investor_Name" runat="server" Value='<%# Eval("VCH_INV_NAME") %>' />--%>
                                                 <asp:LinkButton ID="LnkBtn_Inv_Name" runat="server" ToolTip="Click here to view details !!"
                                                     OnClick="LnkBtn_Inv_Name_Click" Text='<%# Eval("VCH_INV_NAME")%>'></asp:LinkButton>
-                                                <%-- <asp:Label ID="Lbl_Investor_Name" runat="server" Text='<%# Eval("VCH_INV_NAME") %>'></asp:Label>--%>
                                             </ItemTemplate>
                                             <ItemStyle Width="13%" />
                                         </asp:TemplateField>
@@ -190,7 +197,7 @@
                                                 <asp:Label ID="Lbl_User_Id" runat="server" Text='<%# Eval("VCH_INV_USERID") %>'></asp:Label>
                                                 <asp:HiddenField ID="Hid_Investor_Id" runat="server" Value='<%# Eval("INT_INVESTOR_ID") %>' />
                                                 <asp:HiddenField ID="Hid_Parent_Id" runat="server" Value='<%# Eval("INT_PARENT_ID") %>' />
-                                                  <asp:HiddenField ID="Hid_Industry_Type" runat="server" Value='<%# Eval("INT_INDUSTRY_TYPE") %>' />
+                                                <asp:HiddenField ID="Hid_Industry_Type" runat="server" Value='<%# Eval("INT_INDUSTRY_TYPE") %>' />
                                                 <asp:HiddenField ID="Hid_Investor_UserId" runat="server" Value='<%# Eval("VCH_INV_USERID") %>' />
                                             </ItemTemplate>
                                             <ItemStyle Width="13%" />
@@ -199,67 +206,55 @@
                                             <ItemTemplate>
                                                 <table width="99%">
                                                     <tr>
-                                                        <td width="25%">
-                                                            Industry Type
+                                                        <td width="25%">Industry Type
                                                         </td>
-                                                        <td width="3%">
-                                                            :
+                                                        <td width="3%">:
                                                         </td>
                                                         <td>
-                         
-                                                            <asp:Label ID="Lbl_Industry_type" runat="server" Text='<%# Eval("INT_INDUSTRY_TYPE").ToString() == "1" ? "Industry" : "Non-Industry" %>'  ForeColor="Red"></asp:Label>
+
+                                                            <asp:Label ID="Lbl_Industry_type" runat="server" Text='<%# Eval("INT_INDUSTRY_TYPE").ToString() == "1" ? "Industry" : "Non-Industry" %>' ForeColor="Red"></asp:Label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td width="25%">
-                                                            Email Id
+                                                        <td width="25%">Email Id
                                                         </td>
-                                                        <td width="3%">
-                                                            :
+                                                        <td width="3%">:
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Lbl_Email_Id" runat="server" Text='<%# Eval("VCH_EMAIL") %>'></asp:Label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            Mobile No
+                                                        <td>Mobile No
                                                         </td>
-                                                        <td>
-                                                            :
+                                                        <td>:
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Lbl_Mobile_No" runat="server" Text='<%# Eval("VCH_OFF_MOBILE") %>'></asp:Label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            PAN
+                                                        <td>PAN
                                                         </td>
-                                                        <td>
-                                                            :
+                                                        <td>:
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Lbl_PAN" runat="server" Text='<%# Eval("VCH_PAN") %>'></asp:Label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            EIN/IEM
+                                                        <td>EIN/IEM
                                                         </td>
-                                                        <td>
-                                                            :
+                                                        <td>:
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Lbl_EIN_IEM" runat="server" Text='<%# Eval("VCH_EIN_IEM") %>'></asp:Label>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            Regd. Date
+                                                        <td>Regd. Date
                                                         </td>
-                                                        <td>
-                                                            :
+                                                        <td>:
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Lbl_Regd_Date" runat="server" Text='<%# Eval("DTM_CREATED_ON" ,"{0:dd-MMM-yyyy}") %>'></asp:Label>
@@ -288,19 +283,24 @@
                                                 <asp:LinkButton ID="LnkBtn_Reject" runat="server" OnClick="LnkBtn_Reject_Click" OnClientClick="return confirmReject(this);"
                                                     CssClass="btn btn-danger" ToolTip="Click Here to Reject this User !!">Reject</asp:LinkButton>
                                             </ItemTemplate>
-                                            <ItemStyle Width="7%" />
+                                            <ItemStyle Width="7%"/>
                                         </asp:TemplateField>
                                     </Columns>
+                                      <PagerStyle CssClass="pagination-grid no-print" />
                                     <EmptyDataTemplate>
                                         No investor found for approval !!
                                     </EmptyDataTemplate>
                                 </asp:GridView>
-                            </div>
+                                     </div>
+                          </div>
                         </div>
+                      </div>    
                     </div>
+               
                 </div>
             </div>
         </div>
+        
         <asp:HiddenField ID="Hid_Pop" runat="server" />
         <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1"
             TargetControlID="Hid_Pop" BackgroundCssClass="modalBackground" CancelControlID="Btn_Cancel">
@@ -311,12 +311,10 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header bg-purpul">
-                            <h4 class="modal-title">
-                                Reject Unit</h4>
+                            <h4 class="modal-title">Reject Unit</h4>
                         </div>
                         <div class="modal-body">
-                            <h4>
-                                Unit Details.</h4>
+                            <h4>Unit Details.</h4>
                             <div class="form-group">
                                 <div class="row">
                                     <label class="col-sm-2">
@@ -338,17 +336,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">                            
-                                 <div class="row">
+                            <div class="form-group">
+                                <div class="row">
                                     <label class="col-sm-2">
-                                       Rejection Cause</label>
+                                        Rejection Cause</label>
                                     <div class="col-sm-4">
                                         <span class="colon">:</span>
                                         <asp:TextBox ID="Txt_Rejection_Cause" runat="server" TextMode="MultiLine" MaxLength="250"
-                                            CssClass="form-control" onKeyUp="limitText(this, 'count', 250);" onKeyDown="limitText(this, 'count', 250);"></asp:TextBox>                                        
+                                            CssClass="form-control" onKeyUp="limitText(this, 'count', 250);" onKeyDown="limitText(this, 'count', 250);"></asp:TextBox>
                                         <small>Maximum
-                                            <input id="count" class="inputCss" readonly="readonly" style="font-weight: bold;
-                                                color: red; width: 26px;" type="text" value="250" />
+                                            <input id="count" class="inputCss" readonly="readonly" style="font-weight: bold; color: red; width: 26px;"
+                                                type="text" value="250" />
                                             Characters Left</small>
                                     </div>
                                 </div>
@@ -372,9 +370,9 @@
             </div>
         </asp:Panel>
 
-<asp:HiddenField ID="Hid_Approval_Pop" runat="server" />
+        <asp:HiddenField ID="Hid_Approval_Popup" runat="server" />
         <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="Panel2"
-            TargetControlID="Hid_Pop" BackgroundCssClass="modalBackground" CancelControlID="Btn_Cancel">
+            TargetControlID="Hid_Approval_Popup" BackgroundCssClass="modalBackground" CancelControlID="Btn_Cancel">
         </cc1:ModalPopupExtender>
         <asp:Panel ID="Panel2" runat="server" CssClass="modalfade" Style="display: none;">
             <div id="undertakingipr2024">
@@ -382,12 +380,10 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header bg-purpul">
-                            <h4 class="modal-title">
-                                Approval unit</h4>
+                            <h4 class="modal-title">Approval unit</h4>
                         </div>
                         <div class="modal-body">
-                            <h4>
-                                Unit Details.</h4>
+                            <h4>Unit Details.</h4>
                             <div class="form-group">
                                 <div class="row">
                                     <label class="col-sm-2">
@@ -399,7 +395,7 @@
                                         <asp:HiddenField ID="Hid_Investor_Id_Approve" runat="server" />
                                         <asp:HiddenField ID="Hid_Email_Id_Approve" runat="server" />
                                         <asp:HiddenField ID="Hid_Mobile_No_Approve" runat="server" />
-                                         <asp:HiddenField ID="Hid_Industry_Type" runat="server"  />
+                                        <asp:HiddenField ID="Hid_Industry_Type" runat="server" />
                                     </div>
                                     <label class="col-sm-2">
                                         User Id</label>
@@ -410,27 +406,27 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <div class="form-group">
                                 <div class="row">
                                     <label class="col-sm-2">
-                                       Approval Remark</label>
+                                        Approval Remark</label>
                                     <div class="col-sm-4">
                                         <span class="colon">:</span>
                                         <asp:TextBox ID="Txt_Approve_Remark" runat="server" TextMode="MultiLine" MaxLength="250"
-                                            CssClass="form-control" onKeyUp="limitText(this, 'countId', 250);" onKeyDown="limitText(this, 'countId', 250);"></asp:TextBox>                                        
+                                            CssClass="form-control" onKeyUp="limitText(this, 'countId', 250);" onKeyDown="limitText(this, 'countId', 250);"></asp:TextBox>
                                         <small>Maximum
-                                            <input id="countId" class="inputCss" readonly="readonly" style="font-weight: bold;
-                                                color: red; width: 26px;" type="text" value="250" />
+                                            <input id="countId" class="inputCss" readonly="readonly" style="font-weight: bold; color: red; width: 26px;"
+                                                type="text" value="250" />
                                             Characters Left</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <div class="row">                              
+                            <div class="row">
                                 <div class="col-sm-3">
-                                    <asp:Button ID="Btn_Approve_Submit" OnClick="Btn_Approve_Submit_Click"  runat="server" Text="Submit" 
+                                    <asp:Button ID="Btn_Approve_Submit" OnClick="Btn_Approve_Submit_Click" runat="server" Text="Submit"
                                         class="btn btn-success" ToolTip="Click Here to Proceed" OnClientClick="return checkvalidationforApproval();" />
                                     <asp:Button ID="Btn_Approve_Cencel" runat="server" Text="Cancel" class="btn btn-danger" ToolTip="Click Here to Cancel the Approve !!" />
                                 </div>

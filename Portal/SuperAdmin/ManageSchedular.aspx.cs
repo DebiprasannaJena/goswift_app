@@ -171,4 +171,12 @@ public partial class Portal_SuperAdmin_ManageSchedular : System.Web.UI.Page
     //    string strAlertMsg = "<script>alert('External Service Payment Scheduler status send Completed.')</script>";
     //    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "temp", strAlertMsg, false);
     //}
+
+    protected void Btn_Mosarkar_Scheduler_Click(object sender, EventArgs e)
+    {
+        PaymentScheduler obj = new PaymentScheduler();
+        obj.MoSarkarServiceSchedule();
+        string strAlertMsg = "<script>alert('MoSarkar Scheduler Completed.')</script>";
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "temp", strAlertMsg, false);
+    }
 }

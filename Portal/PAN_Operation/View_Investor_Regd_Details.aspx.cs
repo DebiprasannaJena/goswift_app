@@ -99,21 +99,79 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
             if (dt.Rows.Count > 0)
             {
                 Lbl_Unit_Name.Text = Convert.ToString(dt.Rows[0]["VCH_INV_NAME"]);
+                if (Lbl_Unit_Name.Text == "")
+                {
+                    Lbl_Unit_Name.Text = "-NA-";
+                    Lbl_Unit_Name.ForeColor = Color.Black;
+                }
+
                 string strSalutation = Convert.ToString(dt.Rows[0]["VCH_SALUTATION"]);
                 string strFirstName = Convert.ToString(dt.Rows[0]["VCH_CONTACT_FIRSTNAME"]);
                 string strMiddleName = Convert.ToString(dt.Rows[0]["VCH_CONTACT_MIDDLENAME"]);
                 string strLastName = Convert.ToString(dt.Rows[0]["VCH_CONTACT_LASTNAME"]);
                 Lbl_Applicant_Name.Text = strSalutation + " " + strFirstName + " " + strMiddleName + " " + strLastName;
+                if (Lbl_Applicant_Name.Text == "")
+                {
+                    Lbl_Applicant_Name.Text = "-NA-";
+                    Lbl_Applicant_Name.ForeColor = Color.Black;
+                }
                 Lbl_Address.Text = Convert.ToString(dt.Rows[0]["VCH_ADDRESS"]);
+                if (Lbl_Address.Text == "")
+                {
+                    Lbl_Address.Text = "-NA-";
+                    Lbl_Address.ForeColor = Color.Black;
+                }
+
                 Lbl_Mobile_No.Text = Convert.ToString(dt.Rows[0]["VCH_OFF_MOBILE"]);
+                if (Lbl_Mobile_No.Text == "")
+                {
+                    Lbl_Mobile_No.Text = "-NA-";
+                    Lbl_Mobile_No.ForeColor = Color.Black;
+                }
                 Lbl_Email_Id.Text = Convert.ToString(dt.Rows[0]["VCH_EMAIL"]);
+                if (Lbl_Email_Id.Text == "")
+                {
+                    Lbl_Email_Id.Text = "-NA-";
+                    Lbl_Email_Id.ForeColor = Color.Black;
+                }
 
                 Lbl_Site_Location.Text = Convert.ToString(dt.Rows[0]["VCH_SITELOCATION"]);
+                if (Lbl_Site_Location.Text == "")
+                {
+                    Lbl_Site_Location.Text = "-NA-";
+                    Lbl_Site_Location.ForeColor = Color.Black;
+                }
                 Lbl_District.Text = Convert.ToString(dt.Rows[0]["vchDistrictName"]);
+                if (Lbl_District.Text == "")
+                {
+                    Lbl_District.Text = "-NA-";
+                    Lbl_District.ForeColor = Color.Black;
+                }
+
                 Lbl_Block.Text = Convert.ToString(dt.Rows[0]["vchBlockName"]);
+                if (Lbl_Block.Text == "")
+                {
+                    Lbl_Block.Text = "-NA-";
+                    Lbl_Block.ForeColor = Color.Black;
+                }
                 Lbl_Sector.Text = Convert.ToString(dt.Rows[0]["VCH_SECTOR"]);
+                if (Lbl_Sector.Text == "")
+                {
+                    Lbl_Sector.Text = "-NA-";
+                    Lbl_Sector.ForeColor = Color.Black;
+                }
                 Lbl_Sub_Sector.Text = Convert.ToString(dt.Rows[0]["vchSubSectorName"]);
+                if (Lbl_Sub_Sector.Text == "")
+                {
+                    Lbl_Sub_Sector.Text = "-NA-";
+                    Lbl_Sub_Sector.ForeColor = Color.Black;
+                }
                 Lbl_Industry_Type.Text = Convert.ToString(dt.Rows[0]["INT_INDUSTRY_TYPE"]);
+                if (Lbl_Industry_Type.Text == "")
+                {
+                    Lbl_Industry_Type.Text = "-NA-";
+                    Lbl_Industry_Type.ForeColor = Color.Black;
+                }
 
                 /*-------------------------------------------------------------------*/
 
@@ -163,15 +221,70 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                 /*-------------------------------------------------------------------*/
 
                 Lbl_Unit_Type.Text = Convert.ToString(dt.Rows[0]["INT_PARENT_ID"]) == "0" ? "Main Unit" : "Subsidiary Unit";
+                if (Lbl_Unit_Type.Text == "")
+                {
+                    Lbl_Unit_Type.Text = "-NA-";
+                    Lbl_Unit_Type.ForeColor = Color.Black;
+                }
                 Lbl_GSTIN.Text = Convert.ToString(dt.Rows[0]["VCH_GSTIN"]);
+                if (Lbl_GSTIN.Text == "")
+                {
+                    Lbl_GSTIN.Text = "-NA-";
+                    Lbl_GSTIN.ForeColor = Color.Black;
+                }
                 Lbl_PAN.Text = Convert.ToString(dt.Rows[0]["VCH_PAN"]);
+                if (Lbl_PAN.Text == "")
+                {
+                    Lbl_PAN.Text = "-NA-";
+                    Lbl_PAN.ForeColor = Color.Black;
+                }
+
+                Lbl_Pan_Holder_Name.Text = Convert.ToString(dt.Rows[0]["VCH_PAN_HOLDER_NAME"]);
+                if (Lbl_Pan_Holder_Name.Text == "")
+                {
+                    Lbl_Pan_Holder_Name.Text = "-NA-";
+                    Lbl_Pan_Holder_Name.ForeColor = Color.Black;
+                }
+
+                Lbl_Pan_Holder_Dob.Text= DateTime.Parse(dt.Rows[0]["DTM_DOB"].ToString()).ToString("dd-MMM-yyyy");
+                if (Lbl_Pan_Holder_Dob.Text == "")
+                {
+                    Lbl_Pan_Holder_Dob.Text = "-NA-";
+                    Lbl_Pan_Holder_Dob.ForeColor = Color.Black;
+                }
+
                 Lbl_Investment_Level.Text = Convert.ToString(dt.Rows[0]["INT_CATEGORY"]) == "1" ? "Project Cost >= 50 Crore" : "Project Cost < 50 Crore";
+                if (Lbl_Investment_Level.Text == "")
+                {
+                    Lbl_Investment_Level.Text = "-NA-";
+                    Lbl_Investment_Level.ForeColor = Color.Black;
+                }
 
                 Lbl_User_Id.Text = Convert.ToString(dt.Rows[0]["VCH_INV_USERID"]);
+                if (Lbl_User_Id.Text == "")
+                {
+                    Lbl_User_Id.Text = "-NA-";
+                    Lbl_User_Id.ForeColor = Color.Black;
+                }
                 Lbl_User_Level.Text = Convert.ToString(dt.Rows[0]["INT_USER_LEVEL"]);
+                if (Lbl_User_Level.Text == "")
+                {
+                    Lbl_User_Level.Text = "-NA-";
+                    Lbl_User_Level.ForeColor = Color.Black;
+                }
                 Lbl_Alias_Name.Text = Convert.ToString(dt.Rows[0]["VCH_INV_USERID_ALIAS"]);
+                if (Lbl_Alias_Name.Text == "")
+                {
+                    Lbl_Alias_Name.Text = "-NA-";
+                    Lbl_Alias_Name.ForeColor = Color.Black;
+                }
 
                 Lbl_AppBy.Text= Convert.ToString(dt.Rows[0]["INT_APPROVED_BY"]);
+                if (Lbl_AppBy.Text == "")
+                {
+                    Lbl_AppBy.Text = "-NA-";
+                    Lbl_AppBy.ForeColor = Color.Black;
+                }
                 /*-------------------------------------------------------------------*/
 
                 string strOTPStatus = Convert.ToString(dt.Rows[0]["INT_OTP_STATUS"]);//add by debiprasanna
@@ -184,6 +297,11 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                 {
                     Lbl_OTP_Status.Text = "Pending";
                     Lbl_OTP_Status.ForeColor = Color.Red;
+                }
+                if (Lbl_OTP_Status.Text == "")
+                {
+                    Lbl_OTP_Status.Text = "-NA-";
+                    Lbl_OTP_Status.ForeColor = Color.Black;
                 }
 
                 /*-------------------------------------------------------------------*/
@@ -301,45 +419,7 @@ public partial class Portal_PAN_Operation_View_Investor_Regd_Details : System.We
                     Lbl_AppBy.Text = "-NA-";
                 }
                 
-                /*-------------------------------------------------------------------*/
-                ///// First Level Approval Details
-
-                string strApprovalDate1stLevel = Convert.ToString(dt.Rows[0]["DTM_APPROVAL_DATE_1ST_LEVEL"]);
-                if (strApprovalDate1stLevel != "")
-                {
-                    strApprovalDate1stLevel = DateTime.Parse(strApprovalDate1stLevel).ToString("dd-MMM-yyyy HH:mm tt");
-                }
-                else
-                {
-                    Lbl_Approval_Date_1st_Level.Text = "-NA-";                   
-                }            
-                string strApprovalStatus1stLevel = Convert.ToString(dt.Rows[0]["INT_APPROVAL_STATUS_1ST_LEVEL"]);
-                if (strApprovalStatus1stLevel == "1")
-                {
-                    if (strApprovalDate1stLevel == "")
-                    {
-                        Lbl_App_Req.Text = "No";
-                        Lbl_App_Req.ForeColor = Color.Green;
-
-                        Lbl_Approval_Status_1st_Level.Text = "Auto Approved";
-                        Lbl_Approval_Status_1st_Level.ForeColor = Color.Orange;
-                    }
-                    else
-                    {
-                        Lbl_App_Req.Text = "Yes";
-                        Lbl_App_Req.ForeColor = Color.Red;
-
-                        Lbl_Approval_Status_1st_Level.Text = "Approved";
-                        Lbl_Approval_Status_1st_Level.ForeColor = Color.Green;
-                    }
-                }
-                else
-                {
-                    Lbl_Approval_Status_1st_Level.Text = "Pending";
-                    Lbl_Approval_Status_1st_Level.ForeColor = Color.Red;
-                    Lbl_App_Req.Text = "Yes";
-                }
-
+                
                 /*-------------------------------------------------------------------*/
                 ///// NSWS Registration Details
                 //Add by Debiprasanna

@@ -79,7 +79,7 @@
                                 <div class="clearfix">
                                 </div>
                             </div>
-                            <div class="form-group">
+                           <%-- <div class="form-group">
                                 <label class="col-sm-2">
                                    Registration Address-2</label>
                                 <div class="col-sm-4">
@@ -220,7 +220,7 @@
                                         </div>
                                 <div class="clearfix">
                                 </div>
-                            </div>
+                            </div>--%>
 
 
                             <div class="form-group">
@@ -410,14 +410,14 @@
                                 </div>
 
 
-                                <label class="col-sm-2">
+                              <%--  <label class="col-sm-2">
                                     Approval Remark 
                                 </label>
                                 <div class="col-sm-4">
                                     <span class="colon">:</span>
                                     <asp:Label ID="Lbl_Approval_Remark" runat="server" CssClass="form-control-static"
                                         Font-Bold="true" ForeColor="BlueViolet"></asp:Label>
-                                </div>
+                                </div>--%>
                                 <div class="clearfix">
                                 </div>
                             </div>
