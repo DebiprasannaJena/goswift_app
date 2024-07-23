@@ -4071,8 +4071,42 @@ namespace DataAcessLayer.Proposal
             }
             return str_Retvalue;
         }
-    }
 
+        //Add By Debiprasanna
+        public DataSet GetPCTrackDetails(ProposalDet objProposal)
+        {
+            DataSet ds = new DataSet();
+
+            SqlCommand cmd = new SqlCommand();
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            try
+            {
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "USP_TRACK_PEAL_APP_STATUS";
+                cmd.Parameters.Clear();
+
+                cmd.Parameters.AddWithValue("@P_CHAR_ACTION", objProposal.strAction);
+                cmd.Parameters.AddWithValue("@P_VCH_APP_ID", objProposal.vchAppFormattedNo);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd = null;
+                conn.Close();
+            }
+            return ds;
+        }
+    }
 }
 
 

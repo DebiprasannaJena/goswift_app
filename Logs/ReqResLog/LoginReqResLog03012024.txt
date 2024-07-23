@@ -1,0 +1,24 @@
+Time: 03-01-2024 09:41:26 AM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 03-01-2024 09:41:26 AM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- DB064593-30B9-4DBC-B127-FA465FE98C0B,36159,6434
+-----------------------------------------------------------
+Time: 03-01-2024 09:41:26 AM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- pCqRrLgyhnEV9f+Vz5TqMiHkh0QzjNU4hTudPCiemWNfmtioF6Pmax8X0pWw/hwEz6vHdn/d3ocXGEpB2jYjKPIN01Ge3RLQc/T24oqKnRg=
+-----------------------------------------------------------
+Time: 03-01-2024 09:41:26 AM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- pCqRrLgyhnEV9f%2BVz5TqMiHkh0QzjNU4hTudPCiemWNfmtioF6Pmax8X0pWw/hwEz6vHdn/d3ocXGEpB2jYjKPIN01Ge3RLQc/T24oqKnRg=
+-----------------------------------------------------------
+Time: 03-01-2024 11:12:14 AM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 03-01-2024 11:12:14 AM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,36160,1243
+-----------------------------------------------------------
+Time: 03-01-2024 11:12:14 AM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- ILAhFpezgoGdb41oHTPEUwnbmL307rJtWTH2C9N84M/Z+4n8ncYE5hJgzvL+FcKUAUh6oLWMIQmJmV1R+MpJOX22MyZCHfUlJHD/5Q6gU/w=
+-----------------------------------------------------------
+Time: 03-01-2024 11:12:14 AM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- ILAhFpezgoGdb41oHTPEUwnbmL307rJtWTH2C9N84M/Z%2B4n8ncYE5hJgzvL%2BFcKUAUh6oLWMIQmJmV1R%2BMpJOX22MyZCHfUlJHD/5Q6gU/w=
+-----------------------------------------------------------

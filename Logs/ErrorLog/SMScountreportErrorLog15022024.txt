@@ -1,0 +1,36 @@
+Time: 15-02-2024 11:10:00 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 178
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 15-02-2024 11:30:35 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 178
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 15-02-2024 03:29:31 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 173
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

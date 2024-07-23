@@ -1,0 +1,20 @@
+Time: 19-12-2023 03:20:38 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3591
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 370
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnDraft_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 1495
+Source: App_Code.iborsfh4
+TargetSite: System.String Exemption_Land_IndustrialUse_Draft(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 19-12-2023 03:21:32 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3591
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse_Draft(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 370
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnDraft_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 1495
+Source: App_Code.iborsfh4
+TargetSite: System.String Exemption_Land_IndustrialUse_Draft(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+

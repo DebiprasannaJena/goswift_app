@@ -1,0 +1,108 @@
+Time: 23-02-2024 09:41:37 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 440
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_2fqn4eyi
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:43:08 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 446
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_favzepxa
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:46:40 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 452
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_n44yjipg
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:49:31 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 454
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_editinvestorprofile.aspx.cdcab7d2.1kfgol7m
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:49:59 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 454
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_editinvestorprofile.aspx.cdcab7d2.8ps9hsus
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:50:16 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 454
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_editinvestorprofile.aspx.cdcab7d2.8ps9hsus
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:50:19 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillRegdCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 454
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 46
+Source: App_Web_editinvestorprofile.aspx.cdcab7d2.8ps9hsus
+TargetSite: Void FillRegdCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:53:45 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillSLCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 477
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 47
+Source: App_Web_editinvestorprofile.aspx.cdcab7d2.-c46awd7
+TargetSite: Void FillSLCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 09:54:37 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillSLCountry() in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 478
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 47
+Source: App_Web_1meozzhd
+TargetSite: Void FillSLCountry()
+-----------------------------------------------------------
+
+Time: 23-02-2024 10:23:42 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillInvestorInfo(String UserId) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 399
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 45
+Source: App_Web_g0xrvqd4
+TargetSite: Void FillInvestorInfo(System.String)
+-----------------------------------------------------------
+
+Time: 23-02-2024 10:24:56 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillInvestorInfo(String UserId) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 399
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 45
+Source: App_Web_4a5tec2b
+TargetSite: Void FillInvestorInfo(System.String)
+-----------------------------------------------------------
+
+Time: 23-02-2024 10:25:45 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at EditInvestorProfile.FillInvestorInfo(String UserId) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 399
+   at EditInvestorProfile.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 45
+Source: App_Web_4a5tec2b
+TargetSite: Void FillInvestorInfo(System.String)
+-----------------------------------------------------------
+

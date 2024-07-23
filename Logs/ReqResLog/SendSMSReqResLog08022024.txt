@@ -1,0 +1,25 @@
+Time: 08-02-2024 05:32:11 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 395 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=OTP has been generated.Kindly log into https://investodisha.gov.in with the new OTP 1919 for M/S Debiprasanna.&mnumber=919439453402&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407161579050838384
+-----------------------------------------------------------
+Time: 08-02-2024 05:39:10 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 515 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=OTP has been generated.Kindly log into https://investodisha.gov.in with the new OTP 9078 for M/S Debiprasanna.&mnumber=919439453321&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407161579050838384
+-----------------------------------------------------------
+Time: 08-02-2024 05:56:03 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 600 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=OTP has been generated.Kindly log into https://investodisha.gov.in with the new OTP 3183 for M/S Debiprasanna.&mnumber=917978921321&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407161579050838384
+-----------------------------------------------------------
+Time: 08-02-2024 06:03:59 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 572 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=The registration of your unit Debiprasanna is successfully activated by department for your use.&mnumber=917978921321&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162979833249973
+-----------------------------------------------------------
+Time: 08-02-2024 06:04:18 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 225 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, Welcome to the growing investment community in Odisha. The state has designed the online Single Window System GO SWIFT to provide hassle-free investment facilitation to all industries. For all your future investment related needs, please log-in to your account in GO SWIFT through the URL: https://investodisha.gov.in/goswift/Login.aspx and enjoy the best-in-class facilitation that Odisha has to offer.
+
+Shri Naveen Patnaik, Chief Minister, Odisha
+&mnumber=917978921321&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162548530993164
+-----------------------------------------------------------
+Time: 08-02-2024 06:04:38 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 665 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ପ୍ରିୟ ନିବେଶକ ମହାଶୟ, 
+        ଓଡିଶାର ଶିଳ୍ପ ଜଗତକୁ ଆପଣଙ୍କୁ ସ୍ୱାଗତ । ରାଜ୍ୟରେ ଶିଳ୍ପ ପ୍ରତିଷ୍ଠାକୁ ସହଜ ଓ ସୁଗମ କରିବା ପାଇଁ ରାଜ୍ୟ online single window system Go SWIFT ବ୍ୟବସ୍ଥା ଆରମ୍ଭ ହୋଇଛି ।
+ ଆପଣଙ୍କର ଭବିଷ୍ୟତର ପୁଞ୍ଜି ବିନିଯୋଗ ସମ୍ୱନ୍ଧୟ ସମସ୍ତ ଆବଶ୍ୟକତା ପାଇଁ ଦୟା କରି URL-https://investodisha.gov.in/goswift/Login.aspx ମାଧ୍ୟମରେ GO SWIFT ରେ ଆପଣଙ୍କ ଆକାଉଣ୍ଟକୁ ଲଗ୍ ଇନ୍ କରନ୍ତୁ ଏବଂ ଓଡିଶା ପ୍ରଦାନ କରିବାକୁ ଥିବା ଶ୍ରେଷ୍ଠ ଶ୍ରେଣୀର ସୁବିଧା ଉପଭୋଗ କରନ୍ତୁ । 
+  ଶ୍ରୀ ନବୀନ ପଟ୍ଟନାୟକ, ଓଡିଶା ମୁଖ୍ୟମନ୍ତ୍ରୀ
+&mnumber=917978921321&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162548648512783
+-----------------------------------------------------------

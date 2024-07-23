@@ -10,3 +10,51 @@ InputOutput: [EncriptParameter]:- K077RCGsTMNyZvyZ4nDB11cN389Olx0KZMxDZcTIlFI6cE
 Time: 28/11/2023 12:46:27 PM For RequestMethod: GenerateAfterEncription
 InputOutput: [EncriptParameterRepalce+]:- K077RCGsTMNyZvyZ4nDB11cN389Olx0KZMxDZcTIlFI6cEZZ8tdWgw%2BwTwMC0sjRlKRIZEeN%2BhC2X7FuxWWgMufayqOK5A0MXg312ATd3B8=
 -----------------------------------------------------------
+Time: 28-11-2023 04:09:23 PM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 28-11-2023 04:09:23 PM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,35932,1243
+-----------------------------------------------------------
+Time: 28-11-2023 04:09:23 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- r5Hb6jhJRCHhXkTf1bDKFsp3kIvaFWGuUkegQw8SbWrxqs1Z5qO6bI10tOzFihe+x1sxKI/pVJGfHPMJM/2mbmHY6xwDnrBM8jln9EcWnMM=
+-----------------------------------------------------------
+Time: 28-11-2023 04:09:23 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- r5Hb6jhJRCHhXkTf1bDKFsp3kIvaFWGuUkegQw8SbWrxqs1Z5qO6bI10tOzFihe%2Bx1sxKI/pVJGfHPMJM/2mbmHY6xwDnrBM8jln9EcWnMM=
+-----------------------------------------------------------
+Time: 28-11-2023 04:21:39 PM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 28-11-2023 04:21:39 PM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,35933,1243
+-----------------------------------------------------------
+Time: 28-11-2023 04:21:39 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- 5t9DQ9q5nfrsHd953ngV8LKwpifZEYVMri4HoPBbIj2OL4Uqr16cgdm1yHTgsXZtnOlJt0RaiJV64qZehcVpFkfhLuIEI/ecxqPOoI9Hjyc=
+-----------------------------------------------------------
+Time: 28-11-2023 04:21:39 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- 5t9DQ9q5nfrsHd953ngV8LKwpifZEYVMri4HoPBbIj2OL4Uqr16cgdm1yHTgsXZtnOlJt0RaiJV64qZehcVpFkfhLuIEI/ecxqPOoI9Hjyc=
+-----------------------------------------------------------
+Time: 28-11-2023 04:51:51 PM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 28-11-2023 04:51:51 PM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,35936,1243
+-----------------------------------------------------------
+Time: 28-11-2023 04:51:51 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- pt+6KANxz5cCEXNZ4r9AVWkFx3m6qVPAaHoAgyveeeOfs+Ngumwuc27WbN1mo0oB4MNig1ggXYdmSleKjlj1A5R0INUC7x3QBivKUlzhUOo=
+-----------------------------------------------------------
+Time: 28-11-2023 04:51:51 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- pt%2B6KANxz5cCEXNZ4r9AVWkFx3m6qVPAaHoAgyveeeOfs%2BNgumwuc27WbN1mo0oB4MNig1ggXYdmSleKjlj1A5R0INUC7x3QBivKUlzhUOo=
+-----------------------------------------------------------
+Time: 28-11-2023 05:37:25 PM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 28-11-2023 05:37:25 PM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,35938,1243
+-----------------------------------------------------------
+Time: 28-11-2023 05:37:25 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- KkTsvW/1nrWYepk+QpMKmQfG+h55yFwmN/kS3AgOazX4057+SPWpyh5RzAWL1sYRbe098Xa6A7lWr7ksTZXdTQeVop0KhEkS0BOKrjBVLcE=
+-----------------------------------------------------------
+Time: 28-11-2023 05:37:25 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- KkTsvW/1nrWYepk%2BQpMKmQfG%2Bh55yFwmN/kS3AgOazX4057%2BSPWpyh5RzAWL1sYRbe098Xa6A7lWr7ksTZXdTQeVop0KhEkS0BOKrjBVLcE=
+-----------------------------------------------------------

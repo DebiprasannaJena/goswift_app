@@ -1,0 +1,3 @@
+Time: 06-05-2024 12:10:34 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 401 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=OTP has been generated.Kindly log into https://investodisha.gov.in with the new OTP 8117 for M/S SERUM INSTITUTE OF INDIA PRIVATE LIMITED.&mnumber=917896347645&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407161579050838384
+-----------------------------------------------------------

@@ -1,0 +1,4 @@
+Time: 06-05-2024 11:36:48 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- AAAPA0039K - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"AAAPA0039K","pan_status":"E","name":"Y","fathername":"","dob":"Y","seeding_status":"Y"}]}
+
+-----------------------------------------------------------

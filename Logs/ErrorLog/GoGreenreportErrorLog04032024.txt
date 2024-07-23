@@ -1,0 +1,22 @@
+Time: 04-03-2024 11:26:31 AM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'FromDate'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_misreport_gogreenreport_aspx.__DataBind__control72(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx:line 250
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status, String Formdate, String Todate) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 158
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

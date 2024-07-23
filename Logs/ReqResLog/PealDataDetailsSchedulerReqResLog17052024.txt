@@ -1,0 +1,62 @@
+Time: 17-05-2024 12:11:56 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 17-05-2024 12:11:56 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:12:58 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["2017111001","201709141","201710965"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 17-05-2024 12:12:58 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- 200
+-----------------------------------------------------------
+Time: 17-05-2024 12:13:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_ROW_COUNT]: 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:13:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NOOF_DATA_INSERTED_COUNT]: 0
+-----------------------------------------------------------
+Time: 17-05-2024 12:13:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:13:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [LOG_MESSAGE_NOT_UPDATED]: Proposal Number not updated: [
+  "2017111001",
+  "201709141",
+  "201710965"
+]
+-----------------------------------------------------------
+Time: 17-05-2024 12:18:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 17-05-2024 12:18:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Urlfrom_Webcofig]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [JsonBody]:- {"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Pradeep Group","mobile":"9658218518","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2016-09-21","registration_no":"201709129","other_info":{"Constitution_Type":"Proprietorship","email":"pradeep@gmail.com"}},{"district_id":"20","name":"Suresh Power","mobile":"5454545454","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-16","registration_no":"201710909","other_info":{"Constitution_Type":"Private Limited Company","email":"mohanty_abhipsa@rediffmail.com"}},{"district_id":"20","name":"TATA1","mobile":"7978236433","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-27","registration_no":"201709161","other_info":{"Constitution_Type":"Proprietorship","email":"subhasri.rout@csmpl.com"}}]}
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201709129","201710909","201709161"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- 200
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_ROW_COUNT]: 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NOOF_DATA_INSERTED_COUNT]: 0
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 3
+-----------------------------------------------------------
+Time: 17-05-2024 12:19:02 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [LOG_MESSAGE_NOT_UPDATED]: Proposal Number not updated: [
+  "201709129",
+  "201710909",
+  "201709161"
+]
+-----------------------------------------------------------

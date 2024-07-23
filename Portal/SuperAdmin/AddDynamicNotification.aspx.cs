@@ -21,6 +21,7 @@ public partial class Portal_SuperAdmin_AddDynamicNotification : System.Web.UI.Pa
             create();
             BindDataToGridview();
             btnSave.Text = "Save";
+          
         }
        else if (!IsPostBack)
         {

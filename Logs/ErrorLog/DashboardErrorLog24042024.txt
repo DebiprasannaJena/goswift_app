@@ -1,0 +1,126 @@
+Time: 24-04-2024 09:17:38 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertAppaStatus(DropDownList ddlDistrict, DropDownList ddlMonth, DropDownList ddlYear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 607
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:38 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertAppa(DropDownList ddlYear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 538
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:39 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertCICGStatus(DropDownList ddlCICGMonth, DropDownList ddldeptCIF, DropDownList ddlYearCICG) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 722
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:39 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertCSRMaster(DropDownList ddlyear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 445
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:40 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.CSRPortletSatus() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 315
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:41 AM
+-----------------------------------------------------------
+Message: The request was aborted: Could not create SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.ViewSPMGServiceStateLevelDataDirect() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 922
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 09:17:41 AM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a receive.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.ViewSPMGServiceDistrictLevelDataDirect() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 1026
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:27 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertAppaStatus(DropDownList ddlDistrict, DropDownList ddlMonth, DropDownList ddlYear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 607
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:27 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertAppa(DropDownList ddlYear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 538
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:28 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertCICGStatus(DropDownList ddlCICGMonth, DropDownList ddldeptCIF, DropDownList ddlYearCICG) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 722
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:28 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.InsertCSRMaster(DropDownList ddlyear) in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 445
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:28 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.CSRPortletSatus() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 315
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:29 PM
+-----------------------------------------------------------
+Message: The request was aborted: Could not create SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.ViewSPMGServiceStateLevelDataDirect() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 922
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 24-04-2024 06:41:30 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a receive.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at Portal_Dashboard_AdminDashboard.ViewSPMGServiceDistrictLevelDataDirect() in d:\GitProject\goswift_app\Portal\Dashboard\AdminDashboard.aspx.cs:line 1026
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

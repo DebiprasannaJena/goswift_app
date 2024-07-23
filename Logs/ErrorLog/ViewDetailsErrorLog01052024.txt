@@ -1,0 +1,9 @@
+Time: 01-05-2024 05:49:53 PM
+-----------------------------------------------------------
+Message: String was not recognized as a valid DateTime.
+StackTrace:    at Portal_PAN_Operation_View_Investor_Regd_Details.FillDetails(Int32 intInvetsorId, Int32 intRequestId, String strUserId) in d:\GitProject\goswift_app\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 371
+   at Portal_PAN_Operation_View_Investor_Regd_Details.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\View_Investor_Regd_Details.aspx.cs:line 56
+Source: App_Web_gfthywxv
+TargetSite: Void FillDetails(Int32, Int32, System.String)
+-----------------------------------------------------------
+

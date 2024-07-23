@@ -1,0 +1,32 @@
+Time: 18-12-2023 11:49:45 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_StampDutyExemption.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\StampDutyExemption.aspx.cs:line 1008
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 18-12-2023 11:49:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_StampDutyExemption.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\StampDutyExemption.aspx.cs:line 1008
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 18-12-2023 11:56:55 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_StampDutyExemption.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\StampDutyExemption.aspx.cs:line 170
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+

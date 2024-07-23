@@ -1,0 +1,19 @@
+Time: 19-01-2024 02:39:58 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 939 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=The registration of your unit Debiprasanna is successfully activated by department for your use.&mnumber=917879612365&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162979833249973
+-----------------------------------------------------------
+Time: 19-01-2024 02:40:18 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 529 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=Dear Investor, Welcome to the growing investment community in Odisha. The state has designed the online Single Window System GO SWIFT to provide hassle-free investment facilitation to all industries. For all your future investment related needs, please log-in to your account in GO SWIFT through the URL: https://investodisha.gov.in/goswift/Login.aspx and enjoy the best-in-class facilitation that Odisha has to offer.
+
+Shri Naveen Patnaik, Chief Minister, Odisha
+&mnumber=917879612365&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162548530993164
+-----------------------------------------------------------
+Time: 19-01-2024 02:40:37 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 937 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=ପ୍ରିୟ ନିବେଶକ ମହାଶୟ, 
+        ଓଡିଶାର ଶିଳ୍ପ ଜଗତକୁ ଆପଣଙ୍କୁ ସ୍ୱାଗତ । ରାଜ୍ୟରେ ଶିଳ୍ପ ପ୍ରତିଷ୍ଠାକୁ ସହଜ ଓ ସୁଗମ କରିବା ପାଇଁ ରାଜ୍ୟ online single window system Go SWIFT ବ୍ୟବସ୍ଥା ଆରମ୍ଭ ହୋଇଛି ।
+ ଆପଣଙ୍କର ଭବିଷ୍ୟତର ପୁଞ୍ଜି ବିନିଯୋଗ ସମ୍ୱନ୍ଧୟ ସମସ୍ତ ଆବଶ୍ୟକତା ପାଇଁ ଦୟା କରି URL-https://investodisha.gov.in/goswift/Login.aspx ମାଧ୍ୟମରେ GO SWIFT ରେ ଆପଣଙ୍କ ଆକାଉଣ୍ଟକୁ ଲଗ୍ ଇନ୍ କରନ୍ତୁ ଏବଂ ଓଡିଶା ପ୍ରଦାନ କରିବାକୁ ଥିବା ଶ୍ରେଷ୍ଠ ଶ୍ରେଣୀର ସୁବିଧା ଉପଭୋଗ କରନ୍ତୁ । 
+  ଶ୍ରୀ ନବୀନ ପଟ୍ଟନାୟକ, ଓଡିଶା ମୁଖ୍ୟମନ୍ତ୍ରୀ
+&mnumber=917879612365&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162548648512783
+-----------------------------------------------------------
+Time: 19-01-2024 03:54:51 PM For RequestMethod: SendSmsWithTemplate
+InputOutput: 305 - https://smsgw.sms.gov.in/failsafe/MLink?username=goswift.sms&pin=Np%40%236745&message=The registration of your unit FDGFYHTU is not activated by the department.&mnumber=919439453407&signature=GOSWIT&dlt_entity_id=1001936451134336346&dlt_template_id=1407162979840138701
+-----------------------------------------------------------

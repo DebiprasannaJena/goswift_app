@@ -1,0 +1,98 @@
+Time: 10-05-2024 09:44:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 10-05-2024 09:44:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Urlfrom_Webcofig]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [JsonBody]:- {"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Proposal100","mobile":"9092909909","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-25","registration_no":"201710961","other_info":{"Constitution_Type":"Proprietorship","email":"nayaksarmistha@gmail.com"}},{"district_id":"20","name":"Kumar Industries & Agents","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-03","registration_no":"2018031050","other_info":{"Constitution_Type":"Proprietorship","email":"devkumar@gmail.com"}},{"district_id":"20","name":"Pradeep Group","mobile":"9658218518","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2016-09-21","registration_no":"201709129","other_info":{"Constitution_Type":"Proprietorship","email":"pradeep@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Url_Post]:- Url Posted
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Content_Type]:- ContentType Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Authorization]:- Authorization Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Cookie]:- Cookie Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Proposal100","mobile":"9092909909","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-25","registration_no":"201710961","other_info":{"Constitution_Type":"Proprietorship","email":"nayaksarmistha@gmail.com"}},{"district_id":"20","name":"Kumar Industries & Agents","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-03","registration_no":"2018031050","other_info":{"Constitution_Type":"Proprietorship","email":"devkumar@gmail.com"}},{"district_id":"20","name":"Pradeep Group","mobile":"9658218518","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2016-09-21","registration_no":"201709129","other_info":{"Constitution_Type":"Proprietorship","email":"pradeep@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710961","2018031050","201709129"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:04 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- 200
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:05 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_ROW_COUNT]: 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:05 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NOOF_DATA_INSERTED_COUNT]: 0
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:05 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:45:05 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [LOG_MESSAGE_NOT_UPDATED]: Proposal Number not updated: [
+  "201710961",
+  "2018031050",
+  "201709129"
+]
+-----------------------------------------------------------
+Time: 10-05-2024 09:50:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 10-05-2024 09:50:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Urlfrom_Webcofig]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [JsonBody]:- {"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"kunal chemicals","mobile":"6666555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-27","registration_no":"201710970","other_info":{"Constitution_Type":"Private Limited Company","email":"indiana@gmail.com"}},{"district_id":"20","name":"Suresh Power","mobile":"5454545454","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-16","registration_no":"201710909","other_info":{"Constitution_Type":"Private Limited Company","email":"mohanty_abhipsa@rediffmail.com"}},{"district_id":"20","name":"Test Company","mobile":"3232323223","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-27","registration_no":"2018031057","other_info":{"Constitution_Type":"Private Limited Company","email":"subha@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Url_Post]:- Url Posted
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Content_Type]:- ContentType Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Authorization]:- Authorization Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [Cookie]:- Cookie Succes
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:22 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"kunal chemicals","mobile":"6666555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-27","registration_no":"201710970","other_info":{"Constitution_Type":"Private Limited Company","email":"indiana@gmail.com"}},{"district_id":"20","name":"Suresh Power","mobile":"5454545454","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-16","registration_no":"201710909","other_info":{"Constitution_Type":"Private Limited Company","email":"mohanty_abhipsa@rediffmail.com"}},{"district_id":"20","name":"Test Company","mobile":"3232323223","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-27","registration_no":"2018031057","other_info":{"Constitution_Type":"Private Limited Company","email":"subha@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710970","201710909","2018031057"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- 200
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_ROW_COUNT]: 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NOOF_DATA_INSERTED_COUNT]: 0
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 3
+-----------------------------------------------------------
+Time: 10-05-2024 09:51:23 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [LOG_MESSAGE_NOT_UPDATED]: Proposal Number not updated: [
+  "201710970",
+  "201710909",
+  "2018031057"
+]
+-----------------------------------------------------------

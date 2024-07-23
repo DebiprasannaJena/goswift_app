@@ -100,7 +100,7 @@
         }
 
         function SameAddressIndustry() {
-            var cc = $('#Txt_Address_unit').val();
+            var cc = $('#Txt_Address_Unit').val();
             if ($("#ChkSameData").is(':checked')) {
                 $('#Txt_Regd_Office_Address').val(cc);
             }
@@ -819,10 +819,10 @@
                                                                                    2.Detailed address of the Unit &nbsp;</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_Address_unit" CssClass="form-control" MaxLength="500" TextMode="MultiLine"
+                                                                                    <asp:TextBox ID="Txt_Address_Unit" CssClass="form-control" MaxLength="500" TextMode="MultiLine"
                                                                                         runat="server" ToolTip="Enter Detailed address of the Unit Here !!"></asp:TextBox>
                                                                                     <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender24" runat="server"
-                                                                                        TargetControlID="Txt_Address_unit" FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom"
+                                                                                        TargetControlID="Txt_Address_Unit" FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom"
                                                                                         ValidChars=",-/. ">
                                                                                     </cc1:FilteredTextBoxExtender>
                                                                                 </div>

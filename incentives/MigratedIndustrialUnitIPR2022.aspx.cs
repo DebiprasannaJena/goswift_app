@@ -85,7 +85,7 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
             {
                 Txt_EnterPrise_Name.Text = dtindustryPre.Rows[0]["vchEnterpriseName"].ToString().Trim();
                 DrpDwn_Unit_Cat.SelectedValue = (dtindustryPre.Rows[0]["intUnitCat"].ToString());
-                Txt_Address_unit.Text = dtindustryPre.Rows[0]["vchIndustryAddress"].ToString();
+                Txt_Address_Unit.Text = dtindustryPre.Rows[0]["vchIndustryAddress"].ToString();
                 Txt_Regd_Office_Address.Text = dtindustryPre.Rows[0]["vchRegisteredOfcAddress"].ToString();
 
                 if ((dtindustryPre.Rows[0]["vchIndustryAddress"].ToString()) == (dtindustryPre.Rows[0]["vchRegisteredOfcAddress"].ToString()))
@@ -1236,7 +1236,7 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
 
             objEntity1.strEnterpriseName = Txt_EnterPrise_Name.Text;
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
-            objEntity1.strIndustryAddress = Txt_Address_unit.Text;
+            objEntity1.strIndustryAddress = Txt_Address_Unit.Text;
             objEntity1.intUnitCat = Convert.ToInt32(DrpDwn_Unit_Cat.SelectedValue);
 
             objEntity1.strRegisteredOfcAddress = Txt_Regd_Office_Address.Text;
@@ -1496,7 +1496,6 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
             if (Request.QueryString["key"] != null)
             {
                 objEntity1.strInctFlow = Request.QueryString["key"].ToString();
-
             }
             else
             {
@@ -1677,7 +1676,7 @@ public partial class incentives_MigratedIndustrialUnitIPR2022 : System.Web.UI.Pa
 
             objEntity1.strEnterpriseName = Txt_EnterPrise_Name.Text;
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
-            objEntity1.strIndustryAddress = Txt_Address_unit.Text;
+            objEntity1.strIndustryAddress = Txt_Address_Unit.Text;
             objEntity1.intUnitCat = Convert.ToInt32(DrpDwn_Unit_Cat.SelectedValue);
             objEntity1.strRegisteredOfcAddress = Txt_Regd_Office_Address.Text;
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;

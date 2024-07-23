@@ -343,5 +343,10 @@ namespace BusinessLogicLayer.Proposal
         {
             return objDataAccess.UpdateQueryDate(objProposal);
         }
+
+        public DataSet GetPCTrackDetails(ProposalDet objProposal)
+        {
+            return objDataAccess.GetPCTrackDetails(objProposal);
+        }
     }
 }

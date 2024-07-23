@@ -1,0 +1,65 @@
+Time: 01-05-2024 11:32:40 AM
+-----------------------------------------------------------
+Message: Target type System.Collections.IEnumerable is not a value type or a non-abstract class.
+Parameter name: targetType
+StackTrace:    at Newtonsoft.Json.Utilities.ConvertUtils.Convert(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Linq.JValue.JValueDynamicProxy.TryConvert(JValue instance, ConvertBinder binder, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 471
+Source: Newtonsoft.Json
+TargetSite: System.Object Convert(System.Object, System.Globalization.CultureInfo, System.Type)
+-----------------------------------------------------------
+
+Time: 01-05-2024 11:38:03 AM
+-----------------------------------------------------------
+Message: Target type System.Collections.Generic.IEnumerable`1[System.Object] is not a value type or a non-abstract class.
+Parameter name: targetType
+StackTrace:    at Newtonsoft.Json.Utilities.ConvertUtils.Convert(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Linq.JValue.JValueDynamicProxy.TryConvert(JValue instance, ConvertBinder binder, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 466
+Source: Newtonsoft.Json
+TargetSite: System.Object Convert(System.Object, System.Globalization.CultureInfo, System.Type)
+-----------------------------------------------------------
+
+Time: 01-05-2024 11:44:46 AM
+-----------------------------------------------------------
+Message: Target type System.Collections.Generic.IEnumerable`1[System.Object] is not a value type or a non-abstract class.
+Parameter name: targetType
+StackTrace:    at Newtonsoft.Json.Utilities.ConvertUtils.Convert(Object initialValue, CultureInfo culture, Type targetType)
+   at Newtonsoft.Json.Linq.JValue.JValueDynamicProxy.TryConvert(JValue instance, ConvertBinder binder, Object& result)
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 465
+Source: Newtonsoft.Json
+TargetSite: System.Object Convert(System.Object, System.Globalization.CultureInfo, System.Type)
+-----------------------------------------------------------
+
+Time: 01-05-2024 12:33:17 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 479
+Source: App_Code.ie8y-ijv
+TargetSite: Void MoSarkarServiceSchedule()
+-----------------------------------------------------------
+
+Time: 01-05-2024 12:47:27 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 479
+Source: App_Code.gutw39c5
+TargetSite: Void MoSarkarServiceSchedule()
+-----------------------------------------------------------
+
+Time: 01-05-2024 03:04:52 PM
+-----------------------------------------------------------
+Message: Cannot convert type 'System.Collections.Generic.List<string>' to 'int'
+StackTrace:    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at PaymentScheduler.MoSarkarServiceSchedule() in d:\GitProject\goswift_app\App_Code\Other\PaymentScheduler.cs:line 476
+Source: Anonymously Hosted DynamicMethods Assembly
+TargetSite: Int32 CallSite.Target(System.Runtime.CompilerServices.Closure, System.Runtime.CompilerServices.CallSite, System.Object)
+-----------------------------------------------------------
+

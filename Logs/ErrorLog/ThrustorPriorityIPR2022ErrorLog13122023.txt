@@ -1,0 +1,89 @@
+Time: 13-12-2023 05:05:24 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+Invalid object name '#TMP_INCENTIVE_AVAILED_DETAILS'.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1388
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:07:59 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1388
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:30:38 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:30:40 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:34:03 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:40:03 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:42:06 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 13-12-2023 05:42:28 PM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+

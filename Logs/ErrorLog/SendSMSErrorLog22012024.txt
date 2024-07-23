@@ -1,0 +1,297 @@
+Time: 22-01-2024 03:09:01 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:09:19 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:09:39 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:10:42 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:11:00 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:11:20 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:11:53 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:12:11 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:12:33 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:31:43 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:34:29 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:34:47 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:35:08 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:37:26 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:49:01 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:49:20 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:49:40 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:37:17 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:37:36 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:37:55 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:47:25 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:47:43 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:48:03 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:49:40 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:49:59 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:50:19 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:54:01 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:54:18 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:54:39 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:09:38 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:12:16 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:12:35 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:12:56 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

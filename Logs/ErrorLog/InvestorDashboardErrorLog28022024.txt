@@ -1,0 +1,9 @@
+Time: 28-02-2024 05:27:13 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a receive.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.InsertSPMGStatus() in d:\GitProject\goswift_app\InvesterDashboard.aspx.cs:line 508
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

@@ -15,6 +15,7 @@ using System.Configuration;
 using RestSharp;
 using Newtonsoft.Json;
 
+
 /// <summary>
 /// Summary description for PaymentScheduler
 /// </summary>
@@ -370,4 +371,169 @@ public class PaymentScheduler
             objConn.Close();
         }
     }
+
+
+    public void MoSarkarServiceSchedule()
+    {
+        Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "Called");
+        string results;
+
+        if (objConn.State == ConnectionState.Closed)
+        {
+            objConn.Open();
+        }
+        try
+        {
+            SqlCommand objCommand = new SqlCommand();
+            SqlDataAdapter objDa = new SqlDataAdapter();
+            DataTable objdt = new DataTable();
+            objCommand.CommandText = "USP_FETCH_PROPOSAL_DETAILS";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Connection = objConn;
+            objCommand.Parameters.AddWithValue("@P_VCH_ACTION", "PDS");
+            objDa.SelectCommand = objCommand;
+            objDa.Fill(objdt);
+            if (objdt.Rows.Count > 0)
+            {
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[TOTAL_RECORD_FOUND]:- " + objdt.Rows.Count.ToString());
+
+                if (objdt.Rows.Count > 0)
+                {
+                    Thread.Sleep(1 * 60 * 1000); // Wait for around 1 min
+                }
+                List<string> PealReportstatus = new List<string>();
+
+
+                // Process all rows from the DataTable
+                foreach (DataRow row in objdt.Rows)
+                {
+                    string ProposalNo = Convert.ToString(row["vchProposalNo"]);
+                    PealReportstatus.Add(ProposalNo);
+                }
+
+                // Create a list to store all current ipicol approve proposal lsit data.
+                List<object> lstdata = new List<object>();
+
+                // Process all rows from the DataTable
+                foreach (DataRow row in objdt.Rows)
+                {
+                    string CompanyName = Convert.ToString(row["vchCompName"]);
+                    string MobileNumber = Convert.ToString(row["vchCorMobileNo"]);
+                    string CreatedDate = Convert.ToDateTime(row["CreatedOn"]).ToString("yyyy-MM-dd");
+                    string ProposalNumber = Convert.ToString(row["vchProposalNo"]);
+                    string ConstitutionType = Convert.ToString(row["ConstitutionType"]);
+                    string EmailId = Convert.ToString(row["vchEmail"]);
+
+                    // Create  the current record
+                    var record = new
+                    {
+                        district_id = "20",
+                        name = CompanyName,
+                        mobile = MobileNumber,
+                        age = "0",
+                        gender = "0",
+                        department_institution_id = "1170",
+                        registration_date = CreatedDate,
+                        registration_no = ProposalNumber,
+                        other_info = new
+                        {
+                            Constitution_Type = ConstitutionType,
+                            email = EmailId
+                        }
+                    };
+                    // Add the current record to the list data
+                    lstdata.Add(record);
+                }
+                // Construct the complete JSON body for the request
+                var body = new
+                {
+                    method = "OutboundDataSubmit",
+                    dept_code = "IND@16",
+                    service_code = "IND@16@SLS",
+                    data = lstdata
+                };
+                string Uri = ConfigurationManager.AppSettings["MoSarkarUrl"].ToString();
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[Urlfrom_Webcofig]:- " + Uri);
+
+                // Serialize the body object to JSON without formatting
+                string JsonBody = JsonConvert.SerializeObject(body, Formatting.None);
+
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[JsonBody]:- " + JsonBody);
+                var client = new RestClient(Uri);
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddHeader("Authorization", "Basic bW9zYXJrYXJfcG9ydGFsOm1vc2Fya2FyIzI4QDIwMjA=");
+                request.AddHeader("Cookie", "PHPSESSID=90pqnlhdnkcjsfksgn1qocurn2");
+                request.AddParameter("application/json", JsonBody, ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[RESPONSE_CONTENT]:- " + response.Content.ToString());
+
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[RESPONSE_STATUS_CODE]:- " + Convert.ToInt32(response.StatusCode));
+
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var ResponseData = JsonConvert.DeserializeObject<dynamic>(response.Content);
+                    var NoofDataInserted = ResponseData["NoofDataInserted"];
+                    Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[TOTAL_ROW_COUNT]: " + objdt.Rows.Count.ToString());
+
+                    // Log the actual count
+                    Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[NOOF_DATA_INSERTED_COUNT]: " + NoofDataInserted.ToString());
+                    if (objdt.Rows.Count == (int)NoofDataInserted)
+                    {
+                        foreach (var ProposalNumberForUpdate in PealReportstatus)
+                        {
+                           // Update the status of the inserted proposal number in the database
+                            UpdateProposalReportStatus(ProposalNumberForUpdate);
+                            Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[LOG_MESSAGE_AFTER_UPDATE]: Successfully updated status for Proposal Number: " + ProposalNumberForUpdate);
+                        }
+                    }
+                    else
+                    {
+                        Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[MISMATCHED_PROPOSAL_COUNT]:- " + ResponseData["noofDataInvalid"]);
+                        Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[LOG_MESSAGE_NOT_UPDATED]: Proposal Number not updated: " + ResponseData["invalidvalidDataArr"]);
+                    }
+                }
+            }
+            else
+            {
+                Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[NO_RECORDS_FOUND]");
+            }
+        }
+        
+        catch (Exception ex)
+        {
+
+            results = ex.Message;
+            Util.LogRequestResponse("PealDataDetailsScheduler", "MoSarkarServiceSchedule", "[OUTPUT_RESPONSE][FAILURE]:- " + results);
+            Util.LogError(ex, "MoSarkarServiceSchedule");
+        }
+    }
+
+    private void UpdateProposalReportStatus(string ProposalNumber)
+    {
+        if (objConn.State == ConnectionState.Closed)
+        {
+            objConn.Open();
+        }
+        try
+        {
+            SqlCommand objCommand = new SqlCommand();
+            objCommand.CommandText = "USP_FETCH_PROPOSAL_DETAILS";
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.Connection = objConn;
+            objCommand.Parameters.AddWithValue("@P_VCH_ACTION", "PRS");
+            objCommand.Parameters.AddWithValue("@vchProposalNumber", ProposalNumber);           
+            objCommand.ExecuteNonQuery();         
+            Util.LogRequestResponse("PealDataDetailsScheduler", "UpdateProposalReportStatus", "[STATUS_UPDATED]: Proposal Number - " + ProposalNumber);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
+    }
+    
+
 }

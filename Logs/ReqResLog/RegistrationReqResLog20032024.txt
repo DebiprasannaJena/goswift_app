@@ -1,0 +1,36 @@
+Time: 20-03-2024 10:09:13 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSACJ1942Q - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSACJ1942Q","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:09:26 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSACJ1942Q - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSACJ1942Q","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:11:24 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSACJ1942Q - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSACJ1942Q","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:11:59 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSQPJ1957A - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSQPJ1957A","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:13:01 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSQPJ1957A - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSQPJ1957A","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:14:04 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSQPJ1957A - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSQPJ1957A","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:19:36 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- AZOPA2620B - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"AZOPA2620B","pan_status":"E","name":"N","fathername":"","dob":"Y","seeding_status":"R"}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:20:38 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- AZOPA2620B - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"AZOPA2620B","pan_status":"E","name":"Y","fathername":"","dob":"Y","seeding_status":"R"}]}
+
+-----------------------------------------------------------
+Time: 20-03-2024 10:31:33 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSQPJ1951A - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"pan":"BSQPJ1951A","pan_status":"N","name":"","fathername":"","dob":"","seeding_status":""}]}
+
+-----------------------------------------------------------

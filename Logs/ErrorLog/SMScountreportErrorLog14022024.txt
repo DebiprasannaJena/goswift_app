@@ -1,0 +1,66 @@
+Time: 14-02-2024 10:21:30 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 107
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 14-02-2024 10:22:27 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 111
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 14-02-2024 10:22:36 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 111
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 14-02-2024 10:22:40 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 107
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 14-02-2024 10:22:58 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 111
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+
+Time: 14-02-2024 10:23:28 AM
+-----------------------------------------------------------
+Message: Multiple controls with the same ID 'ProjectId' were found. FindControl requires that controls have unique IDs.
+StackTrace:    at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FillNamedControlsTable(Control namingContainer, ControlCollection controls)
+   at System.Web.UI.Control.FindControl(String id, Int32 pathOffset)
+   at Portal_MISReport_GoGreenChildDetailsRpt.DisplayPaging() in d:\GitProject\goswift_app\Portal\MISReport\GoGreenChildDetailsRpt.aspx.cs:line 107
+Source: System.Web
+TargetSite: Void FillNamedControlsTable(System.Web.UI.Control, System.Web.UI.ControlCollection)
+-----------------------------------------------------------
+

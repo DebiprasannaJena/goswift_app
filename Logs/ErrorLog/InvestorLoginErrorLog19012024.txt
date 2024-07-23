@@ -1,0 +1,207 @@
+Time: 19-01-2024 10:54:13 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 10:54:25 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 11:03:35 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 11:03:48 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 11:14:31 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 11:49:10 AM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 12:19:40 PM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 12:34:48 PM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+
+Time: 19-01-2024 02:05:58 PM
+-----------------------------------------------------------
+Message: There was no endpoint listening at http://192.168.10.9/INDUSTRYDW/DWHService.svc that could accept the message. This is often caused by an incorrect address or SOAP action. See InnerException, if present, for more details.
+StackTrace: 
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpChannelUtilities.ProcessGetResponseWebException(WebException webException, HttpWebRequest request, HttpAbortReason abortReason)
+   at System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at DWHServiceReference.IDWHServiceHost.KeyEncryption(String NormKey)
+   at DWHServiceReference.DWHServiceHostClient.KeyEncryption(String NormKey) in c:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\swp_new\4dd40345\45dc7d88\App_WebReferences.sqzmu-9e.10.cs:line 1878
+   at Login.Btn_Login_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\login.aspx.cs:line 175
+Source: mscorlib
+TargetSite: Void HandleReturnMessage(System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage)
+-----------------------------------------------------------
+

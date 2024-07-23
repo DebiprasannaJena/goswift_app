@@ -1,0 +1,730 @@
+Time: 20-02-2024 12:20:51 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:21:35 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:21:43 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:21:45 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:21:46 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:21:46 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 42
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:37:34 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:37:38 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:37:46 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:37:48 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:39:12 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:40:17 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:42:07 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:43:05 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:43:05 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:43:06 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:44:41 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 57
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:45:45 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:46:02 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:49:57 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:10 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:11 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:27 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:30 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:30 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:31 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:32 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:32 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:33 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:33 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:34 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:35 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:35 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:52:44 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 68
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:56:09 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 67
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 12:59:44 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:01:49 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:01:56 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:02:53 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:51:22 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:56:57 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:57:27 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:57:54 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 01:59:13 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 02:00:06 PM
+-----------------------------------------------------------
+Message: Cannot deserialize the current JSON object (e.g. {"name":"value"}) into type 'System.Collections.Generic.List`1[Portal_MISReport_GoGreenReport+DataModel]' because the type requires a JSON array (e.g. [1,2,3]) to deserialize correctly.
+To fix this error either change the JSON to a JSON array (e.g. [1,2,3]) or change the deserialized type so that it is a normal .NET type (e.g. not a primitive type like integer, not a collection type like an array or List<T>) that can be deserialized from a JSON object. JsonObjectAttribute can also be added to the type to force it to deserialize from a JSON object.
+Path 'errors', line 1, position 10.
+StackTrace:    at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 56
+Source: Newtonsoft.Json
+TargetSite: System.Object CreateObject(Newtonsoft.Json.JsonReader, System.Type, Newtonsoft.Json.Serialization.JsonContract, Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonContainerContract, Newtonsoft.Json.Serialization.JsonProperty, System.Object)
+-----------------------------------------------------------
+
+Time: 20-02-2024 02:26:45 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Approv'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_misreport_gogreenreport_aspx.__DataBind__control72(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx:line 249
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 114
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 20-02-2024 02:27:39 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'Rejected'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.portal_misreport_gogreenreport_aspx.__DataBind__control86(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx:line 266
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 114
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 20-02-2024 02:30:52 PM
+-----------------------------------------------------------
+Message: Value cannot be null.
+Parameter name: source
+StackTrace:    at System.Linq.OrderedEnumerable`2..ctor(IEnumerable`1 source, Func`2 keySelector, IComparer`1 comparer, Boolean descending)
+   at System.Linq.Enumerable.OrderBy[TSource,TKey](IEnumerable`1 source, Func`2 keySelector)
+   at Portal_MISReport_GoGreenReport.BindDataToGridView(String districtName, String status) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 58
+Source: System.Core
+TargetSite: Void .ctor(System.Collections.Generic.IEnumerable`1[TElement], System.Func`2[TElement,TKey], System.Collections.Generic.IComparer`1[TKey], Boolean)
+-----------------------------------------------------------
+

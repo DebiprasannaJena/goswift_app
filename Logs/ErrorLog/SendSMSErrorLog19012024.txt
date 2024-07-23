@@ -1,0 +1,36 @@
+Time: 19-01-2024 02:40:17 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 19-01-2024 02:40:35 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 19-01-2024 02:40:55 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 19-01-2024 03:55:08 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

@@ -1,0 +1,10 @@
+Time: 16-02-2024 10:26:13 AM
+-----------------------------------------------------------
+Message: The request was aborted: Could not create SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   at System.Net.HttpWebRequest.GetRequestStream()
+   at PANValidationNSDL.GetPANStatusFromNSDL(String strPAN) in d:\GitProject\goswift_app\App_Code\Other\PANValidationNSDL.cs:line 62
+Source: System
+TargetSite: System.IO.Stream GetRequestStream(System.Net.TransportContext ByRef)
+-----------------------------------------------------------
+

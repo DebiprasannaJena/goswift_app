@@ -103,17 +103,17 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
                 DrpDwn_Gender_Partner.SelectedValue = dtindustryPre.Rows[0]["vchManagingPartnerGender"].ToString();
                 Txt_EIN_IL_NO.Text = dtindustryPre.Rows[0]["vchEINNO"].ToString();
                 Txt_EIN_IL_Date.Text = dtindustryPre.Rows[0]["dtmEIN"].ToString();
-                Txt_Propsed_location.Text= dtindustryPre.Rows[0]["vchProposedLocation"].ToString();
+                Txt_Propsed_Location.Text= dtindustryPre.Rows[0]["vchProposedLocation"].ToString();
                 Txt_Status.Text = dtindustryPre.Rows[0]["vchPrsentStatus"].ToString();
                 Txt_Proposed_Date.Text = dtindustryPre.Rows[0]["dtmProdCommBefore"].ToString();
 
                 //*------------------------------------------------------------------------------------------*/
                 #region Production
 
-                Txt_Commence_production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
+                Txt_Commence_Production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
                 Txt_Financer.Text= dtProductionPre.Rows[0]["vchNameoffinancer"].ToString();
                 Txt_Cost_Project.Text= dtProductionPre.Rows[0]["decCostofproject"].ToString();
-                Txt_Land_required.Text= dtProductionPre.Rows[0]["decAreaofLandRequired"].ToString();
+                Txt_Land_Required.Text= dtProductionPre.Rows[0]["decAreaofLandRequired"].ToString();
                 Txt_Land_Acquired.Text= dtProductionPre.Rows[0]["decAreaofLandAcquired"].ToString();
                 Rad_Land_converted.SelectedValue= dtProductionPre.Rows[0]["intParticularsLandtobeconverted"].ToString();
 
@@ -967,15 +967,15 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;
             objEntity1.strManagingPartnerName = Txt_Partner_Name.Text;
-            objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
+            objEntity1.dtmProdCommBefore = Txt_Commence_Production.Text;
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
-            objEntity1.strProposedLocation = Txt_Propsed_location.Text;
+            objEntity1.strProposedLocation = Txt_Propsed_Location.Text;
             objEntity1.strPrsentStatus = Txt_Status.Text;
             objEntity1.strNameoffinancer = Txt_Financer.Text;
             objEntity1.decCostofproject = Convert.ToDecimal(Txt_Cost_Project.Text);
-            objEntity1.decAreaofLandRequired = Convert.ToDecimal(Txt_Land_required.Text);
+            objEntity1.decAreaofLandRequired = Convert.ToDecimal(Txt_Land_Required.Text);
             objEntity1.decAreaofLandAcquired = Convert.ToDecimal(Txt_Land_Acquired.Text);
             objEntity1.intParticularsLandtobeconverted = Convert.ToInt32(Rad_Land_converted.SelectedValue);
                 
@@ -1234,15 +1234,15 @@ public partial class incentives_ExemptionLandforIndustrialUseIPR2022 : System.We
             objEntity1.intOrganisationType = Convert.ToInt32(DrpDwn_Org_Type.SelectedValue);
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;
             objEntity1.strManagingPartnerName = Txt_Partner_Name.Text;
-            objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
+            objEntity1.dtmProdCommBefore = Txt_Commence_Production.Text;
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
-            objEntity1.strProposedLocation = Txt_Propsed_location.Text;
+            objEntity1.strProposedLocation = Txt_Propsed_Location.Text;
             objEntity1.strPrsentStatus = Txt_Status.Text;
             objEntity1.strNameoffinancer = Txt_Financer.Text;
             objEntity1.decCostofproject = Convert.ToDecimal(Txt_Cost_Project.Text);
-            objEntity1.decAreaofLandRequired = Convert.ToDecimal(Txt_Land_required.Text);
+            objEntity1.decAreaofLandRequired = Convert.ToDecimal(Txt_Land_Required.Text);
             objEntity1.decAreaofLandAcquired = Convert.ToDecimal(Txt_Land_Acquired.Text);
             objEntity1.intParticularsLandtobeconverted = Convert.ToInt32(Rad_Land_converted.SelectedValue);
               

@@ -1,0 +1,36 @@
+Time: 27-12-2023 12:51:31 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.viewCSRPortletData() in d:\GitProject\goswift_app\InvesterDashboard.aspx.cs:line 645
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 27-12-2023 12:51:32 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.InsertAppaStatus(String District, String Month, String Year) in d:\GitProject\goswift_app\InvesterDashboard.aspx.cs:line 215
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 27-12-2023 12:51:32 PM
+-----------------------------------------------------------
+Message: The underlying connection was closed: An unexpected error occurred on a send.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.InsertCICGStatus(DropDownList ddlYearCICG) in d:\GitProject\goswift_app\InvesterDashboard.aspx.cs:line 710
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+
+Time: 27-12-2023 12:51:33 PM
+-----------------------------------------------------------
+Message: The request was aborted: Could not create SSL/TLS secure channel.
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at InvesterProfile.InsertSPMGStatus() in d:\GitProject\goswift_app\InvesterDashboard.aspx.cs:line 508
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

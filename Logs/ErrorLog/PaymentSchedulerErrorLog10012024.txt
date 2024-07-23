@@ -1,0 +1,30 @@
+Time: 10-01-2024 10:44:38 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at System.Security.Cryptography.HMAC.InitializeKey(Byte[] key)
+   at TreasuryPaymentTracking.HmacSHA256(String message) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 124
+   at TreasuryPaymentTracking.GetPaymentStatusFromTreasury(String strOrderNo, Decimal decAmount) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 37
+Source: mscorlib
+TargetSite: Void InitializeKey(Byte[])
+-----------------------------------------------------------
+
+Time: 10-01-2024 10:44:40 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at System.Security.Cryptography.HMAC.InitializeKey(Byte[] key)
+   at TreasuryPaymentTracking.HmacSHA256(String message) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 124
+   at TreasuryPaymentTracking.GetPaymentStatusFromTreasury(String strOrderNo, Decimal decAmount) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 37
+Source: mscorlib
+TargetSite: Void InitializeKey(Byte[])
+-----------------------------------------------------------
+
+Time: 10-01-2024 10:44:41 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at System.Security.Cryptography.HMAC.InitializeKey(Byte[] key)
+   at TreasuryPaymentTracking.HmacSHA256(String message) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 124
+   at TreasuryPaymentTracking.GetPaymentStatusFromTreasury(String strOrderNo, Decimal decAmount) in d:\GitProject\goswift_app\App_Code\Other\TreasuryPaymentTracking.cs:line 37
+Source: mscorlib
+TargetSite: Void InitializeKey(Byte[])
+-----------------------------------------------------------
+

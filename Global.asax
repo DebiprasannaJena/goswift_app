@@ -114,6 +114,22 @@
         //       {
         //       }
 
+
+         /*-------------------------------------------------------------------------------------------------------*/
+        /////// Peal Data Scheduler for Mosarkar Service add by  Debi
+        /*-------------------------------------------------------------------------------------------------------*/
+        //       try
+        //       {
+        //           System.Timers.Timer timScheduledPealDataPushToMosarkar = new System.Timers.Timer();
+        //           timScheduledPealDataPushToMosarkar.Interval = 60 * 1000 * 60;
+        //           timScheduledPealDataPushToMosarkar.Enabled = true;
+        //           timScheduledPealDataPushToMosarkar.Elapsed += new System.Timers.ElapsedEventHandler(timScheduledPealDataPushToMosarkar_Elapsed);
+        //       }
+        //       catch
+        //       {
+        //       }
+
+
         /*-------------------------------------------------------------------------------------------------------*/
         /////// Payment Scheduler for PEAL
         /*-------------------------------------------------------------------------------------------------------*/
@@ -337,6 +353,13 @@
         PaymentScheduler objPaySchedule = new PaymentScheduler();
         objPaySchedule.ExternalServicePaymentSchedule();
     }
+
+     void timScheduledPealDataPushToMosarkar_Elapsed(object sender, System.Timers.ElapsedEventArgs e) // for mosarkar service add by Debi
+    {
+        PaymentScheduler objPaySchedule = new PaymentScheduler();
+        objPaySchedule.MoSarkarServiceSchedule();
+    }
+
     void timScheduledOrderPaymentPEAL_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
     {
         PaymentScheduler objPaySchedule = new PaymentScheduler();

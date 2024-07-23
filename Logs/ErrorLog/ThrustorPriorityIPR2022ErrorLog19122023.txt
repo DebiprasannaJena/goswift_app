@@ -1,0 +1,26 @@
+Time: 19-12-2023 03:22:27 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1640
+Source: App_Code.iborsfh4
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 19-12-2023 04:11:47 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at incentives_ThrustPrioritysectorstatus.BtnDraft_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ThrustPrioritysectorstatus.aspx.cs:line 2749
+Source: App_Web_lybkxlxh
+TargetSite: Void BtnDraft_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 19-12-2023 04:11:51 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at incentives_ThrustPrioritysectorstatus.BtnDraft_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ThrustPrioritysectorstatus.aspx.cs:line 2749
+Source: App_Web_lybkxlxh
+TargetSite: Void BtnDraft_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+

@@ -1,0 +1,78 @@
+Time: 17-02-2024 09:39:29 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at DataAcessLayer.CMS.CMSDataLayer.BindGlinkSubMenuDetails(String action, Int32 GlinkId) in d:\GitProject\goswift_app\App_Code\DAL\CMS\CMSDataLayer.cs:line 1284
+   at BusinessLogicLayer.CMS.CmsBusinesslayer.BindGlinkSubMenuDetails(String action, Int32 GlinkId) in d:\GitProject\goswift_app\App_Code\BAL\CMS\CmsBusinesslayer.cs:line 165
+   at website_Default.getMenuItems(Int32 parentId, Int32 type) in d:\GitProject\goswift_app\Default.aspx.cs:line 407
+Source: App_Code.z4wbgbsz
+TargetSite: System.Data.DataTable BindGlinkSubMenuDetails(System.String, Int32)
+-----------------------------------------------------------
+
+Time: 17-02-2024 09:40:10 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at DataAcessLayer.CMS.CMSDataLayer.GetHeadContent(String action, Int32 IntMenuId) in d:\GitProject\goswift_app\App_Code\DAL\CMS\CMSDataLayer.cs:line 247
+   at BusinessLogicLayer.CMS.CmsBusinesslayer.GetHeadContent(String action, Int32 IntMenuId) in d:\GitProject\goswift_app\App_Code\BAL\CMS\CmsBusinesslayer.cs:line 42
+   at website_Default.FillContent() in d:\GitProject\goswift_app\Default.aspx.cs:line 154
+Source: App_Code.z4wbgbsz
+TargetSite: System.Data.DataTable GetHeadContent(System.String, Int32)
+-----------------------------------------------------------
+
+Time: 17-02-2024 09:40:39 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at DataAcessLayer.CMS.CMSDataLayer.GetWebsiteProposalDetails(CMSDetails objCMS) in d:\GitProject\goswift_app\App_Code\DAL\CMS\CMSDataLayer.cs:line 611
+   at BusinessLogicLayer.CMS.CmsBusinesslayer.GetWebsiteProposalDetails(CMSDetails objCMS) in d:\GitProject\goswift_app\App_Code\BAL\CMS\CmsBusinesslayer.cs:line 82
+   at website_Default.ViewProposalStatus() in d:\GitProject\goswift_app\Default.aspx.cs:line 252
+Source: System.Data
+TargetSite: Void LoginNoFailover(System.Data.SqlClient.ServerInfo, System.String, System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Data.ProviderBase.TimeoutTimer)
+-----------------------------------------------------------
+
+Time: 17-02-2024 09:42:02 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at DataAcessLayer.Common.CommonDataLayer.ViewGallery(Gallery objectGallery) in d:\GitProject\goswift_app\App_Code\DAL\Common\CommonDataLayer.cs:line 139
+   at BusinessLogicLayer.Common.CommonBusinessLayer.ViewGallery(Gallery objGallery) in d:\GitProject\goswift_app\App_Code\BAL\Common\CommonBusinessLayer.cs:line 24
+   at website_Default.BindRepeater() in d:\GitProject\goswift_app\Default.aspx.cs:line 320
+Source: App_Code.z4wbgbsz
+TargetSite: System.Collections.Generic.List`1[EntityLayer.Common.Gallery] ViewGallery(EntityLayer.Common.Gallery)
+-----------------------------------------------------------
+
+Time: 17-02-2024 09:43:46 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at DataAcessLayer.CMS.CMSDataLayer.BindUsefulLinkDetails(String action) in d:\GitProject\goswift_app\App_Code\DAL\CMS\CMSDataLayer.cs:line 1434
+   at BusinessLogicLayer.CMS.CmsBusinesslayer.BindUsefulLinkDetails(String action) in d:\GitProject\goswift_app\App_Code\BAL\CMS\CmsBusinesslayer.cs:line 188
+   at website_Default.BindUsefulLink() in d:\GitProject\goswift_app\Default.aspx.cs:line 132
+Source: App_Code.z4wbgbsz
+TargetSite: System.Data.DataTable BindUsefulLinkDetails(System.String)
+-----------------------------------------------------------
+
+Time: 17-02-2024 09:45:29 PM
+-----------------------------------------------------------
+Message: Arithmetic operation resulted in an overflow.
+StackTrace:    at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at website_Default.DynamicScrolingText() in d:\GitProject\goswift_app\Default.aspx.cs:line 97
+Source: System.Data
+TargetSite: Void LoginNoFailover(System.Data.SqlClient.ServerInfo, System.String, System.Security.SecureString, Boolean, System.Data.SqlClient.SqlConnectionString, System.Data.SqlClient.SqlCredential, System.Data.ProviderBase.TimeoutTimer)
+-----------------------------------------------------------
+

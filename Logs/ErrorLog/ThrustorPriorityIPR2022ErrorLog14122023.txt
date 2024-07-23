@@ -1,0 +1,104 @@
+Time: 14-12-2023 10:11:08 AM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+Invalid object name '#TMP_INCENTIVE_AVAILED_DETAILS'.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 14-12-2023 10:17:04 AM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 14-12-2023 10:31:28 AM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3667
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Migrated_Industrial_Unit_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 374
+   at incentives_MigratedIndustrialUnitIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 1386
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Migrated_Industrial_Unit_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:16:39 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:38:24 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:39:06 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:39:26 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:39:56 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 04:40:27 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 14-12-2023 05:22:23 PM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_MigratedIndustrialUnitIPR2022.PostpopulateDataComm(Int32 id) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 240
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+

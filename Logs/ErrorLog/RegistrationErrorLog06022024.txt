@@ -1,0 +1,30 @@
+Time: 06-02-2024 04:07:08 PM
+-----------------------------------------------------------
+Message: The system cannot find the path specified.
+
+StackTrace:    at PANValidationNSDL.GetPANStatusFromNSDL(String strPAN) in d:\GitProject\goswift_app\App_Code\Other\PANValidationNSDL.cs:line 74
+   at InvestorRegistrationUser.Btn_PAN_Validate_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationUser.aspx.cs:line 802
+Source: App_Code.ja3mshhx
+TargetSite: System.String GetPANStatusFromNSDL(System.String)
+-----------------------------------------------------------
+
+Time: 06-02-2024 04:08:01 PM
+-----------------------------------------------------------
+Message: The system cannot find the path specified.
+
+StackTrace:    at PANValidationNSDL.GetPANStatusFromNSDL(String strPAN) in d:\GitProject\goswift_app\App_Code\Other\PANValidationNSDL.cs:line 74
+   at InvestorRegistrationUser.Btn_PAN_Validate_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationUser.aspx.cs:line 802
+Source: App_Code.ja3mshhx
+TargetSite: System.String GetPANStatusFromNSDL(System.String)
+-----------------------------------------------------------
+
+Time: 06-02-2024 04:08:44 PM
+-----------------------------------------------------------
+Message: The system cannot find the path specified.
+
+StackTrace:    at PANValidationNSDL.GetPANStatusFromNSDL(String strPAN) in d:\GitProject\goswift_app\App_Code\Other\PANValidationNSDL.cs:line 74
+   at InvestorRegistrationUser.Btn_PAN_Validate_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationUser.aspx.cs:line 802
+Source: App_Code.ja3mshhx
+TargetSite: System.String GetPANStatusFromNSDL(System.String)
+-----------------------------------------------------------
+

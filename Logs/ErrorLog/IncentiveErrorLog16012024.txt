@@ -1,0 +1,70 @@
+Time: 16-01-2024 03:24:31 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'id'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Incentive_IncentiveDetails.BindProductGridview(DataTable dtView) in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 1002
+   at Portal_Incentive_IncentiveDetails.GetApplicationDetails() in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 798
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 16-01-2024 03:46:05 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'id'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Incentive_IncentiveDetails.BindProductGridview(DataTable dtView) in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 1002
+   at Portal_Incentive_IncentiveDetails.GetApplicationDetails() in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 798
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 16-01-2024 03:49:41 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'id'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Incentive_IncentiveDetails.BindProductGridview(DataTable dtView) in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 1002
+   at Portal_Incentive_IncentiveDetails.GetApplicationDetails() in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 798
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 16-01-2024 03:54:01 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'id'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Incentive_IncentiveDetails.BindProductGridview(DataTable dtView) in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 1002
+   at Portal_Incentive_IncentiveDetails.GetApplicationDetails() in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 798
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 16-01-2024 04:21:15 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'id'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at Portal_Incentive_IncentiveDetails.BindProductGridview(DataTable dtView) in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 1002
+   at Portal_Incentive_IncentiveDetails.GetApplicationDetails() in d:\GitProject\goswift_app\Portal\Incentive\IncentiveDetails.aspx.cs:line 798
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

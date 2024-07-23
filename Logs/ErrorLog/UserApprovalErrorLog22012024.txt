@@ -1,0 +1,193 @@
+Time: 22-01-2024 02:38:52 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.Button' to type 'System.Web.UI.WebControls.LinkButton'.
+StackTrace:    at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 491
+Source: App_Web_jxibpn0u
+TargetSite: Void Btn_Approve_Submit_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 22-01-2024 02:40:21 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.Button' to type 'System.Web.UI.WebControls.LinkButton'.
+StackTrace:    at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 491
+Source: App_Web_jxibpn0u
+TargetSite: Void Btn_Approve_Submit_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 22-01-2024 02:42:36 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.ContentPlaceHolder' to type 'System.Web.UI.WebControls.GridViewRow'.
+StackTrace:    at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 492
+Source: App_Web_3elqzyzs
+TargetSite: Void Btn_Approve_Submit_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 22-01-2024 02:44:21 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.HtmlControls.HtmlForm' to type 'System.Web.UI.WebControls.GridViewRow'.
+StackTrace:    at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 492
+Source: App_Web_4tbsdefm
+TargetSite: Void Btn_Approve_Submit_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 22-01-2024 02:52:17 PM
+-----------------------------------------------------------
+Message: Unable to cast object of type 'System.Web.UI.WebControls.ContentPlaceHolder' to type 'System.Web.UI.WebControls.GridViewRow'.
+StackTrace:    at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 493
+Source: App_Web_nu4xk2xc
+TargetSite: Void Btn_Approve_Submit_Click(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:17:04 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 255
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:17:21 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 255
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:18:03 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 255
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:18:11 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 255
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:18:20 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 255
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:21:04 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 256
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:21:15 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 256
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:21:28 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 256
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:21:47 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 256
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 03:25:51 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 256
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:00:26 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.LnkBtn_Approve_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 257
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:25:56 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 529
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:26:43 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 529
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:27:45 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 529
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 04:30:37 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 530
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:03:59 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 528
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 22-01-2024 05:04:15 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Portal_PAN_Operation_User_Approval.Btn_Approve_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\PAN_Operation\User_Approval.aspx.cs:line 528
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+

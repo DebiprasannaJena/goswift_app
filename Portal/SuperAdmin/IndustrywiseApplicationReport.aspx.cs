@@ -91,7 +91,7 @@ public partial class Portal_SuperAdmin_IndustrywiseApplicationReport : System.We
             };
             List<IndustrywiseApplicationReport> lstChildServices = new List<IndustrywiseApplicationReport>();
 
-           // lstChildServices = MisReportServices.View_Industrywise_Application_Report(objSearch);
+          // lstChildServices = MisReportServices.View_Industrywise_Application_Report(objSearch);
             GridView1.DataSource = lstChildServices;
             GridView1.DataBind();
             GrdExcel.DataSource = lstChildServices;

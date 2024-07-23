@@ -1,0 +1,17 @@
+Time: 22-03-2024 11:56:39 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposals.BindInvestorInfo() in d:\GitProject\goswift_app\Proposals.aspx.cs:line 53
+Source: App_Web_proposals.aspx.cdcab7d2.5lncd-ns
+TargetSite: Void BindInvestorInfo()
+-----------------------------------------------------------
+
+Time: 22-03-2024 11:56:39 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Proposals.BindGrid() in d:\GitProject\goswift_app\Proposals.aspx.cs:line 137
+   at Proposals.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Proposals.aspx.cs:line 38
+Source: App_Web_proposals.aspx.cdcab7d2.5lncd-ns
+TargetSite: Void BindGrid()
+-----------------------------------------------------------
+

@@ -1,0 +1,12 @@
+Time: 02-02-2024 03:14:56 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at proposeddetails.btnNext_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\PEAL\proposeddetails.aspx.cs:line 2412
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

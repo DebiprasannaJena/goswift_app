@@ -1,0 +1,12 @@
+Time: 07-12-2023 10:25:12 AM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Portal_Incentive_View_Inct_Application_IPR2022.Grd_Application_RowCommand(Object sender, GridViewCommandEventArgs e) in d:\GitProject\goswift_app\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 170
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

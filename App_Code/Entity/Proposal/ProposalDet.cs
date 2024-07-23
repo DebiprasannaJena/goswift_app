@@ -137,6 +137,6 @@ namespace EntityLayer.Proposal
         public string VCH_OFF_MOBILE { get; set; }
         public string VCH_INVESTOR_ID { get; set; }
         #endregion
-       // public string VCH_RAISE_QUERY { get; set; }//Add by Debiprasanna
+        public string vchAppFormattedNo { get; set; }//Add by Debiprasanna
     }
 }

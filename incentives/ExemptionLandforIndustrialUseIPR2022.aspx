@@ -547,7 +547,7 @@
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
                                                                                    <div class="input-group date datePicker" id="Div1" runat="server">
-                                                                                        <asp:TextBox ID="Txt_Commence_production" CssClass="form-control" type="text" runat="server"
+                                                                                        <asp:TextBox ID="Txt_Commence_Production" CssClass="form-control" type="text" runat="server"
                                                                                             MaxLength="11" ToolTip="Enter Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment Here !!"></asp:TextBox>
                                                                                         <span id="Span2" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                                                     </div>
@@ -704,8 +704,6 @@
                                                                                 </div>
                                                                             </div>
 
-
-
                                                                         </div>
                                                                            
                                                                             <h4>
@@ -735,7 +733,7 @@
                                                                                11. Proposed location of the Project</label>
                                                                             <div class="col-sm-8">
                                                                                 <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Propsed_location" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                <asp:TextBox ID="Txt_Propsed_Location" CssClass="form-control" MaxLength="100" runat="server"
                                                                                             ToolTip="Enter  Proposed location of the Project Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>
@@ -791,7 +789,7 @@
                                                                              14. Area of Land required as per DPR / Project report</label>
                                                                             <div class="col-sm-8">
                                                                                 <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Land_required" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                <asp:TextBox ID="Txt_Land_Required" CssClass="form-control" MaxLength="100" runat="server"
                                                                                             ToolTip="Enter  Area of Land required as per DPR / Project report Here !!"></asp:TextBox>
                                                                             </div>
                                                                         </div>

@@ -1,0 +1,1222 @@
+Time: 30-11-2023 09:39:17 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:39:20 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:36 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:38 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:55:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:01 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:02 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:04 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:04 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:05 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:06 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:06 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:56:06 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:34 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:36 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:37 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:38 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:43 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:43 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:43 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:45 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:45 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:46 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:47 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:48 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 09:58:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:09 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:11 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:18 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:19 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:20 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:46 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:53 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:56 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:56 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:57 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:58 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:00:59 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:45:52 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUse.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUse.aspx.cs:line 831
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:32 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:33 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:34 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:35 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:36 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:37 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:37 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:38 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:39 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:40 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:41 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:42 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:43 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:43 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:44 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:53:49 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:55:22 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:56:07 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 10:56:09 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:01:45 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:03:06 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:04:20 AM
+-----------------------------------------------------------
+Message: Input string was not in a correct format.
+StackTrace:    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   at System.Convert.ToDecimal(String value)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 832
+Source: mscorlib
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:05:34 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:05:35 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:08:17 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:09:32 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:10:11 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:10:37 AM
+-----------------------------------------------------------
+Message: Sequence contains no matching element
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: App_Code.2e-khcjx
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:15:59 AM
+-----------------------------------------------------------
+Message: There is no row at position 0.
+StackTrace:    at System.Data.RBTree`1.GetNodeByIndex(Int32 userIndex)
+   at System.Data.DataRowCollection.get_Item(Int32 index)
+   at incentives_ExemptionLandforIndustrialUseIPR2022.fillData() in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 195
+Source: System.Data
+TargetSite: NodePath GetNodeByIndex(Int32)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:19:24 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:21:54 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 980
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:32:18 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:32:56 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:46:18 AM
+-----------------------------------------------------------
+Message: Cannot insert explicit value for identity column in table 'T_INCT_LAND_CONVERTED' when IDENTITY_INSERT is set to OFF.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:47:46 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:48:23 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:48:26 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:48:52 AM
+-----------------------------------------------------------
+Message: Cannot insert the value NULL into column 'intProductionId', table 'SWPGOO.dbo.T_INCT_BASIC_PRODUCTION_ITEM'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 11:55:48 AM
+-----------------------------------------------------------
+Message: Cannot insert explicit value for identity column in table 'T_INCT_LAND_CONVERTED' when IDENTITY_INSERT is set to OFF.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 30-11-2023 03:00:50 PM
+-----------------------------------------------------------
+Message: Cannot insert explicit value for identity column in table 'T_INCT_LAND_CONVERTED' when IDENTITY_INSERT is set to OFF.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3530
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Exemption_Land_IndustrialUse(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 366
+   at incentives_ExemptionLandforIndustrialUseIPR2022.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ExemptionLandforIndustrialUseIPR2022.aspx.cs:line 981
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Exemption_Land_IndustrialUse(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+

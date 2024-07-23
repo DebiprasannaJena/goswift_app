@@ -1,0 +1,22 @@
+Time: 05-12-2023 10:09:40 AM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Thrust_Priority_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3048
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Thrust_Priority_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 338
+   at incentives_ThrustPrioritysectorstatus.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ThrustPrioritysectorstatus.aspx.cs:line 1743
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Thrust_Priority_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+
+Time: 05-12-2023 10:09:45 AM
+-----------------------------------------------------------
+Message: Arithmetic overflow error converting expression to data type int.
+Arithmetic overflow error converting expression to data type int.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Thrust_Priority_AED(Basic_Unit_Details_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 3048
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Thrust_Priority_AED(Basic_Unit_Details_Entity objIMEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 338
+   at incentives_ThrustPrioritysectorstatus.BtnApply_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\ThrustPrioritysectorstatus.aspx.cs:line 1743
+Source: .Net SqlClient Data Provider
+TargetSite: System.String Thrust_Priority_AED(EntityLayer.Incentive.Basic_Unit_Details_Entity)
+-----------------------------------------------------------
+

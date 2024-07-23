@@ -1,0 +1,16 @@
+Time: 28-03-2024 10:15:04 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\includes\investormenu.ascx.cs:line 116
+Source: App_Web_zepv15vy
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+
+Time: 28-03-2024 11:48:55 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at includes_investormenu.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\includes\investormenu.ascx.cs:line 116
+Source: App_Web_zepv15vy
+TargetSite: Void Page_Load(System.Object, System.EventArgs)
+-----------------------------------------------------------
+

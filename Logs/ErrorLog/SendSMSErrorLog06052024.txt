@@ -1,0 +1,9 @@
+Time: 06-05-2024 12:10:53 PM
+-----------------------------------------------------------
+Message: Unable to connect to the remote server
+StackTrace:    at System.Net.HttpWebRequest.GetResponse()
+   at CommonHelperCls.SendSmsWithTemplate(String strMobNo, String strSmsContent, String strTemplateId, String strMsgType) in d:\GitProject\goswift_app\App_Code\Other\CommonHelperCls.cs:line 703
+Source: System
+TargetSite: System.Net.WebResponse GetResponse()
+-----------------------------------------------------------
+

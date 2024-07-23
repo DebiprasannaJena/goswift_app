@@ -1,0 +1,4 @@
+Time: 16-02-2024 10:26:14 AM For RequestMethod: GetPANStatusFromNSDL
+InputOutput: [REQUEST_PAN]:- BSQPJ1951A - [RESPONSE_FROM_NSDL]:- {"response_Code":"1","outputData":[{"dob":"","name":"","pan_status":"N","pan":"BSQPJ1951A","seeding_status":""}]}
+
+-----------------------------------------------------------

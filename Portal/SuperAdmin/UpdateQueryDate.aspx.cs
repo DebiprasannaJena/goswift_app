@@ -131,15 +131,16 @@ public partial class Portal_SuperAdmin_UpdateQueryDate : System.Web.UI.Page
                 DivPeal.Visible = true;
                 DivService.Visible = false;
                 Txt_Proposal_No.Text = "";
-          
-                
+                Txt_Service_No.Text = "";
+
+
             }
             else if(Rdbtn_Select_Type.SelectedItem.Value == "2")
             {
                 DivService.Visible = true;
                 DivPeal.Visible = false;
                 Txt_Service_No.Text = "";
-                
+                Txt_Proposal_No.Text = "";
             }
         }
         catch(Exception ex)

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Notifications>
+  <Notification>HVJBK</Notification>
+  <DefaultPage>1</DefaultPage>
+  <LoginPage>0</LoginPage>
+  <IndustrialPage>1</IndustrialPage>
+  <NonIndustrialPage>0</NonIndustrialPage>
+</Notifications>

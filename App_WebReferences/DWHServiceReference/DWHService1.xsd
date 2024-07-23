@@ -29,6 +29,8 @@
       <xs:element minOccurs="0" name="INTSUBSECTOR" type="xs:int" />
       <xs:element minOccurs="0" name="INTUSERID" type="xs:int" />
       <xs:element minOccurs="0" name="INTUSERLEVEL" type="xs:int" />
+      <xs:element minOccurs="0" name="INT_REG_COUNTRY" type="xs:int" />
+      <xs:element minOccurs="0" name="INT_SL_COUNTRY" type="xs:int" />
       <xs:element minOccurs="0" name="LogId" type="xs:int" />
       <xs:element minOccurs="0" name="MSGOUT" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHACTION" nillable="true" type="xs:string" />
@@ -36,6 +38,7 @@
       <xs:element minOccurs="0" name="VCHADHARNO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHALIASUSERNAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHAPPIDS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHAPPROVALREMARKS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHCINNUMBER" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHCORADDRESS" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHDESIGNATION" nillable="true" type="xs:string" />
@@ -61,6 +64,16 @@
       <xs:element minOccurs="0" name="VCHUSERNAME" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHUSERNAME_NEW" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VCHUSERUNIQUEID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_CIN_DATA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_LLPIN_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_REG_ADDRESS_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_REG_CITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_REG_PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_REG_STATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_SL_ADDRESS_2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_SL_CITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_SL_PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCH_SL_STATE" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DWH_Model" nillable="true" type="tns:DWH_Model" />

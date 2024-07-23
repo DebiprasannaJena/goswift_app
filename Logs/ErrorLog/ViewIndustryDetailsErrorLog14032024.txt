@@ -1,0 +1,36 @@
+Time: 14-03-2024 03:20:15 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_MISReport_ViewMISIndustryList.fillDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 233
+   at Portal_MISReport_ViewMISIndustryList.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 41
+Source: App_Web_0tk3hezx
+TargetSite: Void fillDetails(Int32)
+-----------------------------------------------------------
+
+Time: 14-03-2024 03:21:19 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_MISReport_ViewMISIndustryList.fillDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 233
+   at Portal_MISReport_ViewMISIndustryList.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 41
+Source: App_Web_0tk3hezx
+TargetSite: Void fillDetails(Int32)
+-----------------------------------------------------------
+
+Time: 14-03-2024 03:21:32 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_MISReport_ViewMISIndustryList.fillDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 233
+   at Portal_MISReport_ViewMISIndustryList.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 41
+Source: App_Web_0tk3hezx
+TargetSite: Void fillDetails(Int32)
+-----------------------------------------------------------
+
+Time: 14-03-2024 03:24:11 PM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at Portal_MISReport_ViewMISIndustryList.fillDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 233
+   at Portal_MISReport_ViewMISIndustryList.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\ViewMISIndustryList.aspx.cs:line 41
+Source: App_Web_0tk3hezx
+TargetSite: Void fillDetails(Int32)
+-----------------------------------------------------------
+

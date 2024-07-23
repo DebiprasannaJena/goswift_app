@@ -1,0 +1,45 @@
+Time: 15-04-2024 11:14:10 AM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Update_PAN.GetIndustryDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Update_PAN.aspx.cs:line 344
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 15-04-2024 12:08:43 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Update_PAN.GetIndustryDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Update_PAN.aspx.cs:line 344
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 15-04-2024 12:18:15 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Update_PAN.GetIndustryDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Update_PAN.aspx.cs:line 344
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 15-04-2024 12:18:25 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Update_PAN.GetIndustryDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Update_PAN.aspx.cs:line 344
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+
+Time: 15-04-2024 12:22:36 PM
+-----------------------------------------------------------
+Message: Object cannot be cast from DBNull to other types.
+StackTrace:    at System.DBNull.System.IConvertible.ToInt32(IFormatProvider provider)
+   at Update_PAN.GetIndustryDetails(Int32 intInvetsorId) in d:\GitProject\goswift_app\Update_PAN.aspx.cs:line 344
+Source: mscorlib
+TargetSite: Int32 System.IConvertible.ToInt32(System.IFormatProvider)
+-----------------------------------------------------------
+

@@ -358,19 +358,19 @@
                 $("#popup_ok").click(function () { $("#Txt_Regd_Office_Address").focus(); });
                 return false;
             }
-            if (WhiteSpaceValidation1st('Txt_Phone_no', 'Mobile number', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Phone_No', 'Mobile number', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidationLast('Txt_Phone_no', 'Mobile number', projname) == false) {
+            if (WhiteSpaceValidationLast('Txt_Phone_No', 'Mobile number', projname) == false) {
                 return false;
             }
-            if (SpecialCharacter1st('Txt_Phone_no', 'Mobile number', projname) == false) {
+            if (SpecialCharacter1st('Txt_Phone_No', 'Mobile number', projname) == false) {
                 return false;
             }
-            var Phoneno = $('#Txt_Phone_no').val().length;
+            var Phoneno = $('#Txt_Phone_No').val().length;
             if (Phoneno < 8 || Phoneno > 15) {
                 jAlert('<strong>The minimum and maximum length of the mobile number should be 8 to 15 digit.</strong>', projname);
-                $("#popup_ok").click(function () { $("#Txt_Phone_no").focus(); });
+                $("#popup_ok").click(function () { $("#Txt_Phone_No").focus(); });
                 return false;
             }
 
@@ -464,13 +464,13 @@
                 }
             }
 
-            if (WhiteSpaceValidation1st('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
+            if (WhiteSpaceValidation1st('Txt_Total_Emp_Number', 'Total Employement Numbers', projname) == false) {
                 return false;
             }
-            if (WhiteSpaceValidationLast('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
+            if (WhiteSpaceValidationLast('Txt_Total_Emp_Number', 'Total Employement Numbers', projname) == false) {
                 return false;
             }
-            if (SpecialCharacter1st('Txt_total_emp_Number', 'Total Employement Numbers', projname) == false) {
+            if (SpecialCharacter1st('Txt_Total_Emp_Number', 'Total Employement Numbers', projname) == false) {
                 return false;
             }
             if (!blankFieldValidation('Txt_Managarial_After', 'Managerial Employee', projname)) {
@@ -865,7 +865,7 @@
                                                                                    5. Phone Number</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_Phone_no"  MaxLength="15" Onkeypress="return inputLimiter(event,'Numbers')" CssClass="form-control" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Phone_No"  MaxLength="15" Onkeypress="return inputLimiter(event,'Numbers')" CssClass="form-control" runat="server"
                                                                                         ToolTip="Enter Phone Number Here !!"></asp:TextBox>
                                                                                    
 
@@ -937,10 +937,8 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="form-group">
-                                                                             
+                                                                        <div class="form-group">                                                                             
                                                                             <div class="row">
-                                                                                
                                                                                 <label for="Iname" class="col-sm-4">
                                                                                  EIN/ PC/ IEM/PEAL approval Date issued by SLNA/DLNA</label>
                                                                                 <div class="col-sm-8">
@@ -1125,15 +1123,14 @@
                                                                         </div>
                                                                     </div>
 
-                                                                             <div class="form-group">
-                                                                                 
+                                                                             <div class="form-group">      
                                                                         <div class="row">
                                                                             <label for="Iname" class="col-sm-4">
                                                                                12. Proposed Date/ Date of Commencement of production / Activity</label>
                                                                             <div class="col-sm-8">
                                                                                 <span class="colon">:</span>
                                                                                 <div class="input-group date datePicker" id="Div5" runat="server">
-                                                                                    <asp:TextBox ID="Txt_Commence_production" CssClass="form-control" type="text" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Commence_Production" CssClass="form-control" type="text" runat="server"
                                                                                         MaxLength="11" ToolTip="Enter  Proposed Date/ Date of Commencement of production / Activity Here !!"></asp:TextBox>
                                                                                     <span id="Span4" runat="server" class="input-group-addon"><i class="fa fa-calendar">
                                                                                     </i></span>
@@ -1143,8 +1140,7 @@
                                                                     </div>
 
 
-                                                                            <div class="form-group">
-                                                                               
+                                                                            <div class="form-group">      
                                                                         <div class="row">
                                                                             <label for="Iname" class="col-sm-4">
                                                                                13. Select EIM/UAM/Other
@@ -1259,7 +1255,7 @@
                                                                                    14. Total Employement Numbers</label>
                                                                             <div class="col-sm-4">
                                                                                 <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_total_emp_Number" Onkeypress="return inputLimiter(event,'Numbers')" CssClass="form-control text-right" MaxLength="50" runat="server"
+                                                                                <asp:TextBox ID="Txt_Total_Emp_Number" Onkeypress="return inputLimiter(event,'Numbers')" CssClass="form-control text-right" MaxLength="50" runat="server"
                                                                                     ToolTip="Enter Total Employement Numbers Here !!"></asp:TextBox>
                                                                               
                                                                             </div>
@@ -1924,10 +1920,10 @@
                                                                                20. Whether applied for statutory clearances /Clearances /Approvals under Single Windows Mechanism</label>
                                                                             <div class="col-sm-8">
                                                                                 <span class="colon">:</span>
-                                                                                <asp:TextBox ID="Txt_Swm_approve" CssClass="form-control" MaxLength="500" TextMode="MultiLine"
+                                                                                <asp:TextBox ID="Txt_Swm_Approve" CssClass="form-control" MaxLength="500" TextMode="MultiLine"
                                                                                     runat="server" ToolTip="Enter  Whether applied for statutory clearances /Clearances /Approvals under SINGLE Windows Mechanism Here !!"></asp:TextBox>
                                                                                 <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender23" runat="server"
-                                                                                    TargetControlID="Txt_Swm_approve" FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom"
+                                                                                    TargetControlID="Txt_Swm_Approve" FilterType="Numbers,LowercaseLetters,UppercaseLetters,Custom"
                                                                                     ValidChars=",-/. ">
                                                                                 </cc1:FilteredTextBoxExtender>
 

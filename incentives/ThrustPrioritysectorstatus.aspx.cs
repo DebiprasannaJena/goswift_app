@@ -45,7 +45,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             {
                 Txt_EIN_IL_Date.Attributes.Add("readonly", "readonly");
                 Txt_Proposed_Date.Attributes.Add("readonly", "readonly");
-                Txt_Commence_production.Attributes.Add("readonly", "readonly");
+                Txt_Commence_Production.Attributes.Add("readonly", "readonly");
                 Txt_PC_EMI_Date.Attributes.Add("readonly", "readonly");
                 Txt_Uam_Date.Attributes.Add("readonly", "readonly");
                 Txt_TL_Sanction_Date.Attributes.Add("readonly", "readonly");
@@ -99,7 +99,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 {
                     ChkSameData.Checked = false;
                 }
-                Txt_Phone_no.Text = dtindustryPre.Rows[0]["vchPhoneNumber"].ToString();
+                Txt_Phone_No.Text = dtindustryPre.Rows[0]["vchPhoneNumber"].ToString();
                 Txt_Email.Text = dtindustryPre.Rows[0]["vchEmail"].ToString();
                 DrpDwn_Org_Type.SelectedValue = (dtindustryPre.Rows[0]["intOrganisationType"].ToString());
 
@@ -154,7 +154,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
                 #endregion
                 Txt_Proposed_Date.Text = dtindustryPre.Rows[0]["dtmProdCommBefore"].ToString();
-                Txt_Commence_production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
+                Txt_Commence_Production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
                 Rad_production.SelectedValue = dtMoFTermLoanPre.Rows[0]["intEIMorUAMtype"].ToString();
 
                 if (Rad_production.SelectedValue == "1")
@@ -188,10 +188,10 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                     Txt_Uam_No.Text = "";
                     Txt_Uam_Date.Text = "";
                 }
-              /*--------------------------------------------------------------------------------------------------------------------------*/
+                /*--------------------------------------------------------------------------------------------------------------------------*/
 
                 #region Investment
-                Txt_total_emp_Number.Text = dtMoFTermLoanPre.Rows[0]["intDirectEmpAfter"].ToString();
+                Txt_Total_Emp_Number.Text = dtMoFTermLoanPre.Rows[0]["intDirectEmpAfter"].ToString();
                 Txt_Land_Details_before.Text = dtProductionPre.Rows[0]["decLandAmtBefore"].ToString();
                 Txt_Building_Before.Text = dtProductionPre.Rows[0]["decBuildingAmtBefore"].ToString();
                 Txt_Electrical_inst_Before.Text = dtProductionPre.Rows[0]["decPlantMachAmtBefore"].ToString();
@@ -228,7 +228,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
                 Rad_Clearnce_PCB.SelectedValue = dtindustryPre.Rows[0]["intProjectClearance"].ToString();
                 Rad_PP_thrust_Status.SelectedValue = dtindustryPre.Rows[0]["intProvisnalPriorityThrustStatus"].ToString();
                 Rad_IPR_Incentive_avail.SelectedValue = dtindustryPre.Rows[0]["intIPRinctiveAvel"].ToString();
-                Txt_Swm_approve.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
+                Txt_Swm_Approve.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
 
                 ///----------------------------------------Other File Upload----------------------------------------------------------///
 
@@ -1168,7 +1168,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
-            objEntity1.strPhoneNo = Txt_Phone_no.Text;
+            objEntity1.strPhoneNo = Txt_Phone_No.Text;
             objEntity1.strEmail = Txt_Email.Text;
 
             /*-------------------------Industrial Unit Details End---------------------------------*/
@@ -1180,7 +1180,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             ///Production and Employment Details Section
             /*----------------------------------------------------------*/
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
-            objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
+            objEntity1.dtmProdCommBefore = Txt_Commence_Production.Text;
             if (Rad_production.SelectedValue == "1")
             {
                 objEntity1.strUAMNo = Txt_PC_EMI_No.Text;
@@ -1201,7 +1201,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             /*----------------------------------------------------------*/
             /// Investment Details Section
             /*----------------------------------------------------------*/
-            objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_total_emp_Number.Text == "" ? "0" : Txt_total_emp_Number.Text);
+            objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_Total_Emp_Number.Text == "" ? "0" : Txt_Total_Emp_Number.Text);
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text);
             decimal decLandBefore = 0;
             decimal decBuildingBefore = 0;
@@ -1314,7 +1314,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.intProjectClearance = Convert.ToInt32(Rad_Clearnce_PCB.SelectedValue);
             objEntity1.intProvisnalPriorityThrustStatus = Convert.ToInt32(Rad_PP_thrust_Status.SelectedValue);
             objEntity1.intIPRinctiveAvel = Convert.ToInt32(Rad_IPR_Incentive_avail.SelectedValue);
-            objEntity1.strClearnceswm = Txt_Swm_approve.Text;
+            objEntity1.strClearnceswm = Txt_Swm_Approve.Text;
 
             #endregion
 
@@ -2185,7 +2185,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
 
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
-            objEntity1.strPhoneNo = Txt_Phone_no.Text;
+            objEntity1.strPhoneNo = Txt_Phone_No.Text;
             objEntity1.strEmail = Txt_Email.Text;
 
             /*-------------------------Industrial Unit Details End---------------------------------*/
@@ -2197,7 +2197,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             /// Production and Employment Details Section
             /*----------------------------------------------------------*/
             objEntity1.dtmFFCIDateBefore = Txt_Proposed_Date.Text;
-            objEntity1.dtmProdCommBefore = Txt_Commence_production.Text;
+            objEntity1.dtmProdCommBefore = Txt_Commence_Production.Text;
             if (Rad_production.SelectedValue == "1")
             {
                 objEntity1.strUAMNo = Txt_PC_EMI_No.Text;
@@ -2218,7 +2218,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             /*----------------------------------------------------------*/
             /// Investment Details Section
             /*----------------------------------------------------------*/
-            objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_total_emp_Number.Text == "" ? "0" : Txt_total_emp_Number.Text);
+            objEntity1.intDirectEmpAfter = Convert.ToInt32(Txt_Total_Emp_Number.Text == "" ? "0" : Txt_Total_Emp_Number.Text);
             objEntity1.decEquity = Convert.ToDecimal(Txt_Equity_Amt.Text);
             decimal decLandBefore = 0;
             decimal decBuildingBefore = 0;
@@ -2329,7 +2329,7 @@ public partial class incentives_ThrustPrioritysectorstatus : System.Web.UI.Page
             objEntity1.intProjectClearance = Convert.ToInt32(Rad_Clearnce_PCB.SelectedValue);
             objEntity1.intProvisnalPriorityThrustStatus = Convert.ToInt32(Rad_PP_thrust_Status.SelectedValue);
             objEntity1.intIPRinctiveAvel = Convert.ToInt32(Rad_IPR_Incentive_avail.SelectedValue);
-            objEntity1.strClearnceswm = Txt_Swm_approve.Text;
+            objEntity1.strClearnceswm = Txt_Swm_Approve.Text;
 
             #endregion
 

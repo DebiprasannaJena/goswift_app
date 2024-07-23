@@ -1,0 +1,12 @@
+Time: 19-02-2024 04:27:00 PM For RequestMethod: GetRedirectionUrlFromDWH
+InputOutput: [Url]:- proposals.aspx
+-----------------------------------------------------------
+Time: 19-02-2024 04:27:00 PM For RequestMethod: GenerateParameterForEncription
+InputOutput: [ActualParameter]:- D48225DB-3125-438B-AB59-6580099F1737,37339,1243
+-----------------------------------------------------------
+Time: 19-02-2024 04:27:00 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameter]:- cJnvac0tyzyGaPWk4YEyLZvzDeVn5uvVg/OpvJ7tua6p5tOc/s+jqrAY/UXvrwzrhPlF14yHe/GR4iNsEwDdERwjvVPczoPVP5qOwkEKHw4=
+-----------------------------------------------------------
+Time: 19-02-2024 04:27:00 PM For RequestMethod: GenerateAfterEncription
+InputOutput: [EncriptParameterRepalce+]:- cJnvac0tyzyGaPWk4YEyLZvzDeVn5uvVg/OpvJ7tua6p5tOc/s%2BjqrAY/UXvrwzrhPlF14yHe/GR4iNsEwDdERwjvVPczoPVP5qOwkEKHw4=
+-----------------------------------------------------------

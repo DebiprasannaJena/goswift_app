@@ -46,7 +46,7 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
             {
                 Txt_EIN_IL_Date.Attributes.Add("readonly", "readonly");
                 Txt_Proposed_Date.Attributes.Add("readonly", "readonly");
-                Txt_Commence_production.Attributes.Add("readonly", "readonly");
+                Txt_Commence_Production.Attributes.Add("readonly", "readonly");
                 FillUnitMeasurment();
                 FillUnitCategory();
                 Txt_Other_Unit_Before.Visible = false;
@@ -101,12 +101,12 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
                 DrpDwn_Gender_Partner.SelectedValue = dtindustryPre.Rows[0]["vchManagingPartnerGender"].ToString();
                 Txt_EIN_IL_NO.Text = dtindustryPre.Rows[0]["vchEINNO"].ToString();
                 Txt_EIN_IL_Date.Text = dtindustryPre.Rows[0]["dtmEIN"].ToString();
-                Txt_Propsed_location.Text = dtindustryPre.Rows[0]["vchProposedLocation"].ToString();
+                Txt_Propsed_Location.Text = dtindustryPre.Rows[0]["vchProposedLocation"].ToString();
                 Txt_Status.Text = dtindustryPre.Rows[0]["vchPrsentStatus"].ToString();
-                Txt_deed.Text = dtindustryPre.Rows[0]["vchDeedoragreement"].ToString();
+                Txt_Deed.Text = dtindustryPre.Rows[0]["vchDeedoragreement"].ToString();
                 Txt_Stampduty_claimed.Text = dtProductionPre.Rows[0]["decSdeClaimed"].ToString();
                 Txt_Availed.Text = dtProductionPre.Rows[0]["decAmountAvailed"].ToString();
-                txt_Deferential.Text = dtProductionPre.Rows[0]["decDeferentialClaim"].ToString();
+                Txt_Deferential.Text = dtProductionPre.Rows[0]["decDeferentialClaim"].ToString();
 
                 Grd_Production_Before.DataSource = dtProductionDetBefPre;
                 Grd_Production_Before.DataBind();
@@ -136,11 +136,11 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
 
                 #endregion
                 Txt_Proposed_Date.Text = dtindustryPre.Rows[0]["dtmProdCommBefore"].ToString();
-                Txt_Commence_production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
+                Txt_Commence_Production.Text = dtProductionPre.Rows[0]["dtmFFCIDateBefore"].ToString();
                 ///*-------------------------------------------------------------------------------------------*///
-               
 
-                Txt_clearances.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
+
+                Txt_Clearances.Text = dtindustryPre.Rows[0]["vchClearnceswm"].ToString();
 
                 ///-----------------------------Other File Upload-------------------------------------/////
 
@@ -901,11 +901,11 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
             objEntity1.strRegisteredOfcAddress = Txt_Industry_Address.Text;
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;
             objEntity1.strManagingPartnerName = Txt_Partner_Name.Text;
-            objEntity1.dtmFFCIDateBefore = Txt_Commence_production.Text;
+            objEntity1.dtmFFCIDateBefore = Txt_Commence_Production.Text;
             objEntity1.dtmProdCommBefore = Txt_Proposed_Date.Text;
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
-            objEntity1.strProposedLocation = Txt_Propsed_location.Text;
+            objEntity1.strProposedLocation = Txt_Propsed_Location.Text;
             objEntity1.strPrsentStatus = Txt_Status.Text;
 
             /*-------------------------Industrial Unit Details End---------------------------------*/
@@ -915,11 +915,11 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
             /*----------------------------------------------------------*/
             /// Means of Finance Section
            /*----------------------------------------------------------*/
-            objEntity1.strClearnceswm = Txt_clearances.Text;
-            objEntity1.strDeed = Txt_deed.Text;
+            objEntity1.strClearnceswm = Txt_Clearances.Text;
+            objEntity1.strDeed = Txt_Deed.Text;
             objEntity1.decSdeClaimed = Convert.ToDecimal(Txt_Stampduty_claimed.Text);
             objEntity1.decAmountAvailed = Convert.ToDecimal(Txt_Availed.Text);
-            objEntity1.decDeferentialClaim = Convert.ToDecimal(txt_Deferential.Text);
+            objEntity1.decDeferentialClaim = Convert.ToDecimal(Txt_Deferential.Text);
 
             #endregion
 
@@ -1190,11 +1190,11 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
             objEntity1.strRegisteredOfcAddress = Txt_Industry_Address.Text;
             objEntity1.strManagingPartnerGender = DrpDwn_Gender_Partner.SelectedValue;
             objEntity1.strManagingPartnerName = Txt_Partner_Name.Text;
-            objEntity1.dtmFFCIDateBefore = Txt_Commence_production.Text;
+            objEntity1.dtmFFCIDateBefore = Txt_Commence_Production.Text;
             objEntity1.dtmProdCommBefore = Txt_Proposed_Date.Text;
             objEntity1.strEINNO = Txt_EIN_IL_NO.Text == "" ? null : Txt_EIN_IL_NO.Text;
             objEntity1.dtmEIN = Txt_EIN_IL_Date.Text == "" ? null : Txt_EIN_IL_Date.Text;
-            objEntity1.strProposedLocation = Txt_Propsed_location.Text;
+            objEntity1.strProposedLocation = Txt_Propsed_Location.Text;
             objEntity1.strPrsentStatus = Txt_Status.Text;
 
             /*-------------------------Industrial Unit Details End---------------------------------*/
@@ -1205,11 +1205,11 @@ public partial class incentives_StampDutyExemption : System.Web.UI.Page
             ///Means of Finance Section
              /*----------------------------------------------------------*/
 
-            objEntity1.strClearnceswm = Txt_clearances.Text;
-            objEntity1.strDeed = Txt_deed.Text;
+            objEntity1.strClearnceswm = Txt_Clearances.Text;
+            objEntity1.strDeed = Txt_Deed.Text;
             objEntity1.decSdeClaimed = Convert.ToDecimal(Txt_Stampduty_claimed.Text);
             objEntity1.decAmountAvailed = Convert.ToDecimal(Txt_Availed.Text);
-            objEntity1.decDeferentialClaim = Convert.ToDecimal(txt_Deferential.Text);
+            objEntity1.decDeferentialClaim = Convert.ToDecimal(Txt_Deferential.Text);
 
             #endregion
 

@@ -1,0 +1,78 @@
+Time: 21-02-2024 12:46:54 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchBlockName'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 21-02-2024 12:47:57 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_STATE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 21-02-2024 12:50:34 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_STATE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 21-02-2024 12:52:37 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_STATE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 21-02-2024 12:55:43 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_STATE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+
+Time: 21-02-2024 01:02:44 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'VCH_STATE'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName, String format)
+   at System.Web.UI.WebControls.ListControl.PerformDataBinding(IEnumerable dataSource)
+   at System.Web.UI.WebControls.ListControl.OnDataBinding(EventArgs e)
+   at System.Web.UI.WebControls.ListControl.PerformSelect()
+   at EditInvestorProfile.DrpRegdCountry_SelectedIndexChanged(Object sender, EventArgs e) in d:\GitProject\goswift_app\EditInvestorProfile.aspx.cs:line 365
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

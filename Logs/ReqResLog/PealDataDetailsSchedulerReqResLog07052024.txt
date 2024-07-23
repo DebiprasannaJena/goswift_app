@@ -1,0 +1,232 @@
+Time: 07-05-2024 10:42:15 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 10:42:32 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 10:44:36 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test 1","mobile":"8093516201","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-17","registration_no":"201710937","other_info":{"Constitution_Type":"Proprietorship","email":"kumarpranay1991@gmail.com"}},{"district_id":"20","name":"Proposal100","mobile":"9092909909","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-25","registration_no":"201710961","other_info":{"Constitution_Type":"Proprietorship","email":"nayaksarmistha@gmail.com"}},{"district_id":"20","name":"Testing Agenda Today","mobile":"2333333333","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-11","registration_no":"201710430","other_info":{"Constitution_Type":"Public Limited Company","email":"dd@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 10:44:41 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710937","201710961","201710430"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 11:03:58 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 11:04:02 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 11:05:39 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test Company","mobile":"3232323223","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-27","registration_no":"2018031057","other_info":{"Constitution_Type":"Private Limited Company","email":"subha@gmail.com"}},{"district_id":"20","name":"Koshal Industries and Agents","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-14","registration_no":"2018031055","other_info":{"Constitution_Type":"Proprietorship","email":"ritika@gmail.com"}},{"district_id":"20","name":"odisha textile","mobile":"9866666666","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-12","registration_no":"201710444","other_info":{"Constitution_Type":"Proprietorship","email":"ashu@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 11:05:40 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["2018031057","2018031055","201710444"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 11:07:44 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 11:07:44 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 11:09:25 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test Test Test 3","mobile":"4343334343","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-19","registration_no":"2017121031","other_info":{"Constitution_Type":"Private Limited Company","email":"dd@gmail.com"}},{"district_id":"20","name":"Jaganatha Steel","mobile":"5475686786","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-31","registration_no":"201710988","other_info":{"Constitution_Type":"Proprietorship","email":"jaganatha@gmail.com"}},{"district_id":"20","name":"Dev Industries","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-13","registration_no":"2018031054","other_info":{"Constitution_Type":"Proprietorship","email":"ritika@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 11:09:28 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["2017121031","201710988","2018031054"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 11:12:51 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 11:12:53 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 11:14:26 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"odisha textile","mobile":"9866666666","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-12","registration_no":"201710444","other_info":{"Constitution_Type":"Proprietorship","email":"ashu@gmail.com"}},{"district_id":"20","name":"Dell Corporation","mobile":"5632872872","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-27","registration_no":"201709155","other_info":{"Constitution_Type":"Proprietorship","email":"dell@mail.com"}},{"district_id":"20","name":"Amira Enterprises","mobile":"9576575657","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-12","registration_no":"201710448","other_info":{"Constitution_Type":"Proprietorship","email":"amir@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 11:14:45 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710444","201709155","201710448"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 11:16:36 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 11:16:46 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 11:17:50 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test 1","mobile":"8093516201","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-20","registration_no":"201710945","other_info":{"Constitution_Type":"Proprietorship","email":"kumarpranay1991@gmail.com"}},{"district_id":"20","name":"Gems","mobile":"9898989898","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-26","registration_no":"201710962","other_info":{"Constitution_Type":"Private Limited Company","email":"future@gmail.com"}},{"district_id":"20","name":"TEST USER","mobile":"7658769708","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2023-02-10","registration_no":"2023022065","other_info":{"Constitution_Type":"PSU","email":"Samal2raju@csm.co.in"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 11:17:59 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710945","201710962","2023022065"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 11:57:17 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 11:57:17 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NO_RECORDS_FOUND]
+-----------------------------------------------------------
+Time: 07-05-2024 12:00:04 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:00:04 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NO_RECORDS_FOUND]
+-----------------------------------------------------------
+Time: 07-05-2024 12:01:43 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:01:43 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:02:43 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Testing query 1","mobile":"8093516201","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2016-09-21","registration_no":"201709127","other_info":{"Constitution_Type":"Private Limited Company","email":"kumarpranay1991@gmail.com"}},{"district_id":"20","name":"Testing Agenda Today","mobile":"2333333333","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-11","registration_no":"201710430","other_info":{"Constitution_Type":"Public Limited Company","email":"dd@gmail.com"}},{"district_id":"20","name":"Jaganatha Steel","mobile":"5475686786","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-31","registration_no":"201710988","other_info":{"Constitution_Type":"Proprietorship","email":"jaganatha@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:02:55 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"message":"Record Saved successfully. 1 inserted and 2 data discrded as invalid out of 3 no of data.","response_code":200,"invalidvalidDataArr":["201710430","201710988"],"NoofDataInserted":1,"noofDataInvalid":2,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:02:55 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:02:55 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [OUTPUT_RESPONSE][FAILURE]:- 'Newtonsoft.Json.Linq.JValue' does not contain a definition for 'Count'
+-----------------------------------------------------------
+Time: 07-05-2024 12:09:52 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:09:52 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:10:52 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"west coast","mobile":"9853340145","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-22","registration_no":"201709144","other_info":{"Constitution_Type":"Proprietorship","email":"subhasrirout@csmpl.com"}},{"district_id":"20","name":"Test Test Test 3","mobile":"4343334343","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-19","registration_no":"2017121031","other_info":{"Constitution_Type":"Private Limited Company","email":"dd@gmail.com"}},{"district_id":"20","name":"IMFA | Indian Metals  Ferro Alloys Limited","mobile":"9937863858","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-30","registration_no":"201709173","other_info":{"Constitution_Type":"Private Limited Company","email":"imfa@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:10:54 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201709144","2017121031","201709173"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:10:54 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:10:54 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [OUTPUT_RESPONSE][FAILURE]:- 'Newtonsoft.Json.Linq.JValue' does not contain a definition for 'Count'
+-----------------------------------------------------------
+Time: 07-05-2024 12:15:59 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:15:59 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:16:59 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test 1","mobile":"8093516201","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-14","registration_no":"201710463","other_info":{"Constitution_Type":"Proprietorship","email":"kumarpranay1991@gmail.com"}},{"district_id":"20","name":"rtttttttfgggggggggggggggg","mobile":"4555555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-22","registration_no":"201709143","other_info":{"Constitution_Type":"Proprietorship","email":"ggg@gmail.com"}},{"district_id":"20","name":"SAM infotech","mobile":"9040194808","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-03","registration_no":"201710174","other_info":{"Constitution_Type":"Proprietorship","email":"nayak@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:17:01 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710463","201709143","201710174"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:17:01 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:17:01 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [OUTPUT_RESPONSE][FAILURE]:- 'Newtonsoft.Json.Linq.JValue' does not contain a definition for 'Count'
+-----------------------------------------------------------
+Time: 07-05-2024 12:22:34 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:22:34 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:23:34 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Utkal Steel","mobile":"2435464364","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-11-15","registration_no":"2017111018","other_info":{"Constitution_Type":"Proprietorship","email":"utkal@gmail.com"}},{"district_id":"20","name":"west coast","mobile":"9853340145","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-22","registration_no":"201709144","other_info":{"Constitution_Type":"Proprietorship","email":"subhasrirout@csmpl.com"}},{"district_id":"20","name":"kunal chemicals","mobile":"6666555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-27","registration_no":"201710970","other_info":{"Constitution_Type":"Private Limited Company","email":"indiana@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:23:35 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["2017111018","201709144","201710970"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:23:35 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:23:35 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [OUTPUT_RESPONSE][FAILURE]:- Operator '==' cannot be applied to operands of type 'int' and 'Newtonsoft.Json.Linq.JValue'
+-----------------------------------------------------------
+Time: 07-05-2024 12:27:21 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:27:26 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:28:29 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Test 1","mobile":"8093516201","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-17","registration_no":"201710937","other_info":{"Constitution_Type":"Proprietorship","email":"kumarpranay1991@gmail.com"}},{"district_id":"20","name":"Kumar Industries & Agents","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-03","registration_no":"2018031050","other_info":{"Constitution_Type":"Proprietorship","email":"devkumar@gmail.com"}},{"district_id":"20","name":"Test Test Test 3","mobile":"4343334343","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-19","registration_no":"2017121031","other_info":{"Constitution_Type":"Private Limited Company","email":"dd@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:28:29 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710937","2018031050","2017121031"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:28:29 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:28:36 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- System.Collections.Generic.List`1[System.String]
+-----------------------------------------------------------
+Time: 07-05-2024 12:32:58 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:33:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:34:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"tset","mobile":"5675676576","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-12","registration_no":"201710451","other_info":{"Constitution_Type":"Proprietorship","email":"ftghnfjuf@gmail.com"}},{"district_id":"20","name":"IMFA | Indian Metals  Ferro Alloys Limited","mobile":"9937863858","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-30","registration_no":"201709173","other_info":{"Constitution_Type":"Private Limited Company","email":"imfa@gmail.com"}},{"district_id":"20","name":"Testing 1","mobile":"3232323232","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-07","registration_no":"201710384","other_info":{"Constitution_Type":"Proprietorship","email":"dd@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:34:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710451","201709173","201710384"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:34:00 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:34:07 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- [
+  "201710451",
+  "201709173",
+  "201710384"
+]
+-----------------------------------------------------------
+Time: 07-05-2024 12:40:44 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 12:40:46 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 12:41:46 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Global Steel","mobile":"4356467578","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-31","registration_no":"201710996","other_info":{"Constitution_Type":"Proprietorship","email":"global@gmail.com"}},{"district_id":"20","name":"Kumar Industries & Agents","mobile":"8018049429","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2018-03-01","registration_no":"2018031047","other_info":{"Constitution_Type":"Proprietorship","email":"devkumar@gmail.com"}},{"district_id":"20","name":"Anil Industry","mobile":"9132112905","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-07","registration_no":"201710399","other_info":{"Constitution_Type":"Private Limited Company","email":"vishal@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 12:41:47 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"message":"Record Saved successfully. 1 inserted and 2 data discrded as invalid out of 3 no of data.","response_code":200,"invalidvalidDataArr":["2018031047","201710399"],"NoofDataInserted":1,"noofDataInvalid":2,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 12:41:47 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- OK
+-----------------------------------------------------------
+Time: 07-05-2024 12:42:10 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 2
+-----------------------------------------------------------
+Time: 07-05-2024 03:49:44 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 03:49:44 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NO_RECORDS_FOUND]
+-----------------------------------------------------------
+Time: 07-05-2024 03:50:03 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 03:50:03 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [NO_RECORDS_FOUND]
+-----------------------------------------------------------
+Time: 07-05-2024 03:50:25 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 07-05-2024 03:50:25 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 07-05-2024 03:51:25 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"kunal chemicals","mobile":"6666555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-27","registration_no":"201710970","other_info":{"Constitution_Type":"Private Limited Company","email":"indiana@gmail.com"}},{"district_id":"20","name":"Global Steel","mobile":"4356467578","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-31","registration_no":"201710996","other_info":{"Constitution_Type":"Proprietorship","email":"global@gmail.com"}},{"district_id":"20","name":"Utkal Steel","mobile":"2435464364","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-11-15","registration_no":"2017111018","other_info":{"Constitution_Type":"Proprietorship","email":"utkal@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 07-05-2024 03:51:26 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["201710970","201710996","2017111018"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 07-05-2024 03:51:26 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_STATUS_CODE]:- 200
+-----------------------------------------------------------
+Time: 07-05-2024 03:51:27 PM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [MISMATCHED_PROPOSAL_COUNT]:- 3
+-----------------------------------------------------------

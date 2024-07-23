@@ -1,0 +1,45 @@
+Time: 16-01-2024 02:51:15 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchStatusName'.
+StackTrace:    at Portal_Helpdesk_TrackPCAppStatus.BindData() in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 147
+   at Portal_Helpdesk_TrackPCAppStatus.BtnSearch_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 157
+Source: App_Web_hg3tmhey
+TargetSite: Void BindData()
+-----------------------------------------------------------
+
+Time: 16-01-2024 02:52:35 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchStatusName'.
+StackTrace:    at Portal_Helpdesk_TrackPCAppStatus.BindData() in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 147
+   at Portal_Helpdesk_TrackPCAppStatus.BtnSearch_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 157
+Source: App_Web_hg3tmhey
+TargetSite: Void BindData()
+-----------------------------------------------------------
+
+Time: 16-01-2024 02:53:04 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchStatusName'.
+StackTrace:    at Portal_Helpdesk_TrackPCAppStatus.BindData() in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 147
+   at Portal_Helpdesk_TrackPCAppStatus.BtnSearch_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 157
+Source: App_Web_hg3tmhey
+TargetSite: Void BindData()
+-----------------------------------------------------------
+
+Time: 16-01-2024 02:55:56 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchStatusName'.
+StackTrace:    at Portal_Helpdesk_TrackPCAppStatus.BindData() in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 147
+   at Portal_Helpdesk_TrackPCAppStatus.BtnSearch_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 157
+Source: App_Web_hg3tmhey
+TargetSite: Void BindData()
+-----------------------------------------------------------
+
+Time: 16-01-2024 02:55:57 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchStatusName'.
+StackTrace:    at Portal_Helpdesk_TrackPCAppStatus.BindData() in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 147
+   at Portal_Helpdesk_TrackPCAppStatus.BtnSearch_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 157
+Source: App_Web_hg3tmhey
+TargetSite: Void BindData()
+-----------------------------------------------------------
+

@@ -1,0 +1,13 @@
+Time: 16-01-2024 03:05:46 PM
+-----------------------------------------------------------
+Message: D:\GitProject\goswift_app\QueryFiles\2017_11_08_12_39_16_PM__1071_Query1.pdf
+StackTrace:    at Ionic.Zip.SharedUtilities.GetFileLength(String fileName)
+   at Ionic.Zip.ZipEntry.MaybeUnsetCompressionMethodForWriting(Int32 cycle)
+   at Ionic.Zip.ZipEntry.WriteHeader(Stream s, Int32 cycle)
+   at Ionic.Zip.ZipEntry.Write(Stream s)
+   at Ionic.Zip.ZipFile.Save()
+   at Portal_Helpdesk_TrackPCAppStatus.LnkBtnQueryFile_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Helpdesk\TrackPCAppStatus.aspx.cs:line 225
+Source: Ionic.Zip.Reduced
+TargetSite: Int64 GetFileLength(System.String)
+-----------------------------------------------------------
+

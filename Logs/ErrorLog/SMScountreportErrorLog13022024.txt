@@ -1,0 +1,88 @@
+Time: 13-02-2024 05:21:35 PM
+-----------------------------------------------------------
+Message: RegisterForEventValidation can only be called during Render();
+StackTrace:    at System.Web.UI.ClientScriptManager.RegisterForEventValidation(String uniqueId, String argument)
+   at System.Web.UI.WebControls.HiddenField.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.GridView.Render(HtmlTextWriter writer, Boolean renderPanel)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 242
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 178
+Source: System.Web
+TargetSite: Void RegisterForEventValidation(System.String, System.String)
+-----------------------------------------------------------
+
+Time: 13-02-2024 05:23:14 PM
+-----------------------------------------------------------
+Message: RegisterForEventValidation can only be called during Render();
+StackTrace:    at System.Web.UI.ClientScriptManager.RegisterForEventValidation(String uniqueId, String argument)
+   at System.Web.UI.WebControls.HiddenField.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.TableCell.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.WebControls.Table.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.WebControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.WebControls.WebControl.RenderContents(HtmlTextWriter writer)
+   at System.Web.UI.WebControls.GridView.Render(HtmlTextWriter writer, Boolean renderPanel)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 242
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 178
+Source: System.Web
+TargetSite: Void RegisterForEventValidation(System.String, System.String)
+-----------------------------------------------------------
+
+Time: 13-02-2024 05:24:39 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenDetailsRpt.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenDetailsRpt.aspx.cs:line 178
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+
+Time: 13-02-2024 05:59:07 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenReport.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 190
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

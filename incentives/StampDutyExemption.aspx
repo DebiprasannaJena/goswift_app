@@ -199,12 +199,12 @@
                 }
             }
 
-            var DtCommencProd = $('#Txt_Commence_production').val()
+            var DtCommencProd = $('#Txt_Commence_Production').val()
             if (DtCommencProd != '') {
 
                 if (new Date(DtCommencProd) > new Date()) {
                     jAlert('<strong>Proposed Date/ Date of Commencement of production / Activity Date should not be greater than Current Date.</strong>', projname);
-                    $("#popup_ok").click(function () { $("#Txt_Commence_production").focus(); });
+                    $("#popup_ok").click(function () { $("#Txt_Commence_Production").focus(); });
                     return false;
                 }
             }
@@ -512,7 +512,7 @@
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
                                                                                     <div class="input-group date datePicker" id="Div1" runat="server">
-                                                                                        <asp:TextBox ID="Txt_Commence_production" CssClass="form-control" type="text" runat="server"
+                                                                                        <asp:TextBox ID="Txt_Commence_Production" CssClass="form-control" type="text" runat="server"
                                                                                             MaxLength="11" ToolTip="Enter Date of first fixed capital investment i.e. land / bulding / plant & machinary and balancing equipment Here !!"></asp:TextBox>
                                                                                         <span id="Span2" runat="server" class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                                                     </div>
@@ -699,7 +699,7 @@
                                                                                     10. Proposed location of the Project</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_Propsed_location" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Propsed_Location" CssClass="form-control" MaxLength="100" runat="server"
                                                                                         ToolTip="Enter  Proposed location of the Project Here !!"></asp:TextBox>
                                                                                 </div>
                                                                             </div>
@@ -728,7 +728,7 @@
                                                                                     11.  Type of Deed / Agreement to be executed</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_deed" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Deed" CssClass="form-control" MaxLength="100" runat="server"
                                                                                         ToolTip="Enter Type of Deed / Agreement to be executed Here !!"></asp:TextBox>
                                                                                 </div>
                                                                             </div>
@@ -767,7 +767,7 @@
                                                                                     14.   Amount of deferential claim to be exempted</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="txt_Deferential" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Deferential" CssClass="form-control" MaxLength="100" runat="server"
                                                                                         ToolTip="Enter Amount of deferential claim to be exempted Here !!"></asp:TextBox>
                                                                                 </div>
                                                                             </div>
@@ -782,7 +782,7 @@
                                                                                     15.  Statutory clearances,if any</label>
                                                                                 <div class="col-sm-8">
                                                                                     <span class="colon">:</span>
-                                                                                    <asp:TextBox ID="Txt_clearances" CssClass="form-control" MaxLength="100" runat="server"
+                                                                                    <asp:TextBox ID="Txt_Clearances" CssClass="form-control" MaxLength="100" runat="server"
                                                                                         ToolTip="Enter Statutory clearances,if any Here !!"></asp:TextBox>
                                                                                 </div>
                                                                             </div>

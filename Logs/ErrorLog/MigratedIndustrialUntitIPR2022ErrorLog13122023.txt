@@ -1,0 +1,22 @@
+Time: 13-12-2023 05:19:01 PM
+-----------------------------------------------------------
+Message: DataBinding: 'System.Data.DataRowView' does not contain a property with the name 'vchIncentive'.
+StackTrace:    at System.Web.UI.DataBinder.GetPropertyValue(Object container, String propName)
+   at System.Web.UI.DataBinder.Eval(Object container, String[] expressionParts)
+   at ASP.incentives_migratedindustrialunitipr2022_aspx.__DataBinding__control326(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx:line 2499
+   at System.Web.UI.Control.OnDataBinding(EventArgs e)
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.Control.DataBindChildren()
+   at System.Web.UI.Control.DataBind(Boolean raiseOnDataBinding)
+   at System.Web.UI.WebControls.GridView.CreateRow(Int32 rowIndex, Int32 dataSourceIndex, DataControlRowType rowType, DataControlRowState rowState, Boolean dataBind, Object dataItem, DataControlField[] fields, TableRowCollection rows, PagedDataSource pagedDataSource)
+   at System.Web.UI.WebControls.GridView.CreateChildControls(IEnumerable dataSource, Boolean dataBinding)
+   at System.Web.UI.WebControls.CompositeDataBoundControl.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.GridView.PerformDataBinding(IEnumerable data)
+   at System.Web.UI.WebControls.DataBoundControl.OnDataSourceViewSelectCallback(IEnumerable data)
+   at incentives_MigratedIndustrialUnitIPR2022.LnkBtn_Add_Item_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\incentives\MigratedIndustrialUnitIPR2022.aspx.cs:line 858
+Source: System.Web
+TargetSite: System.Object GetPropertyValue(System.Object, System.String)
+-----------------------------------------------------------
+

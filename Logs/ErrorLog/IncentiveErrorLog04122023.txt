@@ -1,0 +1,62 @@
+Time: 04-12-2023 11:21:00 AM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\GitProject\goswift_app\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.kc3rnozv
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+
+Time: 04-12-2023 11:52:49 AM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\GitProject\goswift_app\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.nmmermcq
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+
+Time: 04-12-2023 12:07:19 PM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\GitProject\goswift_app\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.nmmermcq
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+
+Time: 04-12-2023 02:54:36 PM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\GitProject\goswift_app\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.nmmermcq
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+
+Time: 04-12-2023 03:45:34 PM
+-----------------------------------------------------------
+Message: Failed to convert parameter value from a String to a Int32.
+StackTrace:    at DataAcessLayer.Incentive.IncentiveMasterDataLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objOGEntity) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveMasterDataLayer.cs:line 927
+   at BusinessLogicLayer.Incentive.IncentiveMasterBusinessLayer.Inct_Application_Count(Inct_Basic_Unit_Details_WPC_Entity objInctEntity) in d:\GitProject\goswift_app\App_Code\BAL\Incentive\IncentiveMasterBusinessLayer.cs:line 71
+   at incentives_incentiveoffered.fillAppCount() in d:\GitProject\goswift_app\incentives\incentiveoffered.aspx.cs:line 65
+Source: App_Code.nmmermcq
+TargetSite: System.Collections.Generic.IList`1[EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity] Inct_Application_Count(EntityLayer.Incentive.Inct_Basic_Unit_Details_WPC_Entity)
+-----------------------------------------------------------
+
+Time: 04-12-2023 05:02:02 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   at Portal_Incentive_View_Inct_Application_IPR2022.Page_Load(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\Incentive\View_Inct_Application_IPR2022.aspx.cs:line 35
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

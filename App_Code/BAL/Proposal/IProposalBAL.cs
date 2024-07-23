@@ -153,6 +153,8 @@ namespace BusinessLogicLayer.Proposal
         DataTable QueryDateUpdate(ProposalDet objProposal);
         //Add by Debiprasanna
         string UpdateQueryDate(ProposalDet objProposal);
+        //Add by Debiprasanna
+        DataSet GetPCTrackDetails(ProposalDet objProposal);
     }
 
 }

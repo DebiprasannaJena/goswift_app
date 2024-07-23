@@ -1,0 +1,12 @@
+Time: 19-02-2024 03:02:11 PM
+-----------------------------------------------------------
+Message: Thread was being aborted.
+StackTrace:    at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at IncentiveCommonFunctions.ExportToExcel(String strFileName, Control grd, String title, String details, String year, Boolean check) in d:\GitProject\goswift_app\App_Code\DAL\Incentive\IncentiveCommonFunctions.cs:line 259
+   at Portal_MISReport_GoGreenReport.lnkExport_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\Portal\MISReport\GoGreenReport.aspx.cs:line 329
+Source: mscorlib
+TargetSite: Void AbortInternal()
+-----------------------------------------------------------
+

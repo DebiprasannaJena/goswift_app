@@ -1,0 +1,30 @@
+Time: 06-05-2024 10:26:42 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.InvestorRegistration(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\DAL\Investor\InvestorDataLayer.cs:line 409
+   at BusinessLogicLayer.Investor.InvestorRegistration.InvestorRegistrationBAL(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\BAL\Investor\InvestorRegistration.cs:line 17
+   at InvestorRegistrationUser.Btn_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationUser.aspx.cs:line 697
+Source: App_Code.kms4wz6l
+TargetSite: System.String InvestorRegistration(EntityLayer.Investor.InvestorInfo, System.String)
+-----------------------------------------------------------
+
+Time: 06-05-2024 10:41:38 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.InvestorRegistration(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\DAL\Investor\InvestorDataLayer.cs:line 409
+   at BusinessLogicLayer.Investor.InvestorRegistration.InvestorRegistrationBAL(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\BAL\Investor\InvestorRegistration.cs:line 17
+   at InvestorRegistrationUser.Btn_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationUser.aspx.cs:line 697
+Source: App_Code.kms4wz6l
+TargetSite: System.String InvestorRegistration(EntityLayer.Investor.InvestorInfo, System.String)
+-----------------------------------------------------------
+
+Time: 06-05-2024 11:38:16 AM
+-----------------------------------------------------------
+Message: Object reference not set to an instance of an object.
+StackTrace:    at DataAcessLayer.Investor.InvestorDataLayer.InvestorRegistration(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\DAL\Investor\InvestorDataLayer.cs:line 409
+   at BusinessLogicLayer.Investor.InvestorRegistration.InvestorRegistrationBAL(InvestorInfo objInvestor, String strAction) in d:\GitProject\goswift_app\App_Code\BAL\Investor\InvestorRegistration.cs:line 17
+   at InvestorRegistrationNonIndustry.Btn_Submit_Click(Object sender, EventArgs e) in d:\GitProject\goswift_app\InvestorRegistrationNonIndustry.aspx.cs:line 482
+Source: App_Code.kms4wz6l
+TargetSite: System.String InvestorRegistration(EntityLayer.Investor.InvestorInfo, System.String)
+-----------------------------------------------------------
+

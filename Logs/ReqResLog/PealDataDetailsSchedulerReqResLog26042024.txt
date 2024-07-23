@@ -1,0 +1,24 @@
+Time: 26-04-2024 09:49:34 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 26-04-2024 09:49:35 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 26-04-2024 09:50:35 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"Testing EEEEE","mobile":"7667676776","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-18","registration_no":"2017121029","other_info":{"Constitution_Type":"Private Limited Company","email":"ss@gmail.com"}},{"district_id":"20","name":"ddddddddddddddddddww332","mobile":"3222222222","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-14","registration_no":"201710501","other_info":{"Constitution_Type":"Private Limited Company","email":"dd@gmail.com"}},{"district_id":"20","name":"west coast","mobile":"9853340145","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-09-22","registration_no":"201709144","other_info":{"Constitution_Type":"Proprietorship","email":"subhasrirout@csmpl.com"}}]}
+-----------------------------------------------------------
+Time: 26-04-2024 09:50:35 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"error":"Error:Occured. Some Inputs are Invalid. Please try again! ","response_code":405,"invalidvalidDataArr":["2017121029","201710501","201709144"],"NoofDataInserted":0,"noofDataInvalid":3,"totalRecordrcvd":3}
+-----------------------------------------------------------
+Time: 26-04-2024 09:51:38 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: Called
+-----------------------------------------------------------
+Time: 26-04-2024 09:51:38 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [TOTAL_RECORD_FOUND]:- 3
+-----------------------------------------------------------
+Time: 26-04-2024 09:52:38 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [URL GENERATE][from MoSarkar]:- http://192.168.10.168/mosarkar/App/API/mosarkarservice.php{"method":"OutboundDataSubmit","dept_code":"IND@16","service_code":"IND@16@SLS","data":[{"district_id":"20","name":"kunal chemicals","mobile":"6666555555","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-10-27","registration_no":"201710970","other_info":{"Constitution_Type":"Private Limited Company","email":"indiana@gmail.com"}},{"district_id":"20","name":"Testing EEEEE","mobile":"7667676776","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-18","registration_no":"2017121029","other_info":{"Constitution_Type":"Private Limited Company","email":"ss@gmail.com"}},{"district_id":"20","name":"Test Test Test 3","mobile":"4343334343","age":"0","gender":"0","department_institution_id":"1170","registration_date":"2017-12-19","registration_no":"2017121031","other_info":{"Constitution_Type":"Private Limited Company","email":"dd@gmail.com"}}]}
+-----------------------------------------------------------
+Time: 26-04-2024 09:52:39 AM For RequestMethod: MoSarkarServiceSchedule
+InputOutput: [RESPONSE_CONTENT]:- {"message":"Record Saved successfully. 2 inserted and 1 data discrded as invalid out of 3 no of data.","response_code":200,"invalidvalidDataArr":["2017121029"],"NoofDataInserted":2,"noofDataInvalid":1,"totalRecordrcvd":3}
+-----------------------------------------------------------

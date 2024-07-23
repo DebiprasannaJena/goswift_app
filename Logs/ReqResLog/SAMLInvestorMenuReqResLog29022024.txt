@@ -1,0 +1,24 @@
+Time: 29-02-2024 03:16:10 PM For RequestMethod: RedirectionToNsws
+InputOutput: [ForUniqueId]:- A6F8C622-A34F-4E2A-B42E-EC89D30CCB35 [ForUserId]:- AABCT8879J_505000
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:14 PM For RequestMethod: RedirectionToNsws
+InputOutput: [AccessTokenResponseError]:- 
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:15 PM For RequestMethod: RedirectionToNsws
+InputOutput: [ForUniqueId]:- A6F8C622-A34F-4E2A-B42E-EC89D30CCB35 [ForUserId]:- AABCT8879J_505000
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:19 PM For RequestMethod: RedirectionToNsws
+InputOutput: [AccessTokenResponseError]:- 
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:19 PM For RequestMethod: RedirectionToNsws
+InputOutput: [ForUniqueId]:- A6F8C622-A34F-4E2A-B42E-EC89D30CCB35 [ForUserId]:- AABCT8879J_505000
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:24 PM For RequestMethod: RedirectionToNsws
+InputOutput: [AccessTokenResponseError]:- 
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:34 PM For RequestMethod: RedirectionToNsws
+InputOutput: [ForUniqueId]:- A6F8C622-A34F-4E2A-B42E-EC89D30CCB35 [ForUserId]:- AABCT8879J_505000
+-----------------------------------------------------------
+Time: 29-02-2024 03:16:38 PM For RequestMethod: RedirectionToNsws
+InputOutput: [AccessTokenResponseError]:- 
+-----------------------------------------------------------
